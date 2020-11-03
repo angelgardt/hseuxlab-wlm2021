@@ -1,5 +1,5 @@
 --- 
-title: "HSE UX LAB | Анализ данных + R: мир линейных моделей"
+title: "HSE UX LAB | Анализ данных + R: мир линейных моделей | Book"
 author: "А. Ангельгардт"
 date: "2021"
 site: bookdown::bookdown_site

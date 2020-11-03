@@ -51,3 +51,11 @@ a.source {
   padding-left: 5%;
 }
 
+.task {
+  padding: 2%;
+  background-color: #e6e6e6;
+}
+.taskimg {
+  width: 5%;
+  margin: 2%;
+}
