@@ -53,7 +53,10 @@ a.source {
 
 .task {
   padding: 2%;
+  margin-bottom: 5%;
   background-color: #e6e6e6;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
 }
 .taskimg {
   width: 5%;
