@@ -1,0 +1,20 @@
+# Литература {-}
+
+### Касаемо математики {-}
+
+* [Lovász, L., Pelikán, J., & Vesztergombi, K. (2003). Discrete Mathematics. _Undergraduate Texts in Mathematics_](https://www.springer.com/gp/book/9780387955841)
+* [Wallis, W. D. (2012). A Beginner’s Guide to Discrete Mathematics](https://www.springer.com/gp/book/9780817682859)
+* [Gorodentsev, A. L. (2016). Algebra I](https://www.springer.com/gp/book/9783319452845)
+* [Gorodentsev, A. L. (2017). Algebra II](https://www.springer.com/gp/book/9783319508528)
+* [Olver, P. J., & Shakiban, C. (2018). Applied Linear Algebra. _Undergraduate Texts in Mathematics_](https://link.springer.com/book/10.1007/978-3-319-91041-3)
+* [Ross, K. A. (2013). Elementary Analysis. _Undergraduate Texts in Mathematics_](https://link.springer.com/book/10.1007/978-1-4614-6271-2)
+* [Laczkovich, M., & Sós, V. T. (2015). Real Analysis. _Undergraduate Texts in Mathematics_](https://www.springer.com/gp/book/9781493927654)
+* [Abbott, S. (2015). Understanding Analysis. _Undergraduate Texts in Mathematics_](https://link.springer.com/book/10.1007/978-1-4939-2712-8)
+
+### Относительно статистики {-}
+
+### About R {-}
+
+### Во славу андана {-}
+
+

@@ -1,0 +1,53 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p.author {
+  font-weight: bold;
+}
+p.date {
+  font-weight: bold;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+a.source {
+  float: right;
+  font-size: 8pt;
+  font-style: oblique;
+}
+
+#header {
+  background-color: black;
+  padding: 5%;
+  color: white;
+}
+
+.authorspeech {
+  padding-left: 5%;
+  font-style: oblique;
+  color: #002366;
+}
+
+.box {
+  border: 1px solid gray;
+  padding: 3%;
+  margin-bottom: 3%;
+}
+
+.piccaption {
+  font-size: 9pt;
+  margin-bottom: 3%;
+}
+
+.mytheorem {
+  padding-left: 5%;
+}
+
