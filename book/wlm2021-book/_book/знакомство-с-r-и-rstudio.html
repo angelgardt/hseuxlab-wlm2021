@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Знакомство с R и RStudio | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
+  <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Знакомство с R и RStudio | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Знакомство с R и RStudio | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
+  
+  <meta name="twitter:description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
+  
+
+<meta name="author" content="А. Ангельгардт" />
+
+
+<meta name="date" content="2021-01-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="типы-данных.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">HSE UX LAB | WLM 2021</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#благодарности"><i class="fa fa-check"></i>Благодарности</a></li>
+</ul></li>
+<li class="part"><span><b>I R programming</b></span></li>
+<li class="chapter" data-level="1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html"><i class="fa fa-check"></i><b>1</b> Знакомство с R и RStudio</a><ul>
+<li class="chapter" data-level="1.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#что-это-и-откуда"><i class="fa fa-check"></i><b>1.1</b> Что это и откуда?</a></li>
+<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#почему-r"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-он-лучше-питона"><i class="fa fa-check"></i><b>1.2.1</b> А он лучше Питона?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>1.3</b> Установка R и RStudio</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-зачем-обе-штуки-ставить"><i class="fa fa-check"></i><b>1.3.1</b> А зачем обе штуки ставить?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#где-спросить-вопрос-или-искать-ответ"><i class="fa fa-check"></i><b>1.4</b> Где спросить вопрос или искать ответ?</a></li>
+<li class="chapter" data-level="1.5" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#интерфейс-r"><i class="fa fa-check"></i><b>1.5</b> Интерфейс R</a></li>
+<li class="chapter" data-level="1.6" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#интерфейс-rstudio"><i class="fa fa-check"></i><b>1.6</b> Интерфейс RStudio</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#console"><i class="fa fa-check"></i><b>1.6.1</b> Console</a></li>
+<li class="chapter" data-level="1.6.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#code-editor"><i class="fa fa-check"></i><b>1.6.2</b> Code Editor</a></li>
+<li class="chapter" data-level="1.6.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#environment-workspace-и-history"><i class="fa fa-check"></i><b>1.6.3</b> Environment (Workspace) и History</a></li>
+<li class="chapter" data-level="1.6.4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#plots-files-packages-help-viewer"><i class="fa fa-check"></i><b>1.6.4</b> Plots, Files, Packages, Help, Viewer</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#r-как-калькулятор"><i class="fa fa-check"></i><b>1.7</b> R как калькулятор</a></li>
+<li class="chapter" data-level="1.8" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric-integer"><i class="fa fa-check"></i><b>2.0.1</b> Numeric &amp; Integer</a></li>
+<li class="chapter" data-level="2.0.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.0.2</b> Logical</a></li>
+<li class="chapter" data-level="2.0.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.0.3</b> Character</a></li>
+<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#coercion"><i class="fa fa-check"></i><b>2.1</b> Coercion</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.1</b> Генерация числовых последовательностей</a></li>
+<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.2</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.3</b> NA, NaN, NULL</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
+<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
+<li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
+<li class="chapter" data-level="3.5" data-path="структуры-данных.html"><a href="структуры-данных.html#функции"><i class="fa fa-check"></i><b>3.5</b> Функции</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="строки.html"><a href="строки.html"><i class="fa fa-check"></i><b>4</b> Строки</a><ul>
+<li class="chapter" data-level="4.1" data-path="строки.html"><a href="строки.html#регулярные-выражения"><i class="fa fa-check"></i><b>4.1</b> Регулярные выражения</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html"><i class="fa fa-check"></i><b>5</b> Работа с реальными данными</a><ul>
+<li class="chapter" data-level="5.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#рабочая-директория"><i class="fa fa-check"></i><b>5.1</b> Рабочая директория</a></li>
+<li class="chapter" data-level="5.2" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#импорт-данных"><i class="fa fa-check"></i><b>5.2</b> Импорт данных</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#форматы-данных"><i class="fa fa-check"></i><b>5.2.1</b> Форматы данных</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#исследование-данных"><i class="fa fa-check"></i><b>5.3</b> Исследование данных</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="предобработка-данных-концепция-tidy-data.html"><a href="предобработка-данных-концепция-tidy-data.html"><i class="fa fa-check"></i><b>6</b> Предобработка данных. Концепция tidy data</a></li>
+<li class="chapter" data-level="7" data-path="визуализация-данных.html"><a href="визуализация-данных.html"><i class="fa fa-check"></i><b>7</b> Визуализация данных</a></li>
+<li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
+<li class="chapter" data-level="8" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>8</b> Введение в статистику</a></li>
+<li class="part"><span><b>III Теория вероятностей и математическая статистика</b></span></li>
+<li class="chapter" data-level="9" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html#введение-в-статистику"><i class="fa fa-check"></i><b>9</b> Введение в статистику</a></li>
+<li class="chapter" data-level="10" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>10</b> Случайный эксперимент</a></li>
+<li class="chapter" data-level="11" data-path="вероятность-и-случайные-величины.html"><a href="вероятность-и-случайные-величины.html"><i class="fa fa-check"></i><b>11</b> Вероятность и случайные величины</a></li>
+<li class="chapter" data-level="12" data-path="оценивание-параметров-в-практике-статистического-анализа.html"><a href="оценивание-параметров-в-практике-статистического-анализа.html"><i class="fa fa-check"></i><b>12</b> Оценивание параметров в практике статистического анализа</a></li>
+<li class="chapter" data-level="13" data-path="тестирование-статистических-гипотез.html"><a href="тестирование-статистических-гипотез.html"><i class="fa fa-check"></i><b>13</b> Тестирование статистических гипотез</a></li>
+<li class="part"><span><b>IV Анализ данных</b></span></li>
+<li class="chapter" data-level="14" data-path="описательные-статистики.html"><a href="описательные-статистики.html"><i class="fa fa-check"></i><b>14</b> Описательные статистики</a></li>
+<li class="chapter" data-level="15" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html"><i class="fa fa-check"></i><b>15</b> Корреляционный анализ</a></li>
+<li class="chapter" data-level="16" data-path="общие-линейные-модели-простая-линейная-регрессия.html"><a href="общие-линейные-модели-простая-линейная-регрессия.html"><i class="fa fa-check"></i><b>16</b> Общие линейные модели. Простая линейная регрессия</a></li>
+<li class="chapter" data-level="17" data-path="множественная-линейная-регрессия.html"><a href="множественная-линейная-регрессия.html"><i class="fa fa-check"></i><b>17</b> Множественная линейная регрессия</a></li>
+<li class="chapter" data-level="18" data-path="дисперсионный-анализ.html"><a href="дисперсионный-анализ.html"><i class="fa fa-check"></i><b>18</b> Дисперсионный анализ</a></li>
+<li class="chapter" data-level="19" data-path="ковариационный-анализ.html"><a href="ковариационный-анализ.html"><i class="fa fa-check"></i><b>19</b> Ковариационный анализ</a></li>
+<li class="chapter" data-level="20" data-path="обобщенные-линейные-модели-логистическая-регрессия.html"><a href="обобщенные-линейные-модели-логистическая-регрессия.html"><i class="fa fa-check"></i><b>20</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="21" data-path="пуассоновская-регрессия.html"><a href="пуассоновская-регрессия.html"><i class="fa fa-check"></i><b>21</b> Пуассоновская регрессия</a></li>
+<li class="chapter" data-level="22" data-path="регуляризация-регрессии.html"><a href="регуляризация-регрессии.html"><i class="fa fa-check"></i><b>22</b> Регуляризация регрессии</a></li>
+<li class="chapter" data-level="23" data-path="смешанные-линейные-модели.html"><a href="смешанные-линейные-модели.html"><i class="fa fa-check"></i><b>23</b> Смешанные линейные модели</a></li>
+<li class="chapter" data-level="24" data-path="кластерный-анализ.html"><a href="кластерный-анализ.html"><i class="fa fa-check"></i><b>24</b> Кластерный анализ</a></li>
+<li class="chapter" data-level="25" data-path="анализ-главных-компонент.html"><a href="анализ-главных-компонент.html"><i class="fa fa-check"></i><b>25</b> Анализ главных компонент</a></li>
+<li class="chapter" data-level="26" data-path="эксплораторный-факторный-анализ.html"><a href="эксплораторный-факторный-анализ.html"><i class="fa fa-check"></i><b>26</b> Эксплораторный факторный анализ</a></li>
+<li class="chapter" data-level="27" data-path="конфирматорный-факторный-анализ.html"><a href="конфирматорный-факторный-анализ.html"><i class="fa fa-check"></i><b>27</b> Конфирматорный факторный анализ</a></li>
+<li class="chapter" data-level="28" data-path="что-дальше.html"><a href="что-дальше.html"><i class="fa fa-check"></i><b>28</b> Что дальше?</a></li>
+<li class="appendix"><span><b>Приложения</b></span></li>
+<li class="chapter" data-level="A" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html"><i class="fa fa-check"></i><b>A</b> Ещё о математике</a><ul>
+<li class="chapter" data-level="A.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#числа"><i class="fa fa-check"></i><b>A.1</b> Числа</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#натуральные-числа"><i class="fa fa-check"></i><b>A.1.1</b> Натуральные числа</a></li>
+<li class="chapter" data-level="A.1.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#рациональные-и-иррациональные-числа"><i class="fa fa-check"></i><b>A.1.2</b> Рациональные и иррациональные числа</a></li>
+<li class="chapter" data-level="A.1.3" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#вещественные-числа"><i class="fa fa-check"></i><b>A.1.3</b> Вещественные числа</a></li>
+<li class="chapter" data-level="A.1.4" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#модуль-числа"><i class="fa fa-check"></i><b>A.1.4</b> Модуль числа</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
+<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
+<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
+<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#about-r"><i class="fa fa-check"></i>About R</a></li>
+<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="знакомство-с-r-и-rstudio" class="section level1">
+<h1><span class="header-section-number">1</span> Знакомство с R и RStudio</h1>
+<blockquote>
+<p><em>— Я вот не могу выбрать: делать на R или на Python? <br>
+— Да какая разница! Главное — делай!</em></p>
+</blockquote>
+<div id="что-это-и-откуда" class="section level2">
+<h2><span class="header-section-number">1.1</span> Что это и откуда?</h2>
+<p><a href="https://www.r-project.org/"><strong>R</strong></a> — популярный язык программирования среди исследователей в социальных и гуманитарных науках. Если совсем коротко, то начиналось всё с языка <a href="https://en.wikipedia.org/wiki/S_(programming_language)"><strong>S</strong></a>, который был языком программирования для статистического анализа. Потом его <a href="https://www.researchgate.net/publication/240040602_Evaluating_the_Design_of_the_R_Language">доработали</a> и получился <strong>R</strong>.</p>
+<p>Хотя сегодня всё ещё можно услышать, что «R — это язык программирования для статистической обработки данных», это <a href="https://en.wikipedia.org/wiki/False_(logic)">ложь</a>. Да, когда-то <a href="https://en.wikipedia.org/wiki/Devonian">давно</a> дела обстояли именно так, но сейчас <strong>R</strong> — это полноценный язык программирования, который позволяет решать широкий спект задач от статистического анализа и data wrangling до машинного обучения, моделирования и создания сайтов и приложений.</p>
+</div>
+<div id="почему-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> Почему R?</h2>
+<ul>
+<li>свободное ПО (часть <a href="https://en.wikipedia.org/wiki/GNU_Project">GNU Project</a>)</li>
+<li>динамично развивается</li>
+<li>громадные возможности расширения функционала
+<ul>
+<li>более 10 000 пакетов</li>
+<li>открытый исходный код</li>
+<li>возможность написать свои
+<center>
+<img src="img/img_number-of-submitted-packages-to-CRAN.png" />
+</center>
+<font size=1>
+<p align="right">
+<a href="https://gist.github.com/daroczig/3cf06d6db4be2bbe3368"><em>Source</em></a>
+</p>
+</font></li>
+</ul></li>
+<li>большое сообщество по всему миру, много ресурсов для задавания вопросов</li>
+<li><a href="https://1d4chan.org/wiki/Linear_Warriors,_Quadratic_Wizards">Linear Warriors vs Quadratic Wizards</a>
+<ul>
+<li>в SPSS (и другие GUI пакеты) ниже порог вхождения, но развитие навыков — линейное</li>
+<li>в R порог вхождения выше, но впоследствии случается резкий буст, и вы становитесь богами дата саенс</li>
+</ul></li>
+</ul>
+<center>
+<img src="img/img_LinearWarriors_QuadraticWizards.png" />
+</center>
+<font size=1>
+<p align="right">
+<a href="https://1d4chan.org/wiki/Linear_Warriors,_Quadratic_Wizards"><em>Source</em></a>
+</p>
+<p></font>
+* <a href="https://en.wikipedia.org/wiki/Reproducibility_Project">репродуцируемость</a> результатов</p>
+<div id="а-он-лучше-питона" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> А он лучше Питона?</h3>
+<center>
+<img src="img/img_R-Vs-Python-samaya-aktualnaya-diskussiya-dlya-nachinayushhih-uchenyh-dannyh.jpg" />
+</center>
+<font size=1>
+<p align="right">
+<a href="https://andreyex.ru/programmirovanie/r-vs-python-samaya-aktualnaya-diskussiya-dlya-nachinayushhih-uchenyh-dannyh/"><em>Source</em></a>
+</p>
+<p></font></p>
+<p>Нет. Но он и <strong>не хуже</strong>.</p>
+<p>Вообще файт <strong>R vs Python</strong>, на мой взгляд, несколько бессмысленный, поскольку, по факту, всё упирается в синтаксис языка. Ну, и запрос работодателя, конечно. Возможности обоих языков и скорость работы сопоставимы. Области применения по большей части тоже. Поэтому я пользуюсь следующей эвристикой:</p>
+<ul>
+<li>аналитика, статистика, графики, покрутить данные — <strong>R</strong></li>
+<li>машинное обучение, нейросети, другой ИИ, интерфейсы и [собственно] программирование — <strong>Python</strong></li>
+</ul>
+<p>Многие, наверняка, оспорят такое разделение — я же не стану отстаивать его истинность.</p>
+<p>Мы будем работать на <strong>R</strong>, поскольку он всё же более популярен в наших кругах — среди «социально-гуманитарных аналитиков».</p>
+</div>
+</div>
+<div id="установка-r-и-rstudio" class="section level2">
+<h2><span class="header-section-number">1.3</span> Установка R и RStudio</h2>
+<p>Чтобы нам радостно и приятно жилось, нужно установить:</p>
+<ul>
+<li>Сначала <strong>R</strong>
+<ul>
+<li>на <a href="https://cran.r-project.org/bin/windows/base/">Windows</a></li>
+<li>на <a href="https://cran.r-project.org/bin/macosx/">Mac</a></li>
+<li>на <a href="https://cran.rstudio.com/bin/linux/">Linux</a></li>
+</ul></li>
+<li>Затем <a href="https://www.rstudio.com/products/rstudio/download/"><strong>RStudio</strong></a></li>
+</ul>
+<p>Если что-то не установилось или вы предпочитаете облачные сервисы, то можно работать через браузер в <a href="https://rstudio.cloud/">RStudio Cloud</a>.</p>
+<div id="а-зачем-обе-штуки-ставить" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> А зачем обе штуки ставить?</h3>
+<p>Вопрос не безосновательный. Не углубляясь в мелкие детали, скажем так: R — это собственно язык программирования, а RStudio — это среда (<a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8">IDE</a>, <a href="https://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environment</a>), которая позволяет в этом языке удобно и просто работать, а также расширяет его возможности.</p>
+<blockquote>
+<p>RStudio — не единственная среда для работы в R, но, определённо, самая топовая. Почти все пользуются именно ею, и нет смысла искать что-то более удобное.</p>
+</blockquote>
+</div>
+</div>
+<div id="где-спросить-вопрос-или-искать-ответ" class="section level2">
+<h2><span class="header-section-number">1.4</span> Где спросить вопрос или искать ответ?</h2>
+<ul>
+<li><a href="https://google.com">Google</a> — препарат выбора</li>
+<li><a href="https://stackoverflow.com/">Stack Overflow</a> — ответы на вопросы, и не только по R</li>
+<li><a href="https://ru.stackoverflow.com/">Stack Overflow на русском</a> — то же самое, только отечественные специалисты</li>
+<li><a href="http://www.cookbook-r.com/">Cookbook for R</a> — хорошая книжка для старта</li>
+<li><a href="https://community.rstudio.com/">RStudio Community</a> — ответы на вопросы по R</li>
+<li><a href="https://www.r-bloggers.com/">R-bloggers</a> — про новинки в R и рядом с ним</li>
+<li><a href="https://habr.com/ru/hub/r/">Хабр про R</a></li>
+<li>…</li>
+</ul>
+</div>
+<div id="интерфейс-r" class="section level2">
+<h2><span class="header-section-number">1.5</span> Интерфейс R</h2>
+<p>Можно, конечно, работать и без RStudio вовсе — чисто в R. Мы кратенько взглянем на его интерфейс, чтобы наслаждение от встречи с IDE-шкой было больше.</p>
+<p>КАРТИНКА</p>
+<p>Выглядит весьма по-программистски. Есть окно скрипта, где пишутся команды, есть консоль, в которой они выполняются, иногда открываются окна с графиками. Но, в общем, посмотрели для общего развития — и хватит. Пора серьезными делами заняться.</p>
+</div>
+<div id="интерфейс-rstudio" class="section level2">
+<h2><span class="header-section-number">1.6</span> Интерфейс RStudio</h2>
+<p>Итак, посмотрим на RStudio. При запуске у вас откроется что-то такое:</p>
+<p>КАРТИНКА</p>
+<p>Видно четыре (или три<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>) окна. Давайте последовательно разбираться, что в каждом из них происходит.</p>
+<div id="console" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Console</h3>
+<p>В консоль можно писать команды и запускать их нажатием <code>Enter</code>. Они будут сразу выполняться. После некоторых команд будет выводиться какой-то результат. С помощью стрелок <code>↑</code> и <code>↓</code> можно вывести предыдущие команды, например, чтобы запустить их ещё раз, не вводя повторно, или каким-либо образом их изменить.</p>
+<p>Можно, в прицнипе, работать только из консоли, но на практике это не очень удобно. Главным образом, из-за того, что команды улетают «вникуда» и к некоторым уже будет нельзя вернуться. Поэтому существует редактор кода.</p>
+</div>
+<div id="code-editor" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Code Editor</h3>
+<p>По своей сути это обычный блокнот с той лишь разницей, что здесь некоторые слова раскрашены. И в этом блокноте мы пишем <em>текст</em> программы (скрипт), который состоит из комманд. Чтобы выполнить команду, нам необхожимо отправить её в консоль с помощью <code>Ctrl + Enter</code> (<code>Cmd + Enter</code>). Нажатие <code>Enter</code> здесь как и в обычном текстовом редакторе осуществляет переход на новую строку. Результат выполнения команды отображается в консоли, как будто вы изначально запускали команду там.</p>
+<p>В консоли удобно что-то быстро поститать, скрипт же удобнее при работе с длинными командами и для сохранения кода (текста) для дальнейшей работы. Чтобы сохранить скрипт, сделайте <code>File → Save (as…)</code> или нажмите <code>Ctrl + S</code> (<code>Cmd + S</code>).</p>
+<p>Несмотря на то, что файл сохраняется с расширением <em>.R</em>, это всё ещё обычный текст, который можно открыть и редактировать в любом текстовом редакторе (типа <em>Notebook</em> или <em>TextEdit</em>).</p>
+<blockquote>
+<p>К вопросу <em>текста</em> мы ещё вернёмся.</p>
+</blockquote>
+<div id="кодировка" class="section level4">
+<h4><span class="header-section-number">1.6.2.1</span> Кодировка</h4>
+<p>Компьютер умеет <a href="">хранить в памяти</a> только цифры. А текст мы набираем буквами. Поэтому ему приходится перекодировать буквы в цифры. Делать это можно по-разному — поэтому существуют разные <em>кодировки</em>.</p>
+<p>При сохранении скрипта важно следить за кодировкой, особенно если в тексте встречаются кириллические знаки. В разных операционных систем разная кодировка по умолчанию, поэтому на другом компьютере файл может открываться с неведомой кракозяброй типа этой:</p>
+<p>КАРТИНКА</p>
+<p>Обычно при сохрании файла с кириллицей программа автоматически спрашивает, в какой кодировке его надо сохранить. Выбирайте <code>UTF-8</code> — она корректно откроется в любой операционной системе. Также вы можете сохранить файл в определенной кодировке в помощью <code>File → Save with Encoding…</code>.</p>
+<p>Если при открытии файла у вас отображается кракозябра, подобная той, которая показана выше, нужно узнать кодировку файла<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> (для Win это обычно <code>ASCII</code>, для Mac — <code>UTF-8</code>) и выполнить <code>File → Reopen with Encoding…</code>.</p>
+</div>
+</div>
+<div id="environment-workspace-и-history" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Environment (Workspace) и History</h3>
+<p>Здесь, в Environment, можно наблюдать переменные и другие объекты, которые создаются в процессе работы кода, а также некоторую информацию о них. Это удобно, поскольку код, бывает, разрастается до сумасшедшего количества строк, и что вы там насоздавали тремястами строками выше — уже и не упомнить. А тут всё под рукой.</p>
+<p>В окне History можно найти историю команд, которые вы выполняли. Может быть полезно, чтобы не листать консоль, которая, как правило, завалена результатами и ошибками.</p>
+</div>
+<div id="plots-files-packages-help-viewer" class="section level3">
+<h3><span class="header-section-number">1.6.4</span> Plots, Files, Packages, Help, Viewer</h3>
+<p>Очень полезное окно в кучей всего.</p>
+<ul>
+<li>сюда выводятся графики, которые вы строите</li>
+<li>здесь можно найти справку по функциям и пакетам</li>
+<li>проверить, какие у вас установлены пакеты и их версии</li>
+<li>посмотреть файлы в рабочей директории</li>
+<li>наблюдать 3D-визуализации, превью отчетов, презентаций и много чего ещё</li>
+</ul>
+</div>
+</div>
+<div id="r-как-калькулятор" class="section level2">
+<h2><span class="header-section-number">1.7</span> R как калькулятор</h2>
+<p>R — полноценный язык программирования с множеством возможностей, но давайте начнём с малого. Первое, от чего стоит избавиться — это страх консоли. Боязни калькулятора вроде не бывает (но это не точно<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>), поэтому стартанём с этого.</p>
+<p>В R есть все привычные нам математические операции и операторы для них: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>. Выполняются они тоже вполне предсказуемо:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span> <span class="co"># сложение</span></a></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span> <span class="co"># вычитание</span></a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">7</span> <span class="co"># умножение</span></a></code></pre></div>
+<pre><code>## [1] 21</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="dv">30</span> <span class="op">/</span><span class="st"> </span><span class="dv">3</span> <span class="co"># деление</span></a></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="dv">2</span> <span class="op">^</span><span class="st"> </span><span class="dv">10</span> <span class="co"># возведение в степень</span></a></code></pre></div>
+<pre><code>## [1] 1024</code></pre>
+<p>Также есть два особых деления:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="dv">5</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># целочисленное деление</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="dv">5</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># взятие остатка от деления (5 mod 2)</span></a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Попробуйте самостоятельно посчитать какие-нибудь простые примеры.</p>
+</div>
+<center>
+<img src="img/changing_stuff.jpeg" />
+</center>
+<font size=1>
+<p align="right">
+<a href="https://medium.com/@strayblues/gsoc-2018-changing-stuff-and-seeing-what-happens-c6694ec41d05"><em>Source</em></a>
+</p>
+<p></font></p>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Посчитайте в R значения следующих выражений:</p>
+<ul>
+<li><span class="math inline">\((\log_3 65)^7\)</span></li>
+<li><span class="math inline">\(e^\sqrt[3]{5.5}\)</span></li>
+<li><span class="math inline">\(\sin(8\pi + 4)\)</span></li>
+<li><span class="math inline">\(\log \cos(-5\sqrt{12})\)</span></li>
+<li><span class="math inline">\(\displaystyle 2\tan \log_{\sqrt{3}}8 + \sin^{(20\! \mod\! 3)} \Big(e + \frac{8}{3}\Big)\)</span></li>
+</ul>
+</div>
+</div>
+<div id="assignment-и-переменные" class="section level2">
+<h2><span class="header-section-number">1.8</span> Assignment и переменные</h2>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>При первом запуске может не быть окна Code Editor. Чтобы его открыть, сделайте <code>File → New File → R Script</code> или нажмите <code>Ctrl + Shift + N</code> (<code>Cmd + Shift + N</code>).<a href="знакомство-с-r-и-rstudio.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Чтобы не возникало лишних вопросов, лучше снабдить папку с файлами документом README.md, где описать все важные детали, в том числе и кодировку файла. Об это ещё немного поговорим поздее.<a href="знакомство-с-r-и-rstudio.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Бывает, что <a href="https://psychtimes.com/logizomechanophobia-fear-of-computers/">вот это</a> распространяют и на калькуляторы тоже. [Кек]<a href="знакомство-с-r-и-rstudio.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="типы-данных.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["wlm2021-book.pdf", "wlm2021-book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
