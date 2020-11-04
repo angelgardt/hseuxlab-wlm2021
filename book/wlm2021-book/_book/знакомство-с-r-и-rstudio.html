@@ -154,6 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#r-как-калькулятор"><i class="fa fa-check"></i><b>1.7</b> R как калькулятор</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#арифметические-операции"><i class="fa fa-check"></i><b>1.7.1</b> Арифметические операции</a></li>
 <li class="chapter" data-level="1.7.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>1.7.2</b> Функции</a></li>
+<li class="chapter" data-level="1.7.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#сравнение-и-логические-операции"><i class="fa fa-check"></i><b>1.7.3</b> Сравнение и логические операции</a></li>
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
 </ul></li>
@@ -266,7 +267,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>более 10 000 пакетов</li>
 <li>открытый исходный код</li>
-<li>возможность написать свои
+<li>возможность написать свои пакеты
 <center>
 <img src="img/img_number-of-submitted-packages-to-CRAN.png" />
 </center>
@@ -431,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://medium.com/@strayblues/gsoc-2018-changing-stuff-and-seeing-what-happens-c6694ec41d05"><em>Source</em></a>
 </p>
 <p></font></p>
-<p>В R есть скобки — <code>()</code>. Их назначение такое же, как и в математике. Порядок выполнения арифметических действий (приоритетов операторов<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, <em>operator precedence</em>) тоже как в математике. Итого имеем:</p>
+<p>В R есть скобки — <code>()</code>. Их назначение такое же, как и в математике. Порядок выполнения арифметических действий (приоритет операторов<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, <em>operator precedence</em>) тоже как в математике. Итого имеем:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
@@ -467,29 +468,236 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &gt; Логарифм некоторого числа — это показатель степени, в которую нужно возвести <em>основание</em>, чтобы получить данное число.</p>
 <p>Здесь придется чуть углубиться в <strong>аргументы функции</strong>. Аргументы — это то самое «что-то», что мы записываем в скобках. Бывают <em>обязательные аргументы</em>, без которых функция просто не будет работать и выдаст ошибку, например,</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">log</span>() <span class="co"># попробуйте выполнить эту команду</span></a></code></pre></div>
-<p>и <em>необязательные аргументы</em>, у которых уже задано некоторое значение по умолчанию</p>
+<p>и <em>необязательные аргументы</em>, у которых уже задано некоторое значение по умолчанию, например, аргумент <code>base</code> у функции <code>log()</code>, который отвечает как раз за задание основания логарифма.</p>
+<p>Список аргументов функции можно посмотреть в справке по данной функции, открыв окно <em>Help</em> и введя в поиск название функции, или выполнив одну из следующих команд:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">help</span>(log) <span class="co"># ищет справку по функции</span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">?log <span class="co"># синоним предыдущей команды</span></a></code></pre></div>
+<p>Также в справке можно найти много другой полезной информации.</p>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>Какое значение по умолчанию определено для аргумента <code>base</code> функции <code>log()</code>?</p>
+</div>
+<p>Согласно хелпу, значение по умолчанию равно <span class="math inline">\(e\)</span>, то есть вычисляется натуральный логарифм, если основание не указано. Но подождите, в хелпе не написано никакого <span class="math inline">\(e\)</span>, там есть что-то странное в виде <code>exp(1)</code>. Да, тут спросить бессмысленно, однако <code>exp(1)</code> — это не что иное, как экспонента от единицы, то есть <span class="math inline">\(e^1 = e\)</span>, что равно:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">exp</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 2.718282</code></pre>
+<p>Итак, мы выучили две важные вещи: (1) функцию <code>exp()</code> и то, что (2) <em>в качестве аргументов функции можно передавать результаты другой функции</em>. Посмотрите примеры:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">base =</span> <span class="dv">2</span>) <span class="co"># эксплицитно задаём основание и число</span></a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">b =</span> <span class="dv">2</span>) <span class="co"># имена аргументов можно не дописывать, если они не совпадают с другими</span></a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">16</span>) <span class="co"># при таком способе задания порядок аргументов можно менять</span></a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">625</span>, <span class="dv">25</span>) <span class="co"># имя аргумента можно не писать, но тогда соблюдать порядок следования</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">16</span>, <span class="dt">base =</span> <span class="kw">exp</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))) <span class="co"># задаём аргумент через результат функций</span></a></code></pre></div>
+<pre><code>## [1] 1.960516</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">log10</span>(<span class="dv">1000</span>) <span class="co"># десятичный логарифм</span></a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">log2</span>(<span class="dv">512</span>) <span class="co"># двоичный логарифм</span></a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<p>На логарифмах, естественно, свет клином не сошёлся, есть и множество других функций, например, тригонометрические (<code>sin()</code>, <code>cos()</code>, …). Да и сами арифметические операции, на самом деле, это тоже функции:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="st">&#39;+&#39;</span>(<span class="dv">7</span>, <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>К функциям, как я говорил, мы ещё вернемся, а пока двинемся дальше.</p>
+<p>Но перед этим ещё одна важная деталь. Вы, наверняка, заметили, что после команд я часто пишу <code>#</code> и далее текст. Это <em>комментарии</em>. Они крайне важны в коде, поэтому я, и не только я, настоятельно советую вам их оставлять — и чем больше, тем лучше. Сейчас это может казаться бессмысленным, но поверьте, когда ваш код будет занимать 50+ строк — а это очень небольшой код — разобраться уже будет непросто, не говоря о том, что делать, если вы открыли его через месяц или, не дай боже, год…</p>
+<center>
+<img src="img/comment_importance.jpeg" />
+</center>
+<font size=1>
+<p align="right">
+<a href="https://twitter.com/Loly_girl/status/1009726649263325184/photo/1"><em>Source</em></a>
+</p>
+<p></font></p>
+<p>Закомментить несколько строк сразу можно сочетанием <code>Ctrl</code> + <code>Shift</code> + <code>C</code> (<code>Cmd</code> + <code>Shift</code> + <code>C</code>).</p>
 <img class="taskimg" src="img/code.png">
 <div class="task">
-<p>Посчитайте в R значения следующих выражений:</p>
+<p>Посчитайте в R значения следующих выражений. Для проверки введите неокруглённое значение до четвёртого знака после запятой.</p>
 <ul>
 <li><span class="math inline">\((\log_3 65)^7\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input1" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check1()">
+<div id="taskans1" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
 <li><span class="math inline">\(e^\sqrt[3]{5.5}\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input2" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check2()">
+<div id="taskans2" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
 <li><span class="math inline">\(\sin(8\pi + 4)\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input3" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check3()">
+<div id="taskans3" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
 <li><span class="math inline">\(\log \cos(-5\sqrt{12})\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input4" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check4()">
+<div id="taskans4" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
 <li><span class="math inline">\(\displaystyle 2\tan \log_{\sqrt{3}}8 + \sin^{(20\! \mod\! 3)} \Big(e + \frac{8}{3}\Big)\)</span></li>
 </ul>
+<div class="autocheck">
+<input class="taskinput" id="input5" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check5()">
+<div id="taskans5" class="taskans" hidden="">
+
 </div>
+</div>
+</div>
+<script type="text/javascript">
+var input1 = document.getElementById("input1")
+var input2 = document.getElementById("input2")
+var input3 = document.getElementById("input3")
+var input4 = document.getElementById("input4")
+var input5 = document.getElementById("input5")
+var taskans1 = document.getElementById("taskans1")
+var taskans2 = document.getElementById("taskans2")
+var taskans3 = document.getElementById("taskans3")
+var taskans4 = document.getElementById("taskans4")
+var taskans5 = document.getElementById("taskans5")
+
+function check1() {
+  if (input1.value == 11435.05) {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+
+function check2() {
+  if (input2.value == 5.8425) {
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'Верно!';
+    taskans2.style = "color:  #00aa4a";
+  } else
+  {
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'У меня другой ответ…';
+    taskans2.style = "color:  #b73239";
+  }
+}
+
+function check3() {
+  if (input3.value == -0.7568) {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'Верно!';
+    taskans3.style = "color:  #00aa4a";
+  } else
+  {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'У меня другой ответ…';
+    taskans3.style = "color:  #b73239";
+  }
+}
+
+function check4() {
+  if (input4.value == -3.1763) {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'Верно!';
+    taskans4.style = "color:  #00aa4a";
+  } else
+  {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'У меня другой ответ…';
+    taskans4.style = "color:  #b73239";
+  }
+}
+
+function check5() {
+  if (input5.value == 2.1133) {
+    taskans5.hidden = false;
+    taskans5.innerHTML = 'Верно!';
+    taskans5.style = "color:  #00aa4a";
+  } else
+  {
+    taskans5.hidden = false;
+    taskans5.innerHTML = 'У меня другой ответ…';
+    taskans5.style = "color:  #b73239";
+  }
+}
+</script>
+</div>
+<div id="сравнение-и-логические-операции" class="section level3">
+<h3><span class="header-section-number">1.7.3</span> Сравнение и логические операции</h3>
+<p>Как мы знаем, числа можно сравнивать. Также мы знаем, что существуют операторы сравнения — все они есть и в R: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code> — больше, меньше, больше или равно, меньше или равно, равно (ли), не равно.</p>
+<blockquote>
+<p>Обратите внимание, что сравнение на равенство осуществляется с помощью оператора <code>==</code>! Одинарное «равно» (<code>=</code>) имеет другой смысл (см. ниже).</p>
+</blockquote>
+<p>Посмотрим на ряд простых примеров:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="dv">3</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="dv">7</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">7</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">8</span> <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Вроде все логично и понятно. Единственное, что стоит помнить, это то, что приоритет операторов сравнения <em>ниже</em>, чем у арифметических операций.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Сделайте самостоятельно несколько простых сравнений.</p>
+</div>
+<p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="">Типы данных</a> мы подробно будем обсуждать в следующем разделе, пока же просто отметит факт столкновения с неизвестным.</p>
 </div>
 </div>
 <div id="assignment-и-переменные" class="section level2">
 <h2><span class="header-section-number">1.8</span> Assignment и переменные</h2>
+<p>И последнее, с чем нам необходимо разобраться в этом разделе, это то, как же не терять результаты вычислений. Для этого существуют <strong>переменные</strong>, в которые можно записывать промежуточные результаты. Делается это так:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<p>В данном случае мы записали в переменную <code>x</code> значение <span class="math inline">\(3\)</span>. Разберёмся подробно:</p>
+<ol style="list-style-type: decimal">
+<li>Обозначаем название переменной, в данном случае <code>x</code>. На самом деле, название может быть любое, однако рекомендуется давать им осмысленные имена, чтобы потом не запутаться. Длинные названия — это, скорее, хорошо. Это немного съедает времени сейчас, но значительно экономит его в будущем! Также <strong>НЕ</strong> рекомендуется использовать для обозначения переменных <em>названия функций</em> (например, <code>data()</code>, <code>str()</code> и др).</li>
+<li>Говорим, что надо записать в переменную значение или же присвоить какой-то результат функции. Делается это с помощью <em>оператора присваивания</em> (<em>assignment</em>) <code>&lt;-</code>, который вводится с клавиатуры шорткатом <code>Alt</code> + <code>-</code> (<code>Option</code> + <code>-</code>). Этот оператор записывает то, что справа в то, что слева.</li>
+<li>Пишем то, что нужно присвоить в переменную. Это может быть конкретное значение, но чаще это результат какой-либо функции, например:</li>
+</ol>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">sin</span>(<span class="dv">90</span>)</a></code></pre></div>
+<p>После создания переменной, она появляется в <strong>Environment</strong>. Далее переменные можно использовать в вычислениях:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">x <span class="op">+</span><span class="st"> </span>y</a></code></pre></div>
+<pre><code>## [1] 3.893997</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">x<span class="op">^</span>y <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] 24.03186</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">log</span>(y, x)</a></code></pre></div>
+<pre><code>## [1] -0.1019953</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">x <span class="op">==</span><span class="st"> </span>y</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>Обратите внимание ещё раз, что сравнивания переменные мы используем оператор <code>==</code>. А что будет если использовать одно «равно»?</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">x =<span class="st"> </span>y</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2">x</a></code></pre></div>
+<pre><code>## [1] 0.8939967</code></pre>
+<p>Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно <code>&lt;-</code> используют для присваивания, а <code>=</code> для задания аргументов функций.</p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>При первом запуске может не быть окна Code Editor. Чтобы его открыть, сделайте <code>File → New File → R Script</code> или нажмите <code>Ctrl + Shift + N</code> (<code>Cmd + Shift + N</code>).<a href="знакомство-с-r-и-rstudio.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>При первом запуске может не быть окна Code Editor. Чтобы его открыть, сделайте <code>File → New File → R Script</code> или нажмите <code>Ctrl</code> + <code>Shift</code> + <code>N</code> (<code>Cmd</code> + <code>Shift</code> + <code>N</code>).<a href="знакомство-с-r-и-rstudio.html#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Чтобы не возникало лишних вопросов, лучше снабдить папку с файлами документом README.md, где описать все важные детали, в том числе и кодировку файла. Об это ещё немного поговорим поздее.<a href="знакомство-с-r-и-rstudio.html#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p>Бывает, что <a href="https://psychtimes.com/logizomechanophobia-fear-of-computers/">вот это</a> распространяют и на калькуляторы тоже. [Кек]<a href="знакомство-с-r-и-rstudio.html#fnref3" class="footnote-back">↩</a></p></li>
 <li id="fn4"><p>А вообще в разных языках программирования этот вопрос решается <a href="https://www.quora.com/Do-all-computer-languages-with-operator-precedence-use-the-same-operator-precedence">по-разному</a>.<a href="знакомство-с-r-и-rstudio.html#fnref4" class="footnote-back">↩</a></p></li>
