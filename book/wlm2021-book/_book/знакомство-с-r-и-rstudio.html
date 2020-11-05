@@ -157,6 +157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#сравнение-и-логические-операции"><i class="fa fa-check"></i><b>1.7.3</b> Сравнение и логические операции</a></li>
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
+<li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric-integer"><i class="fa fa-check"></i><b>2.0.1</b> Numeric &amp; Integer</a></li>
@@ -663,34 +664,188 @@ function check5() {
 <div class="task">
 <p>Сделайте самостоятельно несколько простых сравнений.</p>
 </div>
-<p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="">Типы данных</a> мы подробно будем обсуждать в следующем разделе, пока же просто отметит факт столкновения с неизвестным.</p>
+<p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="">Типы данных</a> и <a href="">элементы алгебры логики</a> мы подробно будем обсуждать далее, пока же снова ограничимся простым и интуитивным пониманием.</p>
+<p>Мы можем составлять из простых сравнений сложные высказывания с помощью <em>логических операторов</em>. Самые известные и часто используемые из них — «И» (<code>&amp;</code>) и «ИЛИ» (<code>|</code>). Подробно об их смысле <a href="">здесь</a>. Если в двух словах, то «И» истинно, когда <em>оба</em> соединяемых им утверждений истинны, а «ИЛИ» истинно, когда <em>хотя бы одно</em> из соединяемых им утвердений истинно. Например,</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">8</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">12</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="dv">6</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">|</span><span class="st"> </span><span class="dv">8</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="co"># что по сути эквивалентно 8 &lt;= 10</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span>) <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>Как видно из примеров, приоритет логических операторов <em>ниже</em> приоритета операторов сравнения, а приоритет у <code>&amp;</code> <em>выше</em>, чем у <code>|</code>.</p>
 </div>
 </div>
 <div id="assignment-и-переменные" class="section level2">
 <h2><span class="header-section-number">1.8</span> Assignment и переменные</h2>
-<p>И последнее, с чем нам необходимо разобраться в этом разделе, это то, как же не терять результаты вычислений. Для этого существуют <strong>переменные</strong>, в которые можно записывать промежуточные результаты. Делается это так:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<p>Мы что-то считаем в R и нам важно не терять результаты вычислений. Для этого существуют <strong>переменные</strong>, в которые можно записывать промежуточные результаты. Делается это так:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">3</span></a></code></pre></div>
 <p>В данном случае мы записали в переменную <code>x</code> значение <span class="math inline">\(3\)</span>. Разберёмся подробно:</p>
 <ol style="list-style-type: decimal">
 <li>Обозначаем название переменной, в данном случае <code>x</code>. На самом деле, название может быть любое, однако рекомендуется давать им осмысленные имена, чтобы потом не запутаться. Длинные названия — это, скорее, хорошо. Это немного съедает времени сейчас, но значительно экономит его в будущем! Также <strong>НЕ</strong> рекомендуется использовать для обозначения переменных <em>названия функций</em> (например, <code>data()</code>, <code>str()</code> и др).</li>
 <li>Говорим, что надо записать в переменную значение или же присвоить какой-то результат функции. Делается это с помощью <em>оператора присваивания</em> (<em>assignment</em>) <code>&lt;-</code>, который вводится с клавиатуры шорткатом <code>Alt</code> + <code>-</code> (<code>Option</code> + <code>-</code>). Этот оператор записывает то, что справа в то, что слева.</li>
 <li>Пишем то, что нужно присвоить в переменную. Это может быть конкретное значение, но чаще это результат какой-либо функции, например:</li>
 </ol>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">sin</span>(<span class="dv">90</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">sin</span>(<span class="dv">90</span>)</a></code></pre></div>
 <p>После создания переменной, она появляется в <strong>Environment</strong>. Далее переменные можно использовать в вычислениях:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">x <span class="op">+</span><span class="st"> </span>y</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">x <span class="op">+</span><span class="st"> </span>y</a></code></pre></div>
 <pre><code>## [1] 3.893997</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">x<span class="op">^</span>y <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">x<span class="op">^</span>y <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
 <pre><code>## [1] 24.03186</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">log</span>(y, x)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">log</span>(y, x)</a></code></pre></div>
 <pre><code>## [1] -0.1019953</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">x <span class="op">==</span><span class="st"> </span>y</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">x <span class="op">==</span><span class="st"> </span>y</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Обратите внимание ещё раз, что сравнивания переменные мы используем оператор <code>==</code>. А что будет если использовать одно «равно»?</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">x =<span class="st"> </span>y</a>
-<a class="sourceLine" id="cb69-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">x =<span class="st"> </span>y</a>
+<a class="sourceLine" id="cb79-2" data-line-number="2">x</a></code></pre></div>
 <pre><code>## [1] 0.8939967</code></pre>
-<p>Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно <code>&lt;-</code> используют для присваивания, а <code>=</code> для задания аргументов функций.</p>
+<p>Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно <code>&lt;-</code> используют для присваивания, а <code>=</code> для задания аргументов функций. У оператора присваивания самый низкий приоритет из всех, то есть присваивание выполняется после всех вычислений. Хм, как неожиданно и логично.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Запишите в переменную <code>a</code> значение следующего выражения:</p>
+<pre><code>6 + log(3,6)</code></pre>
+<p>в переменную <code>b</code> значение такого выражения:</p>
+<pre><code></code></pre>
+<p>в переменную <code>c</code> значение вот этого выражения:</p>
+<pre><code></code></pre>
+<p>и в переменную <code>d</code> значение вот этого выражения:</p>
+<pre><code>read.csv()</code></pre>
+<p>Какой результаты выдают следующие команды?</p>
+<ul>
+<li><span class="math inline">\(-\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input6" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check6()">
+<div id="taskans6" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(-\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input7" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check7()">
+<div id="taskans7" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(-\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input8" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check8()">
+<div id="taskans8" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(-\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input9" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check9()">
+<div id="taskans9" class="taskans" hidden="">
+
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(-\)</span></li>
+</ul>
+<div class="autocheck">
+<input class="taskinput" id="input10" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check10()">
+<div id="taskans10" class="taskans" hidden="">
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var input6 = document.getElementById("input6")
+var input7 = document.getElementById("input7")
+var input8 = document.getElementById("input8")
+var input9 = document.getElementById("input9")
+var input10 = document.getElementById("input10")
+var taskans6 = document.getElementById("taskans6")
+var taskans7 = document.getElementById("taskans7")
+var taskans8 = document.getElementById("taskans8")
+var taskans9 = document.getElementById("taskans9")
+var taskans10 = document.getElementById("taskans10")
+
+function check6() {
+  if (input6.value.toLowerCase() == 'false') {
+    taskans6.hidden = false;
+    taskans6.innerHTML = 'Верно!';
+    taskans6.style = "color:  #00aa4a";
+  } else
+  {
+    taskans6.hidden = false;
+    taskans6.innerHTML = 'У меня другой ответ…';
+    taskans6.style = "color:  #b73239";
+  }
+}
+
+function check7() {
+  if (input7.value.toLowerCase() == 5.8425) {
+    taskans7.hidden = false;
+    taskans7.innerHTML = 'Верно!';
+    taskans7.style = "color:  #00aa4a";
+  } else
+  {
+    taskans7.hidden = false;
+    taskans7.innerHTML = 'У меня другой ответ…';
+    taskans7.style = "color:  #b73239";
+  }
+}
+
+function check8() {
+  if (input8.value.toLowerCase() == -0.7568) {
+    taskans8.hidden = false;
+    taskans8.innerHTML = 'Верно!';
+    taskans8.style = "color:  #00aa4a";
+  } else
+  {
+    taskans8.hidden = false;
+    taskans8.innerHTML = 'У меня другой ответ…';
+    taskans8.style = "color:  #b73239";
+  }
+}
+
+function check9() {
+  if (input9.value.toLowerCase() == -3.1763) {
+    taskans9.hidden = false;
+    taskans9.innerHTML = 'Верно!';
+    taskans9.style = "color:  #00aa4a";
+  } else
+  {
+    taskans9.hidden = false;
+    taskans9.innerHTML = 'У меня другой ответ…';
+    taskans9.style = "color:  #b73239";
+  }
+}
+
+function check10() {
+  if (input10.value.toLowerCase() == 2.1133) {
+    taskans10.hidden = false;
+    taskans10.innerHTML = 'Верно!';
+    taskans10.style = "color:  #00aa4a";
+  } else
+  {
+    taskans10.hidden = false;
+    taskans10.innerHTML = 'У меня другой ответ…';
+    taskans10.style = "color:  #b73239";
+  }
+}
+</script>
+</div>
+<div id="рабочая-директория.-projects" class="section level2">
+<h2><span class="header-section-number">1.9</span> Рабочая директория. Projects</h2>
 
 </div>
 </div>
