@@ -157,7 +157,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#сравнение-и-логические-операции"><i class="fa fa-check"></i><b>1.7.3</b> Сравнение и логические операции</a></li>
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
-<li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
+<li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#terminal"><i class="fa fa-check"></i><b>1.9.1</b> Terminal</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
 <li class="chapter" data-level="2.0.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric-integer"><i class="fa fa-check"></i><b>2.0.1</b> Numeric &amp; Integer</a></li>
@@ -353,13 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="интерфейс-r" class="section level2">
 <h2><span class="header-section-number">1.5</span> Интерфейс R</h2>
 <p>Можно, конечно, работать и без RStudio вовсе — чисто в R. Мы кратенько взглянем на его интерфейс, чтобы наслаждение от встречи с IDE-шкой было больше.</p>
-<p>КАРТИНКА</p>
+<p><img src="img/r-interface.png" /></p>
 <p>Выглядит весьма по-программистски. Есть окно скрипта, где пишутся команды, есть консоль, в которой они выполняются, иногда открываются окна с графиками. Но, в общем, посмотрели для общего развития — и хватит. Пора серьезными делами заняться.</p>
 </div>
 <div id="интерфейс-rstudio" class="section level2">
 <h2><span class="header-section-number">1.6</span> Интерфейс RStudio</h2>
 <p>Итак, посмотрим на RStudio. При запуске у вас откроется что-то такое:</p>
-<p>КАРТИНКА</p>
+<p><img src="img/rstart.png" /></p>
 <p>Видно четыре (или три<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>) окна. Давайте последовательно разбираться, что в каждом из них происходит.</p>
 <div id="console" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> Console</h3>
@@ -378,7 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">1.6.2.1</span> Кодировка</h4>
 <p>Компьютер умеет <a href="">хранить в памяти</a> только цифры. А текст мы набираем буквами. Поэтому ему приходится перекодировать буквы в цифры. Делать это можно по-разному — поэтому существуют разные <em>кодировки</em>.</p>
 <p>При сохранении скрипта важно следить за кодировкой, особенно если в тексте встречаются кириллические знаки. В разных операционных систем разная кодировка по умолчанию, поэтому на другом компьютере файл может открываться с неведомой кракозяброй типа этой:</p>
-<p>КАРТИНКА</p>
+<p><img src="img/encoding.png" /></p>
 <p>Обычно при сохрании файла с кириллицей программа автоматически спрашивает, в какой кодировке его надо сохранить. Выбирайте <code>UTF-8</code> — она корректно откроется в любой операционной системе. Также вы можете сохранить файл в определенной кодировке в помощью <code>File → Save with Encoding…</code>.</p>
 <p>Если при открытии файла у вас отображается кракозябра, подобная той, которая показана выше, нужно узнать кодировку файла<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> (для Win это обычно <code>ASCII</code>, для Mac — <code>UTF-8</code>) и выполнить <code>File → Reopen with Encoding…</code>.</p>
 </div>
@@ -847,7 +849,48 @@ function check10() {
 </div>
 <div id="рабочая-директория.-projects" class="section level2">
 <h2><span class="header-section-number">1.9</span> Рабочая директория. Projects</h2>
+<p>В ходе нализа данных мы работаем со множеством файлов: скрипты, файлы сырых данных данных, файлы предобработанны данных, файл объектов из рабочего пространства, графики, результаты анализа… Это всё куда-то надо сохранять — вопрос куда?</p>
+<p>В R есть понятие <strong>рабочей директории</strong>. Директория — это синоним папки. Рабочая директория — это папка, в которую смотрит R во время работы. Что это за папка можно узнать через команду:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">getwd</span>() <span class="co"># get working directory</span></a></code></pre></div>
+<pre><code>## [1] &quot;/Users/antonangelgardt/hseuxlab-wlm2021/book/wlm2021-book&quot;</code></pre>
+<p>У меня он смотрел вот в эту папку, у вас, скорее всего, будет что-то типа <code>C://users/имя_пользователя</code> или <code>/Users/имя_пользователя</code>, что указывает на папку пользователя по умолчанию.</p>
+<p>Можно установить другую рабочую директорию с помощью команды <code>setwd()</code>:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">setwd</span>(<span class="st">&quot;/Users/antonangelgardt/R&quot;</span>)</a></code></pre></div>
+<p>Теперь он будет смотреть в папку <code>R</code>, которая лежит в дефолтной папке пользователя. Такой способ достаточно удобен, однако можно сделать ещё лучше — создать проект (<em>Project</em>).</p>
+<p>Кто-то любит работать в проектах, кто-то нет — дело вкуса. Мне это нравится, даже если вам не понравится. Простите, если мы вдруг не сойдёмся во вкусах, но, повторюсь, это нравится мне, сугубо, лично… Поэтому я буду про это рассказывать и рекламировать.</p>
+<p>Зайдите в <code>File → New Project…</code>. У вас откроется такое окно:</p>
+<p><img src="img/proj1.png" /></p>
+<p>Выберите <code>New Directory</code>, затем еще раз <code>New Project</code>:</p>
+<p><img src="img/proj2.png" /></p>
+<p>Откроется вот это:</p>
+<p><img src="img/proj3.png" /></p>
+<p>В <code>Directory name</code> указываем название нашей папки, во втором поле указываем путь к той папке, в которой будет лежать создаваемая папка. Нажимаем <code>Create Project</code>, после чего R перезапускает сессию, и открывается привычное окно. Однако в верхнем правом углу R теперь указано название проекта, в котором мы работаем.</p>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Создайте проект для нашего курса.</p>
+<ol style="list-style-type: decimal">
+<li>Откройте <code>File → New Project…</code></li>
+<li>Выберите <code>New Directory → New Project</code></li>
+<li>Назовите новую директорию <code>hseuxlab-wlm2021</code></li>
+<li>Задайте расположение внутри папки пользователя системы</li>
+<li>Создайте новый скрипт и скопируйте туда следующий код:</li>
+</ol>
+<pre><code>print(&quot;Hello, World of Linear Models!&quot;)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Сохраните скрипт нажатием <code>Ctrl</code> + <code>S</code> (<code>Cmd</code> + <code>S</code>)</li>
+</ol>
+</div>
+<p>Теперь при работе в рамках курса мы будем запускать проект и работать в нём, чтобы ничего не запуталось.</p>
+<p>Много ли это приносит профита? Ну, не так уж и много… По сути, что открыть проект, что выполнить <code>setwd(&quot;пусть_к_папке&quot;)</code> — примерно одно и то же. Вот только строку кода можно забыть запустить после открытия скрипта, а если мы запустили проект, мы уверены, что у нас все автоматически настроилось и ошибок не будет.</p>
+<div id="terminal" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Terminal</h3>
+<blockquote>
+<p>Это дополнительный раздел. Если пока что вы чувствуете себя не уверенно в работе с комплюктером, пропустите. Будет ещё время вернуться.</p>
+</blockquote>
+<p>Мы освоили консоль в R. Но это не предел. Следующий шаг — консоль компьютера! Хвала небесам, она встроена в RStudio, и нам никуда не надо выходить. Называется она <strong>Terminal</strong>. Располагается в правой от консоли вкладке и выглядит так:</p>
+<p><img src="img/terminal-interface.png" /></p>
 
+</div>
 </div>
 </div>
 <div class="footnotes">
