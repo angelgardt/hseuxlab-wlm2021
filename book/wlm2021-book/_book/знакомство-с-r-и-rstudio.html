@@ -706,17 +706,18 @@ function check5() {
 <p>Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно <code>&lt;-</code> используют для присваивания, а <code>=</code> для задания аргументов функций. У оператора присваивания самый низкий приоритет из всех, то есть присваивание выполняется после всех вычислений. Хм, как неожиданно и логично.</p>
 <img class="taskimg" src="img/code.png">
 <div class="task">
-<p>Запишите в переменную <code>a</code> значение следующего выражения:</p>
-<pre><code>6 + log(3,6)</code></pre>
-<p>в переменную <code>b</code> значение такого выражения:</p>
-<pre><code></code></pre>
-<p>в переменную <code>c</code> значение вот этого выражения:</p>
-<pre><code></code></pre>
-<p>и в переменную <code>d</code> значение вот этого выражения:</p>
-<pre><code>read.csv()</code></pre>
+<p>Запишите в переменную <code>k</code> значение следующего выражения:</p>
+<pre><code>9^sqrt(8) + log(3,6)</code></pre>
+<p>в переменную <code>l</code> значение такого выражения:</p>
+<pre><code>(TRUE | FALSE) &amp; (FALSE &amp; TRUE)</code></pre>
+<p>в переменную <code>m</code> значение вот этого выражения:</p>
+<pre><code>6 &gt;= 4 &amp; 8 - 1 != 7 | sqrt(25) == 5</code></pre>
+<p>и в переменную <code>n</code> результат вот такой страшной команды:</p>
+<pre><code>read.csv(&quot;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2&quot;)[[&#39;x&#39;]]
+### fix the link!!!</code></pre>
 <p>Какой результаты выдают следующие команды?</p>
 <ul>
-<li><span class="math inline">\(-\)</span></li>
+<li><code>k &amp; l</code></li>
 </ul>
 <div class="autocheck">
 <input class="taskinput" id="input6" type="text">
@@ -726,7 +727,7 @@ function check5() {
 </div>
 </div>
 <ul>
-<li><span class="math inline">\(-\)</span></li>
+<li><code>k &amp; m</code></li>
 </ul>
 <div class="autocheck">
 <input class="taskinput" id="input7" type="text">
@@ -736,7 +737,7 @@ function check5() {
 </div>
 </div>
 <ul>
-<li><span class="math inline">\(-\)</span></li>
+<li><code>m &amp; l | ((k &amp; l) | m)</code></li>
 </ul>
 <div class="autocheck">
 <input class="taskinput" id="input8" type="text">
@@ -746,7 +747,7 @@ function check5() {
 </div>
 </div>
 <ul>
-<li><span class="math inline">\(-\)</span></li>
+<li><code>k &amp; l &amp; n</code></li>
 </ul>
 <div class="autocheck">
 <input class="taskinput" id="input9" type="text">
@@ -756,7 +757,7 @@ function check5() {
 </div>
 </div>
 <ul>
-<li><span class="math inline">\(-\)</span></li>
+<li><code>(1 | 2) &amp; 0</code></li>
 </ul>
 <div class="autocheck">
 <input class="taskinput" id="input10" type="text">
@@ -792,7 +793,7 @@ function check6() {
 }
 
 function check7() {
-  if (input7.value.toLowerCase() == 5.8425) {
+  if (input7.value.toLowerCase() == 'true') {
     taskans7.hidden = false;
     taskans7.innerHTML = 'Верно!';
     taskans7.style = "color:  #00aa4a";
@@ -805,7 +806,7 @@ function check7() {
 }
 
 function check8() {
-  if (input8.value.toLowerCase() == -0.7568) {
+  if (input8.value.toLowerCase() == 'true') {
     taskans8.hidden = false;
     taskans8.innerHTML = 'Верно!';
     taskans8.style = "color:  #00aa4a";
@@ -818,7 +819,7 @@ function check8() {
 }
 
 function check9() {
-  if (input9.value.toLowerCase() == -3.1763) {
+  if (input9.value.toLowerCase() == 'na') {
     taskans9.hidden = false;
     taskans9.innerHTML = 'Верно!';
     taskans9.style = "color:  #00aa4a";
@@ -831,7 +832,7 @@ function check9() {
 }
 
 function check10() {
-  if (input10.value.toLowerCase() == 2.1133) {
+  if (input10.value.toLowerCase() == 'false') {
     taskans10.hidden = false;
     taskans10.innerHTML = 'Верно!';
     taskans10.style = "color:  #00aa4a";

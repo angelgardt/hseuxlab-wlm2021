@@ -490,29 +490,38 @@ x
 
 <img class="taskimg" src="img/code.png">
 <div class="task">
-Запишите в переменную `a` значение следующего выражения:
+Запишите в переменную `k` значение следующего выражения:
 ```
-6 + log(3,6)
+9^sqrt(8) + log(3,6)
 ```
-в переменную `b` значение такого выражения:
+в переменную `l` значение такого выражения:
 ```
+(TRUE | FALSE) & (FALSE & TRUE)
 ```
-в переменную `c` значение вот этого выражения:
+в переменную `m` значение вот этого выражения:
 ```
+6 >= 4 & 8 - 1 != 7 | sqrt(25) == 5
 ```
 
-и в переменную `d` значение вот этого выражения:
+и в переменную `n` результат вот такой страшной команды:
 ```{r, include=FALSE, echo=FALSE, eval=FALSE}
 # create data frame with NA for the task
 write.csv(x=data.frame(x=NA), file = "data/Rintro_logic.csv")
 ```
 ```
-read.csv()
+read.csv("https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2")[['x']]
+### fix the link!!!
+```
+```{r, include=FALSE, echo=FALSE, eval=FALSE}
+k <- 9^sqrt(8) + log(3,6)
+l <- (TRUE | FALSE) & (FALSE & TRUE)
+m <- 6 >= 4 & 8 - 1 != 7 | sqrt(25) == 5
+n <- NA
 ```
 
 Какой результаты выдают следующие команды?
 
-* $-$
+* `k & l`
 
 <div class="autocheck">
 <input class="taskinput" id="input6" type="text">
@@ -520,7 +529,7 @@ read.csv()
 <div class="taskans" id="taskans6" hidden></div>
 </div>
 
-* $-$
+* `k & m`
 
 <div class="autocheck">
 <input class="taskinput" id="input7" type="text">
@@ -528,7 +537,7 @@ read.csv()
 <div class="taskans" id="taskans7" hidden></div>
 </div>
 
-* $-$
+* `m & l | ((k & l) | m)`
 
 <div class="autocheck">
 <input class="taskinput" id="input8" type="text">
@@ -536,7 +545,7 @@ read.csv()
 <div class="taskans" id="taskans8" hidden></div>
 </div>
 
-* $-$
+* `k & l & n`
 
 <div class="autocheck">
 <input class="taskinput" id="input9" type="text">
@@ -544,7 +553,7 @@ read.csv()
 <div class="taskans" id="taskans9" hidden></div>
 </div>
 
-* $-$
+* `(1 | 2) & 0`
 
 <div class="autocheck">
 <input class="taskinput" id="input10" type="text">
@@ -580,7 +589,7 @@ function check6() {
 }
 
 function check7() {
-  if (input7.value.toLowerCase() == 5.8425) {
+  if (input7.value.toLowerCase() == 'true') {
     taskans7.hidden = false;
     taskans7.innerHTML = 'Верно!';
     taskans7.style = "color:  #00aa4a";
@@ -593,7 +602,7 @@ function check7() {
 }
 
 function check8() {
-  if (input8.value.toLowerCase() == -0.7568) {
+  if (input8.value.toLowerCase() == 'true') {
     taskans8.hidden = false;
     taskans8.innerHTML = 'Верно!';
     taskans8.style = "color:  #00aa4a";
@@ -606,7 +615,7 @@ function check8() {
 }
 
 function check9() {
-  if (input9.value.toLowerCase() == -3.1763) {
+  if (input9.value.toLowerCase() == 'na') {
     taskans9.hidden = false;
     taskans9.innerHTML = 'Верно!';
     taskans9.style = "color:  #00aa4a";
@@ -619,7 +628,7 @@ function check9() {
 }
 
 function check10() {
-  if (input10.value.toLowerCase() == 2.1133) {
+  if (input10.value.toLowerCase() == 'false') {
     taskans10.hidden = false;
     taskans10.innerHTML = 'Верно!';
     taskans10.style = "color:  #00aa4a";
@@ -631,8 +640,6 @@ function check10() {
   }
 }
 ```
-
-
 
 
 
