@@ -436,11 +436,23 @@ function check5() {
 Сделайте самостоятельно несколько простых сравнений.
 </div>
 
-Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами --- здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый _тип данных_ --- логическое значение («истина» `TRUE` или «ложь» `FALSE`). [Типы данных]() мы подробно будем обсуждать в следующем разделе, пока же просто отметит факт столкновения с неизвестным.
+Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами --- здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый _тип данных_ --- логическое значение («истина» `TRUE` или «ложь» `FALSE`). [Типы данных]() и [элементы алгебры логики]() мы подробно будем обсуждать далее, пока же снова ограничимся простым и интуитивным пониманием.
+
+Мы можем составлять из простых сравнений сложные высказывания с помощью _логических операторов_. Самые известные и часто используемые из них --- «И» (`&`) и «ИЛИ» (`|`). Подробно об их смысле [здесь](). Если в двух словах, то «И» истинно, когда _оба_ соединяемых им утверждений истинны, а «ИЛИ» истинно, когда _хотя бы одно_ из соединяемых им утвердений истинно. Например,
+
+```{r}
+2 > 6 & 8 < 12
+1 != 4 & 5 == 10 / 2
+6 + 2 < 10 | 8 == 10 # что по сути эквивалентно 8 <= 10
+1 + 1 == 2 | FALSE & 4 != 2 * 2
+(1 + 1 == 2 | FALSE) & 4 != 2 * 2
+```
+
+Как видно из примеров, приоритет логических операторов _ниже_ приоритета операторов сравнения, а приоритет у `&` _выше_, чем у `|`.
 
 
 ## Assignment и переменные
-И последнее, с чем нам необходимо разобраться в этом разделе, это то, как же не терять результаты вычислений. Для этого существуют **переменные**, в которые можно записывать промежуточные результаты. Делается это так:
+Мы что-то считаем в R и нам важно не терять результаты вычислений. Для этого существуют **переменные**, в которые можно записывать промежуточные результаты. Делается это так:
 
 ```{r}
 x <- 3
@@ -472,7 +484,160 @@ x = y
 x
 ```
 
-Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно `<-` используют для присваивания, а `=` для задания аргументов функций.
+Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно `<-` используют для присваивания, а `=` для задания аргументов функций. У оператора присваивания самый низкий приоритет из всех, то есть присваивание выполняется после всех вычислений. Хм, как неожиданно и логично.
+
+
+
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Запишите в переменную `a` значение следующего выражения:
+```
+6 + log(3,6)
+```
+в переменную `b` значение такого выражения:
+```
+```
+в переменную `c` значение вот этого выражения:
+```
+```
+
+и в переменную `d` значение вот этого выражения:
+```{r, include=FALSE, echo=FALSE, eval=FALSE}
+# create data frame with NA for the task
+write.csv(x=data.frame(x=NA), file = "data/Rintro_logic.csv")
+```
+```
+read.csv()
+```
+
+Какой результаты выдают следующие команды?
+
+* $-$
+
+<div class="autocheck">
+<input class="taskinput" id="input6" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check6()">
+<div class="taskans" id="taskans6" hidden></div>
+</div>
+
+* $-$
+
+<div class="autocheck">
+<input class="taskinput" id="input7" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check7()">
+<div class="taskans" id="taskans7" hidden></div>
+</div>
+
+* $-$
+
+<div class="autocheck">
+<input class="taskinput" id="input8" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check8()">
+<div class="taskans" id="taskans8" hidden></div>
+</div>
+
+* $-$
+
+<div class="autocheck">
+<input class="taskinput" id="input9" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check9()">
+<div class="taskans" id="taskans9" hidden></div>
+</div>
+
+* $-$
+
+<div class="autocheck">
+<input class="taskinput" id="input10" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check10()">
+<div class="taskans" id="taskans10" hidden></div>
+</div>
+
+</div>
+
+```{js, echo=FALSE}
+var input6 = document.getElementById("input6")
+var input7 = document.getElementById("input7")
+var input8 = document.getElementById("input8")
+var input9 = document.getElementById("input9")
+var input10 = document.getElementById("input10")
+var taskans6 = document.getElementById("taskans6")
+var taskans7 = document.getElementById("taskans7")
+var taskans8 = document.getElementById("taskans8")
+var taskans9 = document.getElementById("taskans9")
+var taskans10 = document.getElementById("taskans10")
+
+function check6() {
+  if (input6.value.toLowerCase() == 'false') {
+    taskans6.hidden = false;
+    taskans6.innerHTML = 'Верно!';
+    taskans6.style = "color:  #00aa4a";
+  } else
+  {
+    taskans6.hidden = false;
+    taskans6.innerHTML = 'У меня другой ответ…';
+    taskans6.style = "color:  #b73239";
+  }
+}
+
+function check7() {
+  if (input7.value.toLowerCase() == 5.8425) {
+    taskans7.hidden = false;
+    taskans7.innerHTML = 'Верно!';
+    taskans7.style = "color:  #00aa4a";
+  } else
+  {
+    taskans7.hidden = false;
+    taskans7.innerHTML = 'У меня другой ответ…';
+    taskans7.style = "color:  #b73239";
+  }
+}
+
+function check8() {
+  if (input8.value.toLowerCase() == -0.7568) {
+    taskans8.hidden = false;
+    taskans8.innerHTML = 'Верно!';
+    taskans8.style = "color:  #00aa4a";
+  } else
+  {
+    taskans8.hidden = false;
+    taskans8.innerHTML = 'У меня другой ответ…';
+    taskans8.style = "color:  #b73239";
+  }
+}
+
+function check9() {
+  if (input9.value.toLowerCase() == -3.1763) {
+    taskans9.hidden = false;
+    taskans9.innerHTML = 'Верно!';
+    taskans9.style = "color:  #00aa4a";
+  } else
+  {
+    taskans9.hidden = false;
+    taskans9.innerHTML = 'У меня другой ответ…';
+    taskans9.style = "color:  #b73239";
+  }
+}
+
+function check10() {
+  if (input10.value.toLowerCase() == 2.1133) {
+    taskans10.hidden = false;
+    taskans10.innerHTML = 'Верно!';
+    taskans10.style = "color:  #00aa4a";
+  } else
+  {
+    taskans10.hidden = false;
+    taskans10.innerHTML = 'У меня другой ответ…';
+    taskans10.style = "color:  #b73239";
+  }
+}
+```
+
+
+
+
+
+## Рабочая директория. Projects
+
 
 
 
