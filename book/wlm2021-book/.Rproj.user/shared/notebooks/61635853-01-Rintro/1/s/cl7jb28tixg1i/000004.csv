@@ -1,0 +1,9 @@
+"0","k <- 9^sqrt(8) + log(3,6)
+l <- (TRUE | FALSE) & (FALSE & TRUE)
+m <- 6 >= 4 & 8 - 1 != 7 | sqrt(25) == 5
+n <- read.csv(""https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2"")[['x']]
+"
+"2","cannot open URL 'https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2': HTTP status was '404 Not Found'"
+"2","Error in file(file, ""rt"") : 
+  cannot open the connection to 'https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2'
+"
