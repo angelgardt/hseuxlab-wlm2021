@@ -165,16 +165,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
-<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric"><i class="fa fa-check"></i><b>2.1</b> Numeric</a></li>
-<li class="chapter" data-level="2.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.2</b> Logical</a></li>
-<li class="chapter" data-level="2.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.3</b> Character</a></li>
-<li class="chapter" data-level="2.4" data-path="типы-данных.html"><a href="типы-данных.html#coercion"><i class="fa fa-check"></i><b>2.4</b> Coercion</a></li>
+<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.4" data-path="типы-данных.html"><a href="типы-данных.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.1</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.2</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.3</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
+<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
 <li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
@@ -257,14 +258,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="типы-данных" class="section level1">
 <h1><span class="header-section-number">2</span> Типы данных</h1>
 <p>Итак, до какого-то момента мы работали только с числами, а затем начали их сравнивать, и получили что-то новое типа <code>TRUE</code> и <code>FALSE</code>. И как мы отметили, это новый <em>тип данных</em>.</p>
-<p>А что такое вообще тип данных? <strong>Тип данных</strong> это характеристика данных, которая определяет:</p>
+<p>А что такое вообще тип данных? <strong>Тип данных</strong> — это характеристика данных, которая определяет:</p>
 <ul>
 <li><em>множество допустимых значений</em>, которые могут принимать данные этого типа,</li>
 <li>и <em>набор операций</em>, которые можно осуществлять с данными этого типа.</li>
 </ul>
 <p>Что это значит, будем разбираться на конкретных примерах.</p>
 <div id="numeric" class="section level2">
-<h2><span class="header-section-number">2.1</span> Numeric</h2>
+<h2><span class="header-section-number">2.1</span> <code>numeric</code></h2>
 <p>Этот тип данных нам уже знаком — это числа. Например, если мы создадим переменную со значением <code>7</code> и захотим узнать её тип, то это будет выглядеть так:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="типы-данных.html#cb1-1"></a>a &lt;-<span class="st"> </span><span class="dv">7</span></span>
 <span id="cb1-2"><a href="типы-данных.html#cb1-2"></a><span class="kw">class</span>(a) <span class="co"># эта команда выводит тип данных</span></span></code></pre></div>
@@ -282,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>На числовых данных выполняются все математические операции и различные функции, с чем мы развлекались на протяжении предыдущей главы. А множество значений этого типа, как вы понимаете, бесконечно.</p>
 </div>
 <div id="logical" class="section level2">
-<h2><span class="header-section-number">2.2</span> Logical</h2>
+<h2><span class="header-section-number">2.2</span> <code>logical</code></h2>
 <p>Здесь все гораздо проще. Есть всего два значение <code>TRUE</code> и <code>FALSE</code>, то есть «истина» и «ложь». Получаются логические данные в результате сравнения — и мы это уже тоже видели в предыдущей главе — и на себе допускают тоже только сравнение.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="типы-данных.html#cb5-1"></a><span class="ot">TRUE</span> <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span> <span class="co"># но вообще-то это операция, которая не несет никакого смысла</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
@@ -309,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="character" class="section level2">
-<h2><span class="header-section-number">2.3</span> Character</h2>
+<h2><span class="header-section-number">2.3</span> <code>character</code></h2>
 <p>Очевидно, что в практике мы не всегда имеет дело только с цифрами, мы храним ещё и текстовую информацию. Для этого есть тип данных <code>character</code> (хотя другие языки программирования с R бы <a href="">поспорили</a>).</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="типы-данных.html#cb16-1"></a>x &lt;-<span class="st"> &quot;Доброе утро, девочки!&quot;</span></span>
 <span id="cb16-2"><a href="типы-данных.html#cb16-2"></a><span class="kw">class</span>(x)</span></code></pre></div>
@@ -319,16 +320,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-2"><a href="типы-данных.html#cb18-2"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Мужчина громко зашёл в комнату и высказал решительное \&quot;здравствуйте\&quot;&quot;</code></pre>
 <blockquote>
-<p>А вообще, есть беспроигрышный вариант:</p>
+<p>А вообще, есть беспроигрышный [и типографически верный] вариант:</p>
 </blockquote>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="типы-данных.html#cb20-1"></a>x &lt;-<span class="st"> &#39;Мужчина громко зашёл в комнату и высказал решительное «здравствуйте»&#39;</span></span>
 <span id="cb20-2"><a href="типы-данных.html#cb20-2"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Мужчина громко зашёл в комнату и высказал решительное «здравствуйте»&quot;</code></pre>
+<blockquote>
+<p>Конечно, чтобы разговор и типах данных был полным, необходимо сказать о таком типе данных как <code>factor</code>. Однако он не является «базовым» типом, поэтому мы обсудим его устройство и работу с ним, когда непосредственно с ним столкнёмся.</p>
+</blockquote>
 </div>
-<div id="coercion" class="section level2">
-<h2><span class="header-section-number">2.4</span> Coercion</h2>
+<div id="coercion-part-one" class="section level2">
+<h2><span class="header-section-number">2.4</span> Coercion [part one]</h2>
+<p>А что будет, если мы пренебрежём допустимыми операциями и попробуем, например, сложить не-числа? Допустим, так:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="типы-данных.html#cb22-1"></a><span class="ot">TRUE</span> <span class="op">+</span><span class="st"> </span><span class="ot">TRUE</span> <span class="co"># складываем две истины</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Внезапно, команда выполнилась. Можно задаться вопросом, почему именно так, ведь <a href="">правила алгебры логики</a> говорят, что должно быть по-другому. Опуская детали, скажем, что оператор <code>+</code> несет только арифметический, но не логический смысл, поэтому произошло следующее:</p>
+<ul>
+<li>оператор <code>+</code> умеет работать только с числовыми значениями</li>
+<li>но получил логические</li>
+<li>поэтому попробовал привести их к числовым</li>
+<li>у него получилось — <code>TRUE</code> легко и непринуждено приводится к <code>1</code>, а <code>FALSE</code> к <code>0</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li>далее выполнилось сложение</li>
+</ul>
+<p>Такое поведение называется <strong>приведение типов (coercion)</strong>. Подробно мы его будем обсуждать позже, когда изучим структуры данных и поймем, какие опасности это может за собой влечь. Сейчас же ознакомимся с некоторыми примерами.</p>
+<p>Приведение типов сработает не всегда. Например, если мы попытаемся сложить строки<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, то получим ошибку:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="типы-данных.html#cb24-1"></a><span class="st">&quot;abc&quot;</span> <span class="op">+</span><span class="st"> &quot;cbd&quot;</span></span></code></pre></div>
+<pre><code>## Error in &quot;abc&quot; + &quot;cbd&quot;: non-numeric argument to binary operator</code></pre>
+<p>Чтобы контролировать приведение типов, есть семейство функций <code>as.*()</code>. Посмотрим, как они работают.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="типы-данных.html#cb26-1"></a><span class="co"># приводим логические данные в числовым</span></span>
+<span id="cb26-2"><a href="типы-данных.html#cb26-2"></a><span class="kw">as.numeric</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="типы-данных.html#cb28-1"></a><span class="kw">as.numeric</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="типы-данных.html#cb30-1"></a><span class="co"># приводим числовые данные к логическим</span></span>
+<span id="cb30-2"><a href="типы-данных.html#cb30-2"></a><span class="kw">as.logical</span>(<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="типы-данных.html#cb32-1"></a><span class="kw">as.logical</span>(<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="типы-данных.html#cb34-1"></a><span class="kw">as.logical</span>(<span class="op">-</span><span class="dv">1</span>) <span class="co">## наблюдаем, что все не так однозначно</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="типы-данных.html#cb36-1"></a><span class="kw">as.logical</span>(<span class="fl">0.4</span>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="типы-данных.html#cb38-1"></a><span class="kw">as.logical</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="типы-данных.html#cb40-1"></a><span class="co"># числовые данные к строке</span></span>
+<span id="cb40-2"><a href="типы-данных.html#cb40-2"></a><span class="kw">as.character</span>(<span class="dv">23</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;23&quot;</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="типы-данных.html#cb42-1"></a><span class="kw">as.character</span>(<span class="op">-</span><span class="dv">150</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;-150&quot;</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="типы-данных.html#cb44-1"></a><span class="co"># логические данные к строке</span></span>
+<span id="cb44-2"><a href="типы-данных.html#cb44-2"></a><span class="kw">as.character</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;TRUE&quot;</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="типы-данных.html#cb46-1"></a><span class="kw">as.character</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;FALSE&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>А какой результат выдаст следующая команда?</p>
+<pre><code>as.character(as.numeric(FALSE))</code></pre>
+<div class="autocheck">
+<input class="taskinput" id="input1" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check1()">
+<div id="taskans1" class="taskans" hidden="">
 
 </div>
+</div>
+</div>
+<script type="text/javascript">
+var input1 = document.getElementById("input1")
+var taskans1 = document.getElementById("taskans1")
+
+function check1() {
+  if (input1.value == '"0"') {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+</script>
+<blockquote>
+<p>Поздравляю! Мы закончили с основами основ! Пора переходить к самому важному и интересному — структурам данных, а именно – векторам!</p>
+</blockquote>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Почему так? <a href="">Потому что</a>.<a href="типы-данных.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Хотя, например, для JavaScript <a href="https://learn.javascript.ru/operators#slozhenie-strok-pri-pomoschi-binarnogo">сложение строк</a> — стандартная процедура.<a href="типы-данных.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
