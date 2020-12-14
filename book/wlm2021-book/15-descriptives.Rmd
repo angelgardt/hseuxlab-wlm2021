@@ -88,11 +88,115 @@ median(x)
 
 
 ### Среднее
+А ежели мы уже на уровне интервальной шкалы, что не грех и среднее посчитать. Вот только какое?
 
 #### Арифметическое
+Как правило, считается среднее арифметическое (поэтому если не указано иного, мы понимает под термином «среднее» именно «арифметическое среднее»), и далее люди не заморачиваются, что в целом разумно. По сему, мы уделим основное внимание ему, а другие посмотрим лишь обзорно.
 
-КАРТИНКА СРАВНЕНИЯ ПОЛОЖЕНИЙ МОДЫ МЕДИАНЫ И СРЕДНЕГО
+С **арифметическим средним (arithmetic mean, mean, average)** все знакомы ещё со школы, и считается оно предельно просто --- суммируем все наблюдения и полученную сумму делим на количество наблюдений.
 
+$$
+\bar X = \dfrac{\sum_{i=1}^{n}x_i}{n},
+$$
+где $\bar X$ --- среднее арифметическое, $x_i$ --- наблюдение в векторе $X$, $n$ --- количество наблюдений.
+
+В **R** оно считается абсолютно элементарно:
+```{r}
+mean(x)
+```
+Кстати, оценка генерального среднего через выборочное среднее --- это один из примеров [точечной оценки]() параметра [методом моментов]().
+
+Давайте сравним для рассмотреные статистики (используем все тот же вектор `x`):
+```{r, echo=FALSE}
+# mode function
+mode <- function(x) {
+  values <- sort(unique(x))
+  freqs <- tabulate(x)
+  which(freqs == max(freqs))
+}
+```
+```{r}
+mode(x) # кастомная функция, отсутствует в R
+median(x)
+mean(x)
+```
+Как мы видим, хотя все три статистики описывают цкентральную тенденцию, тем не менее они всё же дают разные результаты. Посмотрим их взаимное положение на графике:
+```{r, echo=FALSE}
+library(ggplot2)
+theme_set(theme_bw())
+set.seed(108)
+symm <- sample(
+  x = seq(1, 10, 0.5),
+  size = 200,
+  replace = TRUE,
+  prob = c(
+    .05,
+    .05,
+    .07,
+    .1,
+    .1,
+    .15,
+    .20,
+    .30,
+    .35,
+    .5,
+    .35,
+    .30,
+    .20,
+    .15,
+    .1,
+    .1,
+    .07,
+    .05,
+    .05
+  )
+)
+asymm <- sample(
+  x = seq(1, 10, 0.5),
+  size = 200,
+  replace = TRUE,
+  prob = c(
+    .1,
+    .2,
+    .25,
+    .4,
+    .5,
+    .5,
+    .4,
+    .35,
+    .3,
+    .25,
+    .2,
+    .25,
+    .2,
+    .15,
+    .1,
+    .1,
+    .07,
+    .05,
+    .05
+  )
+)
+ggplot(NULL) +
+  geom_density(aes(symm)) +
+  geom_density(aes(asymm), linetype = 'dashed') +
+  geom_vline(xintercept = mean(symm), color = 'darkred') +
+  geom_vline(xintercept = median(symm), color = 'darkblue') +
+  geom_vline(xintercept = mode(symm), color = 'darkgreen') +
+  geom_vline(xintercept = mean(asymm), color = 'darkred', linetype = 'dashed') +
+  geom_vline(xintercept = median(asymm), color = 'darkblue', linetype = 'dashed') +
+  geom_vline(xintercept = mode(asymm), color = 'darkgreen', linetype = 'dashed') +
+  labs(x = 'Value',
+       y = 'Density')
+  
+```
+<center style="margin-top: -2%;">
+<div style="display:inline-block; margin-right: 1%; color: #7f170e; font-size: 12px;">mean</div>
+<div style="display:inline-block; margin-right: 1%; color: #000d85; font-size: 12px;">median</div>
+<div style="display:inline-block; color: #2a6218; font-size: 12px;">mode</div>
+</center>
+
+Что тут можно пронаблюдать? Во-первых, есть два распределения --- более симметричное (сплошная чёрная линия) и сильно скошенное (прерывистая чёрная линия). 
 
 #### Геометрическое
 #### Гармоническое
