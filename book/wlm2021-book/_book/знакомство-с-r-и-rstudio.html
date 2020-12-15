@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Знакомство с R и RStudio | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Знакомство с R и RStudio | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -160,21 +165,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric-integer"><i class="fa fa-check"></i><b>2.0.1</b> Numeric &amp; Integer</a></li>
-<li class="chapter" data-level="2.0.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.0.2</b> Logical</a></li>
-<li class="chapter" data-level="2.0.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.0.3</b> Character</a></li>
-<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#coercion"><i class="fa fa-check"></i><b>2.1</b> Coercion</a></li>
+<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.4" data-path="типы-данных.html"><a href="типы-данных.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.1</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.2</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.3</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
+<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
 <li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
 <li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
-<li class="chapter" data-level="3.5" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>3.5</b> Функции</a></li>
+<li class="chapter" data-level="3.5" data-path="структуры-данных.html"><a href="структуры-данных.html#функции-1"><i class="fa fa-check"></i><b>3.5</b> Функции</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="строки.html"><a href="строки.html"><i class="fa fa-check"></i><b>4</b> Строки</a><ul>
 <li class="chapter" data-level="4.1" data-path="строки.html"><a href="строки.html#регулярные-выражения"><i class="fa fa-check"></i><b>4.1</b> Регулярные выражения</a></li>
@@ -191,13 +197,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
 <li class="chapter" data-level="8" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>8</b> Введение в статистику</a></li>
 <li class="part"><span><b>III Теория вероятностей и математическая статистика</b></span></li>
-<li class="chapter" data-level="9" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html#введение-в-статистику"><i class="fa fa-check"></i><b>9</b> Введение в статистику</a></li>
+<li class="chapter" data-level="9" data-path="введение-в-статистику-1.html"><a href="введение-в-статистику-1.html"><i class="fa fa-check"></i><b>9</b> Введение в статистику</a></li>
 <li class="chapter" data-level="10" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>10</b> Случайный эксперимент</a></li>
 <li class="chapter" data-level="11" data-path="вероятность-и-случайные-величины.html"><a href="вероятность-и-случайные-величины.html"><i class="fa fa-check"></i><b>11</b> Вероятность и случайные величины</a></li>
 <li class="chapter" data-level="12" data-path="оценивание-параметров-в-практике-статистического-анализа.html"><a href="оценивание-параметров-в-практике-статистического-анализа.html"><i class="fa fa-check"></i><b>12</b> Оценивание параметров в практике статистического анализа</a></li>
 <li class="chapter" data-level="13" data-path="тестирование-статистических-гипотез.html"><a href="тестирование-статистических-гипотез.html"><i class="fa fa-check"></i><b>13</b> Тестирование статистических гипотез</a></li>
 <li class="part"><span><b>IV Анализ данных</b></span></li>
-<li class="chapter" data-level="14" data-path="описательные-статистики.html"><a href="описательные-статистики.html"><i class="fa fa-check"></i><b>14</b> Описательные статистики</a></li>
+<li class="chapter" data-level="14" data-path="описательные-статистики.html"><a href="описательные-статистики.html"><i class="fa fa-check"></i><b>14</b> Описательные статистики</a><ul>
+<li class="chapter" data-level="14.1" data-path="описательные-статистики.html"><a href="описательные-статистики.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>14.1</b> Меры центральной тенденции</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="описательные-статистики.html"><a href="описательные-статистики.html#мода"><i class="fa fa-check"></i><b>14.1.1</b> Мода</a></li>
+<li class="chapter" data-level="14.1.2" data-path="описательные-статистики.html"><a href="описательные-статистики.html#медиана"><i class="fa fa-check"></i><b>14.1.2</b> Медиана</a></li>
+<li class="chapter" data-level="14.1.3" data-path="описательные-статистики.html"><a href="описательные-статистики.html#среднее"><i class="fa fa-check"></i><b>14.1.3</b> Среднее</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="15" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html"><i class="fa fa-check"></i><b>15</b> Корреляционный анализ</a></li>
 <li class="chapter" data-level="16" data-path="общие-линейные-модели-простая-линейная-регрессия.html"><a href="общие-линейные-модели-простая-линейная-регрессия.html"><i class="fa fa-check"></i><b>16</b> Общие линейные модели. Простая линейная регрессия</a></li>
 <li class="chapter" data-level="17" data-path="множественная-линейная-регрессия.html"><a href="множественная-линейная-регрессия.html"><i class="fa fa-check"></i><b>17</b> Множественная линейная регрессия</a></li>
@@ -222,6 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
 </ul></li>
+<li class="chapter" data-level="B" data-path="данные-и-железо.html"><a href="данные-и-железо.html"><i class="fa fa-check"></i><b>B</b> Данные и железо</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
@@ -406,20 +419,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="арифметические-операции" class="section level3">
 <h3><span class="header-section-number">1.7.1</span> Арифметические операции</h3>
 <p>В R есть все привычные нам математические операции и операторы для них: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>. Выполняются они тоже вполне предсказуемо:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span> <span class="co"># сложение</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="знакомство-с-r-и-rstudio.html#cb1-1"></a><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span> <span class="co"># сложение</span></span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span> <span class="co"># вычитание</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="знакомство-с-r-и-rstudio.html#cb3-1"></a><span class="dv">10</span> <span class="op">-</span><span class="st"> </span><span class="dv">4</span> <span class="co"># вычитание</span></span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">7</span> <span class="co"># умножение</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="знакомство-с-r-и-rstudio.html#cb5-1"></a><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="dv">7</span> <span class="co"># умножение</span></span></code></pre></div>
 <pre><code>## [1] 21</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="dv">30</span> <span class="op">/</span><span class="st"> </span><span class="dv">3</span> <span class="co"># деление</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="знакомство-с-r-и-rstudio.html#cb7-1"></a><span class="dv">30</span> <span class="op">/</span><span class="st"> </span><span class="dv">3</span> <span class="co"># деление</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="dv">2</span> <span class="op">^</span><span class="st"> </span><span class="dv">10</span> <span class="co"># возведение в степень</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="знакомство-с-r-и-rstudio.html#cb9-1"></a><span class="dv">2</span> <span class="op">^</span><span class="st"> </span><span class="dv">10</span> <span class="co"># возведение в степень</span></span></code></pre></div>
 <pre><code>## [1] 1024</code></pre>
 <p>Также есть два особых деления:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="dv">5</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># целочисленное деление</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="знакомство-с-r-и-rstudio.html#cb11-1"></a><span class="dv">5</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># целочисленное деление</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="dv">5</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># взятие остатка от деления (5 mod 2)</span></a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="знакомство-с-r-и-rstudio.html#cb13-1"></a><span class="dv">5</span> <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="co"># взятие остатка от деления (5 mod 2)</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <img class="taskimg" src="img/code.png">
 <div class="task">
@@ -434,30 +447,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 <p></font></p>
 <p>В R есть скобки — <code>()</code>. Их назначение такое же, как и в математике. Порядок выполнения арифметических действий (приоритет операторов<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, <em>operator precedence</em>) тоже как в математике. Итого имеем:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="знакомство-с-r-и-rstudio.html#cb15-1"></a><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="знакомство-с-r-и-rstudio.html#cb17-1"></a><span class="dv">4</span> <span class="op">*</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">+</span><span class="st"> </span><span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 32</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">^</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="знакомство-с-r-и-rstudio.html#cb19-1"></a><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span> <span class="op">^</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 15625</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">(<span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span>) <span class="op">^</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="знакомство-с-r-и-rstudio.html#cb21-1"></a>(<span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span>) <span class="op">^</span><span class="st"> </span><span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] 9765625</code></pre>
 <p>Так что используйте скобки, если вы не уверены, в каком порядке будут выполняться действия. Или смотрите таблицу приоритетор операторов по команде <code>?Syntax</code>.</p>
 </div>
 <div id="функции" class="section level3">
 <h3><span class="header-section-number">1.7.2</span> Функции</h3>
 <p>Но что, если нам надо посчитать что-то более сложное? Например, извлечь корень или вычислить логарифм? С корнем мы можем провернуть математический финт, если вспомним, что <span class="math inline">\(\sqrt{x} = x^{\frac{1}{2}}\)</span>:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="dv">4</span> <span class="op">^</span><span class="st"> </span><span class="fl">0.5</span></a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="знакомство-с-r-и-rstudio.html#cb23-1"></a><span class="dv">4</span> <span class="op">^</span><span class="st"> </span><span class="fl">0.5</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Однако с логарифмом так уже не прокатит. Для вычисления подобных штук существуют <em>функции</em>. К вопросу, что есть функция, мы ещё не раз вернемся, а пока ограничимся самым общим пониманием: функция это некоторая команда, которая имеет вид <code>название_функции()</code>, просит что-то указать у себя в скобках (например, число) и после выполнения возвращает нам некоторый ответ (например, снова число).</p>
 <p>На примере с квадратным корнем это выглядит так:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw">sqrt</span>(<span class="dv">4</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="знакомство-с-r-и-rstudio.html#cb25-1"></a><span class="kw">sqrt</span>(<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <blockquote>
 <p>R чувствителен к регистру (case-sensitive), то есть <code>SQRT(4)</code> не сработает.</p>
 </blockquote>
 <p>А вот логарифм:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">16</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="знакомство-с-r-и-rstudio.html#cb27-1"></a><span class="kw">log</span>(<span class="dv">16</span>)</span></code></pre></div>
 <pre><code>## [1] 2.772589</code></pre>
 <p>Вот только здесь есть одна важная деталь.</p>
 <img class="taskimg" src="img/question.png">
@@ -468,36 +481,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[\log_a b = c \Leftrightarrow a^c = b\]</span>
 &gt; Логарифм некоторого числа — это показатель степени, в которую нужно возвести <em>основание</em>, чтобы получить данное число.</p>
 <p>Здесь придется чуть углубиться в <strong>аргументы функции</strong>. Аргументы — это то самое «что-то», что мы записываем в скобках. Бывают <em>обязательные аргументы</em>, без которых функция просто не будет работать и выдаст ошибку, например,</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">log</span>() <span class="co"># попробуйте выполнить эту команду</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="знакомство-с-r-и-rstudio.html#cb29-1"></a><span class="kw">log</span>() <span class="co"># попробуйте выполнить эту команду</span></span></code></pre></div>
 <p>и <em>необязательные аргументы</em>, у которых уже задано некоторое значение по умолчанию, например, аргумент <code>base</code> у функции <code>log()</code>, который отвечает как раз за задание основания логарифма.</p>
 <p>Список аргументов функции можно посмотреть в справке по данной функции, открыв окно <em>Help</em> и введя в поиск название функции, или выполнив одну из следующих команд:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">help</span>(log) <span class="co"># ищет справку по функции</span></a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">?log <span class="co"># синоним предыдущей команды</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="знакомство-с-r-и-rstudio.html#cb30-1"></a><span class="kw">help</span>(log) <span class="co"># ищет справку по функции</span></span>
+<span id="cb30-2"><a href="знакомство-с-r-и-rstudio.html#cb30-2"></a>?log <span class="co"># синоним предыдущей команды</span></span></code></pre></div>
 <p>Также в справке можно найти много другой полезной информации.</p>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>Какое значение по умолчанию определено для аргумента <code>base</code> функции <code>log()</code>?</p>
 </div>
 <p>Согласно хелпу, значение по умолчанию равно <span class="math inline">\(e\)</span>, то есть вычисляется натуральный логарифм, если основание не указано. Но подождите, в хелпе не написано никакого <span class="math inline">\(e\)</span>, там есть что-то странное в виде <code>exp(1)</code>. Да, тут спросить бессмысленно, однако <code>exp(1)</code> — это не что иное, как экспонента от единицы, то есть <span class="math inline">\(e^1 = e\)</span>, что равно:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">exp</span>(<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="знакомство-с-r-и-rstudio.html#cb31-1"></a><span class="kw">exp</span>(<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 2.718282</code></pre>
 <p>Итак, мы выучили две важные вещи: (1) функцию <code>exp()</code> и то, что (2) <em>в качестве аргументов функции можно передавать результаты другой функции</em>. Посмотрите примеры:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">base =</span> <span class="dv">2</span>) <span class="co"># эксплицитно задаём основание и число</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="знакомство-с-r-и-rstudio.html#cb33-1"></a><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">base =</span> <span class="dv">2</span>) <span class="co"># эксплицитно задаём основание и число</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">b =</span> <span class="dv">2</span>) <span class="co"># имена аргументов можно не дописывать, если они не совпадают с другими</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="знакомство-с-r-и-rstudio.html#cb35-1"></a><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">16</span>, <span class="dt">b =</span> <span class="dv">2</span>) <span class="co"># имена аргументов можно не дописывать, если они не совпадают с другими</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">16</span>) <span class="co"># при таком способе задания порядок аргументов можно менять</span></a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="знакомство-с-r-и-rstudio.html#cb37-1"></a><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">16</span>) <span class="co"># при таком способе задания порядок аргументов можно менять</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">625</span>, <span class="dv">25</span>) <span class="co"># имя аргумента можно не писать, но тогда соблюдать порядок следования</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="знакомство-с-r-и-rstudio.html#cb39-1"></a><span class="kw">log</span>(<span class="dv">625</span>, <span class="dv">25</span>) <span class="co"># имя аргумента можно не писать, но тогда соблюдать порядок следования</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">16</span>, <span class="dt">base =</span> <span class="kw">exp</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))) <span class="co"># задаём аргумент через результат функций</span></a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="знакомство-с-r-и-rstudio.html#cb41-1"></a><span class="kw">log</span>(<span class="dv">16</span>, <span class="dt">base =</span> <span class="kw">exp</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))) <span class="co"># задаём аргумент через результат функций</span></span></code></pre></div>
 <pre><code>## [1] 1.960516</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">log10</span>(<span class="dv">1000</span>) <span class="co"># десятичный логарифм</span></a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="знакомство-с-r-и-rstudio.html#cb43-1"></a><span class="kw">log10</span>(<span class="dv">1000</span>) <span class="co"># десятичный логарифм</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">log2</span>(<span class="dv">512</span>) <span class="co"># двоичный логарифм</span></a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="знакомство-с-r-и-rstudio.html#cb45-1"></a><span class="kw">log2</span>(<span class="dv">512</span>) <span class="co"># двоичный логарифм</span></span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
 <p>На логарифмах, естественно, свет клином не сошёлся, есть и множество других функций, например, тригонометрические (<code>sin()</code>, <code>cos()</code>, …). Да и сами арифметические операции, на самом деле, это тоже функции:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="st">&#39;+&#39;</span>(<span class="dv">7</span>, <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="знакомство-с-r-и-rstudio.html#cb47-1"></a><span class="st">&#39;+&#39;</span>(<span class="dv">7</span>, <span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p>К функциям, как я говорил, мы ещё вернемся, а пока двинемся дальше.</p>
 <p>Но перед этим ещё одна важная деталь. Вы, наверняка, заметили, что после команд я часто пишу <code>#</code> и далее текст. Это <em>комментарии</em>. Они крайне важны в коде, поэтому я, и не только я, настоятельно советую вам их оставлять — и чем больше, тем лучше. Сейчас это может казаться бессмысленным, но поверьте, когда ваш код будет занимать 50+ строк — а это очень небольшой код — разобраться уже будет непросто, не говоря о том, что делать, если вы открыли его через месяц или, не дай боже, год…</p>
@@ -649,15 +662,15 @@ function check5() {
 <p>Обратите внимание, что сравнение на равенство осуществляется с помощью оператора <code>==</code>! Одинарное «равно» (<code>=</code>) имеет другой смысл (см. ниже).</p>
 </blockquote>
 <p>Посмотрим на ряд простых примеров:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="знакомство-с-r-и-rstudio.html#cb49-1"></a><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span></a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="знакомство-с-r-и-rstudio.html#cb51-1"></a><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="dv">3</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="знакомство-с-r-и-rstudio.html#cb53-1"></a><span class="dv">3</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span> <span class="op">-</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="dv">7</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">7</span></a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="знакомство-с-r-и-rstudio.html#cb55-1"></a><span class="dv">7</span> <span class="op">&gt;=</span><span class="st"> </span><span class="dv">7</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">8</span> <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="знакомство-с-r-и-rstudio.html#cb57-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">8</span> <span class="op">^</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Вроде все логично и понятно. Единственное, что стоит помнить, это то, что приоритет операторов сравнения <em>ниже</em>, чем у арифметических операций.</p>
 <img class="taskimg" src="img/code.png">
@@ -666,15 +679,15 @@ function check5() {
 </div>
 <p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="">Типы данных</a> и <a href="">элементы алгебры логики</a> мы подробно будем обсуждать далее, пока же снова ограничимся простым и интуитивным пониманием.</p>
 <p>Мы можем составлять из простых сравнений сложные высказывания с помощью <em>логических операторов</em>. Самые известные и часто используемые из них — «И» (<code>&amp;</code>) и «ИЛИ» (<code>|</code>). Подробно об их смысле <a href="">здесь</a>. Если в двух словах, то «И» истинно, когда <em>оба</em> соединяемых им утверждений истинны, а «ИЛИ» истинно, когда <em>хотя бы одно</em> из соединяемых им утвердений истинно. Например,</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">8</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">12</span></a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="знакомство-с-r-и-rstudio.html#cb59-1"></a><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">8</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">12</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="знакомство-с-r-и-rstudio.html#cb61-1"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="dv">6</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">|</span><span class="st"> </span><span class="dv">8</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="co"># что по сути эквивалентно 8 &lt;= 10</span></a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="знакомство-с-r-и-rstudio.html#cb63-1"></a><span class="dv">6</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">|</span><span class="st"> </span><span class="dv">8</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="co"># что по сути эквивалентно 8 &lt;= 10</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="знакомство-с-r-и-rstudio.html#cb65-1"></a><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span>) <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="знакомство-с-r-и-rstudio.html#cb67-1"></a>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="ot">FALSE</span>) <span class="op">&amp;</span><span class="st"> </span><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Как видно из примеров, приоритет логических операторов <em>ниже</em> приоритета операторов сравнения, а приоритет у <code>&amp;</code> <em>выше</em>, чем у <code>|</code>.</p>
 </div>
@@ -682,26 +695,26 @@ function check5() {
 <div id="assignment-и-переменные" class="section level2">
 <h2><span class="header-section-number">1.8</span> Assignment и переменные</h2>
 <p>Мы что-то считаем в R и нам важно не терять результаты вычислений. Для этого существуют <strong>переменные</strong>, в которые можно записывать промежуточные результаты. Делается это так:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">3</span></a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="знакомство-с-r-и-rstudio.html#cb69-1"></a>x &lt;-<span class="st"> </span><span class="dv">3</span></span></code></pre></div>
 <p>В данном случае мы записали в переменную <code>x</code> значение <span class="math inline">\(3\)</span>. Разберёмся подробно:</p>
 <ol style="list-style-type: decimal">
 <li>Обозначаем название переменной, в данном случае <code>x</code>. На самом деле, название может быть любое, однако рекомендуется давать им осмысленные имена, чтобы потом не запутаться. Длинные названия — это, скорее, хорошо. Это немного съедает времени сейчас, но значительно экономит его в будущем! Также <strong>НЕ</strong> рекомендуется использовать для обозначения переменных <em>названия функций</em> (например, <code>data()</code>, <code>str()</code> и др).</li>
 <li>Говорим, что надо записать в переменную значение или же присвоить какой-то результат функции. Делается это с помощью <em>оператора присваивания</em> (<em>assignment</em>) <code>&lt;-</code>, который вводится с клавиатуры шорткатом <code>Alt</code> + <code>-</code> (<code>Option</code> + <code>-</code>). Этот оператор записывает то, что справа в то, что слева.</li>
 <li>Пишем то, что нужно присвоить в переменную. Это может быть конкретное значение, но чаще это результат какой-либо функции, например:</li>
 </ol>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">y &lt;-<span class="st"> </span><span class="kw">sin</span>(<span class="dv">90</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="знакомство-с-r-и-rstudio.html#cb70-1"></a>y &lt;-<span class="st"> </span><span class="kw">sin</span>(<span class="dv">90</span>)</span></code></pre></div>
 <p>После создания переменной, она появляется в <strong>Environment</strong>. Далее переменные можно использовать в вычислениях:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1">x <span class="op">+</span><span class="st"> </span>y</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="знакомство-с-r-и-rstudio.html#cb71-1"></a>x <span class="op">+</span><span class="st"> </span>y</span></code></pre></div>
 <pre><code>## [1] 3.893997</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">x<span class="op">^</span>y <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="знакомство-с-r-и-rstudio.html#cb73-1"></a>x<span class="op">^</span>y <span class="op">*</span><span class="st"> </span>x<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>## [1] 24.03186</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">log</span>(y, x)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="знакомство-с-r-и-rstudio.html#cb75-1"></a><span class="kw">log</span>(y, x)</span></code></pre></div>
 <pre><code>## [1] -0.1019953</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1">x <span class="op">==</span><span class="st"> </span>y</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="знакомство-с-r-и-rstudio.html#cb77-1"></a>x <span class="op">==</span><span class="st"> </span>y</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Обратите внимание ещё раз, что сравнивания переменные мы используем оператор <code>==</code>. А что будет если использовать одно «равно»?</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1">x =<span class="st"> </span>y</a>
-<a class="sourceLine" id="cb79-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="знакомство-с-r-и-rstudio.html#cb79-1"></a>x =<span class="st"> </span>y</span>
+<span id="cb79-2"><a href="знакомство-с-r-и-rstudio.html#cb79-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 0.8939967</code></pre>
 <p>Выполнилась операция присваивания. Да, её можно записывать и через «равно», но это не очень принято. Традиционно <code>&lt;-</code> используют для присваивания, а <code>=</code> для задания аргументов функций. У оператора присваивания самый низкий приоритет из всех, то есть присваивание выполняется после всех вычислений. Хм, как неожиданно и логично.</p>
 <img class="taskimg" src="img/code.png">
@@ -849,11 +862,13 @@ function check10() {
 <h2><span class="header-section-number">1.9</span> Рабочая директория. Projects</h2>
 <p>В ходе нализа данных мы работаем со множеством файлов: скрипты, файлы сырых данных данных, файлы предобработанны данных, файл объектов из рабочего пространства, графики, результаты анализа… Это всё куда-то надо сохранять — вопрос куда?</p>
 <p>В R есть понятие <strong>рабочей директории</strong>. Директория — это синоним папки. Рабочая директория — это папка, в которую смотрит R во время работы. Что это за папка можно узнать через команду:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">getwd</span>() <span class="co"># get working directory</span></a></code></pre></div>
+
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="знакомство-с-r-и-rstudio.html#cb85-1"></a><span class="kw">getwd</span>() <span class="co"># get working directory</span></span></code></pre></div>
 <pre><code>## [1] &quot;/Users/antonangelgardt/hseuxlab-wlm2021/book/wlm2021-book&quot;</code></pre>
 <p>У меня он смотрел вот в эту папку, у вас, скорее всего, будет что-то типа <code>C://users/имя_пользователя</code> или <code>/Users/имя_пользователя</code>, что указывает на папку пользователя по умолчанию.</p>
 <p>Можно установить другую рабочую директорию с помощью команды <code>setwd()</code>:</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">setwd</span>(<span class="st">&quot;/Users/antonangelgardt/R&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="знакомство-с-r-и-rstudio.html#cb87-1"></a><span class="kw">setwd</span>(<span class="st">&quot;/Users/antonangelgardt/R&quot;</span>)</span></code></pre></div>
+
 <p>Теперь он будет смотреть в папку <code>R</code>, которая лежит в дефолтной папке пользователя. Такой способ достаточно удобен, однако можно сделать ещё лучше — создать проект (<em>Project</em>).</p>
 <p>Кто-то любит работать в проектах, кто-то нет — дело вкуса. Мне это нравится, даже если вам не понравится. Простите, если мы вдруг не сойдёмся во вкусах, но, повторюсь, это нравится мне, сугубо, лично… Поэтому я буду про это рассказывать и рекламировать.</p>
 <p>Зайдите в <code>File → New Project…</code>. У вас откроется такое окно:</p>
@@ -878,8 +893,10 @@ function check10() {
 <li>Сохраните скрипт нажатием <code>Ctrl</code> + <code>S</code> (<code>Cmd</code> + <code>S</code>)</li>
 </ol>
 </div>
+  
 <p>Теперь при работе в рамках курса мы будем запускать проект и работать в нём, чтобы ничего не запуталось.</p>
 <p>Много ли это приносит профита? Ну, не так уж и много… По сути, что открыть проект, что выполнить <code>setwd(&quot;пусть_к_папке&quot;)</code> — примерно одно и то же. Вот только строку кода можно забыть запустить после открытия скрипта, а если мы запустили проект, мы уверены, что у нас все автоматически настроилось и ошибок не будет.</p>
+
 <img class="taskimg" src="img/task.png">
 <div class="task">
 <p>Откройте директорию (папку) проекта курса и создайте в ней несколько папок. Они нам понадобятся для структурирования нашего пространства в процессу курса, потому что файлов будет много. Кроме того, будем постепенно привыкать к тому, чтобы наше рабочее пространство было чистым и опрятным.</p>
@@ -897,10 +914,10 @@ function check10() {
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>При первом запуске может не быть окна Code Editor. Чтобы его открыть, сделайте <code>File → New File → R Script</code> или нажмите <code>Ctrl</code> + <code>Shift</code> + <code>N</code> (<code>Cmd</code> + <code>Shift</code> + <code>N</code>).<a href="знакомство-с-r-и-rstudio.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Чтобы не возникало лишних вопросов, лучше снабдить папку с файлами документом README.md, где описать все важные детали, в том числе и кодировку файла. Об это ещё немного поговорим поздее.<a href="знакомство-с-r-и-rstudio.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Бывает, что <a href="https://psychtimes.com/logizomechanophobia-fear-of-computers/">вот это</a> распространяют и на калькуляторы тоже. [Кек]<a href="знакомство-с-r-и-rstudio.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>А вообще в разных языках программирования этот вопрос решается <a href="https://www.quora.com/Do-all-computer-languages-with-operator-precedence-use-the-same-operator-precedence">по-разному</a>.<a href="знакомство-с-r-и-rstudio.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>При первом запуске может не быть окна Code Editor. Чтобы его открыть, сделайте <code>File → New File → R Script</code> или нажмите <code>Ctrl</code> + <code>Shift</code> + <code>N</code> (<code>Cmd</code> + <code>Shift</code> + <code>N</code>).<a href="знакомство-с-r-и-rstudio.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Чтобы не возникало лишних вопросов, лучше снабдить папку с файлами документом README.md, где описать все важные детали, в том числе и кодировку файла. Об это ещё немного поговорим поздее.<a href="знакомство-с-r-и-rstudio.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Бывает, что <a href="https://psychtimes.com/logizomechanophobia-fear-of-computers/">вот это</a> распространяют и на калькуляторы тоже. [Кек]<a href="знакомство-с-r-и-rstudio.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>А вообще в разных языках программирования этот вопрос решается <a href="https://www.quora.com/Do-all-computer-languages-with-operator-precedence-use-the-same-operator-precedence">по-разному</a>.<a href="знакомство-с-r-и-rstudio.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
