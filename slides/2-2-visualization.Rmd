@@ -1,0 +1,10 @@
+---
+title: "Работа с реальными данными. Визуализация данных"
+subtitle: "Лекция 2.2 / 14"
+author: "А. Ангельгардт"
+date: "HSE UX LAB | Анализ данных + R: мир линейных моделей, 2021"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    logo: img/logo.png
+---

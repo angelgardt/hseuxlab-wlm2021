@@ -1,0 +1,10 @@
+---
+title: "Регуляризованная регрессия"
+subtitle: "Лекция 10.2 / 14"
+author: "А. Ангельгардт"
+date: "HSE UX LAB | Анализ данных + R: мир линейных моделей, 2021"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    logo: img/logo.png
+---
