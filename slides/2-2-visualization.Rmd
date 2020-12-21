@@ -8,3 +8,7 @@ output:
     widescreen: true
     logo: img/logo.png
 ---
+
+# Зачем нужна визуализация?
+
+
