@@ -9,6 +9,107 @@ output:
     logo: img/logo.png
 ---
 
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 # Зачем нужна визуализация?
+
+## Квартет Анскомба
+
+Anscombe, F. J. (1973) “Graphs in Statistical Analysis”
+
+```{r, include=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
+```{r, include=FALSE}
+quartet <- read_csv("https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/data/anscombe.csv")
+```
+
+```{r, message=FALSE}
+quartet %>% 
+  group_by(dataset) %>% 
+  summarise(mean_X = mean(x),
+            mean_Y = mean(y),
+            sd_X = sd(x),
+            sd_Y = sd(y),
+            cor = cor(x, y),
+            n_obs = n()) %>% 
+  select(-dataset) %>% 
+  round(2)
+```
+
+
+## Квартет Анскомба
+
+<center>
+```{r, message=FALSE}
+quartet %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  geom_smooth(method = 'lm', se = FALSE) +
+  facet_wrap(~ dataset)
+```
+</center>
+
+
+## Datasaurus
+
+Matejka and Fitzmaurice (2017) “Same Stats, Different Graphs”
+
+```{r, include=FALSE}
+datasaurus <- read_csv("https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/data/datasaurus.csv")
+```
+
+```{r, message=FALSE}
+datasaurus %>% 
+  group_by(dataset) %>% 
+  summarise(mean_X = mean(x),
+            mean_Y = mean(y),
+            sd_X = sd(x),
+            sd_Y = sd(y),
+            cor = cor(x, y),
+            n_obs = n()) %>% 
+  select(-dataset) %>% 
+  round(1)
+```
+
+## Datasaurus
+
+<center>
+```{r}
+datasaurus %>% 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  facet_wrap(~dataset)
+```
+</center>
+
+
+# Виды графиков
+
+## Столбчатая диаграмма (Bar Graph)
+
+## Лучевая диаграмма (Sunburts)
+
+## Круговая диаграмма (Pie Chart)
+
+## Линейная диаграмма (Line Graph)
+
+## Диаграмма рассеяния
+
+## Пузырьковая диаграмма (Bubble Chart)
+
+## Гистограмма (Histogram)
+
+## График плотности вероятности (Density Plot)
+
+## Ящик с усами (Boxplot)
+
+## График интервальных оценок (Error Bar)
+
+
 
 
