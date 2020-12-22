@@ -8,3 +8,65 @@ output:
     widescreen: true
     logo: img/logo.png
 ---
+
+## Что такое R?
+
+* «язык программирования для статистической обработки данных»
+* а также
+  + машинного обучения
+  + data wrangling
+  + написания сайтов
+  + создания приложений
+  + и др.
+
+
+## Почему R?
+
+* свободное ПО (часть [GNU Project](https://en.wikipedia.org/wiki/GNU_Project))
+* динамично развивается
+* громадные возможности расширения функционала
+  + более 10 000 пакетов
+  + открытый исходный код
+  + возможность написать свои пакеты
+
+## Почему R?
+
+<center>
+<img src="img/img_LinearWarriors_QuadraticWizards.png" width="40%" style="float: left; margin-right: 5%;">
+</center>
+* большое сообщество по всему миру, много ресурсов для задавания вопросов
+* [Linear Warriors vs Quadratic Wizards](https://1d4chan.org/wiki/Linear_Warriors,_Quadratic_Wizards)
+    - в SPSS (и другие GUI пакеты) ниже порог вхождения, но развитие навыков --- линейное
+    - в R порог вхождения выше, но впоследствии случается резкий буст
+* [репродуцируемость](https://en.wikipedia.org/wiki/Reproducibility_Project) результатов
+
+## R vs Python
+
+<center>
+<img src="img/img_R-Vs-Python-samaya-aktualnaya-diskussiya-dlya-nachinayushhih-uchenyh-dannyh.jpg" width="70%">
+</center>
+
+
+## Установка R и RStudio
+
+* Сначала **R**
+  + на [Windows](https://cran.r-project.org/bin/windows/base/)
+  + на [Mac](https://cran.r-project.org/bin/macosx/)
+  + на [Linux](https://cran.rstudio.com/bin/linux/)
+* Затем [**RStudio**](https://www.rstudio.com/products/rstudio/download/)
+
+Если что-то не установилось или вы предпочитаете облачные сервисы, то можно работать через браузер в [RStudio Cloud](https://rstudio.cloud/).
+
+
+## Ресурсы
+
+* [Google](https://google.com)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Stack Overflow на русском](https://ru.stackoverflow.com/)
+* [Cookbook for R](http://www.cookbook-r.com/)
+* [RStudio Community](https://community.rstudio.com/)
+* [R-bloggers](https://www.r-bloggers.com/)
+* [Хабр про R](https://habr.com/ru/hub/r/)
+* …
+
+# The end
