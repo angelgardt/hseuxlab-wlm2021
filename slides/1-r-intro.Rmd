@@ -69,4 +69,173 @@ output:
 * [Хабр про R](https://habr.com/ru/hub/r/)
 * …
 
-# The end
+# Типы данных
+
+## `numeric`
+
+- числа всех видов и сортов
+
+```{r}
+2 + 3; 3 - 5
+6 * 8; 12 / 6
+```
+
+## `numeric`
+
+```{r}
+sqrt(25)
+log(8)
+exp(1)
+```
+
+
+## `numeric`
+
+### `float` (`double`)
+
+```{r}
+typeof(3)
+```
+
+### `integer`
+
+```{r}
+class(3)
+class(3L)
+```
+
+## `numeric`
+
+### `complex`
+
+```{r}
+x <- 3 + 2i; y <- -7 - 1i
+```
+```{r}
+x - y; x + y; x * y; x / y
+```
+
+## `logical` (`boolean`, `bool`)
+
+- допустимые значения `TRUE` и `FALSE`
+
+```{r}
+3 < 2; 5 >= 1; 4 == 4; 6 != 8
+```
+
+## `logical`
+
+```{r}
+TRUE & TRUE; TRUE & FALSE; FALSE & FALSE
+```
+```{r}
+TRUE | TRUE; TRUE | FALSE; FALSE | FALSE
+```
+
+## `character` (`string`)
+
+```{r}
+class("type smth here")
+```
+
+
+## `factor`
+
+```{r, include=FALSE}
+x <- as.factor(sample(x = c("Greek", "Latin", "Cyrillic"), size = 10, replace = TRUE))
+```
+```{r}
+class(x)
+x
+```
+
+
+
+
+
+# Структуры данных
+
+## `vector`
+
+- *упорядоченный* набор
+- элементов *одного типа*
+
+```{r}
+x <- c(1,3,5,7)
+x
+x[1]; x[2]; x[1:3]
+```
+
+
+## `matrix`
+
+```{r}
+m1 <- matrix(x, nrow = 2)
+m2 <- matrix(x, ncol = 1)
+m1; m2
+```
+
+## `matrix`
+
+```{r}
+m1[2]
+m1[1,2]
+```
+
+## `arrays`
+
+```{r}
+array(1:12, c(3,2,2))
+```
+
+## `list`
+
+- позволяет объединять различные типы данных в один объект
+
+```{r}
+l <- list(sequence = 1:10, grthan4 = 1:10 > 4, lable = 'spisok')
+l
+```
+
+## `list`
+
+```{r}
+l[1]
+l[[2]]
+l$lable
+```
+
+
+## `dataframe`
+
+- `matrix` + `list` = `dataframe`
+- привычная «таблица»
+- столбцы --- вектора
+
+```{r}
+d <- data.frame(id = 1:10,
+                sex = rep(c("f", "m"), time = 5),
+                score = sample(0:5, 10, replace = TRUE))
+head(d)
+```
+
+
+## `dataframe`
+
+```{r}
+d[1]
+```
+
+## `dataframe`
+
+```{r}
+d[[2]]
+```
+
+```{r}
+d$score
+```
+
+```{r}
+d[7,]
+```
