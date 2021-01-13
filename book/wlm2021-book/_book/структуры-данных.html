@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -69,7 +133,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">HSE UX LAB | WLM 2021</a></li>
+<li><a href="">HSE UX LAB | WLM 2021</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
@@ -109,10 +173,12 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion-part-two"><i class="fa fa-check"></i><b>3.1.1</b> Coercion [part two]</a></li>
 <li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#операции-с-векторами"><i class="fa fa-check"></i><b>3.1.3</b> Операции с векторами</a></li>
+<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.4</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.5" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-векторов"><i class="fa fa-check"></i><b>3.1.5</b> Индексация векторов</a></li>
+<li class="chapter" data-level="3.1.6" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.6</b> NA, NaN, NULL</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
 <li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
@@ -121,8 +187,8 @@
 <li class="chapter" data-level="4" data-path="функции-1.html"><a href="функции-1.html"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
 <li class="chapter" data-level="4.1" data-path="функции-1.html"><a href="функции-1.html#открытый-исходный-код"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="строки.html"><a href="строки.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
-<li class="chapter" data-level="5.1" data-path="строки.html"><a href="строки.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.1</b> Регулярные выражения</a></li>
+<li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
+<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.1</b> Регулярные выражения</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html"><i class="fa fa-check"></i><b>6</b> Работа с реальными данными</a><ul>
 <li class="chapter" data-level="6.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#рабочая-директория"><i class="fa fa-check"></i><b>6.1</b> Рабочая директория</a></li>
@@ -180,16 +246,7 @@
 <li class="chapter" data-level="28" data-path="конфирматорный-факторный-анализ.html"><a href="конфирматорный-факторный-анализ.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="что-дальше.html"><a href="что-дальше.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
 <li class="appendix"><span><b>Приложения</b></span></li>
-<li class="chapter" data-level="A" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html"><i class="fa fa-check"></i><b>A</b> Ещё о математике</a><ul>
-<li class="chapter" data-level="A.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#числа"><i class="fa fa-check"></i><b>A.1</b> Числа</a><ul>
-<li class="chapter" data-level="A.1.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#натуральные-числа"><i class="fa fa-check"></i><b>A.1.1</b> Натуральные числа</a></li>
-<li class="chapter" data-level="A.1.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#рациональные-и-иррациональные-числа"><i class="fa fa-check"></i><b>A.1.2</b> Рациональные и иррациональные числа</a></li>
-<li class="chapter" data-level="A.1.3" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#вещественные-числа"><i class="fa fa-check"></i><b>A.1.3</b> Вещественные числа</a></li>
-<li class="chapter" data-level="A.1.4" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#модуль-числа"><i class="fa fa-check"></i><b>A.1.4</b> Модуль числа</a></li>
-</ul></li>
-<li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
-</ul></li>
-<li class="chapter" data-level="B" data-path="данные-и-железо.html"><a href="данные-и-железо.html"><i class="fa fa-check"></i><b>B</b> Данные и железо</a></li>
+<li class="chapter" data-level="A" data-path="iron.html"><a href="iron.html"><i class="fa fa-check"></i><b>A</b> Данные и железо</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
@@ -218,19 +275,173 @@
             <section class="normal" id="section-">
 <div id="структуры-данных" class="section level1">
 <h1><span class="header-section-number">3</span> Структуры данных</h1>
+<p>С тем, какие существуют данные, мы разобрались. Теперь надо понять, как мы их можем организовать.</p>
 <div id="векторы" class="section level2">
 <h2><span class="header-section-number">3.1</span> Векторы</h2>
-<div id="coercion" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Coercion</h3>
+<p>Простейший способ организации данных — это вектор. Казалось бы, мы знаем, что вектор — это направленный отрезок. Безусловно, это так — в рамках Евклидовой геометрии, которую мы в давнем прошлом учили. Однако это не единственный способ смотреть на вещи. С точки зрения структур данных, <strong>вектор — это одномерный массив</strong>, а если по-русски, то <strong>набор элементов одного типа (например, чисел)</strong>.</p>
+<p>Эти два представления, на самом деле, не противоречат друг другу. Геометрически, как мы сказали, вектор — это направленный отрезок. Он задаётся через координаты начала и конца. Если мы условимся всегда начинать вектор из начала координат — то есть будет считать равными все векторы, которые имеют одинаковую длину и одинаковое направление<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> — то мы сможем задавать вектор только через координаты его конца. В случае двумерного пространства вектор будет однозначно задаваться парой чисел <span class="math inline">\((x, y)\)</span>, в случае трёхмерного — тройкой чисел <span class="math inline">\((x,y,z)\)</span>, а в случае <span class="math inline">\(n\)</span>-мерного пространства — набором чисел <span class="math inline">\((x_1, x_2, x_3, \dots, x_n)\)</span>.</p>
+<p>Чтобы создать вектор в R надо воспользоваться функцией <code>c()</code>. Она принимает неограниченное количесво аргументов, которые объединяет в вектор. В вектор можно объединить элементы <em>только одного типа</em>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="структуры-данных.html#cb1-1"></a>v &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span></code></pre></div>
+<p>Сохраним получившийся числовой вектор в переменную <code>v</code>. Присваивание векторов ничем не отличается от присваивания чисел, во-первых, потому что <em>в R нет скаляров</em>, и все числа — это векторы типа <code>numeric</code> длиной 1, а во-вторых, потому что и число, и вектор, и другие структуры данных (и даже функции!) — всё это <em>объекты</em>. А assignment — не что иное, как присваивание имени некоторому объекту, и нет разницы, что мы называем — число, матрицу, список, датафрейм или функцию.</p>
+<div id="coercion-part-two" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Coercion [part two]</h3>
+<p>Взбунтуемся, и объеденим в один вектор разные типы данных:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="структуры-данных.html#cb2-1"></a>v0 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb2-2"><a href="структуры-данных.html#cb2-2"></a>v0</span></code></pre></div>
+<pre><code>## [1] 1 2 1 0</code></pre>
+<p>Бунт не удался — вектор всё равно был создан. Но что произошло?</p>
+<center>
+<img src="img/mem-coercion.jpg">
+</center>
+<p>С приведением типов мы уже сталкивались, когда пытались складывать логические константы. Аналогично R действовал и здесь:</p>
+<ul>
+<li>есть задача создать вектор</li>
+<li>но на выход функции поступили данные различных типов</li>
+<li>придётся сделать так, чтобы тип был всё-таки один</li>
+<li><code>numeric</code> к <code>logical</code> однозначно привести сложно (что есть <code>2</code> — <code>TRUE</code> или <code>FALSE</code>?)</li>
+<li><code>logical</code> к <code>numeric</code> приводится очень хорошо и красиво (<code>TRUE</code> — <code>1</code>, <code>FALSE</code> — <code>0</code>)</li>
+<li>после приведения типов можно выполнить команду создания вектора.</li>
+</ul>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>А всё-таки: что есть <code>2</code>? <code>TRUE</code> или <code>FALSE</code>? Выясните, воспользовавшись функциями <code>isTRUE()</code> и <code>isFALSE()</code>.</p>
+</div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>А будет ли работать (и как именно) ручное приведение <code>numeric</code> к <code>logical</code>? С помощью функции <code>as.logical()</code> приведите числа <code>0</code>, <code>1</code>, <code>2</code> и <code>-1</code> к логическому типу.</p>
+</div>
+<p>Сделаем вектор из полного салата — добавим сторовые значения:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="структуры-данных.html#cb4-1"></a>v0 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="st">&#39;text&#39;</span>, <span class="st">&#39;string&#39;</span>)</span>
+<span id="cb4-2"><a href="структуры-данных.html#cb4-2"></a>v0</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot;      &quot;2&quot;      &quot;TRUE&quot;   &quot;FALSE&quot;  &quot;text&quot;   &quot;string&quot;</code></pre>
+<p>Наблюдаем, что все свелось к типу <code>character</code>, что вполне ожидаемо, так как <code>2</code> в <code>"2"</code> превращается однозначно, а вот в какое число (или логическую константу) превратить <code>"string"</code>, не очень понятно.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Как отработает следующая конструкция?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="структуры-данных.html#cb6-1"></a>v0 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">TRUE</span>), <span class="ot">FALSE</span>, <span class="st">&#39;text&#39;</span>, <span class="st">&#39;string&#39;</span>)</span></code></pre></div>
+<p>И почему именно так?</p>
+</div>
+<p>Собственно, можно вывести иерархию приведения типов:</p>
+<center>
+logical &lt; integer &lt; numeric &lt; complex &lt; character
+</center>
 </div>
 <div id="генерация-числовых-последовательностей" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Генерация числовых последовательностей</h3>
+<p>Создавать руками вектора — это, конечно, радостно и приятно, но не очень юзабельно. На практике часто возникает потребность сгенерировать определенную числовую последовательность. Например, у вас есть опросниковые данные, из которых необходимо удалить персональные данные, но при этом сохранить возможность соотнести персональные данные и результаты анализа по каждому респонденту — вам нужно сгенерировать переменную ID. Вам поможет оператор <code>:</code>, который генерирует последовательность в заданных пределах с шагом 1:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="структуры-данных.html#cb7-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="структуры-данных.html#cb9-1"></a><span class="dv">15</span><span class="op">:</span><span class="dv">0</span></span></code></pre></div>
+<pre><code>##  [1] 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1  0</code></pre>
+<p>Если вам нужна последовательно с другим шагом, например, 0.5, то подойдет функция <code>seq()</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="структуры-данных.html#cb11-1"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="fl">0.5</span>) <span class="co"># задаём шаг последовательности</span></span></code></pre></div>
+<pre><code>##  [1]  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5  8.0
+## [16]  8.5  9.0  9.5 10.0</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="структуры-данных.html#cb13-1"></a><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">-6</span>, <span class="fl">-1.5</span>) <span class="co"># или без указания названий аргументов</span></span></code></pre></div>
+<pre><code>## [1]  0.0 -1.5 -3.0 -4.5 -6.0</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="структуры-данных.html#cb15-1"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">5</span>, <span class="dt">to =</span> <span class="dv">30</span>, <span class="dt">length.out =</span> <span class="dv">20</span>) <span class="co"># задаём длину последовательности</span></span></code></pre></div>
+<pre><code>##  [1]  5.000000  6.315789  7.631579  8.947368 10.263158 11.578947 12.894737
+##  [8] 14.210526 15.526316 16.842105 18.157895 19.473684 20.789474 22.105263
+## [15] 23.421053 24.736842 26.052632 27.368421 28.684211 30.000000</code></pre>
+<p>Допустим, у вас есть данные (пусть выборка будет 15 человек), в которых каждые две строки относятся к одному респонденту, но к двум различным экспериментальным условиям (экспериментальному и контрольному). Тогда можно сделать такие переменные:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="структуры-данных.html#cb17-1"></a><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>, <span class="dt">each =</span> <span class="dv">2</span>) <span class="co"># для id</span></span></code></pre></div>
+<pre><code>##  [1]  1  1  2  2  3  3  4  4  5  5  6  6  7  7  8  8  9  9 10 10 11 11 12 12 13
+## [26] 13 14 14 15 15</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="структуры-данных.html#cb19-1"></a><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&#39;exp&#39;</span>, <span class="st">&#39;control&#39;</span>), <span class="dt">times =</span> <span class="dv">15</span>) <span class="co"># для обозначения условия</span></span></code></pre></div>
+<pre><code>##  [1] &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;    
+##  [8] &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot;
+## [15] &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;    
+## [22] &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot; &quot;exp&quot;     &quot;control&quot;
+## [29] &quot;exp&quot;     &quot;control&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Сгенерируйте последовательность от 106 до 124 с шагом 4, в которой каждый элемент будет повторяться подряд три раза.</p>
+<pre><code>##  [1] 106 106 106 110 110 110 114 114 114 118 118 118 122 122 122</code></pre>
+</div>
+<p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
+<pre><code>##  [1]  5 10  1  8 11  2 21 25 15 12 17 30  4 20 29</code></pre>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
+</div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Сгенерируйте случайную последователность из 30 чисел от 1 до 10 при условии, что единица выпадает в два раза чаще, чем все остальные числа.</p>
+<p>Чтобы результат получился такой же, как ниже, перед выполнением команды <code>sample(...)</code> выполните команду:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="структуры-данных.html#cb24-1"></a><span class="kw">set.seed</span>(<span class="dv">69</span>)</span></code></pre></div>
+<pre><code>##  [1]  6  9  4 10  5 10  1  9  1  1 10  8  2  3  3  3  1  7  1  9  5  1  4  8  1
+## [26]  3  4  7  1  8</code></pre>
+</div>
+</div>
+<div id="операции-с-векторами" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Операции с векторами</h3>
+<p>Операции, которые можно выполнять над векторами зависят от типа данных, которые содержатся в векторе. Чаще всего мы будем работать с числовыми векторами, поэтому разберем подробно именно их.</p>
+<p>Пусть у нас будет два вектора:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="структуры-данных.html#cb26-1"></a><span class="kw">set.seed</span>(<span class="dv">42</span>) <span class="co"># задаём положение для датчика случайных чисел</span></span>
+<span id="cb26-2"><a href="структуры-данных.html#cb26-2"></a>v1 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">20</span>)</span>
+<span id="cb26-3"><a href="структуры-данных.html#cb26-3"></a>v2 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">50</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">20</span>)</span></code></pre></div>
+<p>Над векторами можно выполнять арифметические операции:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="структуры-данных.html#cb27-1"></a>v1 <span class="op">+</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1]  56  56  -2  66 110 200 132   9  88 147  78 -27  74  66  -4 110 115  70 -14
+## [20] 154</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="структуры-данных.html#cb29-1"></a>v1 <span class="op">-</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1]  42  74  52  82 -74   0 -38  39  54  31  -4  67 -22 -60  86 -56 -43 -60  82
+## [20]  20</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="структуры-данных.html#cb31-1"></a>v1 <span class="op">*</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1]   343  -585  -675  -592  1656 10000  3995  -360  1207  5162  1517  -940
+## [13]  1248   189 -1845  2241  2844   325 -1632  5829</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="структуры-данных.html#cb33-1"></a>v1 <span class="op">/</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1]  7.00000000 -7.22222222 -0.92592593 -9.25000000  0.19565217  1.00000000
+##  [7]  0.55294118 -1.60000000  4.17647059  1.53448276  0.90243902 -0.42553191
+## [13]  0.54166667  0.04761905 -0.91111111  0.32530120  0.45569620  0.07692308
+## [19] -0.70833333  1.29850746</code></pre>
+<p>Они выполняются поэлементно, то есть соответсвующие элементы двух векторов складываются (вычитаются, умножаются, делятся), и в результате получается новый вектор.</p>
+<p>Кроме того, векторы можно поэлементно сравнивать:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="структуры-данных.html#cb35-1"></a>v1 <span class="op">&lt;</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE
+## [13]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="структуры-данных.html#cb37-1"></a>v1 <span class="op">==</span><span class="st"> </span>v2</span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+## [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="структуры-данных.html#cb39-1"></a>v2 <span class="op">&lt;=</span><span class="st"> </span>v1</span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE
+## [13] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+<p>Также к вектору можно применять и функции:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="структуры-данных.html#cb41-1"></a><span class="kw">sin</span>(v1)</span></code></pre></div>
+<pre><code>##  [1] -0.9537527  0.8268287 -0.1323518 -0.9851463 -0.7509872 -0.5063656
+##  [7]  0.1235731 -0.9055784  0.9510547  0.8600694 -0.6435381  0.9129453
+## [13]  0.7625585  0.1411200 -0.1586227  0.9563759 -0.9917789 -0.9589243
+## [19]  0.5290827 -0.8218178</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="структуры-данных.html#cb43-1"></a><span class="kw">log</span>(v1)</span></code></pre></div>
+<pre><code>##  [1] 3.891820 4.174387 3.218876 4.304065 2.890372 4.605170 3.850148 3.178054
+##  [9] 4.262680 4.488636 3.610918 2.995732 3.258097 1.098612 3.713572 3.295837
+## [17] 3.583519 1.609438 3.526361 4.465908</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="структуры-данных.html#cb45-1"></a><span class="kw">exp</span>(v2)</span></code></pre></div>
+<pre><code>##  [1] 1.096633e+03 1.234098e-04 1.879529e-12 3.354626e-04 9.017628e+39
+##  [6] 2.688117e+43 8.223013e+36 3.059023e-07 2.415495e+07 1.545539e+25
+## [11] 6.398435e+17 3.873998e-21 7.016736e+20 2.293783e+27 2.862519e-20
+## [16] 1.112864e+36 2.038281e+34 1.694889e+28 1.425164e-21 1.252363e+29</code></pre>
+<p>Можно применять несколько функций подряд:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="структуры-данных.html#cb47-1"></a><span class="kw">log</span>(<span class="kw">abs</span>(v2))</span></code></pre></div>
+<pre><code>##  [1] 1.945910 2.197225 3.295837 2.079442 4.521789 4.605170 4.442651 2.708050
+##  [9] 2.833213 4.060443 3.713572 3.850148 3.871201 4.143135 3.806662 4.418841
+## [17] 4.369448 4.174387 3.871201 4.204693</code></pre>
+<p>Большинство арифметических функций выполняется поэлементно, однако существуют такие, которые поэлементно не могут быть выполнены, например сумма по вектору:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="структуры-данных.html#cb49-1"></a><span class="kw">sum</span>(v1)</span></code></pre></div>
+<pre><code>## [1] 878</code></pre>
+<p>Или функция, которая вычисляет длину вектора (в смысле колиичества элементов в нём):</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="структуры-данных.html#cb51-1"></a><span class="kw">length</span>(v2)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
 </div>
 <div id="recycling" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> Recycling</h3>
+<h3><span class="header-section-number">3.1.4</span> Recycling</h3>
+</div>
+<div id="индексация-векторов" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Индексация векторов</h3>
 </div>
 <div id="na-nan-null" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> NA, NaN, NULL</h3>
+<h3><span class="header-section-number">3.1.6</span> NA, NaN, NULL</h3>
 </div>
 </div>
 <div id="матрицы" class="section level2">
@@ -243,6 +454,12 @@
 <h2><span class="header-section-number">3.4</span> Датафреймы</h2>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Такие векторы называются <em>свободными</em>.<a href="структуры-данных.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -300,6 +517,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

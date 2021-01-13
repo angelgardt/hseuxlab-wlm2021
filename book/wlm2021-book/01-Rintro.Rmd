@@ -509,8 +509,7 @@ x
 write.csv(x=data.frame(x=NA), file = "data/Rintro_logic.csv")
 ```
 ```
-read.csv("https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv?token=ALSN47DNCZIDP5NE6QOCSMC7UPMV2")[['x']]
-### fix the link!!!
+read.csv("https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/Rintro_logic.csv")[['x']]
 ```
 ```{r, include=FALSE, echo=FALSE, eval=FALSE}
 k <- 9^sqrt(8) + log(3,6)
@@ -704,7 +703,7 @@ print("Hello, World of Linear Models!")
 
 <img class="taskimg" src="img/task.png">
 <div class="task">
-Откройте директорию (папку) проекта курса и создайте в ней несколько папок. Они нам понадобятся для структурирования нашего пространства в процессу курса, потому что файлов будет много. Кроме того, будем постепенно привыкать к тому, чтобы наше рабочее пространство было чистым и опрятным.
+Откройте директорию (папку) проекта курса и создайте в ней несколько папок. Они нам понадобятся для структурирования нашего пространства в процессе курса, потому что файлов будет много. Кроме того, будем постепенно привыкать к тому, чтобы наше рабочее пространство было чистым и опрятным.
 
 Нам понадобятся следующие папки:
 

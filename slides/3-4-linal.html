@@ -3151,6 +3151,254 @@ slide:not(.current) .plotly.html-widget{
 
 
 
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Матрицы</h2></hgroup><article  id="матрицы">
+
+</article></slide><slide class=""><hgroup><h2>Что такое матрица?</h2></hgroup><article  id="что-такое-матрица">
+
+<blockquote>
+<p>«Увы, невозможно объяснить, что такое матрица. Ты должен увидеть это сам.» <br> <em>Морфеус (Матрица, 1999)</em></p>
+</blockquote>
+
+<p>\[
+\pmb{A}= 
+\begin{pmatrix}
+1 &amp; 6 &amp; 11 \\
+2 &amp; 7 &amp; 13 \\
+3 &amp; 8 &amp; 15 \\
+4 &amp; 9 &amp; 18 \\
+5 &amp; 0 &amp; 19
+\end{pmatrix}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Откуда берутся матрицы?</h2></hgroup><article  id="откуда-берутся-матрицы">
+
+<ul>
+<li>cистема из \(n\) линейных уравнений относительно \(m\) неизвестных</li>
+</ul>
+
+<p>\[
+\begin{cases}a_{11}x_1 + a_{12}x_2 + \ldots + a_{1m}x_m = b_1
+\\a_{21}x_1 + a_{22}x_2 + \ldots + a_{2m}x_m = b_2
+\\ \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots
+\\a_{n1}x_1 + a_{n2}x_2 + \ldots + a_{nm}x_m = b_n
+\end{cases}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Матричный вид</h2></hgroup><article  id="матричный-вид">
+
+<p>\[
+\pmb{A}\pmb{x}= \pmb{b},
+\] где \[
+\pmb{A}=
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nm}
+\end{pmatrix} ; \quad 
+\pmb{x}= \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_m
+\end{pmatrix} ; \quad
+\pmb{b}= \begin{pmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{pmatrix}
+\]</p>
+
+<p>\(\pmb{A}\) — матрица коэффициентов системы, \(\pmb{x}\) — вектор неизвестных, \(\pmb{b}\) — вектор свободных членов.</p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Векторы</h2></hgroup><article  id="векторы">
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Действия с матрицами</h2></hgroup><article  id="действия-с-матрицами">
+
+</article></slide><slide class=""><hgroup><h2>Сложение матриц</h2></hgroup><article  id="сложение-матриц">
+
+<p>\[
+\pmb{A}_{n×m} + \pmb{B}_{n×m} = 
+\begin{pmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots &amp; a_{1m} + b_{1m} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots &amp; a_{2m} + b_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} + b_{n1} &amp; a_{n2} + b_{n2} &amp; \dots &amp; a_{nm} + b_{nm}
+\end{pmatrix}
+\]</p>
+
+<p><strong>Свойства сложения матриц:</strong></p>
+
+<ol>
+<li>\(\pmb{A}+ \pmb{B}= \pmb{B}+ \pmb{A}\) (коммутативность)</li>
+<li>\((\pmb{A}+ \pmb{B}) + \pmb{C}= \pmb{A}+ (\pmb{B}+ \pmb{C})\) (ассоциативность)</li>
+<li>\(\pmb{A}+ \pmb{O}= \pmb{A}\) (существование нулевого элемента)</li>
+<li>\(\pmb{A}+ (-\pmb{A}) = \pmb{O}\) (существование противоположного элемента)</li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Умножение матрицы на число</h2></hgroup><article  id="умножение-матрицы-на-число">
+
+<p>\[
+\lambda \pmb{A}= \begin{pmatrix}
+\lambda a_{11} &amp; \lambda a_{12} &amp; \dots &amp; \lambda a_{1m} \\
+\lambda a_{21} &amp; \lambda a_{22} &amp; \dots &amp; \lambda a_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\lambda a_{n1} &amp; \lambda a_{n2} &amp; \dots &amp; \lambda a_{nm}
+\end{pmatrix}, \; \forall \lambda \in \mathbb{R}
+\]</p>
+
+<p><strong>Свойства умножения матрицы на число:</strong></p>
+
+<ol>
+<li>\(1 \cdot \pmb{A}= \pmb{A}\)</li>
+<li>\(-1 \cdot \pmb{A}= -\pmb{A}\)</li>
+<li>\(\lambda(\mu \pmb{A}) = (\lambda \mu) \pmb{A}\) (ассоциативность)</li>
+<li>\((\lambda + \mu) \pmb{A}= \lambda \pmb{A}+ \mu \pmb{A}\) (дистрибутивность)</li>
+<li>\(\lambda (\pmb{A}+ \pmb{B}) = \lambda \pmb{A}+ \lambda \pmb{B}\) (дистрибутивность)</li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Скалярное произведение векторов</h2></hgroup><article  id="скалярное-произведение-векторов">
+
+<p>\[
+\pmb{a}= \begin{pmatrix} a_1 &amp; a_2 &amp; \dots &amp; a_n \end{pmatrix} \\
+\pmb{b}= \begin{pmatrix} b_1 &amp; b_2 &amp; \dots &amp; b_n \end{pmatrix}\\
+\] \[
+\pmb{a}\cdot \pmb{b}= a_1 b_1 + a_2 b_2 + \dots + a_n b_n
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Произведение матриц (матричное умножение)</h2></hgroup><article  id="произведение-матриц-матричное-умножение">
+
+<p>\[
+\pmb{A}= 
+\begin{pmatrix}
+\pmb{a}_1 \\
+\pmb{a}_2 \\
+\vdots \\
+\pmb{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{pmatrix}, \\
+\pmb{B}= 
+\begin{pmatrix}
+\pmb{b}_1 &amp; \pmb{b}_2 &amp; \dots \pmb{b}_m
+\end{pmatrix} = 
+\begin{pmatrix}
+b_{11} &amp; b_{12} &amp; \dots &amp; b_{1m} \\
+b_{21} &amp; b_{22} &amp; \dots &amp; b_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+b_{k1} &amp; b_{k2} &amp; \dots &amp; b_{km}
+\end{pmatrix}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Произведение матриц</h2></hgroup><article  id="произведение-матриц">
+
+<p>\[
+\pmb{A}\times \pmb{B}= 
+\begin{pmatrix}
+\pmb{a}_1 \cdot \pmb{b}_1 &amp; \pmb{a}_1 \cdot \pmb{b}_2 &amp; \dots &amp; \pmb{a}_1 \cdot \pmb{b}_m \\
+\pmb{a}_2 \cdot \pmb{b}_1 &amp; \pmb{a}_2 \cdot \pmb{b}_2 &amp; \dots &amp; \pmb{a}_2 \cdot \pmb{b}_m \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\pmb{a}_n \cdot \pmb{b}_1 &amp; \pmb{a}_n \cdot \pmb{b}_2 &amp; \dots &amp; \pmb{a}_n \cdot \pmb{b}_m \\
+\end{pmatrix} =
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Произведение матриц</h2></hgroup><article  id="произведение-матриц-1">
+
+<p>\[ = 
+\begin{pmatrix}
+c_{11} &amp; c_{12} &amp; \dots &amp; c_{1m} \\
+c_{21} &amp; c_{22} &amp; \dots &amp; c_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+c_{n1} &amp; c_{n2} &amp; \dots &amp; c_{nm}
+\end{pmatrix} = \pmb{C}
+\]</p>
+
+<p>\[
+c_{ij} = \sum_{t=1}^k a_{it} b_{tj}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Произведение матриц</h2></hgroup><article  id="произведение-матриц-2">
+
+<p><strong>Cвойства произведения матриц:</strong></p>
+
+<ol>
+<li>\(\pmb{A}(\pmb{B}\pmb{C}) = (\pmb{A}\pmb{B}) \pmb{C}\) (ассоциативность)</li>
+<li>\(\lambda (\pmb{A}\pmb{B}) = (\lambda \pmb{A}) \pmb{B}= (\lambda \pmb{B}) \pmb{A}\) (ассоциативность)</li>
+<li>\(\pmb{A}(\pmb{B}+ \pmb{C}) = \pmb{A}\pmb{B}+ \pmb{A}\pmb{C}\) (дистрибутивность)</li>
+<li>\((\pmb{A}+ \pmb{B}) \pmb{C}= \pmb{A}\pmb{C}+ \pmb{B}\pmb{C}\) (дистрибутивность)</li>
+<li>\(\pmb{A}\pmb{B}\neq \pmb{B}\pmb{A}\) (отсутствие коммутативности)</li>
+<li>\(\pmb{E}\pmb{A}= \pmb{A}; \, \pmb{A}\pmb{E}= \pmb{A}\) (умножение на единичный элемент)</li>
+<li>\(\pmb{O}\pmb{A}= \pmb{O}; \, \pmb{A}\pmb{O}= \pmb{O}\) (умножение на нулевой элемент)</li>
+<li>\(\pmb{A}\pmb{A}^{-1} = \pmb{A}^{-1} \pmb{A}= \pmb{E}\) (умножение на обратную матрицу — <em>только для некоторых квадратных матриц</em>)</li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Замечательные матрицы</h2></hgroup><article  id="замечательные-матрицы">
+
+<p>\[
+\pmb{E}= \pmb{I}= \begin{pmatrix}
+1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 1 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; 1
+\end{pmatrix} ; \quad
+\pmb{O}= \begin{pmatrix}
+0 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 0 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; 0
+\end{pmatrix}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Транспонирование матрицы</h2></hgroup><article  id="транспонирование-матрицы">
+
+<p>\[
+\pmb{A}= 
+\begin{pmatrix}
+\pmb{a}_1 \\
+\pmb{a}_2 \\
+\vdots \\
+\pmb{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{pmatrix}
+\]</p>
+
+<p>\[
+\pmb{A}^\mathrm{T}=
+\begin{pmatrix}
+\pmb{a}_1 &amp; \pmb{a}_2 &amp; \dots &amp; \pmb{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{21} &amp; \dots &amp; a_{n1} \\
+a_{12} &amp; a_{22} &amp; \dots &amp; a_{n2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
+\end{pmatrix}
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Детерминант матрицы и обратная матрица</h2></hgroup><article  id="детерминант-матрицы-и-обратная-матрица">
+
+<p>\[
+\pmb{A}_{n×n} \times \pmb{A}^{-1}_{n×n} = \pmb{E}_{n×n}
+\]</p>
+
+<p>\[
+\det A_{n×n} \neq 0 \Rightarrow \exists \, A^{-1}_{n×n} \\
+\det A_{n×n} = 0 \Rightarrow \nexists \, A^{-1}_{n×n}
+\]</p>
+
+<p>Одним из условий <em>вырожденности матрицы</em> является линейная зависимость строк или столбцов.</p></article></slide>
+
+
   <slide class="backdrop"></slide>
 
 </slides>
