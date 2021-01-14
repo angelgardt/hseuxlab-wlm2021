@@ -360,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1]  1 16 13 10 14 12 20  9 27 23 28 15 22  2  8</code></pre>
+<pre><code>##  [1]  5 17  7 28  9  8 23 13 30 10 14  6 21  4 15</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -537,6 +537,58 @@ function check1() {
 </div>
 <div id="na-nan-null" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> NA, NaN, NULL</h3>
+<p>Взбунтуемся ещё раз и посмотрим, что получится, если мы будем вытаскивать из вектора элементы, используя индексы, которые выходят за границы длины вектора. Например, у нас есть вектор <code>v2</code>, длина которого</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="структуры-данных.html#cb91-1"></a><span class="kw">length</span>(v2)</span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<p>Попробуем сделать так:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="структуры-данных.html#cb93-1"></a>v2[<span class="dv">15</span><span class="op">:</span><span class="dv">25</span>]</span></code></pre></div>
+<pre><code>##  [1] -45  83  79  65 -48  67  NA  NA  NA  NA  NA</code></pre>
+<p>Мы получили нечто, с чем ранее не сталкивались. <code>NA</code> (от <em>not available</em>) обозначает значение, которое недоступно. Как правило, в реальных данных они появляются при каких-либо ошибках записи данных. Впрочем, не всегда. Можно придумать и такой дизайн исследования, когда пропуски также будут информативны и могут анализировться. В нашем случае мы обратились к элементам, которых нет в нашем векторе, поэтому R ничего более не смог сделать, как вернуть нам свидетельство того, что такие элементы он из вектора достать не смог.</p>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>К какому типу даных относится константа <code>NA</code>?</p>
+</div>
+<p><code>NA</code> ведёт себя весьма специфично. Например, если мы попробуем посчитать сумму по получившемуся вектору, то результат будет следующим:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="структуры-данных.html#cb95-1"></a><span class="kw">sum</span>(v2[<span class="dv">15</span><span class="op">:</span><span class="dv">25</span>])</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Аналогичная ситуация возникнет, если мы будем вычислять среднее:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="структуры-данных.html#cb97-1"></a><span class="kw">mean</span>(v2[<span class="dv">15</span><span class="op">:</span><span class="dv">25</span>])</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Такое поведение функций может поначалу напрягать, однако оказывается очень полезным при работе с реальными данными.</p>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>И всё же функция <code>sum()</code> не так проста, и умеет бороться с <code>NA</code>. Как нужно изменить команду, чтобы сумма была посчитана?</p>
+</div>
+<p>Попробуем вычислить логарифм по вектору <code>v2</code>:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="структуры-данных.html#cb99-1"></a><span class="kw">log</span>(v2)</span></code></pre></div>
+<pre><code>## Warning in log(v2): NaNs produced</code></pre>
+<pre><code>##  [1] 1.945910      NaN      NaN      NaN 4.521789 4.605170 4.442651      NaN
+##  [9] 2.833213 4.060443 3.713572      NaN 3.871201 4.143135      NaN 4.418841
+## [17] 4.369448 4.174387      NaN 4.204693</code></pre>
+<p>Опять всё не слава богу. Теперь у нас <code>NaN</code>. Это почти как <code>NA</code>, но не совсем. <code>NaN</code> обозначает не-число (<em>not a number</em>). То есть, это не пропущенное значение, оно существует, но R его не может вычислить. Если мы сравним два вектора,</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="структуры-данных.html#cb102-1"></a>v2; <span class="kw">log</span>(v2)</span></code></pre></div>
+<pre><code>##  [1]   7  -9 -27  -8  92 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48
+## [20]  67</code></pre>
+<pre><code>## Warning in log(v2): NaNs produced</code></pre>
+<pre><code>##  [1] 1.945910      NaN      NaN      NaN 4.521789 4.605170 4.442651      NaN
+##  [9] 2.833213 4.060443 3.713572      NaN 3.871201 4.143135      NaN 4.418841
+## [17] 4.369448 4.174387      NaN 4.204693</code></pre>
+<p>то обнаружим, что <code>NaN</code> появляется там, где мы пытаемся вычислить логарим отрицательного числа. А, как мы помним, функция логарифма определена только на положительно полуоси <span class="math inline">\(x\)</span>. Вот и получается, что логарифм отрицательного аргумента — это какая-то неведомая сущность, то точно не-число.</p>
+<p>В функциях <code>NaN</code> ведёт себя аналогично <code>NA</code>:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="структуры-данных.html#cb106-1"></a><span class="kw">sum</span>(<span class="kw">log</span>(v2))</span></code></pre></div>
+<pre><code>## Warning in log(v2): NaNs produced</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>К какому типу даных относится константа <code>NaN</code>?</p>
+</div>
+<p>Мы поговорили о двух важный константах используемых в R. Есть ещё одна, и имя её <code>NULL</code>. Это имя обозначает «ничего», то есть, что объект пуст.</p>
+<p>Например, возьмем вектор <code>v</code>, который мы создавали в самом начале, и положим в него <code>NULL</code>:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="структуры-данных.html#cb109-1"></a>v &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb109-2"><a href="структуры-данных.html#cb109-2"></a>v</span></code></pre></div>
+<pre><code>## NULL</code></pre>
+<p>Теперь в этом векторе ничего не лежит.</p>
+<p><code>NULL</code> может использоваться при задании аргументов функций или как результат работы функций, если возвращается пустой объект.</p>
 </div>
 </div>
 <div id="матрицы" class="section level2">
