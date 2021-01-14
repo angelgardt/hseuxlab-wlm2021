@@ -323,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Собственно, можно вывести иерархию приведения типов:</p>
 <center>
-logical &lt; integer &lt; numeric &lt; complex &lt; character
+<strong> logical &lt; integer &lt; numeric &lt; complex &lt; character </strong>
 </center>
 </div>
 <div id="генерация-числовых-последовательностей" class="section level3">
@@ -360,7 +360,7 @@ logical &lt; integer &lt; numeric &lt; complex &lt; character
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1]  5 10  1  8 11  2 21 25 15 12 17 30  4 20 29</code></pre>
+<pre><code>##  [1] 11 21 26 28 19  6 17 16 25 14  3 29  5  1 23</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -430,15 +430,62 @@ logical &lt; integer &lt; numeric &lt; complex &lt; character
 <p>Большинство арифметических функций выполняется поэлементно, однако существуют такие, которые поэлементно не могут быть выполнены, например сумма по вектору:</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="структуры-данных.html#cb49-1"></a><span class="kw">sum</span>(v1)</span></code></pre></div>
 <pre><code>## [1] 878</code></pre>
-<p>Или функция, которая вычисляет длину вектора (в смысле колиичества элементов в нём):</p>
+<p>Или функция, которая вычисляет длину вектора (в смысле количества элементов в нём):</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="структуры-данных.html#cb51-1"></a><span class="kw">length</span>(v2)</span></code></pre></div>
 <pre><code>## [1] 20</code></pre>
 </div>
 <div id="recycling" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> Recycling</h3>
+<p>Доныне мы складывали векторы одинаковой длины. С ними всё ясно — они складываются поэлементно. А что будет, если мы сложим векторы разной длины?</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="структуры-данных.html#cb53-1"></a>v3 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, <span class="dt">times =</span> <span class="dv">10</span>); v3 <span class="co"># создаём векторы</span></span></code></pre></div>
+<pre><code>##  [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="структуры-данных.html#cb55-1"></a>v4 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">2</span>); v4</span></code></pre></div>
+<pre><code>## [1] 21  2</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="структуры-данных.html#cb57-1"></a>v5 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">3</span>); v5</span></code></pre></div>
+<pre><code>## [1] 58 10 40</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="структуры-данных.html#cb59-1"></a><span class="kw">length</span>(v3) <span class="co"># проверяем длину</span></span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="структуры-данных.html#cb61-1"></a><span class="kw">length</span>(v4)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="структуры-данных.html#cb63-1"></a><span class="kw">length</span>(v5)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>Итак, сумма:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="структуры-данных.html#cb65-1"></a>v3 <span class="op">+</span><span class="st"> </span>v4</span></code></pre></div>
+<pre><code>##  [1] 22  3 22  3 22  3 22  3 22  3</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="структуры-данных.html#cb67-1"></a>v3 <span class="op">+</span><span class="st"> </span>v5</span></code></pre></div>
+<pre><code>## Warning in v3 + v5: longer object length is not a multiple of shorter object
+## length</code></pre>
+<pre><code>##  [1] 59 11 41 59 11 41 59 11 41 59</code></pre>
+<p>Внимательно посмотрим на результат. В первом случае мы складывали вектор из десяти элементов и вектор из двух элементов. Чтобы выполнирь эту операцию R выполняет <em>зацикливание (recycling)</em> более короткого из двух, чтобы каждый элемент большего по длине вектора получил в соответствии элементн меньшего. Так как десять кратно двум, то по сути было выполнена следующая команда:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="структуры-данных.html#cb70-1"></a>v3 <span class="op">+</span><span class="st"> </span><span class="kw">rep</span>(v4, </span>
+<span id="cb70-2"><a href="структуры-данных.html#cb70-2"></a>         <span class="dt">times =</span> <span class="kw">length</span>(v3) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(v4))</span></code></pre></div>
+<pre><code>##  [1] 22  3 22  3 22  3 22  3 22  3</code></pre>
+<p>Во втором случае длина меньшего вектора не кратна длине большего, поэтому recycling происходит до тех пор, пока не будут покрыты все элемент большего вектора. Вектор из трех элементов укладывается на вектор из десяти элементов три раза — поэтому мы видим в результате три раза последовательность <code>59, 11, 41</code> — и остается ещё один десятый элемент, который суммируется в первым элементом меньшего вектора — поэтому последний элемент в векторе результата <code>59</code>.</p>
 </div>
 <div id="индексация-векторов" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> Индексация векторов</h3>
+<p>В практике мы постоянно сталкиваемся в необходимость анализировать не все данные в векторе, а их часть. Поэтому встаёт вопрос о том, как эту часть извлечь?</p>
+<p>Извлечение части данных из вектора называется <strong>индексацией</strong>. Это делается так:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="структуры-данных.html#cb72-1"></a>v1[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>] <span class="co"># первые десять элементов вектора</span></span></code></pre></div>
+<pre><code>##  [1]  49  65  25  74  18 100  47  24  71  89</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="структуры-данных.html#cb74-1"></a>v1[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>)] <span class="co"># 1-й, 3-й, 5-й и 7-й элементы вектора</span></span></code></pre></div>
+<pre><code>## [1] 49 25 18 47</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="структуры-данных.html#cb76-1"></a>v1[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">5</span>)] <span class="co"># случайная подвыборка пяти элементов</span></span></code></pre></div>
+<pre><code>## [1] 18 49 36 47 74</code></pre>
+<p>Логика проста — чтобы взять часть вектора, нам нужен вектор индексов тех элементов, которые мы хотим вытащить. Его мы поместим в квадратные скобки — и будет нам счастье. Вектор индектов можно получить любыми способами:</p>
+<ul>
+<li>сгенерировать последовательноть (как в первом варианте),</li>
+<li>задать индексы вручную, не забыв при этом обернуть их в фнукцию <code>c()</code>, чтобы указать, что это вектор, (как во втором варианте),</li>
+<li>воспользоваться функцией, которая возвращает вектор.</li>
+</ul>
+<p>Полезно также является индексация через отрицательные индексы:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="структуры-данных.html#cb78-1"></a>v2</span></code></pre></div>
+<pre><code>##  [1]   7  -9 -27  -8  92 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48
+## [20]  67</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="структуры-данных.html#cb80-1"></a>v2[<span class="op">-</span><span class="dv">1</span>] <span class="co"># все элементы, кроме первого</span></span></code></pre></div>
+<pre><code>##  [1]  -9 -27  -8  92 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48  67</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="структуры-данных.html#cb82-1"></a>v2[<span class="op">-</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)] <span class="co"># все элементы, кроме первых пяти</span></span></code></pre></div>
+<pre><code>##  [1] 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48  67</code></pre>
 </div>
 <div id="na-nan-null" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> NA, NaN, NULL</h3>
