@@ -273,13 +273,87 @@ write.csv(x = data.frame(x = sample(-300:1000, 500)),
            file = 'indexing_vectors.csv')
 ```
 
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Запишите в вектор результат следующей команды:
+```{r, eval=FALSE}
+read.csv('https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/indexing_vectors.csv')[['x']]
+```
+Задайте положение датчик случайный чисел:
+
+```{r}
+set.seed(123)
+```
+
+Выберите из получившего вектора все значения, *кроме тех*, которые попадут в случайную подвыборку из 50 наблюдений. Вычислите сумму элементов получившегося вектора.
+
+```{r, include=FALSE}
+ind <- read.csv('https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/indexing_vectors.csv')[['x']]
+sum(ind[-sample(1:length(ind), 50)])
+```
+
+*Подсказка. Функции `sample()` необходимы границы интервала, из которого она генерирует случайную подвыборку. Одна из границ интервала --- длина вектора, с которым вы работаете.*
+
+<div class="autocheck">
+<input class="taskinput" id="input1" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check1()">
+<div class="taskans" id="taskans1" hidden></div>
+</div>
+
+</div>
+
+```{js, echo=FALSE}
+var input1 = document.getElementById("input1")
+var taskans1 = document.getElementById("taskans1")
+
+function check1() {
+  if (input1.value == '149885') {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+```
 
 
+Особого внимания заслуживает **индексация логическими векторами**. Например, мы хотим отобрать все элементы вектора, которые больше некоторого числа. Как это сделать?
 
+Нам нужен вектор, которым мы будем индексировать исходный вектор. Как его получить? Известно, что при сравнении векторов между собой получается логический вектор. Но ведь число --- это тоже вектор, просто единичной длины? Значит, если мы будем сравнивать вектор с числом, произойдёт recycling, в результате которого каждый элемент вектора будет сравнен с этим числом. То есть:
 
+```{r}
+v1 > 40
+```
+
+Отлично! Вектор есть. Можно ли им проидексировать наш исходный вектор `v1`? Можно! Аналогично тому, как мы это уже делали.
+
+```{r}
+v1[v1 > 40]
+```
+
+Конструкция, возможно, выглядит немного странновато --- но работает!
+
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Возмите вектор `v1`, с которым мы только что работали и с опорой на имеющийся в предыдущем чанке код, вытащите из вектора элементы, который *не больше* среднего значения по вектору.
+
+Мы ещё не изучали описательные статистики, но со средним арифметическим вроде все знакомы? Вычисляется оно с помощью функции `mean()`.
+
+```{r, echo=FALSE}
+v1[v1 <= mean(v1)]
+```
+
+</div>
 
 
 ### NA, NaN, NULL
+
+
+
 
 
 ## Матрицы

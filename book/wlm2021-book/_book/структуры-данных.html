@@ -360,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1] 11 21 26 28 19  6 17 16 25 14  3 29  5  1 23</code></pre>
+<pre><code>##  [1]  1 16 13 10 14 12 20  9 27 23 28 15 22  2  8</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -486,6 +486,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1]  -9 -27  -8  92 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48  67</code></pre>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="структуры-данных.html#cb82-1"></a>v2[<span class="op">-</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)] <span class="co"># все элементы, кроме первых пяти</span></span></code></pre></div>
 <pre><code>##  [1] 100  85 -15  17  58  41 -47  48  63 -45  83  79  65 -48  67</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Запишите в вектор результат следующей команды:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="структуры-данных.html#cb84-1"></a><span class="kw">read.csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/indexing_vectors.csv&#39;</span>)[[<span class="st">&#39;x&#39;</span>]]</span></code></pre></div>
+<p>Задайте положение датчик случайный чисел:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="структуры-данных.html#cb85-1"></a><span class="kw">set.seed</span>(<span class="dv">123</span>)</span></code></pre></div>
+<p>Выберите из получившего вектора все значения, <em>кроме тех</em>, которые попадут в случайную подвыборку из 50 наблюдений. Вычислите сумму элементов получившегося вектора.</p>
+<p><em>Подсказка. Функции <code>sample()</code> необходимы границы интервала, из которого она генерирует случайную подвыборку. Одна из границ интервала — длина вектора, с которым вы работаете.</em></p>
+<div class="autocheck">
+<input class="taskinput" id="input1" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check1()">
+<div id="taskans1" class="taskans" hidden="">
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var input1 = document.getElementById("input1")
+var taskans1 = document.getElementById("taskans1")
+
+function check1() {
+  if (input1.value == '149885') {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+</script>
+<p>Особого внимания заслуживает <strong>индексация логическими векторами</strong>. Например, мы хотим отобрать все элементы вектора, которые больше некоторого числа. Как это сделать?</p>
+<p>Нам нужен вектор, которым мы будем индексировать исходный вектор. Как его получить? Известно, что при сравнении векторов между собой получается логический вектор. Но ведь число — это тоже вектор, просто единичной длины? Значит, если мы будем сравнивать вектор с числом, произойдёт recycling, в результате которого каждый элемент вектора будет сравнен с этим числом. То есть:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="структуры-данных.html#cb86-1"></a>v1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">40</span></span></code></pre></div>
+<pre><code>##  [1]  TRUE  TRUE FALSE  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE
+## [13] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE  TRUE</code></pre>
+<p>Отлично! Вектор есть. Можно ли им проидексировать наш исходный вектор <code>v1</code>? Можно! Аналогично тому, как мы это уже делали.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="структуры-данных.html#cb88-1"></a>v1[v1 <span class="op">&gt;</span><span class="st"> </span><span class="dv">40</span>]</span></code></pre></div>
+<pre><code>## [1]  49  65  74 100  47  71  89  41  87</code></pre>
+<p>Конструкция, возможно, выглядит немного странновато — но работает!</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Возмите вектор <code>v1</code>, с которым мы только что работали и с опорой на имеющийся в предыдущем чанке код, вытащите из вектора элементы, который <em>не больше</em> среднего значения по вектору.</p>
+<p>Мы ещё не изучали описательные статистики, но со средним арифметическим вроде все знакомы? Вычисляется оно с помощью функции <code>mean()</code>.</p>
+<pre><code>##  [1] 25 18 24 37 20 26  3 41 27 36  5 34</code></pre>
+</div>
 </div>
 <div id="na-nan-null" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> NA, NaN, NULL</h3>
