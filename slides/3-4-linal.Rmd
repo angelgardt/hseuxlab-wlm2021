@@ -90,6 +90,17 @@ $\A$ --- матрица коэффициентов системы, $\x$ --- ве
 
 ## Направленный отрезок vs набор чисел
 
+<center>
+<img src="img/vector.jpeg" style="width: 50%"> <br>
+<img src="img/vectors.jpeg" style="width: 30%">
+</center>
+
+## Многомерный вектор
+
+<center>
+<img src="img/multidim_vectors.jpeg" style="width: 50%">
+</center>
+
 
 
 # Действия с матрицами
@@ -141,8 +152,13 @@ $$
 \b = \begin{pmatrix} b_1 & b_2 & \dots & b_n \end{pmatrix}\\
 $$
 $$
-\a \cdot \b = a_1 b_1 + a_2 b_2 + \dots + a_n b_n
+\a \cdot \b = a_1 b_1 + a_2 b_2 + \dots + a_n b_n = \sum_{i=1}^n a_i b_i
 $$
+
+```{r}
+a <- 1:10; b <- 10:1
+a %*% b
+```
 
 
 ## Произведение матриц (матричное умножение)
@@ -272,3 +288,13 @@ $$
 $$
 
 Одним из условий *вырожденности матрицы* является линейная зависимость строк или столбцов.
+
+
+## Детерминант матрицы и обратная матрица в R
+
+```{r}
+A <- matrix(sample(1:10, 9, replace = TRUE), nrow = 3)
+det(A)
+solve(A)
+```
+
