@@ -370,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1] 17 10 14 27 21  4 26 20 18 29 12  6 16 13 24</code></pre>
+<pre><code>##  [1] 29  2 25 11 23  6  7 24  9 13 17 27 26 12 15</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -886,6 +886,33 @@ function check1() {
 ## [3,]   96   93   63
 ## [4,]   38   69   13</code></pre>
 <p>Обратите внимание, что в таком случае сразу возвращается «голый» объект — вектор, матрица, etc. Запомните этот способ — так мы будем делать о-о-очень часто (примерно всегда).</p>
+<p><img class="taskimg" src="img/code.png">
+&lt;div class=“task”</p>
+<div class="autocheck">
+<input class="taskinput" id="input2" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check2()">
+<div id="taskans1" class="taskans" hidden="">
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var input2 = document.getElementById("input1")
+var taskans1 = document.getElementById("taskans1")
+
+function check1() {
+  if (input1.value == '149885') {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+</script>
 </div>
 </div>
 <div id="датафреймы" class="section level2">

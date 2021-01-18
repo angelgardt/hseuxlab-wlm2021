@@ -693,6 +693,137 @@ l3$matrix
 
 Обратите внимание, что в таком случае сразу возвращается «голый» объект --- вектор, матрица, etc. Запомните этот способ --- так мы будем делать о-о-очень часто (примерно всегда).
 
+<img class="taskimg" src="img/code.png">
+<div class="task"
+```{r, include=FALSE, eval=FALSE}
+hugelist <- list(
+  book1 = list(
+    main = list(
+      title = c('Machine', 'Learning', 'and', 'Artificial', 'Intelligence'),
+      authors = c('Ameet V Joshi')
+      ),
+    copyright_info = list(
+      copyright = 2020,
+      publisher = 'Springer International Publishing',
+      copyright_holder = 'Springer Nature Switzerland AG'
+      ),
+    identifiers = list(
+      DOI = '10.1007/978-3-030-26622-6',
+      ISBN = c(
+        eBook = '978-3-030-26622-6',
+        Hardcover_ISBN = '978-3-030-26621-9',
+        Softcover_ISBN = '978-3-030-26624-0'
+      )
+    )
+  ),
+  book2 = list(
+    main = list(
+      title = c('Digital', 'Transformation', 'of', 'the', 'Design', 'Construction', 'and', 'Management', 'Processes', 'of', 'the', 'Built', 'Environment'),
+      authors = c('Bruno Daniotti', 'Marco Gianinetto', 'Stefano Della Torre')
+      ),
+    copyright_info = list(
+      copyright = 2020,
+      publisher = 'Springer International Publishing',
+      copyright_holder = 'The Editor(s) (if applicable) and The Author(s)'
+      ),
+    identifiers = list(
+      DOI = '10.1007/978-3-030-33570-0',
+      ISBN = c(
+        eBook = '978-3-030-33570-0',
+        Hardcover_ISBN = '978-3-030-33569-4',
+        Softcover_ISBN = '978-3-030-33572-4'
+      )
+    )
+  ),
+  book3 = list(
+    main = list(
+      title = c('Probabilistic', 'Graphical', 'Models'),
+      authors = c('Luis Enrique Sucar')
+      ),
+    copyright_info = list(
+      copyright = 2021,
+      publisher = 'Springer International Publishing',
+      copyright_holder = 'Springer Nature Switzerland AG'
+      ),
+    identifiers = list(
+      DOI = '10.1007/978-3-030-61943-5',
+      ISBN = c(
+        eBook = '978-3-030-61943-5',
+        Hardcover_ISBN = '978-3-030-61942-8',
+        Softcover_ISBN = NA
+      )
+    )
+  ),
+  book4 = list(
+    main = list(
+      title = c('Computational', 'Methods', 'for', 'Deep', 'Learning'),
+      subtitle = c('Theoretic, Practice and Applications'),
+      authors = c('Wei Qi Yan')
+      ),
+    copyright_info = list(
+      copyright = 2021,
+      publisher = 'Springer International Publishing',
+      copyright_holder = 'The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG'
+      ),
+    identifiers = list(
+      DOI = '10.1007/978-3-030-61081-4',
+      ISBN = c(
+        eBook = '978-3-030-61081-4',
+        Hardcover_ISBN = '978-3-030-61080-7',
+        Softcover_ISBN = NA
+      )
+    )
+  ),
+  book5 = list(
+    main = list(
+      title = c('The', 'Art', 'of', 'War', 'for', 'Computer', 'Security'),
+      authors = c('Tom Madsen')
+      ),
+    copyright_info = list(
+      copyright = 2019,
+      publisher = 'Springer International Publishing',
+      copyright_holder = 'Springer Nature Switzerland AG'
+      ),
+    identifiers = list(
+      DOI = '10.1007/978-3-030-28569-2',
+      ISBN = c(
+        eBook = '978-3-030-28569-2',
+        Hardcover_ISBN = '978-3-030-28568-5',
+        Softcover_ISBN = '978-3-030-28571-5'
+      )
+    )
+  )
+)
+str(hugelist)
+save.image('list.RData')
+```
+
+
+<div class="autocheck">
+<input class="taskinput" id="input2" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check2()">
+<div class="taskans" id="taskans1" hidden></div>
+</div>
+
+</div>
+
+```{js, echo=FALSE}
+var input2 = document.getElementById("input1")
+var taskans1 = document.getElementById("taskans1")
+
+function check1() {
+  if (input1.value == '149885') {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'Верно!';
+    taskans1.style = "color:  #00aa4a";
+  } else
+  {
+    taskans1.hidden = false;
+    taskans1.innerHTML = 'У меня другой ответ…';
+    taskans1.style = "color:  #b73239";
+  }
+}
+```
 
 
 ## Датафреймы
