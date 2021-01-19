@@ -694,7 +694,8 @@ l3$matrix
 Обратите внимание, что в таком случае сразу возвращается «голый» объект --- вектор, матрица, etc. Запомните этот способ --- так мы будем делать о-о-очень часто (примерно всегда).
 
 <img class="taskimg" src="img/code.png">
-<div class="task"
+<div class="task">
+
 ```{r, include=FALSE, eval=FALSE}
 hugelist <- list(
   book1 = list(
@@ -711,8 +712,8 @@ hugelist <- list(
       DOI = '10.1007/978-3-030-26622-6',
       ISBN = c(
         eBook = '978-3-030-26622-6',
-        Hardcover_ISBN = '978-3-030-26621-9',
-        Softcover_ISBN = '978-3-030-26624-0'
+        Hardcover = '978-3-030-26621-9',
+        Softcover = '978-3-030-26624-0'
       )
     )
   ),
@@ -730,8 +731,8 @@ hugelist <- list(
       DOI = '10.1007/978-3-030-33570-0',
       ISBN = c(
         eBook = '978-3-030-33570-0',
-        Hardcover_ISBN = '978-3-030-33569-4',
-        Softcover_ISBN = '978-3-030-33572-4'
+        Hardcover = '978-3-030-33569-4',
+        Softcover = '978-3-030-33572-4'
       )
     )
   ),
@@ -749,8 +750,8 @@ hugelist <- list(
       DOI = '10.1007/978-3-030-61943-5',
       ISBN = c(
         eBook = '978-3-030-61943-5',
-        Hardcover_ISBN = '978-3-030-61942-8',
-        Softcover_ISBN = NA
+        Hardcover = '978-3-030-61942-8',
+        Softcover = NA
       )
     )
   ),
@@ -769,8 +770,8 @@ hugelist <- list(
       DOI = '10.1007/978-3-030-61081-4',
       ISBN = c(
         eBook = '978-3-030-61081-4',
-        Hardcover_ISBN = '978-3-030-61080-7',
-        Softcover_ISBN = NA
+        Hardcover = '978-3-030-61080-7',
+        Softcover = NA
       )
     )
   ),
@@ -788,8 +789,8 @@ hugelist <- list(
       DOI = '10.1007/978-3-030-28569-2',
       ISBN = c(
         eBook = '978-3-030-28569-2',
-        Hardcover_ISBN = '978-3-030-28568-5',
-        Softcover_ISBN = '978-3-030-28571-5'
+        Hardcover = '978-3-030-28568-5',
+        Softcover = '978-3-030-28571-5'
       )
     )
   )
@@ -798,31 +799,89 @@ str(hugelist)
 save.image('list.RData')
 ```
 
+Скачайте [по ссылке](https://github.com/angelgardt/hseuxlab-wlm2021/blob/master/book/wlm2021-book/list.RData?raw=true) файл `list.RData`. Поместите его в текущую рабочую директорию. Затем выполните команду ниже:
+
+```{r, eval=FALSE}
+load('list.RData')
+```
+
+В окне Environment появиться объект типа «список», который содержит библиографическую информацию о нескольких книгах. Изучите этот объект и ответьте на вопросы ниже с применением навыков индексации списков.
+
+
+1. Сколько слов содержится в названии первой книги?
 
 <div class="autocheck">
 <input class="taskinput" id="input2" type="text">
 <input class="taskcheck" type="button" value="Проверить" onClick="check2()">
-<div class="taskans" id="taskans1" hidden></div>
+<div class="taskans" id="taskans2" hidden></div>
 </div>
+
+2. Кто автор самой старой из представленных книг?
+
+<div class="autocheck">
+<input class="taskinput" id="input3" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check3()">
+<div class="taskans" id="taskans3" hidden></div>
+</div>
+
+3. У какой (каких) книг отсутствует Softcover ISBN? *В ответ введите одно число или несколько чисел через пробел.*
+
+<div class="autocheck">
+<input class="taskinput" id="input4" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check4()">
+<div class="taskans" id="taskans4" hidden></div>
+</div>
+
 
 </div>
 
 ```{js, echo=FALSE}
-var input2 = document.getElementById("input1")
-var taskans1 = document.getElementById("taskans1")
+var input2 = document.getElementById("input2")
+var taskans2 = document.getElementById("taskans2")
+var input3 = document.getElementById("input3")
+var taskans3 = document.getElementById("taskans3")
+var input4 = document.getElementById("input4")
+var taskans4 = document.getElementById("taskans4")
 
-function check1() {
-  if (input1.value == '149885') {
-    taskans1.hidden = false;
-    taskans1.innerHTML = 'Верно!';
-    taskans1.style = "color:  #00aa4a";
+function check2() {
+  if (input2.value == '5') {
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'Верно!';
+    taskans2.style = "color:  #00aa4a";
   } else
   {
-    taskans1.hidden = false;
-    taskans1.innerHTML = 'У меня другой ответ…';
-    taskans1.style = "color:  #b73239";
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'У меня другой ответ…';
+    taskans2.style = "color:  #b73239";
   }
 }
+
+function check3() {
+  if (input3.value.toLowerCase() == 'tom madsen') {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'Верно!';
+    taskans3.style = "color:  #00aa4a";
+  } else
+  {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'У меня другой ответ…';
+    taskans3.style = "color:  #b73239";
+  }
+}
+
+function check4() {
+  if (input4.value == '3 4') {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'Верно!';
+    taskans4.style = "color:  #00aa4a";
+  } else
+  {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'У меня другой ответ…';
+    taskans4.style = "color:  #b73239";
+  }
+}
+
 ```
 
 

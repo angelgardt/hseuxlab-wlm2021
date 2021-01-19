@@ -370,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1] 29  2 25 11 23  6  7 24  9 13 17 27 26 12 15</code></pre>
+<pre><code>##  [1]  5 21  9 17 10  6 13  2  7 23 11 29  1 25 30</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -886,32 +886,89 @@ function check1() {
 ## [3,]   96   93   63
 ## [4,]   38   69   13</code></pre>
 <p>Обратите внимание, что в таком случае сразу возвращается «голый» объект — вектор, матрица, etc. Запомните этот способ — так мы будем делать о-о-очень часто (примерно всегда).</p>
-<p><img class="taskimg" src="img/code.png">
-&lt;div class=“task”</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Скачайте <a href="https://github.com/angelgardt/hseuxlab-wlm2021/blob/master/book/wlm2021-book/list.RData?raw=true">по ссылке</a> файл <code>list.RData</code>. Поместите его в текущую рабочую директорию. Затем выполните команду ниже:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="структуры-данных.html#cb196-1"></a><span class="kw">load</span>(<span class="st">&#39;list.RData&#39;</span>)</span></code></pre></div>
+<p>В окне Environment появиться объект типа «список», который содержит библиографическую информацию о нескольких книгах. Изучите этот объект и ответьте на вопросы ниже с применением навыков индексации списков.</p>
+<ol style="list-style-type: decimal">
+<li>Сколько слов содержится в названии первой книги?</li>
+</ol>
 <div class="autocheck">
 <input class="taskinput" id="input2" type="text">
 <input class="taskcheck" type="button" value="Проверить" onClick="check2()">
-<div id="taskans1" class="taskans" hidden="">
+<div id="taskans2" class="taskans" hidden="">
+
+</div>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Кто автор самой старой из представленных книг?</li>
+</ol>
+<div class="autocheck">
+<input class="taskinput" id="input3" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check3()">
+<div id="taskans3" class="taskans" hidden="">
+
+</div>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>У какой (каких) книг отсутствует Softcover ISBN? <em>В ответ введите одно число или несколько чисел через пробел.</em></li>
+</ol>
+<div class="autocheck">
+<input class="taskinput" id="input4" type="text">
+<input class="taskcheck" type="button" value="Проверить" onClick="check4()">
+<div id="taskans4" class="taskans" hidden="">
 
 </div>
 </div>
 </div>
 <script type="text/javascript">
-var input2 = document.getElementById("input1")
-var taskans1 = document.getElementById("taskans1")
+var input2 = document.getElementById("input2")
+var taskans2 = document.getElementById("taskans2")
+var input3 = document.getElementById("input3")
+var taskans3 = document.getElementById("taskans3")
+var input4 = document.getElementById("input4")
+var taskans4 = document.getElementById("taskans4")
 
-function check1() {
-  if (input1.value == '149885') {
-    taskans1.hidden = false;
-    taskans1.innerHTML = 'Верно!';
-    taskans1.style = "color:  #00aa4a";
+function check2() {
+  if (input2.value == '5') {
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'Верно!';
+    taskans2.style = "color:  #00aa4a";
   } else
   {
-    taskans1.hidden = false;
-    taskans1.innerHTML = 'У меня другой ответ…';
-    taskans1.style = "color:  #b73239";
+    taskans2.hidden = false;
+    taskans2.innerHTML = 'У меня другой ответ…';
+    taskans2.style = "color:  #b73239";
   }
 }
+
+function check3() {
+  if (input3.value.toLowerCase() == 'tom madsen') {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'Верно!';
+    taskans3.style = "color:  #00aa4a";
+  } else
+  {
+    taskans3.hidden = false;
+    taskans3.innerHTML = 'У меня другой ответ…';
+    taskans3.style = "color:  #b73239";
+  }
+}
+
+function check4() {
+  if (input4.value == '3 4') {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'Верно!';
+    taskans4.style = "color:  #00aa4a";
+  } else
+  {
+    taskans4.hidden = false;
+    taskans4.innerHTML = 'У меня другой ответ…';
+    taskans4.style = "color:  #b73239";
+  }
+}
+
 </script>
 </div>
 </div>
