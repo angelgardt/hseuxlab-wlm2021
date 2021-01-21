@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Функции | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Функции | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="структуры-данных.html"/>
-<link rel="next" href="строки.html"/>
+<link rel="next" href="strings.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,11 +50,70 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -69,7 +128,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">HSE UX LAB | WLM 2021</a></li>
+<li><a href="">HSE UX LAB | WLM 2021</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
@@ -79,7 +138,7 @@
 <li class="part"><span><b>I R programming</b></span></li>
 <li class="chapter" data-level="1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html"><i class="fa fa-check"></i><b>1</b> Знакомство с R и RStudio</a><ul>
 <li class="chapter" data-level="1.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#что-это-и-откуда"><i class="fa fa-check"></i><b>1.1</b> Что это и откуда?</a></li>
-<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#почему-r"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
+<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#whyr"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-он-лучше-питона"><i class="fa fa-check"></i><b>1.2.1</b> А он лучше Питона?</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>1.3</b> Установка R и RStudio</a><ul>
@@ -109,20 +168,44 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion-part-two"><i class="fa fa-check"></i><b>3.1.1</b> Coercion [part two]</a></li>
 <li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#операции-с-векторами"><i class="fa fa-check"></i><b>3.1.3</b> Операции с векторами</a></li>
+<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.4</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.5" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-векторов"><i class="fa fa-check"></i><b>3.1.5</b> Индексация векторов</a></li>
+<li class="chapter" data-level="3.1.6" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.6</b> NA, NaN, NULL</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
-<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
+<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-матриц"><i class="fa fa-check"></i><b>3.2.1</b> Индексация матриц</a></li>
+<li class="chapter" data-level="3.2.2" data-path="структуры-данных.html"><a href="структуры-данных.html#операции-в-матрицами"><i class="fa fa-check"></i><b>3.2.2</b> Операции в матрицами</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-списков"><i class="fa fa-check"></i><b>3.3.1</b> Индексация списков</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="функции-1.html"><a href="функции-1.html"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
-<li class="chapter" data-level="4.1" data-path="функции-1.html"><a href="функции-1.html#открытый-исходный-код"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
+<li class="chapter" data-level="4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="функции.html"><a href="функции.html"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="строки.html"><a href="строки.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
-<li class="chapter" data-level="5.1" data-path="строки.html"><a href="строки.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.1</b> Регулярные выражения</a></li>
+<li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
+<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#установка-дополнительных-пакетов"><i class="fa fa-check"></i><b>5.1</b> Установка дополнительных пакетов</a></li>
+<li class="chapter" data-level="5.2" data-path="strings.html"><a href="strings.html#создание-строк"><i class="fa fa-check"></i><b>5.2</b> Создание строк</a></li>
+<li class="chapter" data-level="5.3" data-path="strings.html"><a href="strings.html#конкатенация-строк"><i class="fa fa-check"></i><b>5.3</b> Конкатенация строк</a></li>
+<li class="chapter" data-level="5.4" data-path="strings.html"><a href="strings.html#разделение-строк"><i class="fa fa-check"></i><b>5.4</b> Разделение строк</a></li>
+<li class="chapter" data-level="5.5" data-path="strings.html"><a href="strings.html#сортировка-строк"><i class="fa fa-check"></i><b>5.5</b> Сортировка строк</a></li>
+<li class="chapter" data-level="5.6" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>5.6</b> Изменение регистра</a></li>
+<li class="chapter" data-level="5.7" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>5.7</b> Поиск подстроки</a></li>
+<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>5.8</b> Изменение строк</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>5.8.1</b> Выделение подстроки</a></li>
+<li class="chapter" data-level="5.8.2" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>5.8.2</b> Замена подстроки</a></li>
+<li class="chapter" data-level="5.8.3" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>5.8.3</b> Удаление подстроки</a></li>
+<li class="chapter" data-level="5.8.4" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>5.8.4</b> Транслитерация строк</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.9</b> Регулярные выражения</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="strings.html"><a href="strings.html#метасимволы"><i class="fa fa-check"></i><b>5.9.1</b> Метасимволы</a></li>
+<li class="chapter" data-level="5.9.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.9.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="5.9.3" data-path="strings.html"><a href="strings.html#quant"><i class="fa fa-check"></i><b>5.9.3</b> Квантификация</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html"><i class="fa fa-check"></i><b>6</b> Работа с реальными данными</a><ul>
 <li class="chapter" data-level="6.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#рабочая-директория"><i class="fa fa-check"></i><b>6.1</b> Рабочая директория</a></li>
@@ -134,7 +217,12 @@
 <li class="chapter" data-level="7" data-path="предобработка-данных-концепция-tidy-data.html"><a href="предобработка-данных-концепция-tidy-data.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
 <li class="chapter" data-level="8" data-path="визуализация-данных.html"><a href="визуализация-данных.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
-<li class="chapter" data-level="9" data-path="математический-ликбез.html"><a href="математический-ликбез.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a></li>
+<li class="chapter" data-level="9" data-path="математический-ликбез.html"><a href="математический-ликбез.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
+<li class="chapter" data-level="9.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-алгебры-логики"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
+<li class="chapter" data-level="9.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-теории-множеств"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
+<li class="chapter" data-level="9.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-математического-анализа"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
+<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
 <li class="chapter" data-level="11" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
 <li class="chapter" data-level="12" data-path="вероятность-и-случайные-величины.html"><a href="вероятность-и-случайные-величины.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
@@ -180,16 +268,7 @@
 <li class="chapter" data-level="28" data-path="конфирматорный-факторный-анализ.html"><a href="конфирматорный-факторный-анализ.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="что-дальше.html"><a href="что-дальше.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
 <li class="appendix"><span><b>Приложения</b></span></li>
-<li class="chapter" data-level="A" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html"><i class="fa fa-check"></i><b>A</b> Ещё о математике</a><ul>
-<li class="chapter" data-level="A.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#числа"><i class="fa fa-check"></i><b>A.1</b> Числа</a><ul>
-<li class="chapter" data-level="A.1.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#натуральные-числа"><i class="fa fa-check"></i><b>A.1.1</b> Натуральные числа</a></li>
-<li class="chapter" data-level="A.1.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#рациональные-и-иррациональные-числа"><i class="fa fa-check"></i><b>A.1.2</b> Рациональные и иррациональные числа</a></li>
-<li class="chapter" data-level="A.1.3" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#вещественные-числа"><i class="fa fa-check"></i><b>A.1.3</b> Вещественные числа</a></li>
-<li class="chapter" data-level="A.1.4" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#модуль-числа"><i class="fa fa-check"></i><b>A.1.4</b> Модуль числа</a></li>
-</ul></li>
-<li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
-</ul></li>
-<li class="chapter" data-level="B" data-path="данные-и-железо.html"><a href="данные-и-железо.html"><i class="fa fa-check"></i><b>B</b> Данные и железо</a></li>
+<li class="chapter" data-level="A" data-path="iron.html"><a href="iron.html"><i class="fa fa-check"></i><b>A</b> Данные и железо</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
@@ -216,10 +295,173 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="функции-1" class="section level1">
+<div id="функции" class="section level1">
 <h1><span class="header-section-number">4</span> Функции</h1>
+<p>Безусловно, в R дикое множество различных функций. Но иногда нам и их не хватает. И возникает потребность написать свои. Сделать это, на самом деле, вовсе не так сложно, как может показаться. Разберёмся по порядку.</p>
+<p>Для начала нам нужно осознать, что функция — это объект (такой же объект, как и вектор, матрица или список). И этот объект создается с помощью некоторой функции и имеет имя, которое возникает в результате присваивания. Пока вроде всё знакомо, не так ли?</p>
+<p>Функция, которая делает функции называется <code>function()</code> (внезапно!). Таким образом выглядит её конструкция:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">my_func &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  </a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">}</a></code></pre></div>
+<p><code>my_func</code> — название нашей новой функции, <code>function()</code> — собственно функция, которая требует на вход аргументы нашей будушей функции, а в фигурных скобках мы будем описывать, как наша функция работает.</p>
+<p>Теперь нам нужно вспомнить, что функция должна что-то принимать на вход и что-то возвращать в результате работы. На самом деле можно начать с ещё более простого варианта — когда функция даже ничего не принимает на вход, а просто что-то возвращает после выполнения:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">return</span>(<span class="st">&quot;Hello, world!&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
+<p>Функция <code>return()</code> определяет, что будет возвращать наша функция как итог работы. В данном случае она возвращает нам строку <code>&quot;Hello, world!&quot;</code>. Мы можем немного изменить нашу функцию, чтобы она приветствовала не только мир, но и того, кто к ней обратился:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">return</span>(phrase)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, Антон!&quot;</code></pre>
+<p>Теперь функция приветствует меня и не только — надо всего лишь указать имя того, кому надо сказать «привет».</p>
+<p>А что будет, если не указать ничего?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">my_hello</span>()</a></code></pre></div>
+<pre><code>## Error in paste0(&quot;Hello, &quot;, name, &quot;!&quot;): argument &quot;name&quot; is missing, with no default</code></pre>
+<p>Функция нам сообщает, что аргумент <code>name</code> является обязательным. Что ж, если мы не хотим такой ошибки, то можем задать <em>значение по умолчанию</em>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="kw">return</span>(phrase)</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">}</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, Антон!&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">my_hello</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
+<p>Теперь функция приветствует того, кто указан в её аргументе, а если не указано никого — приветствует весь мир! Pacific function.</p>
+<p>Мы создавали промежуточную переменную <code>phrase</code>, в которую записывали результат работы функции <code>paste0()</code>, которая занимается соединением строк. Но у нас достаточно простая функция, поэтому нет необходимости занимать лишние строки. Можно упростить её следующим образом:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="kw">return</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>))</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
+<p>Но можно пойти и ещё дальше!</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
+<p>Даже <code>return()</code> не обязателен! Функция просто возвращает результат последней выплоненной команды. Красота!</p>
+<p>Общий принцип создания и работы функции понятен. Попробуем сделать что-то более интересное. Например, применим какие-то логические конструкции.</p>
+<p>Напишем простую функцию, которая будет определять, чётное число или нечётное. Чётность определяется остатком от деления на два: если остаток равен нулю, то число чётное, иначе — нечётное.</p>
+<blockquote>
+<p>Конечно, в R как и в любом другом языке программирования есть if else statement и for and while loops. Но зачем они нам, если есть <code>ifelse()</code> и векторизация?</p>
+</blockquote>
+<p>Чтобы написать такую функцию, нам надо понять, как работает функция <code>ifelse()</code>. Работает она достаточно просто: она требует на вход три аргумента — условие, которое необходимо проверить, значение, которое необходимо вернуть, если условие выполнено, и значение, которое необходимо вернуть, если условие не выполнено. Например,</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">ifelse</span>(<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;неверно&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">ifelse</span>(<span class="dv">10</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;верно&quot;</code></pre>
+<p>Как мы можем использовать эту функцию для написания кастомной? Вот так:ъ</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">  <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="kw">odd_even</span>(<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;even&quot;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">odd_even</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;odd&quot;</code></pre>
+<p>Но можно написать ещё короче! Всего в одну строку!</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">odd_even</span>(<span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;odd&quot;</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">odd_even</span>(<span class="dv">8</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;even&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Посчитайте пингвинов! Напишите функцию, которая выводит корректную форму слова «пингвин» в ответ на ввод некоторого числа.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;1 пингвин&quot;</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;3 пингвина&quot;</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;10 пингвинов&quot;</code></pre>
+</div>
 <div id="открытый-исходный-код" class="section level2">
 <h2><span class="header-section-number">4.1</span> Открытый исходный код</h2>
+<p>В R можно не только написать свои функции, но и посмотреть, как написаны другие, то есть увидеть исходный код. Для этого надо написать название функции и выполнить её как команду (без скобок):</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">sd <span class="co"># стандартное отклонение --- корень из дисперсии</span></a></code></pre></div>
+<pre><code>## function (x, na.rm = FALSE) 
+## sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
+##     na.rm = na.rm))
+## &lt;bytecode: 0x7fd2e75e6e30&gt;
+## &lt;environment: namespace:stats&gt;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">lm <span class="co"># функция для построения линейной регрессионной модели</span></a></code></pre></div>
+<pre><code>## function (formula, data, subset, weights, na.action, method = &quot;qr&quot;, 
+##     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
+##     contrasts = NULL, offset, ...) 
+## {
+##     ret.x &lt;- x
+##     ret.y &lt;- y
+##     cl &lt;- match.call()
+##     mf &lt;- match.call(expand.dots = FALSE)
+##     m &lt;- match(c(&quot;formula&quot;, &quot;data&quot;, &quot;subset&quot;, &quot;weights&quot;, &quot;na.action&quot;, 
+##         &quot;offset&quot;), names(mf), 0L)
+##     mf &lt;- mf[c(1L, m)]
+##     mf$drop.unused.levels &lt;- TRUE
+##     mf[[1L]] &lt;- quote(stats::model.frame)
+##     mf &lt;- eval(mf, parent.frame())
+##     if (method == &quot;model.frame&quot;) 
+##         return(mf)
+##     else if (method != &quot;qr&quot;) 
+##         warning(gettextf(&quot;method = &#39;%s&#39; is not supported. Using &#39;qr&#39;&quot;, 
+##             method), domain = NA)
+##     mt &lt;- attr(mf, &quot;terms&quot;)
+##     y &lt;- model.response(mf, &quot;numeric&quot;)
+##     w &lt;- as.vector(model.weights(mf))
+##     if (!is.null(w) &amp;&amp; !is.numeric(w)) 
+##         stop(&quot;&#39;weights&#39; must be a numeric vector&quot;)
+##     offset &lt;- model.offset(mf)
+##     mlm &lt;- is.matrix(y)
+##     ny &lt;- if (mlm) 
+##         nrow(y)
+##     else length(y)
+##     if (!is.null(offset)) {
+##         if (!mlm) 
+##             offset &lt;- as.vector(offset)
+##         if (NROW(offset) != ny) 
+##             stop(gettextf(&quot;number of offsets is %d, should equal %d (number of observations)&quot;, 
+##                 NROW(offset), ny), domain = NA)
+##     }
+##     if (is.empty.model(mt)) {
+##         x &lt;- NULL
+##         z &lt;- list(coefficients = if (mlm) matrix(NA_real_, 0, 
+##             ncol(y)) else numeric(), residuals = y, fitted.values = 0 * 
+##             y, weights = w, rank = 0L, df.residual = if (!is.null(w)) sum(w != 
+##             0) else ny)
+##         if (!is.null(offset)) {
+##             z$fitted.values &lt;- offset
+##             z$residuals &lt;- y - offset
+##         }
+##     }
+##     else {
+##         x &lt;- model.matrix(mt, mf, contrasts)
+##         z &lt;- if (is.null(w)) 
+##             lm.fit(x, y, offset = offset, singular.ok = singular.ok, 
+##                 ...)
+##         else lm.wfit(x, y, w, offset = offset, singular.ok = singular.ok, 
+##             ...)
+##     }
+##     class(z) &lt;- c(if (mlm) &quot;mlm&quot;, &quot;lm&quot;)
+##     z$na.action &lt;- attr(mf, &quot;na.action&quot;)
+##     z$offset &lt;- offset
+##     z$contrasts &lt;- attr(x, &quot;contrasts&quot;)
+##     z$xlevels &lt;- .getXlevels(mt, mf)
+##     z$call &lt;- cl
+##     z$terms &lt;- mt
+##     if (model) 
+##         z$model &lt;- mf
+##     if (ret.x) 
+##         z$x &lt;- x
+##     if (ret.y) 
+##         z$y &lt;- y
+##     if (!qr) 
+##         z$qr &lt;- NULL
+##     z
+## }
+## &lt;bytecode: 0x7fd2e76a8f60&gt;
+## &lt;environment: namespace:stats&gt;</code></pre>
 
 </div>
 </div>
@@ -229,7 +471,7 @@
         </div>
       </div>
 <a href="структуры-данных.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="строки.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
