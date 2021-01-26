@@ -184,8 +184,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
-<li class="chapter" data-level="4.1" data-path="функции.html"><a href="функции.html"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#открытый-исходный-код"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
 <li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#установка-дополнительных-пакетов"><i class="fa fa-check"></i><b>5.1</b> Установка дополнительных пакетов</a></li>
@@ -295,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="функции" class="section level1">
+<div id="functions" class="section level1">
 <h1><span class="header-section-number">4</span> Функции</h1>
 <p>Безусловно, в R дикое множество различных функций. Но иногда нам и их не хватает. И возникает потребность написать свои. Сделать это, на самом деле, вовсе не так сложно, как может показаться. Разберёмся по порядку.</p>
 <p>Для начала нам нужно осознать, что функция — это объект (такой же объект, как и вектор, матрица или список). И этот объект создается с помощью некоторой функции и имеет имя, которое возникает в результате присваивания. Пока вроде всё знакомо, не так ли?</p>
@@ -385,7 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## function (x, na.rm = FALSE) 
 ## sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
 ##     na.rm = na.rm))
-## &lt;bytecode: 0x7f83c52b2430&gt;
+## &lt;bytecode: 0x7fabb3e95230&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">lm <span class="co"># функция для построения линейной регрессионной модели</span></a></code></pre></div>
 <pre><code>## function (formula, data, subset, weights, na.action, method = &quot;qr&quot;, 
@@ -460,7 +460,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         z$qr &lt;- NULL
 ##     z
 ## }
-## &lt;bytecode: 0x7f83c52e8960&gt;
+## &lt;bytecode: 0x7fabb0295b60&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
 
 </div>

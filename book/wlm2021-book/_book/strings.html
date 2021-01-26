@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Строки | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Строки | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="функции-1.html"/>
+<link rel="prev" href="функции.html"/>
 <link rel="next" href="работа-с-реальными-данными.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,11 +50,73 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -79,7 +141,7 @@
 <li class="part"><span><b>I R programming</b></span></li>
 <li class="chapter" data-level="1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html"><i class="fa fa-check"></i><b>1</b> Знакомство с R и RStudio</a><ul>
 <li class="chapter" data-level="1.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#что-это-и-откуда"><i class="fa fa-check"></i><b>1.1</b> Что это и откуда?</a></li>
-<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#почему-r"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
+<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#whyr"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
 <li class="chapter" data-level="1.2.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-он-лучше-питона"><i class="fa fa-check"></i><b>1.2.1</b> А он лучше Питона?</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>1.3</b> Установка R и RStudio</a><ul>
@@ -109,20 +171,44 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
+<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion-part-two"><i class="fa fa-check"></i><b>3.1.1</b> Coercion [part two]</a></li>
 <li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#операции-с-векторами"><i class="fa fa-check"></i><b>3.1.3</b> Операции с векторами</a></li>
+<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.4</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.5" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-векторов"><i class="fa fa-check"></i><b>3.1.5</b> Индексация векторов</a></li>
+<li class="chapter" data-level="3.1.6" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.6</b> NA, NaN, NULL</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
-<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
+<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-матриц"><i class="fa fa-check"></i><b>3.2.1</b> Индексация матриц</a></li>
+<li class="chapter" data-level="3.2.2" data-path="структуры-данных.html"><a href="структуры-данных.html#операции-в-матрицами"><i class="fa fa-check"></i><b>3.2.2</b> Операции в матрицами</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#индексация-списков"><i class="fa fa-check"></i><b>3.3.1</b> Индексация списков</a></li>
+</ul></li>
 <li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="функции-1.html"><a href="функции-1.html"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
-<li class="chapter" data-level="4.1" data-path="функции-1.html"><a href="функции-1.html#открытый-исходный-код"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
+<li class="chapter" data-level="4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="функции.html"><a href="функции.html"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
-<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.1</b> Регулярные выражения</a></li>
+<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#установка-дополнительных-пакетов"><i class="fa fa-check"></i><b>5.1</b> Установка дополнительных пакетов</a></li>
+<li class="chapter" data-level="5.2" data-path="strings.html"><a href="strings.html#создание-строк"><i class="fa fa-check"></i><b>5.2</b> Создание строк</a></li>
+<li class="chapter" data-level="5.3" data-path="strings.html"><a href="strings.html#конкатенация-строк"><i class="fa fa-check"></i><b>5.3</b> Конкатенация строк</a></li>
+<li class="chapter" data-level="5.4" data-path="strings.html"><a href="strings.html#разделение-строк"><i class="fa fa-check"></i><b>5.4</b> Разделение строк</a></li>
+<li class="chapter" data-level="5.5" data-path="strings.html"><a href="strings.html#сортировка-строк"><i class="fa fa-check"></i><b>5.5</b> Сортировка строк</a></li>
+<li class="chapter" data-level="5.6" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>5.6</b> Изменение регистра</a></li>
+<li class="chapter" data-level="5.7" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>5.7</b> Поиск подстроки</a></li>
+<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>5.8</b> Изменение строк</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>5.8.1</b> Выделение подстроки</a></li>
+<li class="chapter" data-level="5.8.2" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>5.8.2</b> Замена подстроки</a></li>
+<li class="chapter" data-level="5.8.3" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>5.8.3</b> Удаление подстроки</a></li>
+<li class="chapter" data-level="5.8.4" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>5.8.4</b> Транслитерация строк</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.9</b> Регулярные выражения</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="strings.html"><a href="strings.html#метасимволы"><i class="fa fa-check"></i><b>5.9.1</b> Метасимволы</a></li>
+<li class="chapter" data-level="5.9.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.9.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="5.9.3" data-path="strings.html"><a href="strings.html#quant"><i class="fa fa-check"></i><b>5.9.3</b> Квантификация</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html"><i class="fa fa-check"></i><b>6</b> Работа с реальными данными</a><ul>
 <li class="chapter" data-level="6.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#рабочая-директория"><i class="fa fa-check"></i><b>6.1</b> Рабочая директория</a></li>
@@ -134,7 +220,12 @@
 <li class="chapter" data-level="7" data-path="предобработка-данных-концепция-tidy-data.html"><a href="предобработка-данных-концепция-tidy-data.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
 <li class="chapter" data-level="8" data-path="визуализация-данных.html"><a href="визуализация-данных.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
-<li class="chapter" data-level="9" data-path="математический-ликбез.html"><a href="математический-ликбез.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a></li>
+<li class="chapter" data-level="9" data-path="математический-ликбез.html"><a href="математический-ликбез.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
+<li class="chapter" data-level="9.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-алгебры-логики"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
+<li class="chapter" data-level="9.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-теории-множеств"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
+<li class="chapter" data-level="9.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-математического-анализа"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
+<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
 <li class="chapter" data-level="11" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
 <li class="chapter" data-level="12" data-path="вероятность-и-случайные-величины.html"><a href="вероятность-и-случайные-величины.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
@@ -180,16 +271,7 @@
 <li class="chapter" data-level="28" data-path="конфирматорный-факторный-анализ.html"><a href="конфирматорный-факторный-анализ.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="что-дальше.html"><a href="что-дальше.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
 <li class="appendix"><span><b>Приложения</b></span></li>
-<li class="chapter" data-level="A" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html"><i class="fa fa-check"></i><b>A</b> Ещё о математике</a><ul>
-<li class="chapter" data-level="A.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#числа"><i class="fa fa-check"></i><b>A.1</b> Числа</a><ul>
-<li class="chapter" data-level="A.1.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#натуральные-числа"><i class="fa fa-check"></i><b>A.1.1</b> Натуральные числа</a></li>
-<li class="chapter" data-level="A.1.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#рациональные-и-иррациональные-числа"><i class="fa fa-check"></i><b>A.1.2</b> Рациональные и иррациональные числа</a></li>
-<li class="chapter" data-level="A.1.3" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#вещественные-числа"><i class="fa fa-check"></i><b>A.1.3</b> Вещественные числа</a></li>
-<li class="chapter" data-level="A.1.4" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#модуль-числа"><i class="fa fa-check"></i><b>A.1.4</b> Модуль числа</a></li>
-</ul></li>
-<li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
-</ul></li>
-<li class="chapter" data-level="B" data-path="данные-и-железо.html"><a href="данные-и-железо.html"><i class="fa fa-check"></i><b>B</b> Данные и железо</a></li>
+<li class="chapter" data-level="A" data-path="iron.html"><a href="iron.html"><i class="fa fa-check"></i><b>A</b> Данные и железо</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
@@ -218,17 +300,421 @@
             <section class="normal" id="section-">
 <div id="strings" class="section level1">
 <h1><span class="header-section-number">5</span> Строки</h1>
+<p>Мы уже знакомились со строковым типом данных <code>character</code>. Но мы обозначили, что многие операции над этим типом невозможны (например, нельзя сложить две строки). Возникает вопрос: что делать?</p>
+<p>Для начала научимся ставить дополнительные пакеты.</p>
+<div id="установка-дополнительных-пакетов" class="section level2">
+<h2><span class="header-section-number">5.1</span> Установка дополнительных пакетов</h2>
+<p>В самом начале мы <a href="знакомство-с-r-и-rstudio.html#whyr">упоминали</a>, что R имеет большие возможности расширения функционала с помощью специальных пакетов. Для работы со строками нам будут нужны два — <code>stringi</code> («стринг-ай») и <code>stringr</code> («стринг-ар»). На их примере мы и разберем механизм установки и подключения дополнительных пакетов.</p>
+<p><strong>Пакет</strong> — это набор функций, не входящих в «базовую комплектацию R», которые, как правило, специализированы под те или иные задачи. В нашем случае — под работу со строками. Поэтому сначала пакет необходимо скачать на комп:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;stringr&quot;</span>))</a></code></pre></div>
+<p>В функцию <code>install.packages()</code> необходимо передать <em>строковый вектор</em>, содержащий названия пакетов, которые мы бы хотели установить.</p>
+<p>Часто одни пакеты ссылаются на функции других, поэтому можно указать в аргументе <code>dependencies</code> <code>TRUE</code>, чтобы попутно установились <em>зависимые</em> пакеты.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;stringi&quot;</span>, <span class="st">&quot;stringr&quot;</span>), <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<blockquote>
+<p>По умолчанию пакеты скачиваются с репозитория <strong>CRAN</strong> — основное хранилище, где лежит подавляющее большинство пакетов и всякого разного. Но может быть такое, что установить соединение с этим репозиторием по каким-либо причинам не получается. Чтобы пофиксить сей баг, нужно указать в настройках какое-либо из зеркал. <code>Options → Packages → Primary CRAN repository → Change…</code>, и выбрать что-то. Если не помогло — попробуйте ещё.</p>
+</blockquote>
+<p>Но мало просто скачать пакет. Надо его ещё подключить к текущей сессии, в которой мы работаем. Для этого используется функция</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(stringi)</a></code></pre></div>
+<pre><code>## Warning: package &#39;stringi&#39; was built under R version 3.6.2</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<p>Ей уже надо скормить название пакета без кавычек, и для подключения каждого пакета потребуется написать новую строчку.</p>
+<blockquote>
+<p>Тут запутываются термины «пакет» и «библиотека», но опустим эти детали и примем сей момент как есть…</p>
+</blockquote>
+<p>После того, как мы подключили пакет к данной сессии, мы можем использовать функции из него.</p>
+<p>Кайф, поехали!</p>
+</div>
+<div id="создание-строк" class="section level2">
+<h2><span class="header-section-number">5.2</span> Создание строк</h2>
+<p>Можно сделать строку руками (наблюдайте за кавычками):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">s1 &lt;-<span class="st"> &quot;сложившаяся структура организации влечет за собой процесс внедрения и модернизации новых предложений&quot;</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">s1</a></code></pre></div>
+<pre><code>## [1] &quot;сложившаяся структура организации влечет за собой процесс внедрения и модернизации новых предложений&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">s2 &lt;-<span class="st"> &#39;С другой стороны постоянный количественный &quot;рост&quot; и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&#39;</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">s2</a></code></pre></div>
+<pre><code>## [1] &quot;С другой стороны постоянный количественный \&quot;рост\&quot; и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">s3 &lt;-<span class="st"> &quot;С другой стороны постоянный количественный &quot;</span>рост<span class="st">&quot; и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">s3</a></code></pre></div>
+<pre><code>## Error: &lt;text&gt;:1:52: unexpected symbol
+## 1: s3 &lt;- &quot;С другой стороны постоянный количественный &quot;рост
+##                                                        ^</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">s4 &lt;-<span class="st"> &quot;С другой стороны постоянный количественный &#39;рост&#39; и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">s4</a></code></pre></div>
+<pre><code>## [1] &quot;С другой стороны постоянный количественный &#39;рост&#39; и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">s5 &lt;-<span class="st"> &quot;С другой стороны постоянный количественный «рост» и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">s5</a></code></pre></div>
+<pre><code>## [1] &quot;С другой стороны постоянный количественный «рост» и сфера нашей активности позволяет выполнять важные задания по разработке соответствующий условий активизации&quot;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">s6 &lt;-<span class="st"> &quot;&quot;</span> <span class="co"># это пустая строка</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">s6</a></code></pre></div>
+<pre><code>## [1] &quot;&quot;</code></pre>
+<p>Также можно использовать функцию <code>character()</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> для создания вектора из пустых строк:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">character</span>(<span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;</code></pre>
+<p>А также функции для приведения типов, которые мы уже обсуждали:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">as.character</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot; &quot;11&quot; &quot;12&quot; &quot;13&quot; &quot;14&quot;
+## [15] &quot;15&quot; &quot;16&quot; &quot;17&quot; &quot;18&quot; &quot;19&quot; &quot;20&quot; &quot;21&quot; &quot;22&quot; &quot;23&quot; &quot;24&quot; &quot;25&quot; &quot;26&quot; &quot;27&quot; &quot;28&quot;
+## [29] &quot;29&quot; &quot;30&quot;</code></pre>
+<p>Кроме того, существуют встроенные текстовые векторы:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">letters</a></code></pre></div>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot; &quot;q&quot;
+## [18] &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">LETTERS</a></code></pre></div>
+<pre><code>##  [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;E&quot; &quot;F&quot; &quot;G&quot; &quot;H&quot; &quot;I&quot; &quot;J&quot; &quot;K&quot; &quot;L&quot; &quot;M&quot; &quot;N&quot; &quot;O&quot; &quot;P&quot; &quot;Q&quot;
+## [18] &quot;R&quot; &quot;S&quot; &quot;T&quot; &quot;U&quot; &quot;V&quot; &quot;W&quot; &quot;X&quot; &quot;Y&quot; &quot;Z&quot;</code></pre>
+&lt;img class=“taskimg” src=&quot;img/question.png&gt;
+<div class="task">
+<p>Есть ещё встроенные векторы, которые содержат названия месяцев и аббревиатуры названий месяцев. Отыщите их.</p>
+</div>
+<p>Мы умеем генерировать числавые последовательности. Можно также генерировать и строки. Например, когда вы хотите сгенерировать ID для испытуемых не просто как числа, а как уникальные текстовые значения:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">stri_rand_strings</span>(<span class="dt">n =</span> <span class="dv">10</span>, <span class="dt">length =</span> <span class="dv">5</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;deTPj&quot; &quot;VfGwS&quot; &quot;O7X0R&quot; &quot;cLQ4K&quot; &quot;BHvRs&quot; &quot;7osCa&quot; &quot;5GD2R&quot; &quot;o4fh9&quot;
+##  [9] &quot;AIs2B&quot; &quot;pKqY6&quot;</code></pre>
+<blockquote>
+<p>Фнукции из пакета <code>stringi</code> начинаются с префикса <code>stri</code>, а функции пакета <code>stringr</code> — с префикса <code>str</code>. Их легко можно опознать.</p>
+</blockquote>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Средствами <code>stringi</code> можно генерировать не только случайные строки, но и <a href="https://gusarov-group.by/wiki-internet-marketologa/ryba/">«рыбу»-текст</a>. Один из вариант такого текста — широко известный «Lorem ipsum». Найдите функцию, которая генерирует такой текст и сгенерируйте четыре абзаца.</p>
+<pre><code>## [1] &quot;Lorem ipsum dolor sit amet, a sit nisl at facilisis sapien. Euismod enim non habitasse dolor in at donec mus lectus viverra? At ante luctus eu eget non. Ligula convallis mi scelerisque habitasse. Sed gravida egestas ut amet diam libero ut non sagittis at. Ante erat placerat justo curae mi, suscipit. Interdum lacus, nostra tristique, phasellus turpis. Id commodo eros eu non mus porta, orci phasellus habitant nulla dolor. Praesent pellentesque aliquam in lacus libero, tempus nibh etiam velit. Faucibus, quisque libero. Suspendisse finibus volutpat et sed. Ex sed sapien vestibulum conubia et amet sed dictumst. Fermentum et sollicitudin posuere. Euismod felis, vel turpis senectus mollis magna. Ipsum ut, per varius vehicula mus nec. Vivamus purus ac blandit venenatis dapibus erat habitasse posuere.&quot;
+## [2] &quot;Aenean et convallis augue magnis in scelerisque. Pellentesque augue amet posuere risus ultrices et, gravida facilisis faucibus ac. Condimentum nunc eu lacus. Tellus quam est, magna egestas aptent quis sit sapien sed ut, aliquam. Posuere nec et lectus curae ornare ultrices ad nec, ac, integer. Vulputate, duis egestas est. Sed ullamcorper tempor pharetra maecenas ut lorem. Tellus justo at felis integer sodales? Urna et dapibus cubilia in tempus pretium, amet. Placerat hac pulvinar. Purus vestibulum metus in ornare sagittis tellus donec, nisl, dictum. Mi leo congue ac. Ornare leo tincidunt et felis eu, ligula sed finibus quam. Porta primis lacus dictum donec eget metus a turpis. Pulvinar, cras nisi, egestas pretium nulla aenean.&quot;                                                                    
+## [3] &quot;Aliquam nunc ut, amet curabitur habitasse in in metus viverra tristique. Cum quis ligula mus et fringilla commodo sollicitudin tincidunt lobortis fermentum. Tincidunt, mollis, in donec tincidunt volutpat tempus quis habitant. Nullam quis porta eros aliquet commodo mauris donec a egestas diam erat. Morbi sagittis posuere et litora ex commodo. Vestibulum condimentum natoque mi etiam eu semper eget? Sed ultricies sed ultrices vehicula finibus, et tortor dictum lobortis ante porta conubia. Erat suscipit eleifend netus laoreet turpis dictum duis a! Felis condimentum ac tristique quis tempus, quam vivamus augue praesent sed ante. Tristique metus orci sed a aliquam ultrices erat.&quot;                                                                                                                          
+## [4] &quot;Nisl sed, feugiat congue vel lorem vestibulum mollis, integer. Gravida fringilla et et sed ultrices ex cursus fringilla curae inceptos. Arcu elit neque adipiscing ut ante. Sed blandit mauris, a sit ornare sed nunc rutrum ipsum posuere ut magna. Eros ligula in sociis maximus eget purus arcu, malesuada sed, in. Gravida sed tincidunt, in justo ex, sociis. Tortor laoreet, ultricies, mollis aliquam. Sed purus ad mauris cras viverra et. Adipiscing morbi sed commodo ligula id tincidunt et vehicula ut venenatis eu.&quot;</code></pre>
+</div>
+</div>
+<div id="конкатенация-строк" class="section level2">
+<h2><span class="header-section-number">5.3</span> Конкатенация строк</h2>
+<p>Строки можно соединять воедино:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">paste</span>(<span class="st">&#39;first&#39;</span>, <span class="st">&#39;second&#39;</span>, <span class="st">&#39;third&#39;</span>) <span class="co"># базовый R</span></a></code></pre></div>
+<pre><code>## [1] &quot;first second third&quot;</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw">paste</span>(<span class="st">&#39;first&#39;</span>, <span class="st">&#39;second&#39;</span>, <span class="st">&#39;third&#39;</span>, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;first_second_third&quot;</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">paste0</span>(<span class="st">&#39;first&#39;</span>, <span class="st">&#39;second&#39;</span>, <span class="st">&#39;third&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;firstsecondthird&quot;</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">stri_c</span>(<span class="st">&#39;first&#39;</span>, <span class="st">&#39;second&#39;</span>, <span class="st">&#39;third&#39;</span>) <span class="co"># пакет stringi</span></a></code></pre></div>
+<pre><code>## [1] &quot;firstsecondthird&quot;</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">stri_c</span>(<span class="st">&#39;first&#39;</span>, <span class="st">&#39;second&#39;</span>, <span class="st">&#39;third&#39;</span>, <span class="dt">sep =</span> <span class="st">&quot; &amp; &quot;</span>) <span class="co"># пакет stringi</span></a></code></pre></div>
+<pre><code>## [1] &quot;first &amp; second &amp; third&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Сгенерируйте вектор, который будет описывать различные сочетания условий вашего гипотетического эксперимента, который вы сможете добавить в гипотетический датафрейм. Пусть у вас будет десять испытуемых, для каждого из которого в датафрейме предусмотрено четыре строки: две под условие <code>A1</code> и две под условие <code>A2</code>. В свою очередь каждое из условий <code>A</code> может сочетаться с вариантами условия <code>B</code> (<code>B1</code> и <code>B2</code>). В итоге у вас должен получиться вектор, каждое значение которого структурно выглядит так: <code>ID_условиеA_условиеB</code>.</p>
+<pre><code>##  [1] &quot;1_A1_B1&quot;  &quot;1_A1_B2&quot;  &quot;1_A2_B1&quot;  &quot;1_A2_B2&quot;  &quot;2_A1_B1&quot;  &quot;2_A1_B2&quot; 
+##  [7] &quot;2_A2_B1&quot;  &quot;2_A2_B2&quot;  &quot;3_A1_B1&quot;  &quot;3_A1_B2&quot;  &quot;3_A2_B1&quot;  &quot;3_A2_B2&quot; 
+## [13] &quot;4_A1_B1&quot;  &quot;4_A1_B2&quot;  &quot;4_A2_B1&quot;  &quot;4_A2_B2&quot;  &quot;5_A1_B1&quot;  &quot;5_A1_B2&quot; 
+## [19] &quot;5_A2_B1&quot;  &quot;5_A2_B2&quot;  &quot;6_A1_B1&quot;  &quot;6_A1_B2&quot;  &quot;6_A2_B1&quot;  &quot;6_A2_B2&quot; 
+## [25] &quot;7_A1_B1&quot;  &quot;7_A1_B2&quot;  &quot;7_A2_B1&quot;  &quot;7_A2_B2&quot;  &quot;8_A1_B1&quot;  &quot;8_A1_B2&quot; 
+## [31] &quot;8_A2_B1&quot;  &quot;8_A2_B2&quot;  &quot;9_A1_B1&quot;  &quot;9_A1_B2&quot;  &quot;9_A2_B1&quot;  &quot;9_A2_B2&quot; 
+## [37] &quot;10_A1_B1&quot; &quot;10_A1_B2&quot; &quot;10_A2_B1&quot; &quot;10_A2_B2&quot;</code></pre>
+</div>
+</div>
+<div id="разделение-строк" class="section level2">
+<h2><span class="header-section-number">5.4</span> Разделение строк</h2>
+<p>Если добрый коллега записал экспериментальные условия в одну переменную как выше, а вам нужно делать по ним, например, какую-нибудь анову, то можно на него долго ругаться, а можно разделить строки обратно:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">str_split</span>(s_exp, <span class="dt">pattern =</span> <span class="st">&quot;_&quot;</span>)</a></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;1&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[2]]
+## [1] &quot;1&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[3]]
+## [1] &quot;1&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[4]]
+## [1] &quot;1&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[5]]
+## [1] &quot;2&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[6]]
+## [1] &quot;2&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[7]]
+## [1] &quot;2&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[8]]
+## [1] &quot;2&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[9]]
+## [1] &quot;3&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[10]]
+## [1] &quot;3&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[11]]
+## [1] &quot;3&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[12]]
+## [1] &quot;3&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[13]]
+## [1] &quot;4&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[14]]
+## [1] &quot;4&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[15]]
+## [1] &quot;4&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[16]]
+## [1] &quot;4&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[17]]
+## [1] &quot;5&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[18]]
+## [1] &quot;5&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[19]]
+## [1] &quot;5&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[20]]
+## [1] &quot;5&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[21]]
+## [1] &quot;6&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[22]]
+## [1] &quot;6&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[23]]
+## [1] &quot;6&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[24]]
+## [1] &quot;6&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[25]]
+## [1] &quot;7&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[26]]
+## [1] &quot;7&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[27]]
+## [1] &quot;7&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[28]]
+## [1] &quot;7&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[29]]
+## [1] &quot;8&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[30]]
+## [1] &quot;8&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[31]]
+## [1] &quot;8&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[32]]
+## [1] &quot;8&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[33]]
+## [1] &quot;9&quot;  &quot;A1&quot; &quot;B1&quot;
+## 
+## [[34]]
+## [1] &quot;9&quot;  &quot;A1&quot; &quot;B2&quot;
+## 
+## [[35]]
+## [1] &quot;9&quot;  &quot;A2&quot; &quot;B1&quot;
+## 
+## [[36]]
+## [1] &quot;9&quot;  &quot;A2&quot; &quot;B2&quot;
+## 
+## [[37]]
+## [1] &quot;10&quot; &quot;A1&quot; &quot;B1&quot;
+## 
+## [[38]]
+## [1] &quot;10&quot; &quot;A1&quot; &quot;B2&quot;
+## 
+## [[39]]
+## [1] &quot;10&quot; &quot;A2&quot; &quot;B1&quot;
+## 
+## [[40]]
+## [1] &quot;10&quot; &quot;A2&quot; &quot;B2&quot;</code></pre>
+<p>Нам вернулся список. Шо с ним делать — вопрос хороший. Можно развернуть список в вектор и индексацией вытащить нужные нам части.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Возьмите список, которые вернула функция <code>str_split()</code>, разверните его в вектор с помощью функции <code>unlist()</code> и вытащите из него по отдельности ID, условия <code>A</code> и условия <code>B</code>.</p>
+<pre><code>##  [1] &quot;1&quot;  &quot;1&quot;  &quot;1&quot;  &quot;1&quot;  &quot;2&quot;  &quot;2&quot;  &quot;2&quot;  &quot;2&quot;  &quot;3&quot;  &quot;3&quot;  &quot;3&quot;  &quot;3&quot;  &quot;4&quot;  &quot;4&quot; 
+## [15] &quot;4&quot;  &quot;4&quot;  &quot;5&quot;  &quot;5&quot;  &quot;5&quot;  &quot;5&quot;  &quot;6&quot;  &quot;6&quot;  &quot;6&quot;  &quot;6&quot;  &quot;7&quot;  &quot;7&quot;  &quot;7&quot;  &quot;7&quot; 
+## [29] &quot;8&quot;  &quot;8&quot;  &quot;8&quot;  &quot;8&quot;  &quot;9&quot;  &quot;9&quot;  &quot;9&quot;  &quot;9&quot;  &quot;10&quot; &quot;10&quot; &quot;10&quot; &quot;10&quot;</code></pre>
+<pre><code>##  [1] &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot;
+## [15] &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot;
+## [29] &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot; &quot;A1&quot; &quot;A1&quot; &quot;A2&quot; &quot;A2&quot;</code></pre>
+<pre><code>##  [1] &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot;
+## [15] &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot;
+## [29] &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot; &quot;B1&quot; &quot;B2&quot;</code></pre>
+</div>
+<p>Но есть более удобная функция <code>separate()</code>, которая разбивает субстроки сразу по колонкам. Её мы вспомним, когда будет говорить о предобработке данных.</p>
+</div>
+<div id="сортировка-строк" class="section level2">
+<h2><span class="header-section-number">5.5</span> Сортировка строк</h2>
+<p>Строки можно сортировать:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">unsorted_s &lt;-<span class="st"> </span><span class="kw">paste0</span>(</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2">  <span class="kw">sample</span>(LETTERS, <span class="dt">size =</span> <span class="kw">length</span>(LETTERS), <span class="dt">replace =</span> <span class="ot">TRUE</span>),</a>
+<a class="sourceLine" id="cb45-3" data-line-number="3">  <span class="kw">sample</span>(letters, <span class="dt">size =</span> <span class="kw">length</span>(letters)),</a>
+<a class="sourceLine" id="cb45-4" data-line-number="4">  <span class="kw">sample</span>(letters, <span class="dt">size =</span> <span class="kw">length</span>(letters))</a>
+<a class="sourceLine" id="cb45-5" data-line-number="5">) <span class="co"># делаем несортированный вектор из трёхбуквенных «слов»</span></a>
+<a class="sourceLine" id="cb45-6" data-line-number="6">unsorted_s</a></code></pre></div>
+<pre><code>##  [1] &quot;Rxi&quot; &quot;Fpo&quot; &quot;Byn&quot; &quot;Jsz&quot; &quot;Qmj&quot; &quot;Wdl&quot; &quot;Ejq&quot; &quot;Caa&quot; &quot;Rgv&quot; &quot;Bcg&quot; &quot;Krf&quot;
+## [12] &quot;Owc&quot; &quot;Dib&quot; &quot;Ctm&quot; &quot;Bnx&quot; &quot;Fbp&quot; &quot;Pvs&quot; &quot;Jeh&quot; &quot;Ghu&quot; &quot;Jzr&quot; &quot;Gky&quot; &quot;Flt&quot;
+## [23] &quot;Gqw&quot; &quot;Pud&quot; &quot;Hoe&quot; &quot;Wfk&quot;</code></pre>
+<p>Сортируем:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">sort</span>(unsorted_s) <span class="co"># можно базовой функцией</span></a></code></pre></div>
+<pre><code>##  [1] &quot;Bcg&quot; &quot;Bnx&quot; &quot;Byn&quot; &quot;Caa&quot; &quot;Ctm&quot; &quot;Dib&quot; &quot;Ejq&quot; &quot;Fbp&quot; &quot;Flt&quot; &quot;Fpo&quot; &quot;Ghu&quot;
+## [12] &quot;Gky&quot; &quot;Gqw&quot; &quot;Hoe&quot; &quot;Jeh&quot; &quot;Jsz&quot; &quot;Jzr&quot; &quot;Krf&quot; &quot;Owc&quot; &quot;Pud&quot; &quot;Pvs&quot; &quot;Qmj&quot;
+## [23] &quot;Rgv&quot; &quot;Rxi&quot; &quot;Wdl&quot; &quot;Wfk&quot;</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">str_sort</span>(unsorted_s) <span class="co"># можно функцией из пакета stringr</span></a></code></pre></div>
+<pre><code>##  [1] &quot;Bcg&quot; &quot;Bnx&quot; &quot;Byn&quot; &quot;Caa&quot; &quot;Ctm&quot; &quot;Dib&quot; &quot;Ejq&quot; &quot;Fbp&quot; &quot;Flt&quot; &quot;Fpo&quot; &quot;Ghu&quot;
+## [12] &quot;Gky&quot; &quot;Gqw&quot; &quot;Hoe&quot; &quot;Jeh&quot; &quot;Jsz&quot; &quot;Jzr&quot; &quot;Krf&quot; &quot;Owc&quot; &quot;Pud&quot; &quot;Pvs&quot; &quot;Qmj&quot;
+## [23] &quot;Rgv&quot; &quot;Rxi&quot; &quot;Wdl&quot; &quot;Wfk&quot;</code></pre>
+<p>Строки сортируются в <a href="https://ru.wikipedia.org/wiki/Лексикографический_порядок"><em>лексикографическом порядке</em></a>. Обратите внимание, что порядок сортировки зависит от того, в какой <em>локали</em> мы работаем, то есть от того, алфавит какого языка используется для определения лексикографического порядка:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="kw">str_sort</span>(<span class="kw">c</span>(<span class="st">&quot;э&quot;</span>, <span class="st">&quot;а&quot;</span>, <span class="st">&quot;у&quot;</span>, <span class="st">&quot;i&quot;</span>), <span class="dt">locale =</span> <span class="st">&#39;en&#39;</span>) <span class="co"># по умолчанию</span></a></code></pre></div>
+<pre><code>## [1] &quot;i&quot; &quot;а&quot; &quot;у&quot; &quot;э&quot;</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="kw">str_sort</span>(<span class="kw">c</span>(<span class="st">&quot;э&quot;</span>, <span class="st">&quot;а&quot;</span>, <span class="st">&quot;у&quot;</span>, <span class="st">&quot;i&quot;</span>), <span class="dt">locale =</span> <span class="st">&#39;ru&#39;</span>) <span class="co"># русский</span></a></code></pre></div>
+<pre><code>## [1] &quot;а&quot; &quot;у&quot; &quot;э&quot; &quot;i&quot;</code></pre>
+<blockquote>
+<p>Сортировок существует <a href="https://www.youtube.com/watch?v=BeoCbJPuvSE">много разных</a>. Но чем больше у вас данные, тем медленнее будет работать базовый <code>sort()</code>. Поэтому используйте <code>str_sort()</code>.</p>
+</blockquote>
+</div>
+<div id="изменение-регистра" class="section level2">
+<h2><span class="header-section-number">5.6</span> Изменение регистра</h2>
+<p>Допусти вы собирали данные онлайн, и у вас было поле ступень образования, в которой респонденты должны быть указать бакалавриат/магистратура/аспирантура. Но по каким-то причинам, разработчик онлайн-формы не подумал, что хорошо бы сделать это поле списком, из котрого можно выбирать, и оставил его как обычное текстовое поле. Теперь у вас в данных есть «бакалавриат», «Бакалавриат» и какой-нибудь «БАкалавриат», то вообще-то одно и то же. Напасти подобного рода можно победить, если привести строки к единому регистру:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">str_to_lower</span>(<span class="kw">c</span>(<span class="st">&quot;Бакалавриат&quot;</span>, <span class="st">&quot;БАКАЛАВРИАТ&quot;</span>, <span class="st">&quot;АСпирантура&quot;</span>, <span class="st">&quot;магистратура&quot;</span>))</a></code></pre></div>
+<pre><code>## [1] &quot;бакалавриат&quot;  &quot;бакалавриат&quot;  &quot;аспирантура&quot;  &quot;магистратура&quot;</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">str_to_upper</span>(<span class="kw">c</span>(<span class="st">&quot;Бакалавриат&quot;</span>, <span class="st">&quot;БАКАЛАВРИАТ&quot;</span>, <span class="st">&quot;АСпирантура&quot;</span>, <span class="st">&quot;магистратура&quot;</span>))</a></code></pre></div>
+<pre><code>## [1] &quot;БАКАЛАВРИАТ&quot;  &quot;БАКАЛАВРИАТ&quot;  &quot;АСПИРАНТУРА&quot;  &quot;МАГИСТРАТУРА&quot;</code></pre>
+<blockquote>
+<p>Но при таком способе сбора данных могли возникнуть и другие ошибки, так что лучше задуматься об их предотвращении заранее!</p>
+</blockquote>
+</div>
+<div id="поиск-подстроки" class="section level2">
+<h2><span class="header-section-number">5.7</span> Поиск подстроки</h2>
+<p>Если нам надо найти какую-то подстроку, то мы можем использоваться функцию <code>str_detect()</code>:</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">str_detect</span>(unsorted_s, <span class="st">&#39;b&#39;</span>) <span class="co"># ищем все элементы, в которых есть маленькая «b»</span></a></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [12] FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+## [23] FALSE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">unsorted_s[<span class="kw">str_detect</span>(unsorted_s, <span class="st">&#39;b&#39;</span>)] <span class="co"># а вот и сами элементы</span></a></code></pre></div>
+<pre><code>## [1] &quot;Dib&quot; &quot;Fbp&quot;</code></pre>
+<p>Можно подсчитать число вхождений подстроки в строке:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">str_count</span>(unsorted_s, <span class="st">&#39;a&#39;</span>)</a></code></pre></div>
+<pre><code>##  [1] 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code></pre>
+</div>
+<div id="изменение-строк" class="section level2">
+<h2><span class="header-section-number">5.8</span> Изменение строк</h2>
+<p>Раз мы умеем искать подстроку, то, наверное, её можно и как-то изменять.</p>
+<div id="выделение-подстроки" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> Выделение подстроки</h3>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">str_sub</span>(unsorted_s, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">2</span>) <span class="co"># по индексам</span></a></code></pre></div>
+<pre><code>##  [1] &quot;Rx&quot; &quot;Fp&quot; &quot;By&quot; &quot;Js&quot; &quot;Qm&quot; &quot;Wd&quot; &quot;Ej&quot; &quot;Ca&quot; &quot;Rg&quot; &quot;Bc&quot; &quot;Kr&quot; &quot;Ow&quot; &quot;Di&quot; &quot;Ct&quot;
+## [15] &quot;Bn&quot; &quot;Fb&quot; &quot;Pv&quot; &quot;Je&quot; &quot;Gh&quot; &quot;Jz&quot; &quot;Gk&quot; &quot;Fl&quot; &quot;Gq&quot; &quot;Pu&quot; &quot;Ho&quot; &quot;Wf&quot;</code></pre>
+</div>
+<div id="замена-подстроки" class="section level3">
+<h3><span class="header-section-number">5.8.2</span> Замена подстроки</h3>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">str_replace</span>(unsorted_s, <span class="dt">pattern =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">replacement =</span> <span class="st">&quot;Ц&quot;</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;Rxi&quot; &quot;Fpo&quot; &quot;Byn&quot; &quot;Jsz&quot; &quot;Qmj&quot; &quot;Wdl&quot; &quot;Ejq&quot; &quot;Caa&quot; &quot;Rgv&quot; &quot;Bcg&quot; &quot;Krf&quot;
+## [12] &quot;Owc&quot; &quot;DiЦ&quot; &quot;Ctm&quot; &quot;Bnx&quot; &quot;FЦp&quot; &quot;Pvs&quot; &quot;Jeh&quot; &quot;Ghu&quot; &quot;Jzr&quot; &quot;Gky&quot; &quot;Flt&quot;
+## [23] &quot;Gqw&quot; &quot;Pud&quot; &quot;Hoe&quot; &quot;Wfk&quot;</code></pre>
+</div>
+<div id="удаление-подстроки" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Удаление подстроки</h3>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">str_remove</span>(unsorted_s, <span class="st">&#39;b&#39;</span>)</a></code></pre></div>
+<pre><code>##  [1] &quot;Rxi&quot; &quot;Fpo&quot; &quot;Byn&quot; &quot;Jsz&quot; &quot;Qmj&quot; &quot;Wdl&quot; &quot;Ejq&quot; &quot;Caa&quot; &quot;Rgv&quot; &quot;Bcg&quot; &quot;Krf&quot;
+## [12] &quot;Owc&quot; &quot;Di&quot;  &quot;Ctm&quot; &quot;Bnx&quot; &quot;Fp&quot;  &quot;Pvs&quot; &quot;Jeh&quot; &quot;Ghu&quot; &quot;Jzr&quot; &quot;Gky&quot; &quot;Flt&quot;
+## [23] &quot;Gqw&quot; &quot;Pud&quot; &quot;Hoe&quot; &quot;Wfk&quot;</code></pre>
+</div>
+<div id="транслитерация-строк" class="section level3">
+<h3><span class="header-section-number">5.8.4</span> Транслитерация строк</h3>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">stri_trans_general</span>(<span class="st">&quot;русский текст, который должен быть написан латиницей&quot;</span>,</a>
+<a class="sourceLine" id="cb71-2" data-line-number="2">                   <span class="st">&#39;cyrillic-latin&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;russkij tekst, kotoryj dolžen bytʹ napisan latinicej&quot;</code></pre>
+</div>
+</div>
 <div id="регулярные-выражения" class="section level2">
-<h2><span class="header-section-number">5.1</span> Регулярные выражения</h2>
+<h2><span class="header-section-number">5.9</span> Регулярные выражения</h2>
+<p>Но часто нас интересует не конкретная подстрока, и все варианты подстрок, которые имеют определенную структуру. Например, мы хотим найти корректно введенные даты рождения в нашем датасете. Пусть по условию дата должна иметь формат <code>DD.MM.YYYY</code>. И у нас есть вот такой вектор:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">dates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;21.92.2001&#39;</span>, <span class="st">&#39;01.04.1994&#39;</span>, <span class="st">&#39;5-3-2011&#39;</span>, <span class="st">&#39;6/04/1999&#39;</span>)</a></code></pre></div>
+<p>Ну, так как у нас сейчас совсем игрушечные данные, мы можем смотреть на них глазами и видеть, что у нас в прицнипе три адекватные даты, но записаны по-разному, и одна верного формата, но с 92 месяцем.</p>
+<p>Чтобы задать структуру паттерна, который мы хотим найти, используются <strong>регулярные выражения</strong>.</p>
+<blockquote>
+<p>Чтобы отображать их работу, будем пользоваться функцией <code>str_view_all()</code>.</p>
+</blockquote>
+<div id="метасимволы" class="section level3">
+<h3><span class="header-section-number">5.9.1</span> Метасимволы</h3>
+<p>Если мы попробуем поискать точки в наших датах, то просто так мы их не найдем:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>)</a></code></pre></div>
+<div id="htmlwidget-aa68fe43b052bd1b224c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aa68fe43b052bd1b224c">{"x":{"html":"<ul>\n  <li><span class='match'>2<\/span><span class='match'>1<\/span><span class='match'>.<\/span><span class='match'>9<\/span><span class='match'>2<\/span><span class='match'>.<\/span><span class='match'>2<\/span><span class='match'>0<\/span><span class='match'>0<\/span><span class='match'>1<\/span><\/li>\n  <li><span class='match'>0<\/span><span class='match'>1<\/span><span class='match'>.<\/span><span class='match'>0<\/span><span class='match'>4<\/span><span class='match'>.<\/span><span class='match'>1<\/span><span class='match'>9<\/span><span class='match'>9<\/span><span class='match'>4<\/span><\/li>\n  <li><span class='match'>5<\/span><span class='match'>-<\/span><span class='match'>3<\/span><span class='match'>-<\/span><span class='match'>2<\/span><span class='match'>0<\/span><span class='match'>1<\/span><span class='match'>1<\/span><\/li>\n  <li><span class='match'>6<\/span><span class='match'>/<\/span><span class='match'>0<\/span><span class='match'>4<\/span><span class='match'>/<\/span><span class='match'>1<\/span><span class='match'>9<\/span><span class='match'>9<\/span><span class='match'>9<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Подсветились все символы, так как точка в регулярных выражениях — <a href="strings.html#quant">специальный символ</a>. Поэтому чтобы указать, что нас интересуют собственно точки, нужно их <em>экранировать</em>.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="dt">pattern =</span> <span class="st">&#39;</span><span class="ch">\\</span><span class="st">.&#39;</span>)</a></code></pre></div>
+<div id="htmlwidget-8d50bde97bbdf8a0d103" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8d50bde97bbdf8a0d103">{"x":{"html":"<ul>\n  <li>21<span class='match'>.<\/span>92<span class='match'>.<\/span>2001<\/li>\n  <li>01<span class='match'>.<\/span>04<span class='match'>.<\/span>1994<\/li>\n  <li>5-3-2011<\/li>\n  <li>6/04/1999<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Так лучше. Еще к специальным знакам (метасимфолам) относятся <code>$</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>^</code>, <code>[</code>, <code>]</code>, и другие.</p>
+</div>
+<div id="классы-знаков" class="section level3">
+<h3><span class="header-section-number">5.9.2</span> Классы знаков</h3>
+<p>В датах нас интересуют цифры, и для них есть специальное обозначение:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="dt">pattern =</span> <span class="st">&#39;</span><span class="ch">\\</span><span class="st">d&#39;</span>) <span class="co"># ищем цифры</span></a></code></pre></div>
+<div id="htmlwidget-168116d29fb47a6b5090" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-168116d29fb47a6b5090">{"x":{"html":"<ul>\n  <li><span class='match'>2<\/span><span class='match'>1<\/span>.<span class='match'>9<\/span><span class='match'>2<\/span>.<span class='match'>2<\/span><span class='match'>0<\/span><span class='match'>0<\/span><span class='match'>1<\/span><\/li>\n  <li><span class='match'>0<\/span><span class='match'>1<\/span>.<span class='match'>0<\/span><span class='match'>4<\/span>.<span class='match'>1<\/span><span class='match'>9<\/span><span class='match'>9<\/span><span class='match'>4<\/span><\/li>\n  <li><span class='match'>5<\/span>-<span class='match'>3<\/span>-<span class='match'>2<\/span><span class='match'>0<\/span><span class='match'>1<\/span><span class='match'>1<\/span><\/li>\n  <li><span class='match'>6<\/span>/<span class='match'>0<\/span><span class='match'>4<\/span>/<span class='match'>1<\/span><span class='match'>9<\/span><span class='match'>9<\/span><span class='match'>9<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="dt">pattern =</span> <span class="st">&#39;</span><span class="ch">\\</span><span class="st">D&#39;</span>) <span class="co"># ищем не-цифры</span></a></code></pre></div>
+<div id="htmlwidget-698dcd4e682b71d006fd" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-698dcd4e682b71d006fd">{"x":{"html":"<ul>\n  <li>21<span class='match'>.<\/span>92<span class='match'>.<\/span>2001<\/li>\n  <li>01<span class='match'>.<\/span>04<span class='match'>.<\/span>1994<\/li>\n  <li>5<span class='match'>-<\/span>3<span class='match'>-<\/span>2011<\/li>\n  <li>6<span class='match'>/<\/span>04<span class='match'>/<\/span>1999<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Другие классы символов можно найти в следующих примерах:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="kw">str_view_all</span>(<span class="st">&#39;успешный балбес&#39;</span>, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">s&#39;</span>) <span class="co"># пробелы</span></a></code></pre></div>
+<div id="htmlwidget-376213ce4081472a78a6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-376213ce4081472a78a6">{"x":{"html":"<ul>\n  <li>успешный<span class='match'> <\/span>балбес<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">str_view_all</span>(<span class="st">&#39;успешный балбес&#39;</span>, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">S&#39;</span>) <span class="co"># не-пробелы</span></a></code></pre></div>
+<div id="htmlwidget-87a072f13c5e38302231" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-87a072f13c5e38302231">{"x":{"html":"<ul>\n  <li><span class='match'>у<\/span><span class='match'>с<\/span><span class='match'>п<\/span><span class='match'>е<\/span><span class='match'>ш<\/span><span class='match'>н<\/span><span class='match'>ы<\/span><span class='match'>й<\/span> <span class='match'>б<\/span><span class='match'>а<\/span><span class='match'>л<\/span><span class='match'>б<\/span><span class='match'>е<\/span><span class='match'>с<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" data-line-number="1"><span class="kw">str_view_all</span>(<span class="st">&#39;верно ведь, что здесь что-то есть&#39;</span>, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">w&#39;</span>) <span class="co"># не пробелы и не знаки препинания</span></a></code></pre></div>
+<div id="htmlwidget-d28bf9db4c05619622f9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d28bf9db4c05619622f9">{"x":{"html":"<ul>\n  <li><span class='match'>в<\/span><span class='match'>е<\/span><span class='match'>р<\/span><span class='match'>н<\/span><span class='match'>о<\/span> <span class='match'>в<\/span><span class='match'>е<\/span><span class='match'>д<\/span><span class='match'>ь<\/span>, <span class='match'>ч<\/span><span class='match'>т<\/span><span class='match'>о<\/span> <span class='match'>з<\/span><span class='match'>д<\/span><span class='match'>е<\/span><span class='match'>с<\/span><span class='match'>ь<\/span> <span class='match'>ч<\/span><span class='match'>т<\/span><span class='match'>о<\/span>-<span class='match'>т<\/span><span class='match'>о<\/span> <span class='match'>е<\/span><span class='match'>с<\/span><span class='match'>т<\/span><span class='match'>ь<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">str_view_all</span>(<span class="st">&#39;верно ведь, что здесь что-то есть&#39;</span>, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">W&#39;</span>) <span class="co"># пробелы и знаки препинания</span></a></code></pre></div>
+<div id="htmlwidget-1933b5569a2a56ef1270" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1933b5569a2a56ef1270">{"x":{"html":"<ul>\n  <li>верно<span class='match'> <\/span>ведь<span class='match'>,<\/span><span class='match'> <\/span>что<span class='match'> <\/span>здесь<span class='match'> <\/span>что<span class='match'>-<\/span>то<span class='match'> <\/span>есть<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="quant" class="section level3">
+<h3><span class="header-section-number">5.9.3</span> Квантификация</h3>
+<p>Можно указать, сколько раз должен встречаться тот или иной символ:</p>
+<ul>
+<li><code>?</code> — ноль или один раз</li>
+<li><code>*</code> — ноль или более раз</li>
+<li><code>+</code> — один или более раз</li>
+<li><code>{n}</code> — n раз</li>
+</ul>
+<p>Например, найдем все группировки по два числа:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">d{2}&#39;</span>)</a></code></pre></div>
+<div id="htmlwidget-a24ce028f14df158e355" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a24ce028f14df158e355">{"x":{"html":"<ul>\n  <li><span class='match'>21<\/span>.<span class='match'>92<\/span>.<span class='match'>20<\/span><span class='match'>01<\/span><\/li>\n  <li><span class='match'>01<\/span>.<span class='match'>04<\/span>.<span class='match'>19<\/span><span class='match'>94<\/span><\/li>\n  <li>5-3-<span class='match'>20<\/span><span class='match'>11<\/span><\/li>\n  <li>6/<span class='match'>04<\/span>/<span class='match'>19<\/span><span class='match'>99<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Итак, теперь мы можем вытащить все корректные даты, которые есть в нашем векторе:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">str_view_all</span>(dates, <span class="st">&#39;</span><span class="ch">\\</span><span class="st">d{2}</span><span class="ch">\\</span><span class="st">.[01]</span><span class="ch">\\</span><span class="st">d{1}</span><span class="ch">\\</span><span class="st">.</span><span class="ch">\\</span><span class="st">d{4}&#39;</span>)</a></code></pre></div>
+<div id="htmlwidget-982a08b02a18a3250ae1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-982a08b02a18a3250ae1">{"x":{"html":"<ul>\n  <li>21.92.2001<\/li>\n  <li><span class='match'>01.04.1994<\/span><\/li>\n  <li>5-3-2011<\/li>\n  <li>6/04/1999<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Она получилась всего одна. Но в целом в нашим набором условий это справедливо.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Как мы отмечали выше, в нашем векторе в датами есть ещё две даты, который выглядят адекватно, но немного отличаются форматом, в котором они записаны. Подправьте их формат с помощью функций, изученных выше, и измените регулярное выражение так, чтобы оно обнаруживало и их тоже.</p>
+<p><em>Подсказка: возможно, вам понадобятся некоторые варианты выше упомянутых функций.</em></p>
+<div id="htmlwidget-d47228f6707e5dbabced" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d47228f6707e5dbabced">{"x":{"html":"<ul>\n  <li>21.92.2001<\/li>\n  <li><span class='match'>01.04.1994<\/span><\/li>\n  <li><span class='match'>5.3.2011<\/span><\/li>\n  <li><span class='match'>6.04.1999<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
 
 </div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Ещё есть <code>numeric()</code> и <code>logical()</code>, например.<a href="strings.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="функции-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="функции.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="работа-с-реальными-данными.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
