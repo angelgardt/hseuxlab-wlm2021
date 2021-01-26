@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,9 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -162,7 +159,15 @@
 <li class="chapter" data-level="9.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-алгебры-логики"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
 <li class="chapter" data-level="9.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-теории-множеств"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
 <li class="chapter" data-level="9.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-математического-анализа"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
-<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a></li>
+<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
+<li class="chapter" data-level="9.4.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#действия-с-матрицами"><i class="fa fa-check"></i><b>9.4.3</b> Действия с матрицами</a></li>
+<li class="chapter" data-level="9.4.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#скалярное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.4</b> Скалярное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.5" data-path="математический-ликбез.html"><a href="математический-ликбез.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.5</b> Векторное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.6" data-path="математический-ликбез.html"><a href="математический-ликбез.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.4.6</b> Произведение матриц (матричное умножение)</a></li>
+<li class="chapter" data-level="9.4.7" data-path="математический-ликбез.html"><a href="математический-ликбез.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.4.7</b> Транспонирование матрицы</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
 <li class="chapter" data-level="11" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
@@ -250,6 +255,303 @@
 <div id="matrix" class="section level2">
 <h2><span class="header-section-number">9.4</span> Элементы линейной алгебры</h2>
 
+<div id="что-такое-матрица" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> Что такое матрица?</h3>
+<blockquote>
+<p>«Увы, невозможно объяснить, что такое матрица. Ты должен увидеть это сам.» <br>
+<em>Морфеус (Матрица, 1999)</em></p>
+</blockquote>
+<p>Матрица выглядит как таблица чисел, записанных в определенном порядке. Например, вот так:</p>
+<p><span class="math display">\[
+\boldsymbol{A}= 
+\begin{pmatrix}
+1 &amp; 6 &amp; 11 \\
+2 &amp; 7 &amp; 13 \\
+3 &amp; 8 &amp; 15 \\
+4 &amp; 9 &amp; 18 \\
+5 &amp; 0 &amp; 19
+\end{pmatrix}
+\]</span></p>
+<p>В данном случае это прямоугольная матрица <span class="math inline">\(\boldsymbol{A}\)</span>. Матрицы обозначаются заглавными буквами (иногда еще и полужирным написанием, чтобы отличать от обычных переменных). Количество строк и столбцов определяет размер матрицы. То есть данная матрица имеет размер 5×3 — <span class="math inline">\(\boldsymbol{A}_{5×3}\)</span>. При указании размера сначала указывается количество строк, затем — число столбцов.</p>
+<p>Ну, и, собственно, всё. Это и есть матрица.</p>
+</div>
+<div id="откуда-берутся-матрицы" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> Откуда берутся матрицы?</h3>
+<p>Матрицы возникают при решении систем линейных уравнений. Рассмотрим систему.</p>
+<p><span class="math display">\[
+\begin{cases}a_{11}x_1 + a_{12}x_2 + \ldots + a_{1m}x_m = b_1
+\\a_{21}x_1 + a_{22}x_2 + \ldots + a_{2m}x_m = b_2
+\\ \dots \dots \dots \dots \dots \dots \dots \dots \dots \dots
+\\a_{n1}x_1 + a_{n2}x_2 + \ldots + a_{nm}x_m = b_n
+\end{cases}
+\]</span></p>
+<p>Система состоит из <span class="math inline">\(n\)</span> линейных уравнений относительно <span class="math inline">\(m\)</span> неизвестных. Её можно переписать в <em>матричном виде</em>:</p>
+<p><span class="math display">\[
+\boldsymbol{A}\boldsymbol{x}= \boldsymbol{b},
+\]</span></p>
+<p>где</p>
+<p><span class="math display">\[
+\boldsymbol{A}=
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nm}
+\end{pmatrix} ; \quad 
+\boldsymbol{x}= \begin{pmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_m
+\end{pmatrix} ; \quad
+\boldsymbol{b}= \begin{pmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{pmatrix}
+\]</span></p>
+<p>Здесь мы видим матрицу коэффициентов системы <span class="math inline">\(\boldsymbol{A}\)</span>. Размер этой матрицы <span class="math inline">\(n × m\)</span>. Также мы видим две особых матрицы <span class="math inline">\(\boldsymbol{x}\)</span> и <span class="math inline">\(\boldsymbol{b}\)</span>. Количество столбов у них равно единице. Такие матрицы носят название <strong>векторов</strong>.</p>
+<p>Но ведь мы можем написать вектор всего с одной строкой. Например, некоторый вектор <span class="math inline">\(\boldsymbol{c}\)</span>:</p>
+<p><span class="math display">\[
+\boldsymbol{c}= \begin{pmatrix}
+c_1 &amp; c_2 &amp; \dots &amp; c_k
+\end{pmatrix}
+\]</span></p>
+<p>Для большей точности принята следующая терминология: векторы вида <span class="math inline">\(\boldsymbol{x}\)</span> называют «вектор-столбец», а векторы вида <span class="math inline">\(\boldsymbol{c}\)</span> называют «вектор-строка». Векторы часто также обозначаются полужирным начертанием, чтобы отличать их от отдельных значений.</p>
+<p>Так как отдельные столбцы матрица мы можем представить в виде векторов, то матрицу <span class="math inline">\(\boldsymbol{A}\)</span> можно написать еще одним способом:
+<span class="math display">\[
+\boldsymbol{A}= \begin{pmatrix} \boldsymbol{A}_1 &amp; \boldsymbol{A}_2 &amp; \dots &amp; \boldsymbol{A}_m \end{pmatrix},
+\]</span></p>
+<p>где</p>
+<p><span class="math display">\[
+\boldsymbol{A}_i = \begin{pmatrix} a_{1i} \\ a_{2i} \\ \vdots \\ a_{ni} \end{pmatrix}, \quad 0&lt;i \leq m
+\]</span></p>
+<p>Ок, но остается вопрос: почему матричная запись равносильна причной нам записи системы?</p>
+<hr />
+<p><strong>Деталь 1</strong></p>
+<p>Есть две замечательные матрицы: единичная матрица <span class="math inline">\(\boldsymbol{E}\)</span> (иногда <span class="math inline">\(\boldsymbol{I}\)</span>) и нулевая матрица <span class="math inline">\(\boldsymbol{O}\)</span>:
+<span class="math display">\[
+\boldsymbol{E}= \begin{pmatrix}
+1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 1 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; 1
+\end{pmatrix} ; \quad
+\boldsymbol{O}= \begin{pmatrix}
+0 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 0 &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \dots &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p><strong>Деталь 2</strong></p>
+<p>Матрица размером <span class="math inline">\(n × n\)</span> называется <em>квадратной матрицей</em>.</p>
+<p>Квадратная матрица, все элементы которой, кроме стоящих на главной диагонали, равны нулю, называется <em>диагональной матрицей</em>.</p>
+<hr />
+</div>
+<div id="действия-с-матрицами" class="section level3">
+<h3><span class="header-section-number">9.4.3</span> Действия с матрицами</h3>
+<div id="сложение-матриц" class="section level4">
+<h4><span class="header-section-number">9.4.3.1</span> Сложение матриц</h4>
+<p>Сложение определено только для матриц <em>одинакового размера</em>.</p>
+<p><span class="math display">\[
+\boldsymbol{A}_{n×m} + \boldsymbol{B}_{n×m} = 
+\begin{pmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots &amp; a_{1m} + b_{1m} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots &amp; a_{2m} + b_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} + b_{n1} &amp; a_{n2} + b_{n2} &amp; \dots &amp; a_{nm} + b_{nm}
+\end{pmatrix}
+\]</span></p>
+<p><strong>Свойства сложения матриц:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\boldsymbol{A}+ \boldsymbol{B}= \boldsymbol{B}+ \boldsymbol{A}\)</span> (коммутативность)</li>
+<li><span class="math inline">\((\boldsymbol{A}+ \boldsymbol{B}) + \boldsymbol{C}= \boldsymbol{A}+ (\boldsymbol{B}+ \boldsymbol{C})\)</span> (ассоциативность)</li>
+<li><span class="math inline">\(\boldsymbol{A}+ \boldsymbol{O}= \boldsymbol{A}\)</span> (существование нулевого элемента)</li>
+<li><span class="math inline">\(\boldsymbol{A}+ (-\boldsymbol{A}) = \boldsymbol{O}\)</span> (существование противоположного элемента)</li>
+</ol>
+<p>Все, описанное выше, справедливо для векторов.</p>
+</div>
+<div id="умножение-матрицы-на-число" class="section level4">
+<h4><span class="header-section-number">9.4.3.2</span> Умножение матрицы на число</h4>
+<p>Умножение на вещественное число определено для любой матрицы <span class="math inline">\(n × m\)</span>.</p>
+<p><span class="math display">\[
+\lambda \boldsymbol{A}= \begin{pmatrix}
+\lambda a_{11} &amp; \lambda a_{12} &amp; \dots &amp; \lambda a_{1m} \\
+\lambda a_{21} &amp; \lambda a_{22} &amp; \dots &amp; \lambda a_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\lambda a_{n1} &amp; \lambda a_{n2} &amp; \dots &amp; \lambda a_{nm}
+\end{pmatrix}, \; \forall \lambda \in \mathbb{R}
+\]</span></p>
+<p><strong>Свойства умножения матрицы на число:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(1 \cdot \boldsymbol{A}= \boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(-1 \cdot \boldsymbol{A}= -\boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(\lambda(\mu \boldsymbol{A}) = (\lambda \mu) \boldsymbol{A}\)</span> (ассоциативность)</li>
+<li><span class="math inline">\((\lambda + \mu) \boldsymbol{A}= \lambda \boldsymbol{A}+ \mu \boldsymbol{A}\)</span> (дистрибутивность)</li>
+<li><span class="math inline">\(\lambda (\boldsymbol{A}+ \boldsymbol{B}) = \lambda \boldsymbol{A}+ \lambda \boldsymbol{B}\)</span> (дистрибутивность)</li>
+</ol>
+<p>Все, описанное выше, справедливо для векторов.</p>
+</div>
+</div>
+<div id="скалярное-произведение-векторов" class="section level3">
+<h3><span class="header-section-number">9.4.4</span> Скалярное произведение векторов</h3>
+<p>Скаларное произведение определено для векторов одинаковой размерности как сумма произведений их соответствующих координат.</p>
+<p><span class="math display">\[
+\boldsymbol{a}= \begin{pmatrix} a_1 &amp; a_2 &amp; \dots &amp; a_n \end{pmatrix} \\
+\boldsymbol{b}= \begin{pmatrix} b_1 &amp; b_2 &amp; \dots &amp; b_n \end{pmatrix}\\
+\]</span>
+<span class="math display">\[
+\boldsymbol{a}\cdot \boldsymbol{b}= a_1 b_1 + a_2 b_2 + \dots + a_n b_n
+\]</span></p>
+</div>
+<div id="векторное-произведение-векторов" class="section level3">
+<h3><span class="header-section-number">9.4.5</span> Векторное произведение векторов</h3>
+<blockquote>
+<p>мы рассматривать не будем :)</p>
+</blockquote>
+</div>
+<div id="произведение-матриц-матричное-умножение" class="section level3">
+<h3><span class="header-section-number">9.4.6</span> Произведение матриц (матричное умножение)</h3>
+<p>Ну, вот и начался треш.</p>
+<p>Умножение определено для матриц <span class="math inline">\(\boldsymbol{A}_{n × k}\)</span> и <span class="math inline">\(\boldsymbol{B}_{k × m}\)</span>, то количество столбцов матрицы, стоящей слева от знака умножения, должно быть равно количество строк матрицы, стоящей справа от знака умножения.</p>
+<p>Произведением матрицы <span class="math inline">\(\boldsymbol{A}_{n × k}\)</span> на матрицу <span class="math inline">\(\boldsymbol{B}_{k × m}\)</span> называется матрица <span class="math inline">\(\boldsymbol{C}_{n × m}\)</span>, элемент которой <span class="math inline">\(c_{ij}\)</span> равен скалярному произведению <span class="math inline">\(i\)</span>-го вектора-строки матрицы <span class="math inline">\(\boldsymbol{A}\)</span> и <span class="math inline">\(j\)</span>-го вектора-столбца матрицы <span class="math inline">\(\boldsymbol{B}\)</span>.</p>
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Matrix_multiplication_diagram_2.svg/1024px-Matrix_multiplication_diagram_2.svg.png" width=500>
+</center>
+<p>Пусть
+<span class="math display">\[
+\boldsymbol{A}= 
+\begin{pmatrix}
+\boldsymbol{a}_1 \\
+\boldsymbol{a}_2 \\
+\vdots \\
+\boldsymbol{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{pmatrix}, \\
+\boldsymbol{B}= 
+\begin{pmatrix}
+\boldsymbol{b}_1 &amp; \boldsymbol{b}_2 &amp; \dots \boldsymbol{b}_m
+\end{pmatrix} = 
+\begin{pmatrix}
+b_{11} &amp; b_{12} &amp; \dots &amp; b_{1m} \\
+b_{21} &amp; b_{22} &amp; \dots &amp; b_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+b_{k1} &amp; b_{k2} &amp; \dots &amp; b_{km}
+\end{pmatrix}
+\]</span></p>
+<p>Тогда,</p>
+<p><span class="math display">\[
+\boldsymbol{A}\times \boldsymbol{B}= 
+\begin{pmatrix}
+\boldsymbol{a}_1 \cdot \boldsymbol{b}_1 &amp; \boldsymbol{a}_1 \cdot \boldsymbol{b}_2 &amp; \dots &amp; \boldsymbol{a}_1 \cdot \boldsymbol{b}_m \\
+\boldsymbol{a}_2 \cdot \boldsymbol{b}_1 &amp; \boldsymbol{a}_2 \cdot \boldsymbol{b}_2 &amp; \dots &amp; \boldsymbol{a}_2 \cdot \boldsymbol{b}_m \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\boldsymbol{a}_n \cdot \boldsymbol{b}_1 &amp; \boldsymbol{a}_n \cdot \boldsymbol{b}_2 &amp; \dots &amp; \boldsymbol{a}_n \cdot \boldsymbol{b}_m \\
+\end{pmatrix} = \\ = 
+\begin{pmatrix}
+(a_{11} b_{11} + a_{12} b_{21} + \dots + a_{1k}b_{k1}) &amp; (a_{11} b_{12} + a_{12} b_{22} + \dots + a_{1k}b_{k2}) &amp; \dots &amp; (a_{11} b_{1m} + a_{12} b_{2m} + \dots + a_{1k}b_{km}) \\
+(a_{21} b_{11} + a_{22} b_{21} + \dots + a_{2k}b_{k1}) &amp; (a_{21} b_{12} + a_{22} b_{22} + \dots + a_{2k}b_{k2}) &amp; \dots &amp; (a_{21} b_{1m} + a_{22} b_{2m} + \dots + a_{2k}b_{km}) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+(a_{n1} b_{11} + a_{n2} b_{21} + \dots + a_{nk}b_{k1}) &amp; (a_{n1} b_{12} + a_{n2} b_{22} + \dots + a_{nk}b_{k2}) &amp; \dots &amp; (a_{n1} b_{1m} + a_{n2} b_{2m} + \dots + a_{nk}b_{km})
+\end{pmatrix} = \\ = 
+\begin{pmatrix}
+c_{11} &amp; c_{12} &amp; \dots &amp; c_{1m} \\
+c_{21} &amp; c_{22} &amp; \dots &amp; c_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+c_{n1} &amp; c_{n2} &amp; \dots &amp; c_{nm}
+\end{pmatrix} = \boldsymbol{C}
+\]</span></p>
+<p><span class="math display">\[
+c_{ij} = \sum_{t=1}^k a_{it} b_{tj}
+\]</span></p>
+<p>Вот так вот.</p>
+<p><strong>Cвойства произведения матриц:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\boldsymbol{A}(\boldsymbol{B}\boldsymbol{C}) = (\boldsymbol{A}\boldsymbol{B}) \boldsymbol{C}\)</span> (ассоциативность)</li>
+<li><span class="math inline">\(\lambda (\boldsymbol{A}\boldsymbol{B}) = (\lambda \boldsymbol{A}) \boldsymbol{B}= (\lambda \boldsymbol{B}) \boldsymbol{A}\)</span> (ассоциативность)</li>
+<li><span class="math inline">\(\boldsymbol{A}(\boldsymbol{B}+ \boldsymbol{C}) = \boldsymbol{A}\boldsymbol{B}+ \boldsymbol{A}\boldsymbol{C}\)</span> (дистрибутивность)</li>
+<li><span class="math inline">\((\boldsymbol{A}+ \boldsymbol{B}) \boldsymbol{C}= \boldsymbol{A}\boldsymbol{C}+ \boldsymbol{B}\boldsymbol{C}\)</span> (дистрибутивность)</li>
+<li><span class="math inline">\(\boldsymbol{A}\boldsymbol{B}\neq \boldsymbol{B}\boldsymbol{A}\)</span> (отсутствие коммутативности)</li>
+<li><span class="math inline">\(\boldsymbol{E}\boldsymbol{A}= \boldsymbol{A}; \, \boldsymbol{A}\boldsymbol{E}= \boldsymbol{A}\)</span> (умножение на единичный элемент)</li>
+<li><span class="math inline">\(\boldsymbol{O}\boldsymbol{A}= \boldsymbol{O}; \, \boldsymbol{A}\boldsymbol{O}= \boldsymbol{O}\)</span> (умножение на нулевой элемент)</li>
+<li><span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1} \boldsymbol{A}= \boldsymbol{E}\)</span> (умножение на обратную матрицу — <em>только для некоторых квадратных матриц</em>)</li>
+</ol>
+<p>Матричное умножение определено для векторов-столбцов (матриц-столбцов) и векторов-строк (матриц-строк) и выполняется по тем же правилам.</p>
+</div>
+<div id="транспонирование-матрицы" class="section level3">
+<h3><span class="header-section-number">9.4.7</span> Транспонирование матрицы</h3>
+<p>В матрице строки и столбцы можно поменять местами — получится транспонированная матрица.</p>
+<p><span class="math display">\[
+\boldsymbol{A}= 
+\begin{pmatrix}
+\boldsymbol{a}_1 \\
+\boldsymbol{a}_2 \\
+\vdots \\
+\boldsymbol{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \dots &amp; a_{1k} \\
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2k} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nk}
+\end{pmatrix}
+\]</span>
+<span class="math display">\[
+\boldsymbol{A}^\mathrm{T}=
+\begin{pmatrix}
+\boldsymbol{a}_1 &amp; \boldsymbol{a}_2 &amp; \dots &amp; \boldsymbol{a}_n
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} &amp; a_{21} &amp; \dots &amp; a_{n1} \\
+a_{12} &amp; a_{22} &amp; \dots &amp; a_{n2} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
+\end{pmatrix}
+\]</span>
+Транспонированная матрица будет иметь размер <span class="math inline">\(k × n\)</span>.</p>
+<img class="taskimg" src="img/maths.png">
+<div class="task">
+<p>Дано:
+<span class="math display">\[
+\boldsymbol{A}= 
+\begin{pmatrix}
+1 &amp; 3 \\
+2 &amp; 4
+\end{pmatrix} ; \quad
+\boldsymbol{B}= 
+\begin{pmatrix}
+5 &amp; 6 &amp; 7 \\
+8 &amp; 9 &amp; 0
+\end{pmatrix} ; \\
+\boldsymbol{a}= 
+\begin{pmatrix}
+11 &amp; 22 &amp; 33
+\end{pmatrix}; \quad
+\boldsymbol{b}= 
+\begin{pmatrix}
+101 \\
+102 \\
+103
+\end{pmatrix};
+\]</span></p>
+<p>Вычислить:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\boldsymbol{A}\times \boldsymbol{B}\)</span>;</li>
+<li><span class="math inline">\(\boldsymbol{B}\times \boldsymbol{A}\)</span>;</li>
+<li><span class="math inline">\(\boldsymbol{a}\times \boldsymbol{b}\)</span>;</li>
+<li><span class="math inline">\(\boldsymbol{b}\times \boldsymbol{a}\)</span>;</li>
+<li><span class="math inline">\(\boldsymbol{a}\times \boldsymbol{a}^\mathrm{T}\)</span></li>
+</ol>
+</div>
+
+</div>
 </div>
 </div>
             </section>
@@ -308,6 +610,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
