@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Функции | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Функции | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -300,48 +305,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Безусловно, в R дикое множество различных функций. Но иногда нам и их не хватает. И возникает потребность написать свои. Сделать это, на самом деле, вовсе не так сложно, как может показаться. Разберёмся по порядку.</p>
 <p>Для начала нам нужно осознать, что функция — это объект (такой же объект, как и вектор, матрица или список). И этот объект создается с помощью некоторой функции и имеет имя, которое возникает в результате присваивания. Пока вроде всё знакомо, не так ли?</p>
 <p>Функция, которая делает функции называется <code>function()</code> (внезапно!). Таким образом выглядит её конструкция:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">my_func &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  </a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="functions.html#cb1-1"></a>my_func &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb1-2"><a href="functions.html#cb1-2"></a>  </span>
+<span id="cb1-3"><a href="functions.html#cb1-3"></a>}</span></code></pre></div>
 <p><code>my_func</code> — название нашей новой функции, <code>function()</code> — собственно функция, которая требует на вход аргументы нашей будушей функции, а в фигурных скобках мы будем описывать, как наша функция работает.</p>
 <p>Теперь нам нужно вспомнить, что функция должна что-то принимать на вход и что-то возвращать в результате работы. На самом деле можно начать с ещё более простого варианта — когда функция даже ничего не принимает на вход, а просто что-то возвращает после выполнения:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="kw">return</span>(<span class="st">&quot;Hello, world!&quot;</span>)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="functions.html#cb2-1"></a>my_hello &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb2-2"><a href="functions.html#cb2-2"></a>  <span class="kw">return</span>(<span class="st">&quot;Hello, world!&quot;</span>)</span>
+<span id="cb2-3"><a href="functions.html#cb2-3"></a>}</span>
+<span id="cb2-4"><a href="functions.html#cb2-4"></a><span class="kw">my_hello</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
-<p>Функция <code>return()</code> определяет, что будет возвращать наша функция как итог работы. В данном случае она возвращает нам строку <code>&quot;Hello, world!&quot;</code>. Мы можем немного изменить нашу функцию, чтобы она приветствовала не только мир, но и того, кто к ней обратился:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="kw">return</span>(phrase)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</a></code></pre></div>
+<p>Функция <code>return()</code> определяет, что будет возвращать наша функция как итог работы. В данном случае она возвращает нам строку <code>"Hello, world!"</code>. Мы можем немного изменить нашу функцию, чтобы она приветствовала не только мир, но и того, кто к ней обратился:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="functions.html#cb4-1"></a>my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(name) {</span>
+<span id="cb4-2"><a href="functions.html#cb4-2"></a>  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb4-3"><a href="functions.html#cb4-3"></a>  <span class="kw">return</span>(phrase)</span>
+<span id="cb4-4"><a href="functions.html#cb4-4"></a>}</span>
+<span id="cb4-5"><a href="functions.html#cb4-5"></a><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, Антон!&quot;</code></pre>
 <p>Теперь функция приветствует меня и не только — надо всего лишь указать имя того, кому надо сказать «привет».</p>
 <p>А что будет, если не указать ничего?</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">my_hello</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="functions.html#cb6-1"></a><span class="kw">my_hello</span>()</span></code></pre></div>
 <pre><code>## Error in paste0(&quot;Hello, &quot;, name, &quot;!&quot;): argument &quot;name&quot; is missing, with no default</code></pre>
 <p>Функция нам сообщает, что аргумент <code>name</code> является обязательным. Что ж, если мы не хотим такой ошибки, то можем задать <em>значение по умолчанию</em>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="kw">return</span>(phrase)</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="functions.html#cb8-1"></a>my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</span>
+<span id="cb8-2"><a href="functions.html#cb8-2"></a>  phrase &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb8-3"><a href="functions.html#cb8-3"></a>  <span class="kw">return</span>(phrase)</span>
+<span id="cb8-4"><a href="functions.html#cb8-4"></a>}</span>
+<span id="cb8-5"><a href="functions.html#cb8-5"></a><span class="kw">my_hello</span>(<span class="st">&quot;Антон&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, Антон!&quot;</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">my_hello</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="functions.html#cb10-1"></a><span class="kw">my_hello</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
 <p>Теперь функция приветствует того, кто указан в её аргументе, а если не указано никого — приветствует весь мир! Pacific function.</p>
 <p>Мы создавали промежуточную переменную <code>phrase</code>, в которую записывали результат работы функции <code>paste0()</code>, которая занимается соединением строк. Но у нас достаточно простая функция, поэтому нет необходимости занимать лишние строки. Можно упростить её следующим образом:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">  <span class="kw">return</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>))</a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="functions.html#cb12-1"></a>my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</span>
+<span id="cb12-2"><a href="functions.html#cb12-2"></a>  <span class="kw">return</span>(<span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>))</span>
+<span id="cb12-3"><a href="functions.html#cb12-3"></a>}</span>
+<span id="cb12-4"><a href="functions.html#cb12-4"></a><span class="kw">my_hello</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
 <p>Но можно пойти и ещё дальше!</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="kw">my_hello</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="functions.html#cb14-1"></a>my_hello &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">name =</span> <span class="st">&quot;world&quot;</span>) {</span>
+<span id="cb14-2"><a href="functions.html#cb14-2"></a>  <span class="kw">paste0</span>(<span class="st">&quot;Hello, &quot;</span>, name, <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb14-3"><a href="functions.html#cb14-3"></a>}</span>
+<span id="cb14-4"><a href="functions.html#cb14-4"></a><span class="kw">my_hello</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Hello, world!&quot;</code></pre>
 <p>Даже <code>return()</code> не обязателен! Функция просто возвращает результат последней выплоненной команды. Красота!</p>
 <p>Общий принцип создания и работы функции понятен. Попробуем сделать что-то более интересное. Например, применим какие-то логические конструкции.</p>
@@ -350,44 +355,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Конечно, в R как и в любом другом языке программирования есть if else statement и for and while loops. Но зачем они нам, если есть <code>ifelse()</code> и векторизация?</p>
 </blockquote>
 <p>Чтобы написать такую функцию, нам надо понять, как работает функция <code>ifelse()</code>. Работает она достаточно просто: она требует на вход три аргумента — условие, которое необходимо проверить, значение, которое необходимо вернуть, если условие выполнено, и значение, которое необходимо вернуть, если условие не выполнено. Например,</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">ifelse</span>(<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="functions.html#cb16-1"></a><span class="kw">ifelse</span>(<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">8</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;неверно&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">ifelse</span>(<span class="dv">10</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="functions.html#cb18-1"></a><span class="kw">ifelse</span>(<span class="dv">10</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;верно&quot;</span>, <span class="st">&quot;неверно&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;верно&quot;</code></pre>
 <p>Как мы можем использовать эту функцию для написания кастомной? Вот так:ъ</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">  <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</a>
-<a class="sourceLine" id="cb20-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="kw">odd_even</span>(<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="functions.html#cb20-1"></a>odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb20-2"><a href="functions.html#cb20-2"></a>  <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb20-3"><a href="functions.html#cb20-3"></a>}</span>
+<span id="cb20-4"><a href="functions.html#cb20-4"></a><span class="kw">odd_even</span>(<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;even&quot;</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">odd_even</span>(<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="functions.html#cb22-1"></a><span class="kw">odd_even</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;odd&quot;</code></pre>
 <p>Но можно написать ещё короче! Всего в одну строку!</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">odd_even</span>(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="functions.html#cb24-1"></a>odd_even &lt;-<span class="st"> </span><span class="cf">function</span>(x) <span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="st">&#39;even&#39;</span>, <span class="st">&#39;odd&#39;</span>)</span>
+<span id="cb24-2"><a href="functions.html#cb24-2"></a><span class="kw">odd_even</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;odd&quot;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">odd_even</span>(<span class="dv">8</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="functions.html#cb26-1"></a><span class="kw">odd_even</span>(<span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;even&quot;</code></pre>
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Посчитайте пингвинов! Напишите функцию, которая выводит корректную форму слова «пингвин» в ответ на ввод некоторого числа.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="functions.html#cb28-1"></a><span class="kw">penguin</span>(<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1 пингвин&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="functions.html#cb30-1"></a><span class="kw">penguin</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;3 пингвина&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">penguin</span>(<span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1"></a><span class="kw">penguin</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;10 пингвинов&quot;</code></pre>
 </div>
 <div id="открытый-исходный-код" class="section level2">
 <h2><span class="header-section-number">4.1</span> Открытый исходный код</h2>
 <p>В R можно не только написать свои функции, но и посмотреть, как написаны другие, то есть увидеть исходный код. Для этого надо написать название функции и выполнить её как команду (без скобок):</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">sd <span class="co"># стандартное отклонение --- корень из дисперсии</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="functions.html#cb34-1"></a>sd <span class="co"># стандартное отклонение --- корень из дисперсии</span></span></code></pre></div>
 <pre><code>## function (x, na.rm = FALSE) 
 ## sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
 ##     na.rm = na.rm))
-## &lt;bytecode: 0x7fabb3e95230&gt;
+## &lt;bytecode: 0x7f937513c530&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">lm <span class="co"># функция для построения линейной регрессионной модели</span></a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="functions.html#cb36-1"></a>lm <span class="co"># функция для построения линейной регрессионной модели</span></span></code></pre></div>
 <pre><code>## function (formula, data, subset, weights, na.action, method = &quot;qr&quot;, 
 ##     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
 ##     contrasts = NULL, offset, ...) 
@@ -460,7 +465,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         z$qr &lt;- NULL
 ##     z
 ## }
-## &lt;bytecode: 0x7fabb0295b60&gt;
+## &lt;bytecode: 0x7f93739f1008&gt;
 ## &lt;environment: namespace:stats&gt;</code></pre>
 
 </div>
