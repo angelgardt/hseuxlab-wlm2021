@@ -2,6 +2,10 @@
 
 # Математический ликбез
 
+<center>
+<img src="https://sun1-89.userapi.com/ZHyQ9wd3-p3pzxICOjVMwnxKHaGLb9oHWwmE4w/iHEd5NYvhoA.jpg">
+</center>
+
 ## Элементы алгебры логики
 
 ## Элементы теории множеств
@@ -326,6 +330,85 @@ $$
 Транспонированная матрица будет иметь размер $k × n$.
 
 
+### Детерминант и обратная матрица
+
+*Детерминант (определитель)* $\det \A, \; |\A|, \Delta \A$ --- величина, которая может быть вычислена и поставлена в однозначное соответствие квадратной матрице. Он «определяет» свойства матрицы, в том числе, её **обратимость**.
+
+Детерминан матрицы из одного элемента равен этому элементу:
+
+$$
+\det \begin{pmatrix} a_{11} \end{pmatrix} = a_{11}
+$$
+Детерминант матрицы $2×2$ вычисляется следующим образом --- это разность произведений элементов главной[^1] и побочной[^2] диагоналей:
+
+$$
+\det \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} = a_{11} a_{22} - a_{12} a_{21}
+$$
+
+Вычисление дереминанта матрицы произвольного размера $n × n$ требует введения ещё пары определений.
+
+**Дополнительный минор** $M_{ij}$ матрицы $\A$ --- это дереминант матрицы, полученной из матрицы $\A$ путём вычеркивания $i$-ой строки и $j$-го столбца.
+
+**Алгебраическое дополнение** элемента $a_{ij}$ матрицы $\A$ --- число, которое получается при умножении минора $M_{ij}$ на $(-1)^{i+j}$:
+
+$$
+A_{ij} = (-1)^{i+j} M_{ij}
+$$
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Matrix_alg_add%282%29.png">
+</center>
+
+Детерминант матрицы произвольного размера $n×n$ вычисляется так[^3]:
+
+$$
+\det \A_{n×n} = \sum_{j=1}^n (-1)^{1 + j} a_{1j} M_{1j} = \sum_{j=1}^n a_{1j}A_{1j},
+$$
+где $M_{1j}$ --- дополнительный минор к элементу $a_{1j}$. 
+
+Но жизнь упрощается, когда есть R:
+
+```{r}
+A <- matrix(sample(20:30, 9), nrow = 3)
+det(A) # так вычисляется детерминант матрицы
+```
+
+
+### След матрицы
+
+**След матрицы** --- сумма элементов (квадратной) матрицы, стоящих на главной[^1] диагонали.
+
+$$
+\mathrm{tr}(\A) = \sum_i a_{ii}
+$$
+
+О нём мы чуть-чуть вспомним, когда будем обсуждать ковариационные матрицы.
+
+<img class="taskimg" src="img/code.png">
+<div class="task">
+В R нет специальной функции, которая вычисляет след матрицы. Давайте её напишем!
+
+Функция должна принимать на вход матрицу, проверять, является ли матрица квадратной, и, если да, то возвращать значение следа матрицы, если нет, то печатать в консоль «матрица не является квадратной».
+
+*Подсказка:* `?diag`
+
+```{r, include=FALSE}
+tr <- function(A) {
+  ifelse(dim(A)[1] == dim(A)[2],
+         sum(diag(A)),
+         "матрица не является квадратной")
+}
+```
+```{r}
+B <- matrix(sample(1:100, 25), nrow = 5)
+C <- matrix(sample(1:100, 12), nrow = 4)
+tr(B)
+tr(C)
+```
+</div>
+
+
+
 <img class="taskimg" src="img/maths.png">
 <div class="task">
 Дано:
@@ -361,6 +444,132 @@ $$
 4) $\b \times \a$;
 5) $\a \times \a^\T$
 
+*Чтобы проверить ответ, введите в соответствующее поле значения элементов матрицы построчно. Элементы одной строки разделяйте пробелами, строки разделяйте [только] запятыми.*
+
+
+<ol style="list-style-type: decimal">
+
+<li style="margin-top: 10px;margin-bottom:10px">
+<input type="text" id="first">
+<input type="button" value="Проверить" style="margin-left:30px" onclick="check1()">
+<div class="feedback" id="ffirst" hidden></div>
+</li>
+
+<li style="margin-top:10px;margin-bottom:10px">
+<input type="text" id="second">
+<input type="button" value="Проверить" style="margin-left:30px" onclick="check2()">
+<div class="feedback" id="fsecond" hidden></div>
+</li>
+
+<li style="margin-top:10px;margin-bottom:10px">
+<input type="text" id="third">
+<input type="button" value="Проверить" style="margin-left:30px" onclick="check3()">
+<div class="feedback" id="fthird" hidden></div>
+</li>
+
+<li style="margin-top:10px;margin-bottom:10px">
+<input type="text" id="fourth">
+<input type="button" value="Проверить" style="margin-left:30px" onclick="check4()">
+<div class="feedback" id="ffourth" hidden></div>
+</li>
+
+<li style="margin-top:10px;margin-bottom:10px">
+<input type="text" id="fifth">
+<input type="button" value="Проверить" style="margin-left:30px" onclick="check5()">
+<div class="feedback" id="ffifth" hidden></div>
+</li>
+
+</ol>
+
+
+<script>
+
+  var v1 = document.getElementById('first');
+  var v2 = document.getElementById('second');
+  var v3 = document.getElementById('third');
+  var v4 = document.getElementById('fourth');
+  var v5 = document.getElementById('fifth');
+  
+  var f1 = document.getElementById('ffirst');
+  var f2 = document.getElementById('fsecond');
+  var f3 = document.getElementById('fthird');
+  var f4 = document.getElementById('ffourth');
+  var f5 = document.getElementById('ffifth');
+
+  function check1()
+  {
+    if (v1.value == "29 33 7,42 48 14")
+    {
+      f1.hidden = false;
+      f1.innerHTML = "Всё супер!";
+      f1.style = "color:  #00aa4a";
+    } else {
+      f1.hidden = false;
+      f1.innerHTML = "Надо проверить вычисления…";
+      f1.style = "color:  #b73239";
+    }
+  }
+
+  function check2()
+  {
+    if (v2.value.toLowerCase() == "матрицы нельзя перемножить")
+    {
+      f2.hidden = false;
+      f2.innerHTML = "Всё супер!";
+      f2.style = "color:  #00aa4a";
+    } else {
+      f2.hidden = false;
+      f2.innerHTML = "Надо проверить вычисления…";
+      f2.style = "color:  #b73239";
+    }
+  }
+
+  function check3()
+  {
+    if (v3.value == "6754")
+    {
+      f3.hidden = false;
+      f3.innerHTML = "Всё супер!";
+      f3.style = "color:  #00aa4a";
+    } else {
+      f3.hidden = false;
+      f3.innerHTML = "Надо проверить вычисления…";
+      f3.style = "color:  #b73239";
+    }
+  }
+
+  function check4()
+  {
+    if (v4.value == "1111 2222 3333,1122 2244 3366,1133 2266 3399")
+    {
+      f4.hidden = false;
+      f4.innerHTML = "Всё супер!";
+      f4.style = "color:  #00aa4a";
+    } else {
+      f4.hidden = false;
+      f4.innerHTML = "Надо проверить вычисления…";
+      f4.style = "color:  #b73239";
+    }
+  }
+
+  function check5()
+  {
+    if (v5.value == "1694")
+    {
+      f5.hidden = false;
+      f5.innerHTML = "Всё супер!";
+      f5.style = "color:  #00aa4a";
+    } else {
+      f5.hidden = false;
+      f5.innerHTML = "Надо проверить вычисления…";
+      f5.style = "color:  #b73239";
+    }
+  }
+</script>
+
 </div>
 
 
+[^1]: Та, которая идёт слева сверху вправо вниз.
+[^2]: Та, которая идёт справа сверху влево вниз.
+[^3]: Эта формула называется разложением по строке. Есть и [другие](https://ru.wikipedia.org/wiki/Определитель)

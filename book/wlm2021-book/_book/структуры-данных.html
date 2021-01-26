@@ -226,7 +226,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-алгебры-логики"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
 <li class="chapter" data-level="9.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-теории-множеств"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
 <li class="chapter" data-level="9.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#элементы-математического-анализа"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
-<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a></li>
+<li class="chapter" data-level="9.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="математический-ликбез.html"><a href="математический-ликбез.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="математический-ликбез.html"><a href="математический-ликбез.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
+<li class="chapter" data-level="9.4.3" data-path="математический-ликбез.html"><a href="математический-ликбез.html#действия-с-матрицами"><i class="fa fa-check"></i><b>9.4.3</b> Действия с матрицами</a></li>
+<li class="chapter" data-level="9.4.4" data-path="математический-ликбез.html"><a href="математический-ликбез.html#скалярное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.4</b> Скалярное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.5" data-path="математический-ликбез.html"><a href="математический-ликбез.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.5</b> Векторное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.6" data-path="математический-ликбез.html"><a href="математический-ликбез.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.4.6</b> Произведение матриц (матричное умножение)</a></li>
+<li class="chapter" data-level="9.4.7" data-path="математический-ликбез.html"><a href="математический-ликбез.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.4.7</b> Транспонирование матрицы</a></li>
+<li class="chapter" data-level="9.4.8" data-path="математический-ликбез.html"><a href="математический-ликбез.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.4.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.4.9" data-path="математический-ликбез.html"><a href="математический-ликбез.html#след-матрицы"><i class="fa fa-check"></i><b>9.4.9</b> След матрицы</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
 <li class="chapter" data-level="11" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
@@ -387,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1] 26 19 28 18  9 30 16 21 20  5  6 23  2  7 11</code></pre>
+<pre><code>##  [1] 14  9 18  7 19 21 11  5 20 12 26  8  6 23 24</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
