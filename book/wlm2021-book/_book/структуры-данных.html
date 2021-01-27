@@ -397,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Также можно сгенерировать случайную последовательность чисел (например, для того, чтобы использовать её при сабсете случайной подвыборки данных):</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="структуры-данных.html#cb22-1"></a><span class="kw">sample</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">size =</span> <span class="dv">15</span>)</span></code></pre></div>
-<pre><code>##  [1] 14  9 18  7 19 21 11  5 20 12 26  8  6 23 24</code></pre>
+<pre><code>##  [1] 15 18  6 22 30 21  3  5  7 14 11 26  8 10 29</code></pre>
 <img class="taskimg" src="img/question.png">
 <div class="task">
 <p>По умолчанию функция <code>sample()</code> генерирует случайную последовательность с учетом того, что выпадение каждого числа равновероятно. Как изменить это условие?</p>
@@ -1001,6 +1001,90 @@ function check4() {
 </div>
 <div id="датафреймы" class="section level2">
 <h2><span class="header-section-number">3.4</span> Датафреймы</h2>
+<blockquote>
+<p>Ура! Мы добрались до самого интересноо в самого важного!</p>
+</blockquote>
+<p>Кратко вспомним, что мы умеем к этому моменту:</p>
+<ul>
+<li>манипулировать с векторами (создавать, индексировать, производить разные математические операции)</li>
+<li>работать с матрицами (создавать, индексировать, производить разные математические операции)</li>
+<li>обращаться со списками (создавать и индексировать различными способами)</li>
+</ul>
+<p>Так вот все эти знания и умения нам нужны, чтобы мастерски жонглировать датафреймами. <strong>Датафрейм</strong> — это детище большой любви матрицы и списка:</p>
+<p>В одном из домашних заданий вы создавали матрицу, которая содержала имена респондентов, их пол, город проживания и любимый цвет. Но ождиаемое ограничение было в том, что все данные неизбежно приводились к строковому типу. И в таком варианте вроде бы ничего криминального, но если мы захотим добавить данные о возраста — что делать? Хорошо мы, чтобы они сохранились в числовом формате, ведь так с ними дальше будет удобно работать.</p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="структуры-данных.html#cb197-1"></a><span class="co"># немного изменим набор переменных для демонстрации возможностей</span></span>
+<span id="cb197-2"><a href="структуры-данных.html#cb197-2"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">name =</span> <span class="kw">c</span>(<span class="st">&#39;Иван&#39;</span>, <span class="st">&#39;Алёна&#39;</span>, <span class="st">&#39;Сергей&#39;</span>, <span class="st">&#39;Елена&#39;</span>, <span class="st">&#39;Кристина&#39;</span>),</span>
+<span id="cb197-3"><a href="структуры-данных.html#cb197-3"></a>                 <span class="dt">age =</span> <span class="kw">c</span>(<span class="dv">23</span>, <span class="dv">34</span>, <span class="dv">52</span>, <span class="dv">19</span>, <span class="dv">26</span>),</span>
+<span id="cb197-4"><a href="структуры-данных.html#cb197-4"></a>                 <span class="dt">sex =</span> <span class="kw">c</span>(<span class="st">&#39;муж&#39;</span>, <span class="st">&#39;жен&#39;</span>, <span class="st">&#39;муж&#39;</span>, <span class="st">&#39;жен&#39;</span>, <span class="st">&#39;жен&#39;</span>),</span>
+<span id="cb197-5"><a href="структуры-данных.html#cb197-5"></a>                 <span class="dt">city =</span> <span class="kw">c</span>(<span class="st">&quot;Mосква&quot;</span>, <span class="st">&quot;Тверь&quot;</span>, <span class="st">&quot;Тверь&quot;</span>, <span class="st">&quot;Питер&quot;</span>, <span class="st">&quot;Москва&quot;</span>))</span>
+<span id="cb197-6"><a href="структуры-данных.html#cb197-6"></a>df</span></code></pre></div>
+<pre><code>##       name age sex   city
+## 1     Иван  23 муж Mосква
+## 2    Алёна  34 жен  Тверь
+## 3   Сергей  52 муж  Тверь
+## 4    Елена  19 жен  Питер
+## 5 Кристина  26 жен Москва</code></pre>
+<p>Обратите внимание, датафрейм создается практически так же, как и список, только функция другая. А в итоге получается привычная нам таблица! Magique!</p>
+<p>Как устроена эта таблица? По сути датафрейм — это <em>именованный список</em>, каждый элемент которого — это <em>вектор</em> определённой длины (одинаковой для всех векторов, входящих в этот список). Так они одинаковой длины, то их можно «поставить рядом друг с другом» как колонки матрицы. Собственно, так и получается. Вот только в данному случае разные столбцы могут содержать разный тип данных.</p>
+<p>И тем не менее, поскольку датафрейм наследует свойства обоих своих «родителей», обращаться с ним можно и как со списком, и как с матрицей:</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="структуры-данных.html#cb199-1"></a><span class="kw">str</span>(df) <span class="co"># изучаем структуру</span></span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
+##  $ name: chr  &quot;Иван&quot; &quot;Алёна&quot; &quot;Сергей&quot; &quot;Елена&quot; ...
+##  $ age : num  23 34 52 19 26
+##  $ sex : chr  &quot;муж&quot; &quot;жен&quot; &quot;муж&quot; &quot;жен&quot; ...
+##  $ city: chr  &quot;Mосква&quot; &quot;Тверь&quot; &quot;Тверь&quot; &quot;Питер&quot; ...</code></pre>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="структуры-данных.html#cb201-1"></a>df<span class="op">$</span>name <span class="co"># вытаскиваем элемент списка (вектор имён респондентов)</span></span></code></pre></div>
+<pre><code>## [1] &quot;Иван&quot;     &quot;Алёна&quot;    &quot;Сергей&quot;   &quot;Елена&quot;    &quot;Кристина&quot;</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="структуры-данных.html#cb203-1"></a>df<span class="op">$</span>name[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>] <span class="co"># индексируем вектор имён респондентов</span></span></code></pre></div>
+<pre><code>## [1] &quot;Иван&quot;   &quot;Алёна&quot;  &quot;Сергей&quot;</code></pre>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="структуры-данных.html#cb205-1"></a>df[, <span class="dv">1</span>] <span class="co"># так тоже срабоает</span></span></code></pre></div>
+<pre><code>## [1] &quot;Иван&quot;     &quot;Алёна&quot;    &quot;Сергей&quot;   &quot;Елена&quot;    &quot;Кристина&quot;</code></pre>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="структуры-данных.html#cb207-1"></a>df[<span class="dv">1</span>] <span class="co"># и даже так, но какая структура данных вернулась?</span></span></code></pre></div>
+<pre><code>##       name
+## 1     Иван
+## 2    Алёна
+## 3   Сергей
+## 4    Елена
+## 5 Кристина</code></pre>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="структуры-данных.html#cb209-1"></a>df[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">3</span><span class="op">:</span><span class="dv">4</span>] <span class="co"># ну это просто пушка</span></span></code></pre></div>
+<pre><code>##   sex   city
+## 1 муж Mосква
+## 2 жен  Тверь</code></pre>
+<p>Можно добавить новые переменные:</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="структуры-данных.html#cb211-1"></a>df<span class="op">$</span>married &lt;-<span class="st"> </span><span class="ot">FALSE</span> <span class="co"># recycling has happened</span></span></code></pre></div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Как вы поняли, возможностей индексации датафрейма — много. Но мы обозначили не все!</p>
+<p>Вытащите из имеющегося датафрейма <code>df</code> строки переменной <code>city</code> со второй по пятую, не используя команды, обозначенные выше.</p>
+<p><em>Подсказка: как можно ещё индексировать список?</em></p>
+<pre><code>## [1] &quot;Тверь&quot;  &quot;Тверь&quot;  &quot;Питер&quot;  &quot;Москва&quot;</code></pre>
+</div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Парой строк выше мы создавали новую переменную в датафрейме с помощью присваивания. Но давайте разнообразим наши данные. Используйте индексацию и оператор присваивания, чтобы привести датафрейм к следующему виду:</p>
+<pre><code>##       name age sex   city married
+## 1     Иван  23 муж Mосква   FALSE
+## 2    Алёна  34 жен  Тверь    TRUE
+## 3   Сергей  52 муж  Тверь    TRUE
+## 4    Елена  19 жен  Питер   FALSE
+## 5 Кристина  26 жен Москва    TRUE</code></pre>
+</div>
+<p>Когда мы говорили об индексации векторов, мы затрагивали тему индексации логическими векторами. Ничего не мешает нам воплотить эту идею и с датафреймами:</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="структуры-данных.html#cb214-1"></a>df<span class="op">$</span>sex[df<span class="op">$</span>age <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age)]</span></code></pre></div>
+<pre><code>## [1] &quot;жен&quot; &quot;муж&quot;</code></pre>
+<p>Или вот так, например:</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="структуры-данных.html#cb216-1"></a>df[df<span class="op">$</span>age <span class="op">&gt;</span><span class="st"> </span><span class="kw">mean</span>(df<span class="op">$</span>age), <span class="st">&#39;sex&#39;</span>]</span></code></pre></div>
+<pre><code>## [1] &quot;жен&quot; &quot;муж&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Мы вытащили по логическому условию значения определенной переменной датафрейма. А как вытащить часть датафрейма по некоторому условию? То есть необходимо оставить все колонки, но строки отобрать по определённому условию.</p>
+<p>Создайте подвыборку наших респондентов, возраст которых меньше среднего по всей имеющейся выборке.</p>
+<pre><code>##       name age sex   city married
+## 1     Иван  23 муж Mосква   FALSE
+## 4    Елена  19 жен  Питер   FALSE
+## 5 Кристина  26 жен Москва    TRUE</code></pre>
+</div>
+<p>Ну, пожалуй, и хватит топтаться в основах — пора уже чем-то серьёзным заняться!</p>
 
 </div>
 </div>
