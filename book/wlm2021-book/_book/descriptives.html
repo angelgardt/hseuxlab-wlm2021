@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Описательные статистики | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Описательные статистики | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="тестирование-статистических-гипотез.html"/>
-<link rel="next" href="корреляционный-анализ.html"/>
+<link rel="prev" href="hypotheses.html"/>
+<link rel="next" href="correlation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,119 +141,148 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#условные-обозначения"><i class="fa fa-check"></i>Условные обозначения</a></li>
 </ul></li>
 <li class="part"><span><b>I R programming</b></span></li>
-<li class="chapter" data-level="1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html"><i class="fa fa-check"></i><b>1</b> Знакомство с R и RStudio</a><ul>
-<li class="chapter" data-level="1.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#что-это-и-откуда"><i class="fa fa-check"></i><b>1.1</b> Что это и откуда?</a></li>
-<li class="chapter" data-level="1.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#почему-r"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-он-лучше-питона"><i class="fa fa-check"></i><b>1.2.1</b> А он лучше Питона?</a></li>
+<li class="chapter" data-level="1" data-path="Rintro.html"><a href="Rintro.html"><i class="fa fa-check"></i><b>1</b> Знакомство с R и RStudio</a><ul>
+<li class="chapter" data-level="1.1" data-path="Rintro.html"><a href="Rintro.html#что-это-и-откуда"><i class="fa fa-check"></i><b>1.1</b> Что это и откуда?</a></li>
+<li class="chapter" data-level="1.2" data-path="Rintro.html"><a href="Rintro.html#whyr"><i class="fa fa-check"></i><b>1.2</b> Почему R?</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="Rintro.html"><a href="Rintro.html#а-он-лучше-питона"><i class="fa fa-check"></i><b>1.2.1</b> А он лучше Питона?</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>1.3</b> Установка R и RStudio</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#а-зачем-обе-штуки-ставить"><i class="fa fa-check"></i><b>1.3.1</b> А зачем обе штуки ставить?</a></li>
+<li class="chapter" data-level="1.3" data-path="Rintro.html"><a href="Rintro.html#установка-r-и-rstudio"><i class="fa fa-check"></i><b>1.3</b> Установка R и RStudio</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="Rintro.html"><a href="Rintro.html#а-зачем-обе-штуки-ставить"><i class="fa fa-check"></i><b>1.3.1</b> А зачем обе штуки ставить?</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#где-спросить-вопрос-или-искать-ответ"><i class="fa fa-check"></i><b>1.4</b> Где спросить вопрос или искать ответ?</a></li>
-<li class="chapter" data-level="1.5" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#интерфейс-r"><i class="fa fa-check"></i><b>1.5</b> Интерфейс R</a></li>
-<li class="chapter" data-level="1.6" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#интерфейс-rstudio"><i class="fa fa-check"></i><b>1.6</b> Интерфейс RStudio</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#console"><i class="fa fa-check"></i><b>1.6.1</b> Console</a></li>
-<li class="chapter" data-level="1.6.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#code-editor"><i class="fa fa-check"></i><b>1.6.2</b> Code Editor</a></li>
-<li class="chapter" data-level="1.6.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#environment-workspace-и-history"><i class="fa fa-check"></i><b>1.6.3</b> Environment (Workspace) и History</a></li>
-<li class="chapter" data-level="1.6.4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#plots-files-packages-help-viewer"><i class="fa fa-check"></i><b>1.6.4</b> Plots, Files, Packages, Help, Viewer</a></li>
+<li class="chapter" data-level="1.4" data-path="Rintro.html"><a href="Rintro.html#где-спросить-вопрос-или-искать-ответ"><i class="fa fa-check"></i><b>1.4</b> Где спросить вопрос или искать ответ?</a></li>
+<li class="chapter" data-level="1.5" data-path="Rintro.html"><a href="Rintro.html#интерфейс-r"><i class="fa fa-check"></i><b>1.5</b> Интерфейс R</a></li>
+<li class="chapter" data-level="1.6" data-path="Rintro.html"><a href="Rintro.html#интерфейс-rstudio"><i class="fa fa-check"></i><b>1.6</b> Интерфейс RStudio</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="Rintro.html"><a href="Rintro.html#console"><i class="fa fa-check"></i><b>1.6.1</b> Console</a></li>
+<li class="chapter" data-level="1.6.2" data-path="Rintro.html"><a href="Rintro.html#code-editor"><i class="fa fa-check"></i><b>1.6.2</b> Code Editor</a></li>
+<li class="chapter" data-level="1.6.3" data-path="Rintro.html"><a href="Rintro.html#environment-workspace-и-history"><i class="fa fa-check"></i><b>1.6.3</b> Environment (Workspace) и History</a></li>
+<li class="chapter" data-level="1.6.4" data-path="Rintro.html"><a href="Rintro.html#plots-files-packages-help-viewer"><i class="fa fa-check"></i><b>1.6.4</b> Plots, Files, Packages, Help, Viewer</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#r-как-калькулятор"><i class="fa fa-check"></i><b>1.7</b> R как калькулятор</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#арифметические-операции"><i class="fa fa-check"></i><b>1.7.1</b> Арифметические операции</a></li>
-<li class="chapter" data-level="1.7.2" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>1.7.2</b> Функции</a></li>
-<li class="chapter" data-level="1.7.3" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#сравнение-и-логические-операции"><i class="fa fa-check"></i><b>1.7.3</b> Сравнение и логические операции</a></li>
+<li class="chapter" data-level="1.7" data-path="Rintro.html"><a href="Rintro.html#r-как-калькулятор"><i class="fa fa-check"></i><b>1.7</b> R как калькулятор</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="Rintro.html"><a href="Rintro.html#арифметические-операции"><i class="fa fa-check"></i><b>1.7.1</b> Арифметические операции</a></li>
+<li class="chapter" data-level="1.7.2" data-path="Rintro.html"><a href="Rintro.html#funcs"><i class="fa fa-check"></i><b>1.7.2</b> Функции</a></li>
+<li class="chapter" data-level="1.7.3" data-path="Rintro.html"><a href="Rintro.html#сравнение-и-логические-операции"><i class="fa fa-check"></i><b>1.7.3</b> Сравнение и логические операции</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
-<li class="chapter" data-level="1.9" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#рабочая-директория.-projects"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
+<li class="chapter" data-level="1.8" data-path="Rintro.html"><a href="Rintro.html#assignment-и-переменные"><i class="fa fa-check"></i><b>1.8</b> Assignment и переменные</a></li>
+<li class="chapter" data-level="1.9" data-path="Rintro.html"><a href="Rintro.html#wd"><i class="fa fa-check"></i><b>1.9</b> Рабочая директория. Projects</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="типы-данных.html"><a href="типы-данных.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
-<li class="chapter" data-level="2.1" data-path="типы-данных.html"><a href="типы-данных.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
-<li class="chapter" data-level="2.2" data-path="типы-данных.html"><a href="типы-данных.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
-<li class="chapter" data-level="2.3" data-path="типы-данных.html"><a href="типы-данных.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
-<li class="chapter" data-level="2.4" data-path="типы-данных.html"><a href="типы-данных.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
+<li class="chapter" data-level="2" data-path="datatypes.html"><a href="datatypes.html"><i class="fa fa-check"></i><b>2</b> Типы данных</a><ul>
+<li class="chapter" data-level="2.1" data-path="datatypes.html"><a href="datatypes.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
+<li class="chapter" data-level="2.2" data-path="datatypes.html"><a href="datatypes.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
+<li class="chapter" data-level="2.3" data-path="datatypes.html"><a href="datatypes.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
+<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="структуры-данных.html"><a href="структуры-данных.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
-<li class="chapter" data-level="3.1" data-path="структуры-данных.html"><a href="структуры-данных.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="структуры-данных.html"><a href="структуры-данных.html#coercion"><i class="fa fa-check"></i><b>3.1.1</b> Coercion</a></li>
-<li class="chapter" data-level="3.1.2" data-path="структуры-данных.html"><a href="структуры-данных.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
-<li class="chapter" data-level="3.1.3" data-path="структуры-данных.html"><a href="структуры-данных.html#recycling"><i class="fa fa-check"></i><b>3.1.3</b> Recycling</a></li>
-<li class="chapter" data-level="3.1.4" data-path="структуры-данных.html"><a href="структуры-данных.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.4</b> NA, NaN, NULL</a></li>
+<li class="chapter" data-level="3" data-path="datastructures.html"><a href="datastructures.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
+<li class="chapter" data-level="3.1" data-path="datastructures.html"><a href="datastructures.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="datastructures.html"><a href="datastructures.html#coercion-part-two"><i class="fa fa-check"></i><b>3.1.1</b> Coercion [part two]</a></li>
+<li class="chapter" data-level="3.1.2" data-path="datastructures.html"><a href="datastructures.html#генерация-числовых-последовательностей"><i class="fa fa-check"></i><b>3.1.2</b> Генерация числовых последовательностей</a></li>
+<li class="chapter" data-level="3.1.3" data-path="datastructures.html"><a href="datastructures.html#операции-с-векторами"><i class="fa fa-check"></i><b>3.1.3</b> Операции с векторами</a></li>
+<li class="chapter" data-level="3.1.4" data-path="datastructures.html"><a href="datastructures.html#recycling"><i class="fa fa-check"></i><b>3.1.4</b> Recycling</a></li>
+<li class="chapter" data-level="3.1.5" data-path="datastructures.html"><a href="datastructures.html#индексация-векторов"><i class="fa fa-check"></i><b>3.1.5</b> Индексация векторов</a></li>
+<li class="chapter" data-level="3.1.6" data-path="datastructures.html"><a href="datastructures.html#na-nan-null"><i class="fa fa-check"></i><b>3.1.6</b> NA, NaN, NULL</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="структуры-данных.html"><a href="структуры-данных.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a></li>
-<li class="chapter" data-level="3.3" data-path="структуры-данных.html"><a href="структуры-данных.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a></li>
-<li class="chapter" data-level="3.4" data-path="структуры-данных.html"><a href="структуры-данных.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
+<li class="chapter" data-level="3.2" data-path="datastructures.html"><a href="datastructures.html#матрицы"><i class="fa fa-check"></i><b>3.2</b> Матрицы</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="datastructures.html"><a href="datastructures.html#индексация-матриц"><i class="fa fa-check"></i><b>3.2.1</b> Индексация матриц</a></li>
+<li class="chapter" data-level="3.2.2" data-path="datastructures.html"><a href="datastructures.html#операции-в-матрицами"><i class="fa fa-check"></i><b>3.2.2</b> Операции в матрицами</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="знакомство-с-r-и-rstudio.html"><a href="знакомство-с-r-и-rstudio.html#функции"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
-<li class="chapter" data-level="4.1" data-path="функции.html"><a href="функции.html"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
+<li class="chapter" data-level="3.3" data-path="datastructures.html"><a href="datastructures.html#списки"><i class="fa fa-check"></i><b>3.3</b> Списки</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="datastructures.html"><a href="datastructures.html#индексация-списков"><i class="fa fa-check"></i><b>3.3.1</b> Индексация списков</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="строки.html"><a href="строки.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
-<li class="chapter" data-level="5.1" data-path="строки.html"><a href="строки.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.1</b> Регулярные выражения</a></li>
+<li class="chapter" data-level="3.4" data-path="datastructures.html"><a href="datastructures.html#датафреймы"><i class="fa fa-check"></i><b>3.4</b> Датафреймы</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html"><i class="fa fa-check"></i><b>6</b> Работа с реальными данными</a><ul>
-<li class="chapter" data-level="6.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#рабочая-директория"><i class="fa fa-check"></i><b>6.1</b> Рабочая директория</a></li>
-<li class="chapter" data-level="6.2" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#импорт-данных"><i class="fa fa-check"></i><b>6.2</b> Импорт данных</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Функции</a><ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#открытый-исходный-код"><i class="fa fa-check"></i><b>4.1</b> Открытый исходный код</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="работа-с-реальными-данными.html"><a href="работа-с-реальными-данными.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
+<li class="chapter" data-level="5" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>5</b> Строки</a><ul>
+<li class="chapter" data-level="5.1" data-path="strings.html"><a href="strings.html#установка-дополнительных-пакетов"><i class="fa fa-check"></i><b>5.1</b> Установка дополнительных пакетов</a></li>
+<li class="chapter" data-level="5.2" data-path="strings.html"><a href="strings.html#создание-строк"><i class="fa fa-check"></i><b>5.2</b> Создание строк</a></li>
+<li class="chapter" data-level="5.3" data-path="strings.html"><a href="strings.html#конкатенация-строк"><i class="fa fa-check"></i><b>5.3</b> Конкатенация строк</a></li>
+<li class="chapter" data-level="5.4" data-path="strings.html"><a href="strings.html#разделение-строк"><i class="fa fa-check"></i><b>5.4</b> Разделение строк</a></li>
+<li class="chapter" data-level="5.5" data-path="strings.html"><a href="strings.html#сортировка-строк"><i class="fa fa-check"></i><b>5.5</b> Сортировка строк</a></li>
+<li class="chapter" data-level="5.6" data-path="strings.html"><a href="strings.html#изменение-регистра"><i class="fa fa-check"></i><b>5.6</b> Изменение регистра</a></li>
+<li class="chapter" data-level="5.7" data-path="strings.html"><a href="strings.html#поиск-подстроки"><i class="fa fa-check"></i><b>5.7</b> Поиск подстроки</a></li>
+<li class="chapter" data-level="5.8" data-path="strings.html"><a href="strings.html#изменение-строк"><i class="fa fa-check"></i><b>5.8</b> Изменение строк</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="strings.html"><a href="strings.html#выделение-подстроки"><i class="fa fa-check"></i><b>5.8.1</b> Выделение подстроки</a></li>
+<li class="chapter" data-level="5.8.2" data-path="strings.html"><a href="strings.html#замена-подстроки"><i class="fa fa-check"></i><b>5.8.2</b> Замена подстроки</a></li>
+<li class="chapter" data-level="5.8.3" data-path="strings.html"><a href="strings.html#удаление-подстроки"><i class="fa fa-check"></i><b>5.8.3</b> Удаление подстроки</a></li>
+<li class="chapter" data-level="5.8.4" data-path="strings.html"><a href="strings.html#транслитерация-строк"><i class="fa fa-check"></i><b>5.8.4</b> Транслитерация строк</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="предобработка-данных-концепция-tidy-data.html"><a href="предобработка-данных-концепция-tidy-data.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
-<li class="chapter" data-level="8" data-path="визуализация-данных.html"><a href="визуализация-данных.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
+<li class="chapter" data-level="5.9" data-path="strings.html"><a href="strings.html#регулярные-выражения"><i class="fa fa-check"></i><b>5.9</b> Регулярные выражения</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="strings.html"><a href="strings.html#метасимволы"><i class="fa fa-check"></i><b>5.9.1</b> Метасимволы</a></li>
+<li class="chapter" data-level="5.9.2" data-path="strings.html"><a href="strings.html#классы-знаков"><i class="fa fa-check"></i><b>5.9.2</b> Классы знаков</a></li>
+<li class="chapter" data-level="5.9.3" data-path="strings.html"><a href="strings.html#quant"><i class="fa fa-check"></i><b>5.9.3</b> Квантификация</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="realdata.html"><a href="realdata.html"><i class="fa fa-check"></i><b>6</b> Работа с реальными данными</a><ul>
+<li class="chapter" data-level="6.1" data-path="realdata.html"><a href="realdata.html#рабочая-директория"><i class="fa fa-check"></i><b>6.1</b> Рабочая директория</a></li>
+<li class="chapter" data-level="6.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>6.2</b> Импорт данных</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="realdata.html"><a href="realdata.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="realdata.html"><a href="realdata.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
+<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#rdata"><i class="fa fa-check"></i><b>6.4</b> <code>.RData</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
+<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
-<li class="chapter" data-level="9" data-path="математический-ликбез.html"><a href="математический-ликбез.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a></li>
-<li class="chapter" data-level="10" data-path="введение-в-статистику.html"><a href="введение-в-статистику.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
-<li class="chapter" data-level="11" data-path="случайный-эксперимент.html"><a href="случайный-эксперимент.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
-<li class="chapter" data-level="12" data-path="вероятность-и-случайные-величины.html"><a href="вероятность-и-случайные-величины.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
-<li class="chapter" data-level="13" data-path="оценивание-параметров-в-практике-статистического-анализа.html"><a href="оценивание-параметров-в-практике-статистического-анализа.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a></li>
-<li class="chapter" data-level="14" data-path="тестирование-статистических-гипотез.html"><a href="тестирование-статистических-гипотез.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="9" data-path="maths.html"><a href="maths.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
+<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
+<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
+<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
+<li class="chapter" data-level="9.4" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="maths.html"><a href="maths.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
+<li class="chapter" data-level="9.4.2" data-path="maths.html"><a href="maths.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
+<li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#действия-с-матрицами"><i class="fa fa-check"></i><b>9.4.3</b> Действия с матрицами</a></li>
+<li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#скалярное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.4</b> Скалярное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.5</b> Векторное произведение векторов</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.4.6</b> Произведение матриц (матричное умножение)</a></li>
+<li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.4.7</b> Транспонирование матрицы</a></li>
+<li class="chapter" data-level="9.4.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.4.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.4.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.4.9</b> След матрицы</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
+<li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
+<li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
+<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
-<li class="chapter" data-level="15" data-path="описательные-статистики.html"><a href="описательные-статистики.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
-<li class="chapter" data-level="15.1" data-path="описательные-статистики.html"><a href="описательные-статистики.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="описательные-статистики.html"><a href="описательные-статистики.html#мода"><i class="fa fa-check"></i><b>15.1.1</b> Мода</a></li>
-<li class="chapter" data-level="15.1.2" data-path="описательные-статистики.html"><a href="описательные-статистики.html#медиана"><i class="fa fa-check"></i><b>15.1.2</b> Медиана</a></li>
-<li class="chapter" data-level="15.1.3" data-path="описательные-статистики.html"><a href="описательные-статистики.html#среднее"><i class="fa fa-check"></i><b>15.1.3</b> Среднее</a></li>
+<li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
+<li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="descriptives.html"><a href="descriptives.html#мода"><i class="fa fa-check"></i><b>15.1.1</b> Мода</a></li>
+<li class="chapter" data-level="15.1.2" data-path="descriptives.html"><a href="descriptives.html#медиана"><i class="fa fa-check"></i><b>15.1.2</b> Медиана</a></li>
+<li class="chapter" data-level="15.1.3" data-path="descriptives.html"><a href="descriptives.html#среднее"><i class="fa fa-check"></i><b>15.1.3</b> Среднее</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="описательные-статистики.html"><a href="описательные-статистики.html#меры-разброса"><i class="fa fa-check"></i><b>15.2</b> Меры разброса</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="описательные-статистики.html"><a href="описательные-статистики.html#минимум-и-максимум"><i class="fa fa-check"></i><b>15.2.1</b> Минимум и максимум</a></li>
-<li class="chapter" data-level="15.2.2" data-path="описательные-статистики.html"><a href="описательные-статистики.html#размах"><i class="fa fa-check"></i><b>15.2.2</b> Размах</a></li>
-<li class="chapter" data-level="15.2.3" data-path="описательные-статистики.html"><a href="описательные-статистики.html#дисперсия"><i class="fa fa-check"></i><b>15.2.3</b> Дисперсия</a></li>
-<li class="chapter" data-level="15.2.4" data-path="описательные-статистики.html"><a href="описательные-статистики.html#стандартное-отклонение"><i class="fa fa-check"></i><b>15.2.4</b> Стандартное отклонение</a></li>
-<li class="chapter" data-level="15.2.5" data-path="описательные-статистики.html"><a href="описательные-статистики.html#стандартная-ошибка-среднего"><i class="fa fa-check"></i><b>15.2.5</b> Стандартная ошибка среднего</a></li>
-<li class="chapter" data-level="15.2.6" data-path="описательные-статистики.html"><a href="описательные-статистики.html#квантили"><i class="fa fa-check"></i><b>15.2.6</b> Квантили</a></li>
+<li class="chapter" data-level="15.2" data-path="descriptives.html"><a href="descriptives.html#меры-разброса"><i class="fa fa-check"></i><b>15.2</b> Меры разброса</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="descriptives.html"><a href="descriptives.html#минимум-и-максимум"><i class="fa fa-check"></i><b>15.2.1</b> Минимум и максимум</a></li>
+<li class="chapter" data-level="15.2.2" data-path="descriptives.html"><a href="descriptives.html#размах"><i class="fa fa-check"></i><b>15.2.2</b> Размах</a></li>
+<li class="chapter" data-level="15.2.3" data-path="descriptives.html"><a href="descriptives.html#дисперсия"><i class="fa fa-check"></i><b>15.2.3</b> Дисперсия</a></li>
+<li class="chapter" data-level="15.2.4" data-path="descriptives.html"><a href="descriptives.html#стандартное-отклонение"><i class="fa fa-check"></i><b>15.2.4</b> Стандартное отклонение</a></li>
+<li class="chapter" data-level="15.2.5" data-path="descriptives.html"><a href="descriptives.html#стандартная-ошибка-среднего"><i class="fa fa-check"></i><b>15.2.5</b> Стандартная ошибка среднего</a></li>
+<li class="chapter" data-level="15.2.6" data-path="descriptives.html"><a href="descriptives.html#квантили"><i class="fa fa-check"></i><b>15.2.6</b> Квантили</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="описательные-статистики.html"><a href="описательные-статистики.html#асимметрия"><i class="fa fa-check"></i><b>15.3</b> Асимметрия</a></li>
-<li class="chapter" data-level="15.4" data-path="описательные-статистики.html"><a href="описательные-статистики.html#эксцесс"><i class="fa fa-check"></i><b>15.4</b> Эксцесс</a></li>
-<li class="chapter" data-level="15.5" data-path="описательные-статистики.html"><a href="описательные-статистики.html#описательные-статистики-в-r"><i class="fa fa-check"></i><b>15.5</b> Описательные статистики в R</a></li>
+<li class="chapter" data-level="15.3" data-path="descriptives.html"><a href="descriptives.html#асимметрия"><i class="fa fa-check"></i><b>15.3</b> Асимметрия</a></li>
+<li class="chapter" data-level="15.4" data-path="descriptives.html"><a href="descriptives.html#эксцесс"><i class="fa fa-check"></i><b>15.4</b> Эксцесс</a></li>
+<li class="chapter" data-level="15.5" data-path="descriptives.html"><a href="descriptives.html#описательные-статистики-в-r"><i class="fa fa-check"></i><b>15.5</b> Описательные статистики в R</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html"><i class="fa fa-check"></i><b>16</b> Корреляционный анализ</a><ul>
-<li class="chapter" data-level="16.1" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html#ковариация"><i class="fa fa-check"></i><b>16.1</b> Ковариация</a></li>
-<li class="chapter" data-level="16.2" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html#корреляция"><i class="fa fa-check"></i><b>16.2</b> Корреляция</a><ul>
-<li class="chapter" data-level="16.2.1" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
-<li class="chapter" data-level="16.2.2" data-path="корреляционный-анализ.html"><a href="корреляционный-анализ.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
+<li class="chapter" data-level="16" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>16</b> Корреляционный анализ</a><ul>
+<li class="chapter" data-level="16.1" data-path="correlation.html"><a href="correlation.html#ковариация"><i class="fa fa-check"></i><b>16.1</b> Ковариация</a></li>
+<li class="chapter" data-level="16.2" data-path="correlation.html"><a href="correlation.html#корреляция"><i class="fa fa-check"></i><b>16.2</b> Корреляция</a><ul>
+<li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
+<li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="общие-линейные-модели-простая-линейная-регрессия.html"><a href="общие-линейные-модели-простая-линейная-регрессия.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="множественная-линейная-регрессия.html"><a href="множественная-линейная-регрессия.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="дисперсионный-анализ.html"><a href="дисперсионный-анализ.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ковариационный-анализ.html"><a href="ковариационный-анализ.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="обобщенные-линейные-модели-логистическая-регрессия.html"><a href="обобщенные-линейные-модели-логистическая-регрессия.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
-<li class="chapter" data-level="22" data-path="пуассоновская-регрессия.html"><a href="пуассоновская-регрессия.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
-<li class="chapter" data-level="23" data-path="регуляризация-регрессии.html"><a href="регуляризация-регрессии.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
-<li class="chapter" data-level="24" data-path="смешанные-линейные-модели.html"><a href="смешанные-линейные-модели.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
-<li class="chapter" data-level="25" data-path="кластерный-анализ.html"><a href="кластерный-анализ.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a></li>
-<li class="chapter" data-level="26" data-path="анализ-главных-компонент.html"><a href="анализ-главных-компонент.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a></li>
-<li class="chapter" data-level="27" data-path="эксплораторный-факторный-анализ.html"><a href="эксплораторный-факторный-анализ.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
-<li class="chapter" data-level="28" data-path="конфирматорный-факторный-анализ.html"><a href="конфирматорный-факторный-анализ.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
-<li class="chapter" data-level="29" data-path="что-дальше.html"><a href="что-дальше.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
-<li class="appendix"><span><b>Приложения</b></span></li>
-<li class="chapter" data-level="A" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html"><i class="fa fa-check"></i><b>A</b> Ещё о математике</a><ul>
-<li class="chapter" data-level="A.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#числа"><i class="fa fa-check"></i><b>A.1</b> Числа</a><ul>
-<li class="chapter" data-level="A.1.1" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#натуральные-числа"><i class="fa fa-check"></i><b>A.1.1</b> Натуральные числа</a></li>
-<li class="chapter" data-level="A.1.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#рациональные-и-иррациональные-числа"><i class="fa fa-check"></i><b>A.1.2</b> Рациональные и иррациональные числа</a></li>
-<li class="chapter" data-level="A.1.3" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#вещественные-числа"><i class="fa fa-check"></i><b>A.1.3</b> Вещественные числа</a></li>
-<li class="chapter" data-level="A.1.4" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#модуль-числа"><i class="fa fa-check"></i><b>A.1.4</b> Модуль числа</a></li>
-</ul></li>
-<li class="chapter" data-level="A.2" data-path="ещё-о-математике.html"><a href="ещё-о-математике.html#settheory"><i class="fa fa-check"></i><b>A.2</b> Немного из теории множеств</a></li>
-</ul></li>
-<li class="chapter" data-level="B" data-path="данные-и-железо.html"><a href="данные-и-железо.html"><i class="fa fa-check"></i><b>B</b> Данные и железо</a></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
+<li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
+<li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
+<li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a></li>
+<li class="chapter" data-level="26" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a></li>
+<li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
+<li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
+<li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
 <li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
@@ -275,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="описательные-статистики" class="section level1">
+<div id="descriptives" class="section level1">
 <h1><span class="header-section-number">15</span> Описательные статистики</h1>
 <p><em>Итак, мы загрузили данные, посмотрели на них, почистили — пора приступить к внимательному изучению, чего мы там насобирали. Частично мы уже сталкивались с описательными статистиками в предыдущих главах — теперь же будем разбираться подробно.</em></p>
 <p><strong>Описательные статистики (descriptive statistics<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>)</strong> — обобщенные статистики, количественно описывающие особенности имеющихся данных.</p>
@@ -317,9 +351,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">15.1.1</span> Мода</h3>
 <p><strong>Мода (mode)</strong> — наиболее часто встречающееся значение данной переменной.</p>
 <p>Тут все достаточно просто и интуитивно понятно. Пусть у нас есть следующий вектор наблюдений:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="descriptives.html#cb1-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)</span></code></pre></div>
 <p>Если мы составим таблицу частот по этому вектору, то получим следующее:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="descriptives.html#cb2-1"></a><span class="kw">table</span>(x)</span></code></pre></div>
 <pre><code>## x
 ## 1 2 3 4 6 
 ## 2 2 2 4 1</code></pre>
@@ -337,9 +371,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая принимает на вход вектор значений дискретной переменной, и вычисляет моду данной переменной<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Если мод у данной переменной несколько, необходимо вернуть все.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">mode</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="descriptives.html#cb4-1"></a><span class="kw">mode</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">mode</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="descriptives.html#cb6-1"></a><span class="kw">mode</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>))</span></code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
 </div>
 </div>
@@ -360,7 +394,7 @@ X(\frac{n+1}{2}), &amp; \text{ if } n \text{ is odd},\\
 \]</span>
 где <span class="math inline">\(X\)</span> — вектор налюдений данной переменной, <span class="math inline">\(n\)</span> — число наблюдений, <span class="math inline">\(X(a)\)</span> — наблюдение с индексом <span class="math inline">\(a\)</span> в сортированном векторе <span class="math inline">\(X\)</span>.</p>
 <p>Для вектора <code>x</code>, который был создан выше, расчёт медианы выглядит так:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">median</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="descriptives.html#cb8-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Изи.</p>
 </div>
@@ -376,15 +410,15 @@ X(\frac{n+1}{2}), &amp; \text{ if } n \text{ is odd},\\
 \]</span>
 где <span class="math inline">\(\bar X\)</span> — среднее арифметическое, <span class="math inline">\(x_i\)</span> — наблюдение в векторе <span class="math inline">\(X\)</span>, <span class="math inline">\(n\)</span> — количество наблюдений.</p>
 <p>В <strong>R</strong> оно считается абсолютно элементарно:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="descriptives.html#cb10-1"></a><span class="kw">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3.090909</code></pre>
 <p>Кстати, оценка генерального среднего через выборочное среднее — это один из примеров <a href="">точечной оценки</a> параметра <a href="">методом моментов</a>.</p>
 <p>Давайте сравним для рассмотреные статистики (используем все тот же вектор <code>x</code>):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">mode</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="descriptives.html#cb12-1"></a><span class="kw">mode</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">median</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="descriptives.html#cb14-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="descriptives.html#cb16-1"></a><span class="kw">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3.090909</code></pre>
 Как мы видим, хотя все три статистики описывают цкентральную тенденцию, тем не менее они всё же дают разные результаты. Посмотрим их взаимное положение на графике:
 <img src="wlm2021-book_files/figure-html/unnamed-chunk-8-1.png" width="672" />
@@ -437,7 +471,7 @@ G_{X} = \sqrt[n]{\prod_{i=1}^n x_i} = \Big(\prod_{i=1}^n x_i\Big)^{\tfrac{1}{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая принимает на вход вектор значений переменной и вычисляет геометрическое среднее. Функция должна возвращать одно число.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">geometric_mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="descriptives.html#cb18-1"></a><span class="kw">geometric_mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 2.698696</code></pre>
 </div>
 <p>Геометрическое среднее используется при работе с экспоненциально растущими величинами (например, численность населения).</p>
@@ -481,7 +515,7 @@ X_{\mathrm{RMS}} = \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая вычисляет квадратичное среднее по данному вектору наблюдений. Функция должна принимать на вход числовой вектор и возвращать одно число.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">quadratic_mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="descriptives.html#cb20-1"></a><span class="kw">quadratic_mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1.028519</code></pre>
 </div>
 </div>
@@ -534,8 +568,8 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 Тогда сумма коэффициентов будет равна единице. Так чаще всего и поступают, так как тогда коэффициент будет представлять долю, которую весит данный параметр в суммарной оценке. Удобно, практично, красиво.</p>
 <p>Взвещенное среднее часто применяется именно во всякого рода ассессментах, и не только образовательных. Например, вы HR-аналитик и оцениваете персонал. Вы аналитически вычисляете веса коэффициентов (допусти, с помощью линейной регрессии), а далее на их основе высчитаете интегральный балл, по которому будете оценивать сотрудников. Это как один из индустриальных примеров.</p>
 <p>Есть специально обученная функция, которая вычисляет взвешенное среднее:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">weighted.mean</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>), <span class="co"># вектор значений параметров (например, баллы за тест, эссе и экзамен)</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">              <span class="dt">w =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>)) <span class="co"># веса в итоговой оценке</span></a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="descriptives.html#cb22-1"></a><span class="kw">weighted.mean</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>), <span class="co"># вектор значений параметров (например, баллы за тест, эссе и экзамен)</span></span>
+<span id="cb22-2"><a href="descriptives.html#cb22-2"></a>              <span class="dt">w =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>)) <span class="co"># веса в итоговой оценке</span></span></code></pre></div>
 <pre><code>## [1] 8.2</code></pre>
 <blockquote>
 <p>На этом список средних не заканчивается, но нам обозначенных выше будет более чем достаточно.</p>
@@ -550,23 +584,23 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <img src="img/not_enough.jpg" width="50%">
 </center>
 <p>Простенький пример для наглядности. Пусть у нас есть два следующих вектора:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">x1</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="descriptives.html#cb24-1"></a>x1</span></code></pre></div>
 <pre><code>## [1]  5 50 12  4  4  6 24</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">x2</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="descriptives.html#cb26-1"></a>x2</span></code></pre></div>
 <pre><code>##  [1] 20 30  6  8  2 11  1 13 28 31</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">mean</span>(x1)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="descriptives.html#cb28-1"></a><span class="kw">mean</span>(x1)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">mean</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="descriptives.html#cb30-1"></a><span class="kw">mean</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <p>Средние по выборкам одинаковы, однако мы явно наблдаем, что вектора различны. Более того, если пристально посмотреть, то мы обнаружим, что у них разный <em>разброс</em> значений. Вообще-то помня о том, что <em>неопределенность и вариация</em> — главные характеристики статистических данных, было бы крайне неразумно пренебречь описанием этой самой вариативности. Что ж, займемся этим вопросом.</p>
 <div id="минимум-и-максимум" class="section level3">
 <h3><span class="header-section-number">15.2.1</span> Минимум и максимум</h3>
 <p>Как можно описать разброс? Указать минимум и максимум!</p>
 <p>Это, во-первых, справедливо, во-вторых, просто, что даже останавливаться на этом не будем. Вот соответствующие функции:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">min</span>(x1); <span class="kw">min</span>(x2) <span class="co"># да, точка с запятой в R тоже работает</span></a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="descriptives.html#cb32-1"></a><span class="kw">min</span>(x1); <span class="kw">min</span>(x2) <span class="co"># да, точка с запятой в R тоже работает</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">max</span>(x1); <span class="kw">max</span>(x2) <span class="co"># но заклинаю вас использовать её не в ущерб удобочитаемости</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="descriptives.html#cb35-1"></a><span class="kw">max</span>(x1); <span class="kw">max</span>(x2) <span class="co"># но заклинаю вас использовать её не в ущерб удобочитаемости</span></span></code></pre></div>
 <pre><code>## [1] 50</code></pre>
 <pre><code>## [1] 31</code></pre>
 <p>Минимум и максимум по переменных всегда полезно смотреть при исследовании данных — так можно обнаружить ошибки записи. Например, если вы психометрик и используете в вопросах опросника семибальную шкалу его высочества Ликерта (Лайкерта), а при исследовании собранных данных обнаруживаете минимум по какому-либо вопросу 0, а максимум 9 — явно что-то пошло не так. Или, допустим, вы анализируете заработную плату сотрудников организации и обнаруживаете минимум по переменной «фонд оплаты труда» ниже МРОТ — повод задуматься. Конечно, сразу выкидывать наблюдения не надо, но точно надо обратить на них внимание и изучить возможные причины появления таких значений — может сотрудник устроен на 0.1 ставки?</p>
@@ -574,10 +608,10 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <div class="task">
 <p><em>Очевидно, что минимум — это первый элемент отсортированного (по возрастанию) массива, а максимум — последний. А как найти минимум (или максимум) без сортировки?</em></p>
 <p>Напишите функцию, которая принимает на вход массив (вектор) и возвращает минимальный (максимальный) элемент массива. Внутри функции нельзя использовать сортировку и встроенные в R функции.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">min_custom</span>(x1); <span class="kw">min_custom</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="descriptives.html#cb38-1"></a><span class="kw">min_custom</span>(x1); <span class="kw">min_custom</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">max_custom</span>(x1); <span class="kw">max_custom</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="descriptives.html#cb41-1"></a><span class="kw">max_custom</span>(x1); <span class="kw">max_custom</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 50</code></pre>
 <pre><code>## [1] 31</code></pre>
 <p><strong>P.S.</strong> Функции для поиска минимума и максимума будут практически идентичны, поэтому если вы напишите одну из них, тут же поймете, как её модифицировать, чтобы получить вторую. <br>
@@ -587,9 +621,9 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <div id="размах" class="section level3">
 <h3><span class="header-section-number">15.2.2</span> Размах</h3>
 <p>А если у нас есть минимум и максимум — значит можно посчитать разницу между ими. И получить такую статистику как <strong>размах (range)</strong>. Добрые люди написали одноименную функцию, правда считает она не сам размах, а выводит минимум и максимум по массиву:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">range</span>(x1)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="descriptives.html#cb44-1"></a><span class="kw">range</span>(x1)</span></code></pre></div>
 <pre><code>## [1]  4 50</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">range</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="descriptives.html#cb46-1"></a><span class="kw">range</span>(x2)</span></code></pre></div>
 <pre><code>## [1]  1 31</code></pre>
 <p>Но это не беда, потому что другие добрые люди написали более серьезные функции, чтобы облегчить нам статистическую жизнь. С ними познакомимся далее.</p>
 </div>
@@ -597,22 +631,22 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <h3><span class="header-section-number">15.2.3</span> Дисперсия</h3>
 <p>Ну, хорошо, <code>range()</code> нам указал, что действительно разброс в наших векторах различный, несмотря на то, что средние в точности равны. Что нам еще надо?</p>
 <p>Вот другой пример. Есть два таких вектора.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">x3</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="descriptives.html#cb48-1"></a>x3</span></code></pre></div>
 <pre><code>##  [1]  1  1  2  5  5  6  8  8 10 10</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">x4</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="descriptives.html#cb50-1"></a>x4</span></code></pre></div>
 <pre><code>##  [1]  1  3  4  4  5  6  7  7  9 10</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">mean</span>(x3); <span class="kw">mean</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="descriptives.html#cb52-1"></a><span class="kw">mean</span>(x3); <span class="kw">mean</span>(x4)</span></code></pre></div>
 <pre><code>## [1] 5.6</code></pre>
 <pre><code>## [1] 5.6</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">range</span>(x3); <span class="kw">range</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="descriptives.html#cb55-1"></a><span class="kw">range</span>(x3); <span class="kw">range</span>(x4)</span></code></pre></div>
 <pre><code>## [1]  1 10</code></pre>
 <pre><code>## [1]  1 10</code></pre>
 <p>Вроде и средние одинаковы, и размах одинаковый. Но вектора явно различаются. Можно даже посмотреть на картинку:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)) <span class="co"># размещаем два графика друг по другом</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">hist</span>(x3, <span class="dt">breaks =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="kw">hist</span>(x4, <span class="dt">breaks =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="descriptives.html#cb58-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)) <span class="co"># размещаем два графика друг по другом</span></span>
+<span id="cb58-2"><a href="descriptives.html#cb58-2"></a><span class="kw">hist</span>(x3, <span class="dt">breaks =</span> <span class="dv">10</span>)</span>
+<span id="cb58-3"><a href="descriptives.html#cb58-3"></a><span class="kw">hist</span>(x4, <span class="dt">breaks =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p><img src="wlm2021-book_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co"># откатываем настройки обратно</span></a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="descriptives.html#cb59-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co"># откатываем настройки обратно</span></span></code></pre></div>
 <p>Всё это безобразие приводит нас к мысли о том, что нам недостаточно описания «общей», «внешней» вариативности, нам надо ещё постараться как-то ухватить вариативность «внутри» ряда наблюдений. И желательно тоже в какой-нибудь одной чиселке.</p>
 <center>
 <img src="img/challenge_accepted.png" width="50%">
@@ -673,7 +707,7 @@ d = \bar x - x_i
 s^2 = \frac{\sum_{i=1}^n (\bar x - x_i)^2}{n-1}
 \]</span></p>
 <p>Функция, которая занимается вычислением дисперсии, называется <code>var()</code>, так как «вариация» (variance) — это полный синоним дисперсии.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">var</span>(x3); <span class="kw">var</span>(x4) <span class="co"># вычисляется несмещённая дисперсия</span></a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="descriptives.html#cb60-1"></a><span class="kw">var</span>(x3); <span class="kw">var</span>(x4) <span class="co"># вычисляется несмещённая дисперсия</span></span></code></pre></div>
 <pre><code>## [1] 11.82222</code></pre>
 <pre><code>## [1] 7.6</code></pre>
 <p>И — voila! — дисперсии у наших векторов действительно различны.</p>
@@ -681,7 +715,7 @@ s^2 = \frac{\sum_{i=1}^n (\bar x - x_i)^2}{n-1}
 <div class="task">
 <p><em>Функция для расчёта дисперсии у нас есть, а вот для суммы квадратов — нет.</em> 😞</p>
 <p>Напишите функцию, которая вычисляет сумму квадратов отклонений от среднего значения по данному вектору. Функция принимает числовой вектор и возвращает одно число.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">SS</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="descriptives.html#cb63-1"></a><span class="kw">SS</span>(x4)</span></code></pre></div>
 <pre><code>## [1] 68.4</code></pre>
 </div>
 </div>
@@ -709,7 +743,7 @@ s^2 = \frac{\sum_{i=1}^n (\bar x - x_i)^2}{n-1}
 <p><span class="math display">\[
 \sigma_X = \sqrt{\sigma^2_X} = \sqrt{\frac{\sum_{i=1}^n (\bar x - x_i)^2}{n}} = \sqrt{\frac{\sum_{i=1}^n d_i^2}{n}},
 \]</span>
-где <span class="math inline">\(d_i = \bar x - x_i\)</span> — отклонение. <a href="описательные-статистики.html#quadratic_mean">Узнали?</a> Согласны?</p>
+где <span class="math inline">\(d_i = \bar x - x_i\)</span> — отклонение. <a href="descriptives.html#quadratic_mean">Узнали?</a> Согласны?</p>
 <ul>
 <li><strong>стандартное отклонение выборки</strong></li>
 </ul>
@@ -756,8 +790,8 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <p>КАРТИНКА</p>
 <p>Квартили хорошо визуализируются графиком «ящик с усами» (boxplot). По этому графику можно увидеть симметричность распределения, разброс значений переменной, сравнить вариативность нескольких переменных.</p>
 <p>Квартили в R можно рассчитать следующим образом:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">x5 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="fl">3.5</span>, <span class="dt">sd =</span> <span class="fl">0.45</span>)</a>
-<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="kw">quantile</span>(x5) <span class="co"># обратите внимание на название функции :)</span></a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="descriptives.html#cb65-1"></a>x5 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="fl">3.5</span>, <span class="dt">sd =</span> <span class="fl">0.45</span>)</span>
+<span id="cb65-2"><a href="descriptives.html#cb65-2"></a><span class="kw">quantile</span>(x5) <span class="co"># обратите внимание на название функции :)</span></span></code></pre></div>
 <pre><code>##       0%      25%      50%      75%     100% 
 ## 2.184432 3.162326 3.507951 3.804915 4.436762</code></pre>
 <p>С первым и третьим квартилями связана следующая полезная метрика — <strong>межквартильный размах (interquartile range)</strong>. Это разность между третьим и первым квартилем:</p>
@@ -783,17 +817,16 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая находит выбросы. Функция должна принимать на вход числовой вектор и возвращать логический вектор такой же длины, как и исходный. Каждое значение логического вектора будет ответом на вопрос, является ли выбросом соответствующее ему значение исходного вектора. Для определения выбросов воспользуйтесь первым из упомянутых подходов.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">is_outlier</span>(<span class="kw">c</span>(x5, <span class="dv">100</span>))</a></code></pre></div>
-<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [23] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [34] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [45] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [56] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [67] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [78] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [89] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [100] FALSE  TRUE</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="descriptives.html#cb67-1"></a><span class="kw">is_outlier</span>(<span class="kw">c</span>(x5, <span class="dv">100</span>))</span></code></pre></div>
+<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [97] FALSE FALSE FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
 </div>
@@ -840,13 +873,13 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Count noun, plural in this case<a href="описательные-статистики.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Mass (uncountable) noun<a href="описательные-статистики.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Обычно противоставляется статистическому выводу (inferential statistics), потому что не делает никаких заключений на основе данных, а просто говорит, что вот жанные такие, какие они есть.<a href="описательные-статистики.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Обратите внимание на функцию <code>tabulate()</code>.<a href="описательные-статистики.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Здесь важно помнить о нюансах терминов «упорядоченный» и «сортированный». <em>Упорядоченный</em> ряд наблюдений — это ряд чисел, на котором задан определенный порядок (например, по ID испытуемого — 1, 2, 3, 4, …), а <em>сортированный ряд наблюдений</em> — это ряд, упорядоченный по возрастанию или убыванию.<a href="описательные-статистики.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>И очень косвенно — нормальности распределения. Точнее будет сказать так: если распределение симметрично, то можно предположить, оно нормальное, однако это требует дополнительной проверки! Здесь надо помнить про <a href="#implication">особенности импликации</a>: <em>нормальное распределение всегда симметрично, однако не любое симметричное распределение нормально</em>.<a href="описательные-статистики.html#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p><em>Квазинепрерывная шкала</em> — это порядковая шкала, относительно которой мы сделали допущение, что она непрерывная. Например, такое допущение делается в психометрике относительно шкалы Ликерта (Лайкерта), когда мы предполагаем, что интервал между двумя соседними значениями мы тоже описали, несмотря на то, что респондент должен выбираться между этими соседними значениями.<a href="описательные-статистики.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Count noun, plural in this case<a href="descriptives.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Mass (uncountable) noun<a href="descriptives.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Обычно противоставляется статистическому выводу (inferential statistics), потому что не делает никаких заключений на основе данных, а просто говорит, что вот жанные такие, какие они есть.<a href="descriptives.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Обратите внимание на функцию <code>tabulate()</code>.<a href="descriptives.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Здесь важно помнить о нюансах терминов «упорядоченный» и «сортированный». <em>Упорядоченный</em> ряд наблюдений — это ряд чисел, на котором задан определенный порядок (например, по ID испытуемого — 1, 2, 3, 4, …), а <em>сортированный ряд наблюдений</em> — это ряд, упорядоченный по возрастанию или убыванию.<a href="descriptives.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>И очень косвенно — нормальности распределения. Точнее будет сказать так: если распределение симметрично, то можно предположить, оно нормальное, однако это требует дополнительной проверки! Здесь надо помнить про <a href="#implication">особенности импликации</a>: <em>нормальное распределение всегда симметрично, однако не любое симметричное распределение нормально</em>.<a href="descriptives.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><em>Квазинепрерывная шкала</em> — это порядковая шкала, относительно которой мы сделали допущение, что она непрерывная. Например, такое допущение делается в психометрике относительно шкалы Ликерта (Лайкерта), когда мы предполагаем, что интервал между двумя соседними значениями мы тоже описали, несмотря на то, что респондент должен выбираться между этими соседними значениями.<a href="descriptives.html#fnref7" class="footnote-back">↩︎</a></p></li>
 <li id="fn8"><p>Метрика, основанная на использовании модуля, конечно, существует и называется <strong>среднее абсолютное отклонение (mean absolute deviatio, MAD)</strong>:
 <span class="math display">\[
 \mathrm{MAD}(X) = \frac{\sum_{i=1}^n |\bar x - x_i|}{n}
@@ -858,7 +891,7 @@ Per se встречается редко, но столкнёмся с её до
 \]</span>
 <span class="math display">\[
 \mathrm{MAD}_{\mathrm{mode}}(X) = \frac{\sum_{i=1}^n |\mathrm{mode}(x) - x_i|}{n}
-\]</span><a href="описательные-статистики.html#fnref8" class="footnote-back">↩</a></p></li>
+\]</span><a href="descriptives.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -866,8 +899,8 @@ Per se встречается редко, но столкнёмся с её до
           </div>
         </div>
       </div>
-<a href="тестирование-статистических-гипотез.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="корреляционный-анализ.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hypotheses.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
