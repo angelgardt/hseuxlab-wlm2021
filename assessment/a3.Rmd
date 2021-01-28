@@ -1,0 +1,108 @@
+---
+title: "A3. Исследование данных"
+author:
+  - name: A. Angelgardt
+  - name: A. Kharitonova
+output: radix::radix_article
+---
+<link rel="stylesheet" href="style.css">
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Вам дан настоящий датасет с данными о страховых медицинских выплатах. Загрузить его можно [отсюда](https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv).
+
+Описание переменных:
+
+* *age:* age of primary beneficiary
+* *sex:* insurance contractor gender, female, male
+* *bmi:* Body mass index, providing an understanding of body, weights that are relatively high or low relative to height, objective index of body weight $\Big( \frac{\text{kg}}{\text{m}^2} \Big)$ using the ratio of height to weight, ideally 18.5 to 24.9
+* *children:* Number of children covered by health insurance / Number of dependents
+* *smoker:* Smoking
+* *region:* the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.
+* *charges:* Individual medical costs billed by health insurance
+
+***
+
+**4) Загрузите датасет в некоторую переменную. Посмотрите структуру датасета. Выведите в отдельную переменную возраст пациентов.**
+
+```{r, include=FALSE}
+insurance <- read.csv('https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv')
+str(insurance)
+age <- insurance$age
+```
+
+***
+
+**5) А теперь вытащите сумму страхового взноса у 23--45 человека. Какой пациент из этой подвыборки получил наименьшую выплату?**
+
+<details>
+<summary> *Подсказка* </summary>
+`?which`
+</details>
+
+```{r, include=FALSE}
+insurance$charges[23:45]
+which.min(insurance$charges[23:45])
+```
+
+***
+
+**6) Представьте, что вы исследуете всех людей из датасета и хотите сперва поделить их на две группы случайно. Создайте новый столбец с названием** `randomGroup` **и впишите туда 1 или 0 в случайном порядке.**
+
+```{r, include=FALSE}
+insurance$randomGroup <- sample(0:1, nrow(insurance), replace = TRUE)
+```
+
+***
+
+**7) Давайте теперь для простоты разделим наш датасет на два отдельных датасета, в одном из них будут курильщики, в другом --- не курящие. Предварительно перекодируйте перепенную** `smoker`, **чтобы её можно было использовать для индексации без дополнительных сравнений.**
+
+<details>
+<summary> *Подсказка* </summary>
+`ifelse()`
+</details>
+
+```{r, include=FALSE}
+insurance$smoker <- ifelse(insurance$smoker == 'yes', TRUE, FALSE)
+insurance_smokers <- insurance[insurance$smoker,]
+insurance_nonsmokers <- insurance[!insurance$smoker,]
+```
+
+***
+
+**8) А теперь давайте узнаем, правда ли у курильщиков страховка в среднем превышает страховку не курящего.**
+
+*Достаточно логического выражения на основе датафрейма. Тестировать статистическую гипотезу пока не нужно*
+
+```{r, include=FALSE}
+mean(insurance_smokers$charges) > mean(insurance_nonsmokers$charges)
+```
+
+***
+
+**9) Помните функцию** `summary()`**? Примените данную функцию к только столбцу страховой выплаты (используйте полный датасет) и введите в ответ минимальное, среднее и медиану в таком поряке через запятую, используя обычную для R точку в качестве дробного разделителя.**
+
+
+```{r, include=FALSE}
+summary(insurance$charges)
+```
+
+***
+
+**10) Отберите в новый датасет пациентов, индекс массы тела которых соответствует нормативным показателям.**
+
+*Следующие вопросы относятся к получившемуся датасету.*
+
+* **10.1) Сколько получилось наблюдений в новом датасете?**
+* **10.2) Кого больше в подвыборке: некурящих мужчин, некурящих женщин, курящих мужчин или курящих женщин?**
+* **10.3) Выберите из датасета только те колонки, которые содержат числовые данные. По каждой из полученных колонок посчитайте среднее значение.**
+
+
+```{r, include=FALSE}
+insurance_normBMI <- insurance[insurance$bmi >= 18.5 & insurance$bmi <= 24.9, ]
+nrow(insurance_normBMI)
+table(insurance_normBMI$sex, insurance_normBMI$smoker)
+apply(insurance_normBMI[sapply(insurance_normBMI, is.numeric)], 2, mean)
+```
