@@ -790,22 +790,43 @@ function check2() {
 }
 </script>
 </div>
-<p>Ещё одна полезная для разведочного анализа функция — это <code>apply()</code>. Она применяет некоторую функцию по всем колонкам или столбцам нашего датафрейма. Наприме, мы хотим выяснить, если ли среди имеющихся переменных логические. Это можно сделать так:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="realdata.html#cb46-1"></a><span class="kw">apply</span>(netflix, <span class="dv">2</span>, is.logical)</span></code></pre></div>
-<pre><code>##      show_id         type        title     director         cast      country 
-##        FALSE        FALSE        FALSE        FALSE        FALSE        FALSE 
-##   date_added release_year       rating     duration    listed_in  description 
-##        FALSE        FALSE        FALSE        FALSE        FALSE        FALSE</code></pre>
-<p>Первым аргументом мы указываем объект, который нас интересует. Далее указываем, по строкам (1) или по столбцам (2) мы будем выполнять нашу функцию. И третьим аргументом собственно определяем, какую функцию мы будем запускать — в нашем случае <code>is.logical</code>.</p>
+<p>Ещё одна полезная для разведочного анализа функция — это <code>apply()</code>. Она работает в матрицами. Например, мы можем посчитать сумму по столбцам или по строкам:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="realdata.html#cb46-1"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">12</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>), <span class="dv">3</span>); m</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   21   21   25   27
+## [2,]   28   23   29   28
+## [3,]   29   22   25   22</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="realdata.html#cb48-1"></a><span class="kw">apply</span>(m, <span class="dv">1</span>, sum) <span class="co"># по строкам</span></span></code></pre></div>
+<pre><code>## [1]  94 108  98</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="realdata.html#cb50-1"></a><span class="kw">apply</span>(m, <span class="dv">2</span>, sum) <span class="co"># по столбцам</span></span></code></pre></div>
+<pre><code>## [1] 78 66 79 77</code></pre>
+<p>Первым аргументом мы указываем объект, который нас интересует. Далее указываем, по строкам (1) или по столбцам (2) мы будем выполнять нашу функцию. И третьим аргументом собственно определяем, какую функцию мы будем запускать — в нашем случае <code>sum</code>.</p>
 <blockquote>
 <p>Да, мы передаём функцию в функцию — это нормально. :)</p>
 </blockquote>
-<p>Функция <code>is.logical()</code> проходится по столбцам нашего датафрейма, отрабатывает на каждом из них, а затем результаты собираются в именованный вектор. В итоге мы узнаём, что среди наших переменных логических нет.</p>
+<p>Однако на датафрейме <code>apply()</code> отработает не совсем так, как нам хотелось бы. Например, мы хотим выяснить, какие из имеющихся переменных текстовые. Это можно попробовать сделать так:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="realdata.html#cb52-1"></a><span class="kw">apply</span>(netflix, <span class="dv">2</span>, is.character)</span></code></pre></div>
+<pre><code>##      show_id         type        title     director         cast      country 
+##         TRUE         TRUE         TRUE         TRUE         TRUE         TRUE 
+##   date_added release_year       rating     duration    listed_in  description 
+##         TRUE         TRUE         TRUE         TRUE         TRUE         TRUE</code></pre>
+<p>Хм, получается все? Но минутку…</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="realdata.html#cb54-1"></a><span class="kw">class</span>(netflix<span class="op">$</span>release_year)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<p>Год — точно числовая переменная. Что не так?</p>
+<p>Как я говорил выше, <code>apply()</code> работает в матрицами, поэтому сначала она превращает датафрейм в матрицу — а это можно сделать, только приведя числовые переменные к тестовым — и далее выполяет своб работу.</p>
+<p>Чтобы избежать такого поведения, нам нужна её сестра <code>sapply()</code>, которая прекрасно отрабатывает на датафреймах:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="realdata.html#cb56-1"></a><span class="kw">sapply</span>(netflix, is.character)</span></code></pre></div>
+<pre><code>##      show_id         type        title     director         cast      country 
+##         TRUE         TRUE         TRUE         TRUE         TRUE         TRUE 
+##   date_added release_year       rating     duration    listed_in  description 
+##         TRUE        FALSE         TRUE         TRUE         TRUE         TRUE</code></pre>
+<p>Её даже не нужно указывать, что надо двигаться по столбцам — она и сама это знает. И отрабатывает корректно — <code>release_year</code> не-текст.</p>
 <img class="taskimg" src="img/code.png">
 <div class="task">
-<p>Сколько в нашем датасете строк, содержащих пропущенные значения?</p>
+<p>Сколько содержится пропущенных значений в каждой строке нашего датасета?</p>
 <p><em>Подсказка 1: помните, что сравненяие с <code>NA</code> возвращает <code>NA</code>.</em>
-<em>Подсказка 2: в <code>apply()</code> можно передать любую функцию, в том числе кастомную.</em></p>
+<em>Подсказка 2: <code>sapply()</code> может возвращать матрицу.</em></p>
 <input type="text" id="task3">
 <input type="button" value="Проверить" onClick="check3()">
 <div id="f3" class="feedback" hidden="">
@@ -833,9 +854,9 @@ function check3() {
 <h2><span class="header-section-number">6.4</span> Файл <code>.RData</code></h2>
 <p>Часто возникает потребность сохранить наработки, когда работа ещё не завершена. Допустим, у вас в Environment накопилась дикая куча объектов, с которыми вы работаете — датафреймы, матрицы, вектора, списки результатов работы статистических функций… — и хотелось бы как-то это все положить на полку, чтобы в следующий раз не перезапускать все 100500 строк кода, которыми вы это множество объектов получили.</p>
 <p>Такая возможность есть. Для этого вам нужно сохранить <em>образ</em> вашего Environment. Это делается с помошью функции <code>save.image()</code>:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="realdata.html#cb48-1"></a><span class="kw">save.image</span>(<span class="st">&#39;netflix.RData&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="realdata.html#cb58-1"></a><span class="kw">save.image</span>(<span class="st">&#39;netflix.RData&#39;</span>)</span></code></pre></div>
 <p>В аргументе функции мы указваем название файла, в котором будет лежать этот образ. Файл имеет расширение <code>.RData</code>. Можно прописать какой-либо путь к другому месту на компьютере, но в целом можно и оставить в рабочей директории. Когда понадобится продолжить работу, его будет нужно подгрузить с помощью функции <code>load()</code>,</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="realdata.html#cb49-1"></a><span class="kw">load</span>(<span class="st">&#39;netflix.RData&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="realdata.html#cb59-1"></a><span class="kw">load</span>(<span class="st">&#39;netflix.RData&#39;</span>)</span></code></pre></div>
 <p>и продолжать работу с той строки скрипта, на которой вы остановились. Все созданные ранее объекты уже будут в Environment.</p>
 <blockquote>
 <p>При завершении сессии в R он может предложить вам сохранить файл .RData. Не советую это делать — лучше сохранять образ Environment вручную, чтобы знать, что там лежит. Если сохранить файл .RData при выходе по предложению R, то, во-первых, его будет сложно достать, потому что он будет не видим невооруженным глазом в директории (сохраняется как скрытый файл), а во-вторых, он может подгрузиться тогда, когда вы его не просили и сломать вам весь кайф. Придётся числить Environment, прогонять заново код — а оно нам надо? Кажется, нет!</p>

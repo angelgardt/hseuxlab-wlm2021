@@ -90,26 +90,179 @@ datasaurus %>%
 
 # Виды графиков
 
+```{r, echo=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+```
+
 ## Столбчатая диаграмма (Bar Graph)
+
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n)) +
+  geom_col() +
+  xlab("Cut") + ylab("Number")
+```
 
 ## Лучевая диаграмма (Sunburts)
 
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% 
+  group_by(cut, color) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(cut, n, fill = color)) +
+  geom_col(position = position_dodge()) +
+  coord_polar() +
+  xlab("Cut") + ylab("Number") +
+  labs(fill = 'Color')
+```
+
 ## Круговая диаграмма (Pie Chart)
+
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% 
+  group_by(cut) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes("", n, fill = cut)) +
+  geom_bar(stat = 'identity', width = 1) +
+  coord_polar('y', start = 0) + 
+  xlab(NULL) + ylab(NULL) +
+  labs(fill = 'Color')
+```
 
 ## Линейная диаграмма (Line Graph)
 
-## Диаграмма рассеяния
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+matrix(AirPassengers, ncol = 12) %>% as.tibble() %>% mutate(year = 1949:1960) -> for_line_graph
+colnames(for_line_graph) <- c(month.abb, 'year')
+for_line_graph %>% pivot_longer(-year) %>% 
+  filter(year < 1952) %>% 
+  ggplot(aes(name, value, group = year, color = factor(year))) +
+  geom_line(linetype = 'solid') +
+  labs(x = "Month", y = 'Number of passangers',
+       color = "Year")
+```
+
+## Диаграмма рассеяния (Scatter plot)
+
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% slice(sample(1:nrow(diamonds), 50)) %>% 
+  ggplot(aes(x, y, color = color)) +
+  geom_point() +
+  labs(color = "Color")
+```
+
 
 ## Пузырьковая диаграмма (Bubble Chart)
 
+```{r}
+diamonds %>% slice(sample(1:nrow(diamonds), 100)) %>% 
+  ggplot(aes(x, y, color = color, size = z)) +
+  geom_point(alpha=0.5) +
+  labs(color = "Color")
+```
+
 ## Гистограмма (Histogram)
+
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% ggplot(aes(price)) +
+  geom_histogram(binwidth = 1000) +
+  xlab('Price') + ylab('Count')
+```
 
 ## График плотности вероятности (Density Plot)
 
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% ggplot(aes(price, fill = cut)) +
+  geom_density(alpha=0.5) +
+  xlab('Price') + ylab('Density')
+```
+
 ## Ящик с усами (Boxplot)
+
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% slice(sample(1:nrow(diamonds), 300)) %>% 
+  ggplot(aes(color, price)) +
+  geom_boxplot() +
+  xlab('Color') + ylab("Price")
+```
 
 ## График интервальных оценок (Error Bar)
 
+```{r, echo=FALSE, message=FALSE}
+diamonds %>% 
+  ggplot(aes(cut, price)) +
+  stat_summary(fun = mean, geom = 'point') +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width = 0.5) +
+  xlab('Cut') + ylab("Price")
+```
 
+# A Layered Grammar of Graphics
 
+## Базовый слой
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot()
+```
+
+## Оси
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price))
+```
+
+## Геомы
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price)) +
+  stat_summary(fun = mean, geom = 'point') +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar')
+```
+
+## Группировка по переменной
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price, color = clarity)) +
+  stat_summary(fun = mean, geom = 'point', position = position_dodge(0.5)) +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', position = position_dodge(0.5))
+```
+
+## Настройка графика
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price, color = clarity)) +
+  stat_summary(fun = mean, geom = 'point',
+               position = position_dodge(0.5)) +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar',
+               position = position_dodge(0.5), width = 0.7) +
+  theme(legend.position = 'bottom')
+```
+
+## Темы
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price, color = clarity)) +
+  stat_summary(fun = mean, geom = 'point',
+               position = position_dodge(0.5)) +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar',
+               position = position_dodge(0.5), width = 0.7) +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+```
+
+## Последние штрихи
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+diamonds %>% ggplot(aes(cut, price, color = clarity)) +
+  stat_summary(fun = mean, geom = 'point',
+               position = position_dodge(0.5)) +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar',
+               position = position_dodge(0.5), width = 0.7) +
+  labs(x = 'Cut', y = "Price", color = "Clarity") +
+  theme_minimal() +
+  theme(legend.position = 'bottom')
+```
+
+# The end

@@ -169,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="datatypes.html"><a href="datatypes.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
 <li class="chapter" data-level="2.2" data-path="datatypes.html"><a href="datatypes.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
 <li class="chapter" data-level="2.3" data-path="datatypes.html"><a href="datatypes.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
-<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
+<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#factors"><i class="fa fa-check"></i><b>2.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.5" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.5</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="datastructures.html"><a href="datastructures.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="datastructures.html"><a href="datastructures.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
@@ -218,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.1" data-path="realdata.html"><a href="realdata.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="realdata.html"><a href="realdata.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
-<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#rdata"><i class="fa fa-check"></i><b>6.4</b> <code>.RData</code></a></li>
+<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#файл-.rdata"><i class="fa fa-check"></i><b>6.4</b> Файл <code>.RData</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
 <li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
@@ -283,11 +284,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#about-r"><i class="fa fa-check"></i>About R</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>Литература</a><ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#about-r"><i class="fa fa-check"></i>About R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -425,16 +426,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb50-2"><a href="datatypes.html#cb50-2"></a>x</span></code></pre></div>
 <pre><code>## [1] &quot;Мужчина громко зашёл в комнату и высказал решительное «здравствуйте»&quot;</code></pre>
 <blockquote>
-<p>Конечно, чтобы разговор и типах данных был полным, необходимо сказать о таком типе данных как <code>factor</code>. Однако он не является «базовым» типом, поэтому мы обсудим его устройство и работу с ним, когда непосредственно с ним столкнёмся.</p>
+<p>Строковый тип данных мы еще подробно обсудим в теме <a href="strings.html#strings">работы со строками</a>, а пока посмотрим вот на что…</p>
 </blockquote>
 <blockquote>
-<p>Строковый тип данных мы еще подробно обсудим в теме <a href="strings.html#strings">работы со строками</a>, а пока посмотрим вот на что…</p>
+<p>Конечно, чтобы разговор и типах данных был полным, необходимо сказать о таком типе данных как <code>factor</code>. Хотя он не является «базовым» типом, Всё же ему необходимо уделить некоторое внимание.</p>
+</blockquote>
+</div>
+<div id="factors" class="section level2">
+<h2><span class="header-section-number">2.4</span> <code>factor</code></h2>
+<p><strong>Фактор</strong> — это строковые данные, которые хранятся как числа. Почему там делать удобно? Потому что фактор содержит определённый (как правило, небольшой) набор уникальных значений (чаще всего около 2-5).</p>
+<p>Для чего используются факторы? Для задания каких-либо групп в данных. Например, у вас есть экспериментальные данные, в которых есть два экспериментальных условия и одно контрольное. Тогда вектор, задающий эти условия может выглядет примерно так:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="datatypes.html#cb52-1"></a>conditions &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;exp1&#39;</span>, <span class="st">&#39;exp2&#39;</span>, <span class="st">&#39;control&#39;</span>, <span class="st">&#39;exp1&#39;</span>, <span class="st">&#39;exp1&#39;</span>, <span class="st">&#39;exp2&#39;</span>, <span class="st">&#39;control&#39;</span>, <span class="st">&#39;exp2&#39;</span>, <span class="st">&#39;control&#39;</span>)</span>
+<span id="cb52-2"><a href="datatypes.html#cb52-2"></a>conditions</span></code></pre></div>
+<pre><code>## [1] &quot;exp1&quot;    &quot;exp2&quot;    &quot;control&quot; &quot;exp1&quot;    &quot;exp1&quot;    &quot;exp2&quot;    &quot;control&quot;
+## [8] &quot;exp2&quot;    &quot;control&quot;</code></pre>
+<p>Сейчас это строковый вектор — это достаточно просто превратить в фактор:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="datatypes.html#cb54-1"></a><span class="kw">as.factor</span>(conditions)</span></code></pre></div>
+<pre><code>## [1] exp1    exp2    control exp1    exp1    exp2    control exp2    control
+## Levels: control exp1 exp2</code></pre>
+<p>В аутпуте добавилась строчка <code>Levels</code>, которая как раз и определяет набор уникальных значений. По умолчанию уровни фактора выстраиваются в алфавитном (лексикографическом) порядке. Если вам принципиален порядок факторов — например, в случае эксперимента на зрительный поиск у вас есть несколько visual set size (количество стимулов в пробе) — тогда можно воспользоваться специальной функцией и создать <em>упорядоченный фактор</em>:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="datatypes.html#cb56-1"></a>vis_set_size &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>), <span class="dt">times =</span> <span class="dv">10</span>),</span>
+<span id="cb56-2"><a href="datatypes.html#cb56-2"></a>                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>), <span class="co"># задаём порядок уровней</span></span>
+<span id="cb56-3"><a href="datatypes.html#cb56-3"></a>                       <span class="dt">ordered =</span> <span class="ot">TRUE</span>) <span class="co"># указываем, что нам нужн упорядоченный вектор</span></span>
+<span id="cb56-4"><a href="datatypes.html#cb56-4"></a>vis_set_size</span></code></pre></div>
+<pre><code>##  [1] 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9 3 6 9
+## Levels: 3 &lt; 6 &lt; 9</code></pre>
+<p>Теперь в строке <code>Levels</code> указаны не только сами уровни, но и отношение порядка для множестве значений. Как видите, в фактор можно превратить не только текстовый вектор, но и числовой.</p>
+<blockquote>
+<p>В актуальных версиях R обычно текстовые векторы автоматически приводятся к факторам в тех случаях, когда это нужно. Однако если нам нужен числовой вектор как факторный, это придется делать вручную. Хотя, конечно, числовые данные мы чаще всего рассмтариваем именно как числовые.</p>
 </blockquote>
 </div>
 <div id="coercion-part-one" class="section level2">
-<h2><span class="header-section-number">2.4</span> Coercion [part one]</h2>
+<h2><span class="header-section-number">2.5</span> Coercion [part one]</h2>
 <p>А что будет, если мы пренебрежём допустимыми операциями и попробуем, например, сложить не-числа? Допустим, так:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="datatypes.html#cb52-1"></a><span class="ot">TRUE</span> <span class="op">+</span><span class="st"> </span><span class="ot">TRUE</span> <span class="co"># складываем две истины</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="datatypes.html#cb58-1"></a><span class="ot">TRUE</span> <span class="op">+</span><span class="st"> </span><span class="ot">TRUE</span> <span class="co"># складываем две истины</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Внезапно, команда выполнилась. Можно задаться вопросом, почему именно так, ведь <a href="">правила алгебры логики</a> говорят, что должно быть по-другому. Опуская детали, скажем, что оператор <code>+</code> несет только арифметический, но не логический смысл, поэтому произошло следующее:</p>
 <ul>
@@ -446,39 +471,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Такое поведение называется <strong>приведение типов (coercion)</strong>. Подробно мы его будем обсуждать позже, когда изучим структуры данных и поймем, какие опасности это может за собой влечь. Сейчас же ознакомимся с некоторыми примерами.</p>
 <p>Приведение типов сработает не всегда. Например, если мы попытаемся сложить строки<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, то получим ошибку:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="datatypes.html#cb54-1"></a><span class="st">&quot;abc&quot;</span> <span class="op">+</span><span class="st"> &quot;cbd&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="datatypes.html#cb60-1"></a><span class="st">&quot;abc&quot;</span> <span class="op">+</span><span class="st"> &quot;cbd&quot;</span></span></code></pre></div>
 <pre><code>## Error in &quot;abc&quot; + &quot;cbd&quot;: non-numeric argument to binary operator</code></pre>
 <p>Чтобы контролировать приведение типов, есть семейство функций <code>as.*()</code>. Посмотрим, как они работают.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="datatypes.html#cb56-1"></a><span class="co"># приводим логические данные в числовым</span></span>
-<span id="cb56-2"><a href="datatypes.html#cb56-2"></a><span class="kw">as.numeric</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="datatypes.html#cb62-1"></a><span class="co"># приводим логические данные в числовым</span></span>
+<span id="cb62-2"><a href="datatypes.html#cb62-2"></a><span class="kw">as.numeric</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="datatypes.html#cb58-1"></a><span class="kw">as.numeric</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="datatypes.html#cb64-1"></a><span class="kw">as.numeric</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="datatypes.html#cb60-1"></a><span class="co"># приводим числовые данные к логическим</span></span>
-<span id="cb60-2"><a href="datatypes.html#cb60-2"></a><span class="kw">as.logical</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="datatypes.html#cb66-1"></a><span class="co"># приводим числовые данные к логическим</span></span>
+<span id="cb66-2"><a href="datatypes.html#cb66-2"></a><span class="kw">as.logical</span>(<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="datatypes.html#cb62-1"></a><span class="kw">as.logical</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="datatypes.html#cb68-1"></a><span class="kw">as.logical</span>(<span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="datatypes.html#cb64-1"></a><span class="kw">as.logical</span>(<span class="op">-</span><span class="dv">1</span>) <span class="co">## наблюдаем, что все не так однозначно</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="datatypes.html#cb70-1"></a><span class="kw">as.logical</span>(<span class="op">-</span><span class="dv">1</span>) <span class="co">## наблюдаем, что все не так однозначно</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="datatypes.html#cb66-1"></a><span class="kw">as.logical</span>(<span class="fl">0.4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="datatypes.html#cb72-1"></a><span class="kw">as.logical</span>(<span class="fl">0.4</span>)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="datatypes.html#cb68-1"></a><span class="kw">as.logical</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="datatypes.html#cb74-1"></a><span class="kw">as.logical</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="datatypes.html#cb70-1"></a><span class="co"># числовые данные к строке</span></span>
-<span id="cb70-2"><a href="datatypes.html#cb70-2"></a><span class="kw">as.character</span>(<span class="dv">23</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="datatypes.html#cb76-1"></a><span class="co"># числовые данные к строке</span></span>
+<span id="cb76-2"><a href="datatypes.html#cb76-2"></a><span class="kw">as.character</span>(<span class="dv">23</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;23&quot;</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="datatypes.html#cb72-1"></a><span class="kw">as.character</span>(<span class="op">-</span><span class="dv">150</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="datatypes.html#cb78-1"></a><span class="kw">as.character</span>(<span class="op">-</span><span class="dv">150</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;-150&quot;</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="datatypes.html#cb74-1"></a><span class="co"># логические данные к строке</span></span>
-<span id="cb74-2"><a href="datatypes.html#cb74-2"></a><span class="kw">as.character</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="datatypes.html#cb80-1"></a><span class="co"># логические данные к строке</span></span>
+<span id="cb80-2"><a href="datatypes.html#cb80-2"></a><span class="kw">as.character</span>(<span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;TRUE&quot;</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="datatypes.html#cb76-1"></a><span class="kw">as.character</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="datatypes.html#cb82-1"></a><span class="kw">as.character</span>(<span class="ot">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;FALSE&quot;</code></pre>
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>А какой результат выдаст следующая команда?</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="datatypes.html#cb78-1"></a><span class="kw">as.character</span>(<span class="kw">as.numeric</span>(<span class="ot">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="datatypes.html#cb84-1"></a><span class="kw">as.character</span>(<span class="kw">as.numeric</span>(<span class="ot">FALSE</span>))</span></code></pre></div>
 <div class="autocheck">
 <input class="taskinput" id="input1" type="text">
 <input class="taskcheck" type="button" value="Проверить" onClick="check1()">
