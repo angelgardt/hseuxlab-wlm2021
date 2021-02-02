@@ -585,9 +585,166 @@ ggsave('graph1.png', path = 'figures', width = 20, height = 20, units = 'cm')
 Через аргумент `path` мы задаём, куда сохранять нашу картинку.
 
 
+## Другие геомы
+
+Окей, мы освоили логику построения графиков и вдоволь навизуализировали средние значения. Что мы можем нарисовать ещё?
+
+Например, распределения. Для этого есть два сходных геома: `geom_histogram()` и `geom_density()`. Первый рисует *гистограмму*, второй --- *график плотности вероятности*.
+
+```{r}
+theme_set(theme_bw()) # еще один способ установить тему на всю сессию
+```
+```{r}
+diamonds %>% ggplot(
+  aes(price)
+) +
+  geom_histogram()
+```
+
+```{r}
+diamonds %>% ggplot(
+  aes(price)
+) +
+  geom_density()
+```
+
+Как видите, оба графика отображают примерно одно и то же --- паттерн распределения цены в датасете.
+
+Однако если мы хотим сравнить распределение цены в каких-то группах, то на гистограмме и денсити-плоте это будет работать несколько по-разному.
+
+```{r}
+diamonds %>% ggplot(
+  aes(price, 
+      fill = cut)
+) +
+  geom_density(alpha=0.3)
+```
+
+На денсити всё просто --- задаём заливку как способ отображению группы и все супер.
+
+```{r}
+diamonds %>% ggplot(
+  aes(price, 
+      fill = cut)
+) +
+  geom_histogram()
+```
+
+А если мы то же самое сделаем на гистограмме, то результат будет не очень читабельным, хотя какую-то информацию отсюда вытащить можно.
+
+Но лучше сделать вот так:
+
+```{r}
+diamonds %>% ggplot(
+  aes(price)
+) +
+  geom_histogram() +
+  facet_wrap(~ cut)
+```
+
+Тут уже действительно видно распределение по группам, однако можно сделать ещё круче!
+
+```{r}
+ggplot() +
+  geom_histogram(data = diamonds %>% select(-cut),
+                 aes(price),
+                 fill = 'lightgray',
+                 binwidth = 100) +
+  geom_histogram(data = diamonds,
+                 aes(price, fill = cut),
+                 binwidth = 100) +
+  facet_wrap(~ cut) +
+  guides(fill = FALSE)
+```
+
+<img class="taskimg" src="img/task.png">
+<div class="task">
+Попробуйте разобраться, что написано в коде и почему получается именно такая визуализация?
+
+Какую информацию мы можем вытащить из такой картинки?
+</div>
+
+Из других наиболее популярных геомов вам могут встретиться два брата `geom_bar()` и `geom_col()`. Один из них работяга, другой чуть более ленив.
+
+Мы выбирали в переменную `diamonds1000` подвыборку из 1000 случайных наблюдений из нашего большого датасета. Давайте посмотрим, насколько равномерна по группам, например, цвета бриллиантов и класса чистоты наша получившаяся подвыборка.
+
+```{r}
+diamonds1000 %>% ggplot(aes(color, fill = clarity)) +
+  geom_bar()
+```
+Вот такая картинка у нас получилась, однако она, как и подобная ей гистограмма, не очень читаема. Давайте поставим столбики рядом:
+
+```{r}
+diamonds1000 %>% ggplot(aes(color, fill = clarity)) +
+  geom_bar(position = position_dodge())
+```
+
+Вот такая вот история. А что `geom_col()`?
+
+```{r, error=TRUE}
+diamonds1000 %>% ggplot(aes(color, fill = clarity)) +
+  geom_col(position = position_dodge())
+```
+
+Требует эстетику `y`. Но это же нам надо её ещё сначала посчитать! Ленивый геом!!1!!1!
+
+```{r}
+diamonds1000 %>% group_by(color, clarity) %>% 
+  summarise(n = n()) %>% 
+  ggplot(aes(color, n, fill = clarity)) +
+  geom_col(position = position_dodge())
+```
 
 
+Вот так вот. На самом деле, и та, и другая функция --- полезны. Когда-то вам нужно разведочно визуализировать непредобработанные данные, а когда-то вы посчитали какие-то числовые показатели, а потом захотели их визуализировать.
 
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Сегодня мы уже строили диаграмму рассеяния, которая отображала зависимость двух переменных --- длины и ширины браллианта.
+
+Теперь создайте подвыборку из 100 случайных наблюдений и визуализируйте связь длины (`x`), ширины (`y`) и высоты (`z`) бриллианта на одном графике. График должен быть типа *scatterplot* (диаграмма рассеяния).
+</div>
+
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Нет предела замороченности визуализации. Превратите диаграмму рассеяния, которая у вас получилась в задании выше в *bubble plot* (пузырьковую диаграмму), который будет отображать связь четырёх переменных длины (`x`), ширины (`y`), высоты (`z`) и глубины (`depth`) бриллиантов. Работайте на той же подвыборке в 100 наблюдений.
+</div>
+
+<img class="taskimg" src="img/code.png">
+<div class="task">
+Скачайте [отсюда](https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv) реальные данные. Это данные поведенческого эксперимента, в котором пользователи Android и iOS искали иконки «share» обеих платформ среди универсальных иконок. Короче, зрительный поиск.
+
+Нас будут интересовать следующие переменные:
+
+* trialtype — тип пробы (tray/dots/both)
+* setsize — количество стимулов в пробе (8/12/16)
+* time1 — время первого клика
+* time2 — время второго клика
+* id — индентификатор испытуемого
+* platform — платформа смартфона (Android/iOS)
+
+Повторите представленную визуализацию:
+
+```{r, message=FALSE, echo=FALSE}
+pd <- position_dodge(.3)
+share <- read_csv('https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv')
+share %>% 
+  filter(trialtype != 'both') %>% 
+  ggplot(aes(setsize, time1, group = interaction(trialtype, platform), color = platform, shape = trialtype)) +
+    stat_summary(fun = mean, geom = 'line', linetype = 'dashed', position = pd, alpha = .5) +
+  stat_summary(fun.data = mean_cl_boot, geom = 'errorbar', width = .2, position = pd) +
+  stat_summary(fun = mean, geom = 'point', size = 3, position = pd) +
+  theme_bw() +
+  scale_color_manual(values = c('royalblue4', 'seagreen4'), labels = c('Android','iOS')) +
+  scale_shape_manual(values = c(15, 17), labels = c('Three Dots', 'Outgoing Tray')) +
+  labs(x = 'Количество стимулов в пробе', y = 'Время реакции, мс',
+       color = 'Платформа', shape = 'Тип пробы',
+       title = 'Время реакции (первый клик) при взаимодействии факторов',
+       subtitle = 'Тип пробы × Платформа × Количество стимулов в пробе',
+       caption = 'отображен 95% доверительный интервал') +
+  theme(legend.position = 'bottom')
+```
+</div>
 
 
 [^1]: Мы такие оригинальные!

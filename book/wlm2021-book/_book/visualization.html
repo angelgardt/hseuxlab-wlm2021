@@ -246,6 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8.1" data-path="visualization.html"><a href="visualization.html#фасетизация"><i class="fa fa-check"></i><b>8.8.1</b> Фасетизация</a></li>
 </ul></li>
 <li class="chapter" data-level="8.9" data-path="visualization.html"><a href="visualization.html#сохранение-графиков"><i class="fa fa-check"></i><b>8.9</b> Сохранение графиков</a></li>
+<li class="chapter" data-level="8.10" data-path="visualization.html"><a href="visualization.html#другие-геомы"><i class="fa fa-check"></i><b>8.10</b> Другие геомы</a></li>
 </ul></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
 <li class="chapter" data-level="9" data-path="maths.html"><a href="maths.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
@@ -784,6 +785,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Но, помните, мы создавали специальную папку для сохранения графиков <code>figures</code>? Вот сейчас она нам пригодится:</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="visualization.html#cb55-1"></a><span class="kw">ggsave</span>(<span class="st">&#39;graph1.png&#39;</span>, <span class="dt">path =</span> <span class="st">&#39;figures&#39;</span>, <span class="dt">width =</span> <span class="dv">20</span>, <span class="dt">height =</span> <span class="dv">20</span>, <span class="dt">units =</span> <span class="st">&#39;cm&#39;</span>)</span></code></pre></div>
 <p>Через аргумент <code>path</code> мы задаём, куда сохранять нашу картинку.</p>
+</div>
+<div id="другие-геомы" class="section level2">
+<h2><span class="header-section-number">8.10</span> Другие геомы</h2>
+<p>Окей, мы освоили логику построения графиков и вдоволь навизуализировали средние значения. Что мы можем нарисовать ещё?</p>
+<p>Например, распределения. Для этого есть два сходных геома: <code>geom_histogram()</code> и <code>geom_density()</code>. Первый рисует <em>гистограмму</em>, второй — <em>график плотности вероятности</em>.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="visualization.html#cb56-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>()) <span class="co"># еще один способ установить тему на всю сессию</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="visualization.html#cb57-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(</span>
+<span id="cb57-2"><a href="visualization.html#cb57-2"></a>  <span class="kw">aes</span>(price)</span>
+<span id="cb57-3"><a href="visualization.html#cb57-3"></a>) <span class="op">+</span></span>
+<span id="cb57-4"><a href="visualization.html#cb57-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="visualization.html#cb59-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(</span>
+<span id="cb59-2"><a href="visualization.html#cb59-2"></a>  <span class="kw">aes</span>(price)</span>
+<span id="cb59-3"><a href="visualization.html#cb59-3"></a>) <span class="op">+</span></span>
+<span id="cb59-4"><a href="visualization.html#cb59-4"></a><span class="st">  </span><span class="kw">geom_density</span>()</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p>Как видите, оба графика отображают примерно одно и то же — паттерн распределения цены в датасете.</p>
+<p>Однако если мы хотим сравнить распределение цены в каких-то группах, то на гистограмме и денсити-плоте это будет работать несколько по-разному.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="visualization.html#cb60-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(</span>
+<span id="cb60-2"><a href="visualization.html#cb60-2"></a>  <span class="kw">aes</span>(price, </span>
+<span id="cb60-3"><a href="visualization.html#cb60-3"></a>      <span class="dt">fill =</span> cut)</span>
+<span id="cb60-4"><a href="visualization.html#cb60-4"></a>) <span class="op">+</span></span>
+<span id="cb60-5"><a href="visualization.html#cb60-5"></a><span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span><span class="fl">0.3</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>На денсити всё просто — задаём заливку как способ отображению группы и все супер.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="visualization.html#cb61-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(</span>
+<span id="cb61-2"><a href="visualization.html#cb61-2"></a>  <span class="kw">aes</span>(price, </span>
+<span id="cb61-3"><a href="visualization.html#cb61-3"></a>      <span class="dt">fill =</span> cut)</span>
+<span id="cb61-4"><a href="visualization.html#cb61-4"></a>) <span class="op">+</span></span>
+<span id="cb61-5"><a href="visualization.html#cb61-5"></a><span class="st">  </span><span class="kw">geom_histogram</span>()</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p>А если мы то же самое сделаем на гистограмме, то результат будет не очень читабельным, хотя какую-то информацию отсюда вытащить можно.</p>
+<p>Но лучше сделать вот так:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="visualization.html#cb63-1"></a>diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(</span>
+<span id="cb63-2"><a href="visualization.html#cb63-2"></a>  <span class="kw">aes</span>(price)</span>
+<span id="cb63-3"><a href="visualization.html#cb63-3"></a>) <span class="op">+</span></span>
+<span id="cb63-4"><a href="visualization.html#cb63-4"></a><span class="st">  </span><span class="kw">geom_histogram</span>() <span class="op">+</span></span>
+<span id="cb63-5"><a href="visualization.html#cb63-5"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>cut)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p>Тут уже действительно видно распределение по группам, однако можно сделать ещё круче!</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="visualization.html#cb65-1"></a><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb65-2"><a href="visualization.html#cb65-2"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> diamonds <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>cut),</span>
+<span id="cb65-3"><a href="visualization.html#cb65-3"></a>                 <span class="kw">aes</span>(price),</span>
+<span id="cb65-4"><a href="visualization.html#cb65-4"></a>                 <span class="dt">fill =</span> <span class="st">&#39;lightgray&#39;</span>,</span>
+<span id="cb65-5"><a href="visualization.html#cb65-5"></a>                 <span class="dt">binwidth =</span> <span class="dv">100</span>) <span class="op">+</span></span>
+<span id="cb65-6"><a href="visualization.html#cb65-6"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">data =</span> diamonds,</span>
+<span id="cb65-7"><a href="visualization.html#cb65-7"></a>                 <span class="kw">aes</span>(price, <span class="dt">fill =</span> cut),</span>
+<span id="cb65-8"><a href="visualization.html#cb65-8"></a>                 <span class="dt">binwidth =</span> <span class="dv">100</span>) <span class="op">+</span></span>
+<span id="cb65-9"><a href="visualization.html#cb65-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>cut) <span class="op">+</span></span>
+<span id="cb65-10"><a href="visualization.html#cb65-10"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">fill =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Попробуйте разобраться, что написано в коде и почему получается именно такая визуализация?</p>
+<p>Какую информацию мы можем вытащить из такой картинки?</p>
+</div>
+<p>Из других наиболее популярных геомов вам могут встретиться два брата <code>geom_bar()</code> и <code>geom_col()</code>. Один из них работяга, другой чуть более ленив.</p>
+<p>Мы выбирали в переменную <code>diamonds1000</code> подвыборку из 1000 случайных наблюдений из нашего большого датасета. Давайте посмотрим, насколько равномерна по группам, например, цвета бриллиантов и класса чистоты наша получившаяся подвыборка.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="visualization.html#cb66-1"></a>diamonds1000 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(color, <span class="dt">fill =</span> clarity)) <span class="op">+</span></span>
+<span id="cb66-2"><a href="visualization.html#cb66-2"></a><span class="st">  </span><span class="kw">geom_bar</span>()</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-48-1.png" width="672" />
+Вот такая картинка у нас получилась, однако она, как и подобная ей гистограмма, не очень читаема. Давайте поставим столбики рядом:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="visualization.html#cb67-1"></a>diamonds1000 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(color, <span class="dt">fill =</span> clarity)) <span class="op">+</span></span>
+<span id="cb67-2"><a href="visualization.html#cb67-2"></a><span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="kw">position_dodge</span>())</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p>Вот такая вот история. А что <code>geom_col()</code>?</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="visualization.html#cb68-1"></a>diamonds1000 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(color, <span class="dt">fill =</span> clarity)) <span class="op">+</span></span>
+<span id="cb68-2"><a href="visualization.html#cb68-2"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="kw">position_dodge</span>())</span></code></pre></div>
+<pre><code>## Error: geom_col requires the following missing aesthetics: y</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p>Требует эстетику <code>y</code>. Но это же нам надо её ещё сначала посчитать! Ленивый геом!!1!!1!</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="visualization.html#cb70-1"></a>diamonds1000 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(color, clarity) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb70-2"><a href="visualization.html#cb70-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb70-3"><a href="visualization.html#cb70-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(color, n, <span class="dt">fill =</span> clarity)) <span class="op">+</span></span>
+<span id="cb70-4"><a href="visualization.html#cb70-4"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="kw">position_dodge</span>())</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;color&#39; (override with `.groups` argument)</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p>Вот так вот. На самом деле, и та, и другая функция — полезны. Когда-то вам нужно разведочно визуализировать непредобработанные данные, а когда-то вы посчитали какие-то числовые показатели, а потом захотели их визуализировать.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Сегодня мы уже строили диаграмму рассеяния, которая отображала зависимость двух переменных — длины и ширины браллианта.</p>
+<p>Теперь создайте подвыборку из 100 случайных наблюдений и визуализируйте связь длины (<code>x</code>), ширины (<code>y</code>) и высоты (<code>z</code>) бриллианта на одном графике. График должен быть типа <em>scatterplot</em> (диаграмма рассеяния).</p>
+</div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Нет предела замороченности визуализации. Превратите диаграмму рассеяния, которая у вас получилась в задании выше в <em>bubble plot</em> (пузырьковую диаграмму), который будет отображать связь четырёх переменных длины (<code>x</code>), ширины (<code>y</code>), высоты (<code>z</code>) и глубины (<code>depth</code>) бриллиантов. Работайте на той же подвыборке в 100 наблюдений.</p>
+</div>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Скачайте <a href="https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv">отсюда</a> реальные данные. Это данные поведенческого эксперимента, в котором пользователи Android и iOS искали иконки «share» обеих платформ среди универсальных иконок. Короче, зрительный поиск.</p>
+<p>Нас будут интересовать следующие переменные:</p>
+<ul>
+<li>trialtype — тип пробы (tray/dots/both)</li>
+<li>setsize — количество стимулов в пробе (8/12/16)</li>
+<li>time1 — время первого клика</li>
+<li>time2 — время второго клика</li>
+<li>id — индентификатор испытуемого</li>
+<li>platform — платформа смартфона (Android/iOS)</li>
+</ul>
+<p>Повторите представленную визуализацию:</p>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
 
 </div>
 </div>
