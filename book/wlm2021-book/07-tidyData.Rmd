@@ -1,2 +1,6 @@
 # Предобработка данных. Концепция tidy data {#tidy}
 
+Чтобы в этом приуспеть, надо его себе на машину поставить:
+```{r, eval=FALSE}
+install.packages('tidyverse', dependencies = TRUE)
+```
