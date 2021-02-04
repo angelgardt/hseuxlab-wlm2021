@@ -247,7 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.10" data-path="tidy.html"><a href="tidy.html#группировка-и-аггрегация-данных"><i class="fa fa-check"></i><b>7.10</b> Группировка и аггрегация данных</a><ul>
 <li class="chapter" data-level="7.10.1" data-path="tidy.html"><a href="tidy.html#group_by-ungroup"><i class="fa fa-check"></i><b>7.10.1</b> <code>group_by()</code> &amp; <code>ungroup()</code></a></li>
-<li class="chapter" data-level="7.10.2" data-path="tidy.html"><a href="tidy.html#summarize-n-count"><i class="fa fa-check"></i><b>7.10.2</b> <code>summarize()</code>, <code>n()</code>, <code>count()</code></a></li>
+<li class="chapter" data-level="7.10.2" data-path="tidy.html"><a href="tidy.html#summarize"><i class="fa fa-check"></i><b>7.10.2</b> <code>summarize()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="7.11" data-path="tidy.html"><a href="tidy.html#широкий-и-длинный-формат"><i class="fa fa-check"></i><b>7.11</b> Широкий и длинный формат</a><ul>
 <li class="chapter" data-level="7.11.1" data-path="tidy.html"><a href="tidy.html#pivot_longer-pivot_wider"><i class="fa fa-check"></i><b>7.11.1</b> <code>pivot_longer()</code> &amp; <code>pivot_wider()</code></a></li>
@@ -429,16 +429,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 30 x 2
 ##      age group 
 ##    &lt;int&gt; &lt;chr&gt; 
-##  1    42 old   
-##  2    59 old   
-##  3    29 middle
-##  4    41 old   
-##  5    27 middle
-##  6    33 middle
-##  7    46 old   
-##  8    54 old   
-##  9    26 middle
-## 10    43 old   
+##  1    25 middle
+##  2    52 old   
+##  3    50 old   
+##  4    37 middle
+##  5    33 middle
+##  6    58 old   
+##  7    31 middle
+##  8    48 old   
+##  9    36 middle
+## 10    60 old   
 ## # … with 20 more rows</code></pre>
 <p>Роскошно!</p>
 <p>Может показаться, что это достаточно незначительно преимущество. В целом, да — <code>tibble</code> и <code>data.frame</code> практически одно и то же. Однако, во-первых, стоит помнить, что функции из <code>tidyverse</code> всегда возвращают <code>tibble</code>, а во-вторых, когда мы познаем всю мощь <del>тёмной стороны</del> <a href="tidy.html#mutate">функции <code>mutate()</code></a>, мы осознаем полезность фичи исползования переменных «по ходу событий».</p>
@@ -1313,24 +1313,324 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="соединение-датафреймов-ii" class="section level2">
 <h2><span class="header-section-number">7.9</span> Соединение датафреймов II</h2>
-<p>Данные о том, смартфон на какой платформе использует испытуемый, были записаны в отдельный датасет. Он <a href="">вот тут</a>.</p>
+<p>Данные о том, смартфон на какой платформе использует испытуемый, были записаны в отдельный датасет. Он <a href="https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/share_platform.csv">вот тут</a>.</p>
+<p>Грузим его:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="tidy.html#cb62-1"></a>platform &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/share_platform.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   id = col_double(),
+##   platform = col_character()
+## )</code></pre>
+<p>Осталось понять, как нам его присобачить к имеющимся данным так, как нам надо. А нам надо так, чтобы появилась новая колонка, в каждой ячейке которой согласно <code>id</code> будет стоять соответствующая платформа.</p>
 <div id="join" class="section level3">
 <h3><span class="header-section-number">7.9.1</span> <code>..._join()</code></h3>
+<p>Нас спасёт <code>..._join()</code>. Эта функция объединяет два датасета по определенной <em>ключевой</em> переменной.
+Что делает <code>..._join()</code>? У него есть две ключевые колонки из двух датасетов. Он находит соответствия, и лепит все колонки одной таблицы к другой, сопоставляя соответствующие строки.</p>
+<ul>
+<li>Для <code>left_join()</code> главный тиббл — слева, то есть остаются <em>все строки левого тиббла</em>, а из правого выбираются только те, которые нужны.</li>
+<li>Для <code>right_join()</code> главный тиббл — справа, то есть остаются <em>все строки правого тиббла</em>, а из левого выбираются те, которые нужны.</li>
+<li>Для <code>full_join()</code> и <code>inner_join()</code> главные тибблы оба:
+<ul>
+<li><code>full_join()</code> оставляет все строки обоих тибблов, а те, которым не нашлось соответствия в другом тиббле, заполняет <code>NA</code>.</li>
+<li><code>inner_join()</code> оставляет только те строки, которым нашлось соответствие, а всё остальные удаляет.</li>
+</ul></li>
+<li><code>anti_join()</code> оставляет только те строки, которым не нашлось соответствия.</li>
+</ul>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="tidy.html#cb64-1"></a>t1 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">x1 =</span> LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>])</span>
+<span id="cb64-2"><a href="tidy.html#cb64-2"></a>t2 &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">id =</span> <span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">2</span>), <span class="dt">x2 =</span> LETTERS[<span class="dv">11</span><span class="op">:</span><span class="dv">15</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="tidy.html#cb65-1"></a><span class="kw">left_join</span>(t1, t2)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 5 x 3
+##      id x1    x2   
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1     1 A     &lt;NA&gt; 
+## 2     2 B     K    
+## 3     3 C     &lt;NA&gt; 
+## 4     4 D     L    
+## 5     5 E     &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="tidy.html#cb68-1"></a><span class="kw">right_join</span>(t1, t2)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 5 x 3
+##      id x1    x2   
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1     2 B     K    
+## 2     4 D     L    
+## 3     6 &lt;NA&gt;  M    
+## 4     8 &lt;NA&gt;  N    
+## 5    10 &lt;NA&gt;  O</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="tidy.html#cb71-1"></a><span class="kw">full_join</span>(t1, t2)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 8 x 3
+##      id x1    x2   
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1     1 A     &lt;NA&gt; 
+## 2     2 B     K    
+## 3     3 C     &lt;NA&gt; 
+## 4     4 D     L    
+## 5     5 E     &lt;NA&gt; 
+## 6     6 &lt;NA&gt;  M    
+## 7     8 &lt;NA&gt;  N    
+## 8    10 &lt;NA&gt;  O</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="tidy.html#cb74-1"></a><span class="kw">inner_join</span>(t1, t2)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##      id x1    x2   
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1     2 B     K    
+## 2     4 D     L</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="tidy.html#cb77-1"></a><span class="kw">anti_join</span>(t1, t2)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##      id x1   
+##   &lt;int&gt; &lt;chr&gt;
+## 1     1 A    
+## 2     3 C    
+## 3     5 E</code></pre>
+<p>Как нам это поможет? У нас есть колонка <code>id</code> в обоих датасетах — <code>share</code> и <code>platform</code>. По ней мы и сможем соединить наши тибблы. Нам надо сделать так, чтобы все наши экспериментальные данные были сохранны. Используем <code>left_join()</code>:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="tidy.html#cb80-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(platform)</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<pre><code>## # A tibble: 6,000 x 11
+##    trialtype setsize numtrial time1 click1x click1y time2 click2x click2y    id
+##    &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 tray            8        1  1.67    -227     202 1.28       14    -351     1
+##  2 tray            8        2  1.13     -69     231 1.06      -44    -392     1
+##  3 tray            8        3  2.60      60     195 0.963      17    -361     1
+##  4 tray            8        4  2.61     199     213 0.863     -26    -356     1
+##  5 tray            8        5  1.59    -241      43 0.931     -25    -397     1
+##  6 tray            8        6  1.14     -51      59 0.896      10    -383     1
+##  7 tray            8        7  2.14      99      62 0.879     -29    -372     1
+##  8 tray            8        8  1.63     213      46 0.947     -27    -353     1
+##  9 tray            8        9  2.56    -201    -123 1.65      -25    -385     1
+## 10 tray            8       10  2.02     -70     -82 0.970     -19    -394     1
+## # … with 5,990 more rows, and 1 more variable: platform &lt;chr&gt;</code></pre>
+<p>Наблюдаем, что строки <code>platform</code> были продублированы столько раз, сколько нужно было, чтобы сохранились все строки тиббла с экспериментальными данными.</p>
+<p>Не забываем перезаписать наш тиббл:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="tidy.html#cb83-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(platform) -&gt;<span class="st"> </span>share</span></code></pre></div>
+<pre><code>## Joining, by = &quot;id&quot;</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>В нашей папке с данными есть файл <code>targetpositions.xlsx</code>, который содержит координаты, по которым мы сможем отобрать правильные клики наших испытуемых. Изучите этот файл, загрузите его как <code>tibble</code> и соедините его с нашим основным тибблом <code>share</code>.</p>
+<p>Подумайте, какие колонки тибблов вы будете использовать для объединения.</p>
+<pre><code>## # A tibble: 6,150 x 23
+##    trialtype setsize numtrial time1 click1x click1y time2 click2x click2y    id
+##    &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 tray            8        1  1.67    -227     202 1.28       14    -351     1
+##  2 tray            8        2  1.13     -69     231 1.06      -44    -392     1
+##  3 tray            8        3  2.60      60     195 0.963      17    -361     1
+##  4 tray            8        4  2.61     199     213 0.863     -26    -356     1
+##  5 tray            8        5  1.59    -241      43 0.931     -25    -397     1
+##  6 tray            8        6  1.14     -51      59 0.896      10    -383     1
+##  7 tray            8        7  2.14      99      62 0.879     -29    -372     1
+##  8 tray            8        8  1.63     213      46 0.947     -27    -353     1
+##  9 tray            8        9  2.56    -201    -123 1.65      -25    -385     1
+## 10 tray            8       10  2.02     -70     -82 0.970     -19    -394     1
+## # … with 6,140 more rows, and 13 more variables: platform &lt;chr&gt;, posx1 &lt;dbl&gt;,
+## #   posy1 &lt;dbl&gt;, posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;, posymin1 &lt;dbl&gt;,
+## #   posymax1 &lt;dbl&gt;, posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;, posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;,
+## #   posymin2 &lt;dbl&gt;, posymax2 &lt;dbl&gt;</code></pre>
+</div>
 </div>
 </div>
 <div id="группировка-и-аггрегация-данных" class="section level2">
 <h2><span class="header-section-number">7.10</span> Группировка и аггрегация данных</h2>
+<p>Часто возникает необходимость <strong>аггрегировать</strong> данные, то есть посчитать какие-то показатели, причем на по всему датасету, а по группам, имеющимся в нём. Займемся этим мероприятием.</p>
 <div id="group_by-ungroup" class="section level3">
 <h3><span class="header-section-number">7.10.1</span> <code>group_by()</code> &amp; <code>ungroup()</code></h3>
+<p>Нам тиббл сам по себе не знает, что в нём есть какие-то группы. Поэтому ему надо рассказать, как дело обстоит. Сгруппируем наши данные по экспериметальным условиям:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="tidy.html#cb86-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(trialtype)</span></code></pre></div>
+<pre><code>## # A tibble: 6,150 x 23
+## # Groups:   trialtype [3]
+##    trialtype setsize numtrial time1 click1x click1y time2 click2x click2y    id
+##    &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 tray            8        1  1.67    -227     202 1.28       14    -351     1
+##  2 tray            8        2  1.13     -69     231 1.06      -44    -392     1
+##  3 tray            8        3  2.60      60     195 0.963      17    -361     1
+##  4 tray            8        4  2.61     199     213 0.863     -26    -356     1
+##  5 tray            8        5  1.59    -241      43 0.931     -25    -397     1
+##  6 tray            8        6  1.14     -51      59 0.896      10    -383     1
+##  7 tray            8        7  2.14      99      62 0.879     -29    -372     1
+##  8 tray            8        8  1.63     213      46 0.947     -27    -353     1
+##  9 tray            8        9  2.56    -201    -123 1.65      -25    -385     1
+## 10 tray            8       10  2.02     -70     -82 0.970     -19    -394     1
+## # … with 6,140 more rows, and 13 more variables: platform &lt;chr&gt;, posx1 &lt;dbl&gt;,
+## #   posy1 &lt;dbl&gt;, posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;, posymin1 &lt;dbl&gt;,
+## #   posymax1 &lt;dbl&gt;, posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;, posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;,
+## #   posymin2 &lt;dbl&gt;, posymax2 &lt;dbl&gt;</code></pre>
+<p>Теперь в выводе тиббла указаны переменные, по которым сгруппированы наши данные (<code>Groups</code>). В структуре это тоже будет отображено:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="tidy.html#cb88-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(trialtype) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">str</span>()</span></code></pre></div>
+<pre><code>## tibble [6,150 × 23] (S3: grouped_df/tbl_df/tbl/data.frame)
+##  $ trialtype: chr [1:6150] &quot;tray&quot; &quot;tray&quot; &quot;tray&quot; &quot;tray&quot; ...
+##  $ setsize  : num [1:6150] 8 8 8 8 8 8 8 8 8 8 ...
+##  $ numtrial : num [1:6150] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ time1    : num [1:6150] 1.67 1.13 2.6 2.61 1.59 ...
+##  $ click1x  : num [1:6150] -227 -69 60 199 -241 -51 99 213 -201 -70 ...
+##  $ click1y  : num [1:6150] 202 231 195 213 43 59 62 46 -123 -82 ...
+##  $ time2    : num [1:6150] 1.28 1.061 0.963 0.863 0.931 ...
+##  $ click2x  : num [1:6150] 14 -44 17 -26 -25 10 -29 -27 -25 -19 ...
+##  $ click2y  : num [1:6150] -351 -392 -361 -356 -397 -383 -372 -353 -385 -394 ...
+##  $ id       : num [1:6150] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ platform : chr [1:6150] &quot;ios&quot; &quot;ios&quot; &quot;ios&quot; &quot;ios&quot; ...
+##  $ posx1    : num [1:6150] -238 -63 66 203 -243 -60 73 213 -229 -84 ...
+##  $ posy1    : num [1:6150] 202 226 217 218 59 90 66 52 -93 -79 ...
+##  $ posxmin1 : num [1:6150] -313 -138 -9 128 -318 -135 -2 138 -304 -159 ...
+##  $ posxmax1 : num [1:6150] -163 12 141 278 -168 15 148 288 -154 -9 ...
+##  $ posymin1 : num [1:6150] 127 151 142 143 -16 15 -9 -23 -168 -154 ...
+##  $ posymax1 : num [1:6150] 277 301 292 293 134 165 141 127 -18 -4 ...
+##  $ posx2    : num [1:6150] 450 450 450 450 450 450 450 450 450 450 ...
+##  $ posy2    : num [1:6150] -350 -350 -350 -350 -350 -350 -350 -350 -350 -350 ...
+##  $ posxmin2 : num [1:6150] 350 350 350 350 350 350 350 350 350 350 ...
+##  $ posxmax2 : num [1:6150] 550 550 550 550 550 550 550 550 550 550 ...
+##  $ posymin2 : num [1:6150] -425 -425 -425 -425 -425 -425 -425 -425 -425 -425 ...
+##  $ posymax2 : num [1:6150] -275 -275 -275 -275 -275 -275 -275 -275 -275 -275 ...
+##  - attr(*, &quot;groups&quot;)= tibble [3 × 2] (S3: tbl_df/tbl/data.frame)
+##   ..$ trialtype: chr [1:3] &quot;dots&quot; &quot;tray&quot; NA
+##   ..$ .rows    : list&lt;int&gt; [1:3] 
+##   .. ..$ : int [1:3000] 51 52 53 54 55 56 57 58 59 60 ...
+##   .. ..$ : int [1:3000] 1 2 3 4 5 6 7 8 9 10 ...
+##   .. ..$ : int [1:150] 6001 6002 6003 6004 6005 6006 6007 6008 6009 6010 ...
+##   .. ..@ ptype: int(0) 
+##   ..- attr(*, &quot;.drop&quot;)= logi TRUE</code></pre>
+<p>В первой строчке аутпута появилось указание <code>groupped</code>. Это как раз то, что мы хотели сделать. Можно перезаписать наш тиббл и посмотреть, как он будет выводиться в консоль:</p>
+<p>Если нам нужно убрать группировку, то есть функция <code>ungroup()</code>:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="tidy.html#cb90-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6,150 x 23
+##    trialtype setsize numtrial time1 click1x click1y time2 click2x click2y    id
+##    &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
+##  1 tray            8        1  1.67    -227     202 1.28       14    -351     1
+##  2 tray            8        2  1.13     -69     231 1.06      -44    -392     1
+##  3 tray            8        3  2.60      60     195 0.963      17    -361     1
+##  4 tray            8        4  2.61     199     213 0.863     -26    -356     1
+##  5 tray            8        5  1.59    -241      43 0.931     -25    -397     1
+##  6 tray            8        6  1.14     -51      59 0.896      10    -383     1
+##  7 tray            8        7  2.14      99      62 0.879     -29    -372     1
+##  8 tray            8        8  1.63     213      46 0.947     -27    -353     1
+##  9 tray            8        9  2.56    -201    -123 1.65      -25    -385     1
+## 10 tray            8       10  2.02     -70     -82 0.970     -19    -394     1
+## # … with 6,140 more rows, and 13 more variables: platform &lt;chr&gt;, posx1 &lt;dbl&gt;,
+## #   posy1 &lt;dbl&gt;, posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;, posymin1 &lt;dbl&gt;,
+## #   posymax1 &lt;dbl&gt;, posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;, posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;,
+## #   posymin2 &lt;dbl&gt;, posymax2 &lt;dbl&gt;</code></pre>
 </div>
-<div id="summarize-n-count" class="section level3">
-<h3><span class="header-section-number">7.10.2</span> <code>summarize()</code>, <code>n()</code>, <code>count()</code></h3>
+<div id="summarize" class="section level3">
+<h3><span class="header-section-number">7.10.2</span> <code>summarize()</code></h3>
+<p>Сама по себе функция <code>group_by()</code> особого смысла не имеет, но вот есть её использовать в связке в <code>summarize()</code>…</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="tidy.html#cb92-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(trialtype) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb92-2"><a href="tidy.html#cb92-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(time1),</span>
+<span id="cb92-3"><a href="tidy.html#cb92-3"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(time1))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   trialtype  mean     sd
+##   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+## 1 dots       1.60  0.886
+## 2 tray       1.65  0.896
+## 3 &lt;NA&gt;      NA    NA</code></pre>
+<p>Что мы здесь сделали? Мы хотели посчитать среднее и стандартное отклонение времени реакции (первого клика), но не по всему датасету, а по экспериментальным условиям. Для этого мы сгруппироали тиббл по переменной, содержащей указания на экспериментальное условие, и затем аггрегировали наши данные — посчитали по ним некоторые статистики. Функция <code>§ummarise()</code> возвращает тиббл, в котором по строкам идут заданные нами группы, а по столбцам те статистики, которые мы указали в её аргументах. Для их подсчёта можно использовать любые функции — как специализированные их пакетов, так и встроенные в базовый R.</p>
+<p>Допустим, мы хотим проверить, что эксперимент был сбалансирован по количеству проб в разных условиях. Тогда сделаем так:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="tidy.html#cb95-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(trialtype, setsize) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb95-2"><a href="tidy.html#cb95-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>())</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;trialtype&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 7 x 3
+## # Groups:   trialtype [3]
+##   trialtype setsize     n
+##   &lt;chr&gt;       &lt;dbl&gt; &lt;int&gt;
+## 1 dots            8  1000
+## 2 dots           12  1000
+## 3 dots           16  1000
+## 4 tray            8  1000
+## 5 tray           12  1000
+## 6 tray           16  1000
+## 7 &lt;NA&gt;           NA   150</code></pre>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>При предобработке данных нам часто необходимо усреднить экспериментальные пробы по респондентам. Возьмите имеющиеся данные <code>share</code> и подготовьте их к дисперсионному анализу.</p>
+<ol style="list-style-type: decimal">
+<li><p>Создайте новую логическую переменную, которая будет содержать информацию о том, корректно ли выполнена данная проба. Корректной считается проба, в которой координаты клика респондента (<code>click1x</code>, <code>click1y</code>) попали в целевые диапазоны ([<code>posxmin1</code>, <code>posxmax1</code>] и [<code>posymin1</code>, <code>posymax1</code>]).</p></li>
+<li><p>Отберите только корректные пробы.</p></li>
+<li><p>Рассчитайте среднее и стандартное отклонение времени реакции (<code>time1</code>) по экспериментальным условиям (<code>trialtype</code>, <code>setsize</code>) для каждого испытуемого. Итоговый тиббл также должен содержать колонку <code>platform</code>.</p></li>
+<li><p>Сохраните результат в новый объект.</p></li>
+</ol>
+<pre><code>## `summarise()` regrouping output by &#39;id&#39;, &#39;trialtype&#39;, &#39;setsize&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 120 x 6
+## # Groups:   id, trialtype, setsize [120]
+##       id trialtype setsize platform  mean    sd
+##    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+##  1     1 dots            8 ios       1.59 0.467
+##  2     1 dots           12 ios       1.88 0.647
+##  3     1 dots           16 ios       2.18 1.14 
+##  4     1 tray            8 ios       1.56 0.453
+##  5     1 tray           12 ios       1.77 0.739
+##  6     1 tray           16 ios       2.12 1.08 
+##  7     2 dots            8 ios       1.54 0.566
+##  8     2 dots           12 ios       1.59 0.613
+##  9     2 dots           16 ios       1.99 1.00 
+## 10     2 tray            8 ios       1.44 0.446
+## # … with 110 more rows</code></pre>
+</div>
 </div>
 </div>
 <div id="широкий-и-длинный-формат" class="section level2">
 <h2><span class="header-section-number">7.11</span> Широкий и длинный формат</h2>
+<p>Мы получили новый тиббл который содержит аггрегированные данные. Теперь нам надо поговорить о <em>широком и длинном форматах данных</em>.</p>
+<p>Как мы говорили ранее, <em>tidy data</em> задаёт нам следующий формат данных: по строкам идут наблюдения, по столбцам — отдельные переменные. Такой формат данных называется <em>широким</em>. Широкий он потому, что у нас может быть много отдельных переменных. <em>Длиннный</em> формат данных выглядит следующим образом: есть столбец <em>индентификаторов</em> (например, ID испытуемого), есть столбец <em>переменных</em>, и есть столбец <em>значений</em> этих переменных.</p>
+<p>Это общая логика, и под каждую задачу у нас может быть свой длинный и свой широкий формат. Кроме того, данные могут быть разной «широкости» и разной «длинности», что тоже определяется конкретной задачей.</p>
 <div id="pivot_longer-pivot_wider" class="section level3">
 <h3><span class="header-section-number">7.11.1</span> <code>pivot_longer()</code> &amp; <code>pivot_wider()</code></h3>
+<p>Наши данные сейчас — «средние». С одно стороны он — широкий, так как у нас есть две переменные <code>mean</code> и <code>id</code>, которые записаны в отдельных столбцах:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="tidy.html#cb100-1"></a>share_aggregated</span></code></pre></div>
+<pre><code>## # A tibble: 120 x 6
+## # Groups:   id, trialtype, setsize [120]
+##       id trialtype setsize platform  mean    sd
+##    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
+##  1     1 dots            8 ios       1.59 0.467
+##  2     1 dots           12 ios       1.88 0.647
+##  3     1 dots           16 ios       2.18 1.14 
+##  4     1 tray            8 ios       1.56 0.453
+##  5     1 tray           12 ios       1.77 0.739
+##  6     1 tray           16 ios       2.12 1.08 
+##  7     2 dots            8 ios       1.54 0.566
+##  8     2 dots           12 ios       1.59 0.613
+##  9     2 dots           16 ios       1.99 1.00 
+## 10     2 tray            8 ios       1.44 0.446
+## # … with 110 more rows</code></pre>
+<p>Мы можем перевести наши данный в длинный формат:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="tidy.html#cb102-1"></a>share_aggregated <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="kw">c</span>(<span class="st">&#39;mean&#39;</span>, <span class="st">&#39;sd&#39;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 240 x 6
+## # Groups:   id, trialtype, setsize [120]
+##       id trialtype setsize platform name  value
+##    &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;
+##  1     1 dots            8 ios      mean  1.59 
+##  2     1 dots            8 ios      sd    0.467
+##  3     1 dots           12 ios      mean  1.88 
+##  4     1 dots           12 ios      sd    0.647
+##  5     1 dots           16 ios      mean  2.18 
+##  6     1 dots           16 ios      sd    1.14 
+##  7     1 tray            8 ios      mean  1.56 
+##  8     1 tray            8 ios      sd    0.453
+##  9     1 tray           12 ios      mean  1.77 
+## 10     1 tray           12 ios      sd    0.739
+## # … with 230 more rows</code></pre>
+<p>У нас появилась колонка <code>name</code>, которая задаёт названия наших переменных, и колонка <code>value</code>, которая задаёт их значения.</p>
+<p>Однако мы можем перевести исходный датасет и в более широкий формат:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="tidy.html#cb104-1"></a>share_aggregated <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>sd) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># переменная sd будет лишней</span></span>
+<span id="cb104-2"><a href="tidy.html#cb104-2"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&#39;setsize&#39;</span>, <span class="dt">values_from =</span> <span class="st">&#39;mean&#39;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 40 x 6
+## # Groups:   id, trialtype [40]
+##       id trialtype platform   `8`  `12`  `16`
+##    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1     1 dots      ios       1.59  1.88  2.18
+##  2     1 tray      ios       1.56  1.77  2.12
+##  3     2 dots      ios       1.54  1.59  1.99
+##  4     2 tray      ios       1.44  1.74  2.68
+##  5     3 dots      ios       1.53  1.82  1.99
+##  6     3 tray      ios       1.46  2.05  2.48
+##  7     4 dots      andr      1.35  1.73  1.97
+##  8     4 tray      andr      1.32  1.61  1.65
+##  9     5 dots      ios       1.22  1.34  1.44
+## 10     5 tray      ios       1.22  1.51  1.73
+## # … with 30 more rows</code></pre>
+<p>Наблюдаем, что теперь время в различных сетсайзах расположено в отдельных колонках.</p>
+<p>Из широкого формата удобнее доставать отдельные переменные, например, для сравнения t-тестов. Из длинного формата удобно доставать вектор значений и вектор групп, например, для дисперсионного анализа. Мы будем работать и с тем и с другим форматом, поэтому перемещаться между ними надо быстро и уверенно.</p>
 
 </div>
 </div>
