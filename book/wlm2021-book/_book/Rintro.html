@@ -169,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="datatypes.html"><a href="datatypes.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
 <li class="chapter" data-level="2.2" data-path="datatypes.html"><a href="datatypes.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
 <li class="chapter" data-level="2.3" data-path="datatypes.html"><a href="datatypes.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
-<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
+<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#factors"><i class="fa fa-check"></i><b>2.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.5" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.5</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="datastructures.html"><a href="datastructures.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="datastructures.html"><a href="datastructures.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
@@ -218,15 +219,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.1" data-path="realdata.html"><a href="realdata.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="realdata.html"><a href="realdata.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
-<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#rdata"><i class="fa fa-check"></i><b>6.4</b> <code>.RData</code></a></li>
+<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#файл-.rdata"><i class="fa fa-check"></i><b>6.4</b> Файл <code>.RData</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
-<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
+<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
+<li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
+<li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
+<li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="tidy.html"><a href="tidy.html#pipe"><i class="fa fa-check"></i><b>7.5.1</b> <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="7.5.2" data-path="tidy.html"><a href="tidy.html#select"><i class="fa fa-check"></i><b>7.5.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="7.5.3" data-path="tidy.html"><a href="tidy.html#rename"><i class="fa fa-check"></i><b>7.5.3</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="7.5.4" data-path="tidy.html"><a href="tidy.html#slice"><i class="fa fa-check"></i><b>7.5.4</b> <code>slice()</code></a></li>
+<li class="chapter" data-level="7.5.5" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i><b>7.5.5</b> <code>filter()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tidy.html"><a href="tidy.html#mutate"><i class="fa fa-check"></i><b>7.6</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="7.7" data-path="tidy.html"><a href="tidy.html#догрузим-остальные-данные"><i class="fa fa-check"></i><b>7.7</b> Догрузим остальные данные</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-i"><i class="fa fa-check"></i><b>7.7.1</b> Соединение датафреймов I</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="tidy.html"><a href="tidy.html#сортировка"><i class="fa fa-check"></i><b>7.8</b> Сортировка</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="tidy.html"><a href="tidy.html#sort"><i class="fa fa-check"></i><b>7.8.1</b> <code>sort()</code></a></li>
+<li class="chapter" data-level="7.8.2" data-path="tidy.html"><a href="tidy.html#arrange"><i class="fa fa-check"></i><b>7.8.2</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="7.8.3" data-path="tidy.html"><a href="tidy.html#distinct"><i class="fa fa-check"></i><b>7.8.3</b> <code>distinct()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-ii"><i class="fa fa-check"></i><b>7.9</b> Соединение датафреймов II</a><ul>
+<li class="chapter" data-level="7.9.1" data-path="tidy.html"><a href="tidy.html#join"><i class="fa fa-check"></i><b>7.9.1</b> <code>..._join()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="tidy.html"><a href="tidy.html#группировка-и-аггрегация-данных"><i class="fa fa-check"></i><b>7.10</b> Группировка и аггрегация данных</a><ul>
+<li class="chapter" data-level="7.10.1" data-path="tidy.html"><a href="tidy.html#group_by-ungroup"><i class="fa fa-check"></i><b>7.10.1</b> <code>group_by()</code> &amp; <code>ungroup()</code></a></li>
+<li class="chapter" data-level="7.10.2" data-path="tidy.html"><a href="tidy.html#summarize"><i class="fa fa-check"></i><b>7.10.2</b> <code>summarize()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="tidy.html"><a href="tidy.html#широкий-и-длинный-формат"><i class="fa fa-check"></i><b>7.11</b> Широкий и длинный формат</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="tidy.html"><a href="tidy.html#pivot_longer-pivot_wider"><i class="fa fa-check"></i><b>7.11.1</b> <code>pivot_longer()</code> &amp; <code>pivot_wider()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualization.html"><a href="visualization.html#философия-ggplot2-a-layered-grammar-of-graphics"><i class="fa fa-check"></i><b>8.1</b> Философия ggplot2 (A Layered Grammar of Graphics)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="visualization.html"><a href="visualization.html#собственно-к-философии-построения-графиков"><i class="fa fa-check"></i><b>8.1.1</b> Собственно к философии построения графиков</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualization.html"><a href="visualization.html#данные"><i class="fa fa-check"></i><b>8.2</b> Данные</a></li>
+<li class="chapter" data-level="8.3" data-path="visualization.html"><a href="visualization.html#строим-базовый-график"><i class="fa fa-check"></i><b>8.3</b> Строим базовый график</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualization.html"><a href="visualization.html#базовый-слой"><i class="fa fa-check"></i><b>8.3.1</b> Базовый слой</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualization.html"><a href="visualization.html#разметка-осей-и-переменные"><i class="fa fa-check"></i><b>8.3.2</b> Разметка осей и переменные</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualization.html"><a href="visualization.html#геомы"><i class="fa fa-check"></i><b>8.3.3</b> Геомы</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualization.html"><a href="visualization.html#группировка-по-переменной"><i class="fa fa-check"></i><b>8.4</b> Группировка по переменной</a></li>
+<li class="chapter" data-level="8.5" data-path="visualization.html"><a href="visualization.html#графики-со-встроенной-статистической-обработкой"><i class="fa fa-check"></i><b>8.5</b> Графики со встроенной статистической обработкой</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualization.html"><a href="visualization.html#статы-stat_"><i class="fa fa-check"></i><b>8.5.1</b> Статы (stat_)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualization.html"><a href="visualization.html#ищем-более-сложные-закономерности"><i class="fa fa-check"></i><b>8.6</b> Ищем более сложные закономерности</a></li>
+<li class="chapter" data-level="8.7" data-path="visualization.html"><a href="visualization.html#настраиваем-график"><i class="fa fa-check"></i><b>8.7</b> Настраиваем график</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="visualization.html"><a href="visualization.html#темы"><i class="fa fa-check"></i><b>8.7.1</b> Темы</a></li>
+<li class="chapter" data-level="8.7.2" data-path="visualization.html"><a href="visualization.html#кастомизация-шкал-scale_"><i class="fa fa-check"></i><b>8.7.2</b> Кастомизация шкал (scale_)</a></li>
+<li class="chapter" data-level="8.7.3" data-path="visualization.html"><a href="visualization.html#последние-штрихи"><i class="fa fa-check"></i><b>8.7.3</b> Последние штрихи</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="visualization.html"><a href="visualization.html#больше-переменных"><i class="fa fa-check"></i><b>8.8</b> Больше переменных</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="visualization.html"><a href="visualization.html#фасетизация"><i class="fa fa-check"></i><b>8.8.1</b> Фасетизация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="visualization.html"><a href="visualization.html#сохранение-графиков"><i class="fa fa-check"></i><b>8.9</b> Сохранение графиков</a></li>
+<li class="chapter" data-level="8.10" data-path="visualization.html"><a href="visualization.html#другие-геомы"><i class="fa fa-check"></i><b>8.10</b> Другие геомы</a></li>
+</ul></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
 <li class="chapter" data-level="9" data-path="maths.html"><a href="maths.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
-<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
-<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
-<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
+<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="maths.html"><a href="maths.html#высказывания"><i class="fa fa-check"></i><b>9.1.1</b> Высказывания</a></li>
+<li class="chapter" data-level="9.1.2" data-path="maths.html"><a href="maths.html#логические-операции"><i class="fa fa-check"></i><b>9.1.2</b> Логические операции</a></li>
+<li class="chapter" data-level="9.1.3" data-path="maths.html"><a href="maths.html#сложные-высказвания"><i class="fa fa-check"></i><b>9.1.3</b> Сложные высказвания</a></li>
+<li class="chapter" data-level="9.1.4" data-path="maths.html"><a href="maths.html#нормальные-формы"><i class="fa fa-check"></i><b>9.1.4</b> Нормальные формы</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="maths.html"><a href="maths.html#множество"><i class="fa fa-check"></i><b>9.2.1</b> Множество</a></li>
+<li class="chapter" data-level="9.2.2" data-path="maths.html"><a href="maths.html#операции-над-множествами"><i class="fa fa-check"></i><b>9.2.2</b> Операции над множествами</a></li>
+<li class="chapter" data-level="9.2.3" data-path="maths.html"><a href="maths.html#отображения"><i class="fa fa-check"></i><b>9.2.3</b> Отображения</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="maths.html"><a href="maths.html#последовательность"><i class="fa fa-check"></i><b>9.3.1</b> Последовательность</a></li>
+<li class="chapter" data-level="9.3.2" data-path="maths.html"><a href="maths.html#предел-последовательности"><i class="fa fa-check"></i><b>9.3.2</b> Предел последовательности</a></li>
+<li class="chapter" data-level="9.3.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.3.3</b> Функции</a></li>
+<li class="chapter" data-level="9.3.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.3.4</b> Дифференцируемость функции. Производная</a></li>
+<li class="chapter" data-level="9.3.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.3.5</b> Функции нескольких переменных</a></li>
+<li class="chapter" data-level="9.3.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.3.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.3.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.3.7</b> Интеграл</a></li>
+</ul></li>
 <li class="chapter" data-level="9.4" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="maths.html"><a href="maths.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
 <li class="chapter" data-level="9.4.2" data-path="maths.html"><a href="maths.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
@@ -242,7 +316,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
 <li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
 <li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
-<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a></li>
+<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a><ul>
+<li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.1</b> Доверительный интервал</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
@@ -283,11 +359,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#about-r"><i class="fa fa-check"></i>About R</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>Литература</a><ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#about-r"><i class="fa fa-check"></i>About R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -725,8 +801,8 @@ function check5() {
 <div class="task">
 <p>Сделайте самостоятельно несколько простых сравнений.</p>
 </div>
-<p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="">Типы данных</a> и <a href="">элементы алгебры логики</a> мы подробно будем обсуждать далее, пока же снова ограничимся простым и интуитивным пониманием.</p>
-<p>Мы можем составлять из простых сравнений сложные высказывания с помощью <em>логических операторов</em>. Самые известные и часто используемые из них — «И» (<code>&amp;</code>) и «ИЛИ» (<code>|</code>). Подробно об их смысле <a href="">здесь</a>. Если в двух словах, то «И» истинно, когда <em>оба</em> соединяемых им утверждений истинны, а «ИЛИ» истинно, когда <em>хотя бы одно</em> из соединяемых им утвердений истинно. Например,</p>
+<p>Само по себе сравнение интуитивно понятно, однако нам интересен здесь получаемый результат. Ранее мы имели дело с числами — здесь что-то другое. С одно стороны, программы выдает на слово, но это не простое слово. Это особый <em>тип данных</em> — логическое значение («истина» <code>TRUE</code> или «ложь» <code>FALSE</code>). <a href="datatypes.html#datatypes">Типы данных</a> и <a href="maths.html#alg_logic">элементы алгебры логики</a> мы подробно будем обсуждать далее, пока же снова ограничимся простым и интуитивным пониманием.</p>
+<p>Мы можем составлять из простых сравнений сложные высказывания с помощью <em>логических операторов</em>. Самые известные и часто используемые из них — «И» (<code>&amp;</code>) и «ИЛИ» (<code>|</code>). Подробно об их смысле <a href="#logic_operations">здесь</a>. Если в двух словах, то «И» истинно, когда <em>оба</em> соединяемых им утверждений истинны, а «ИЛИ» истинно, когда <em>хотя бы одно</em> из соединяемых им утвердений истинно. Например,</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="Rintro.html#cb59-1"></a><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">8</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">12</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="Rintro.html#cb61-1"></a><span class="dv">1</span> <span class="op">!=</span><span class="st"> </span><span class="dv">4</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="dv">10</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span></span></code></pre></div>
