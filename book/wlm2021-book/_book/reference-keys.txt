@@ -243,3 +243,8 @@ or
 xor
 replication
 equivalence
+set
+combinatorics
+permutations
+accomodations
+combinations
