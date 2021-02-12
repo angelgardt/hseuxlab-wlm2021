@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -105,7 +169,8 @@
 <li class="chapter" data-level="2.1" data-path="datatypes.html"><a href="datatypes.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
 <li class="chapter" data-level="2.2" data-path="datatypes.html"><a href="datatypes.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
 <li class="chapter" data-level="2.3" data-path="datatypes.html"><a href="datatypes.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
-<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
+<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#factors"><i class="fa fa-check"></i><b>2.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.5" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.5</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="datastructures.html"><a href="datastructures.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="datastructures.html"><a href="datastructures.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
@@ -154,15 +219,88 @@
 <li class="chapter" data-level="6.2.1" data-path="realdata.html"><a href="realdata.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="realdata.html"><a href="realdata.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
-<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#rdata"><i class="fa fa-check"></i><b>6.4</b> <code>.RData</code></a></li>
+<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#файл-.rdata"><i class="fa fa-check"></i><b>6.4</b> Файл <code>.RData</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
-<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
+<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
+<li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
+<li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
+<li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="tidy.html"><a href="tidy.html#pipe"><i class="fa fa-check"></i><b>7.5.1</b> <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="7.5.2" data-path="tidy.html"><a href="tidy.html#select"><i class="fa fa-check"></i><b>7.5.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="7.5.3" data-path="tidy.html"><a href="tidy.html#rename"><i class="fa fa-check"></i><b>7.5.3</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="7.5.4" data-path="tidy.html"><a href="tidy.html#slice"><i class="fa fa-check"></i><b>7.5.4</b> <code>slice()</code></a></li>
+<li class="chapter" data-level="7.5.5" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i><b>7.5.5</b> <code>filter()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tidy.html"><a href="tidy.html#mutate"><i class="fa fa-check"></i><b>7.6</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="7.7" data-path="tidy.html"><a href="tidy.html#догрузим-остальные-данные"><i class="fa fa-check"></i><b>7.7</b> Догрузим остальные данные</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-i"><i class="fa fa-check"></i><b>7.7.1</b> Соединение датафреймов I</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="tidy.html"><a href="tidy.html#сортировка"><i class="fa fa-check"></i><b>7.8</b> Сортировка</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="tidy.html"><a href="tidy.html#sort"><i class="fa fa-check"></i><b>7.8.1</b> <code>sort()</code></a></li>
+<li class="chapter" data-level="7.8.2" data-path="tidy.html"><a href="tidy.html#arrange"><i class="fa fa-check"></i><b>7.8.2</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="7.8.3" data-path="tidy.html"><a href="tidy.html#distinct"><i class="fa fa-check"></i><b>7.8.3</b> <code>distinct()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-ii"><i class="fa fa-check"></i><b>7.9</b> Соединение датафреймов II</a><ul>
+<li class="chapter" data-level="7.9.1" data-path="tidy.html"><a href="tidy.html#join"><i class="fa fa-check"></i><b>7.9.1</b> <code>..._join()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="tidy.html"><a href="tidy.html#группировка-и-аггрегация-данных"><i class="fa fa-check"></i><b>7.10</b> Группировка и аггрегация данных</a><ul>
+<li class="chapter" data-level="7.10.1" data-path="tidy.html"><a href="tidy.html#group_by-ungroup"><i class="fa fa-check"></i><b>7.10.1</b> <code>group_by()</code> &amp; <code>ungroup()</code></a></li>
+<li class="chapter" data-level="7.10.2" data-path="tidy.html"><a href="tidy.html#summarize"><i class="fa fa-check"></i><b>7.10.2</b> <code>summarize()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="tidy.html"><a href="tidy.html#широкий-и-длинный-формат"><i class="fa fa-check"></i><b>7.11</b> Широкий и длинный формат</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="tidy.html"><a href="tidy.html#pivot_longer-pivot_wider"><i class="fa fa-check"></i><b>7.11.1</b> <code>pivot_longer()</code> &amp; <code>pivot_wider()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualization.html"><a href="visualization.html#философия-ggplot2-a-layered-grammar-of-graphics"><i class="fa fa-check"></i><b>8.1</b> Философия ggplot2 (A Layered Grammar of Graphics)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="visualization.html"><a href="visualization.html#собственно-к-философии-построения-графиков"><i class="fa fa-check"></i><b>8.1.1</b> Собственно к философии построения графиков</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualization.html"><a href="visualization.html#данные"><i class="fa fa-check"></i><b>8.2</b> Данные</a></li>
+<li class="chapter" data-level="8.3" data-path="visualization.html"><a href="visualization.html#строим-базовый-график"><i class="fa fa-check"></i><b>8.3</b> Строим базовый график</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualization.html"><a href="visualization.html#базовый-слой"><i class="fa fa-check"></i><b>8.3.1</b> Базовый слой</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualization.html"><a href="visualization.html#разметка-осей-и-переменные"><i class="fa fa-check"></i><b>8.3.2</b> Разметка осей и переменные</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualization.html"><a href="visualization.html#геомы"><i class="fa fa-check"></i><b>8.3.3</b> Геомы</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualization.html"><a href="visualization.html#группировка-по-переменной"><i class="fa fa-check"></i><b>8.4</b> Группировка по переменной</a></li>
+<li class="chapter" data-level="8.5" data-path="visualization.html"><a href="visualization.html#графики-со-встроенной-статистической-обработкой"><i class="fa fa-check"></i><b>8.5</b> Графики со встроенной статистической обработкой</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualization.html"><a href="visualization.html#статы-stat_"><i class="fa fa-check"></i><b>8.5.1</b> Статы (stat_)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualization.html"><a href="visualization.html#ищем-более-сложные-закономерности"><i class="fa fa-check"></i><b>8.6</b> Ищем более сложные закономерности</a></li>
+<li class="chapter" data-level="8.7" data-path="visualization.html"><a href="visualization.html#настраиваем-график"><i class="fa fa-check"></i><b>8.7</b> Настраиваем график</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="visualization.html"><a href="visualization.html#темы"><i class="fa fa-check"></i><b>8.7.1</b> Темы</a></li>
+<li class="chapter" data-level="8.7.2" data-path="visualization.html"><a href="visualization.html#кастомизация-шкал-scale_"><i class="fa fa-check"></i><b>8.7.2</b> Кастомизация шкал (scale_)</a></li>
+<li class="chapter" data-level="8.7.3" data-path="visualization.html"><a href="visualization.html#последние-штрихи"><i class="fa fa-check"></i><b>8.7.3</b> Последние штрихи</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="visualization.html"><a href="visualization.html#больше-переменных"><i class="fa fa-check"></i><b>8.8</b> Больше переменных</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="visualization.html"><a href="visualization.html#фасетизация"><i class="fa fa-check"></i><b>8.8.1</b> Фасетизация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="visualization.html"><a href="visualization.html#сохранение-графиков"><i class="fa fa-check"></i><b>8.9</b> Сохранение графиков</a></li>
+<li class="chapter" data-level="8.10" data-path="visualization.html"><a href="visualization.html#другие-геомы"><i class="fa fa-check"></i><b>8.10</b> Другие геомы</a></li>
+</ul></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
 <li class="chapter" data-level="9" data-path="maths.html"><a href="maths.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
-<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
-<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
-<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
+<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="maths.html"><a href="maths.html#высказывания"><i class="fa fa-check"></i><b>9.1.1</b> Высказывания</a></li>
+<li class="chapter" data-level="9.1.2" data-path="maths.html"><a href="maths.html#logic_operations"><i class="fa fa-check"></i><b>9.1.2</b> Логические операции</a></li>
+<li class="chapter" data-level="9.1.3" data-path="maths.html"><a href="maths.html#сложные-высказвания"><i class="fa fa-check"></i><b>9.1.3</b> Сложные высказвания</a></li>
+<li class="chapter" data-level="9.1.4" data-path="maths.html"><a href="maths.html#нормальные-формы"><i class="fa fa-check"></i><b>9.1.4</b> Нормальные формы</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="maths.html"><a href="maths.html#множество"><i class="fa fa-check"></i><b>9.2.1</b> Множество</a></li>
+<li class="chapter" data-level="9.2.2" data-path="maths.html"><a href="maths.html#sets_operations"><i class="fa fa-check"></i><b>9.2.2</b> Операции над множествами</a></li>
+<li class="chapter" data-level="9.2.3" data-path="maths.html"><a href="maths.html#отображения"><i class="fa fa-check"></i><b>9.2.3</b> Отображения</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="maths.html"><a href="maths.html#последовательность"><i class="fa fa-check"></i><b>9.3.1</b> Последовательность</a></li>
+<li class="chapter" data-level="9.3.2" data-path="maths.html"><a href="maths.html#предел-последовательности"><i class="fa fa-check"></i><b>9.3.2</b> Предел последовательности</a></li>
+<li class="chapter" data-level="9.3.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.3.3</b> Функции</a></li>
+<li class="chapter" data-level="9.3.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.3.4</b> Дифференцируемость функции. Производная</a></li>
+<li class="chapter" data-level="9.3.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.3.5</b> Функции нескольких переменных</a></li>
+<li class="chapter" data-level="9.3.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.3.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.3.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.3.7</b> Интеграл</a></li>
+</ul></li>
 <li class="chapter" data-level="9.4" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="maths.html"><a href="maths.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
 <li class="chapter" data-level="9.4.2" data-path="maths.html"><a href="maths.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
@@ -175,10 +313,35 @@
 <li class="chapter" data-level="9.4.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.4.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
-<li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
-<li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
-<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a></li>
+<li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a><ul>
+<li class="chapter" data-level="10.1" data-path="stats-intro.html"><a href="stats-intro.html#исходные-понятия-статистики"><i class="fa fa-check"></i><b>10.1</b> Исходные понятия статистики</a></li>
+<li class="chapter" data-level="10.2" data-path="stats-intro.html"><a href="stats-intro.html#виды-статистических-данных"><i class="fa fa-check"></i><b>10.2</b> Виды статистических данных</a></li>
+<li class="chapter" data-level="10.3" data-path="stats-intro.html"><a href="stats-intro.html#шкалы"><i class="fa fa-check"></i><b>10.3</b> Шкалы</a></li>
+<li class="chapter" data-level="10.4" data-path="stats-intro.html"><a href="stats-intro.html#задачи-статистики"><i class="fa fa-check"></i><b>10.4</b> Задачи статистики</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="stats-intro.html"><a href="stats-intro.html#этапы-статистического-моделирования"><i class="fa fa-check"></i><b>10.4.1</b> Этапы статистического моделирования</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a><ul>
+<li class="chapter" data-level="11.1" data-path="randexp.html"><a href="randexp.html#ход-исследования"><i class="fa fa-check"></i><b>11.1</b> Ход исследования</a></li>
+<li class="chapter" data-level="11.2" data-path="randexp.html"><a href="randexp.html#событие.-пространство-элементарных-событий."><i class="fa fa-check"></i><b>11.2</b> Событие. Пространство элементарных событий.</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="randexp.html"><a href="randexp.html#игральный-кубик"><i class="fa fa-check"></i><b>11.2.1</b> Игральный кубик</a></li>
+<li class="chapter" data-level="11.2.2" data-path="randexp.html"><a href="randexp.html#events_operations"><i class="fa fa-check"></i><b>11.2.2</b> Действия над событиями</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="randexp.html"><a href="randexp.html#классическое-определение-вероятности"><i class="fa fa-check"></i><b>11.3</b> Классическое определение вероятности</a></li>
+<li class="chapter" data-level="11.4" data-path="randexp.html"><a href="randexp.html#статистическое-определение-вероятности"><i class="fa fa-check"></i><b>11.4</b> Статистическое определение вероятности</a></li>
+<li class="chapter" data-level="11.5" data-path="randexp.html"><a href="randexp.html#кроме-кубика"><i class="fa fa-check"></i><b>11.5</b> Кроме кубика</a></li>
+<li class="chapter" data-level="11.6" data-path="randexp.html"><a href="randexp.html#вероятности-сложных-событий"><i class="fa fa-check"></i><b>11.6</b> Вероятности сложных событий</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="randexp.html"><a href="randexp.html#условная-вероятность"><i class="fa fa-check"></i><b>11.6.1</b> Условная вероятность</a></li>
+<li class="chapter" data-level="11.6.2" data-path="randexp.html"><a href="randexp.html#теорема-байеса"><i class="fa fa-check"></i><b>11.6.2</b> Теорема Байеса</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a><ul>
+<li class="chapter" data-level="12.1" data-path="prob.html"><a href="prob.html#дискретные-случайные-величины"><i class="fa fa-check"></i><b>12.1</b> Дискретные случайные величины</a></li>
+<li class="chapter" data-level="12.2" data-path="prob.html"><a href="prob.html#непрерывные-случайные-величины"><i class="fa fa-check"></i><b>12.2</b> Непрерывные случайные величины</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a><ul>
+<li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.1</b> Доверительный интервал</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
@@ -219,11 +382,11 @@
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#about-r"><i class="fa fa-check"></i>About R</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>Литература</a><ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#about-r"><i class="fa fa-check"></i>About R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -248,6 +411,93 @@
 <div id="prob" class="section level1">
 <h1><span class="header-section-number">12</span> Вероятность и случайные величины</h1>
 
+<blockquote>
+<p>Возвращаемся к тому, что мы получаем циферки в результате измерений в ходе нашего исследования.</p>
+</blockquote>
+<p>Мы измеряет определённые характеристики нашей выборки, которую мы извлекли из генеральной совокупности, то есть приписываем им некоторые значения на определённой шкале. В итоге мы получаем описание интересующей нас характеристики через <em>случайную величину</em>.</p>
+<p><strong>Случайная величина</strong> — это величина, которая принимает любое из своих возможных значений с определенной вероятностью.</p>
+<p>Вернемся на пару минут к кубику. У нас есть пространство элементарных событий, которое содержит шесть элементов. Каждой элементу мы ставим с соответствие число, находящееся на грани кубика. Итого, получаем, что у нашей случайной величины есть всего 6 значений, которые она может принимать с вероятностью <span class="math inline">\(\frac{1}{6}\)</span>. Мы даже можем построить соответствующий график:</p>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Мы с вами познакомились с частным примером <em>дискретной случайной величины</em>.</p>
+<div id="дискретные-случайные-величины" class="section level2">
+<h2><span class="header-section-number">12.1</span> Дискретные случайные величины</h2>
+<p>С ними всё просто. Есть множество значений, которые эта случайная величина может принимать. Есть вероятности, с которыми она каждое из них принимает. Самый простой способ описания дискретной случайной величины — <em>табличный</em>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x_i\)</span></th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mathrm{P}_i\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{6}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{6}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{6}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{6}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{6}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Это табличное задание для <strong>функции вероятности (probablity mass function, PMF)</strong> для <em>дискретного равномерного распределения</em>. Собственно, функция вероятности описывает, с какой вероятность даная случайная величина принимает каждое из своих значений.</p>
+<p>Другая функция, которая тоже описывается распредление, называется <strong>функцией распредления (cumulative distribution function, CDF)</strong>.</p>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+Она показывает, какова вероятность, что случайная величина пример <em>данное или меньшее значение</em>.</p>
+</div>
+<div id="непрерывные-случайные-величины" class="section level2">
+<h2><span class="header-section-number">12.2</span> Непрерывные случайные величины</h2>
+<p>Всё легко и приятно до тех пор, пока мы не сталкивается с непрерывными слуайными величинами. Хотя в ними мы как раз и работаем практически всегда. Что с ними не так?</p>
+<p>Основная их фича в том, что их множество значений <em>бесконечно</em>. Представим, что мы замеряем время реакции. Пусть у нас экспериментально есть ограничений, и диапазон времени реакции у нас от 0 мс до 10000 мс. Вроде границы есть, но внутри них переменная «время реакции» может принимать абсолютно любое значение, так как между 0 и 10000 бесконечное множестве чисел<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Если мы попробуем применить классический подход к вероятности для вычислений, то получим следующее. Внимательно взглянем на формулу:</p>
+<p><span class="math display">\[
+\mathrm{P}(A) = \frac{m}{n}
+\]</span>
+Так как число возможных исходов <span class="math inline">\(n\)</span> у нас бесконечно, то</p>
+<p><span class="math display">\[
+\mathrm{P}(A) = \frac{m}{\infty}
+\]</span></p>
+<p>Выглядит уже дико, но это ещё можно попробовать подсчитать. Через предел:</p>
+<p><span class="math display">\[
+\mathrm{P}(A) = \lim_{n \rightarrow \infty} \frac{m}{n} = 0
+\]</span></p>
+<p>Короче, здесь мы не приуспели. Зато выяснили, что <strong>вероятность того, что непрерывная случайная величина примет конкретное значение равна нулю</strong>.</p>
+<p>Что же делать? Давайте посмотрим не на конкретные значения, а на какие-нибудь отрезки нашей переменной. Вероятность того, что значение нашей случайной величины окажется в некотором интервале уже не будет равно нулю, и его можно подсчитать.</p>
+<p>Чтобы с непрерывными случайными величинами можно было оперировать аналогично тому, как это происходит с дискретными, вводится понятие <em>плотность вероятности</em>.</p>
+<p><strong>Плотность вероятности</strong> — это предел отношения вероятности попадания значения случайной величины в определенный отрезок к длине этого отрезка при очень малой длине этого отрезка.</p>
+<p><span class="math display">\[
+f(x) = \lim_{\Delta x \rightarrow 0} \frac{\mathrm{P}(x &lt; X &lt; x + \Delta x)}{\Delta x}
+\]</span></p>
+<p>В итоге после всего математического колдунства получается <strong>функция плотности распределения (probability density function, PDF)</strong>. Почти как PMF, только непрерывная.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="prob.html#cb1-1"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">.001</span>)</span>
+<span id="cb1-2"><a href="prob.html#cb1-2"></a><span class="kw">tibble</span>(<span class="dt">y =</span> <span class="kw">dnorm</span>(x, <span class="dt">mean =</span> <span class="dv">1</span>, <span class="dt">sd =</span> <span class="dv">2</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-3"><a href="prob.html#cb1-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
+<span id="cb1-4"><a href="prob.html#cb1-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb1-5"><a href="prob.html#cb1-5"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;X&#39;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&#39;Плотность вероятности&#39;</span>) <span class="op">+</span></span>
+<span id="cb1-6"><a href="prob.html#cb1-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;PDF нормального распредлеения&quot;</span>,</span>
+<span id="cb1-7"><a href="prob.html#cb1-7"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;mean = 1, sd = 2&quot;</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Есть и <strong>функция распределения (cumulative distribution function, CDF)</strong> для непрерывных величин:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="prob.html#cb2-1"></a>x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="fl">.001</span>)</span>
+<span id="cb2-2"><a href="prob.html#cb2-2"></a><span class="kw">tibble</span>(<span class="dt">y =</span> <span class="kw">pnorm</span>(x, <span class="dt">mean =</span> <span class="dv">1</span>, <span class="dt">sd =</span> <span class="dv">2</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-3"><a href="prob.html#cb2-3"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)) <span class="op">+</span></span>
+<span id="cb2-4"><a href="prob.html#cb2-4"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb2-5"><a href="prob.html#cb2-5"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&#39;X&#39;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&#39;Вероятность&#39;</span>) <span class="op">+</span></span>
+<span id="cb2-6"><a href="prob.html#cb2-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;CDF нормального распредлеения&quot;</span>,</span>
+<span id="cb2-7"><a href="prob.html#cb2-7"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;mean = 1, sd = 2&quot;</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Вспомним, что мы находимся на вещественной прямой, где работает <a href="https://ru.wikipedia.org/wiki/Непрерывность_множества_действительных_чисел">аксиома полноты</a>, а следовательно, нет «дырок».<a href="prob.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -305,6 +555,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
