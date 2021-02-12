@@ -883,13 +883,33 @@ F: L \rightarrow N
 <h2><span class="header-section-number">9.3</span> Немного комбинаторики</h2>
 <div id="permutations" class="section level3">
 <h3><span class="header-section-number">9.3.1</span> Перестановки</h3>
-<p>Представим такую задачу:</p>
+<p>Представим такую задачу: нам необходимо расставить книги на полке. Всего у нас есть пять книг. Сколькими способами мы это сможем сделать?</p>
+<p>Подойдём к вопросу технически: возьмем и начнём расставлять. На первое место мы можем поставить любую из пяти книг, то есть вариантов заполнить первое место на полке — пять штук. Когда первое место заполнено, то вариантов заполнить второе место остаётся четыре. Всего возможных вариантов заполнения первых двух мест получается <span class="math inline">\(5 \times 4\)</span>.
+Заполняем далее: на третье место претендуют три оставшиеся книги, то есть вариантов, которыми мы можем расставить три книги <span class="math inline">\(5 \times 4 \times 3\)</span>. Следуя далее этой логике мы получим, что всего возможных вариантов расставить все пять книг на полке будет <span class="math inline">\(5 \times 4 \times 3 \times 2 \times 1 = 5!\)</span>.</p>
+<p>Мы получили формулу <strong>числа перестановок</strong> из <span class="math inline">\(n\)</span> элементов:</p>
+<p><span class="math display">\[
+P_n = n!
+\]</span></p>
+<p>То есть любые <span class="math inline">\(n\)</span> объектов можно расставить на <span class="math inline">\(n\)</span> мест <span class="math inline">\(n!\)</span> способами.</p>
 </div>
 <div id="accomodations" class="section level3">
 <h3><span class="header-section-number">9.3.2</span> Размещения</h3>
+<p>Теперь представим, что у нас очень маленькая полка, и на ней умещается всего <em>три</em> книги. Сколькими способами мы можем заполнить такую полку, если всего в нашем распоряжении <em>пять</em> книг?</p>
+<p>Всего перестановок из пяти книг <span class="math inline">\(5!\)</span>, однако в силу того, что на полку умещаются только три первые книги из каждой перестановки, отличных друг от друга вариантов теперь будет меньше. Во сколько раз? В число раз, равно количеству перестановок из тех книг, которые на полку не помещаются. В нашем случае <span class="math inline">\((5-3)!\)</span>. То есть мы можем заполнить нашу полку <span class="math inline">\(\displaystyle \frac{5!}{(5-3)!}\)</span> способами.</p>
+<p>Мы получили формулу для подсчета <strong>числа размещений</strong> из <span class="math inline">\(n\)</span> элементов по <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+A_n^k = \frac{n!}{(n-k)!}
+\]</span></p>
 </div>
 <div id="combinations" class="section level3">
 <h3><span class="header-section-number">9.3.3</span> Сочетания</h3>
+<p>А теперь задача такова: нам не важно в каком порядке будут стоять книги на полке — нам нужно просто поставить три какие-то книги. Сколько возможно вариантов <em>выбрать три книги из пяти</em>?</p>
+<p>Так как мы теперь не учитываем порядок книг, то возможных вариантов будет в <span class="math inline">\(3!\)</span> раз меньше, чем число размещений. Почему? Так как все перестановки этих трёх книг для нас теперь идентичны. Итого, всего вариантов выбрать три книги из пяти $.</p>
+<p>Мы получили формулу для подсчета <strong>числа сочетаний</strong> из <span class="math inline">\(n\)</span> элементов по <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+С_n^k = \frac{n!}{k!(n-k)!}
+\]</span></p>
+<p>Последняя формула на пригодится далее при обсуждении <a href="#bernoulli_trials">схемы испытаний Бернулли</a>.</p>
 </div>
 </div>
 <div id="calculus" class="section level2">
@@ -1212,7 +1232,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>Но жизнь упрощается, когда есть R:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb28-2"><a href="maths.html#cb28-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
-<pre><code>## [1] -628</code></pre>
+<pre><code>## [1] -1074</code></pre>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.5.9</span> След матрицы</h3>
@@ -1229,7 +1249,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
 <span id="cb30-2"><a href="maths.html#cb30-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
 <span id="cb30-3"><a href="maths.html#cb30-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
-<pre><code>## [1] 295</code></pre>
+<pre><code>## [1] 310</code></pre>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
