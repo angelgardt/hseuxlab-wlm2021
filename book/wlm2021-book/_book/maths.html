@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -218,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
 <li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
-<li class="chapter" data-level="7.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
 <li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
 <li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
@@ -280,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.1" data-path="maths.html"><a href="maths.html#высказывания"><i class="fa fa-check"></i><b>9.1.1</b> Высказывания</a></li>
 <li class="chapter" data-level="9.1.2" data-path="maths.html"><a href="maths.html#logic_operations"><i class="fa fa-check"></i><b>9.1.2</b> Логические операции</a></li>
 <li class="chapter" data-level="9.1.3" data-path="maths.html"><a href="maths.html#сложные-высказвания"><i class="fa fa-check"></i><b>9.1.3</b> Сложные высказвания</a></li>
-<li class="chapter" data-level="9.1.4" data-path="maths.html"><a href="maths.html#нормальные-формы"><i class="fa fa-check"></i><b>9.1.4</b> Нормальные формы</a></li>
+<li class="chapter" data-level="9.1.4" data-path="maths.html"><a href="maths.html#условные-высказывания"><i class="fa fa-check"></i><b>9.1.4</b> Условные высказывания</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a><ul>
 <li class="chapter" data-level="9.2.1" data-path="maths.html"><a href="maths.html#множество"><i class="fa fa-check"></i><b>9.2.1</b> Множество</a></li>
@@ -450,19 +455,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>В данном случае с помощью переменной <span class="math inline">\(p\)</span> обозначено некоторые атомарное высказывание.</p>
 <p>Особо стоит отметить, что при отрицании <em>отрицается всё высказывание целиком</em>, а не какой-то отдельный его элемент. То есть формально правильным вариантом отрицания высказывания <em>«все лебеди белые»</em> будет следующий — <em>«неверно, что все лебеди белые»</em>.</p>
 <p>Графически инверсия отображается так:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/p.jpeg" style="width: 50%">
+<img src="img/neg_p.jpeg" style="width: 50%">
+</center>
 <p>Кружком обозначена часть пространства, где утверждение истинно. Соответственно, в любой иной области пространства оно ложно.</p>
 <div id="инверсия-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.2.1.1</span> Инверсия в R</h5>
 <p>Оператор отрицания в R обозначается восклицательным знаком <code>!</code>. Если его поставить перед некоторой командой, которая возвращает логическое значение, то этот оператор изменит его на противоположное:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="maths.html#cb1-1"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="maths.html#cb4-1"></a><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="maths.html#cb8-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -471,7 +479,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">9.1.3</span> Сложные высказвания</h3>
 <p>Из атомарных высказываний можно составлять <em>сложные высказывания</em> при помощи логических операторов. Например, высказывание «если четыре делится на два, то четыре — чётное число» является сложным, посколько состоит из двух атомарных — «четыре делится на два» и «четыре — чётное число» — соединённых союзом «если…, то…».</p>
 <p>Далее мы пристумаем с знакомству с <em>бинарными операторами</em>, то есть такими, которые функционируют на двух аргументах.</p>
-<div id="конъюнкция" class="section level4">
+<div id="and" class="section level4">
 <h4><span class="header-section-number">9.1.3.1</span> Конъюнкция</h4>
 <p><strong>Конъюнкция (логическое умножение, логические И)</strong> представляет собой такое высказывание, которое наиболее точно передается следующей конструкцией естественного языка — «как <span class="math inline">\(p\)</span>, так и <span class="math inline">\(q\)</span>». <span class="math inline">\(p\)</span> и <span class="math inline">\(q\)</span> в данном случае пропозициональные переменные, которые заменяют конкретные высказывания. Конъюнкция истинна тогда и только тогда, когда обе пропозициональные переменные, входящие в её состав, имеют значении истинности <code>TRUE</code>. В любом ином случае конъюнкция ложна.</p>
 <p>Конъюнкция обозначается символом <span class="math inline">\(\wedge\)</span> и имеет следующую таблицу истинности:</p>
@@ -507,20 +515,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Графически конъюнкция отображается так:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/p_and_q.jpeg" style="width: 50%">
+</center>
 <div id="конъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.1.1</span> Конъюнкция в R</h5>
 <p>В качестве оператора логического И в R используется символ <code>&amp;</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="maths.html#cb10-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="maths.html#cb12-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">a <span class="op">&amp;</span><span class="st"> </span>b</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="maths.html#cb14-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb14-2"><a href="maths.html#cb14-2"></a>a <span class="op">&amp;</span><span class="st"> </span>b</span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
-<div id="дизъюнкция" class="section level4">
+<div id="or" class="section level4">
 <h4><span class="header-section-number">9.1.3.2</span> Дизъюнкция</h4>
 <p><strong>Дизъюнкция (логическое сложение, логические ИЛИ)</strong> представляет собой такое высказывание, которое наиболее точно передается следующей конструкцией естественного языка — «или <span class="math inline">\(p\)</span>, или <span class="math inline">\(q\)</span>, или и то и другое». Поэтому дизъюнкция истинна тогда, когда хотя бы одна пропозициональная переменная, входящая в её состав, имеет значении истинности <code>TRUE</code>. В случае, если оба высказывания ложны, дизъюнкция будет ложна.</p>
 <p>Дизъюнкция обозначается символом <span class="math inline">\(\vee\)</span> и имеет следующую таблицу истинности:</p>
@@ -556,23 +566,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Графически дизъюнкция отображается так:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/p_or_q.jpeg" style="width: 50%">
+</center>
 <div id="дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.2.1</span> Дизъюнкция в R</h5>
 <p>В качестве оператора логического ИЛИ в R используется символ <code>|</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="maths.html#cb16-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="maths.html#cb18-1"></a><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">a <span class="op">|</span><span class="st"> </span>b</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="maths.html#cb20-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb20-2"><a href="maths.html#cb20-2"></a>a <span class="op">|</span><span class="st"> </span>b</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
-<div id="разделительная-дизъюнкция" class="section level4">
+<div id="xor" class="section level4">
 <h4><span class="header-section-number">9.1.3.3</span> Разделительная дизъюнкция</h4>
 <p><strong>Разделительная дизъюнкция (исключающее ИЛИ)</strong> — это такое высказывание, которое наиболее полно описывается следующим выражением естественного языка — «либо <span class="math inline">\(p\)</span>, либо <span class="math inline">\(q\)</span>». На её графическом представлении хорошо видно, чем она отличается от обычной дизъюнкции — она <em>исключает</em> ту часть пространства, где верны оба высказывания:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/p_xor_q.jpeg" style="width: 50%">
+</center>
 
 <p>Для обозначения разделительно дизъюнкции есть много различных операторов, но мы будем записывать её так — <span class="math inline">\(p \; \mathrm{XOR}\; q\)</span>. По иллюстрации можно восстановить таблицу истинности для этого оператора:</p>
 <table>
@@ -610,31 +624,145 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="разделительная-дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.3.1</span> Разделительная дизъюнкция в R</h5>
 <p>В R эта логическая функция реализована, в отличие от предыдущих, не как оператор, а как функция с соответствующим названием:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">xor</span>(a, b)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="maths.html#cb22-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb22-2"><a href="maths.html#cb22-2"></a><span class="kw">xor</span>(a, b)</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
-<div id="антиконъюнкция" class="section level4">
-<h4><span class="header-section-number">9.1.3.4</span> Антиконъюнкция</h4>
 </div>
-<div id="импликация" class="section level4">
-<h4><span class="header-section-number">9.1.3.5</span> Импликация</h4>
+<div id="условные-высказывания" class="section level3">
+<h3><span class="header-section-number">9.1.4</span> Условные высказывания</h3>
+<div id="implication" class="section level4">
+<h4><span class="header-section-number">9.1.4.1</span> Импликация</h4>
+<p>Сложное высказывание, описываемое конструкцией естественного языка «если <span class="math inline">\(p\)</span>, то <span class="math inline">\(q\)</span>» в формальной логике носит название <strong>импликации</strong>. Она отражает следование одного утверждения из другого и обозначается следующим образом — <span class="math inline">\(p \rightarrow q\)</span>. Высказывание <span class="math inline">\(p\)</span> называется <em>антецедентом</em> имликации, а <span class="math inline">\(q\)</span> — <em>консеквентом</em>.</p>
+<p>Импликация имеет следующую таблицу истиности:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \rightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Как видно из таблицы, импликация ложна только тогда, когда её антецедент истинен, и консеквент — ложен. Но что более интересно, так это то, что, согласно таблице, <em>из ложного утверждения может следовать любое</em><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Это факт мы вспомним, когда будем обсуждать <a href="hypotheses.html#hypotheses">тестирование статистических гипотез</a>.</p>
+<p>Импликацию утвержает то же самое, что и следующее сложное высказывание — <span class="math inline">\(\neg (p \wedge \neg q)\)</span>. Отсюда можно получить графическое изображение импликации:</p>
+<center>
+<img src="img/p_to_q.jpeg" style="width: 50%">
+</center>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Таблица истинности для импликации <span class="math inline">\(p \rightarrow q\)</span> у нас есть. Постройте таблицу истинности для высказывания <span class="math inline">\(\neg (p \wedge \neg q)\)</span> и проверьте, действительно ли значенния истинности обоих сложных высказывания совпадают.</p>
 </div>
-<div id="репликация" class="section level4">
-<h4><span class="header-section-number">9.1.3.6</span> Репликация</h4>
 </div>
-<div id="эквиваленция" class="section level4">
-<h4><span class="header-section-number">9.1.3.7</span> Эквиваленция</h4>
+<div id="replication" class="section level4">
+<h4><span class="header-section-number">9.1.4.2</span> Репликация</h4>
+<p><strong>Репликация</strong> похожа на импликацию, но действует как бы в обратном направлении, что отражено в её обозначении — <span class="math inline">\(p \leftarrow q\)</span>. Эта конструкция читается как «<span class="math inline">\(p\)</span> реплицирует <span class="math inline">\(q\)</span>» и является эквивалентом естественноязыкового «только если <span class="math inline">\(p\)</span>, то <span class="math inline">\(q\)</span>». Соответствующим образом изменяется и таблица истиности:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \leftarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Идея здесь в том, что если мы получили в результате <em>ложь</em>, то <em>истины</em> в начале быть не могло. Графическое изобажение репликации выглядит так:</p>
+<center>
+<img src="img/p_from_q.jpeg" style="width: 50%">
+</center>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Выведите равносильное репликации высказывание, содержащее только операторы инверсии, конъюнкции и дизъюнкции. Под равносильностью мы пониманием одинаковый набор значений истинности двух утверждений.</p>
+<p>Для импликации <span class="math inline">\(p \rightarrow q\)</span> таким утверждением является <span class="math inline">\(\neg (p \wedge \neg q)\)</span>. А для репликации?</p>
 </div>
 </div>
-<div id="нормальные-формы" class="section level3">
-<h3><span class="header-section-number">9.1.4</span> Нормальные формы</h3>
-<div id="конъюнктивная-нормальная-форма" class="section level4">
-<h4><span class="header-section-number">9.1.4.1</span> Конъюнктивная нормальная форма</h4>
+<div id="equivalence" class="section level4">
+<h4><span class="header-section-number">9.1.4.3</span> Эквиваленция</h4>
+<p>Если мы соединим с помощью конъюнкции импликацию и репликацию, то есть запишем вот такое высказывание — <span class="math inline">\((p \rightarrow q) \wedge (p \leftarrow q)\)</span> — то получим <strong>эквиваленцию</strong>. По своей сути она является логическим отражением языковой конструкции «только если <span class="math inline">\(p\)</span>, то <span class="math inline">\(q\)</span>», поэтому она обозначается вот так — <span class="math inline">\(p \leftrightarrow q\)</span> — и её таблица истинности выглядит соответствующим образом:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p\)</span></th>
+<th align="center"><span class="math inline">\(q\)</span></th>
+<th align="center"><span class="math inline">\(p \leftrightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+<td align="center"><code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>FALSE</code></td>
+<td align="center"><code>TRUE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Из неё легко вывести графическое представление эквиваленции:</p>
+<center>
+<img src="img/p_equiv_q.jpeg" style="width: 50%">
+</center>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Проверьте, действительно ли равносильны высказывания <span class="math inline">\(p \leftrightarrow q\)</span> и <span class="math inline">\((p \rightarrow q) \wedge (p \leftarrow q)\)</span>. Для этого необходио построить таблицу истинности для представленно конъюнкции.</p>
 </div>
-<div id="дизъюнктивная-нормальная-форма" class="section level4">
-<h4><span class="header-section-number">9.1.4.2</span> Дизъюнктивная нормальная форма</h4>
 </div>
 </div>
 </div>
@@ -949,7 +1077,7 @@ a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
 <p><span class="math display">\[
 \det \begin{pmatrix} a_{11} \end{pmatrix} = a_{11}
 \]</span>
-Детерминант матрицы <span class="math inline">\(2×2\)</span> вычисляется следующим образом — это разность произведений элементов главной<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> и побочной<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> диагоналей:</p>
+Детерминант матрицы <span class="math inline">\(2×2\)</span> вычисляется следующим образом — это разность произведений элементов главной<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> и побочной<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> диагоналей:</p>
 <p><span class="math display">\[
 \det \begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix} = a_{11} a_{22} - a_{12} a_{21}
 \]</span></p>
@@ -962,19 +1090,19 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Matrix_alg_add%282%29.png">
 </center>
-<p>Детерминант матрицы произвольного размера <span class="math inline">\(n×n\)</span> вычисляется так<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>:</p>
+<p>Детерминант матрицы произвольного размера <span class="math inline">\(n×n\)</span> вычисляется так<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>:</p>
 <p><span class="math display">\[
 \det \boldsymbol{A}_{n×n} = \sum_{j=1}^n (-1)^{1 + j} a_{1j} M_{1j} = \sum_{j=1}^n a_{1j}A_{1j},
 \]</span>
 где <span class="math inline">\(M_{1j}\)</span> — дополнительный минор к элементу <span class="math inline">\(a_{1j}\)</span>.</p>
 <p>Но жизнь упрощается, когда есть R:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></a></code></pre></div>
-<pre><code>## [1] -2335</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="maths.html#cb24-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb24-2"><a href="maths.html#cb24-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
+<pre><code>## [1] 3506</code></pre>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.4.9</span> След матрицы</h3>
-<p><strong>След матрицы</strong> — сумма элементов (квадратной) матрицы, стоящих на главной<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> диагонали.</p>
+<p><strong>След матрицы</strong> — сумма элементов (квадратной) матрицы, стоящих на главной<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> диагонали.</p>
 <p><span class="math display">\[
 \mathrm{tr}(\boldsymbol{A}) = \sum_i a_{ii}
 \]</span></p>
@@ -984,11 +1112,11 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>В R нет специальной функции, которая вычисляет след матрицы. Давайте её напишем!</p>
 <p>Функция должна принимать на вход матрицу, проверять, является ли матрица квадратной, и, если да, то возвращать значение следа матрицы, если нет, то печатать в консоль «матрица не является квадратной».</p>
 <p><em>Подсказка:</em> <code>?diag</code></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"><span class="kw">tr</span>(B)</a></code></pre></div>
-<pre><code>## [1] 168</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">tr</span>(C)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="maths.html#cb26-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb26-2"><a href="maths.html#cb26-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb26-3"><a href="maths.html#cb26-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
+<pre><code>## [1] 273</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
 <img class="taskimg" src="img/maths.png">
@@ -1154,12 +1282,13 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Этот факт часто используется при доказательстве всяких невозможных математических утверждений, когда изначально принимается неверная посылка, но это не очевидно.<a href="maths.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
