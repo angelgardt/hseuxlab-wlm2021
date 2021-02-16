@@ -964,15 +964,15 @@ A_n^k = \frac{n!}{(n-k)!}
 <p>Давайте издалека. Как нам узнать, куда двигается функция в данной точке?</p>
 <p>Выберем точку, <span class="math inline">\(x_0\)</span> в которой мы хотим определить, куда и с какой скоростью движется наша функция. В этой точке функция имеет значение <span class="math inline">\(y_0\)</span>:</p>
 <center>
-<img src="img/deriv_1.jpeg" style="width: 50%">
+<img src="img/deriv_1.jpeg">
 </center>
 <p>Шагнём на некоторую дистанцию <span class="math inline">\(\Delta x\)</span> <em>вправо</em> (по направлению оси <span class="math inline">\(x\)</span>). Назовём эту дистанцию <em>приращением</em>. В точке <span class="math inline">\(x_0 + \Delta x\)</span> фунция будет иметь какое-то значение <span class="math inline">\(y_0 + \Delta y\)</span>.</p>
 <center>
-<img src="img/deriv_2.jpeg" style="width: 50%">
+<img src="img/deriv_2.jpeg">
 </center>
 <p>Наша функция движется из точки <span class="math inline">\((x_0, y_0)\)</span> в точку <span class="math inline">\((x_0 + \Delta x, y_0 + \Delta y)\)</span>. То есть имеем следующий треугольник:</p>
 <center>
-<img src="img/deriv_3.jpeg" style="width: 50%">
+<img src="img/deriv_3.jpeg">
 </center>
 <p>Если мы узнаем, каков угол <span class="math inline">\(\alpha\)</span> — а точнее <span class="math inline">\(\tan \alpha\)</span>, потому что так проще — то узнаем, куда движется функция.</p>
 <p><span class="math display">\[
@@ -1016,7 +1016,7 @@ z = \sqrt{x} + y^2
 <p>Если нас интересует производная по <span class="math inline">\(x\)</span>, то мы предполагаем следующее:</p>
 <p><span class="math display">\[
 y = \mathrm{const} \Rightarrow y^2 = \mathrm{const} = c \\
-\frac{\partial z}{\partial x} = (\sqrt(x) + c)&#39; = (\sqrt(x))&#39; + c&#39; = \frac{1}{2\sqrt{x}}
+\frac{\partial z}{\partial x} = (\sqrt{x} + c)&#39; = (\sqrt{x})&#39; + c&#39; = \frac{1}{2\sqrt{x}}
 \]</span></p>
 <p>Если же нас интересует производная по <span class="math inline">\(y\)</span>, то мы делаем так:</p>
 <p><span class="math display">\[
@@ -1028,23 +1028,27 @@ x = \mathrm{const} \Rightarrow \sqrt{x} = \mathrm{const} = c \\
 <div id="интеграл" class="section level3">
 <h3><span class="header-section-number">9.4.7</span> Интеграл</h3>
 <p>Интеграл — штука мощная, но нам он понадобится только с одной стороны. Нам надо будет искать площадь под кривой. Этим и займемся.</p>
-<p>Пусть в нас есть знакомая нам функция <span class="math inline">\(y = \log x\)</span>. Нам надо найти площадь по ней на отрезке от <span class="math inline">\(0\)</span> до <span class="math inline">\(3\)</span>.</p>
-<p>КАРТИНКА</p>
+<p>Пусть у нас есть знакомая нам функция <span class="math inline">\(y = \sqrt x\)</span>. Нам надо найти площадь по ней на отрезке от <span class="math inline">\(0\)</span> до <span class="math inline">\(3\)</span>.</p>
+<center>
+<img src="img/int_1.jpeg">
+</center>
 <p>Мы можем разбить этот отрезок на части размером <span class="math inline">\(\Delta x\)</span>, а саму площадь на соответствующие прямоугольники. Это нам позволит оценить площадь:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/int_2.jpeg">
+</center>
 <p><span class="math display">\[
 S \approx \sum_{i=1}^n y_i \Delta x_i
 \]</span></p>
 <p>Ясно, что чем более узкими прямоугольники у нас будут, тем точнее мы будем знать площадь. Снова нам на помощь приходят пределы:</p>
 <p><span class="math display">\[
-\lim_{\Delta x \rightarrow 0} \sum_{i=1}^n y_1 \Delta x_i = \int_a^b \log x \, dx
+\lim_{\Delta x \rightarrow 0} \sum_{i=1}^n y_1 \Delta x_i = \int_a^b \sqrt x \, dx
 \]</span></p>
 <p>Такая штука называется <strong>определённый интеграл</strong>. Определенный он потому, что мы знаем, площадь в каких границах нас интересует. <em>Определённый интеграл — это число.</em></p>
 <p><span class="math display">\[
-\int_0^3 \log x \, dx \approx 0.3
+\int_0^3 \sqrt x \, dx \approx 3.46
 \]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a><span class="kw">integrate</span>(<span class="dt">f =</span> log, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</span></code></pre></div>
-<pre><code>## 0.2958369 with absolute error &lt; 7.8e-16</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a><span class="kw">integrate</span>(<span class="dt">f =</span> sqrt, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## 3.464102 with absolute error &lt; 4e-04</code></pre>
 <p>А раз есть определённых интеграл, значит есть и неопределённый. Здесь нам понадобиться вот эта визуализация:</p>
 <center>
 <img src="img/integral_anim.gif">
@@ -1349,7 +1353,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>Но жизнь упрощается, когда есть R:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb30-2"><a href="maths.html#cb30-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
-<pre><code>## [1] 302</code></pre>
+<pre><code>## [1] -322</code></pre>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.5.9</span> След матрицы</h3>
@@ -1366,7 +1370,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
 <span id="cb32-2"><a href="maths.html#cb32-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
 <span id="cb32-3"><a href="maths.html#cb32-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
-<pre><code>## [1] 296</code></pre>
+<pre><code>## [1] 299</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
