@@ -248,3 +248,14 @@ combinatorics
 permutations
 accomodations
 combinations
+точеччные-и-интервальные-оценки
+точечные-и-интервальные-оценки
+точечные-оценки
+метод-моментов
+интервальные-оценки
+свойства-точечных-оценок
+несмещённость
+состоятельность
+эффективность
+moments_distributions
+normal_distribution

@@ -135,5 +135,7 @@ tibble(y = pnorm(x, mean = 1, sd = 2)) %>%
        subtitle = "mean = 1, sd = 2")
 ```
 
+## Характеристики распределения случайных величин {#moments_distributions}
 
+## Нормальное распределение {#normal_distribution}
 
