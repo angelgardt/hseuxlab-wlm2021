@@ -441,25 +441,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1     1   104
-## 2     2    98
-## 3     3   112
-## 4     4   111
-## 5     5   105
-## 6     6    94</code></pre>
+## 1     1    97
+## 2     2   122
+## 3     3    92
+## 4     4    92
+## 5     5    67
+## 6     6   111</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statestim.html#cb5-1"></a><span class="kw">tail</span>(iq)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1  9995   129
-## 2  9996    95
-## 3  9997   106
-## 4  9998    92
-## 5  9999    87
-## 6 10000   103</code></pre>
+## 1  9995    65
+## 2  9996   144
+## 3  9997   103
+## 4  9998    71
+## 5  9999   115
+## 6 10000    89</code></pre>
 <p>Так как мы предположили, что это генеральная совокупность, то мы можем посчитать истинное значение параметра <span class="math inline">\(\mu\)</span>. <strong>В реальной жизни мы этого сделать не можем!</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="statestim.html#cb7-1"></a><span class="kw">mean</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
-<pre><code>## [1] 100.0789</code></pre>
+<pre><code>## [1] 100.1595</code></pre>
 <p>Вполне ожидаемое значение<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Теперь попробуем наизвлекать выборок человек по 50 и посчитать <em>оценки среднего (выборочные средние)</em> <span class="math inline">\(\hat \mu\)</span> на них:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="statestim.html#cb9-1"></a>means &lt;-<span class="st"> </span><span class="kw">numeric</span>()</span>
 <span id="cb9-2"><a href="statestim.html#cb9-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
@@ -582,11 +582,11 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 <p>Видим на ней наш доверительный интвервал и значения <span class="math inline">\(t_\alpha\)</span> и <span class="math inline">\(-t_\alpha\)</span>. Сама <span class="math inline">\(\alpha\)</span> обозначает вероятность выхода за границы доверительного интервала. Осталось всё это высчитать в числах, и получить границы доверительного интервала.</p>
 <p>Хорошо, что весь этот ужас в R скрыт под капотом:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statestim.html#cb10-1"></a><span class="kw">mean_cl_normal</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
-<pre><code>##          y     ymin     ymax
-## 1 100.0789 99.78657 100.3712</code></pre>
+<pre><code>##          y    ymin     ymax
+## 1 100.1595 99.8642 100.4548</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statestim.html#cb12-1"></a><span class="kw">mean_cl_boot</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
 <pre><code>##          y     ymin     ymax
-## 1 100.0789 99.78636 100.3724</code></pre>
+## 1 100.1595 99.87159 100.4592</code></pre>
 
 </div>
 </div>
