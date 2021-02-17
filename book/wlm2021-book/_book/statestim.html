@@ -343,6 +343,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a><ul>
 <li class="chapter" data-level="12.1" data-path="prob.html"><a href="prob.html#дискретные-случайные-величины"><i class="fa fa-check"></i><b>12.1</b> Дискретные случайные величины</a></li>
 <li class="chapter" data-level="12.2" data-path="prob.html"><a href="prob.html#непрерывные-случайные-величины"><i class="fa fa-check"></i><b>12.2</b> Непрерывные случайные величины</a></li>
+<li class="chapter" data-level="12.3" data-path="prob.html"><a href="prob.html#moments_distributions"><i class="fa fa-check"></i><b>12.3</b> Характеристики распределения случайных величин</a></li>
+<li class="chapter" data-level="12.4" data-path="prob.html"><a href="prob.html#normal_distribution"><i class="fa fa-check"></i><b>12.4</b> Нормальное распределение</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a><ul>
 <li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#точечные-оценки"><i class="fa fa-check"></i><b>13.1</b> Точечные оценки</a><ul>
@@ -439,25 +441,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1     1   106
-## 2     2   112
-## 3     3   114
-## 4     4   119
-## 5     5    74
-## 6     6   115</code></pre>
+## 1     1   104
+## 2     2    98
+## 3     3   112
+## 4     4   111
+## 5     5   105
+## 6     6    94</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statestim.html#cb5-1"></a><span class="kw">tail</span>(iq)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1  9995   128
-## 2  9996   123
-## 3  9997    91
-## 4  9998   101
-## 5  9999    91
-## 6 10000    89</code></pre>
+## 1  9995   129
+## 2  9996    95
+## 3  9997   106
+## 4  9998    92
+## 5  9999    87
+## 6 10000   103</code></pre>
 <p>Так как мы предположили, что это генеральная совокупность, то мы можем посчитать истинное значение параметра <span class="math inline">\(\mu\)</span>. <strong>В реальной жизни мы этого сделать не можем!</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="statestim.html#cb7-1"></a><span class="kw">mean</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
-<pre><code>## [1] 100.1383</code></pre>
+<pre><code>## [1] 100.0789</code></pre>
 <p>Вполне ожидаемое значение<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Теперь попробуем наизвлекать выборок человек по 50 и посчитать <em>оценки среднего (выборочные средние)</em> <span class="math inline">\(\hat \mu\)</span> на них:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="statestim.html#cb9-1"></a>means &lt;-<span class="st"> </span><span class="kw">numeric</span>()</span>
 <span id="cb9-2"><a href="statestim.html#cb9-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
@@ -473,7 +475,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="метод-моментов" class="section level3">
 <h3><span class="header-section-number">13.1.1</span> Метод моментов</h3>
 <p>Чтобы получить точечные оценки параметров, используются разные методы в зависимости от конкретной модели анализа. Сейчас мы познакомимся с самым простым — <strong>методом моментов</strong>. Другие разберем, когда с ними столкнёмся.</p>
-<p>Само название метода отсылает нас к обсуждению <a href="#moments_distributions">характеристик распределений случайных величин</a>. Мы говорили о том, что распредления характеризуются их <em>моментами</em>. В методе моментов есть три этапа:</p>
+<p>Само название метода отсылает нас к обсуждению <a href="prob.html#moments_distributions">характеристик распределений случайных величин</a>. Мы говорили о том, что распредления характеризуются их <em>моментами</em>. В методе моментов есть три этапа:</p>
 <ol style="list-style-type: decimal">
 <li>устанавливается связь между оцениваемым параметром и моментом распределения</li>
 </ol>
@@ -489,7 +491,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="3" style="list-style-type: decimal">
 <li>истинный момент заменяется на выборочный — получается оценка.</li>
 </ol>
-<p>Для примера разберём всё тот же датасет с IQ. Мы знаем, что распределение баллов IQ подчинается <a href="#normal_distribution">нормальному закону</a>. Поэтому в качестве параметра «среднее значение коэффициента интеллекта» генеральной совокупности можно использовать математическое ожидание:</p>
+<p>Для примера разберём всё тот же датасет с IQ. Мы знаем, что распределение баллов IQ подчинается <a href="prob.html#normal_distribution">нормальному закону</a>. Поэтому в качестве параметра «среднее значение коэффициента интеллекта» генеральной совокупности можно использовать математическое ожидание:</p>
 <p><span class="math display">\[
 \mu = \mathbb{E}X
 \]</span></p>
@@ -531,8 +533,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="интервальные-оценки" class="section level2">
 <h2><span class="header-section-number">13.2</span> Интервальные оценки</h2>
+<blockquote>
+<p>Но этого мало…</p>
+</blockquote>
+<p>Кроме самого значения оценки, необходимо определить качество этой оценки, иначе говоря — её точность. Для этого используется такая величина как <strong>надёжность</strong>:</p>
+<p><span class="math display">\[
+\gamma = \mathrm{P}(\theta_\min &lt; \theta &lt; \theta_\max)
+\]</span></p>
+<p>Такая форма оценки называется <strong>интервальной оценкой параметра</strong>, так как мы указываем <em>интервал</em>, в котором находится истинное значение с определённой вероятностью.</p>
+<p>Такая форма оценки даёт исчерпывающую информацию о параметре: мы знаем (1) интервал, в котором находится значение параметра генеральной совокупности, а также (2) надёжность, с которой выбранный интервал накрывает это значение.</p>
+<p>Значение надежности <span class="math inline">\(\gamma\)</span> может быть выбрано произвольно, но обычно оно близко к единице. Однако необхожимо помнить, что чем выше надёжность, тем шире границы интервальной оценки.</p>
 <div id="confinterval" class="section level3">
 <h3><span class="header-section-number">13.2.1</span> Доверительный интервал</h3>
+<p>Вариантом интервальной оценки является <strong>доверительный интервал (confidence interval)</strong>. Итак, ещё раз:</p>
+<p><span class="math display">\[
+\mathrm{P}(\theta_\min &lt; \theta &lt; \theta_\max) = \gamma, \; \gamma \rightarrow 1
+\]</span></p>
+<p><span class="math inline">\(theta_\min\)</span> и <span class="math inline">\(\theta_\max\)</span> — границы доверительного интервала, <span class="math inline">\(\gamma\)</span> — доверительная вероятность. На практике её значение чаще всего принимается равным <span class="math inline">\(0.95\)</span>.</p>
+<p><strong>Алгоритм определения интервальной оценки</strong> следующий:</p>
+<ol style="list-style-type: decimal">
+<li>Найсти статистику <span class="math inline">\(\zeta(\theta)\)</span>, связанную с оцениваниемым параметром, закон распределения которой известен <span class="math inline">\(f(\zeta)\)</span>.</li>
+<li>Определить значения <span class="math inline">\(\zeta_\min\)</span> и <span class="math inline">\(\zeta_\max\)</span>, в пределах которых статистика находится с вероятностью <span class="math inline">\(\gamma\)</span>.</li>
+<li>Зная связь <span class="math inline">\(\zeta(\theta)\)</span> перейти к границам <span class="math inline">\(\theta_\min\)</span> и <span class="math inline">\(\theta_\max\)</span>.</li>
+</ol>
+<p>Разберемся с этим на примере построения доверительного интервала для генерального среднего.</p>
+<p>Первая задача — найти статистику. Мы воспользуемся тем, что за нас поработали учёные-статистики и сказали, что вот такая вполне подойдёт:</p>
+<p><span class="math display">\[
+t = \frac{\bar x - \mu}{s}\sqrt{n-1},
+\]</span></p>
+<p>где <span class="math inline">\(t\)</span> — значение статистики, <span class="math inline">\(\bar x\)</span> — выборочное среднее, <span class="math inline">\(\mu\)</span> — генеральное среднее, <span class="math inline">\(s\)</span> — выборочное стандартное отклонение, <span class="math inline">\(n\)</span> — объём выборки.</p>
+<p>Известен ли закон её распредления? Да. Эта статистика подчинается <span class="math inline">\(t\)</span>-распределению (распределению Стьюдента). Оно похоже на нормальное, но хвосты у него повыше:</p>
+<center>
+<img src="img/student_pdf.JPG">
+</center>
+<p>Теперь надо сформулировать вид интервальной оценки для генерального среднего. Путем арифметических преобразований формулы выше мы имеет следующее:</p>
+<p><span class="math display">\[
+\mu = \bar x - t \frac{s}{\sqrt{n-1}}
+\]</span></p>
+<p>Значит вид интервальной оценки будет таков:</p>
+<p><span class="math display">\[
+\mathrm{P}\Big( \bar x - t_\alpha \frac{s}{\sqrt{n-1}} &lt; \mu &lt; 
+\bar x + t_\alpha \frac{s}{\sqrt{n-1}}\Big) = 1 - \alpha = \gamma
+\]</span></p>
+<p>Посмотрим на картинку:</p>
+<center>
+<img src="img/mean_ci_graph.jpeg">
+</center>
+<p>Видим на ней наш доверительный интвервал и значения <span class="math inline">\(t_\alpha\)</span> и <span class="math inline">\(-t_\alpha\)</span>. Сама <span class="math inline">\(\alpha\)</span> обозначает вероятность выхода за границы доверительного интервала. Осталось всё это высчитать в числах, и получить границы доверительного интервала.</p>
+<p>Хорошо, что весь этот ужас в R скрыт под капотом:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statestim.html#cb10-1"></a><span class="kw">mean_cl_normal</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>##          y     ymin     ymax
+## 1 100.0789 99.78657 100.3712</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statestim.html#cb12-1"></a><span class="kw">mean_cl_boot</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>##          y     ymin     ymax
+## 1 100.0789 99.78636 100.3724</code></pre>
 
 </div>
 </div>
