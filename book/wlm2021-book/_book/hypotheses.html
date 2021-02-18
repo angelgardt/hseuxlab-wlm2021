@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -291,7 +355,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -359,11 +429,210 @@
             <section class="normal" id="section-">
 <div id="hypotheses" class="section level1">
 <h1><span class="header-section-number">14</span> Тестирование статистических гипотез</h1>
+<p>В ходе статистического анализа мы, главным образом, заняты тем, что тестируем статистические гипотезы. Ведь на какого рода вопросы мы отвечаем с помощью анализа?</p>
+<ul>
+<li>Различаются ли группы между собой?</li>
+<li>Значимо ли влияние какого-либо фактора? → Различаются ли группы между собой?</li>
+<li>Хороша ли та модель, которую мы построили? → Отличается ли она от нулевой модели?</li>
+</ul>
+<p>И так далее. Так или иначе, всё сводится в тому, что мы ищем какие-то различия. Но силу того, что у нас <em>неопределённость и вариация</em> в данных, мы просто так «в лоб» сказать о различиях по оценкам параметров не можем. Приходится тестировать статистические гипотезы.</p>
+<div id="базовые-понятия" class="section level2">
+<h2><span class="header-section-number">14.1</span> Базовые понятия</h2>
+<p><strong>Гипотеза</strong> (<span class="math inline">\(H\)</span>) — это предположение, которое подлежит проверке на основе результатов наблюдений.</p>
+<p><strong>Простая гипотеза</strong> — это такое предположение, которое включает в себя какое-либо однозначно определеяемое утверждение. Например, истинная величина параметра соответствует некоторому строго заданному значению: <span class="math inline">\(H: \theta = \theta_0\)</span>. Другой вариант — две генеральные совокупности имеют одно и то же значение одной и той же характеристики: <span class="math inline">\(H: \theta_1 = \theta_2\)</span>.</p>
+<p><strong>Сложная гипотеза</strong> предполагает множественность вариантов для параметра, которые укладываются в рамки проверяемого предположения. Например, <span class="math inline">\(H: \theta &gt; \theta_0\)</span> или <span class="math inline">\(H: \theta1 \neq \theta_2\)</span>.</p>
+<p>В рамках самого хода тестирования гипотез существует <strong>проверяемая (неулевая) гипотеза</strong> (<span class="math inline">\(H_0\)</span>). Её обычно стараются предельно упростить, поэтому она формулируется как простая гипотеза. В противовес ей выдвигается <strong>альтернативная гипотеза</strong> (<span class="math inline">\(H_1\)</span>), которая будет иметь вид сложной гипотезы.</p>
+<p>Для проверки гипотезы нужны две вещи:</p>
+<ol style="list-style-type: decimal">
+<li>результаты наблюдений</li>
+<li>критерий</li>
+</ol>
+<p>Результаты наблюдений, полученные на выборке, сами по себе, как правило, не используются. Однако на их основе рассчитываются <em>выборочные статистики</em>, которые непосредственно участвуют в проверке гипотезы.</p>
+<p><strong>Критерий</strong> — это правило, согласно которому гипотезу либо принимают, либо отклоняют. Однако перед тем как проверять гипотезу, её так-то нужно сформулировать, и сделать это правильно, поскольку от формулировки гипотезы зависит интерпретация результатов проверки и дальнейшее использование полученной информации.</p>
+<p>Используемая статистика сама по себе <em>является [непрерывной] случайной величиной</em>, а значит может быть построено её распределение. Критерий будет разделять это распределение на непересекающиеся области. В результате чего возникает <strong>критическая область</strong> — область отклонения гипотезы. Дополнением к ней является <em>область неотклонения гипотезы</em>.</p>
+<p>Критическая область может быть односторонней (при <span class="math inline">\(H_1: \theta &gt; \theta_0\)</span> или <span class="math inline">\(H_1: \theta &lt; \theta_0\)</span>) и двусторонней (при <span class="math inline">\(H_1: \theta \neq \theta_0\)</span>).</p>
+<center>
+<img src="img/one_side_two_sides.jpeg">
+</center>
+</div>
+<div id="асимметрия-статистического-вывода" class="section level2">
+<h2><span class="header-section-number">14.2</span> Асимметрия статистического вывода</h2>
+<p>Статистический вывод — заключение о том, получили ли мы подтверждение альтернативной гипотезы — по структур представляет собой <a href="maths.html#implication">импликацию</a>.</p>
+<p><em>Если</em> значение нашей статистики, которое мы рассчитали на выборке, попало в критическую область, <em>то</em> мы говорим о том, что нулевая гипотеза отклоняется.</p>
+<center>
+<img src="img/asymmetry.jpeg">
+</center>
+<p>А если не попало? Тогда мы не можем сделать никакого вывода. Мы не получаем оснований для того, чтобы отклонить нулевую гипотезу, но и не получаем оснований, чтобы её «принять». Мы остаёмся в некотором неведении: мы не нашли различий, а есть они там или нет — хто ж их знает…</p>
+</div>
+<div id="возможные-результаты-проверки-гипотез" class="section level2">
+<h2><span class="header-section-number">14.3</span> Возможные результаты проверки гипотез</h2>
+<p>На самом деле, всё чуть сложнее. Мы изучаем в исследовании какую-то закономерность, которая в реальном мире <em>может быть</em>, а <em>может не быть</em>. В силу неопределённости и вариативности наших данных мы может либо <em>обнаружить</em> интересующую нас закономерность, либо <em>не обнаружить</em>.</p>
+<p>В качестве нулевой гипотезы мы выдвигаем предположение о том, что закономерность отсутствует — так мы упрощаем нашу нулевую гипотезу. Пусть <span class="math inline">\(H_0\)</span> обозначает, что предположение, которое мы проверяем справедливо, а <span class="math inline">\(H_1\)</span> — не справедливо. На основании данных мы можем либо не отклонить наше предположение (<span class="math inline">\(\hat H_0\)</span>), либо отклонить (<span class="math inline">\(\hat H_1\)</span>).</p>
+<p>Тогда имеем следующую ситуацию:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(\hat H_0\)</span></th>
+<th align="center"><span class="math inline">\(\hat H_1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0\)</span></td>
+<td align="center">Верное решение</td>
+<td align="center">Ошибка I рода</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(H_1\)</span></td>
+<td align="center">Ошибка II рода</td>
+<td align="center">Верное решение</td>
+</tr>
+</tbody>
+</table>
+<p>В терминах вероятности это выглядит так:</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(H_0\)</span></th>
+<th align="center"><span class="math inline">\(H_1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\hat H_0\)</span></td>
+<td align="center"><span class="math inline">\(\mathrm{P}(\hat H_0|H_0)\)</span></td>
+<td align="center"><span class="math inline">\(\mathrm{P}(\hat H_1|H_0) = \alpha\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\hat H_1\)</span></td>
+<td align="center"><span class="math inline">\(\mathrm{P}(\hat H_0|H_1) = \beta\)</span></td>
+<td align="center"><span class="math inline">\(\mathrm{P}(\hat H_1|H_1) = 1 - \beta\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Вероятность <span class="math inline">\(\alpha\)</span> называется <strong>уровнем значимости</strong>, вероятность <span class="math inline">\(1 - \beta\)</span> — <strong>статистической мощностью</strong>.</p>
+<p>При тестировании гипотез <span class="math inline">\(\alpha\)</span> выбирается до процедуры самого тестирования и задаёт вероятность, с которой мы позволяем себе ошибиться — отклонить нулевую гипотезу, при условии, что она верна. Вероятность <span class="math inline">\(\beta\)</span> контролировать сложнее из-за ассиметрии статистического вывода. Поэтому вводится понятие статистической мощности, которое связано с объемом выборки и размером эффекта и показывает, насколько мы можем быть уверены в том, что мы сделали всё, чтобы обнаружить закономерность. Это нам позволяет сделать вывод, что если мы не нашли интересующую нас закономерность, то он отутствует в генеральной совокупности. Статистическая мощность рассчитывается после тестирования гипотезы.</p>
+<p>Уровень значимости <span class="math inline">\(\alpha\)</span> выбирается близким к нулю — всем знакомо конценциональное значение <span class="math inline">\(0.05\)</span>. При выборе уровня значимости руководствуются <em>принципом разумной достаточности</em>, так как если устремить <span class="math inline">\(\alpha\)</span> к нулю, что устремиться к нулю и вероятность отклонения нулевой гипотезы:</p>
+<p><span class="math display">\[
+\mathrm{P}(\hat H_1) = \mathrm{P}(\hat H_1 | H_0) \cdot \mathrm{P} (H_0) = \alpha \cdot \mathrm P (H_0)
+\]</span></p>
+<p>Достаточной статистической мощностью считается <span class="math inline">\(0.8\)</span>. Аналогично, устремляя мощность к единице (<span class="math inline">\((1 - \beta) \rightarrow 1 \Rightarrow \beta \rightarrow 0\)</span>), мы устремляем вероятность не отклонения нулевой гипотезы к нулю:</p>
+<p><span class="math display">\[
+\mathrm P (\hat H_0) = \mathrm P (\hat H_0 | H_1) \cdot \mathrm P (H_1) = \beta \cdot \mathrm P (H_1)
+\]</span></p>
+<p>Необходимо также помнить, что ошибки первого и второго рода связаны между собой:</p>
+<p><span class="math display">\[
+\beta \cdot \mathrm P (H_1) = \mathrm P (\hat H_0) = \mathrm P (\hat H_0 | H_0) \cdot \mathrm P (H_0) \Rightarrow \beta = \frac{1}{\mathrm P (H_1)} \cdot \mathrm P (H_0) \cdot \mathrm P (\hat H_0 | H_0)
+\]</span>
+<span class="math display">\[
+\beta = \frac{1}{\mathrm P (H_1)} \cdot \mathrm P (H_0) \cdot \big(1 - \mathrm P (\hat H_1 | H_0) \big) = \frac{1}{\mathrm P (H_1)} \cdot \mathrm P (H_0) \cdot (1 - \alpha)
+\]</span></p>
+<p>Таким образом, <span class="math inline">\(\alpha \rightarrow 0 \Rightarrow \beta \rightarrow 1\)</span>.</p>
+</div>
+<div id="алгоритм-тестирования-статистических-гипотез" class="section level2">
+<h2><span class="header-section-number">14.4</span> Алгоритм тестирования статистических гипотез</h2>
+<p>Для тестирования гипотез есть два сценарий: <em>первый</em> и <em>тот, которым мы будем пользоваться</em>. Первый вариант чуть более классический, второй — более гибкий.</p>
+<p><strong>Сценарий номер раз</strong></p>
+<ol style="list-style-type: decimal">
+<li>Формулировка гипотезы</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(\alpha\)</span></li>
+<li>Построение закона распредлеения статистики критерия <em>при условии, что нулевая гипотеза верна</em></li>
+<li>Определение границ критической области</li>
+<li>Расчёт выборочной статистики</li>
+<li>Определение, попадает ли наблюдемое значение статистики в критическую область и вынесение решения</li>
+</ol>
+<p><strong>Сценарий номер два</strong></p>
+<ol style="list-style-type: decimal">
+<li>Формулировка гипотезы</li>
+<li>Выбор статистического критерия</li>
+<li>Выбор уровня значимости <span class="math inline">\(\alpha\)</span></li>
+<li>Построение закона распредлеения статистики критерия <em>при условии, что нулевая гипотеза верна</em></li>
+<li>Расчёт выборочной статистики</li>
+<li>Расчёт <em>достигнутого уровня значимости</em> <span class="math inline">\(\alpha^*\)</span> (мы его знаем под именем <strong>p-value</strong>)</li>
+<li>Сопоставление <span class="math inline">\(\alpha\)</span> и <span class="math inline">\(\alpha^*\)</span> и вынесение решения</li>
+</ol>
+<p>Почему второй вариант более гибкий? Представим, что мы захотели понизить уровень значимости с <span class="math inline">\(0.05\)</span> до <span class="math inline">\(0.01\)</span> — такие уровни значимости всречаются, например, в медицине. Если мы идем по первому сценарию, то нам надо заново пересчитать критические значения и вновь проанализировать, попадает ли наблюдаемое значение в критическую область. Если мы адепты второго сценария, то нам надо только выполнить одно новое сравнение нашего p-value с новым уровнем значимости.</p>
+<p>Разберем алгоритм тестирования статистических гипотез на примере. Останемся на просторах изучения интеллекта, только данные сгенерируем:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="hypotheses.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="hypotheses.html#cb2-1"></a><span class="co"># генерируем данные</span></span>
+<span id="cb2-2"><a href="hypotheses.html#cb2-2"></a>iq &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">male =</span> <span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dv">103</span>, <span class="dv">20</span>),</span>
+<span id="cb2-3"><a href="hypotheses.html#cb2-3"></a>             <span class="dt">female =</span> <span class="kw">rnorm</span>(<span class="dv">50</span>, <span class="dv">110</span>, <span class="dv">30</span>))</span></code></pre></div>
+<p>Итого у нас есть 50 мужчин и 50 женщин, у которых измерили коэффициент интеллекта. Нас интересует вопрос: <em>различается ли в среднем коэффициент интеллекта у мужчин и женщин?</em> Да, вот такой вот скучный вопрос, но что поделать. Напоминаю, что нас вообще интересует генеральная совокупность, но мы работаем с выборкой. Мы можем посчитать точечные и интервальные оценки для нашей характеристики по группам:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="hypotheses.html#cb3-1"></a>iq <span class="op">%&gt;%</span></span>
+<span id="cb3-2"><a href="hypotheses.html#cb3-2"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="kw">c</span>(<span class="st">&quot;male&quot;</span>, <span class="st">&quot;female&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-3"><a href="hypotheses.html#cb3-3"></a><span class="st">  </span><span class="kw">group_by</span>(name) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-4"><a href="hypotheses.html#cb3-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">unlist</span>(<span class="kw">mean_cl_boot</span>(value))[<span class="dv">1</span>],</span>
+<span id="cb3-5"><a href="hypotheses.html#cb3-5"></a>            <span class="dt">lower =</span> <span class="kw">unlist</span>(<span class="kw">mean_cl_boot</span>(value))[<span class="dv">2</span>],</span>
+<span id="cb3-6"><a href="hypotheses.html#cb3-6"></a>            <span class="dt">upper =</span> <span class="kw">unlist</span>(<span class="kw">mean_cl_boot</span>(value))[<span class="dv">3</span>])</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 4
+##   name    mean lower upper
+##   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 female  115. 108.   122.
+## 2 male    102.  95.7  107.</code></pre>
+<p>По сырым зачениям вроде есть разница, но так ли это на самом деле?</p>
+<p>Сформулируем статистическую гипотезу. Нулевая гипотеза должна быть простой, то есть говорить об отсутствии различий между группами. Так как нас интересует, если ли разница между группами или её нет, то наша альтернативная гипотеза буде двусторонней.</p>
+<p><span class="math display">\[
+H_0: \mu_f = \mu_m \\
+H_1: \mu_f \neq \mu_m
+\]</span></p>
+<p>Для тестирования такой гипотезы хорошо подходит t-критерий, а именно критерий Стьюдента для двух несвязанных выборок. Его статистиска рассчитывается следующим образом:</p>
+<p><span class="math display">\[
+t = \frac{\bar X_1 - \bar X_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+\]</span></p>
+<p>Выбираем уровень значимости — останемся на конвенциональном <span class="math inline">\(0.05\)</span>.</p>
+<p>Далее мы должны построить закон распределения статистики <span class="math inline">\(t\)</span> при условии, что нулевая гипотеза верна, но мы воспользуемся тем, что это за нас уже сделали, и просто скажем, что закон распределения для неё известен — это <span class="math inline">\(t(\nu)\)</span>, t-распределение с параметром <span class="math inline">\(\nu\)</span>, который высчитается по этой страшной формуле:</p>
+<p><span class="math display">\[
+\nu = \frac{\Big(\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2} \Big)^2}{\dfrac{1}{n_1-1} \Big( \dfrac{s_1^2}{n_1} \Big)^2 + \dfrac{1}{n_2-1} \Big( \dfrac{s_2^2}{n_1} \Big)^2}
+\]</span></p>
+<p>Итого, осталось рассчитать выборочную статистику и достигнутый уровень значимости (p-value). Как радостно и приятно осознавать, что всё это в R делается ровно одной командой:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="hypotheses.html#cb5-1"></a><span class="kw">t.test</span>(iq<span class="op">$</span>male, iq<span class="op">$</span>female)</span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  iq$male and iq$female
+## t = -2.7329, df = 95.881, p-value = 0.007477
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -23.073172  -3.657363
+## sample estimates:
+## mean of x mean of y 
+##  101.6830  115.0483</code></pre>
+<p>В аутпуте мы наблюдаем значение статистики <span class="math inline">\(t\)</span>, <span class="math inline">\(\alpha^*\)</span> для этого значения, доверительный интервал для разности средних и сами средние. Также нам представлена альтернативная гипотеза.</p>
+<p>Что остается сделать? Сравнить <span class="math inline">\(0.1\)</span> с <span class="math inline">\(0.05\)</span> и заключить, что у нас нет оснований отклонить нулевую гипотезу о том, что генеральные средние равны.</p>
+</div>
+<div id="проблема-множественных-сравнений" class="section level2">
+<h2><span class="header-section-number">14.5</span> Проблема множественных сравнений</h2>
+<p>Это мы сравнивали две группы между собой. Всё было хорошо. А если у нас больше двух групп? Если их пять? Десять? Или если нам нужно провести десятки тысяч сравнений<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>?</p>
+<p>В одном сравнении вероятность ошибки первого рода мы задаем как <span class="math inline">\(0.05\)</span>. Когда у нас появляется много сравнений, она существенно возрастает. Почему?</p>
+<p>Мы проводим независимые сравнения, значит вероятности ошибок будут перемножаться. Если верояность ошибиться в одном сравнении <span class="math inline">\(\alpha\)</span>, то вероятность сделать правильный вывод — <span class="math inline">\(1 - \alpha\)</span>. Тогда вероятность сделать правильный вывод в <span class="math inline">\(m\)</span> сравнениях — <span class="math inline">\((1 - \alpha)^m\)</span>. Отсюда мы можем вывести вероятность ошибиться <em>хотя бы в одном сравнении</em>:</p>
+<p><span class="math display">\[
+\mathrm P&#39; = 1 - (1 - \alpha)^m
+\]</span></p>
+<p>Пусть у нас есть 3 группы, которые нам надо сравнить друг с другом — получается необходимо провести три сравнения. Итого вероятность ошибиться получается:</p>
+<p><span class="math display">\[
+\mathrm P&#39; = 1 - (1 - 0.05)^3 \approx 0.143
+\]</span></p>
+<p>Значительно больше, чем <span class="math inline">\(0.05\)</span>. И дальше хуже. Поэтому нужно либо корректировать уровень значимости, либо использовать более мощные методы. На их изучении мы и сосредоточимся в этом курсе.</p>
 
+</div>
 </div>
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Например, в психогенетике, где мы можем сравнивать экспрессию генов.<a href="hypotheses.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
@@ -420,6 +689,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
