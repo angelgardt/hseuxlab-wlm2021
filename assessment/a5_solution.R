@@ -1,6 +1,8 @@
 library(tidyverse)
 theme_set(theme_bw())
 
+setwd('/Users/antonangelgardt/Documents/RSF_3exp')
+
 # 1
 ### грузим данные
 base_time <- readxl::read_excel('obr_base.xlsx', 2, skip = 1)
@@ -72,7 +74,7 @@ hybrid %>%
   geom_smooth(method="lm")
 
 
-#8
+# 8
 
 hybrid %>% 
   filter(memory_setsize == 3 & visual_setsize == 8) %>% 
@@ -80,6 +82,9 @@ hybrid %>%
   geom_point() +
   geom_smooth(method="lm") +
   scale_color_manual(values = c('blue', 'orange'))
+
+ggplot(diamonds %>% slice(sample(100)), aes(x, y, color = z)) +
+  geom_point()
 
 
 # 9
@@ -90,6 +95,8 @@ hybrid %>%
   geom_histogram(binwidth = 0.05) +
   facet_grid(visual_setsize ~ memory_setsize) +
   guides(fill = FALSE)
+
+# interaction(hybrid$visual_setsize, hybrid$memory_setsize)
 
 
 # 10
@@ -107,7 +114,8 @@ hybrid %>%
 
 gridExtra::grid.arrange(
   hybrid %>% 
-    ggplot(aes(visual_setsize, accuracy)) +
+    ggplot(aes(visual_setsize, accuracy, group = 1)) +
+    stat_summary(fun = mean, geom = 'line') +
     stat_summary(fun = mean, geom = 'point', size = 2) +
     stat_summary(fun.data = mean_cl_boot, geom = 'errorbar'),
   hybrid %>% 

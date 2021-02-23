@@ -355,7 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -441,25 +447,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1     1    97
-## 2     2   122
-## 3     3    92
-## 4     4    92
-## 5     5    67
-## 6     6   111</code></pre>
+## 1     1    86
+## 2     2    90
+## 3     3    99
+## 4     4    95
+## 5     5   130
+## 6     6    97</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statestim.html#cb5-1"></a><span class="kw">tail</span>(iq)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 2
 ##      id    IQ
 ##   &lt;int&gt; &lt;dbl&gt;
-## 1  9995    65
-## 2  9996   144
-## 3  9997   103
-## 4  9998    71
-## 5  9999   115
-## 6 10000    89</code></pre>
+## 1  9995   105
+## 2  9996   115
+## 3  9997    82
+## 4  9998    98
+## 5  9999   111
+## 6 10000   105</code></pre>
 <p>Так как мы предположили, что это генеральная совокупность, то мы можем посчитать истинное значение параметра <span class="math inline">\(\mu\)</span>. <strong>В реальной жизни мы этого сделать не можем!</strong></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="statestim.html#cb7-1"></a><span class="kw">mean</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
-<pre><code>## [1] 100.1595</code></pre>
+<pre><code>## [1] 100.0598</code></pre>
 <p>Вполне ожидаемое значение<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Теперь попробуем наизвлекать выборок человек по 50 и посчитать <em>оценки среднего (выборочные средние)</em> <span class="math inline">\(\hat \mu\)</span> на них:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="statestim.html#cb9-1"></a>means &lt;-<span class="st"> </span><span class="kw">numeric</span>()</span>
 <span id="cb9-2"><a href="statestim.html#cb9-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
@@ -582,11 +588,11 @@ t = \frac{\bar x - \mu}{s}\sqrt{n-1},
 <p>Видим на ней наш доверительный интвервал и значения <span class="math inline">\(t_\alpha\)</span> и <span class="math inline">\(-t_\alpha\)</span>. Сама <span class="math inline">\(\alpha\)</span> обозначает вероятность выхода за границы доверительного интервала. Осталось всё это высчитать в числах, и получить границы доверительного интервала.</p>
 <p>Хорошо, что весь этот ужас в R скрыт под капотом:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statestim.html#cb10-1"></a><span class="kw">mean_cl_normal</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
-<pre><code>##          y    ymin     ymax
-## 1 100.1595 99.8642 100.4548</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statestim.html#cb12-1"></a><span class="kw">mean_cl_boot</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
 <pre><code>##          y     ymin     ymax
-## 1 100.1595 99.87159 100.4592</code></pre>
+## 1 100.0598 99.76788 100.3517</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statestim.html#cb12-1"></a><span class="kw">mean_cl_boot</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>##          y    ymin     ymax
+## 1 100.0598 99.7861 100.3359</code></pre>
 
 </div>
 </div>

@@ -355,7 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -455,22 +461,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Мы с вами уже знаем ряд функций R и даже умеем писать свои. Так как с точки зрения математики игральный кубик случайным образом генерирует некоторое число, то мы можем написать его аналог с помощью кода:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="randexp.html#cb1-1"></a>dice &lt;-<span class="st"> </span><span class="cf">function</span>() <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">1</span>)</span>
 <span id="cb1-2"><a href="randexp.html#cb1-2"></a><span class="kw">dice</span>()</span></code></pre></div>
-<pre><code>## [1] 1</code></pre>
+<pre><code>## [1] 4</code></pre>
 <p>Вот так вот всё просто.</p>
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Наш кубик сейчас способен дать нам только одно число за один вызов. Это не совсем удобно. Скорректируйте имеющуюся функцию, которая будет за один вызов бросать кубик столько раз, сколько нам надо.</p>
-<pre><code>##  [1] 6 1 5 2 1 1 6 5 4 2 3 6 5 6 4 1 1 4 3 2</code></pre>
+<pre><code>##  [1] 3 5 4 1 4 2 2 5 3 3 1 5 6 1 4 4 6 1 5 5</code></pre>
 </div>
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Мы написали функцию, которая симулиует «честный» кубик. Напишите функцию <code>dice2()</code>, которая описывает «кривой» кубик. У такого кубика едница выпадает в два раза чаще, чем остальные грани. Функция за один вызов должна подбрасывать кубик сколько раз, сколько указано в её аргументе.</p>
-<pre><code>##   [1] 1 6 5 6 1 1 4 1 2 3 4 4 2 3 4 5 5 2 5 5 4 4 4 2 3 3 2 1 6 6 1 2 6 5 1 3 6
-##  [38] 6 6 4 4 2 3 3 1 1 5 4 2 1 4 2 1 1 6 1 1 2 5 3 3 2 6 1 1 3 5 5 1 1 6 3 1 4
-##  [75] 6 1 6 1 6 6 4 4 4 1 5 1 1 1 1 3 2 6 5 1 2 2 5 3 4 1</code></pre>
+<pre><code>##   [1] 1 1 6 6 4 6 5 1 4 6 5 6 4 1 2 4 5 4 1 1 6 2 4 2 3 3 1 2 4 3 2 4 3 6 6 6 1
+##  [38] 6 4 1 1 1 6 4 5 2 3 1 5 6 5 1 5 1 1 2 2 6 1 4 6 1 3 5 1 3 1 1 1 1 1 1 2 3
+##  [75] 6 4 1 5 1 3 1 3 5 1 4 3 1 6 4 6 5 1 4 3 1 2 5 3 2 1</code></pre>
 <pre><code>## v
 ##  1  2  3  4  5  6 
-## 28 14 13 16 13 16</code></pre>
+## 32 11 13 15 12 17</code></pre>
 </div>
 <hr />
 <p>В нашем эксперименте всего возможно шесть исходов. Падения на рёбра и прочие ЧП мы не учитываем. Эти шесть исходов образуют <em>пространство элементарных событий</em>.</p>
@@ -505,7 +511,7 @@ A_1 \cup A_2 = \{2, 3, 4, 5, 6\}
 <p>Пусть событие <span class="math inline">\(A_1\)</span> — «выпало чётное число», а событие <span class="math inline">\(A_2\)</span> — «выпало число, большее двух». Тогда</p>
 <p><span class="math display">\[
 A_1 = \{2, 4, 6\}; \quad A_2 = \{3, 4, 5, 6\}\\
-A_1 \cap A_2 = \{4, 5, 6\}
+A_1 \cap A_2 = \{4, 6\}
 \]</span></p>
 <p>Если события не пересекаются, то они являются <em>несовместными</em>.</p>
 <p>Например, Пусть событие <span class="math inline">\(A_1\)</span> — «выпало чётное число», а событие <span class="math inline">\(A_2\)</span> — «выпало число, <em>меньшее</em> двух». Тогда</p>

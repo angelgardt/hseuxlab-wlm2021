@@ -440,7 +440,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">14.1</span> Базовые понятия</h2>
 <p><strong>Гипотеза</strong> (<span class="math inline">\(H\)</span>) — это предположение, которое подлежит проверке на основе результатов наблюдений.</p>
 <p><strong>Простая гипотеза</strong> — это такое предположение, которое включает в себя какое-либо однозначно определеяемое утверждение. Например, истинная величина параметра соответствует некоторому строго заданному значению: <span class="math inline">\(H: \theta = \theta_0\)</span>. Другой вариант — две генеральные совокупности имеют одно и то же значение одной и той же характеристики: <span class="math inline">\(H: \theta_1 = \theta_2\)</span>.</p>
-<p><strong>Сложная гипотеза</strong> предполагает множественность вариантов для параметра, которые укладываются в рамки проверяемого предположения. Например, <span class="math inline">\(H: \theta &gt; \theta_0\)</span> или <span class="math inline">\(H: \theta1 \neq \theta_2\)</span>.</p>
+<p><strong>Сложная гипотеза</strong> предполагает множественность вариантов для параметра, которые укладываются в рамки проверяемого предположения. Например, <span class="math inline">\(H: \theta &gt; \theta_0\)</span> или <span class="math inline">\(H: \theta_1 \neq \theta_2\)</span>.</p>
 <p>В рамках самого хода тестирования гипотез существует <strong>проверяемая (неулевая) гипотеза</strong> (<span class="math inline">\(H_0\)</span>). Её обычно стараются предельно упростить, поэтому она формулируется как простая гипотеза. В противовес ей выдвигается <strong>альтернативная гипотеза</strong> (<span class="math inline">\(H_1\)</span>), которая будет иметь вид сложной гипотезы.</p>
 <p>Для проверки гипотезы нужны две вещи:</p>
 <ol style="list-style-type: decimal">
@@ -575,8 +575,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 2 x 4
 ##   name    mean lower upper
 ##   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 female  115. 108.   122.
-## 2 male    102.  95.7  107.</code></pre>
+## 1 female  110. 102.   117.
+## 2 male    103.  97.6  109.</code></pre>
 <p>По сырым зачениям вроде есть разница, но так ли это на самом деле?</p>
 <p>Сформулируем статистическую гипотезу. Нулевая гипотеза должна быть простой, то есть говорить об отсутствии различий между группами. Так как нас интересует, если ли разница между группами или её нет, то наша альтернативная гипотеза буде двусторонней.</p>
 <p><span class="math display">\[
@@ -598,13 +598,13 @@ t = \frac{\bar X_1 - \bar X_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 ##  Welch Two Sample t-test
 ## 
 ## data:  iq$male and iq$female
-## t = -2.7329, df = 95.881, p-value = 0.007477
+## t = -1.3388, df = 85.068, p-value = 0.1842
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -23.073172  -3.657363
+##  -16.503547   3.221346
 ## sample estimates:
 ## mean of x mean of y 
-##  101.6830  115.0483</code></pre>
+##  102.8801  109.5212</code></pre>
 <p>В аутпуте мы наблюдаем значение статистики <span class="math inline">\(t\)</span>, <span class="math inline">\(\alpha^*\)</span> для этого значения, доверительный интервал для разности средних и сами средние. Также нам представлена альтернативная гипотеза.</p>
 <p>Что остается сделать? Сравнить <span class="math inline">\(0.1\)</span> с <span class="math inline">\(0.05\)</span> и заключить, что у нас нет оснований отклонить нулевую гипотезу о том, что генеральные средние равны.</p>
 </div>

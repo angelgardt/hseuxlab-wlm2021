@@ -341,7 +341,7 @@ $$
 Во-вторых, множества можно **умножать, или находить их пересечение**:
 
 $$
-A + B = A \cap B = \{x: x \in A \wedge x \in B\}
+A \cdot B = A \cap B = \{x: x \in A \wedge x \in B\}
 $$
 
 <center>

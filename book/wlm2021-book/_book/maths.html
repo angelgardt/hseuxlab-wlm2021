@@ -355,7 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -846,7 +852,7 @@ A + B = A \cup B = \{x: x \in A \vee x \in B\}
 <p>Тогда в новом множестве окажутся все элементы обоих исходных множеств. <a href="maths.html#or">Что-то</a> это напоминает.</p>
 <p>Во-вторых, множества можно <strong>умножать, или находить их пересечение</strong>:</p>
 <p><span class="math display">\[
-A + B = A \cap B = \{x: x \in A \wedge x \in B\}
+A \cdot B = A \cap B = \{x: x \in A \wedge x \in B\}
 \]</span></p>
 <center>
 <img src="img/intersection.jpeg" style="width: 50%">
@@ -1361,7 +1367,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>Но жизнь упрощается, когда есть R:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb30-2"><a href="maths.html#cb30-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
-<pre><code>## [1] -916</code></pre>
+<pre><code>## [1] 1170</code></pre>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.5.9</span> След матрицы</h3>
@@ -1378,7 +1384,7 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
 <span id="cb32-2"><a href="maths.html#cb32-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
 <span id="cb32-3"><a href="maths.html#cb32-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
-<pre><code>## [1] 274</code></pre>
+<pre><code>## [1] 253</code></pre>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
