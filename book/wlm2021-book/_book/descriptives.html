@@ -355,7 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -899,7 +905,9 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <li><strong>третий квартиль</strong> (<span class="math inline">\(Q_3\)</span>), ниже которого лежит 75% наблюдений,</li>
 <li><strong>четвертый квартиль</strong> (<span class="math inline">\(Q_4\)</span>), он же <strong>максимум</strong>, так как ниже него лежит 100% наблюдений.</li>
 </ul>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/Boxplot_vs_PDF.png">
+</center>
 <p>Квартили хорошо визуализируются графиком «ящик с усами» (boxplot). По этому графику можно увидеть симметричность распределения, разброс значений переменной, сравнить вариативность нескольких переменных.</p>
 <p>Квартили в R можно рассчитать следующим образом:</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="descriptives.html#cb65-1"></a>x5 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="fl">3.5</span>, <span class="dt">sd =</span> <span class="fl">0.45</span>)</span>
@@ -957,7 +965,9 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <li><strong>отрицательный коэфффициент асимметрии (negative skew)</strong> указывает на наличие <em>длинного левого хвоста</em> распределения, соответственно всё распределения будет <em>скошено вправо</em> (то есть преобладают высокие значения)</li>
 <li>значения коэффициента асимметрии, <strong>близкие к нулю</strong>, говорят о симметричности распределения</li>
 </ul>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/relationship_between_mean_and_median_under_different_skewness.png">
+</center>
 </div>
 <div id="эксцесс" class="section level2">
 <h2><span class="header-section-number">15.4</span> Эксцесс</h2>
@@ -975,10 +985,177 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <li><strong>положительный коэффициент эксцесса</strong> обозначает, что распределение имеет более острую вершину (то есть у нас очень много средних значений, но тонкие «хвосты» — мало низких и высоких значений)</li>
 <li><strong>отрицательный коэффициент эксцесса</strong> обозначает, что распределение имеет более пологую вершину (то есть у нас меньше средних значений и толстые «хвосты» — много низких и высоких значений)</li>
 </ul>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/Standard_symmetric_pdfs.png">
+</center>
 </div>
 <div id="описательные-статистики-в-r" class="section level2">
 <h2><span class="header-section-number">15.5</span> Описательные статистики в R</h2>
+<p>Ну, хорошо. А считать-то как?</p>
+<p>Можно по отдельности:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="descriptives.html#cb69-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0
+## ✓ purrr   0.3.4</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="descriptives.html#cb73-1"></a><span class="co"># воспользуемся данными, которые уже видели</span></span>
+<span id="cb73-2"><a href="descriptives.html#cb73-2"></a>share &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   trialtype = col_character(),
+##   platform = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="descriptives.html#cb75-1"></a><span class="kw">mean</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 1.599066</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="descriptives.html#cb77-1"></a><span class="kw">median</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 1.346363</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="descriptives.html#cb79-1"></a><span class="kw">var</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 0.7451164</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="descriptives.html#cb81-1"></a><span class="kw">sd</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 0.8632012</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="descriptives.html#cb83-1"></a><span class="kw">min</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 0.5392201</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="descriptives.html#cb85-1"></a><span class="kw">max</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>## [1] 12.23256</code></pre>
+<p>Но можно и все сразу:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="descriptives.html#cb87-1"></a>psych<span class="op">::</span><span class="kw">describe</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>##    vars     n mean   sd median trimmed mad  min   max range skew kurtosis   se
+## X1    1 16200  1.6 0.86   1.35    1.45 0.5 0.54 12.23 11.69 3.03    16.88 0.01</code></pre>
+<p>Но это мы посчитали по всей переменной времени реакции сразу. А обычно нас интересуют описательные статистики по экспериментальным группам. Это можно сделать так:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="descriptives.html#cb89-1"></a>psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> share<span class="op">$</span>trialtype)</span></code></pre></div>
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: both
+##    vars    n mean  sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.38 0.6   1.23    1.29 0.39 0.54 10.89 10.35 3.35    26.63 0.01
+## ------------------------------------------------------------ 
+## group: dots
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.68 0.93    1.4    1.52 0.55 0.58 12.23 11.66 2.92    15.97 0.01
+## ------------------------------------------------------------ 
+## group: tray
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.74 0.97   1.45    1.57 0.59 0.58 11.88  11.3 2.68    12.25 0.01</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="descriptives.html#cb91-1"></a>psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> <span class="kw">interaction</span>(share<span class="op">$</span>trialtype, share<span class="op">$</span>setsize))</span></code></pre></div>
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: both.8
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.24 0.44   1.13    1.18 0.32 0.54 4.86  4.32 2.11     7.45 0.01
+## ------------------------------------------------------------ 
+## group: dots.8
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.43 0.68   1.26    1.33 0.41 0.58 7.65  7.07 3.21    17.73 0.02
+## ------------------------------------------------------------ 
+## group: tray.8
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.44 0.62   1.28    1.34 0.42 0.63 6.56  5.93 2.68    12.46 0.01
+## ------------------------------------------------------------ 
+## group: both.12
+##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis   se
+## X1    1 1800 1.37 0.61   1.22    1.28 0.37 0.6 10.89 10.29 4.37    43.73 0.01
+## ------------------------------------------------------------ 
+## group: dots.12
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 1800 1.68 0.86   1.43    1.54 0.56 0.59 11.66 11.07 2.64    14.76 0.02
+## ------------------------------------------------------------ 
+## group: tray.12
+##    vars    n mean   sd median trimmed mad min   max range skew kurtosis   se
+## X1    1 1800 1.73 0.86    1.5     1.6 0.6 0.6 10.03  9.43 2.19     8.78 0.02
+## ------------------------------------------------------------ 
+## group: both.16
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.53 0.69   1.35    1.43 0.49 0.55 9.25   8.7 2.72    16.06 0.02
+## ------------------------------------------------------------ 
+## group: dots.16
+##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis   se
+## X1    1 1800 1.92 1.13   1.59    1.74 0.71 0.6 12.23 11.64 2.62    12.49 0.03
+## ------------------------------------------------------------ 
+## group: tray.16
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 1800 2.05 1.22   1.68    1.85 0.81 0.58 11.88  11.3 2.31     8.61 0.03</code></pre>
+<p>Но мы же с вами осваивали <em>tidyverse</em> не просто так, поэтому воспользуемся его мощностями:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="descriptives.html#cb93-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-2"><a href="descriptives.html#cb93-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-3"><a href="descriptives.html#cb93-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-4"><a href="descriptives.html#cb93-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(time1),</span>
+<span id="cb93-5"><a href="descriptives.html#cb93-5"></a>            <span class="dt">median =</span> <span class="kw">median</span>(time1),</span>
+<span id="cb93-6"><a href="descriptives.html#cb93-6"></a>            <span class="dt">var =</span> <span class="kw">var</span>(time1),</span>
+<span id="cb93-7"><a href="descriptives.html#cb93-7"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(time1),</span>
+<span id="cb93-8"><a href="descriptives.html#cb93-8"></a>            <span class="dt">min =</span> <span class="kw">min</span>(time1),</span>
+<span id="cb93-9"><a href="descriptives.html#cb93-9"></a>            <span class="dt">max =</span> <span class="kw">max</span>(time1),</span>
+<span id="cb93-10"><a href="descriptives.html#cb93-10"></a>            <span class="dt">se =</span> sd<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(time1)),</span>
+<span id="cb93-11"><a href="descriptives.html#cb93-11"></a>            <span class="dt">skew =</span> moments<span class="op">::</span><span class="kw">skewness</span>(time1),</span>
+<span id="cb93-12"><a href="descriptives.html#cb93-12"></a>            <span class="dt">kurt =</span> moments<span class="op">::</span><span class="kw">kurtosis</span>(time1))</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;trialtype&#39;, &#39;setsize&#39;, &#39;platform&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 216 x 13
+## # Groups:   trialtype, setsize, platform [12]
+##    trialtype setsize platform    id  mean median    var    sd   min   max     se
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 dots            8 android      4  1.37  1.16  0.342  0.585 0.750  3.40 0.0827
+##  2 dots            8 android      6  1.20  0.945 0.669  0.818 0.667  5.92 0.116 
+##  3 dots            8 android      7  1.86  1.77  0.325  0.570 0.809  3.15 0.0807
+##  4 dots            8 android      8  1.85  1.59  0.578  0.760 1.03   4.53 0.108 
+##  5 dots            8 android     10  1.04  0.964 0.0997 0.316 0.614  2.01 0.0447
+##  6 dots            8 android     11  1.20  1.11  0.145  0.380 0.766  2.45 0.0538
+##  7 dots            8 android     12  1.21  1.06  0.199  0.447 0.666  2.62 0.0632
+##  8 dots            8 android     15  1.48  1.29  0.445  0.667 0.807  4.55 0.0943
+##  9 dots            8 android     16  1.16  1.05  0.233  0.483 0.648  2.65 0.0683
+## 10 dots            8 android     18  1.42  1.20  0.287  0.536 0.813  2.96 0.0758
+## # … with 206 more rows, and 2 more variables: skew &lt;dbl&gt;, kurt &lt;dbl&gt;</code></pre>
+<p>Кода побольше, зато всё кастомное, а значит всем этим можно управлять! Обратите внимание, что для расчёта коэффициента асимметрии и коэффициента эксцесса потребуются функции из дополнительного пакета <code>moments</code>, который нужно установить через команду <code>install.packages("moments")</code>.</p>
+<p>Кучу описательных статистик мы насчитали. Теперь разберёмся в квартилями и выбросами (нехарактерными значениями). Когда мы с вами говорили о визуализации, мы упоминали, что график «ящик с усами» (boxplot) отображает выбросы. Посмотрим:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="descriptives.html#cb96-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span>
+<span id="cb96-2"><a href="descriptives.html#cb96-2"></a>share <span class="op">%&gt;%</span></span>
+<span id="cb96-3"><a href="descriptives.html#cb96-3"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb96-4"><a href="descriptives.html#cb96-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">as_factor</span>(setsize), time1, <span class="dt">color =</span> trialtype)) <span class="op">+</span></span>
+<span id="cb96-5"><a href="descriptives.html#cb96-5"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb96-6"><a href="descriptives.html#cb96-6"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;point&#39;</span>, <span class="dt">shape =</span> <span class="dv">15</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="fl">0.8</span>)) <span class="op">+</span></span>
+<span id="cb96-7"><a href="descriptives.html#cb96-7"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>platform)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>Видим много-много точек над ящиками — это и есть выбросы. Это данные поведенческого эксперимента, поэтому для последующего анализа мы желаем, чтобы таких значений в данных не было. Почистим!</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="descriptives.html#cb97-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-2"><a href="descriptives.html#cb97-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-3"><a href="descriptives.html#cb97-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-4"><a href="descriptives.html#cb97-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">lower =</span> <span class="kw">quantile</span>(time1)[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1),</span>
+<span id="cb97-5"><a href="descriptives.html#cb97-5"></a>            <span class="dt">upper =</span> <span class="kw">quantile</span>(time1)[<span class="dv">4</span>] <span class="op">+</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-6"><a href="descriptives.html#cb97-6"></a><span class="st">  </span><span class="kw">right_join</span>(share) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-7"><a href="descriptives.html#cb97-7"></a><span class="st">  </span><span class="kw">filter</span>(time1 <span class="op">&gt;</span><span class="st"> </span>lower <span class="op">&amp;</span><span class="st"> </span>time1 <span class="op">&lt;</span><span class="st"> </span>upper) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-8"><a href="descriptives.html#cb97-8"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lower, <span class="op">-</span>upper) -&gt;<span class="st"> </span>share_clear</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;trialtype&#39;, &#39;setsize&#39;, &#39;platform&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## Joining, by = c(&quot;trialtype&quot;, &quot;setsize&quot;, &quot;platform&quot;, &quot;id&quot;)</code></pre>
+<p>Вот так мы удалили все выбросы. Можно было также воспользоваться функцией <code>is_outlier()</code>, которую мы написали в одном из заданий:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="descriptives.html#cb100-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-2"><a href="descriptives.html#cb100-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-3"><a href="descriptives.html#cb100-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-4"><a href="descriptives.html#cb100-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">outlier =</span> <span class="kw">is_outlier</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-5"><a href="descriptives.html#cb100-5"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>outlier)</span></code></pre></div>
+<pre><code>## # A tibble: 10,213 x 23
+## # Groups:   trialtype, setsize, platform, id [216]
+##    trialtype setsize time1 click1x click1y time2 click2x click2y    id platform
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   
+##  1 tray            8  1.67    -227     202 1.28       14    -351     1 ios     
+##  2 tray            8  1.13     -69     231 1.06      -44    -392     1 ios     
+##  3 tray            8  1.59    -241      43 0.931     -25    -397     1 ios     
+##  4 tray            8  1.14     -51      59 0.896      10    -383     1 ios     
+##  5 tray            8  2.14      99      62 0.879     -29    -372     1 ios     
+##  6 tray            8  1.63     213      46 0.947     -27    -353     1 ios     
+##  7 tray            8  2.02     -70     -82 0.970     -19    -394     1 ios     
+##  8 tray            8  1.08      72     -95 1.33       30    -399     1 ios     
+##  9 tray            8  1.50     222     -55 0.879      46    -344     1 ios     
+## 10 tray            8  1.36    -231    -229 0.880      -8    -388     1 ios     
+## # … with 10,203 more rows, and 13 more variables: posx1 &lt;dbl&gt;, posy1 &lt;dbl&gt;,
+## #   posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;, posymin1 &lt;dbl&gt;, posymax1 &lt;dbl&gt;,
+## #   posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;, posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;, posymin2 &lt;dbl&gt;,
+## #   posymax2 &lt;dbl&gt;, outlier &lt;lgl&gt;</code></pre>
+<p>Ну, вот теперь у нас мало того, что опрятные, так они еще и чистые!</p>
 
 </div>
 </div>
@@ -992,7 +1169,7 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <li id="fn5"><p>Здесь важно помнить о нюансах терминов «упорядоченный» и «сортированный». <em>Упорядоченный</em> ряд наблюдений — это ряд чисел, на котором задан определенный порядок (например, по ID испытуемого — 1, 2, 3, 4, …), а <em>сортированный ряд наблюдений</em> — это ряд, упорядоченный по возрастанию или убыванию.<a href="descriptives.html#fnref5" class="footnote-back">↩︎</a></p></li>
 <li id="fn6"><p>И очень косвенно — нормальности распределения. Точнее будет сказать так: если распределение симметрично, то можно предположить, оно нормальное, однако это требует дополнительной проверки! Здесь надо помнить про <a href="maths.html#implication">особенности импликации</a>: <em>нормальное распределение всегда симметрично, однако не любое симметричное распределение нормально</em>.<a href="descriptives.html#fnref6" class="footnote-back">↩︎</a></p></li>
 <li id="fn7"><p><em>Квазинепрерывная шкала</em> — это порядковая шкала, относительно которой мы сделали допущение, что она непрерывная. Например, такое допущение делается в психометрике относительно шкалы Ликерта (Лайкерта), когда мы предполагаем, что интервал между двумя соседними значениями мы тоже описали, несмотря на то, что респондент должен выбираться между этими соседними значениями.<a href="descriptives.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>Метрика, основанная на использовании модуля, конечно, существует и называется <strong>среднее абсолютное отклонение (mean absolute deviatio, MAD)</strong>:
+<li id="fn8"><p>Метрика, основанная на использовании модуля, конечно, существует и называется <strong>среднее абсолютное отклонение (mean absolute deviation, MAD)</strong>:
 <span class="math display">\[
 \mathrm{MAD}(X) = \frac{\sum_{i=1}^n |\bar x - x_i|}{n}
 \]</span>
