@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -323,6 +387,13 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
 <li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
@@ -448,9 +519,333 @@ z(r_{ij}) = \frac{1}{2} \ln \frac{1 + r_{ij}}{1 - r_{ij}} \thicksim \mathrm{N}(\
 \mathrm{P} \Big( \bar z_{ij} - t_\gamma \sqrt{\tfrac{1}{n-3}} &lt; z_{ij, \mathrm{true}} &lt; \bar z_{ij} + t_\gamma \sqrt{\tfrac{1}{n-3}}  \Big) = \gamma = \Phi(t_\gamma)
 \]</span></p>
 <p>Далее путём обратного преобразования получаются значения границ интервала <span class="math inline">\((\rho_{ij,\min}, \; \rho_{ij,\max})\)</span>.</p>
+</div>
+</div>
+<div id="ковариация-и-корреляция-в-r" class="section level2">
+<h2><span class="header-section-number">16.3</span> Ковариация и корреляция в R</h2>
+<p>Запасёмся <a href="https://github.com/angelgardt/hseuxlab-wlm2021/blob/master/book/wlm2021-book/data/clean_dannye_norm.xlsx?raw=true">данными</a>. По ссылке скачается экселька.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="correlation.html#cb1-1"></a>dehum &lt;-<span class="st"> </span>readxl<span class="op">::</span><span class="kw">read_xlsx</span>(<span class="st">&#39;data/clean_dannye_norm.xlsx&#39;</span>)</span>
+<span id="cb1-2"><a href="correlation.html#cb1-2"></a><span class="kw">str</span>(dehum)</span></code></pre></div>
+<pre><code>## tibble [906 × 39] (S3: tbl_df/tbl/data.frame)
+##  $ SEX            : num [1:906] 1 2 2 2 2 2 2 1 2 2 ...
+##  $ AGE            : chr [1:906] &quot;32&quot; &quot;22&quot; &quot;21&quot; &quot;15&quot; ...
+##  $ MCA            : num [1:906] NA NA 1 NA NA NA NA NA NA 1 ...
+##  $ MMA            : num [1:906] NA NA NA NA NA NA NA NA NA NA ...
+##  $ MCI            : num [1:906] NA NA NA NA NA NA NA NA NA NA ...
+##  $ MMI            : num [1:906] NA NA NA 1 NA NA NA NA NA NA ...
+##  $ WCA            : num [1:906] NA NA NA NA 1 NA NA NA NA NA ...
+##  $ WMA            : num [1:906] 1 NA NA NA NA 1 NA NA NA NA ...
+##  $ WCI            : num [1:906] NA NA NA NA NA NA NA NA NA NA ...
+##  $ WMI            : num [1:906] NA NA NA NA NA NA 1 NA NA NA ...
+##  $ MX             : num [1:906] NA NA NA NA NA NA NA 1 NA NA ...
+##  $ WX             : num [1:906] NA 1 NA NA NA NA NA NA 1 NA ...
+##  $ sex_k          : num [1:906] 2 2 1 1 2 2 2 2 2 1 ...
+##  $ intention      : num [1:906] 2 2 2 1 2 2 1 2 2 2 ...
+##  $ victim         : num [1:906] 2 2 1 2 1 2 2 2 2 1 ...
+##  $ CG             : num [1:906] 0 2 0 0 0 0 0 1 2 0 ...
+##  $ DP             : num [1:906] 2 1 5 3 1 1 3 1 1 2 ...
+##  $ GRa            : num [1:906] 1 3 5 1 1 5 2 1 4 5 ...
+##  $ GRb            : num [1:906] 1 3 5 2 1 4 1 1 3 6 ...
+##  $ GRc            : num [1:906] 1 3 2 3 1 2 1 1 2 1 ...
+##  $ GR_average     : num [1:906] 1 3 4 2 1 ...
+##  $ ARa            : num [1:906] 1 2 3 1 2 4 4 1 2 3 ...
+##  $ ARb            : num [1:906] 1 2 2 3 1 1 1 1 2 1 ...
+##  $ ARc            : num [1:906] 1 2 1 4 1 1 1 1 2 1 ...
+##  $ AR_average     : num [1:906] 1 2 2 2.67 1.33 ...
+##  $ SRa            : num [1:906] 1 5 5 1 2 4 2 1 3 2 ...
+##  $ SRb            : num [1:906] 1 4 4 1 2 5 1 1 3 3 ...
+##  $ SRc            : num [1:906] 1 4 5 2 2 2 1 1 4 4 ...
+##  $ SR_average     : num [1:906] 1 4.33 4.67 1.33 2 ...
+##  $ DHa            : num [1:906] 3 1 5 3 1 5 1 1 3 2 ...
+##  $ DHb            : num [1:906] 1 1 2 2 1 2 1 1 2 2 ...
+##  $ DHc            : num [1:906] 1 1 5 4 1 2 3 1 4 2 ...
+##  $ DHd            : num [1:906] 1 1 1 2 1 1 1 1 1 2 ...
+##  $ DHe            : num [1:906] 2 4 5 2 2 1 2 1 3 1 ...
+##  $ DHf            : num [1:906] 1 1 1 2 1 1 3 1 3 1 ...
+##  $ DHg            : num [1:906] 1 1 2 4 1 4 5 1 1 1 ...
+##  $ DHh            : num [1:906] 1 4 7 5 4 4 6 1 4 5 ...
+##  $ animal_average : num [1:906] 1.75 2.5 5.5 3.5 2 3 3 1 3.5 2.5 ...
+##  $ machine_average: num [1:906] 1 1 1.5 2.5 1 2 2.5 1 1.75 1.5 ...</code></pre>
+<p>Это данные исследования на тему дегуманизации убийц. Нас будут интересовать следующие шкалы:</p>
+<ul>
+<li><em>DPa</em> — шкала «одобрения казни»</li>
+<li>Шкала морального возмущения:
+<ul>
+<li><em>GR_average</em> — подшкала отвращения</li>
+<li><em>AR_average</em> — подшкала гнева</li>
+<li><em>SR_average</em> — подшкала презрения</li>
+</ul></li>
+<li>Шкала дегуманизации:
+<ul>
+<li><em>animal_average</em> — анималистическая дегуманизация</li>
+<li><em>machine_average</em> — механистическая дегуманизация</li>
+</ul></li>
+</ul>
+<p>Ковариация считается так:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="correlation.html#cb3-1"></a><span class="kw">cov</span>(dehum<span class="op">$</span>GR_average, dehum<span class="op">$</span>AR_average)</span></code></pre></div>
+<pre><code>## [1] 1.567469</code></pre>
+<p>А корреляция так:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="correlation.html#cb5-1"></a><span class="kw">cor</span>(dehum<span class="op">$</span>GR_average, dehum<span class="op">$</span>AR_average)</span></code></pre></div>
+<pre><code>## [1] 0.7363325</code></pre>
+<p>Ещё мы можем построить соответствующий график, чтобы отобразить закономерность — диаграмма рассеяния с линией тренда:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="correlation.html#cb7-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="correlation.html#cb11-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="correlation.html#cb12-1"></a>dehum <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(GR_average, AR_average)) <span class="op">+</span></span>
+<span id="cb12-2"><a href="correlation.html#cb12-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb12-3"><a href="correlation.html#cb12-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>) <span class="co"># мы заинтересованы в отображении линейного компонента связи</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Но это мы всё получали выборочные оценки коэффициентов. А как же тестировать гипотезы?</p>
+<p>Легко и непринужденно! Просто дописать <code>test</code> в название функции:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="correlation.html#cb14-1"></a><span class="kw">cor.test</span>(dehum<span class="op">$</span>GR_average, dehum<span class="op">$</span>AR_average)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  dehum$GR_average and dehum$AR_average
+## t = 32.72, df = 904, p-value &lt; 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.7050124 0.7647859
+## sample estimates:
+##       cor 
+## 0.7363325</code></pre>
+<p>Что мы наблюдаем в аутпуте? Значение t-статистики, число степеней свободы, p-value для значения t-статистики, а также 95% доверительный интервал для коэффициента корреляции. Всё, что мы и хотели — за одну команду!</p>
+<div id="коэффициенты-корреляции-для-разных-шкал" class="section level3">
+<h3><span class="header-section-number">16.3.1</span> Коэффициенты корреляции для разных шкал</h3>
+<p>Дла разных шкал разработаны разные коэффициенты корреляции. Оценки коэффициентов будут рассчитываться по-разному, но логика тестирования статистических гипотез остаётся одинаковой.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Переменная <span class="math inline">\(X\)</span></th>
+<th align="center">Переменная <span class="math inline">\(Y\)</span></th>
+<th align="center">Мера связи</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Интервальная или отношений</td>
+<td align="center">Интервальная или отношений</td>
+<td align="center">Коэффициент Пирсона</td>
+</tr>
+<tr class="even">
+<td align="center">Ранговая, интервальная или отношений</td>
+<td align="center">Ранговая, интервальная или отношений</td>
+<td align="center">Коэффициент Спирмена</td>
+</tr>
+<tr class="odd">
+<td align="center">Ранговая</td>
+<td align="center">Ранговая</td>
+<td align="center">Коэффициент Кенделла</td>
+</tr>
+</tbody>
+</table>
+<p>В функциях <code>cor()</code> и <code>cor.test()</code> требуемый коэффициент задаётся черед аргумент <code>method</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="correlation.html#cb16-1"></a><span class="kw">cor.test</span>(dehum<span class="op">$</span>DP, dehum<span class="op">$</span>animal_average, <span class="dt">method =</span> <span class="st">&#39;kendall&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Kendall&#39;s rank correlation tau
+## 
+## data:  dehum$DP and dehum$animal_average
+## z = 9.5138, p-value &lt; 2.2e-16
+## alternative hypothesis: true tau is not equal to 0
+## sample estimates:
+##     tau 
+## 0.24636</code></pre>
+</div>
+</div>
+<div id="частный-и-множественный-коэффициент-корреляции" class="section level2">
+<h2><span class="header-section-number">16.4</span> Частный и множественный коэффициент корреляции</h2>
+<p>Если у нас два признака, то с ними всё достаточно понятно. А если признаком много? Тогда у нас могут быть сложные взаимосвязи, и возможен такой случай, что некоторый признак оказывает связан как с одним, так и с другим из интересующих нас. Таким образом, мы можем наблюдать <em>ложную корреляцию</em>. Чтобы избавиться от влияния сторонних признаков, используюся частные коэффициенты корреляции.</p>
+<p>Функция <code>cor()</code> может возвращать не только оценку одного коэффициента корреляции, но и <strong>корреляционную матрицу</strong>, отобрадающую связи всех признаков со всеми. Например, продолжим работать со шкалой морального возмущения и изучим взаимосвязи внутри неё:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="correlation.html#cb18-1"></a>dehum <span class="op">%&gt;%</span></span>
+<span id="cb18-2"><a href="correlation.html#cb18-2"></a><span class="st">  </span><span class="kw">select</span>(GR_average, AR_average, SR_average) <span class="op">%&gt;%</span></span>
+<span id="cb18-3"><a href="correlation.html#cb18-3"></a><span class="st">  </span><span class="kw">cor</span>()</span></code></pre></div>
+<pre><code>##            GR_average AR_average SR_average
+## GR_average  1.0000000  0.7363325   0.607245
+## AR_average  0.7363325  1.0000000   0.630688
+## SR_average  0.6072450  0.6306880   1.000000</code></pre>
+<p>В корреляционной матрице на главной диагонали стоят единицы, отражающай связь переменной в самой собой — разумеется, она будет абсолютно линейная.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>А как посчитать <em>ковариационную</em> матрицу?</p>
+</div>
+<p>В общем виде корреляционная матрица имеет следующий вид:</p>
+<p><span class="math display">\[
+R = 
+\begin{pmatrix}
+1 &amp; r_{12} &amp; \dots &amp; r_{1p} \\
+r_{12} &amp; 1 &amp; \dots &amp; r_{2p} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+r_{p1} &amp; r_{p2} &amp; \dots &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>Матрица, как можно заметить, симметрична относительно главной диагонали, так как <span class="math inline">\(r_{ij} = r_{ji}\)</span>.</p>
+<p>Её можно визуализироать, например, так:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="correlation.html#cb20-1"></a>dehum <span class="op">%&gt;%</span></span>
+<span id="cb20-2"><a href="correlation.html#cb20-2"></a><span class="st">  </span><span class="kw">select</span>(GR_average, AR_average, SR_average) <span class="op">%&gt;%</span></span>
+<span id="cb20-3"><a href="correlation.html#cb20-3"></a><span class="st">  </span><span class="kw">cor</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-4"><a href="correlation.html#cb20-4"></a><span class="st">  </span>corrplot<span class="op">::</span><span class="kw">corrplot</span>()</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Но можно и усовершенствовать визуализацию, отобразив сами значения:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="correlation.html#cb21-1"></a>dehum <span class="op">%&gt;%</span></span>
+<span id="cb21-2"><a href="correlation.html#cb21-2"></a><span class="st">  </span><span class="kw">select</span>(GR_average, AR_average, SR_average) <span class="op">%&gt;%</span></span>
+<span id="cb21-3"><a href="correlation.html#cb21-3"></a><span class="st">  </span><span class="kw">cor</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb21-4"><a href="correlation.html#cb21-4"></a><span class="st">  </span>corrplot<span class="op">::</span><span class="kw">corrplot.mixed</span>()</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>На основе этой матрицы мы можем протестировать статистическую значимость каждого из коэффициентов (не забыв про поправки на множественные сравнения!):</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="correlation.html#cb22-1"></a>cor_tests &lt;-<span class="st"> </span>correlation<span class="op">::</span><span class="kw">correlation</span>(</span>
+<span id="cb22-2"><a href="correlation.html#cb22-2"></a>  dehum <span class="op">%&gt;%</span></span>
+<span id="cb22-3"><a href="correlation.html#cb22-3"></a><span class="st">    </span><span class="kw">select</span>(GR_average, AR_average, SR_average),</span>
+<span id="cb22-4"><a href="correlation.html#cb22-4"></a>  <span class="dt">method =</span> <span class="st">&quot;spearman&quot;</span>, <span class="co"># указываем, какой коэффициент нам нужен</span></span>
+<span id="cb22-5"><a href="correlation.html#cb22-5"></a>  <span class="dt">adjust =</span> <span class="st">&quot;holm&quot;</span> <span class="co"># и какую поправку будем использовать</span></span>
+<span id="cb22-6"><a href="correlation.html#cb22-6"></a>)</span>
+<span id="cb22-7"><a href="correlation.html#cb22-7"></a>cor_tests</span></code></pre></div>
+<pre><code>## # Correlation table (spearman-method)
+## 
+## Parameter1 | Parameter2 |  rho |       95% CI |        S |         p
+## --------------------------------------------------------------------
+## GR_average | AR_average | 0.71 | [0.67, 0.74] | 3.65e+07 | &lt; .001***
+## GR_average | SR_average | 0.60 | [0.55, 0.64] | 4.99e+07 | &lt; .001***
+## AR_average | SR_average | 0.67 | [0.63, 0.70] | 4.13e+07 | &lt; .001***
+## 
+## p-value adjustment method: Holm (1979)
+## Observations: 906</code></pre>
+<p>Чтобы перенести их на график, нам нужно получить матрицу из p-значений:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="correlation.html#cb24-1"></a>p_values &lt;-<span class="st"> </span>corrplot<span class="op">::</span><span class="kw">cor.mtest</span>(dehum <span class="op">%&gt;%</span></span>
+<span id="cb24-2"><a href="correlation.html#cb24-2"></a><span class="st">  </span><span class="kw">select</span>(GR_average, AR_average, SR_average), <span class="dt">adjust =</span> <span class="st">&#39;holm&#39;</span>)<span class="op">$</span>p</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="correlation.html#cb25-1"></a>dehum <span class="op">%&gt;%</span></span>
+<span id="cb25-2"><a href="correlation.html#cb25-2"></a><span class="st">  </span><span class="kw">select</span>(GR_average, AR_average, SR_average) <span class="op">%&gt;%</span></span>
+<span id="cb25-3"><a href="correlation.html#cb25-3"></a><span class="st">  </span><span class="kw">cor</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb25-4"><a href="correlation.html#cb25-4"></a><span class="st">  </span>corrplot<span class="op">::</span><span class="kw">corrplot</span>(<span class="dt">type =</span> <span class="st">&#39;upper&#39;</span>,</span>
+<span id="cb25-5"><a href="correlation.html#cb25-5"></a>                     <span class="dt">p.mat =</span> p_values,</span>
+<span id="cb25-6"><a href="correlation.html#cb25-6"></a>                     <span class="dt">sig.level =</span> <span class="fl">0.05</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Ну, у нас ничего не поменялось, так как коэффициенты все оказались значимы. Эх…</p>
+<p>Но вот для примера на одно из встроенных датасетов:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="correlation.html#cb26-1"></a>corrplot<span class="op">::</span><span class="kw">corrplot</span>(</span>
+<span id="cb26-2"><a href="correlation.html#cb26-2"></a>  <span class="kw">cor</span>(mtcars),</span>
+<span id="cb26-3"><a href="correlation.html#cb26-3"></a>  <span class="dt">type =</span> <span class="st">&quot;upper&quot;</span>,</span>
+<span id="cb26-4"><a href="correlation.html#cb26-4"></a>  <span class="dt">p.mat =</span> corrplot<span class="op">::</span><span class="kw">cor.mtest</span>(mtcars)<span class="op">$</span>p,</span>
+<span id="cb26-5"><a href="correlation.html#cb26-5"></a>  <span class="dt">sig.level =</span> <span class="fl">0.01</span></span>
+<span id="cb26-6"><a href="correlation.html#cb26-6"></a>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Итак, возвращается к частному коэффициенту корреляции. Он определяется так:</p>
+<p><span class="math display">\[
+r_{ij, J(i,j)} = - \frac{A_{ij}}{\sqrt{A_{ii} A_{jj}}},
+\]</span></p>
+<p>где <span class="math inline">\(A\)</span> — алгебраическое дополнение.</p>
+<p>В общем виде это осознать сложно, поэтому давайте на примере трёх признаков.</p>
+<p><span class="math display">\[
+R =
+\begin{pmatrix}
+1 &amp; r_{12} &amp; r_{13} \\
+r_{21} &amp; 1 &amp; r_{23} \\
+r_{31} &amp; r_{32} &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+r_{12,3} = \frac{r_{12} - r_{13} \cdot r_{23}}{\sqrt{(1 - r^2_{23})(1-r^2{13})}}
+\]</span></p>
+<p><span class="math display">\[
+H_0: \rho_{12,3} = 0 \\
+H_1: \rho_{12,3} \neq 0 \\
+t = \frac{r_{12,3} \sqrt{n-3}}{\sqrt{1 - r^2_{12,3}}} \overset{H_0}{\thicksim} t(\nu = n-3)
+\]</span></p>
+<p>Но слава богу, что в R это все делается в одну строку:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="correlation.html#cb27-1"></a>ppcor<span class="op">::</span><span class="kw">pcor</span>(</span>
+<span id="cb27-2"><a href="correlation.html#cb27-2"></a>  dehum <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb27-3"><a href="correlation.html#cb27-3"></a><span class="st">    </span><span class="kw">select</span>(GR_average, AR_average, SR_average)</span>
+<span id="cb27-4"><a href="correlation.html#cb27-4"></a>)</span></code></pre></div>
+<pre><code>## $estimate
+##            GR_average AR_average SR_average
+## GR_average  1.0000000  0.5730882  0.2720509
+## AR_average  0.5730882  1.0000000  0.3414418
+## SR_average  0.2720509  0.3414418  1.0000000
+## 
+## $p.value
+##              GR_average   AR_average   SR_average
+## GR_average 0.000000e+00 3.948903e-80 8.051918e-17
+## AR_average 3.948903e-80 0.000000e+00 3.811050e-26
+## SR_average 8.051918e-17 3.811050e-26 0.000000e+00
+## 
+## $statistic
+##            GR_average AR_average SR_average
+## GR_average   0.000000   21.01453   8.495546
+## AR_average  21.014531    0.00000  10.916353
+## SR_average   8.495546   10.91635   0.000000
+## 
+## $n
+## [1] 906
+## 
+## $gp
+## [1] 1
+## 
+## $method
+## [1] &quot;pearson&quot;</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="correlation.html#cb29-1"></a>ppcor<span class="op">::</span><span class="kw">pcor.test</span>(dehum<span class="op">$</span>GR_average,</span>
+<span id="cb29-2"><a href="correlation.html#cb29-2"></a>                 dehum<span class="op">$</span>AR_average,</span>
+<span id="cb29-3"><a href="correlation.html#cb29-3"></a>                 dehum<span class="op">$</span>SR_average)</span></code></pre></div>
+<pre><code>##    estimate      p.value statistic   n gp  Method
+## 1 0.5730882 3.948903e-80  21.01453 906  1 pearson</code></pre>
+<p>Хорошо, а если нас интересует связь одного признака с несколькими сразу? Тогда нам нужен множественный коэффициент корреляции. Он также вычисляется на основе корреляционной матрицы и определяется следующим образом. Пусть нас интересует связь первого признака со всеми остальными:</p>
+<p><span class="math display">\[
+R_1 = \sqrt{1 - \frac{\det R}{A_{11}}}
+\]</span></p>
+<p>Квадрат множественонго коэффициента корреляции называется <em>коэффициентом детерминации</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Он показывает, во-первых, степень тесноты связи данного признака со всеми остальными, но, кроме того, ещё и долю дисперсии данного признака, определяемую вариацией все остальных признаков, включенных в данную корреляционную модель.</p>
+<p>Мы подробнее его изучим в следуюшей теме, а также увидим, где нам его найти, чтобы не считать руками.</p>
+</div>
+<div id="другие-корреляции" class="section level2">
+<h2><span class="header-section-number">16.5</span> Другие корреляции</h2>
+<p>Можно коррелировать не только количественные и ранговые шкалы между собой, но и качественные тоже:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Переменная <span class="math inline">\(X\)</span></th>
+<th align="center">Переменная <span class="math inline">\(Y\)</span></th>
+<th align="center">Мера связи</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Дихотомическая</td>
+<td align="center">Дихотомическая</td>
+<td align="center"><span class="math inline">\(\phi\)</span>-коэффициент</td>
+</tr>
+<tr class="even">
+<td align="center">Дихотомическая</td>
+<td align="center">Ранговая</td>
+<td align="center">Рангово-бисериальный коэффициент</td>
+</tr>
+<tr class="odd">
+<td align="center">Дихотомическая</td>
+<td align="center">Интервальная или отношений</td>
+<td align="center">Бисериальный коэффициент</td>
+</tr>
+</tbody>
+</table>
+<div id="phi-коэффициент" class="section level3">
+<h3><span class="header-section-number">16.5.1</span> <span class="math inline">\(\phi\)</span>-коэффициент</h3>
 
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Вы точно видели это словосочетание, когда сталкивались с линейной регресией.<a href="correlation.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
