@@ -837,6 +837,28 @@ R_1 = \sqrt{1 - \frac{\det R}{A_{11}}}
 </table>
 <div id="phi-коэффициент" class="section level3">
 <h3><span class="header-section-number">16.5.1</span> <span class="math inline">\(\phi\)</span>-коэффициент</h3>
+<p>Этот коэффициент позволяет рассчитать корреляцию между двумы дихотомическими шкалами. Он основан на расчёте статистики <span class="math inline">\(\chi^2\)</span>.</p>
+<p>По двум дихотомическим переменным можно построить таблицу сопряженности. Разберемся на <a href="https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/cats_n_dogs.csv">котиках и пёсиках</a>:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="correlation.html#cb31-1"></a>cats_n_dogs &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/cats_n_dogs.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   id = col_double(),
+##   species = col_character(),
+##   size = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="correlation.html#cb33-1"></a><span class="kw">table</span>(cats_n_dogs<span class="op">$</span>species, cats_n_dogs<span class="op">$</span>size)</span></code></pre></div>
+<pre><code>##      
+##       big small
+##   cat  17     8
+##   dog  13    12</code></pre>
+<p>По данной таблице можно рассчитать <strong>критерий согласия Пирсона (<span class="math inline">\(\chi^2\)</span>)</strong>:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="correlation.html#cb35-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(cats_n_dogs<span class="op">$</span>species, cats_n_dogs<span class="op">$</span>size))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  table(cats_n_dogs$species, cats_n_dogs$size)
+## X-squared = 0.75, df = 1, p-value = 0.3865</code></pre>
 
 </div>
 </div>
