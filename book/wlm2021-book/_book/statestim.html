@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -105,7 +169,8 @@
 <li class="chapter" data-level="2.1" data-path="datatypes.html"><a href="datatypes.html#numeric"><i class="fa fa-check"></i><b>2.1</b> <code>numeric</code></a></li>
 <li class="chapter" data-level="2.2" data-path="datatypes.html"><a href="datatypes.html#logical"><i class="fa fa-check"></i><b>2.2</b> <code>logical</code></a></li>
 <li class="chapter" data-level="2.3" data-path="datatypes.html"><a href="datatypes.html#character"><i class="fa fa-check"></i><b>2.3</b> <code>character</code></a></li>
-<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.4</b> Coercion [part one]</a></li>
+<li class="chapter" data-level="2.4" data-path="datatypes.html"><a href="datatypes.html#factors"><i class="fa fa-check"></i><b>2.4</b> <code>factor</code></a></li>
+<li class="chapter" data-level="2.5" data-path="datatypes.html"><a href="datatypes.html#coercion-part-one"><i class="fa fa-check"></i><b>2.5</b> Coercion [part one]</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="datastructures.html"><a href="datastructures.html"><i class="fa fa-check"></i><b>3</b> Структуры данных</a><ul>
 <li class="chapter" data-level="3.1" data-path="datastructures.html"><a href="datastructures.html#векторы"><i class="fa fa-check"></i><b>3.1</b> Векторы</a><ul>
@@ -154,32 +219,149 @@
 <li class="chapter" data-level="6.2.1" data-path="realdata.html"><a href="realdata.html#форматы-данных"><i class="fa fa-check"></i><b>6.2.1</b> Форматы данных</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="realdata.html"><a href="realdata.html#исследование-данных"><i class="fa fa-check"></i><b>6.3</b> Исследование данных</a></li>
-<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#rdata"><i class="fa fa-check"></i><b>6.4</b> <code>.RData</code></a></li>
+<li class="chapter" data-level="6.4" data-path="realdata.html"><a href="realdata.html#файл-.rdata"><i class="fa fa-check"></i><b>6.4</b> Файл <code>.RData</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a></li>
-<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a></li>
+<li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
+<li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
+<li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
+<li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="tidy.html"><a href="tidy.html#pipe"><i class="fa fa-check"></i><b>7.5.1</b> <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="7.5.2" data-path="tidy.html"><a href="tidy.html#select"><i class="fa fa-check"></i><b>7.5.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="7.5.3" data-path="tidy.html"><a href="tidy.html#rename"><i class="fa fa-check"></i><b>7.5.3</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="7.5.4" data-path="tidy.html"><a href="tidy.html#slice"><i class="fa fa-check"></i><b>7.5.4</b> <code>slice()</code></a></li>
+<li class="chapter" data-level="7.5.5" data-path="tidy.html"><a href="tidy.html#filter"><i class="fa fa-check"></i><b>7.5.5</b> <code>filter()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="tidy.html"><a href="tidy.html#mutate"><i class="fa fa-check"></i><b>7.6</b> <code>mutate()</code></a></li>
+<li class="chapter" data-level="7.7" data-path="tidy.html"><a href="tidy.html#догрузим-остальные-данные"><i class="fa fa-check"></i><b>7.7</b> Догрузим остальные данные</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-i"><i class="fa fa-check"></i><b>7.7.1</b> Соединение датафреймов I</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="tidy.html"><a href="tidy.html#сортировка"><i class="fa fa-check"></i><b>7.8</b> Сортировка</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="tidy.html"><a href="tidy.html#sort"><i class="fa fa-check"></i><b>7.8.1</b> <code>sort()</code></a></li>
+<li class="chapter" data-level="7.8.2" data-path="tidy.html"><a href="tidy.html#arrange"><i class="fa fa-check"></i><b>7.8.2</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="7.8.3" data-path="tidy.html"><a href="tidy.html#distinct"><i class="fa fa-check"></i><b>7.8.3</b> <code>distinct()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="tidy.html"><a href="tidy.html#соединение-датафреймов-ii"><i class="fa fa-check"></i><b>7.9</b> Соединение датафреймов II</a><ul>
+<li class="chapter" data-level="7.9.1" data-path="tidy.html"><a href="tidy.html#join"><i class="fa fa-check"></i><b>7.9.1</b> <code>..._join()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="tidy.html"><a href="tidy.html#группировка-и-аггрегация-данных"><i class="fa fa-check"></i><b>7.10</b> Группировка и аггрегация данных</a><ul>
+<li class="chapter" data-level="7.10.1" data-path="tidy.html"><a href="tidy.html#group_by-ungroup"><i class="fa fa-check"></i><b>7.10.1</b> <code>group_by()</code> &amp; <code>ungroup()</code></a></li>
+<li class="chapter" data-level="7.10.2" data-path="tidy.html"><a href="tidy.html#summarize"><i class="fa fa-check"></i><b>7.10.2</b> <code>summarize()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="tidy.html"><a href="tidy.html#широкий-и-длинный-формат"><i class="fa fa-check"></i><b>7.11</b> Широкий и длинный формат</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="tidy.html"><a href="tidy.html#pivot_longer-pivot_wider"><i class="fa fa-check"></i><b>7.11.1</b> <code>pivot_longer()</code> &amp; <code>pivot_wider()</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>8</b> Визуализация данных</a><ul>
+<li class="chapter" data-level="8.1" data-path="visualization.html"><a href="visualization.html#философия-ggplot2-a-layered-grammar-of-graphics"><i class="fa fa-check"></i><b>8.1</b> Философия ggplot2 (A Layered Grammar of Graphics)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="visualization.html"><a href="visualization.html#собственно-к-философии-построения-графиков"><i class="fa fa-check"></i><b>8.1.1</b> Собственно к философии построения графиков</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="visualization.html"><a href="visualization.html#данные"><i class="fa fa-check"></i><b>8.2</b> Данные</a></li>
+<li class="chapter" data-level="8.3" data-path="visualization.html"><a href="visualization.html#строим-базовый-график"><i class="fa fa-check"></i><b>8.3</b> Строим базовый график</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="visualization.html"><a href="visualization.html#базовый-слой"><i class="fa fa-check"></i><b>8.3.1</b> Базовый слой</a></li>
+<li class="chapter" data-level="8.3.2" data-path="visualization.html"><a href="visualization.html#разметка-осей-и-переменные"><i class="fa fa-check"></i><b>8.3.2</b> Разметка осей и переменные</a></li>
+<li class="chapter" data-level="8.3.3" data-path="visualization.html"><a href="visualization.html#геомы"><i class="fa fa-check"></i><b>8.3.3</b> Геомы</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="visualization.html"><a href="visualization.html#группировка-по-переменной"><i class="fa fa-check"></i><b>8.4</b> Группировка по переменной</a></li>
+<li class="chapter" data-level="8.5" data-path="visualization.html"><a href="visualization.html#графики-со-встроенной-статистической-обработкой"><i class="fa fa-check"></i><b>8.5</b> Графики со встроенной статистической обработкой</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="visualization.html"><a href="visualization.html#статы-stat_"><i class="fa fa-check"></i><b>8.5.1</b> Статы (stat_)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="visualization.html"><a href="visualization.html#ищем-более-сложные-закономерности"><i class="fa fa-check"></i><b>8.6</b> Ищем более сложные закономерности</a></li>
+<li class="chapter" data-level="8.7" data-path="visualization.html"><a href="visualization.html#настраиваем-график"><i class="fa fa-check"></i><b>8.7</b> Настраиваем график</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="visualization.html"><a href="visualization.html#темы"><i class="fa fa-check"></i><b>8.7.1</b> Темы</a></li>
+<li class="chapter" data-level="8.7.2" data-path="visualization.html"><a href="visualization.html#кастомизация-шкал-scale_"><i class="fa fa-check"></i><b>8.7.2</b> Кастомизация шкал (scale_)</a></li>
+<li class="chapter" data-level="8.7.3" data-path="visualization.html"><a href="visualization.html#последние-штрихи"><i class="fa fa-check"></i><b>8.7.3</b> Последние штрихи</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="visualization.html"><a href="visualization.html#больше-переменных"><i class="fa fa-check"></i><b>8.8</b> Больше переменных</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="visualization.html"><a href="visualization.html#фасетизация"><i class="fa fa-check"></i><b>8.8.1</b> Фасетизация</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="visualization.html"><a href="visualization.html#сохранение-графиков"><i class="fa fa-check"></i><b>8.9</b> Сохранение графиков</a></li>
+<li class="chapter" data-level="8.10" data-path="visualization.html"><a href="visualization.html#другие-геомы"><i class="fa fa-check"></i><b>8.10</b> Другие геомы</a></li>
+</ul></li>
 <li class="part"><span><b>II Теория вероятностей и математическая статистика</b></span></li>
 <li class="chapter" data-level="9" data-path="maths.html"><a href="maths.html"><i class="fa fa-check"></i><b>9</b> Математический ликбез</a><ul>
-<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a></li>
-<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a></li>
-<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.3</b> Элементы математического анализа</a></li>
-<li class="chapter" data-level="9.4" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.4</b> Элементы линейной алгебры</a><ul>
-<li class="chapter" data-level="9.4.1" data-path="maths.html"><a href="maths.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.4.1</b> Что такое матрица?</a></li>
-<li class="chapter" data-level="9.4.2" data-path="maths.html"><a href="maths.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.4.2</b> Откуда берутся матрицы?</a></li>
-<li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#действия-с-матрицами"><i class="fa fa-check"></i><b>9.4.3</b> Действия с матрицами</a></li>
-<li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#скалярное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.4</b> Скалярное произведение векторов</a></li>
-<li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.4.5</b> Векторное произведение векторов</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.4.6</b> Произведение матриц (матричное умножение)</a></li>
-<li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.4.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.4.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.4.8</b> Детерминант и обратная матрица</a></li>
-<li class="chapter" data-level="9.4.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.4.9</b> След матрицы</a></li>
+<li class="chapter" data-level="9.1" data-path="maths.html"><a href="maths.html#alg_logic"><i class="fa fa-check"></i><b>9.1</b> Элементы алгебры логики</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="maths.html"><a href="maths.html#высказывания"><i class="fa fa-check"></i><b>9.1.1</b> Высказывания</a></li>
+<li class="chapter" data-level="9.1.2" data-path="maths.html"><a href="maths.html#logic_operations"><i class="fa fa-check"></i><b>9.1.2</b> Логические операции</a></li>
+<li class="chapter" data-level="9.1.3" data-path="maths.html"><a href="maths.html#сложные-высказвания"><i class="fa fa-check"></i><b>9.1.3</b> Сложные высказвания</a></li>
+<li class="chapter" data-level="9.1.4" data-path="maths.html"><a href="maths.html#условные-высказывания"><i class="fa fa-check"></i><b>9.1.4</b> Условные высказывания</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="maths.html"><a href="maths.html#set_theory"><i class="fa fa-check"></i><b>9.2</b> Элементы теории множеств</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="maths.html"><a href="maths.html#set"><i class="fa fa-check"></i><b>9.2.1</b> Множество</a></li>
+<li class="chapter" data-level="9.2.2" data-path="maths.html"><a href="maths.html#sets_operations"><i class="fa fa-check"></i><b>9.2.2</b> Операции над множествами</a></li>
+<li class="chapter" data-level="9.2.3" data-path="maths.html"><a href="maths.html#отображения"><i class="fa fa-check"></i><b>9.2.3</b> Отображения</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="maths.html"><a href="maths.html#combinatorics"><i class="fa fa-check"></i><b>9.3</b> Немного комбинаторики</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="maths.html"><a href="maths.html#permutations"><i class="fa fa-check"></i><b>9.3.1</b> Перестановки</a></li>
+<li class="chapter" data-level="9.3.2" data-path="maths.html"><a href="maths.html#accomodations"><i class="fa fa-check"></i><b>9.3.2</b> Размещения</a></li>
+<li class="chapter" data-level="9.3.3" data-path="maths.html"><a href="maths.html#combinations"><i class="fa fa-check"></i><b>9.3.3</b> Сочетания</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="maths.html"><a href="maths.html#calculus"><i class="fa fa-check"></i><b>9.4</b> Элементы математического анализа</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="maths.html"><a href="maths.html#последовательность"><i class="fa fa-check"></i><b>9.4.1</b> Последовательность</a></li>
+<li class="chapter" data-level="9.4.2" data-path="maths.html"><a href="maths.html#предел-последовательности"><i class="fa fa-check"></i><b>9.4.2</b> Предел последовательности</a></li>
+<li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
+<li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
+<li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="maths.html"><a href="maths.html#что-такое-матрица"><i class="fa fa-check"></i><b>9.5.1</b> Что такое матрица?</a></li>
+<li class="chapter" data-level="9.5.2" data-path="maths.html"><a href="maths.html#откуда-берутся-матрицы"><i class="fa fa-check"></i><b>9.5.2</b> Откуда берутся матрицы?</a></li>
+<li class="chapter" data-level="9.5.3" data-path="maths.html"><a href="maths.html#действия-с-матрицами"><i class="fa fa-check"></i><b>9.5.3</b> Действия с матрицами</a></li>
+<li class="chapter" data-level="9.5.4" data-path="maths.html"><a href="maths.html#скалярное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.4</b> Скалярное произведение векторов</a></li>
+<li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
+<li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
+<li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a></li>
-<li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a></li>
-<li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a></li>
-<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="10" data-path="stats-intro.html"><a href="stats-intro.html"><i class="fa fa-check"></i><b>10</b> Введение в статистику</a><ul>
+<li class="chapter" data-level="10.1" data-path="stats-intro.html"><a href="stats-intro.html#исходные-понятия-статистики"><i class="fa fa-check"></i><b>10.1</b> Исходные понятия статистики</a></li>
+<li class="chapter" data-level="10.2" data-path="stats-intro.html"><a href="stats-intro.html#виды-статистических-данных"><i class="fa fa-check"></i><b>10.2</b> Виды статистических данных</a></li>
+<li class="chapter" data-level="10.3" data-path="stats-intro.html"><a href="stats-intro.html#шкалы"><i class="fa fa-check"></i><b>10.3</b> Шкалы</a></li>
+<li class="chapter" data-level="10.4" data-path="stats-intro.html"><a href="stats-intro.html#задачи-статистики"><i class="fa fa-check"></i><b>10.4</b> Задачи статистики</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="stats-intro.html"><a href="stats-intro.html#этапы-статистического-моделирования"><i class="fa fa-check"></i><b>10.4.1</b> Этапы статистического моделирования</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="randexp.html"><a href="randexp.html"><i class="fa fa-check"></i><b>11</b> Случайный эксперимент</a><ul>
+<li class="chapter" data-level="11.1" data-path="randexp.html"><a href="randexp.html#ход-исследования"><i class="fa fa-check"></i><b>11.1</b> Ход исследования</a></li>
+<li class="chapter" data-level="11.2" data-path="randexp.html"><a href="randexp.html#событие.-пространство-элементарных-событий."><i class="fa fa-check"></i><b>11.2</b> Событие. Пространство элементарных событий.</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="randexp.html"><a href="randexp.html#игральный-кубик"><i class="fa fa-check"></i><b>11.2.1</b> Игральный кубик</a></li>
+<li class="chapter" data-level="11.2.2" data-path="randexp.html"><a href="randexp.html#events_operations"><i class="fa fa-check"></i><b>11.2.2</b> Действия над событиями</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="randexp.html"><a href="randexp.html#классическое-определение-вероятности"><i class="fa fa-check"></i><b>11.3</b> Классическое определение вероятности</a></li>
+<li class="chapter" data-level="11.4" data-path="randexp.html"><a href="randexp.html#статистическое-определение-вероятности"><i class="fa fa-check"></i><b>11.4</b> Статистическое определение вероятности</a></li>
+<li class="chapter" data-level="11.5" data-path="randexp.html"><a href="randexp.html#кроме-кубика"><i class="fa fa-check"></i><b>11.5</b> Кроме кубика</a></li>
+<li class="chapter" data-level="11.6" data-path="randexp.html"><a href="randexp.html#вероятности-сложных-событий"><i class="fa fa-check"></i><b>11.6</b> Вероятности сложных событий</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="randexp.html"><a href="randexp.html#условная-вероятность"><i class="fa fa-check"></i><b>11.6.1</b> Условная вероятность</a></li>
+<li class="chapter" data-level="11.6.2" data-path="randexp.html"><a href="randexp.html#теорема-байеса"><i class="fa fa-check"></i><b>11.6.2</b> Теорема Байеса</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a><ul>
+<li class="chapter" data-level="12.1" data-path="prob.html"><a href="prob.html#дискретные-случайные-величины"><i class="fa fa-check"></i><b>12.1</b> Дискретные случайные величины</a></li>
+<li class="chapter" data-level="12.2" data-path="prob.html"><a href="prob.html#непрерывные-случайные-величины"><i class="fa fa-check"></i><b>12.2</b> Непрерывные случайные величины</a></li>
+<li class="chapter" data-level="12.3" data-path="prob.html"><a href="prob.html#moments_distributions"><i class="fa fa-check"></i><b>12.3</b> Характеристики распределения случайных величин</a></li>
+<li class="chapter" data-level="12.4" data-path="prob.html"><a href="prob.html#normal_distribution"><i class="fa fa-check"></i><b>12.4</b> Нормальное распределение</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a><ul>
+<li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#точечные-оценки"><i class="fa fa-check"></i><b>13.1</b> Точечные оценки</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="statestim.html"><a href="statestim.html#метод-моментов"><i class="fa fa-check"></i><b>13.1.1</b> Метод моментов</a></li>
+<li class="chapter" data-level="13.1.2" data-path="statestim.html"><a href="statestim.html#свойства-точечных-оценок"><i class="fa fa-check"></i><b>13.1.2</b> Свойства точечных оценок</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="statestim.html"><a href="statestim.html#интервальные-оценки"><i class="fa fa-check"></i><b>13.2</b> Интервальные оценки</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -219,11 +401,11 @@
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html"><i class="fa fa-check"></i>Литература</a><ul>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#about-r"><i class="fa fa-check"></i>About R</a></li>
-<li class="chapter" data-level="" data-path="литература.html"><a href="литература.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>Литература</a><ul>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#касаемо-математики"><i class="fa fa-check"></i>Касаемо математики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#относительно-статистики"><i class="fa fa-check"></i>Относительно статистики</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#about-r"><i class="fa fa-check"></i>About R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html#во-славу-андана"><i class="fa fa-check"></i>Во славу андана</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -247,7 +429,179 @@
             <section class="normal" id="section-">
 <div id="statestim" class="section level1">
 <h1><span class="header-section-number">13</span> Оценивание параметров в практике статистического анализа</h1>
+<p>Мы оказываемся в сложной, но интересной ситуации. Мы хотим знать что-то про генеральную совокупность — значение некоторого <em>параметра</em>. Но мы его никогда не узнаем, потому что не можем работать с целой генеральной совокупностью. Нам остаётся работать только с <em>выборочной совокупность (выборкой)</em> и опираться на статистические данные, которые мы собираем на ней.</p>
+<p>Выборка извлекается из генеральной совокупности случайным образом, поэтому что там именно — с точки зрения данных — в нашей выборке будет нам также неизвестно. Отсюда происходят два ключевых свойства статистических данных — <em>неопредлённость</em> и <em>вариативность</em>.</p>
+<p><strong>Неопределённость</strong> нам говорит о том, что мы не знаем, что именно мы получим в результате наших измерений для конкретной выборки. В том числе потому, что мы работаем на просторах случайных величин.</p>
+<p><strong>Вариативность</strong> означает, что наши данные будут различатся ещё и от респондента к респонденту. И между выборками тоже. Здесь и ошибка измерения, и различные смешения и ещё куча всего.</p>
+<p>В итоге что мы имеем: так как нам не доступны <em>истинные</em> значения параметров, придётся использовать <em>оценки</em> этих параметров.</p>
+<div id="точечные-оценки" class="section level2">
+<h2><span class="header-section-number">13.1</span> Точечные оценки</h2>
+<p>Параметр обычно обозначается греческой буквой. Пусть у нас есть некоторый параметр генеральной совокупности <span class="math inline">\(\theta\)</span>. Его аналогом на выборочной совокупности является его <em>точечная оценка</em> <span class="math inline">\(\hat \theta\)</span>. Точечная она, потому что представляет собой некоторое одно число. Таким образом, это наиболее компактный способ составить представление о значении параметра. По своей сути она, на самом деле, она является функцией от результатов наблюдений:</p>
+<p><span class="math display">\[
+\hat \theta = \hat \theta (x), \; x = (x_1, x_2, \dots, x_n)
+\]</span></p>
+<p>Что это значит? То, что на разных выборках эта оценка может различаться. Возьмем для примера такой параметр как среднее значение. Предположим, что мы исследуем интеллект, и наша <em>генеральная совокупность</em> представлена таким набором наблюдений:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="statestim.html#cb1-1"></a><span class="kw">nrow</span>(iq)</span></code></pre></div>
+<pre><code>## [1] 10000</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="statestim.html#cb3-1"></a><span class="kw">head</span>(iq)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##      id    IQ
+##   &lt;int&gt; &lt;dbl&gt;
+## 1     1    86
+## 2     2    90
+## 3     3    99
+## 4     4    95
+## 5     5   130
+## 6     6    97</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statestim.html#cb5-1"></a><span class="kw">tail</span>(iq)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##      id    IQ
+##   &lt;int&gt; &lt;dbl&gt;
+## 1  9995   105
+## 2  9996   115
+## 3  9997    82
+## 4  9998    98
+## 5  9999   111
+## 6 10000   105</code></pre>
+<p>Так как мы предположили, что это генеральная совокупность, то мы можем посчитать истинное значение параметра <span class="math inline">\(\mu\)</span>. <strong>В реальной жизни мы этого сделать не можем!</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="statestim.html#cb7-1"></a><span class="kw">mean</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>## [1] 100.0598</code></pre>
+<p>Вполне ожидаемое значение<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Теперь попробуем наизвлекать выборок человек по 50 и посчитать <em>оценки среднего (выборочные средние)</em> <span class="math inline">\(\hat \mu\)</span> на них:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="statestim.html#cb9-1"></a>means &lt;-<span class="st"> </span><span class="kw">numeric</span>()</span>
+<span id="cb9-2"><a href="statestim.html#cb9-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>) {</span>
+<span id="cb9-3"><a href="statestim.html#cb9-3"></a>  means[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(<span class="kw">sample</span>(iq<span class="op">$</span>IQ, <span class="dv">50</span>, <span class="dt">replace =</span> <span class="ot">FALSE</span>))</span>
+<span id="cb9-4"><a href="statestim.html#cb9-4"></a>}</span>
+<span id="cb9-5"><a href="statestim.html#cb9-5"></a><span class="kw">ggplot</span>(<span class="ot">NULL</span>, <span class="kw">aes</span>(means)) <span class="op">+</span></span>
+<span id="cb9-6"><a href="statestim.html#cb9-6"></a><span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="dv">1</span>, <span class="dt">fill =</span> <span class="st">&#39;royalblue4&#39;</span>, <span class="dt">color =</span> <span class="st">&#39;lightgray&#39;</span>) <span class="op">+</span></span>
+<span id="cb9-7"><a href="statestim.html#cb9-7"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">mean</span>(iq<span class="op">$</span>IQ)) <span class="op">+</span></span>
+<span id="cb9-8"><a href="statestim.html#cb9-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Выборочные средние IQ&#39;</span>,</span>
+<span id="cb9-9"><a href="statestim.html#cb9-9"></a>       <span class="dt">y =</span> <span class="st">&#39;Количество&#39;</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Наблюдаем, что иногда мы при подсчёте оценке параметра попадаем близко к истинному его значению, иногда промахиваемся. Собственно, как раз об этом <em>неопределённость и вариация</em>.</p>
+<div id="метод-моментов" class="section level3">
+<h3><span class="header-section-number">13.1.1</span> Метод моментов</h3>
+<p>Чтобы получить точечные оценки параметров, используются разные методы в зависимости от конкретной модели анализа. Сейчас мы познакомимся с самым простым — <strong>методом моментов</strong>. Другие разберем, когда с ними столкнёмся.</p>
+<p>Само название метода отсылает нас к обсуждению <a href="prob.html#moments_distributions">характеристик распределений случайных величин</a>. Мы говорили о том, что распредления характеризуются их <em>моментами</em>. В методе моментов есть три этапа:</p>
+<ol style="list-style-type: decimal">
+<li>устанавливается связь между оцениваемым параметром и моментом распределения</li>
+</ol>
+<p><span class="math display">\[
+\theta = \xi(\nu_k) \quad \text{или} \quad \theta = \xi(\mu_k)
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>находятся выборочные моменты</li>
+</ol>
+<p><span class="math display">\[
+\hat \theta = \xi(\nu_k^*) \quad \text{или} \quad \hat \theta = \xi(\mu_k^*)
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>истинный момент заменяется на выборочный — получается оценка.</li>
+</ol>
+<p>Для примера разберём всё тот же датасет с IQ. Мы знаем, что распределение баллов IQ подчинается <a href="prob.html#normal_distribution">нормальному закону</a>. Поэтому в качестве параметра «среднее значение коэффициента интеллекта» генеральной совокупности можно использовать математическое ожидание:</p>
+<p><span class="math display">\[
+\mu = \mathbb{E}X
+\]</span></p>
+<p>Выборочным аналогом математического ожидания является выборочное среднее:</p>
+<p><span class="math display">\[
+\hat \mu = \frac{1}{n} \sum_{i=1}^n x_i
+\]</span></p>
+<p>И это, собственно, всё. Если вы хотя бы раз анализировали данные, вы имплицитно пользовались этим знанием. Просто, скорее всего, не задумывались, что это так работает. :)</p>
+</div>
+<div id="свойства-точечных-оценок" class="section level3">
+<h3><span class="header-section-number">13.1.2</span> Свойства точечных оценок</h3>
+<p>Так как точечные оценки всё же оценки, мы можем и промахнуться мимо истинного среднего — это мы наблюдали на гистограмме. Поэтому нам надо предъявить определённые требования к точечным оценкам. Их три: <em>несмещённость</em>, <em>состоятельность</em> и <em>эффективность</em>.</p>
+<div id="несмещённость" class="section level4">
+<h4><span class="header-section-number">13.1.2.1</span> Несмещённость</h4>
+<p><strong>Несмещённость</strong> выражает следующую идею: когда мы рассчитываем выборочную оценку, мы должны как можно ближе попадать в истинное значение параметра.</p>
+<p><span class="math display">\[
+\forall n \; \mathbb{E} \hat \theta = \theta, \quad (\mathbb{E}\hat \theta - \theta) \rightarrow 0,
+\]</span>
+где <span class="math inline">\(n\)</span> — объём выборки, <span class="math inline">\((\mathbb{E}\hat \theta - \theta)\)</span> — смещение.</p>
+<p>Слева представлено требование <em>несмещённости при любом объёме выборки</em>, а справа — <em>ассимптотической несмещённости</em>.</p>
+</div>
+<div id="состоятельность" class="section level4">
+<h4><span class="header-section-number">13.1.2.2</span> Состоятельность</h4>
+<p>Математически <strong>состоятельность</strong> определяется следующим образом:</p>
+<p><span class="math display">\[
+\lim_{n \rightarrow \infty} \mathrm{P}(|\hat \theta - \theta| &lt; \varepsilon) = 1, \, \varepsilon &gt; 0
+\]</span></p>
+<p>Содержательно эта запись нам говорит следующее, что при неограниченном росте мощности выборки наша оценка стремится к истинному значению параметра. Может быть, такая формулировка не совсем точна математически, но позволяет представить, что происходит.</p>
+</div>
+<div id="эффективность" class="section level4">
+<h4><span class="header-section-number">13.1.2.3</span> Эффективность</h4>
+<p>Эффективность точечной оценки определяется достаточно просто. Так как оценка параметра — это случайная величина, но у неё есть <em>дисперсия</em>. Чтобы оценка была <strong>эффективна</strong>, её дисперсия должна быть минимальной:</p>
+<p><span class="math display">\[
+\sigma^2_{\hat \theta} = \min
+\]</span></p>
+<p>Пример несмещённой, состоятельной и эффективной оценки — это выборочное среднее для оценки математического ожидания нормально распределённой величины. Именно то, что мы и делали в примере применения метода моментов.</p>
+</div>
+</div>
+</div>
+<div id="интервальные-оценки" class="section level2">
+<h2><span class="header-section-number">13.2</span> Интервальные оценки</h2>
+<blockquote>
+<p>Но этого мало…</p>
+</blockquote>
+<p>Кроме самого значения оценки, необходимо определить качество этой оценки, иначе говоря — её точность. Для этого используется такая величина как <strong>надёжность</strong>:</p>
+<p><span class="math display">\[
+\gamma = \mathrm{P}(\theta_\min &lt; \theta &lt; \theta_\max)
+\]</span></p>
+<p>Такая форма оценки называется <strong>интервальной оценкой параметра</strong>, так как мы указываем <em>интервал</em>, в котором находится истинное значение с определённой вероятностью.</p>
+<p>Такая форма оценки даёт исчерпывающую информацию о параметре: мы знаем (1) интервал, в котором находится значение параметра генеральной совокупности, а также (2) надёжность, с которой выбранный интервал накрывает это значение.</p>
+<p>Значение надежности <span class="math inline">\(\gamma\)</span> может быть выбрано произвольно, но обычно оно близко к единице. Однако необхожимо помнить, что чем выше надёжность, тем шире границы интервальной оценки.</p>
+<div id="confinterval" class="section level3">
+<h3><span class="header-section-number">13.2.1</span> Доверительный интервал</h3>
+<p>Вариантом интервальной оценки является <strong>доверительный интервал (confidence interval)</strong>. Итак, ещё раз:</p>
+<p><span class="math display">\[
+\mathrm{P}(\theta_\min &lt; \theta &lt; \theta_\max) = \gamma, \; \gamma \rightarrow 1
+\]</span></p>
+<p><span class="math inline">\(theta_\min\)</span> и <span class="math inline">\(\theta_\max\)</span> — границы доверительного интервала, <span class="math inline">\(\gamma\)</span> — доверительная вероятность. На практике её значение чаще всего принимается равным <span class="math inline">\(0.95\)</span>.</p>
+<p><strong>Алгоритм определения интервальной оценки</strong> следующий:</p>
+<ol style="list-style-type: decimal">
+<li>Найсти статистику <span class="math inline">\(\zeta(\theta)\)</span>, связанную с оцениваниемым параметром, закон распределения которой известен <span class="math inline">\(f(\zeta)\)</span>.</li>
+<li>Определить значения <span class="math inline">\(\zeta_\min\)</span> и <span class="math inline">\(\zeta_\max\)</span>, в пределах которых статистика находится с вероятностью <span class="math inline">\(\gamma\)</span>.</li>
+<li>Зная связь <span class="math inline">\(\zeta(\theta)\)</span> перейти к границам <span class="math inline">\(\theta_\min\)</span> и <span class="math inline">\(\theta_\max\)</span>.</li>
+</ol>
+<p>Разберемся с этим на примере построения доверительного интервала для генерального среднего.</p>
+<p>Первая задача — найти статистику. Мы воспользуемся тем, что за нас поработали учёные-статистики и сказали, что вот такая вполне подойдёт:</p>
+<p><span class="math display">\[
+t = \frac{\bar x - \mu}{s}\sqrt{n-1},
+\]</span></p>
+<p>где <span class="math inline">\(t\)</span> — значение статистики, <span class="math inline">\(\bar x\)</span> — выборочное среднее, <span class="math inline">\(\mu\)</span> — генеральное среднее, <span class="math inline">\(s\)</span> — выборочное стандартное отклонение, <span class="math inline">\(n\)</span> — объём выборки.</p>
+<p>Известен ли закон её распредления? Да. Эта статистика подчинается <span class="math inline">\(t\)</span>-распределению (распределению Стьюдента). Оно похоже на нормальное, но хвосты у него повыше:</p>
+<center>
+<img src="img/student_pdf.JPG">
+</center>
+<p>Теперь надо сформулировать вид интервальной оценки для генерального среднего. Путем арифметических преобразований формулы выше мы имеет следующее:</p>
+<p><span class="math display">\[
+\mu = \bar x - t \frac{s}{\sqrt{n-1}}
+\]</span></p>
+<p>Значит вид интервальной оценки будет таков:</p>
+<p><span class="math display">\[
+\mathrm{P}\Big( \bar x - t_\alpha \frac{s}{\sqrt{n-1}} &lt; \mu &lt; 
+\bar x + t_\alpha \frac{s}{\sqrt{n-1}}\Big) = 1 - \alpha = \gamma
+\]</span></p>
+<p>Посмотрим на картинку:</p>
+<center>
+<img src="img/mean_ci_graph.jpeg">
+</center>
+<p>Видим на ней наш доверительный интвервал и значения <span class="math inline">\(t_\alpha\)</span> и <span class="math inline">\(-t_\alpha\)</span>. Сама <span class="math inline">\(\alpha\)</span> обозначает вероятность выхода за границы доверительного интервала. Осталось всё это высчитать в числах, и получить границы доверительного интервала.</p>
+<p>Хорошо, что весь этот ужас в R скрыт под капотом:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="statestim.html#cb10-1"></a><span class="kw">mean_cl_normal</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>##          y     ymin     ymax
+## 1 100.0598 99.76788 100.3517</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="statestim.html#cb12-1"></a><span class="kw">mean_cl_boot</span>(iq<span class="op">$</span>IQ)</span></code></pre></div>
+<pre><code>##          y    ymin     ymax
+## 1 100.0598 99.7861 100.3359</code></pre>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Шкала IQ устроена так, что её среднее значение равно 100, а стандартное отклонение 15.<a href="statestim.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -305,6 +659,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

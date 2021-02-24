@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Математический ликбез | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -218,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
 <li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
-<li class="chapter" data-level="7.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
 <li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
 <li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
@@ -338,11 +343,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>12</b> Вероятность и случайные величины</a><ul>
 <li class="chapter" data-level="12.1" data-path="prob.html"><a href="prob.html#дискретные-случайные-величины"><i class="fa fa-check"></i><b>12.1</b> Дискретные случайные величины</a></li>
 <li class="chapter" data-level="12.2" data-path="prob.html"><a href="prob.html#непрерывные-случайные-величины"><i class="fa fa-check"></i><b>12.2</b> Непрерывные случайные величины</a></li>
+<li class="chapter" data-level="12.3" data-path="prob.html"><a href="prob.html#moments_distributions"><i class="fa fa-check"></i><b>12.3</b> Характеристики распределения случайных величин</a></li>
+<li class="chapter" data-level="12.4" data-path="prob.html"><a href="prob.html#normal_distribution"><i class="fa fa-check"></i><b>12.4</b> Нормальное распределение</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="statestim.html"><a href="statestim.html"><i class="fa fa-check"></i><b>13</b> Оценивание параметров в практике статистического анализа</a><ul>
-<li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.1</b> Доверительный интервал</a></li>
+<li class="chapter" data-level="13.1" data-path="statestim.html"><a href="statestim.html#точечные-оценки"><i class="fa fa-check"></i><b>13.1</b> Точечные оценки</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="statestim.html"><a href="statestim.html#метод-моментов"><i class="fa fa-check"></i><b>13.1.1</b> Метод моментов</a></li>
+<li class="chapter" data-level="13.1.2" data-path="statestim.html"><a href="statestim.html#свойства-точечных-оценок"><i class="fa fa-check"></i><b>13.1.2</b> Свойства точечных оценок</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="13.2" data-path="statestim.html"><a href="statestim.html#интервальные-оценки"><i class="fa fa-check"></i><b>13.2</b> Интервальные оценки</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -463,14 +482,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="инверсия-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.2.1.1</span> Инверсия в R</h5>
 <p>Оператор отрицания в R обозначается восклицательным знаком <code>!</code>. Если его поставить перед некоторой командой, которая возвращает логическое значение, то этот оператор изменит его на противоположное:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="maths.html#cb1-1"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="maths.html#cb4-1"></a><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="maths.html#cb8-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -521,12 +540,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="конъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.1.1</span> Конъюнкция в R</h5>
 <p>В качестве оператора логического И в R используется символ <code>&amp;</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="maths.html#cb10-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="maths.html#cb12-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2">a <span class="op">&amp;</span><span class="st"> </span>b</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="maths.html#cb14-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb14-2"><a href="maths.html#cb14-2"></a>a <span class="op">&amp;</span><span class="st"> </span>b</span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
@@ -572,12 +591,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.2.1</span> Дизъюнкция в R</h5>
 <p>В качестве оператора логического ИЛИ в R используется символ <code>|</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="maths.html#cb16-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="maths.html#cb18-1"></a><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb20-2" data-line-number="2">a <span class="op">|</span><span class="st"> </span>b</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="maths.html#cb20-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb20-2"><a href="maths.html#cb20-2"></a>a <span class="op">|</span><span class="st"> </span>b</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -624,8 +643,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="разделительная-дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.3.1</span> Разделительная дизъюнкция в R</h5>
 <p>В R эта логическая функция реализована, в отличие от предыдущих, не как оператор, а как функция с соответствующим названием:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">xor</span>(a, b)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="maths.html#cb22-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb22-2"><a href="maths.html#cb22-2"></a><span class="kw">xor</span>(a, b)</span></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -833,7 +852,7 @@ A + B = A \cup B = \{x: x \in A \vee x \in B\}
 <p>Тогда в новом множестве окажутся все элементы обоих исходных множеств. <a href="maths.html#or">Что-то</a> это напоминает.</p>
 <p>Во-вторых, множества можно <strong>умножать, или находить их пересечение</strong>:</p>
 <p><span class="math display">\[
-A + B = A \cap B = \{x: x \in A \wedge x \in B\}
+A \cdot B = A \cap B = \{x: x \in A \wedge x \in B\}
 \]</span></p>
 <center>
 <img src="img/intersection.jpeg" style="width: 50%">
@@ -871,10 +890,10 @@ A \times B = \{(a, b): a \in A, b \in B\}
 F: L \rightarrow N
 \]</span></p>
 <p>Более того, мы даже можем реализовать его в R:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">letter_number &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb24-2" data-line-number="2">  <span class="kw">which</span>(x <span class="op">==</span><span class="st"> </span>letters)</a>
-<a class="sourceLine" id="cb24-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="kw">letter_number</span>(<span class="st">&quot;a&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;z&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;i&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="maths.html#cb24-1"></a>letter_number &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb24-2"><a href="maths.html#cb24-2"></a>  <span class="kw">which</span>(x <span class="op">==</span><span class="st"> </span>letters)</span>
+<span id="cb24-3"><a href="maths.html#cb24-3"></a>}</span>
+<span id="cb24-4"><a href="maths.html#cb24-4"></a><span class="kw">letter_number</span>(<span class="st">&quot;a&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;z&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;i&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <pre><code>## [1] 26</code></pre>
 <pre><code>## [1] 9</code></pre>
@@ -958,11 +977,17 @@ A_n^k = \frac{n!}{(n-k)!}
 <p>Производная — штука очень полезная. Во-первых, она показывает <em>тангенс угла наклона касательной</em> в данной точке, а во-вторых <em>скорость и направление изменения функции</em> в данной точке. На самом деле, что одно, что другое рассказывает нам примерно об одном и том же.</p>
 <p>Давайте издалека. Как нам узнать, куда двигается функция в данной точке?</p>
 <p>Выберем точку, <span class="math inline">\(x_0\)</span> в которой мы хотим определить, куда и с какой скоростью движется наша функция. В этой точке функция имеет значение <span class="math inline">\(y_0\)</span>:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/deriv_1.jpeg">
+</center>
 <p>Шагнём на некоторую дистанцию <span class="math inline">\(\Delta x\)</span> <em>вправо</em> (по направлению оси <span class="math inline">\(x\)</span>). Назовём эту дистанцию <em>приращением</em>. В точке <span class="math inline">\(x_0 + \Delta x\)</span> фунция будет иметь какое-то значение <span class="math inline">\(y_0 + \Delta y\)</span>.</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/deriv_2.jpeg">
+</center>
 <p>Наша функция движется из точки <span class="math inline">\((x_0, y_0)\)</span> в точку <span class="math inline">\((x_0 + \Delta x, y_0 + \Delta y)\)</span>. То есть имеем следующий треугольник:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/deriv_3.jpeg">
+</center>
 <p>Если мы узнаем, каков угол <span class="math inline">\(\alpha\)</span> — а точнее <span class="math inline">\(\tan \alpha\)</span>, потому что так проще — то узнаем, куда движется функция.</p>
 <p><span class="math display">\[
 \tan \alpha = \frac{\Delta y}{\Delta x}
@@ -971,7 +996,6 @@ A_n^k = \frac{n!}{(n-k)!}
 <p><span class="math display">\[
 \tan \alpha_1, \tan \alpha_2, \tan \alpha_3, \dots
 \]</span></p>
-<p>КАРТИНКА</p>
 <p>У этой последовательности <em>есть предел</em>, и если мы его рассчитаем, то как раз и получим значение производной в данной точке.</p>
 <p><span class="math display">\[
 f&#39;(x_0) = \lim_{\Delta x \rightarrow 0} \frac{\Delta f(x)}{\Delta x} = \frac{df}{dx} (x_0)
@@ -1006,7 +1030,7 @@ z = \sqrt{x} + y^2
 <p>Если нас интересует производная по <span class="math inline">\(x\)</span>, то мы предполагаем следующее:</p>
 <p><span class="math display">\[
 y = \mathrm{const} \Rightarrow y^2 = \mathrm{const} = c \\
-\frac{\partial z}{\partial x} = (\sqrt(x) + c)&#39; = (\sqrt(x))&#39; + c&#39; = \frac{1}{2\sqrt{x}}
+\frac{\partial z}{\partial x} = (\sqrt{x} + c)&#39; = (\sqrt{x})&#39; + c&#39; = \frac{1}{2\sqrt{x}}
 \]</span></p>
 <p>Если же нас интересует производная по <span class="math inline">\(y\)</span>, то мы делаем так:</p>
 <p><span class="math display">\[
@@ -1018,23 +1042,27 @@ x = \mathrm{const} \Rightarrow \sqrt{x} = \mathrm{const} = c \\
 <div id="интеграл" class="section level3">
 <h3><span class="header-section-number">9.4.7</span> Интеграл</h3>
 <p>Интеграл — штука мощная, но нам он понадобится только с одной стороны. Нам надо будет искать площадь под кривой. Этим и займемся.</p>
-<p>Пусть в нас есть знакомая нам функция <span class="math inline">\(y = \log x\)</span>. Нам надо найти площадь по ней на отрезке от <span class="math inline">\(0\)</span> до <span class="math inline">\(3\)</span>.</p>
-<p>КАРТИНКА</p>
+<p>Пусть у нас есть знакомая нам функция <span class="math inline">\(y = \sqrt x\)</span>. Нам надо найти площадь по ней на отрезке от <span class="math inline">\(0\)</span> до <span class="math inline">\(3\)</span>.</p>
+<center>
+<img src="img/int_1.jpeg">
+</center>
 <p>Мы можем разбить этот отрезок на части размером <span class="math inline">\(\Delta x\)</span>, а саму площадь на соответствующие прямоугольники. Это нам позволит оценить площадь:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/int_2.jpeg">
+</center>
 <p><span class="math display">\[
 S \approx \sum_{i=1}^n y_i \Delta x_i
 \]</span></p>
 <p>Ясно, что чем более узкими прямоугольники у нас будут, тем точнее мы будем знать площадь. Снова нам на помощь приходят пределы:</p>
 <p><span class="math display">\[
-\lim_{\Delta x \rightarrow 0} \sum_{i=1}^n y_1 \Delta x_i = \int_a^b \log x \, dx
+\lim_{\Delta x \rightarrow 0} \sum_{i=1}^n y_1 \Delta x_i = \int_a^b \sqrt x \, dx
 \]</span></p>
 <p>Такая штука называется <strong>определённый интеграл</strong>. Определенный он потому, что мы знаем, площадь в каких границах нас интересует. <em>Определённый интеграл — это число.</em></p>
 <p><span class="math display">\[
-\int_0^3 \log x \, dx \approx 0.3
+\int_0^3 \sqrt x \, dx \approx 3.46
 \]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">integrate</span>(<span class="dt">f =</span> log, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</a></code></pre></div>
-<pre><code>## 0.2958369 with absolute error &lt; 7.8e-16</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a><span class="kw">integrate</span>(<span class="dt">f =</span> sqrt, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## 3.464102 with absolute error &lt; 4e-04</code></pre>
 <p>А раз есть определённых интеграл, значит есть и неопределённый. Здесь нам понадобиться вот эта визуализация:</p>
 <center>
 <img src="img/integral_anim.gif">
@@ -1337,9 +1365,9 @@ A_{ij} = (-1)^{i+j} M_{ij}
 \]</span>
 где <span class="math inline">\(M_{1j}\)</span> — дополнительный минор к элементу <span class="math inline">\(a_{1j}\)</span>.</p>
 <p>Но жизнь упрощается, когда есть R:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></a></code></pre></div>
-<pre><code>## [1] -1976</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb30-2"><a href="maths.html#cb30-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
+<pre><code>## [1] 1170</code></pre>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.5.9</span> След матрицы</h3>
@@ -1353,11 +1381,11 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>В R нет специальной функции, которая вычисляет след матрицы. Давайте её напишем!</p>
 <p>Функция должна принимать на вход матрицу, проверять, является ли матрица квадратной, и, если да, то возвращать значение следа матрицы, если нет, то печатать в консоль «матрица не является квадратной».</p>
 <p><em>Подсказка:</em> <code>?diag</code></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="kw">tr</span>(B)</a></code></pre></div>
-<pre><code>## [1] 331</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">tr</span>(C)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb32-2"><a href="maths.html#cb32-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb32-3"><a href="maths.html#cb32-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
+<pre><code>## [1] 253</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
 <img class="taskimg" src="img/maths.png">
@@ -1523,17 +1551,17 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Этот факт часто используется при доказательстве всяких невозможных математических утверждений, когда изначально принимается неверная посылка, но это не очевидно.<a href="maths.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>В теории множеств натуральные числа начинаются с нуля. Если нас интересуют натуральные числа без нуля, то мы будем использовать обозначение <span class="math inline">\(\mathbb{Z}_+\)</span>, то есть целые положительные числа.<a href="maths.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>По умолчанию считаем, что <span class="math inline">\(x \in \mathbb{R}\)</span>.<a href="maths.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>Некотрые определения математики заставляют тебя задуматься о том, что ты ещё не до конца постиг дзен абстрактной науки…<a href="maths.html#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p>Хотя и не все. Непрерывность является <em>необходимым, но недостаточным</em> условием для дифференцируемости.<a href="maths.html#fnref7" class="footnote-back">↩</a></p></li>
-<li id="fn8"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Этот факт часто используется при доказательстве всяких невозможных математических утверждений, когда изначально принимается неверная посылка, но это не очевидно.<a href="maths.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>В теории множеств натуральные числа начинаются с нуля. Если нас интересуют натуральные числа без нуля, то мы будем использовать обозначение <span class="math inline">\(\mathbb{Z}_+\)</span>, то есть целые положительные числа.<a href="maths.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>По умолчанию считаем, что <span class="math inline">\(x \in \mathbb{R}\)</span>.<a href="maths.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Некотрые определения математики заставляют тебя задуматься о том, что ты ещё не до конца постиг дзен абстрактной науки…<a href="maths.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Хотя и не все. Непрерывность является <em>необходимым, но недостаточным</em> условием для дифференцируемости.<a href="maths.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
