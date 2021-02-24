@@ -291,7 +291,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -409,9 +415,39 @@ x_i^* = \frac{x_i - \bar x}{s}
 <p>Коэффициент корреляции имеет четкие пределы изменения: <span class="math inline">\([-1; \,1]\)</span>. Крайнее левое значение говорит о том, что присутствует полная обратная линейная взаимосвязь, крайнее правое — что присутствует полная прямая линейная взаимосвязь. Как и ковариация, корреляция ловит <em>только линейную составляющую</em> связи, поэтому нулевое значение корреляци показывает, что между переменными отсутствует <em>линейная взаимосвязь</em>. Это всё еще не значит, что связи нет вовсе.</p>
 <div id="тестирование-статистической-значимости-коэффициента-корреляции" class="section level3">
 <h3><span class="header-section-number">16.2.1</span> Тестирование статистической значимости коэффициента корреляции</h3>
+<p>Оценку коэффициента корреляции мы получаем методом моментов, заменяя истинный момент <span class="math inline">\(\rho_{ij}\)</span> выборочным <span class="math inline">\(r_{ij}\)</span>:</p>
+<p><span class="math display">\[
+\hat \rho_{ij} = \overline{\big( (X_{ki} - \bar X_i) (X_{kj} - \bar X_j) \big)} = r_{ij}
+\]</span></p>
+<p>Если в генеральной совокупности связь между признаками отсутствует, то есть <span class="math inline">\(\rho_{ij} = 0\)</span>, будет ли равен нулю <span class="math inline">\(r_{ij}\)</span>? Можно с уверенностью сказать, что не будет, так как выборочный коэффициент корреляции — случайная величина. А мы помним, что вероятность принятия случайной величиной своего конкретного значения равна нулю.</p>
+<p>Тогда необходимо протестировать статистическую гипотезу:</p>
+<p><span class="math display">\[
+H_0: \rho_{ij} = 0 \; \text{(линейной связи нет)} \\
+H_1: \rho_{ij} \neq 0 \text{(наиболее частый вариант альтернативы)}
+\]</span></p>
+<p>Для проверки нулевой гипотезы используется следующая статистика:</p>
+<p><span class="math display">\[
+t = \frac{r_{ij}}{\sqrt{\frac{1 - r^2_{ij}}{n-2}}} \overset{H_0}{\thicksim} t(\nu = n-2)
+\]</span></p>
+<p>Вывод о статистической значимости коэффициента корреляции делается согласно <a href="statestim.html#statestim">алгоритму тестировния статистических гипотез</a>.</p>
 </div>
 <div id="доверительный-интервал-для-коэффициента-корреляции" class="section level3">
 <h3><span class="header-section-number">16.2.2</span> Доверительный интервал для коэффициента корреляции</h3>
+<p>С построением интервальной оценки коэффциента корреляции возникают некоторые сложности. Наша задача состоит в том, чтобы определить в каких границах будет лежать значение истинного коэффициента корреляции с заданной вероятностью:</p>
+<p><span class="math display">\[
+\mathrm{P} (\rho_{ij,\min} &lt; \rho_{ij} &lt; \rho_{ij,\max}) = \gamma
+\]</span></p>
+<p>Нам необходимо найти статистику, закон распределения корой известен, однако ранее упомянутся статистика не подходит, так как она имеет распределение Стьюдента, когда верна нулевая гипотеза об отсутствии связи. Если же мы строим интервальную оценку, нас интересует случай наличия связи.</p>
+<p>Такую статистику искали долго, и её удалось найти, когда ввели определённое преобразование выборочного критерия корреяции — <em>z-преобразования Фишера</em>:</p>
+<p><span class="math display">\[
+z(r_{ij}) = \frac{1}{2} \ln \frac{1 + r_{ij}}{1 - r_{ij}} \thicksim \mathrm{N}(\bar z_{ij}, \tfrac{1}{n-3}),
+\]</span>
+где <span class="math inline">\(n\)</span> — объём выборки, а <span class="math inline">\(\bar z_{ij}\)</span> получается расчётом по указанной формуле после подставления точечной оценки коэффициента корреляции.</p>
+<p>Тогда интервальная оценка для величины <span class="math inline">\(z_{ij, \mathrm{true}}\)</span> приобретает такой вид:</p>
+<p><span class="math display">\[
+\mathrm{P} \Big( \bar z_{ij} - t_\gamma \sqrt{\tfrac{1}{n-3}} &lt; z_{ij, \mathrm{true}} &lt; \bar z_{ij} + t_\gamma \sqrt{\tfrac{1}{n-3}}  \Big) = \gamma = \Phi(t_\gamma)
+\]</span></p>
+<p>Далее путём обратного преобразования получаются значения границ интервала <span class="math inline">\((\rho_{ij,\min}, \; \rho_{ij,\max})\)</span>.</p>
 
 </div>
 </div>
