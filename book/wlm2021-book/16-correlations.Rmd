@@ -355,7 +355,21 @@ $$
 
 Этот коэффициент позволяет рассчитать корреляцию между двумы дихотомическими шкалами. Он основан на расчёте статистики $\chi^2$.
 
+По двум дихотомическим переменным можно построить таблицу сопряженности. Разберемся на [котиках и пёсиках](https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/cats_n_dogs.csv):
 
+```{r, include=FALSE}
+tibble(id = 1:50,
+       species = rep(c('cat', 'dog'), each = 25),
+       size = sample(c('small', 'big'), size = 50, replace = TRUE, prob = c(1,2))) %>% write_csv('cats_n_dogs.csv')
+```
+
+```{r}
+cats_n_dogs <- read_csv('https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/cats_n_dogs.csv')
+```
+
+```{r}
+table(cats_n_dogs$species, cats_n_dogs$size)
+```
 
 
 
