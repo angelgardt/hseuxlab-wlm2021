@@ -393,6 +393,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
 <li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
 <li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
@@ -851,14 +853,98 @@ R_1 = \sqrt{1 - \frac{\det R}{A_{11}}}
 <pre><code>##      
 ##       big small
 ##   cat  17     8
-##   dog  13    12</code></pre>
+##   dog  16     9</code></pre>
 <p>По данной таблице можно рассчитать <strong>критерий согласия Пирсона (<span class="math inline">\(\chi^2\)</span>)</strong>:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="correlation.html#cb35-1"></a><span class="kw">chisq.test</span>(<span class="kw">table</span>(cats_n_dogs<span class="op">$</span>species, cats_n_dogs<span class="op">$</span>size))</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
 ## data:  table(cats_n_dogs$species, cats_n_dogs$size)
-## X-squared = 0.75, df = 1, p-value = 0.3865</code></pre>
+## X-squared = 0, df = 1, p-value = 1</code></pre>
+<p>Сам хи-квартар тестирует гипотезу о том, что между двумя категориальными переменными те связи. Он это делает путём сравнения теоретической и эмпирической таблицы частот.</p>
+<p>Эмпирическую таблицу частот мы получаем по результатам наблюдений (то, что мы делаем с помощью функции <code>table()</code>):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(X_1\)</span></th>
+<th align="center"><span class="math inline">\(X_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(Y_1\)</span></td>
+<td align="center"><span class="math inline">\(p_{X_1,Y_1} = a\)</span></td>
+<td align="center"><span class="math inline">\(p_{X_2,Y_1} = b\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(Y_2\)</span></td>
+<td align="center"><span class="math inline">\(p_{X_1,Y_2} = c\)</span></td>
+<td align="center"><span class="math inline">\(p_{X_2,Y_2} = d\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Далее вычисляются теоретические частоты:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(X_1^*\)</span></th>
+<th align="center"><span class="math inline">\(X_2^*\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(Y_1^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{a+b}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{b+a}{N}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(Y_2^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{c+d}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{d+c}{N}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>где <span class="math inline">\(N = a + b + c + d\)</span>.</p>
+<p>Затем считаются расхождения частот, которые суммируются и получается статистика <span class="math inline">\(\chi^2\)</span>:</p>
+<p><span class="math display">\[
+\chi^2 = \sum_{i,j} \frac{p_{X_i,Y_j} - p_{X_i^*,Y_j^*}}{p_{X_i^*,Y_j^*}}
+\]</span></p>
+<p>Статистика подчиняется распределению <span class="math inline">\(\chi^2\)</span>, и чем больше значение этой статистики, тем сильнее связаны признаки. В нашем случае мы получили значение 0, что говорит о абсолютном отсутствии связи между видом животного и его размером.</p>
+<p>Но по значению <span class="math inline">\(\chi^2\)</span> сложно что-то сказать о силе связи, поэтому его нормируют следующим образом, чтобы получить значения от 0 до 1, которые можно интерпретироват аналогично коэффициенту корреляции:</p>
+<p><span class="math display">\[
+\phi = \sqrt{\frac{\chi^2}{N}}
+\]</span></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="correlation.html#cb37-1"></a><span class="kw">sqrt</span>(</span>
+<span id="cb37-2"><a href="correlation.html#cb37-2"></a>  <span class="kw">chisq.test</span>(<span class="kw">table</span>(cats_n_dogs<span class="op">$</span>species, cats_n_dogs<span class="op">$</span>size))<span class="op">$</span>statistic <span class="op">/</span><span class="st"> </span></span>
+<span id="cb37-3"><a href="correlation.html#cb37-3"></a><span class="st">    </span><span class="kw">nrow</span>(cats_n_dogs)</span>
+<span id="cb37-4"><a href="correlation.html#cb37-4"></a>)</span></code></pre></div>
+<pre><code>## X-squared 
+##         0</code></pre>
+<p>Так как в нашем случае значение <span class="math inline">\(\chi^2\)</span> было 0, то и коэффициент <span class="math inline">\(\phi\)</span> мы получили 0.</p>
+</div>
+<div id="бисериальный-коэффициент-корреляции" class="section level3">
+<h3><span class="header-section-number">16.5.2</span> Бисериальный коэффициент корреляции</h3>
+<p>Этот коэффициент используется для вычисления корреляции между количественной (<span class="math inline">\(y\)</span>) и категориальной (<span class="math inline">\(x\)</span>) шкалой и рассчитывается следующим образом:</p>
+<p><span class="math display">\[
+r = \frac{\bar x_1 - \bar x_2}{s_y} \sqrt{\frac{n_1 n_2}{N(N-1)}},
+\]</span>
+где <span class="math inline">\(\bar x_1\)</span> — среднее по элементам переменной <span class="math inline">\(y\)</span> из группы <span class="math inline">\(x_1\)</span>, <span class="math inline">\(\bar x_2\)</span> — среднее по элементам <span class="math inline">\(y\)</span> из группы <span class="math inline">\(x_2\)</span>, <span class="math inline">\(s_y\)</span> — стандартное отклонение по переменной <span class="math inline">\(y\)</span>, <span class="math inline">\(n_1\)</span> — число элементов в группе <span class="math inline">\(x_1\)</span>, <span class="math inline">\(n_2\)</span> — число элементов в группе <span class="math inline">\(x_2\)</span>, <span class="math inline">\(N\)</span> — общее число элементов.</p>
+<p>Важно отметить, что несмотря на то, что значение коэффициента может быть как положительным, так и отрицательным, это <em>не влияет на интерпретацию</em>. Это одно из исключений из общего правила.</p>
+<p>В R его можно вычислить так:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="correlation.html#cb39-1"></a>ltm<span class="op">::</span><span class="kw">biserial.cor</span>(dehum<span class="op">$</span>GR_average, dehum<span class="op">$</span>SEX)</span></code></pre></div>
+<pre><code>## [1] -0.01406144</code></pre>
+</div>
+<div id="рангово-бисериальный-коэффициент-корреляции" class="section level3">
+<h3><span class="header-section-number">16.5.3</span> Рангово-бисериальный коэффициент корреляции</h3>
+<p>Если у нас не количественная, а ранговая шкала, то применяется рангово-бисериальный коэффициент:</p>
+<p><span class="math display">\[
+r = \frac{2(\bar x_1 - \bar x_2)}{N},
+\]</span>
+где <span class="math inline">\(\bar x_1\)</span> — средний ранг в группе <span class="math inline">\(x_1\)</span>, <span class="math inline">\(\bar x_2\)</span> — средний ранг в группе <span class="math inline">\(\x_2\)</span>, <span class="math inline">\(N\)</span> — общее количество наблюдений.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="correlation.html#cb41-1"></a>polycor<span class="op">::</span><span class="kw">polyserial</span>(dehum<span class="op">$</span>DP, dehum<span class="op">$</span>SEX)</span></code></pre></div>
+<pre><code>## [1] 0.0530944</code></pre>
 
 </div>
 </div>
