@@ -861,7 +861,7 @@ R_1 = \sqrt{1 - \frac{\det R}{A_{11}}}
 ## 
 ## data:  table(cats_n_dogs$species, cats_n_dogs$size)
 ## X-squared = 0, df = 1, p-value = 1</code></pre>
-<p>Сам хи-квартар тестирует гипотезу о том, что между двумя категориальными переменными те связи. Он это делает путём сравнения теоретической и эмпирической таблицы частот.</p>
+<p>Сам хи-квадрат тестирует гипотезу о том, что между двумя категориальными переменными нет связи. Он это делает путём сравнения теоретической и эмпирической таблицы частот.</p>
 <p>Эмпирическую таблицу частот мы получаем по результатам наблюдений (то, что мы делаем с помощью функции <code>table()</code>):</p>
 <table>
 <thead>
@@ -896,13 +896,13 @@ R_1 = \sqrt{1 - \frac{\det R}{A_{11}}}
 <tbody>
 <tr class="odd">
 <td align="center"><span class="math inline">\(Y_1^*\)</span></td>
-<td align="center"><span class="math inline">\(\frac{a+b}{N}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{b+a}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(a+b) \times (a+c)}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(b+a) \times (b+d)}{N}\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(Y_2^*\)</span></td>
-<td align="center"><span class="math inline">\(\frac{c+d}{N}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{d+c}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(c+d) \times (a+c)}{N}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(d+c) \times (b + d)}{N}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -942,7 +942,7 @@ r = \frac{\bar x_1 - \bar x_2}{s_y} \sqrt{\frac{n_1 n_2}{N(N-1)}},
 <p><span class="math display">\[
 r = \frac{2(\bar x_1 - \bar x_2)}{N},
 \]</span>
-где <span class="math inline">\(\bar x_1\)</span> — средний ранг в группе <span class="math inline">\(x_1\)</span>, <span class="math inline">\(\bar x_2\)</span> — средний ранг в группе <span class="math inline">\(\x_2\)</span>, <span class="math inline">\(N\)</span> — общее количество наблюдений.</p>
+где <span class="math inline">\(\bar x_1\)</span> — средний ранг в группе <span class="math inline">\(x_1\)</span>, <span class="math inline">\(\bar x_2\)</span> — средний ранг в группе <span class="math inline">\(x_2\)</span>, <span class="math inline">\(N\)</span> — общее количество наблюдений.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="correlation.html#cb41-1"></a>polycor<span class="op">::</span><span class="kw">polyserial</span>(dehum<span class="op">$</span>DP, dehum<span class="op">$</span>SEX)</span></code></pre></div>
 <pre><code>## [1] 0.0530944</code></pre>
 
