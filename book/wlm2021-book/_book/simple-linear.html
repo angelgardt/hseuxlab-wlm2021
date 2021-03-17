@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Общие линейные модели. Простая линейная регрессия | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Общие линейные модели. Простая линейная регрессия | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,9 +50,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -159,7 +156,7 @@
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
 <li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
-<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
 <li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
 <li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
@@ -291,7 +288,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,8 +320,32 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#предсказания-с-помощью-модели"><i class="fa fa-check"></i><b>17.4</b> Предсказания с помощью модели</a><ul>
+<li class="chapter" data-level="17.4.1" data-path="simple-linear.html"><a href="simple-linear.html#индивидуальные-предсказания"><i class="fa fa-check"></i><b>17.4.1</b> Индивидуальные предсказания</a></li>
+<li class="chapter" data-level="17.4.2" data-path="simple-linear.html"><a href="simple-linear.html#групповые-предсказания"><i class="fa fa-check"></i><b>17.4.2</b> Групповые предсказания</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
@@ -359,7 +386,52 @@
             <section class="normal" id="section-">
 <div id="simple_linear" class="section level1">
 <h1><span class="header-section-number">17</span> Общие линейные модели. Простая линейная регрессия</h1>
+<div id="формализация-модели" class="section level2">
+<h2><span class="header-section-number">17.1</span> Формализация модели</h2>
+<p>Коррелляция позволяет тестировать гипотезы о связях между переменными. Однако кроме проверки наличия или отсутствия связей между переменными, нас ещё интересует, как бы мы могли управлять одними переменнымис помощью других. Для этого необходимо построение некоторой модели.</p>
+<p>Когда мы строили диаграммы рассеяния, мы добавляли на них <em>линию тренда</em>, которая отражала линейную составляющую связи между визуализируемыми переменными. Визуально мы такую переменную проведём очень легко, а вот как мы нам получить её математическое выражение?</p>
+<p>Первое, что нужно вспомнить — это общее уравнение прямой. Оно выглядит так:</p>
+<p><span class="math display">\[
+y = kx + b,
+\]</span></p>
+<p>где <span class="math inline">\(k\)</span> — угловой коэффициент (slope), задающий угол наклона прямой к оси <span class="math inline">\(x\)</span>, а <span class="math inline">\(b\)</span> — свободный член (intercept), который обозначает ординату точки пересечения прямой с осью <span class="math inline">\(y\)</span>.</p>
+<p>Итого, чтобы получить уравнение прямой, нам надо знать два этих числа. Мы привыкли к тому, что неизвестными являются <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span>, но теперь, когда мы ищем уравнение прямой на основе имебщихся измерений, ситуация изменяется. Запишем уравнение, используя общепринятие обозначения.</p>
+<p><span class="math display">\[
+y = b_0 + b_1 x
+\]</span></p>
+<p>Уравнение отражает зависимость между переменными <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span>, значения которых нам известны, так как у нас есть результаты измерений, а вот неизвестными теперь являются <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>.</p>
+</div>
+<div id="идентификация-модели" class="section level2">
+<h2><span class="header-section-number">17.2</span> Идентификация модели</h2>
+<div id="метод-наименьших-квадратов" class="section level3">
+<h3><span class="header-section-number">17.2.1</span> Метод наименьших квадратов</h3>
+</div>
+<div id="матричное-вычисление-коэффициентов" class="section level3">
+<h3><span class="header-section-number">17.2.2</span> Матричное вычисление коэффициентов</h3>
+</div>
+</div>
+<div id="тестирование-качества-модели" class="section level2">
+<h2><span class="header-section-number">17.3</span> Тестирование качества модели</h2>
+<div id="коэффициент-детерминации" class="section level3">
+<h3><span class="header-section-number">17.3.1</span> Коэффициент детерминации</h3>
+</div>
+<div id="статистическая-значимость-модели" class="section level3">
+<h3><span class="header-section-number">17.3.2</span> Статистическая значимость модели</h3>
+</div>
+<div id="статистическая-значимость-отдельных-предикторов" class="section level3">
+<h3><span class="header-section-number">17.3.3</span> Статистическая значимость отдельных предикторов</h3>
+</div>
+</div>
+<div id="предсказания-с-помощью-модели" class="section level2">
+<h2><span class="header-section-number">17.4</span> Предсказания с помощью модели</h2>
+<div id="индивидуальные-предсказания" class="section level3">
+<h3><span class="header-section-number">17.4.1</span> Индивидуальные предсказания</h3>
+</div>
+<div id="групповые-предсказания" class="section level3">
+<h3><span class="header-section-number">17.4.2</span> Групповые предсказания</h3>
 
+</div>
+</div>
 </div>
             </section>
 
@@ -417,6 +489,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
