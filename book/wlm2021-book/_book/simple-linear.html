@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>17 Общие линейные модели. Простая линейная регрессия | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="17 Общие линейные модели. Простая линейная регрессия | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,8 +50,75 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -156,7 +223,7 @@
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
 <li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
-<li class="chapter" data-level="7.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
 <li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
 <li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
@@ -236,7 +303,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -341,10 +408,8 @@
 <li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
 <li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
 </ul></li>
-<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#предсказания-с-помощью-модели"><i class="fa fa-check"></i><b>17.4</b> Предсказания с помощью модели</a><ul>
-<li class="chapter" data-level="17.4.1" data-path="simple-linear.html"><a href="simple-linear.html#индивидуальные-предсказания"><i class="fa fa-check"></i><b>17.4.1</b> Индивидуальные предсказания</a></li>
-<li class="chapter" data-level="17.4.2" data-path="simple-linear.html"><a href="simple-linear.html#групповые-предсказания"><i class="fa fa-check"></i><b>17.4.2</b> Групповые предсказания</a></li>
-</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
@@ -403,35 +468,294 @@ y = b_0 + b_1 x
 </div>
 <div id="идентификация-модели" class="section level2">
 <h2><span class="header-section-number">17.2</span> Идентификация модели</h2>
+<p>Идентификация модели сводится к нахождению коэффициентов <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>. Мы хотим провести такую прямую, которая наилучшим образом будет описывать имеющуюся в данных закономерность, поэтому необходимо найти критерий, по которому мы будем определять «хорошесть» нашей прямой.</p>
+<p>Вспомним следующий важный факт: <em>ни одна модель не идеальна, у модели всегда есть ошибка</em>. Таким образом, модель, «хорошесть» которой мы пытаемся определить выглядит так:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 x_i + e_i
+\]</span></p>
+<p>Собственно, задача идентификации модели — <em>минимизировать ошибку модели</em>, подбирая её параметры.</p>
+<p><span class="math display">\[
+Q_{res} = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n \big(y_i - (b_0 + b_1x_i) \big)^2 \rightarrow \underset{b_0, b_1}{\min}
+\]</span></p>
+<p>Ошибки модели <span class="math inline">\(e_i\)</span> также называются <em>остатки (residuals)</em>, то есть то, что модель не смогла объяснить. Обозначенное выше условие минимизации ошибки лежит в основе <strong>метода наименьших квадратов</strong>.</p>
 <div id="метод-наименьших-квадратов" class="section level3">
 <h3><span class="header-section-number">17.2.1</span> Метод наименьших квадратов</h3>
+<p>Если внимательно посмотреть на условие минимизации ошибки модели, то можно увидеть, что оно представляет собой функцию двух аргументов:</p>
+<p><span class="math display">\[
+f(b_0, b_1) = \sum_{i=1}^n (y_i - b_0 - b_1 x_i)^2
+\]</span></p>
+<p>Это квадративная функция, и чтобы нам дальше удобнее было с ней работать, раскроем скобки:</p>
+<p><span class="math display">\[
+f(b_0, b_1) = \sum_{i=1}^n (y_i - b_0 - b_1 x_i)(y_i - b_0 - b_1 x_i) \\
+f(b_0, b_1) = \sum_{i=1}^n (y_i^2 - 2 x_i y_i b_1 - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
+\]</span></p>
+<p>Чтобы определить, при каких значения <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span> функция будет принимать минимальное значение, нужно взять две <a href="maths.html#partial">частные производные</a> по <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span> и приравнять их в нулю.</p>
+<p>Берём частные производные:</p>
+<p><span class="math display">\[
+\frac{f(b_0. b_1)}{\partial b_0} = \sum_{i=1}^n (-2 y_i + 2 b_0 + 2 x_i b_1) = -2 \sum_{i=1}^n \big(y_i - (b_0 + b_1 x_i) \big) \\
+\frac{f(b_0, b_1)}{\partial b_1} = \sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = -2 \sum_{i=1}^n \big(y_i - (b_0+ b_1 x_i) \big) x_i
+\]</span></p>
+<p>Приравниваем производные к нулю и решаем систему уравнений:</p>
+<p><span class="math display">\[
+\cases {
+-2 \sum_{i=1}^n \big(y_i - (b_0 + b_1 x_i) \big) = 0, \\
+-2 \sum_{i=1}^n \big(y_i - (b_0+ b_1 x_i) \big) x_i = 0;
+}
+\]</span>
+<span class="math display">\[
+\cases {
+b_1 \sum_{i=1}^n x_i + \sum_{i=1}^n b_0 = \sum_{i=1}^n y_i, \\
+b_1 \sum_{i=1}^n x_i^2 + b_0 \sum_{i=1}^n x_i = \sum_{i=1}^n x_i y_i;
+}
+\]</span>
+<span class="math display">\[
+\cases {
+b_1 \sum_{i=1}^n x_i + n b_0 = \sum_{i=1}^n y_i, \\
+b_1 \sum_{i=1}^n x_i^2 + b_0 \sum_{i=1}^n x_i = \sum_{i=1}^n x_i y_i;
+}
+\]</span></p>
+<p><span class="math display">\[
+\cases {
+b_0 = \dfrac{\sum_{i=1}^n y_i}{n} - b_1 \dfrac{\sum_{i=1}^n x_i}{n} = \bar y - b_1 \bar x \\
+b_1 = \dfrac{n \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \sum_{i=1}^n y_i}{n \sum_{i=1}^n x_i^2 - \big( \sum_{i=1}^n x_i \big)^2} = \dfrac{\overline {xy} - \bar x \cdot \bar y}{S^2_x}
+}
+\]</span></p>
+<p>Это всё, конечно, очень хорошо и приятно, но если усваивается trudnovato, то вот основной месседж:</p>
+<p><em>задача индентификации модели линейной регрессии имеет аналитическое решение</em>, то есть мы можем подобрать коэффициенты модели, опираясь только на имеющиеся данные.</p>
+<p>Это, безусловно, радостно и приятно.</p>
 </div>
 <div id="матричное-вычисление-коэффициентов" class="section level3">
 <h3><span class="header-section-number">17.2.2</span> Матричное вычисление коэффициентов</h3>
+
+<p>Аналитическое вычисление коэффициентов выглядит громоздко и трудоёмко — хотелось бы как-то попроще. Нам на помощь приходят <a href="maths.html#matrix">матрицы</a>!</p>
+<p>Вспомним, что имеющуюся у нас модель мы можем переписать в следующем виде:</p>
+<p><span class="math display">\[
+\boldsymbol{y}= \boldsymbol{X}\boldsymbol{b},
+\]</span>
+где <span class="math inline">\(\boldsymbol{y}\)</span> — вектор нашей зависимой переменной, <span class="math inline">\(\boldsymbol{X}\)</span> — матрица независимых переменных, <span class="math inline">\(\boldsymbol{b}\)</span> — вектор коэффициентов модели.</p>
+<p>Может возникнуть резонный вопрос: «почему <span class="math inline">\(\boldsymbol{X}\)</span> матрица, ведь у нас только одна независимая переменная?». Так как вектор коэффициентов модели <span class="math inline">\(\boldsymbol{b}\)</span> содержит два элемента <span class="math inline">\((b_0, b_1)^\mathrm{T}\)</span>, то для удобства вычислений к вектору значений предиктора <span class="math inline">\(x\)</span> дообавляют вектор, состоящий из единиц, который будет отвечать за интерсепт нашей модел — в результате получается матрица <span class="math inline">\(\boldsymbol{X}\)</span>, которая имеет следующий вид:</p>
+<p><span class="math display">\[
+\boldsymbol{X}= 
+\begin{pmatrix}
+1 &amp; x_{11} \\
+1 &amp; x_{21} \\
+1 &amp; x_{31} \\
+\vdots &amp; \vdots \\
+1 &amp; x_{n1}
+\end{pmatrix}
+\]</span></p>
+<p>При умножении вектора <span class="math inline">\(\boldsymbol{b}= (b_0, b_1)^\mathrm{T}\)</span> на матрицу <span class="math inline">\(\boldsymbol{X}\)</span> как раз будут получатся выражения типа <span class="math inline">\(b_0 \cdot 1 + b_1 x_{i1}\)</span>, а это то, что нам надо.</p>
+<p>Опуская детали, сразу укажем матричное решение для коэффициентов модели:</p>
+<p><span class="math display">\[
+\boldsymbol{b}= (X^\mathrm{T}X)^{-1}X^\mathrm{T}Y
+\]</span></p>
+<p>Выглядит проще, не так ли?</p>
+<blockquote>
+<p>Нужно заметить ещё один важный момент: в ходе вычисления коэффициентов мы берём обратную матрицу от матрицы <span class="math inline">\(X^\mathrm{T}X\)</span>. Этот факт нам будет полезен в следующем разделе.</p>
+</blockquote>
 </div>
 </div>
 <div id="тестирование-качества-модели" class="section level2">
 <h2><span class="header-section-number">17.3</span> Тестирование качества модели</h2>
+<p>Супер! Мы построили модель! Теперь надо понять, насколько она хороша для наших данных. Но перед этим нам надо сделать шаг назад и прояснить ряд моментов, на которые мы имплицитно опираемся, но пока ещё не проговорили.</p>
+<p>Мы помним, что работая с выборкой, мы хотим получить информацию о генеральной совокупности. Строя модель, мы предполагаем, что в генеральной совокупности есть связь, которая описывается следующим уравнением:</p>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \varepsilon_i
+\]</span></p>
+<p>Таким образом, построив модель, мы получили оценки генеральных параметров:</p>
+<p><span class="math display">\[
+b_0 = \hat \beta_0, \quad b_1 = \hat \beta_1, \quad e_i = \hat \varepsilon_i
+\]</span></p>
+<p>Кроме того, при построении модели мы также исходили из нескольких предположений.</p>
+<ul>
+<li>Во-первых, мы считали, что связь между предикторами и зависимой переменной <strong>линейная</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</li>
+<li>Во-вторых, мы предположили, что наша модель полностью улавливает тренд закономерности, то остатки (ошибоки) модели случайны. Их <strong>математическое ожидание равно нулю</strong>: <span class="math inline">\(\mathbb{E} \varepsilon = 0\)</span>,</li>
+<li>а также <strong>остатки модели не коррелируют между собой</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>: <span class="math inline">\(\mathbb{E} (\underset{i \neq j}{\varepsilon_i \varepsilon_j}) = 0\)</span>.</li>
+<li>Ну, а раз остатки заключают в себе случайный компонент модели, то они должны быть <strong>распределены нормально</strong> <span class="math inline">\(\varepsilon \thicksim \mathrm{N}(0, \sigma^2)\)</span>,</li>
+<li>причём их <strong>дисперсия должна быть одинакова при любых значениях предиктора</strong> <span class="math inline">\(\sigma_i^2 = \sigma^2 = \mathrm{const}\)</span>.</li>
+</ul>
+<p>Так-с, ну, теперь можно приступать с анализу модели.</p>
 <div id="коэффициент-детерминации" class="section level3">
 <h3><span class="header-section-number">17.3.1</span> Коэффициент детерминации</h3>
+<p>Первое, что хочется понять — насколько наша модель информативна. Иначе говоря, сколько дисперсии наших данных она смогла объяснить. На практике работают не с дисперсией, а с <em>суммой квадратов</em>, что почти то же самое.</p>
+<p>Вся изменчивость наших данных <strong>(total sum of squares, TSS)</strong> определяется так:</p>
+<p><span class="math display">\[
+TSS = \sum_{i=1}^n (\bar y - y_i)^2
+\]</span></p>
+<p>Одну часть этой изменчивости объясняет модель <strong>(explained sum of squares, ESS)</strong>:</p>
+<p><span class="math display">\[
+ESS = \sum_{i=1}^n (\bar y - \hat y_i)^2
+\]</span></p>
+<p>Другую часть этой изменчивости модель не улавливает, и она остаётся необъяснённой (остаточной) <strong>(residual sum of squares, RSS)</strong>:</p>
+<p><span class="math display">\[
+RSS = \sum_{i=1}^n (y_i - \hat y_i)^2
+\]</span></p>
+<p><a href="https://en.wikipedia.org/wiki/Partition_of_sums_of_squares#Proof">Очевидно</a>, что</p>
+<p><span class="math display">\[
+TSS = ESS + RSS
+\]</span></p>
+<p>В качестве метрики информативности модели используется <strong>коэффициент детерминации</strong> <span class="math inline">\(R^2\)</span>, который вычисляется по формуле:</p>
+<p><span class="math display">\[
+R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS},
+\]</span></p>
+<p>из чего следует, что <span class="math inline">\(0 \leq R^2 \leq 1\)</span>, а значит коэффициент детерминации может быть интерпретирован как <em>доля дисперсии данных, которую смогла объяснить модель</em>.</p>
+<p>Считается, что если модель объясняется 0.8 и более дисперсии данных, то она хороша, хотя этот порог о-о-о-о-очень сильно зависит от конкретной задачи и исследовательской области.</p>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>Может ли коэффициент детерминации быть отрицательным?</p>
+</div>
 </div>
 <div id="статистическая-значимость-модели" class="section level3">
 <h3><span class="header-section-number">17.3.2</span> Статистическая значимость модели</h3>
+<p>На основе коэффициента детерминации мы можем сделать вывод о том, насколько в целом наша модель статистически значима. Для этого нам надо заняться тестированием некоторой статистической гипотезы. Она формулируется так:</p>
+<p><span class="math display">\[
+H_0: \beta_0 = \beta_1 = 0 \\
+H_1: \beta_0 \neq 0 \vee \beta_1 \neq 0
+\]</span></p>
+<p>Для тестирования данной гипотезы используется следующая статистика:</p>
+<p><span class="math display">\[
+F_{\mathrm{df_e, df_r}} = \frac{MS_{exp}}{MS_{res}} = \frac{ESS / \mathrm{df_e}}{RSS / \mathrm{df_r}} \overset{H_0}{\thicksim} F(\mathrm{df_e, df_r}),
+\]</span></p>
+<p>где <span class="math inline">\(\mathrm{df_e} = p - 1\)</span>, <span class="math inline">\(\mathrm{df_r} = n-p\)</span>, <span class="math inline">\(p\)</span> — число предикторов в модели, <span class="math inline">\(n\)</span> — число наблюдений.</p>
+<p>Как и всегда, для <span class="math inline">\(F_{\mathrm{ob}}\)</span> рассчитывается <em>p-value</em>, на основе значения которого мы делаем статистический вывод о статистическом равенствер коэффициента детерминации нулю, а следовательно, о статистической значимости модели в целом.</p>
 </div>
 <div id="статистическая-значимость-отдельных-предикторов" class="section level3">
 <h3><span class="header-section-number">17.3.3</span> Статистическая значимость отдельных предикторов</h3>
+<p>Если модель значима в целом, значит среди её коэффициентов есть те, которые статистически отличны от нуля. Иначе говоря, есть такие предикторы, которые значимо влияют на нашу целевую переменную. В случае простой линейной регрессии предиктора всего два — intercept и slope. Intercept не всегда интерпретабелен, поэтому основное внимание уделают угловому коэффициенту.</p>
+<p>Статистическая значимость коэффициента тестируется так:</p>
+<p>$$
+H_0: _1 = 0 \
+H_1: _1 0 \
+t =  =   t(= n-p)</p>
+<p>$$</p>
 </div>
 </div>
-<div id="предсказания-с-помощью-модели" class="section level2">
-<h2><span class="header-section-number">17.4</span> Предсказания с помощью модели</h2>
-<div id="индивидуальные-предсказания" class="section level3">
-<h3><span class="header-section-number">17.4.1</span> Индивидуальные предсказания</h3>
+<div id="простая-линейная-регрессия-в-r" class="section level2">
+<h2><span class="header-section-number">17.4</span> Простая линейная регрессия в R</h2>
+<p>Хвала небесам, что в R всё то, что написано выше, делается в 1,5 строки кода.</p>
+<p>Считаем файл данных:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="simple-linear.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="simple-linear.html#cb5-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span>
+<span id="cb5-2"><a href="simple-linear.html#cb5-2"></a>ofv &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&#39;http://www.statsci.org/data/general/fev.txt&#39;</span>, <span class="dt">delim =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   ID = col_double(),
+##   Age = col_double(),
+##   FEV = col_double(),
+##   Height = col_double(),
+##   Sex = col_character(),
+##   Smoker = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="simple-linear.html#cb7-1"></a><span class="kw">str</span>(ofv)</span></code></pre></div>
+<pre><code>## tibble [654 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ ID    : num [1:654] 301 451 501 642 901 ...
+##  $ Age   : num [1:654] 9 8 7 9 9 8 6 6 8 9 ...
+##  $ FEV   : num [1:654] 1.71 1.72 1.72 1.56 1.9 ...
+##  $ Height: num [1:654] 57 67.5 54.5 53 57 61 58 56 58.5 60 ...
+##  $ Sex   : chr [1:654] &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Male&quot; ...
+##  $ Smoker: chr [1:654] &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   ID = col_double(),
+##   ..   Age = col_double(),
+##   ..   FEV = col_double(),
+##   ..   Height = col_double(),
+##   ..   Sex = col_character(),
+##   ..   Smoker = col_character()
+##   .. )</code></pre>
+<p>Описание данных из источника:
+«FEV (forced expiratory volume) is an index of pulmonary function that measures the volume of air expelled after one second of constant effort. The data contains determinations of FEV on 654 children ages 6-22 who were seen in the Childhood Respiratory Desease Study in 1980 in East Boston, Massachusetts. The data are part of a larger study to follow the change in pulmonary function over time in children.»</p>
+<p>Файл содержит данные об объёме форсированного выдоха (ОФВ) (forced expiratory volume, FEV)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> у курящих и некурящих детей (3–19 лет) и информацию о поле, возрасте, росте и ID пациента.</p>
+<p>Попробуем построить модель, которая будет описывать зависимость ОФВ от возраста пациента.</p>
+<p>Первоначально посмотрим, есть ли вообще связь между данными переменными:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="simple-linear.html#cb9-1"></a><span class="kw">cor.test</span>(ofv<span class="op">$</span>FEV, ofv<span class="op">$</span>Age)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  ofv$FEV and ofv$Age
+## t = 29.533, df = 652, p-value &lt; 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.7216444 0.7874568
+## sample estimates:
+##      cor 
+## 0.756459</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="simple-linear.html#cb11-1"></a>ofv <span class="op">%&gt;%</span></span>
+<span id="cb11-2"><a href="simple-linear.html#cb11-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Age, FEV)) <span class="op">+</span></span>
+<span id="cb11-3"><a href="simple-linear.html#cb11-3"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb11-4"><a href="simple-linear.html#cb11-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Связь есть и довольно приличная, что весьма ожидаемо.</p>
+<p>Линейная регрессия в R строить с помощью функции <code>lm()</code>, которой необходимо в формульном виде указать модель, а также данные, на основе которых модель должна быть построена.</p>
+<p>Формульная запись в общем виде выглядит так: <code>y ~ x</code>, где <code>y</code> — интересующая нас целевая переменная, а <code>x</code> — предиктор нашей модели.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="simple-linear.html#cb13-1"></a>model &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age, ofv)</span></code></pre></div>
+<p>Записываем нашу модель в объект, а затем передаём этот объект в функцию <code>summary()</code>, которая выведет нам всю необхожимую информацию:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="simple-linear.html#cb14-1"></a><span class="kw">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.57539 -0.34567 -0.04989  0.32124  2.12786 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 0.431648   0.077895   5.541 4.36e-08 ***
+## Age         0.222041   0.007518  29.533  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.5675 on 652 degrees of freedom
+## Multiple R-squared:  0.5722, Adjusted R-squared:  0.5716 
+## F-statistic: 872.2 on 1 and 652 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Аутпут этой функции надо читать снизу вверх. Прежде всего, нас интересует статистическая значимость модели в целом, поэтому мы смотрим на значение F-статистики и p-value для неё. Здесь p-value много меньше конвенционального .05, поэтому мы делаем вывод о том, что модель статистически значима.</p>
+<p>Далее мы смотрим на коэффициент детерминации. В данном случае он равен примерно 0.6, что неплохо.</p>
+<p>И затем мы смотрим на результаты тестирования значимости отдельных предикторов. Мы видим, что предиктор «возраст» оказался статистически значимым, так как p-значение, рассчитанное для t-статистикии, значительно меньше конценциональнгого .05. Следовательно, мы делаем вывод о том, что возраст связан в ОФВ. Более того, так как у нас оценка коэффициента при предикторе, мы можем сказать, что с увеличением возраста на единицу ОФВ в среднем возрастрает на 0.22 л.</p>
+<p>Строго говоря, регрессия как и корреляция не показывает причинно следственно связи, но в данном случае, опираясь на здравый смысл, мы эту причинно-следственную связь имеем. В общем случае, когда мы хотим делать вывод о причинно-следственной связи, проводя регрессионный анализ, нам необходимо либо концептуально обосновывать нашу модель и теоретически доказывать причинно-следственный характер изучаемой связи, либо использовать экспериментальный дизайн исследования.</p>
 </div>
-<div id="групповые-предсказания" class="section level3">
-<h3><span class="header-section-number">17.4.2</span> Групповые предсказания</h3>
+<div id="диагностика-модели" class="section level2">
+<h2><span class="header-section-number">17.5</span> Диагностика модели</h2>
+<p>Окей, наша модель значима в целом, а значит значимы и её предикторы, она объясняет приемлемую долю дисперсии данных. Неужели этого недостаточно?</p>
+<p>Недостаточно. При построении модели мы исходили из ряда предпосылок. Напомним их:</p>
+<ul>
+<li>линейность связи</li>
+<li>нормальность распределения остатков и нулевое математическое ожидание</li>
+<li>равенствво дисперсии остатков при различных значениях предикторов (гомоскедастичность)</li>
+<li>независимость остатков от предикторов модели</li>
+</ul>
+<p>Линейность связи мы проверили, когда визуализировали корреляцию между переменными.</p>
+<p>Другие предпосылки мы можем проверить следующим образом:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="simple-linear.html#cb16-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb16-2"><a href="simple-linear.html#cb16-2"></a><span class="kw">plot</span>(model)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="simple-linear.html#cb17-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p>Данные графики позволяют провести диагностику модели.</p>
+<p>Нормальность распределения остатков отображена на правом верхнем графике. Если все наблюдения находятся на или близко к пунктирной линии, то распределение остатков не отличается от нормального.</p>
+<p>Два левых графика позволяют проверить независимость остатков от предикторов модели и требование гомоскедастичности. На графике не должно определяться никаких явных паттернов. В данном случае мы видим, что красная линия тренда демонстрирует нам явный паттерн стремления вниз (верхний график) и явный паттерн линейной связи (нижний график), что говорит о том, что требование независимости остатков модели от предикторов не выполнено, и модель не до конца ухватывает имеющиеся закономерности.</p>
+<p>Кроме того, мы видим разный разброс остатков, что говорит о невыполнении требования гомоскедастичности — остатки гетероскедастичны.</p>
+<p>Последний график позволяет определить <em>влиятельные наблюдения</em>. Это такие наблюдения, удаление/добавление которых сильно повлияет на положение регрессионной прямой. В данном случае все наблюдения располагаются в пределах критических значений расстояния Кука (метрика влиятельности наблюдений), так как на график даже не попала красная пунктирная линия.</p>
+<p>Что можно заключить по результатам диагностики модели? Модель необходимо дорабатывать. Она ловит часть закономерности, присутствующей в данных, но необходимо вводить дополнительные предикторы, чтобы регрессия ухватывала имеющуюся закономерность более полно.</p>
 
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Важная линейность именно относительно параметров модели.<a href="simple-linear.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>И с предикторами модели тоже не коррелируют.<a href="simple-linear.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Объём воздуха, выдыхаемого за первую секунду манёвра форсированного выдоха. Используется для расчёта индекса наличия/отсутствия ухудшения проходимости дыхательных путей.<a href="simple-linear.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
