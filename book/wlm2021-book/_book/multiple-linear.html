@@ -426,8 +426,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
 <li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
 <li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
-<li class="chapter" data-level="18.3.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-1"><i class="fa fa-check"></i><b>18.3.3</b> Оценка качества модели</a></li>
-<li class="chapter" data-level="18.3.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-2"><i class="fa fa-check"></i><b>18.3.4</b> Диагностика модели</a></li>
 </ul></li>
 <li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
 </ul></li>
@@ -716,21 +714,199 @@ y_i = b_0 + b_1 I_1 + b_2 x_2 + b_3 x_2
 </div>
 <div id="модели-со-взаимодействием-предикторов" class="section level2">
 <h2><span class="header-section-number">18.3</span> Модели со взаимодействием предикторов</h2>
+<p>Но можно ведь не только уловить различия в базовом уровне количественны предикторов в раз личных группах наблюдений, но и разную степень их связи с целевой переменной в этих группах. Для этоо нужно ввести <strong>взаимодействие предикторов</strong> в модель.</p>
 <div id="математическая-модель-2" class="section level3">
 <h3><span class="header-section-number">18.3.1</span> Математическая модель</h3>
+<p>В данном случае модель будет выглядеть так:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_1 + b_2 x_2 + b_3 I_1 x_2
+\]</span></p>
+<p>Для простоты здесь один количественный и один категориальный предиктор. Переменная <span class="math inline">\(I_1\)</span> снова выступает здесь индикатором. То есть наша модель как бы снова содержит в себе две «подмодели»:</p>
+<ul>
+<li>для наблюдений категории 1 (<span class="math inline">\(I_1 = 0\)</span>) модель принимает следующий вид: <span class="math inline">\(y_i = b_0 + b_2 x_2\)</span>,</li>
+<li>а для наблюдений категории 2 (<span class="math inline">\(I_1 = 1\)</span>) вот такой: <span class="math inline">\(y_i = (b_0 + b_1) + (b_2 + b_3) x_2\)</span>.</li>
+</ul>
+<p>Теперь у нас не только есть поправочный коэффициент на baseline, но и поправочный угловой коэффициент для количественного предиктора.</p>
 </div>
 <div id="подбор-модели-2" class="section level3">
 <h3><span class="header-section-number">18.3.2</span> Подбор модели</h3>
-</div>
-<div id="оценка-качества-модели-1" class="section level3">
-<h3><span class="header-section-number">18.3.3</span> Оценка качества модели</h3>
-</div>
-<div id="диагностика-модели-2" class="section level3">
-<h3><span class="header-section-number">18.3.4</span> Диагностика модели</h3>
+<p>Взаиможействие предикторов можно указать двумя способами:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="multiple-linear.html#cb23-1"></a>model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>Smoker <span class="op">+</span><span class="st"> </span>Age<span class="op">:</span>Smoker, ofv) <span class="co"># : указывает на дополнительный угловой коэффициент для категории Smoker</span></span>
+<span id="cb23-2"><a href="multiple-linear.html#cb23-2"></a>model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">*</span><span class="st"> </span>Smoker, ofv) <span class="co"># эквивалентна предыдущей записи, но короче</span></span></code></pre></div>
+<p>Обе команды построят идентичные модели. Взглянем на <code>summary()</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="multiple-linear.html#cb24-1"></a><span class="kw">summary</span>(model4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age * Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.76645 -0.34947 -0.03364  0.33679  2.05990 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    2.19697    0.40596   5.412 8.78e-08 ***
+## Age            0.07986    0.02959   2.699  0.00713 ** 
+## SmokerNon     -1.94357    0.41428  -4.691 3.31e-06 ***
+## Age:SmokerNon  0.16270    0.03074   5.293 1.65e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.5537 on 650 degrees of freedom
+## Multiple R-squared:  0.5941, Adjusted R-squared:  0.5922 
+## F-statistic: 317.1 on 3 and 650 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Intercept содержит baseline для уровня <code>Current</code> переменой <code>Smoker</code>. Коэффициент при <code>SmokerNon</code>, как и в предыдущей модели, показывает, насколько отличается baseline для уровня <code>Non</code> переменной <code>Smoker</code> от базового уровня категории <code>Current</code> этой же переменной. Коэффициент при <code>Age</code> — это угловой коэффициент регрессионной прямой для категории <code>SmokerCurrent</code>, в то время как запись <code>Age:SmokerNon</code> показывается, то это добавочный угловой коэффициент для группы некурящих респондентов. Как видите, всё аналогично тому, как это задаётся в математической модели, поэтому если вы помните её, интерпретация результатов анализа не составляет особого труда.</p>
 </div>
 </div>
 <div id="сравнение-моделей" class="section level2">
 <h2><span class="header-section-number">18.4</span> Сравнение моделей</h2>
+<p>Часто нам надо сравнить две модели друг с другом. Зачем? Например, чтобы понять, можно ли данную модель упростить, ведь мы хотим найти <a href="https://ru.wikipedia.org/wiki/Бритва_Оккама">наиболее простую и интерпретируемую модель</a>, не так ли?</p>
+<p>Как уже упоминалось выше, можно это сделать по значению скорректированного коэффициента детерминации, но можно использовать и другие показатели. Есть способ сравнить информативность двух моделей статистическим тестом — <strong>частным F-критерием</strong>. Делается это с помощью функции <code>anova()</code>, в которую необходимо передать сравниваемые модели.</p>
+<p>Допустим мы хотим сравнить <code>model2</code> и <code>model3</code> — первая содержит два количественных предиктора, а вторая ещё и категориальный.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="multiple-linear.html#cb26-1"></a><span class="kw">anova</span>(model2, model3)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: FEV ~ Age + resHeight
+## Model 2: FEV ~ Age + resHeight + Smoker
+##   Res.Df    RSS Df Sum of Sq      F  Pr(&gt;F)  
+## 1    651 114.67                              
+## 2    650 114.08  1   0.59206 3.3733 0.06672 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Здесь мы смотрим на значение F-статистики и p-value — впрочем, как и обычно при тестировании статистических гипотез. Если модели статистически значимо различаются, то влияние предиктора, который присутствует в одной модели, но отсутствует в другой, статистически значимо. В данном случае мы видим, что обе модели в общем-то одинаковы по своей информативности — то есть введение предиктора <code>Smoker</code> не особо-то и улучшает модель, даже несмотря на то, что он статистически значим. <del>Но мы получили значение p-value, которое говорит о том, что модели различаются на уровне статистической тенденции. Возможно, стоит обратить на это внимание.</del></p>
+<p>Частный F-критерий можно рассчитать и с помощью другой функции — <code>drop1()</code>. Допустим, мы решили регрессировать нашу целевую переменную по всем переменным датасета сразу да ещё и со всеми взаиможействиями:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="multiple-linear.html#cb28-1"></a>model5 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">*</span><span class="st"> </span>Height <span class="op">*</span><span class="st"> </span>Sex <span class="op">*</span><span class="st"> </span>Smoker, ofv)</span>
+<span id="cb28-2"><a href="multiple-linear.html#cb28-2"></a><span class="kw">summary</span>(model5)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age * Height * Sex * Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.42585 -0.22543  0.00276  0.22556  1.62815 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)                   25.71051   13.30602   1.932   0.0538 .
+## Age                           -1.95406    1.00231  -1.950   0.0517 .
+## Height                        -0.34974    0.20513  -1.705   0.0887 .
+## SexMale                      -31.17265   15.46414  -2.016   0.0442 *
+## SmokerNon                    -28.32508   13.33280  -2.124   0.0340 *
+## Age:Height                     0.03009    0.01547   1.946   0.0521 .
+## Age:SexMale                    1.60183    1.21164   1.322   0.1866  
+## Height:SexMale                 0.47343    0.23620   2.004   0.0455 *
+## Age:SmokerNon                  1.92939    1.00829   1.914   0.0561 .
+## Height:SmokerNon               0.42323    0.20565   2.058   0.0400 *
+## SexMale:SmokerNon             34.15472   15.50337   2.203   0.0279 *
+## Age:Height:SexMale            -0.02410    0.01844  -1.307   0.1916  
+## Age:Height:SmokerNon          -0.02860    0.01556  -1.838   0.0666 .
+## Age:SexMale:SmokerNon         -2.07178    1.21924  -1.699   0.0898 .
+## Height:SexMale:SmokerNon      -0.52090    0.23696  -2.198   0.0283 *
+## Age:Height:SexMale:SmokerNon   0.03172    0.01856   1.709   0.0880 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.3827 on 638 degrees of freedom
+## Multiple R-squared:  0.8096, Adjusted R-squared:  0.8051 
+## F-statistic: 180.9 on 15 and 638 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>В итоге мы получили, конечно, что-то значимое, но совершенно не интерпретабельное. Надо пытаться упрощать.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="multiple-linear.html#cb30-1"></a><span class="kw">drop1</span>(model5, <span class="dt">test =</span> <span class="st">&#39;F&#39;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age * Height * Sex * Smoker
+##                       Df Sum of Sq    RSS     AIC F value  Pr(&gt;F)  
+## &lt;none&gt;                             93.465 -1240.4                  
+## Age:Height:Sex:Smoker  1   0.42783 93.893 -1239.4  2.9204 0.08795 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Функция <code>drop1()</code> исключается по одному предиктору из модели, начиная со взаиможействий самого высокого порядка и сразу тестирует гипотезу о различии моделей. Необходимо в её аргументах указать <code>test = "F"</code>, так как сейчас нас интересует именно F-критерий. Эта функция умеет считать ещё и другие — с ними мы столкнемся в следующих главах.</p>
+<p>В данном случае мы видим, что при исключении из модели взаимодействия третьего уровня (то есть взаиможействия четырёх предикторов) информативность модели не изменится — а значит модель можно упростить.</p>
+<p>Ещё одна полезная функция — это <code>update()</code>, чтобы не переписывать модель заново, а просто указать, какую её составляющую надо удалить:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="multiple-linear.html#cb32-1"></a>model5<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Height<span class="op">:</span>Sex<span class="op">:</span>Smoker)</span></code></pre></div>
+<p>Синтаксис <code>. ~ . -x</code> говорит о том, что «оставь формулу модели той же, но удали из неё предиктор <code>x</code>».</p>
+<p>Снова протестиируем модель с помощью частного F-критерия:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="multiple-linear.html#cb33-1"></a><span class="kw">drop1</span>(model5<span class="fl">.1</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Age:Height:Smoker + Age:Sex:Smoker + Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.893 -1239.4                      
+## Age:Height:Sex     1   1.67744 95.570 -1229.8 11.4160 0.0007724 ***
+## Age:Height:Smoker  1   0.08082 93.974 -1240.8  0.5500 0.4585756    
+## Age:Sex:Smoker     1   0.00474 93.898 -1241.3  0.0322 0.8575529    
+## Height:Sex:Smoker  1   1.20821 95.101 -1233.0  8.2226 0.0042735 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Видим, что при удалении взаиможействий <code>Age:Height:Smoker</code> и <code>Age:Sex:Smoker</code> информативность модели не изменится — поочередно удалим. Почему лучше делать это поочередно? Так как при удалении предиктора из модели статистики других предикторов могут измениться:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="multiple-linear.html#cb35-1"></a>model5<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5<span class="fl">.1</span>, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Sex<span class="op">:</span>Smoker)</span>
+<span id="cb35-2"><a href="multiple-linear.html#cb35-2"></a><span class="kw">drop1</span>(model5<span class="fl">.2</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Age:Height:Smoker + Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.898 -1241.3                      
+## Age:Height:Sex     1    1.6786 95.576 -1231.8 11.4412 0.0007621 ***
+## Age:Height:Smoker  1    0.0811 93.979 -1242.8  0.5528 0.4574650    
+## Height:Sex:Smoker  1    1.2755 95.173 -1234.5  8.6939 0.0033091 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="multiple-linear.html#cb37-1"></a>model5<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5<span class="fl">.2</span>, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Height<span class="op">:</span>Smoker)</span>
+<span id="cb37-2"><a href="multiple-linear.html#cb37-2"></a><span class="kw">drop1</span>(model5<span class="fl">.3</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.979 -1242.8                      
+## Age:Smoker         1    1.4059 95.385 -1235.1  9.5893 0.0020425 ** 
+## Age:Height:Sex     1    1.7363 95.715 -1232.8 11.8424 0.0006166 ***
+## Height:Sex:Smoker  1    1.1946 95.173 -1236.5  8.1478 0.0044507 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>И вот мы добрались до того момента, когда исключение любого из взаиможействий значимо ухудшит модель. То есть мы максимально упростили модель, насколько это возможно. Итоговая модель выглядит так:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="multiple-linear.html#cb39-1"></a><span class="kw">summary</span>(model5<span class="fl">.3</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age + Height + Sex + Smoker + Age:Height + 
+##     Age:Sex + Height:Sex + Age:Smoker + Height:Smoker + Sex:Smoker + 
+##     Age:Height:Sex + Height:Sex:Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.42575 -0.22638  0.00352  0.22770  1.62661 
+## 
+## Coefficients:
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)               1.559311   2.313757   0.674 0.500598    
+## Age                      -0.119427   0.113202  -1.055 0.291827    
+## Height                    0.022225   0.035423   0.627 0.530599    
+## SexMale                  -4.668960   2.978608  -1.567 0.117492    
+## SmokerNon                -4.042750   1.980650  -2.041 0.041648 *  
+## Age:Height                0.001818   0.001738   1.046 0.295947    
+## Age:SexMale              -0.446116   0.134768  -3.310 0.000984 ***
+## Height:SexMale            0.067449   0.045821   1.472 0.141504    
+## Age:SmokerNon             0.073548   0.023751   3.097 0.002043 ** 
+## Height:SmokerNon          0.049233   0.030222   1.629 0.103798    
+## SexMale:SmokerNon         7.515828   2.604824   2.885 0.004041 ** 
+## Age:Height:SexMale        0.007257   0.002109   3.441 0.000617 ***
+## Height:SexMale:SmokerNon -0.112966   0.039576  -2.854 0.004451 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.3829 on 641 degrees of freedom
+## Multiple R-squared:  0.8086, Adjusted R-squared:  0.805 
+## F-statistic: 225.6 on 12 and 641 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Почему в неё остались незначимые предикторы? Так как оказались значимы взаимодействия, а включить в модель взаиможействия без самого предиктора невозможно.</p>
+<p>Конечно, можно делать это не руками, а автоматически, но это уже относится к сфере машинного обучения. При этом не проводится содержательным анализ того, что происходит — пока же вы руками исключаете предикторы друг за другом, можно успеть подумать, что складывается в модели с содержательной точки зрения и почему.</p>
 
 </div>
 </div>
