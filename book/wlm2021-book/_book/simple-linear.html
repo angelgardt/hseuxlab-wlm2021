@@ -411,7 +411,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
 <li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.2.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-1"><i class="fa fa-check"></i><b>18.2.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.2.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-2"><i class="fa fa-check"></i><b>18.2.4</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.3.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-2"><i class="fa fa-check"></i><b>18.3.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.3.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-3"><i class="fa fa-check"></i><b>18.3.4</b> Диагностика модели</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
 <li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
@@ -464,15 +483,22 @@ y = kx + b,
 <p><span class="math display">\[
 y = b_0 + b_1 x
 \]</span></p>
-<p>Уравнение отражает зависимость между переменными <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span>, значения которых нам известны, так как у нас есть результаты измерений, а вот неизвестными теперь являются <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>.</p>
+<p>Уравнение отражает зависимость между переменными <span class="math inline">\(x\)</span> и <span class="math inline">\(y\)</span>, значения которых нам известны, так как у нас есть результаты измерений, а вот неизвестными теперь являются <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>. В терминах модели переменная <span class="math inline">\(y\)</span> называется <em>зависимая</em>, <em>предсказываемая</em>, <em>целевая переменная</em> или <em>регрессант</em>. Переменная <span class="math inline">\(x\)</span> носит названия <em>независимая переменная</em>, <em>предиктор</em> или <em>регрессор</em>. <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span> называются <em>коэффициентами</em> или <em>параметрами</em> модели.</p>
+<blockquote>
+<p>Несмотря на использование терминов <em>зависимая</em> и <em>независимая</em> переменные, необходимо чётко понимать, что сам регрессионный анализ, как и корреляционный, ничего нам не говорит о причинности. Мы выражаем <span class="math inline">\(y\)</span> через <span class="math inline">\(x\)</span>, но точно так же можем выразить и <span class="math inline">\(x\)</span> через <span class="math inline">\(y\)</span> — и модель будет подобрана, так как нет никаких математических ограничений. Поэтому если мы хотим сделать по результатам регрессионного анализа вывод о причинно-следственной связи между явлениями, нам необходимо либо серьёзное теоретическое обоснование нашего вывода — почему мы выбрали в качестве зависимой и независимой переменных именно эти? — либо использование экспериментельного дизайна исследования, где мы обосновываем причинно-следственный характер связи именно через дизайн эксперимента.</p>
+</blockquote>
 </div>
 <div id="идентификация-модели" class="section level2">
 <h2><span class="header-section-number">17.2</span> Идентификация модели</h2>
 <p>Идентификация модели сводится к нахождению коэффициентов <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span>. Мы хотим провести такую прямую, которая наилучшим образом будет описывать имеющуюся в данных закономерность, поэтому необходимо найти критерий, по которому мы будем определять «хорошесть» нашей прямой.</p>
+<p>Графически мы делаем вот что: проводим прямую через облако точек. Очевидно, что красная прямая описывает закономерность совсем плохо, зелёная — чуть получше, а синяя — то, что нам нужно.</p>
+<p>КАРТИНКА</p>
 <p>Вспомним следующий важный факт: <em>ни одна модель не идеальна, у модели всегда есть ошибка</em>. Таким образом, модель, «хорошесть» которой мы пытаемся определить выглядит так:</p>
 <p><span class="math display">\[
 y_i = b_0 + b_1 x_i + e_i
 \]</span></p>
+<p>А графически ошибки будут тут:</p>
+<p>КАРТИНКА</p>
 <p>Собственно, задача идентификации модели — <em>минимизировать ошибку модели</em>, подбирая её параметры.</p>
 <p><span class="math display">\[
 Q_{res} = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n \big(y_i - (b_0 + b_1x_i) \big)^2 \rightarrow \underset{b_0, b_1}{\min}
@@ -484,7 +510,7 @@ Q_{res} = \sum_{i=1}^n e_i^2 = \sum_{i=1}^n \big(y_i - (b_0 + b_1x_i) \big)^2 \r
 <p><span class="math display">\[
 f(b_0, b_1) = \sum_{i=1}^n (y_i - b_0 - b_1 x_i)^2
 \]</span></p>
-<p>Это квадративная функция, и чтобы нам дальше удобнее было с ней работать, раскроем скобки:</p>
+<p>Это квадратияная функция, и чтобы нам дальше удобнее было с ней работать, раскроем скобки:</p>
 <p><span class="math display">\[
 f(b_0, b_1) = \sum_{i=1}^n (y_i - b_0 - b_1 x_i)(y_i - b_0 - b_1 x_i) \\
 f(b_0, b_1) = \sum_{i=1}^n (y_i^2 - 2 x_i y_i b_1 - 2 y_i b_0 + x_i^2 b_1^2 + b_0^2 + 2 x_i b_1 b_0)
@@ -492,7 +518,7 @@ f(b_0, b_1) = \sum_{i=1}^n (y_i^2 - 2 x_i y_i b_1 - 2 y_i b_0 + x_i^2 b_1^2 + b_
 <p>Чтобы определить, при каких значения <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span> функция будет принимать минимальное значение, нужно взять две <a href="maths.html#partial">частные производные</a> по <span class="math inline">\(b_0\)</span> и <span class="math inline">\(b_1\)</span> и приравнять их в нулю.</p>
 <p>Берём частные производные:</p>
 <p><span class="math display">\[
-\frac{f(b_0. b_1)}{\partial b_0} = \sum_{i=1}^n (-2 y_i + 2 b_0 + 2 x_i b_1) = -2 \sum_{i=1}^n \big(y_i - (b_0 + b_1 x_i) \big) \\
+\frac{f(b_0, b_1)}{\partial b_0} = \sum_{i=1}^n (-2 y_i + 2 b_0 + 2 x_i b_1) = -2 \sum_{i=1}^n \big(y_i - (b_0 + b_1 x_i) \big) \\
 \frac{f(b_0, b_1)}{\partial b_1} = \sum_{i=1}^n (-2 x_i y_i + 2 x_i^2 b_1 + 2 x_i b_0) = -2 \sum_{i=1}^n \big(y_i - (b_0+ b_1 x_i) \big) x_i
 \]</span></p>
 <p>Приравниваем производные к нулю и решаем систему уравнений:</p>
@@ -530,9 +556,9 @@ b_1 = \dfrac{n \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \sum_{i=1}^n y_i}{n \sum_
 <p>Аналитическое вычисление коэффициентов выглядит громоздко и трудоёмко — хотелось бы как-то попроще. Нам на помощь приходят <a href="maths.html#matrix">матрицы</a>!</p>
 <p>Вспомним, что имеющуюся у нас модель мы можем переписать в следующем виде:</p>
 <p><span class="math display">\[
-\boldsymbol{y}= \boldsymbol{X}\boldsymbol{b},
+\boldsymbol{y}= \boldsymbol{X}\boldsymbol{b}+ \boldsymbol{e},
 \]</span>
-где <span class="math inline">\(\boldsymbol{y}\)</span> — вектор нашей зависимой переменной, <span class="math inline">\(\boldsymbol{X}\)</span> — матрица независимых переменных, <span class="math inline">\(\boldsymbol{b}\)</span> — вектор коэффициентов модели.</p>
+где <span class="math inline">\(\boldsymbol{y}\)</span> — вектор нашей зависимой переменной, <span class="math inline">\(\boldsymbol{X}\)</span> — матрица независимых переменных, <span class="math inline">\(\boldsymbol{b}\)</span> — вектор коэффициентов модели, <span class="math inline">\(\boldsymbol{e}\)</span> — вектор ошибок (остатков) модели.</p>
 <p>Может возникнуть резонный вопрос: «почему <span class="math inline">\(\boldsymbol{X}\)</span> матрица, ведь у нас только одна независимая переменная?». Так как вектор коэффициентов модели <span class="math inline">\(\boldsymbol{b}\)</span> содержит два элемента <span class="math inline">\((b_0, b_1)^\mathrm{T}\)</span>, то для удобства вычислений к вектору значений предиктора <span class="math inline">\(x\)</span> дообавляют вектор, состоящий из единиц, который будет отвечать за интерсепт нашей модел — в результате получается матрица <span class="math inline">\(\boldsymbol{X}\)</span>, которая имеет следующий вид:</p>
 <p><span class="math display">\[
 \boldsymbol{X}= 
@@ -547,7 +573,7 @@ b_1 = \dfrac{n \sum_{i=1}^n x_i y_i - \sum_{i=1}^n x_i \sum_{i=1}^n y_i}{n \sum_
 <p>При умножении вектора <span class="math inline">\(\boldsymbol{b}= (b_0, b_1)^\mathrm{T}\)</span> на матрицу <span class="math inline">\(\boldsymbol{X}\)</span> как раз будут получатся выражения типа <span class="math inline">\(b_0 \cdot 1 + b_1 x_{i1}\)</span>, а это то, что нам надо.</p>
 <p>Опуская детали, сразу укажем матричное решение для коэффициентов модели:</p>
 <p><span class="math display">\[
-\boldsymbol{b}= (X^\mathrm{T}X)^{-1}X^\mathrm{T}Y
+\boldsymbol{b}= (\boldsymbol{X}^\mathrm{T}\boldsymbol{X})^{-1}\boldsymbol{X}^\mathrm{T}\boldsymbol{y}
 \]</span></p>
 <p>Выглядит проще, не так ли?</p>
 <blockquote>
@@ -582,18 +608,23 @@ b_0 = \hat \beta_0, \quad b_1 = \hat \beta_1, \quad e_i = \hat \varepsilon_i
 <p><span class="math display">\[
 TSS = \sum_{i=1}^n (\bar y - y_i)^2
 \]</span></p>
+<p>На одной из картинок нам уже встречалась «красная модель» — это и было среднее по выборке. То есть графически TSS выглядит так:</p>
+<p>КАРТИНКА</p>
 <p>Одну часть этой изменчивости объясняет модель <strong>(explained sum of squares, ESS)</strong>:</p>
 <p><span class="math display">\[
 ESS = \sum_{i=1}^n (\bar y - \hat y_i)^2
 \]</span></p>
+<p>КАРТИНКА</p>
 <p>Другую часть этой изменчивости модель не улавливает, и она остаётся необъяснённой (остаточной) <strong>(residual sum of squares, RSS)</strong>:</p>
 <p><span class="math display">\[
 RSS = \sum_{i=1}^n (y_i - \hat y_i)^2
 \]</span></p>
-<p><a href="https://en.wikipedia.org/wiki/Partition_of_sums_of_squares#Proof">Очевидно</a>, что</p>
+<p>КАРТИНКА</p>
+<p><a href="https://en.wikipedia.org/wiki/Partition_of_sums_of_squares#Proof">Очевидно</a> (особенно по графику), что</p>
 <p><span class="math display">\[
 TSS = ESS + RSS
 \]</span></p>
+<p>КАРТИНКА</p>
 <p>В качестве метрики информативности модели используется <strong>коэффициент детерминации</strong> <span class="math inline">\(R^2\)</span>, который вычисляется по формуле:</p>
 <p><span class="math display">\[
 R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS},
@@ -607,7 +638,7 @@ R^2 = \frac{ESS}{TSS} = 1 - \frac{RSS}{TSS},
 </div>
 <div id="статистическая-значимость-модели" class="section level3">
 <h3><span class="header-section-number">17.3.2</span> Статистическая значимость модели</h3>
-<p>На основе коэффициента детерминации мы можем сделать вывод о том, насколько в целом наша модель статистически значима. Для этого нам надо заняться тестированием некоторой статистической гипотезы. Она формулируется так:</p>
+<p>На основе всё тех же сумм квадратов мы можем сделать вывод о том, насколько в целом наша модель статистически значима. Для этого нам надо заняться тестированием некоторой статистической гипотезы. Она формулируется так:</p>
 <p><span class="math display">\[
 H_0: \beta_0 = \beta_1 = 0 \\
 H_1: \beta_0 \neq 0 \vee \beta_1 \neq 0
@@ -623,11 +654,11 @@ F_{\mathrm{df_e, df_r}} = \frac{MS_{exp}}{MS_{res}} = \frac{ESS / \mathrm{df_e}}
 <h3><span class="header-section-number">17.3.3</span> Статистическая значимость отдельных предикторов</h3>
 <p>Если модель значима в целом, значит среди её коэффициентов есть те, которые статистически отличны от нуля. Иначе говоря, есть такие предикторы, которые значимо влияют на нашу целевую переменную. В случае простой линейной регрессии предиктора всего два — intercept и slope. Intercept не всегда интерпретабелен, поэтому основное внимание уделают угловому коэффициенту.</p>
 <p>Статистическая значимость коэффициента тестируется так:</p>
-<p>$$
-H_0: _1 = 0 \
-H_1: _1 0 \
-t =  =   t(= n-p)</p>
-<p>$$</p>
+<p><span class="math display">\[
+H_0: \beta_1 = 0 \\
+H_1: \beta_1 \neq 0 \\
+t = \frac{b_1 - \beta_1}{\mathrm{SE_{b_1}}} = \frac{b_1}{\mathrm{SE_{b_1}}} \overset{H_0}{\thicksim} t(\nu = n-p)
+\]</span></p>
 </div>
 </div>
 <div id="простая-линейная-регрессия-в-r" class="section level2">
@@ -722,7 +753,7 @@ t =  =   t(= n-p)</p>
 <p>Аутпут этой функции надо читать снизу вверх. Прежде всего, нас интересует статистическая значимость модели в целом, поэтому мы смотрим на значение F-статистики и p-value для неё. Здесь p-value много меньше конвенционального .05, поэтому мы делаем вывод о том, что модель статистически значима.</p>
 <p>Далее мы смотрим на коэффициент детерминации. В данном случае он равен примерно 0.6, что неплохо.</p>
 <p>И затем мы смотрим на результаты тестирования значимости отдельных предикторов. Мы видим, что предиктор «возраст» оказался статистически значимым, так как p-значение, рассчитанное для t-статистикии, значительно меньше конценциональнгого .05. Следовательно, мы делаем вывод о том, что возраст связан в ОФВ. Более того, так как у нас оценка коэффициента при предикторе, мы можем сказать, что с увеличением возраста на единицу ОФВ в среднем возрастрает на 0.22 л.</p>
-<p>Строго говоря, регрессия как и корреляция не показывает причинно следственно связи, но в данном случае, опираясь на здравый смысл, мы эту причинно-следственную связь имеем. В общем случае, когда мы хотим делать вывод о причинно-следственной связи, проводя регрессионный анализ, нам необходимо либо концептуально обосновывать нашу модель и теоретически доказывать причинно-следственный характер изучаемой связи, либо использовать экспериментальный дизайн исследования.</p>
+<p>Строго говоря, регрессия как и корреляция не показывает причинно-следственной связи, но в данном случае, опираясь на здравый смысл, мы эту причинно-следственную связь имеем. В общем случае, как уже говорилось выше, когда мы хотим делать вывод о причинно-следственной связи, проводя регрессионный анализ, нам необходимо либо концептуально обосновывать нашу модель и теоретически доказывать причинно-следственный характер изучаемой связи, либо использовать экспериментальный дизайн исследования.</p>
 </div>
 <div id="диагностика-модели" class="section level2">
 <h2><span class="header-section-number">17.5</span> Диагностика модели</h2>
