@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -296,7 +360,7 @@
 <li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
 <li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
 <li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
-<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
 </ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
@@ -365,7 +429,18 @@
 </ul></li>
 <li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
 <li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
@@ -404,7 +479,192 @@
             <section class="normal" id="section-">
 <div id="anova" class="section level1">
 <h1><span class="header-section-number">19</span> Дисперсионный анализ</h1>
+<p>Мы знаем, что в регрессионную модель можно включать как количественные (непрерывные), так и категориальные (дискретные) предикторы. Более того, мы знаем, как при включении категориальных предикторов изменяется модель и что значат предикторы. Теперь рассмотрим случай, когда в модели останутся только категориальные предикторы.</p>
+<div id="параметризация-индикаторов-и-параметризация-эффектов" class="section level2">
+<h2><span class="header-section-number">19.1</span> Параметризация индикаторов и параметризация эффектов</h2>
+<p>На модель только с категориальными предикторами можно смотреть двумя разными способами. С первым мы уже частично знакомы. Если мы из моделей, рассмотренных в предыдущей главе исключим количественные предикторы, то получим модель такого вида:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_{\mathrm{Group_2}}
+\]</span></p>
+<p>Здесь у нас один категориальный предиктор с двумя уровнями — переменная-индикатор <span class="math inline">\(I_{\mathrm{Group_2}}\)</span> задаёт принадлежность наблюдения ко второй группе.</p>
+<p>Если же у нашего категориального предиктора будет более двух уровней, то модель примет следующий вид:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_{\mathrm{Group_2}} + b_2 I_{\mathrm{Group_3}}
+\]</span></p>
+<p>Как это помыслить визуально? Вот так:</p>
+<p>КАРТИНКА</p>
+<p>Собственно, как мы обсуждали в предыдущей главе, в интерсепт модели <span class="math inline">\(b_0\)</span> уходит baseline для группы 1, а коэффициенты при переменных <span class="math inline">\(I_{\mathrm{Group_i}}\)</span> показывают, насколько изменяется baseline в других группах по сравнению с группой 1.</p>
+<p>Кодировку групп с помощью переменных-индикаторов можно представить в такой табличке:</p>
+<p>ТАБЛИЦА</p>
+<p>Такая кодировка позволяет переписать уравнение модели в более простом виде — теперь и вовсе как обычная множественная регрессия:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 x_1 + b_2 x_2
+\]</span></p>
+<p>Этот способ подбора коэффициентов модели называется <strong>параметризация индикаторов (dummy coding, treatment parametrization, reference cell model)</strong>.</p>
+<p>В R модель подбирается автоматически в параметризации индикаторов. Подгрузим <a href="https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv">данные</a>. Мы с ними уже знакомы — это всё тот же эксперимент об иконках share.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="anova.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="anova.html#cb5-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span>
+<span id="cb5-2"><a href="anova.html#cb5-2"></a>share &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   trialtype = col_character(),
+##   platform = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<p>Напомним себе переменные:</p>
+<ul>
+<li><code>trialtype</code> — тип пробы (<code>tray</code>/<code>dots</code>/<code>both</code>)</li>
+<li><code>setsize</code> — количество стимулов в пробе (<code>8</code>/<code>12</code>/<code>16</code>)</li>
+<li><code>time1</code> — время первого клика</li>
+<li><code>time2</code> — время второго клика</li>
+<li><code>id</code> — индентификатор испытуемого</li>
+<li><code>platform</code> — платформа смартфона (<code>Android</code>/<code>iOS</code>)</li>
+</ul>
+<p>Возьмем для примера в качестве категориальной переменной <code>setize</code> — в ней три уровня <code>8</code>, <code>12</code> и <code>16</code> (хотя в реальном анализе лучше, конечно, рассматривать её как непрерывную).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="anova.html#cb7-1"></a>share <span class="op">%&gt;%</span></span>
+<span id="cb7-2"><a href="anova.html#cb7-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">setsize =</span> <span class="kw">as_factor</span>(setsize)) -&gt;<span class="st"> </span>share</span></code></pre></div>
+<p>Подберём модель в параметризации индикаторов (сравниваем время реакции <code>time1</code>):</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1"></a>model_tr &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share)</span>
+<span id="cb8-2"><a href="anova.html#cb8-2"></a>model_tr</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = time1 ~ setsize, data = share)
+## 
+## Coefficients:
+## (Intercept)    setsize12    setsize16  
+##      1.3704       0.2220       0.4641</code></pre>
+<p>Смысл полученных чисел таков: в условии с восемью стимулами в пробе среднее время реакции 1.37 с, а в условиях с 12 и 16 стимулами оно больше на 0.22 и 0.46 с соответственно.</p>
+<p>Другой способ смотреть на влияние фактора на нашу целевую переменную — это <em>эффект фактора</em>. Он складывается из <em>отклонений средних значений в группах по фактору от общего среднего</em>.</p>
+<p>КАРТИНКА</p>
+<p>В кодировке отклонений уровней дискретного фактора от общего среднего коэффициенты модели начинают отражать вклад каждого уровня факторв в его общий эфффект. Такая кодировка называется <strong>параметризацией эффектов (effects coding, sum-to-zero parameterization)</strong>.</p>
+<p>Таблица кодировки групп переменной будет несколько отличаться:</p>
+<p>ТАБЛИЦА</p>
+<p>Математическая запись модель не меняется, однако интерпретация коэффициентов будет иная:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 x_1 + b_2 x_2
+\]</span></p>
+<p>Подберём модель в параметризации эффектов:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="anova.html#cb10-1"></a>model_ef &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share,</span>
+<span id="cb10-2"><a href="anova.html#cb10-2"></a>               <span class="dt">contrasts =</span> <span class="kw">list</span>(<span class="dt">setsize =</span> contr.sum))</span>
+<span id="cb10-3"><a href="anova.html#cb10-3"></a>model_ef</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = time1 ~ setsize, data = share, contrasts = list(setsize = contr.sum))
+## 
+## Coefficients:
+## (Intercept)     setsize1     setsize2  
+##    1.599066    -0.228689    -0.006699</code></pre>
+<p>Коэффициент теперь другие: <span class="math inline">\(b_0\)</span> — среднее время реакции во всех группах по переменной <code>setsize</code>, а <span class="math inline">\(b_1\)</span> и <span class="math inline">\(b_2\)</span> — это отличия среднего времени реакции в группах <code>8</code> и <code>12</code> от среднего времени реакции. Возникает вопрос: куда делась группа <code>16</code>? Если внимательно посмотреть на таблицу кодирования групп, то можно обнаружить, что одна из групп кодируется через <code>-1</code> — то есть, чтобы узнать среднее время реакции в группе <code>16</code> надо провести следующее вычисление: <span class="math inline">\(b_0 - b_1 - b_2\)</span> — в нашем случае получится 1.83.</p>
+<p>Надо сказать, что хотя уравнения моделей получаются разные — коэффициенты при предикторах различаются — это <em>одна и та же модель</em>. Чтобы это доказать, посмотрим на предсказания на новых данных:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a>new_share &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">setsize =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">16</span>)))</span>
+<span id="cb12-2"><a href="anova.html#cb12-2"></a><span class="kw">predict</span>(model_tr, new_share)</span></code></pre></div>
+<pre><code>##        1        2        3 
+## 1.370377 1.592367 1.834454</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="anova.html#cb14-1"></a><span class="kw">predict</span>(model_ef, new_share)</span></code></pre></div>
+<pre><code>##        1        2        3 
+## 1.370377 1.592367 1.834454</code></pre>
+</div>
+<div id="однофакторный-дисперсионный-анализ" class="section level2">
+<h2><span class="header-section-number">19.2</span> Однофакторный дисперсионный анализ</h2>
+<p>Здесь всё просто. У нас один <em>фактор</em> — категориальная переменная с несколькими уровнями — и мы хотим узнать, оказывает ли влияние данный фактор на нашу зависимую переменную. Вернее, конечно, правильнее было бы сказать, связан ли данный фактор в нашей зависимой переменной. Но так как дисперсионный анализ часто используется для анализа экспериментальных данных, мы будем говорить о влиянии, помня всё детали, на которые мы уже неоднократно обращали внимание.</p>
+<div id="зачем-вообще-дисперсионный-анализ" class="section level3">
+<h3><span class="header-section-number">19.2.1</span> Зачем вообще дисперсионный анализ?</h3>
+<p>Вопрос, на самом деле, не праздный. «Регрессия только с категориальными предикторами» — звучит несколько странно. Да и потом, ведь по факту мы сравниванием несколько групп между собой — чё бы t-тест не использовать? Проще и понятнее. Так-то оно, конечно, так, но мы помним о <a href="hypotheses.html#multiple_comp_problem">проблеме множественных сравнений</a>. Дисперсионный анализ на от неё спасает, так как позволяет тестирования влияние фактора целиком, не сравнивая группы друг с другом.</p>
+</div>
+<div id="структура-изменчивости" class="section level3">
+<h3><span class="header-section-number">19.2.2</span> Структура изменчивости</h3>
+<p>Мы говорили, что основные характеристики статистических данных — неопределённость и вариативность. И эта вариативность (изменчивость) имеет определенную структуру.</p>
+<p>Прежде всего, есть <strong>общая изменчивость</strong>, которая складывается [сумм квадратов] отклонений от общего среднего:</p>
+<p><span class="math display">\[
+SS_\mathrm t = \sum_{i=1}^n (\bar y - y_i)^2, \quad \mathrm{df}_\mathrm t = n-1
+\]</span></p>
+<p>КАРТИНКА</p>
+<p>Часть от неё составляет <strong>факторная (межгрупповая) изменчивость</strong> — это отклонения внутригрупповых средних от общего среднего:</p>
+<p><span class="math display">\[
+SS_\mathrm x = \sum_{j=1}^p (\bar y - \bar y_j)^2, \quad \mathrm{df}_\mathrm x = p-1
+\]</span></p>
+<p>КАРТИНКА</p>
+<p>Оставшуюся часть составляет <strong>случайная (внутригрупповая) изменчивость</strong>:</p>
+<p><span class="math display">\[
+SS_\mathrm e = \sum_{i=1}^n \sum_{j=1}^p (\bar y_j - y_{ij})^2, \quad \mathrm{df}_\mathrm e = n-p
+\]</span></p>
+<p>Таким образом,</p>
+<p><span class="math display">\[
+SS_\mathrm t = SS_\mathrm x + SS_\mathrm e
+\]</span></p>
+</div>
+<div id="тестирование-значимости-фактора" class="section level3">
+<h3><span class="header-section-number">19.2.3</span> Тестирование значимости фактора</h3>
+<p>От сумм квадратов можно перейти к дисперсиям — вернее, к <em>средним квадратам</em>:</p>
+<p><span class="math display">\[
+MS_\mathrm t = \frac{SS_\mathrm t}{\mathrm{df}_\mathrm t}, \quad 
+MS_\mathrm x = \frac{SS_\mathrm x}{\mathrm{df}_\mathrm x}, \quad 
+MS_\mathrm e = \frac{SS_\mathrm e}{\mathrm{df}_\mathrm e}
+\]</span></p>
+<p><span class="math inline">\(MS_\mathrm x\)</span> и <span class="math inline">\(MS_\mathrm e\)</span> помогают тестировать значимлсть фактора. Если зависимости между фактором и целевой переменной нет, то <span class="math inline">\(MS_\mathrm x \approx MS_\mathrm e\)</span>. Гипотеза формулируется так:</p>
+<p><span class="math display">\[
+H_0: \mu_1 = \mu_2 = \dots = \mu_p \\
+H_1: \exists i,j: m_i \neq m_j \\
+F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathrm e} \overset{H_0}{\thicksim} F (\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e)
+\]</span></p>
+<p>Результаты дисперсионного анализа обыно представляются в виде таблицы:</p>
+<p>ТАБЛИЦА</p>
+</div>
+<div id="дисперсионный-анализ-в-r" class="section level3">
+<h3><span class="header-section-number">19.2.4</span> Дисперсионный анализ в R</h3>
+<p>Функция для дисперсионного анализа есть много, но мы воспользуется функцией <code>Anova()</code> из пакета <code>car</code>, потому что она хороша.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="anova.html#cb16-1"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<pre><code>## Loading required package: carData</code></pre>
+<pre><code>## 
+## Attaching package: &#39;car&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     recode</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     some</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="anova.html#cb21-1"></a><span class="kw">Anova</span>(model_tr)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: time1
+##            Sum Sq    Df F value    Pr(&gt;F)    
+## setsize     581.9     2  410.17 &lt; 2.2e-16 ***
+## Residuals 11488.3 16197                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="anova.html#cb23-1"></a><span class="kw">Anova</span>(model_ef)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: time1
+##            Sum Sq    Df F value    Pr(&gt;F)    
+## setsize     581.9     2  410.17 &lt; 2.2e-16 ***
+## Residuals 11488.3 16197                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Вот вам пожалуйста — табличка дисперсионного анализа. В случае однофакторного дисперсионного анализа нам всё равно, какой метод параметризации использовать — результаты будут одинаковые.</p>
+<p>Теперь обратим внимание на результат. Да, фактор количества стимулов значим, но что это значит технически? Что есть <em>хотя бы две группы</em>, которые значимо различаются между собой. Какие — нам не известно. Чтобы это узнать, необхожимо провести…</p>
+</div>
+<div id="post-hoc-тесты" class="section level3">
+<h3><span class="header-section-number">19.2.5</span> Post hoc тесты</h3>
+</div>
+</div>
+<div id="многофакторный-дисперсионный-анализ" class="section level2">
+<h2><span class="header-section-number">19.3</span> Многофакторный дисперсионный анализ</h2>
+</div>
+<div id="дисперсионный-анализ-с-повторными-измерениями" class="section level2">
+<h2><span class="header-section-number">19.4</span> Дисперсионный анализ с повторными измерениями</h2>
 
+</div>
 </div>
             </section>
 
