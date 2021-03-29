@@ -438,7 +438,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
 <li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
 <li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
@@ -531,14 +534,20 @@ y_i = b_0 + b_1 x_1 + b_2 x_2
 <li><code>platform</code> — платформа смартфона (<code>Android</code>/<code>iOS</code>)</li>
 </ul>
 <p>Возьмем для примера в качестве категориальной переменной <code>setize</code> — в ней три уровня <code>8</code>, <code>12</code> и <code>16</code> (хотя в реальном анализе лучше, конечно, рассматривать её как непрерывную).</p>
+<p>Также необхожимо дополнительно поготовить наши данные, а именно, аггрегировать их. Зачем?</p>
+<p>Есть два момента. Первый — <em>содержательный</em>. Так как эксперимент подразумевал, что испытуемый проходит по 50 проб в каждом экспериметальном условии, показатели по каждому из условий необхожимо усреднить, ведь эти 50 проб — это не 50 отдельных наблюдений, а попытка нивелировать случайные эффекты и получить точную оценку времени реакции в каждом из сочетаний условий.</p>
+<p>Второй момент — <em>статистический</em>. Если данные не аггрегировать, то наша модель сочтёт, что в ней 50 × [кол-во испытуемых] независимых наблюдений<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> для каждого экспериментального условия, что значительно повлияет на статистическую мощность анализа и может привести к неверным результатам. Количество независимых наблюдений — это количество наших респондентов. Мощность будет в этом случае чрезвычайно завышена, и даже самые ничтожные эффекты могут оказаться статистически значимыми, так как p-value зависит от объёма выборки.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="anova.html#cb7-1"></a>share <span class="op">%&gt;%</span></span>
-<span id="cb7-2"><a href="anova.html#cb7-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">setsize =</span> <span class="kw">as_factor</span>(setsize)) -&gt;<span class="st"> </span>share</span></code></pre></div>
+<span id="cb7-2"><a href="anova.html#cb7-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">setsize =</span> <span class="kw">as_factor</span>(setsize)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># перезаписываем переменную как фактор</span></span>
+<span id="cb7-3"><a href="anova.html#cb7-3"></a><span class="st">  </span><span class="kw">group_by</span>(id, setsize) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="anova.html#cb7-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">time1 =</span> <span class="kw">mean</span>(time1)) -&gt;<span class="st"> </span>share_<span class="dv">1</span></span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;id&#39; (override with `.groups` argument)</code></pre>
 <p>Подберём модель в параметризации индикаторов (сравниваем время реакции <code>time1</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1"></a>model_tr &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share)</span>
-<span id="cb8-2"><a href="anova.html#cb8-2"></a>model_tr</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="anova.html#cb9-1"></a>model_tr &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share_<span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="anova.html#cb9-2"></a>model_tr</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## lm(formula = time1 ~ setsize, data = share)
+## lm(formula = time1 ~ setsize, data = share_1)
 ## 
 ## Coefficients:
 ## (Intercept)    setsize12    setsize16  
@@ -554,23 +563,23 @@ y_i = b_0 + b_1 x_1 + b_2 x_2
 y_i = b_0 + b_1 x_1 + b_2 x_2
 \]</span></p>
 <p>Подберём модель в параметризации эффектов:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="anova.html#cb10-1"></a>model_ef &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share,</span>
-<span id="cb10-2"><a href="anova.html#cb10-2"></a>               <span class="dt">contrasts =</span> <span class="kw">list</span>(<span class="dt">setsize =</span> contr.sum))</span>
-<span id="cb10-3"><a href="anova.html#cb10-3"></a>model_ef</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="anova.html#cb11-1"></a>model_ef &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, share_<span class="dv">1</span>,</span>
+<span id="cb11-2"><a href="anova.html#cb11-2"></a>               <span class="dt">contrasts =</span> <span class="kw">list</span>(<span class="dt">setsize =</span> contr.sum))</span>
+<span id="cb11-3"><a href="anova.html#cb11-3"></a>model_ef</span></code></pre></div>
 <pre><code>## 
 ## Call:
-## lm(formula = time1 ~ setsize, data = share, contrasts = list(setsize = contr.sum))
+## lm(formula = time1 ~ setsize, data = share_1, contrasts = list(setsize = contr.sum))
 ## 
 ## Coefficients:
 ## (Intercept)     setsize1     setsize2  
 ##    1.599066    -0.228689    -0.006699</code></pre>
 <p>Коэффициент теперь другие: <span class="math inline">\(b_0\)</span> — среднее время реакции во всех группах по переменной <code>setsize</code>, а <span class="math inline">\(b_1\)</span> и <span class="math inline">\(b_2\)</span> — это отличия среднего времени реакции в группах <code>8</code> и <code>12</code> от среднего времени реакции. Возникает вопрос: куда делась группа <code>16</code>? Если внимательно посмотреть на таблицу кодирования групп, то можно обнаружить, что одна из групп кодируется через <code>-1</code> — то есть, чтобы узнать среднее время реакции в группе <code>16</code> надо провести следующее вычисление: <span class="math inline">\(b_0 - b_1 - b_2\)</span> — в нашем случае получится 1.83.</p>
 <p>Надо сказать, что хотя уравнения моделей получаются разные — коэффициенты при предикторах различаются — это <em>одна и та же модель</em>. Чтобы это доказать, посмотрим на предсказания на новых данных:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a>new_share &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">setsize =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">16</span>)))</span>
-<span id="cb12-2"><a href="anova.html#cb12-2"></a><span class="kw">predict</span>(model_tr, new_share)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="anova.html#cb13-1"></a>new_share &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">setsize =</span> <span class="kw">factor</span>(<span class="kw">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">16</span>)))</span>
+<span id="cb13-2"><a href="anova.html#cb13-2"></a><span class="kw">predict</span>(model_tr, new_share)</span></code></pre></div>
 <pre><code>##        1        2        3 
 ## 1.370377 1.592367 1.834454</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="anova.html#cb14-1"></a><span class="kw">predict</span>(model_ef, new_share)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="anova.html#cb15-1"></a><span class="kw">predict</span>(model_ef, new_share)</span></code></pre></div>
 <pre><code>##        1        2        3 
 ## 1.370377 1.592367 1.834454</code></pre>
 </div>
@@ -579,7 +588,7 @@ y_i = b_0 + b_1 x_1 + b_2 x_2
 <p>Здесь всё просто. У нас один <em>фактор</em> — категориальная переменная с несколькими уровнями — и мы хотим узнать, оказывает ли влияние данный фактор на нашу зависимую переменную. Вернее, конечно, правильнее было бы сказать, связан ли данный фактор в нашей зависимой переменной. Но так как дисперсионный анализ часто используется для анализа экспериментальных данных, мы будем говорить о влиянии, помня всё детали, на которые мы уже неоднократно обращали внимание.</p>
 <div id="зачем-вообще-дисперсионный-анализ" class="section level3">
 <h3><span class="header-section-number">19.2.1</span> Зачем вообще дисперсионный анализ?</h3>
-<p>Вопрос, на самом деле, не праздный. «Регрессия только с категориальными предикторами» — звучит несколько странно. Да и потом, ведь по факту мы сравниванием несколько групп между собой — чё бы t-тест не использовать? Проще и понятнее. Так-то оно, конечно, так, но мы помним о <a href="hypotheses.html#multiple_comp_problem">проблеме множественных сравнений</a>. Дисперсионный анализ на от неё спасает, так как позволяет тестирования влияние фактора целиком, не сравнивая группы друг с другом.</p>
+<p>Вопрос, на самом деле, не праздный. «Регрессия только с категориальными предикторами» — звучит несколько странно. Да и потом, ведь по факту мы сравниванием несколько групп между собой — чё бы t-тест не использовать? Проще и понятнее. Так-то оно, конечно, так, но мы помним о <a href="hypotheses.html#multiple_comp_problem">проблеме множественных сравнений</a>. <strong>Дисперсионный анализ (analysis of variances, ANOVA)</strong> на от неё спасает, так как позволяет тестирования влияние фактора целиком, не сравнивая группы друг с другом.</p>
 </div>
 <div id="структура-изменчивости" class="section level3">
 <h3><span class="header-section-number">19.2.2</span> Структура изменчивости</h3>
@@ -623,7 +632,7 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 <div id="дисперсионный-анализ-в-r" class="section level3">
 <h3><span class="header-section-number">19.2.4</span> Дисперсионный анализ в R</h3>
 <p>Функция для дисперсионного анализа есть много, но мы воспользуется функцией <code>Anova()</code> из пакета <code>car</code>, потому что она хороша.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="anova.html#cb16-1"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="anova.html#cb17-1"></a><span class="kw">library</span>(car)</span></code></pre></div>
 <pre><code>## Loading required package: carData</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;car&#39;</code></pre>
@@ -633,38 +642,341 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 <pre><code>## The following object is masked from &#39;package:purrr&#39;:
 ## 
 ##     some</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="anova.html#cb21-1"></a><span class="kw">Anova</span>(model_tr)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="anova.html#cb22-1"></a><span class="kw">Anova</span>(model_tr)</span></code></pre></div>
 <pre><code>## Anova Table (Type II tests)
 ## 
 ## Response: time1
-##            Sum Sq    Df F value    Pr(&gt;F)    
-## setsize     581.9     2  410.17 &lt; 2.2e-16 ***
-## Residuals 11488.3 16197                      
+##           Sum Sq  Df F value   Pr(&gt;F)    
+## setsize    3.879   2  18.391 1.42e-07 ***
+## Residuals 11.073 105                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="anova.html#cb23-1"></a><span class="kw">Anova</span>(model_ef)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="anova.html#cb24-1"></a><span class="kw">Anova</span>(model_ef)</span></code></pre></div>
 <pre><code>## Anova Table (Type II tests)
 ## 
 ## Response: time1
-##            Sum Sq    Df F value    Pr(&gt;F)    
-## setsize     581.9     2  410.17 &lt; 2.2e-16 ***
-## Residuals 11488.3 16197                      
+##           Sum Sq  Df F value   Pr(&gt;F)    
+## setsize    3.879   2  18.391 1.42e-07 ***
+## Residuals 11.073 105                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Вот вам пожалуйста — табличка дисперсионного анализа. В случае однофакторного дисперсионного анализа нам всё равно, какой метод параметризации использовать — результаты будут одинаковые.</p>
-<p>Теперь обратим внимание на результат. Да, фактор количества стимулов значим, но что это значит технически? Что есть <em>хотя бы две группы</em>, которые значимо различаются между собой. Какие — нам не известно. Чтобы это узнать, необхожимо провести…</p>
+<p>Теперь обратим внимание на результат. Да, фактор количества стимулов значим, но что это значит технически? Что есть <em>хотя бы две группы</em>, которые значимо различаются между собой. Какие — нам не известно. Чтобы это узнать, необходимо провести…</p>
 </div>
 <div id="post-hoc-тесты" class="section level3">
 <h3><span class="header-section-number">19.2.5</span> Post hoc тесты</h3>
+<p>Post hoc тесты позволяют выяснить, между какими именно группами есть статисически значимые различия. Это не единственный метод, но самый распространенный, поэтому мы рассмотрим его.</p>
+<p>Чтобы выяснить, между какими конкретно группами есть различия, нам неизбежно придется выполнить несколько попарных сравнений, поэтому всё-таки придётся принять меры по предотвращению <a href="hypotheses.html#multiple_comp_problem">проблемы множественных сравнений</a>, то есть скорректировать уровень значимости.</p>
+<p>Возникает закономерный вопрос: раз уж мы всё равно сравниваем попарно все группы, зачем вообще нам нужен был дисперсионный анализ? Можно же сразу было попарно сравнить и кайфовать! Так-то оно, конечно, так — но ведь это не так. Post hoc тесты, или попарные сравнения, мы выполняем только в том случае, если обнаружили значимое влияние фактора (предиктора). Напомним себе, что дисперсионный анализ тестирует гипотезу о том, что средние <em>во всех</em> группах равны. Соответственно, если в ходе дисперсионного анализа не обнаруживается значимое влияние фактора на зависимую переменную, у нас нет оснований отклонить эту нулевую гипотезу — следовательно, мы делаем вывод, что между группами нет различий. А раз их нет, то что же тогда тестировать попарными сравнениями?</p>
+<p>А вот если фактор получился значимым, то тогда <em>хотя бы две из групп</em> различаются — естественно, нам хотелось бы знать, какие конкретно. Тогда мы проводим попарные сравнения.</p>
+<p>Вообще говоря, попарные сравнения можно проводить любым статистическим тестом, который сравнивает две группы. Просто для именования перечислим следующие возможные варианты:</p>
+<ul>
+<li>наименьшая значимая разница Фишера (Fisher’s Least Significant Difference)</li>
+<li>поправка Бонферрони (Bonferroni correction) или Сидака (Sidak’s correction)</li>
+<li>тест Тьюки (Tuckey’s Honest Significant Difference, HSD)</li>
+<li>тест Стьюдента-Ньюмена-Кьюлса (Student-Newman-Kewls test, SNK)</li>
+<li>тест Даннета для сравнения с контрольной группой (Dunnet’s test)</li>
+<li>критерий Дункана (Dunkan’s test)</li>
+<li>тест Шеффе (Scheffe’s test)</li>
+</ul>
+<p>Из всего этого зоопарка мы рассмотрим тест Тьюки, так как он считается разумным компромиссом относительно жёсткости корректировки уровня значимости, и попарные сравнения t-тестом с поправками Бонферрони и Холма, так как их результаты могут несколько отличаться и давать полезную информацию.</p>
+<p><strong>Тест Тьюки</strong> выполняется следующим образом. Нам понадобится пакет <code>multcomp</code>. Из него нам будет нужна функция <code>glht()</code> — general linear hypotheses testing. Эта функция имеет аргумент <code>linfct</code>, который задаёт гипотезу для тестирования и принимает в себя результат работы функции <code>mcp()</code>, с помощью которой задаются попарные сравнения. Звучит сложно — на самом деле всё выглядит не так страшно.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="anova.html#cb26-1"></a><span class="kw">library</span>(multcomp) <span class="co"># надо подключить весь макет, так как вместе с ним подключаются зависимые</span></span></code></pre></div>
+<pre><code>## Loading required package: mvtnorm</code></pre>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Loading required package: TH.data</code></pre>
+<pre><code>## Loading required package: MASS</code></pre>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<pre><code>## 
+## Attaching package: &#39;TH.data&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:MASS&#39;:
+## 
+##     geyser</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="anova.html#cb35-1"></a>mcmp_THSD &lt;-<span class="st"> </span><span class="kw">glht</span>(model_tr, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">setsize =</span> <span class="st">&#39;Tukey&#39;</span>))</span></code></pre></div>
+<p>Вместо <code>setsize</code> можно написать название другой переменной, по которой необхожимо выполнить попарные сравнения. Чтобы увидеть результат, надо воспользоваться функцией <code>summary()</code>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="anova.html#cb36-1"></a><span class="kw">summary</span>(mcmp_THSD)</span></code></pre></div>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Tukey Contrasts
+## 
+## 
+## Fit: lm(formula = time1 ~ setsize, data = share_1)
+## 
+## Linear Hypotheses:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## 12 - 8 == 0   0.22199    0.07654   2.900  0.01250 *  
+## 16 - 8 == 0   0.46408    0.07654   6.063  &lt; 0.001 ***
+## 16 - 12 == 0  0.24209    0.07654   3.163  0.00582 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## (Adjusted p values reported -- single-step method)</code></pre>
+<p>В аутпуте отображаются группы, которые сравнивались, и сразу же нулевая гипотеза об отсутствии различий (<code>== 0</code>). Далее привычная нам таблица с разницей между средними, стандартной ошибкой, значением t-статистики и уровнем значимости, рассчитанным для неё, по которому мы и совершаем статистический вывод.</p>
+<p>Другой вариант попарных сравнений — <strong>тест Стьюдента с поправками</strong>. Он выполняется через следующую команду:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="anova.html#cb38-1"></a><span class="kw">pairwise.t.test</span>(<span class="dt">x =</span> share<span class="op">$</span>time1,</span>
+<span id="cb38-2"><a href="anova.html#cb38-2"></a>                <span class="dt">g =</span> share<span class="op">$</span>setsize)</span></code></pre></div>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  share$time1 and share$setsize 
+## 
+##    8      12    
+## 12 &lt;2e-16 -     
+## 16 &lt;2e-16 &lt;2e-16
+## 
+## P value adjustment method: holm</code></pre>
+<p>Данная функцию принимает в себя два обязательных аргумента: <code>x</code> — вектор значений зависимой переменной, <code>g</code> — вектор значений нашего категориального предиктора (наши группы). В качестве результата возвращается «таблица», в ячейках которой указаны p-values для t-статистик, рассчитанных при сравнении групп. Почему нет самих статистик? Обычно для попарных сравнений рапортуются только уровни значимости.</p>
+<p>Также в аутпуте есть строка, в которой сказано, что при тестировании была использована поправка Холма. Эта попавка мягче Бонферрони, так как учитывает, что не все сравнения могут быть независимы, но немного жестче Тьюки. Если необхожимо всё-таки использовать поправку Бонферрони, то она задается отдельным аргументом:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="anova.html#cb40-1"></a><span class="kw">pairwise.t.test</span>(<span class="dt">x =</span> share<span class="op">$</span>time1,</span>
+<span id="cb40-2"><a href="anova.html#cb40-2"></a>                <span class="dt">g =</span> share<span class="op">$</span>setsize,</span>
+<span id="cb40-3"><a href="anova.html#cb40-3"></a>                <span class="dt">p.adjust.method =</span> <span class="st">&#39;bonf&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  share$time1 and share$setsize 
+## 
+##    8      12    
+## 12 &lt;2e-16 -     
+## 16 &lt;2e-16 &lt;2e-16
+## 
+## P value adjustment method: bonferroni</code></pre>
+<p>В данном случае все группы очень сильно различаются между собой, поэтому не имеет значения, какую именно поправвку использовать — результа получаются всё равно одинаковые. Однако если у вас есть в анализе результаты на грани уровня значимости, более консервативные поправки могут их «срубать».</p>
 </div>
 </div>
 <div id="многофакторный-дисперсионный-анализ" class="section level2">
 <h2><span class="header-section-number">19.3</span> Многофакторный дисперсионный анализ</h2>
+<p>Итак, мы знаем, что дисперсионный анализ — это [практически] линейная регрессия. Мы знаем также, что в линейную регрессию можно включить сразу несколько предикторов. Можно ли включить сразу несколько факторов в дисперсионный анализ? Можно! И их взаимодействие? И их взаимодействие!</p>
+<center>
+<img src="img/anova_meme.jpg">
+</center>
+<p><em>Основной эффект</em> каждого фактора интерпретируется аналогично тому, как это делалось в однофакторном дисперсионном анализе. Если же у нас значимо <em>взаиможействие</em>, то это говорит нам о том, что влияние одного фактора на зависимую переменную различается на разных уровнях другого фактора.</p>
+<p>Визуализация для понимания того, как оно работает:</p>
+<p>КАРТИНКА нет эффекта</p>
+<p>КАРТИНКА нет взаиможействия</p>
+<p>КАРТИНКА есть взаиможействие</p>
+<p>Вообще значимое взаимодействие факторов — это двоякая штука. С одной стороны, мы обнаружили интересную закономерность — возможно, именно ту, которую искали, и c’est cool. С другой стороны, взаимодействие,</p>
+<ul>
+<li><em>во-первых</em>, может маскировать главные эффекты — если мы смотрим только на главные эффекты, то теряем часть информации о закономерности</li>
+<li><em>во-вторых</em>, и это связано с первым пунктом, оно затрудняет интерпретацию основных эффектов.</li>
+</ul>
+<p>КАРТИНКИ</p>
+<p>Если взаиможействие не значимо, что интерпретируются главные эффекты — трудностей не возникает. Если взаимодействие значимо, то обсуждать главнные эффекты необхожимо аккуратно, или не обсуждать вовсе.</p>
+<p>Модель многофакторного дисперсионного анализа можно подобрать как в параметризации эффектов, так и в параметризации индикаторов. Ниже представлены таблицы кодирования предикторов в переменные для обоих случаев в ситуации двухфакторного дисперсионного анализа.</p>
+<p>ТАБЛИЦА</p>
+<p>ТАБЛИЦА</p>
+<p>Конечно, в модель можно ввести и более двух предикторов, и логика останется та же самая. Но помните, что чем сложнее модель, тем сложнее её интерпретация. А интерпретируя взаиможействие трёх предикторов вовсе можно сойти с ума.</p>
+<blockquote>
+<p>В связи с этим, есть следующий момент. Когда вы планируете ваше исследование, сразу подумайте, как вы будете анализировать данные — что будет входить в модель в качестве основных предикторов, что в качестве <a href="ancova.html#ancova">ковариат</a>, и какие взаиможействия в ней будут. Иначе измерить кучу переменных вы построите модель, результаты которой невозможно будет понять. Дизайн исследования очень тесно связан с аналитикой.</p>
+</blockquote>
+<p>В наших данных есть две переменные <code>trialtype</code> и <code>platform</code>, влияние которых на время реакции хотелось бы исследовать. Переменная <code>trialtype</code> содержит три уровня — <code>dots</code>, <code>tray</code> и <code>both</code>, из которых нам понадобятся только два первых<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. В факторе <code>platform</code> у нас два уровня — <code>iOS</code> и <code>Android</code>. Итого, у нас два фактора, в каждом из которых два уровня. Отлично! Поехали!</p>
+<p>Мы будем строить модель сразу со взаимодействием. Подготовим данные:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="anova.html#cb42-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) -&gt;<span class="st"> </span>share_<span class="dv">2</span></span></code></pre></div>
+<blockquote>
+<p><strong>ATTENTION!</strong> <strong>ACHTUNG!</strong> <strong>ВНИМАНИЕ!</strong> В данном <strong>учебном</strong> примере мы будем использовать неаггрегированные данные с целью получить значимое взаимодействие. <strong>Правильным подходом к анализу, безусловно, является аггрегация данных!</strong> В частности, выполните задание в конце этого раздела, и сравните результаты.</p>
+</blockquote>
+<p>Строим модель двухфакторного дисперсионного анализа (в обеих параметризациях):</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="anova.html#cb43-1"></a>model2_tr &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>trialtype <span class="op">*</span><span class="st"> </span>platform, share_<span class="dv">2</span>)</span>
+<span id="cb43-2"><a href="anova.html#cb43-2"></a>model2_tr</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = time1 ~ trialtype * platform, data = share_2)
+## 
+## Coefficients:
+##               (Intercept)              trialtypetray  
+##                   1.75911                    0.02189  
+##               platformios  trialtypetray:platformios  
+##                  -0.16060                    0.07529</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="anova.html#cb45-1"></a>model2_ef &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span>trialtype <span class="op">*</span><span class="st"> </span>platform, share_<span class="dv">2</span>,</span>
+<span id="cb45-2"><a href="anova.html#cb45-2"></a>                <span class="dt">contrasts =</span> <span class="kw">list</span>(</span>
+<span id="cb45-3"><a href="anova.html#cb45-3"></a>                  <span class="dt">trialtype =</span> contr.sum,</span>
+<span id="cb45-4"><a href="anova.html#cb45-4"></a>                  <span class="dt">platform =</span> contr.sum</span>
+<span id="cb45-5"><a href="anova.html#cb45-5"></a>                ))</span>
+<span id="cb45-6"><a href="anova.html#cb45-6"></a>model2_ef</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = time1 ~ trialtype * platform, data = share_2, contrasts = list(trialtype = contr.sum, 
+##     platform = contr.sum))
+## 
+## Coefficients:
+##          (Intercept)            trialtype1             platform1  
+##              1.70858              -0.02977               0.06148  
+## trialtype1:platform1  
+##              0.01882</code></pre>
+<p>Коэффициент модели мы наблюдаем, и готовы проводить собственно дисперсионный анализ. Однако нам надо обсудить один подводный камень.</p>
+<div id="типы-сумм-квадратов" class="section level3">
+<h3><span class="header-section-number">19.3.1</span> Типы сумм квадратов</h3>
+<p>Когда у нас в модели появляется несколько предикторов, у нас возникает несколько коэффициентов. Логично. Взаимодействие в этом смысле тоже как бы «предиктор», так как перед ним есть коэффициент. Так вот, когда у нас есть несколько коэффициентов, мы можем тестировать их значимость различными способами. Этим способы определяеются <strong>типами сумм квадратов</strong>, которых существует три.</p>
+<ul>
+<li><strong>Первый (I) тип сумм квадратов</strong> проводит последовательные тесты значимости предикторов. Для него не важна параметризация, в которой подобрана модель, однако величина эффекта предиктора зависит от объёма выборки. Кроме того, результат вычислений зависит от порядка включения предикторов в модель, что не оч хор.</li>
+<li><strong>Второй (II) тип сумм квадратов</strong> проводит иерархические тесты, поэтому в этом случае результаты не зависят от порядка включения предикторов в модель. Параметризация в этом случае также не влияет на результаты вычисления, поэтому <em>по умолчанию используется этот метод</em>, хотя величина эффекта все ещё зависит от объема выборки.</li>
+<li><strong>Третий (III) тип сумм квадратов</strong> проводит частные тесты. К данному подходу есть некоторые статистические вопросы<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, однако результаты в этом случае не зависят ни от порядка включения предикторов в модель, ни от объёма выборки. По этой причине данный тип <em>используют в случае несбалансированных данных</em>, когда объемы групп по факторам различаются. Несмотря на преимущества третьего типа сумм квадратов, у него есть важная особенность: <em>важна параметризация модели — необходимо использовать параметризацию эффектов</em>.</li>
+</ul>
+<p>Если у нас экспериментальный дизайн исследования, то мы, во-первых, на уровне планирования исследования делаем всё возможное, чтобы группы были уравнены, а также у нас, как правило, есть возможность добрать испытуемых, если в какой-то из групп из не хватает. Тогда мы по умолчанию используем II тип суммы квадратов. Если же у нас опросниковое исследование или такой дизайн, где респонденты разбиваются на группы post factum, мы не можем гарантировать, что эти группы окажутся равными по численности. В этом случае нам может помочь III типа суммы квадратов.</p>
+<hr />
+<p>Посмотрим, какие данные у нас:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="anova.html#cb47-1"></a><span class="kw">table</span>(share_<span class="dv">2</span><span class="op">$</span>trialtype, share_<span class="dv">2</span><span class="op">$</span>platform)</span></code></pre></div>
+<pre><code>##       
+##        android  ios
+##   dots    2700 2700
+##   tray    2700 2700</code></pre>
+<p>Наши данные сбалансированы, так как исследование было экспериментальным. Поэтому можно использоваться II тип суммы квадратов.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="anova.html#cb49-1"></a><span class="kw">Anova</span>(model2_ef)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: time1
+##                    Sum Sq    Df F value    Pr(&gt;F)    
+## trialtype             9.6     1 10.6808  0.001086 ** 
+## platform             40.8     1 45.5580 1.558e-11 ***
+## trialtype:platform    3.8     1  4.2699  0.038817 *  
+## Residuals          9673.7 10796                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Мы видим, что как основные эффекты, так и взаиможействие, оказались статистически значимы. Вы можете проверить, что результаты анализа для модели в параметризации индикаторов идентичны.</p>
+<p>Посмотрим, как работает III тип суммы квадратов:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="anova.html#cb51-1"></a><span class="co">### НЕВЕРНО!!!</span></span>
+<span id="cb51-2"><a href="anova.html#cb51-2"></a><span class="kw">Anova</span>(model2_tr, <span class="dt">type =</span> <span class="st">&#39;III&#39;</span>)</span></code></pre></div>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: time1
+##                    Sum Sq    Df   F value    Pr(&gt;F)    
+## (Intercept)        8355.1     1 9324.4520 &lt; 2.2e-16 ***
+## trialtype             0.6     1    0.7221   0.39546    
+## platform             34.8     1   38.8613  4.72e-10 ***
+## trialtype:platform    3.8     1    4.2699   0.03882 *  
+## Residuals          9673.7 10796                        
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="anova.html#cb53-1"></a><span class="co"># корректный вариант</span></span>
+<span id="cb53-2"><a href="anova.html#cb53-2"></a><span class="kw">Anova</span>(model2_ef, <span class="dt">type =</span> <span class="st">&#39;III&#39;</span>)</span></code></pre></div>
+<pre><code>## Anova Table (Type III tests)
+## 
+## Response: time1
+##                     Sum Sq    Df    F value    Pr(&gt;F)    
+## (Intercept)        31527.8     1 35185.6978 &lt; 2.2e-16 ***
+## trialtype              9.6     1    10.6808  0.001086 ** 
+## platform              40.8     1    45.5580 1.558e-11 ***
+## trialtype:platform     3.8     1     4.2699  0.038817 *  
+## Residuals           9673.7 10796                         
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Хотя на значимость предикторов выбор типа анализа не повлиял, необхожимо заметить, что значения F-статистик, а следовательно, и p-values различаются. Если у вас в анализе будут результаты, близкие в порогу значимости, выбор некорректного типа анализа может привести в ошибочным результатам.</p>
+</div>
+<div id="post-hoc-тесты-1" class="section level3">
+<h3><span class="header-section-number">19.3.2</span> Post hoc тесты</h3>
+<p>Попарные сравнения работают аналогично однофакторному анализу, с той лишь разницей, что если значимо взаиможействие, нет смысла попарно сравнивать группы по отдельным факторам, даже сами фактора значимы.</p>
+<p>Множественные сравнения t-тестом провести достаточно просто — синтаксис практически не отличается. Разница лишь в том, что в аргумент <code>g</code> необхожимо передать переменную, которая будет кодировать взаимодействие предикторов. Такая переменная получается в результате работы функции <code>interaction()</code>, с которой мы уже сталкивались в теме о визуализации.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="anova.html#cb55-1"></a><span class="kw">pairwise.t.test</span>(<span class="dt">x =</span> share_<span class="dv">2</span><span class="op">$</span>time1,</span>
+<span id="cb55-2"><a href="anova.html#cb55-2"></a>                <span class="dt">g =</span> <span class="kw">interaction</span>(share_<span class="dv">2</span><span class="op">$</span>trialtype,</span>
+<span id="cb55-3"><a href="anova.html#cb55-3"></a>                                share_<span class="dv">2</span><span class="op">$</span>platform))</span></code></pre></div>
+<pre><code>## 
+##  Pairwise comparisons using t tests with pooled SD 
+## 
+## data:  share_2$time1 and interaction(share_2$trialtype, share_2$platform) 
+## 
+##              dots.android tray.android dots.ios
+## tray.android 0.39546      -            -       
+## dots.ios     2.4e-09      8.9e-12      -       
+## tray.ios     0.02768      0.00279      0.00065 
+## 
+## P value adjustment method: holm</code></pre>
+<p>Тест Тьюки провести чуть сложнее — понадобится служебная модель, содержащая только взаиможействие (intercept также необходимо из неё исключить):</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="anova.html#cb57-1"></a>share_<span class="dv">2</span><span class="op">$</span>inter &lt;-<span class="st"> </span><span class="kw">interaction</span>(share_<span class="dv">2</span><span class="op">$</span>trialtype,</span>
+<span id="cb57-2"><a href="anova.html#cb57-2"></a>                             share_<span class="dv">2</span><span class="op">$</span>platform)</span>
+<span id="cb57-3"><a href="anova.html#cb57-3"></a>model_for_tukey &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span>inter, share_<span class="dv">2</span>)</span></code></pre></div>
+<p>Эту модель мы и передаём в функцию <code>glht()</code>:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="anova.html#cb58-1"></a>mcmp_THSD_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">glht</span>(model_for_tukey,</span>
+<span id="cb58-2"><a href="anova.html#cb58-2"></a>                    <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">inter =</span> <span class="st">&#39;Tukey&#39;</span>))</span>
+<span id="cb58-3"><a href="anova.html#cb58-3"></a><span class="kw">summary</span>(mcmp_THSD_<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## 
+##   Simultaneous Tests for General Linear Hypotheses
+## 
+## Multiple Comparisons of Means: Tukey Contrasts
+## 
+## 
+## Fit: lm(formula = time1 ~ -1 + inter, data = share_2)
+## 
+## Linear Hypotheses:
+##                                  Estimate Std. Error t value Pr(&gt;|t|)    
+## tray.android - dots.android == 0  0.02189    0.02576   0.850  0.83055    
+## dots.ios - dots.android == 0     -0.16060    0.02576  -6.234  &lt; 0.001 ***
+## tray.ios - dots.android == 0     -0.06342    0.02576  -2.462  0.06618 .  
+## dots.ios - tray.android == 0     -0.18250    0.02576  -7.084  &lt; 0.001 ***
+## tray.ios - tray.android == 0     -0.08532    0.02576  -3.312  0.00504 ** 
+## tray.ios - dots.ios == 0          0.09718    0.02576   3.772  &lt; 0.001 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## (Adjusted p values reported -- single-step method)</code></pre>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Сравните результаты попарных сравнений с помощью друх различных критериев. Согласуются ли они между собой?</p>
+</div>
+<p>Что ж, мы поняли, как работает многофакторный дисперсионный анализ. Осталось только визуализировать результаты:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="anova.html#cb60-1"></a>share_<span class="dv">2</span> <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb60-2"><a href="anova.html#cb60-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(trialtype,</span>
+<span id="cb60-3"><a href="anova.html#cb60-3"></a>             time1,</span>
+<span id="cb60-4"><a href="anova.html#cb60-4"></a>             <span class="dt">color =</span> platform,</span>
+<span id="cb60-5"><a href="anova.html#cb60-5"></a>             <span class="dt">group =</span> platform)) <span class="op">+</span></span>
+<span id="cb60-6"><a href="anova.html#cb60-6"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;line&#39;</span>, <span class="dt">linetype =</span> <span class="st">&#39;dashed&#39;</span>) <span class="op">+</span></span>
+<span id="cb60-7"><a href="anova.html#cb60-7"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;point&#39;</span>, <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb60-8"><a href="anova.html#cb60-8"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_cl_boot, <span class="dt">geom =</span> <span class="st">&#39;errorbar&#39;</span>, <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span></span>
+<span id="cb60-9"><a href="anova.html#cb60-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Тип пробы&quot;</span>,</span>
+<span id="cb60-10"><a href="anova.html#cb60-10"></a>       <span class="dt">y =</span> <span class="st">&quot;Время реакции, с&quot;</span>,</span>
+<span id="cb60-11"><a href="anova.html#cb60-11"></a>       <span class="dt">color =</span> <span class="st">&quot;Платформа&quot;</span>,</span>
+<span id="cb60-12"><a href="anova.html#cb60-12"></a>       <span class="dt">caption =</span> <span class="st">&quot;отображен 95% доверительный интервал&quot;</span>) <span class="op">+</span></span>
+<span id="cb60-13"><a href="anova.html#cb60-13"></a><span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Android&quot;</span>, <span class="st">&quot;iOS&quot;</span>)) <span class="op">+</span></span>
+<span id="cb60-14"><a href="anova.html#cb60-14"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Проведите двухфакторный дисперсионный анализ, аналогичный тому, что был проведён выше, но только <em>на аггрегированных данных</em>. Обратите внимание на различия.</p>
+</div>
+</div>
 </div>
 <div id="дисперсионный-анализ-с-повторными-измерениями" class="section level2">
 <h2><span class="header-section-number">19.4</span> Дисперсионный анализ с повторными измерениями</h2>
+<p>В исследовательской практике не редки случаи так называемых <em>повторных измерений</em>. Например, когда тестируется эффективность лекарственных препаратов, производится два замера объективных показателей — до начала приёма лекарств и после. Кроме того, выше уже упоминался пример, когда испытуемый проходит несколько проб с один набором экспериментальных условий для получения более точных оценок значений экспериментальной зависимой переменной.</p>
+<p>В таком случае структура изменчивости данных несколько изменяется: появляется ещё один компонент, который необхожимо учитывать в анализе — вариативность данных «внутри» каждого испытуемого. Очевидно, что даже кликая мышкой или нажимая на клавиши в ходе какого-нибудь базового когнитивного эксперимента, наш испытуемый не будет давать каждый раз идентичные ответы — значения экспериментальной зависимой переменной в каджом замере будут варьироваться. Получается следуюшая схема <strong>дисперсионного анализа с повторным измерениями (repeated measures ANOVA, rmANOVA)</strong>:</p>
+<p>КАРТИНКА</p>
+<p>В этом случае несколько изменяется вычисление сумм квадратов:</p>
+<p><span class="math display">\[
+SS_\mathrm x = \sum_{j=1}^p n_j (\bar y - \bar y_j)^2, \mathrm{df}_\mathrm x = p - 1,
+\]</span>
+где <span class="math inline">\(p\)</span> — число групп по фактору, <span class="math inline">\(n_j\)</span> — число респондентов в <span class="math inline">\(j\)</span>-ой группе, <span class="math inline">\(\bar y_j\)</span> — среднее в <span class="math inline">\(j\)</span>-ой группе <span class="math inline">\(\bar y\)</span> — общее среднее.</p>
+<p><span class="math display">\[
+SS_\mathrm e = SS_\mathrm w - SS_\mathrm s, \quad \mathrm{df}_\mathrm e = (n-1)(p-1)
+\]</span>
+<span class="math display">\[
+SS_\mathrm w = \sum_{j=1}^p \sum_{i=1}^{n_j} (y_{ij} - \bar y_j)^2,
+\]</span>
+где <span class="math inline">\(p\)</span> — число групп по фактору, <span class="math inline">\(n_j\)</span> — число респондентов в <span class="math inline">\(j\)</span>-ой группе, <span class="math inline">\(\bar y_{ij}\)</span> — <span class="math inline">\(i\)</span>-ое наблюдение в <span class="math inline">\(j\)</span>-ой группе <span class="math inline">\(\bar y_j\)</span> — среднее в <span class="math inline">\(j\)</span>-ой группе.</p>
+<p><span class="math display">\[
+SS_\mathrm s = p \sum_{i=1}^n (\bar y_i - \bar y)^2,
+\]</span>
+где <span class="math inline">\(p\)</span> — число групп по фактору, <span class="math inline">\(n\)</span> — число респондентов в выборке, <span class="math inline">\(\bar y_i\)</span> — среднее <span class="math inline">\(k\)</span>-го респондента по всем условиям <span class="math inline">\(\bar y\)</span> — общее среднее.</p>
+<p>Средние квадраты рассчитываются так:</p>
+<p><span class="math display">\[
+MS_\mathrm x = \frac{SS_\mathrm x}{p-1} \\
+MS_\mathrm e = \frac{SS_\mathrm e}{(n-1)(p-1)}
+\]</span></p>
+<p>Затем рассчитывается F-статистика, p-value и совершается статистический вывод:</p>
+<p><span class="math display">\[
+F = \frac{MS_\mathrm x}{MS_\mathrm e} \overset{H_0}{\thicksim} F(\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e)
+\]</span></p>
+<p>Это теория. Мы намеренно не будем обсуждать практику rmANOVA, так как функции, которые заточены под него имеют не совсем интуитивный синтаксис, а также иногда и практически нечитаемый аутпут. Мы вновь обратимся к дисперсионному анализу с повторными измерениями немного позже, когда познакомимся с ещё одним видом линейных моделей, который как раз позволяет учесть вариативность данных внутри наблюдений одного респондента. На основе это модели мы и будем проводить rmANOVA.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Конечно, можно воспользоваться более сложными моделями, но их мы освоим позже.<a href="anova.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Изначально уровень <code>both</code> вводился в дизайн исследования для другого анализа в проверки других гипотез.<a href="anova.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>В частности, в ходе тестирования возникают такие модели, где есть взаиможействие, но нет основных факторов, что вообще-то с содержательной точки зрения не только #неразумно, но и #невозможно…<a href="anova.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
