@@ -444,8 +444,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a><ul>
+<li class="chapter" data-level="21.4.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.4.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
 <li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
 <li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
@@ -495,10 +507,14 @@ y_i = b_0 + b_1 I_{\mathrm{Group_2}}
 y_i = b_0 + b_1 I_{\mathrm{Group_2}} + b_2 I_{\mathrm{Group_3}}
 \]</span></p>
 <p>Как это помыслить визуально? Вот так:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/tr_parametrization.jpeg">
+</center>
 <p>Собственно, как мы обсуждали в предыдущей главе, в интерсепт модели <span class="math inline">\(b_0\)</span> уходит baseline для группы 1, а коэффициенты при переменных <span class="math inline">\(I_{\mathrm{Group_i}}\)</span> показывают, насколько изменяется baseline в других группах по сравнению с группой 1.</p>
 <p>Кодировку групп с помощью переменных-индикаторов можно представить в такой табличке:</p>
-<p>ТАБЛИЦА</p>
+<center>
+<img src="img/tr_table.jpeg">
+</center>
 <p>Такая кодировка позволяет переписать уравнение модели в более простом виде — теперь и вовсе как обычная множественная регрессия:</p>
 <p><span class="math display">\[
 y_i = b_0 + b_1 x_1 + b_2 x_2
@@ -554,10 +570,14 @@ y_i = b_0 + b_1 x_1 + b_2 x_2
 ##      1.3704       0.2220       0.4641</code></pre>
 <p>Смысл полученных чисел таков: в условии с восемью стимулами в пробе среднее время реакции 1.37 с, а в условиях с 12 и 16 стимулами оно больше на 0.22 и 0.46 с соответственно.</p>
 <p>Другой способ смотреть на влияние фактора на нашу целевую переменную — это <em>эффект фактора</em>. Он складывается из <em>отклонений средних значений в группах по фактору от общего среднего</em>.</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/ef_parametrization.jpeg">
+</center>
 <p>В кодировке отклонений уровней дискретного фактора от общего среднего коэффициенты модели начинают отражать вклад каждого уровня факторв в его общий эфффект. Такая кодировка называется <strong>параметризацией эффектов (effects coding, sum-to-zero parameterization)</strong>.</p>
 <p>Таблица кодировки групп переменной будет несколько отличаться:</p>
-<p>ТАБЛИЦА</p>
+<center>
+<img src="img/ef_table.jpg">
+</center>
 <p>Математическая запись модель не меняется, однако интерпретация коэффициентов будет иная:</p>
 <p><span class="math display">\[
 y_i = b_0 + b_1 x_1 + b_2 x_2
@@ -597,16 +617,23 @@ y_i = b_0 + b_1 x_1 + b_2 x_2
 <p><span class="math display">\[
 SS_\mathrm t = \sum_{i=1}^n (\bar y - y_i)^2, \quad \mathrm{df}_\mathrm t = n-1
 \]</span></p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/SSt.jpeg">
+</center>
 <p>Часть от неё составляет <strong>факторная (межгрупповая) изменчивость</strong> — это отклонения внутригрупповых средних от общего среднего:</p>
 <p><span class="math display">\[
 SS_\mathrm x = \sum_{j=1}^p (\bar y - \bar y_j)^2, \quad \mathrm{df}_\mathrm x = p-1
 \]</span></p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/SSx.jpeg">
+</center>
 <p>Оставшуюся часть составляет <strong>случайная (внутригрупповая) изменчивость</strong>:</p>
 <p><span class="math display">\[
 SS_\mathrm e = \sum_{i=1}^n \sum_{j=1}^p (\bar y_j - y_{ij})^2, \quad \mathrm{df}_\mathrm e = n-p
 \]</span></p>
+<center>
+<img src="img/SSe.jpeg">
+</center>
 <p>Таким образом,</p>
 <p><span class="math display">\[
 SS_\mathrm t = SS_\mathrm x + SS_\mathrm e
@@ -627,7 +654,9 @@ H_1: \exists i,j: m_i \neq m_j \\
 F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathrm e} \overset{H_0}{\thicksim} F (\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e)
 \]</span></p>
 <p>Результаты дисперсионного анализа обыно представляются в виде таблицы:</p>
-<p>ТАБЛИЦА</p>
+<center>
+<img src="img/anova_table.jpeg">
+</center>
 </div>
 <div id="дисперсионный-анализ-в-r" class="section level3">
 <h3><span class="header-section-number">19.2.4</span> Дисперсионный анализ в R</h3>
@@ -709,7 +738,7 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 ## 
 ## Linear Hypotheses:
 ##              Estimate Std. Error t value Pr(&gt;|t|)    
-## 12 - 8 == 0   0.22199    0.07654   2.900  0.01253 *  
+## 12 - 8 == 0   0.22199    0.07654   2.900  0.01257 *  
 ## 16 - 8 == 0   0.46408    0.07654   6.063  &lt; 0.001 ***
 ## 16 - 12 == 0  0.24209    0.07654   3.163  0.00573 ** 
 ## ---
@@ -753,24 +782,32 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 <center>
 <img src="img/anova_meme.jpg">
 </center>
-<p><em>Основной эффект</em> каждого фактора интерпретируется аналогично тому, как это делалось в однофакторном дисперсионном анализе. Если же у нас значимо <em>взаиможействие</em>, то это говорит нам о том, что влияние одного фактора на зависимую переменную различается на разных уровнях другого фактора.</p>
+<p><em>Основной эффект</em> каждого фактора интерпретируется аналогично тому, как это делалось в однофакторном дисперсионном анализе. Если же у нас значимо <em>взаимодействие</em>, то это говорит нам о том, что влияние одного фактора на зависимую переменную различается на разных уровнях другого фактора.</p>
 <p>Визуализация для понимания того, как оно работает:</p>
-<p>КАРТИНКА нет эффекта</p>
-<p>КАРТИНКА нет взаиможействия</p>
-<p>КАРТИНКА есть взаиможействие</p>
+<center>
+<img src="img/anova_interaction.jpeg">
+</center>
 <p>Вообще значимое взаимодействие факторов — это двоякая штука. С одной стороны, мы обнаружили интересную закономерность — возможно, именно ту, которую искали, и c’est cool. С другой стороны, взаимодействие,</p>
 <ul>
 <li><em>во-первых</em>, может маскировать главные эффекты — если мы смотрим только на главные эффекты, то теряем часть информации о закономерности</li>
 <li><em>во-вторых</em>, и это связано с первым пунктом, оно затрудняет интерпретацию основных эффектов.</li>
 </ul>
-<p>КАРТИНКИ</p>
-<p>Если взаиможействие не значимо, что интерпретируются главные эффекты — трудностей не возникает. Если взаимодействие значимо, то обсуждать главнные эффекты необхожимо аккуратно, или не обсуждать вовсе.</p>
+<center>
+<img src="img/anova_interaction2.jpeg">
+</center>
+<p>Если взаимодействие не значимо, то с интерпретацией главных эффектов трудностей не возникает. Если взаимодействие значимо, то обсуждать главнные эффекты необходимо аккуратно, или не обсуждать вовсе. В частности, нижний ряд рисунков выше показывает, как эффект фактора A частично маскирует эффект фактора B, что отражается во взаимодействии.</p>
 <p>Модель многофакторного дисперсионного анализа можно подобрать как в параметризации эффектов, так и в параметризации индикаторов. Ниже представлены таблицы кодирования предикторов в переменные для обоих случаев в ситуации двухфакторного дисперсионного анализа.</p>
-<p>ТАБЛИЦА</p>
-<p>ТАБЛИЦА</p>
-<p>Конечно, в модель можно ввести и более двух предикторов, и логика останется та же самая. Но помните, что чем сложнее модель, тем сложнее её интерпретация. А интерпретируя взаиможействие трёх предикторов вовсе можно сойти с ума.</p>
+<p><em>Для параментризации индикаторов:</em></p>
+<center>
+<img src="img/tr_interaction_table.jpeg">
+</center>
+<p><em>Для параметризации эффектов:</em></p>
+<center>
+<img src="img/ef_interaction_table.jpeg">
+</center>
+<p>Конечно, в модель можно ввести и более двух предикторов, и логика останется та же самая. Но помните, что чем сложнее модель, тем сложнее её интерпретация. А интерпретируя взаимодействие трёх предикторов вовсе можно сойти с ума.</p>
 <blockquote>
-<p>В связи с этим, есть следующий момент. Когда вы планируете ваше исследование, сразу подумайте, как вы будете анализировать данные — что будет входить в модель в качестве основных предикторов, что в качестве <a href="ancova.html#ancova">ковариат</a>, и какие взаиможействия в ней будут. Иначе измерить кучу переменных вы построите модель, результаты которой невозможно будет понять. Дизайн исследования очень тесно связан с аналитикой.</p>
+<p>В связи с этим, есть следующий момент. Когда вы планируете ваше исследование, сразу подумайте, как вы будете анализировать данные — что будет входить в модель в качестве основных предикторов, что в качестве <a href="ancova.html#ancova">ковариат</a>, и какие взаимодействия в ней будут. Иначе измерить кучу переменных вы построите модель, результаты которой невозможно будет понять. Дизайн исследования очень тесно связан с аналитикой.</p>
 </blockquote>
 <p>В наших данных есть две переменные <code>trialtype</code> и <code>platform</code>, влияние которых на время реакции хотелось бы исследовать. Переменная <code>trialtype</code> содержит три уровня — <code>dots</code>, <code>tray</code> и <code>both</code>, из которых нам понадобятся только два первых<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. В факторе <code>platform</code> у нас два уровня — <code>iOS</code> и <code>Android</code>. Итого, у нас два фактора, в каждом из которых два уровня. Отлично! Поехали!</p>
 <p>Мы будем строить модель сразу со взаимодействием. Подготовим данные:</p>
@@ -835,7 +872,7 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 ## Residuals          9673.7 10796                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>Мы видим, что как основные эффекты, так и взаиможействие, оказались статистически значимы. Вы можете проверить, что результаты анализа для модели в параметризации индикаторов идентичны.</p>
+<p>Мы видим, что как основные эффекты, так и взаимодействие, оказались статистически значимы. Вы можете проверить, что результаты анализа для модели в параметризации индикаторов идентичны.</p>
 <p>Посмотрим, как работает III тип суммы квадратов:</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="anova.html#cb51-1"></a><span class="co">### НЕВЕРНО!!!</span></span>
 <span id="cb51-2"><a href="anova.html#cb51-2"></a><span class="kw">Anova</span>(model2_tr, <span class="dt">type =</span> <span class="st">&#39;III&#39;</span>)</span></code></pre></div>
@@ -867,7 +904,7 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 </div>
 <div id="post-hoc-тесты-1" class="section level3">
 <h3><span class="header-section-number">19.3.2</span> Post hoc тесты</h3>
-<p>Попарные сравнения работают аналогично однофакторному анализу, с той лишь разницей, что если значимо взаиможействие, нет смысла попарно сравнивать группы по отдельным факторам, даже сами фактора значимы.</p>
+<p>Попарные сравнения работают аналогично однофакторному анализу, с той лишь разницей, что если значимо взаимодействие, нет смысла попарно сравнивать группы по отдельным факторам, даже сами фактора значимы.</p>
 <p>Множественные сравнения t-тестом провести достаточно просто — синтаксис практически не отличается. Разница лишь в том, что в аргумент <code>g</code> необхожимо передать переменную, которая будет кодировать взаимодействие предикторов. Такая переменная получается в результате работы функции <code>interaction()</code>, с которой мы уже сталкивались в теме о визуализации.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="anova.html#cb55-1"></a><span class="kw">pairwise.t.test</span>(<span class="dt">x =</span> share_<span class="dv">2</span><span class="op">$</span>time1,</span>
 <span id="cb55-2"><a href="anova.html#cb55-2"></a>                <span class="dt">g =</span> <span class="kw">interaction</span>(share_<span class="dv">2</span><span class="op">$</span>trialtype,</span>
@@ -883,7 +920,7 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 ## tray.ios     0.02768      0.00279      0.00065 
 ## 
 ## P value adjustment method: holm</code></pre>
-<p>Тест Тьюки провести чуть сложнее — понадобится служебная модель, содержащая только взаиможействие (intercept также необходимо из неё исключить):</p>
+<p>Тест Тьюки провести чуть сложнее — понадобится служебная модель, содержащая только взаимодействие (intercept также необходимо из неё исключить):</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="anova.html#cb57-1"></a>share_<span class="dv">2</span><span class="op">$</span>inter &lt;-<span class="st"> </span><span class="kw">interaction</span>(share_<span class="dv">2</span><span class="op">$</span>trialtype,</span>
 <span id="cb57-2"><a href="anova.html#cb57-2"></a>                             share_<span class="dv">2</span><span class="op">$</span>platform)</span>
 <span id="cb57-3"><a href="anova.html#cb57-3"></a>model_for_tukey &lt;-<span class="st"> </span><span class="kw">lm</span>(time1 <span class="op">~</span><span class="st"> </span><span class="dv">-1</span> <span class="op">+</span><span class="st"> </span>inter, share_<span class="dv">2</span>)</span></code></pre></div>
@@ -903,10 +940,10 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 ##                                  Estimate Std. Error t value Pr(&gt;|t|)    
 ## tray.android - dots.android == 0  0.02189    0.02576   0.850  0.83055    
 ## dots.ios - dots.android == 0     -0.16060    0.02576  -6.234  &lt; 0.001 ***
-## tray.ios - dots.android == 0     -0.06342    0.02576  -2.462  0.06603 .  
+## tray.ios - dots.android == 0     -0.06342    0.02576  -2.462  0.06617 .  
 ## dots.ios - tray.android == 0     -0.18250    0.02576  -7.084  &lt; 0.001 ***
-## tray.ios - tray.android == 0     -0.08532    0.02576  -3.312  0.00523 ** 
-## tray.ios - dots.ios == 0          0.09718    0.02576   3.772  0.00103 ** 
+## tray.ios - tray.android == 0     -0.08532    0.02576  -3.312  0.00529 ** 
+## tray.ios - dots.ios == 0          0.09718    0.02576   3.772  &lt; 0.001 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
@@ -940,7 +977,9 @@ F_{\mathrm{df}_\mathrm x, \mathrm{df}_\mathrm e} = \frac{MS_\mathrm x}{MS_\mathr
 <h2><span class="header-section-number">19.4</span> Дисперсионный анализ с повторными измерениями</h2>
 <p>В исследовательской практике не редки случаи так называемых <em>повторных измерений</em>. Например, когда тестируется эффективность лекарственных препаратов, производится два замера объективных показателей — до начала приёма лекарств и после. Кроме того, выше уже упоминался пример, когда испытуемый проходит несколько проб с один набором экспериментальных условий для получения более точных оценок значений экспериментальной зависимой переменной.</p>
 <p>В таком случае структура изменчивости данных несколько изменяется: появляется ещё один компонент, который необхожимо учитывать в анализе — вариативность данных «внутри» каждого испытуемого. Очевидно, что даже кликая мышкой или нажимая на клавиши в ходе какого-нибудь базового когнитивного эксперимента, наш испытуемый не будет давать каждый раз идентичные ответы — значения экспериментальной зависимой переменной в каджом замере будут варьироваться. Получается следуюшая схема <strong>дисперсионного анализа с повторным измерениями (repeated measures ANOVA, rmANOVA)</strong>:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/rmANOVA_structure.jpeg">
+</center>
 <p>В этом случае несколько изменяется вычисление сумм квадратов:</p>
 <p><span class="math display">\[
 SS_\mathrm x = \sum_{j=1}^p n_j (\bar y - \bar y_j)^2, \mathrm{df}_\mathrm x = p - 1,
@@ -975,7 +1014,7 @@ F = \frac{MS_\mathrm x}{MS_\mathrm e} \overset{H_0}{\thicksim} F(\mathrm{df}_\ma
 <ol start="1">
 <li id="fn1"><p>Конечно, можно воспользоваться более сложными моделями, но их мы освоим позже.<a href="anova.html#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Изначально уровень <code>both</code> вводился в дизайн исследования для другого анализа в проверки других гипотез.<a href="anova.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>В частности, в ходе тестирования возникают такие модели, где есть взаиможействие, но нет основных факторов, что вообще-то с содержательной точки зрения не только #неразумно, но и #невозможно…<a href="anova.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>В частности, в ходе тестирования возникают такие модели, где есть взаимодействие, но нет основных факторов, что вообще-то с содержательной точки зрения не только #неразумно, но и #невозможно…<a href="anova.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
