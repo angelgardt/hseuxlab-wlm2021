@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Описательные статистики | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book</title>
   <meta name="description" content="Книга написана для слушателей курса по анализу данных от HSE UX LAB" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Описательные статистики | HSE UX LAB | Анализ данных + R: мир линейных моделей | Book" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,14 +67,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -80,9 +85,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -218,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="tidy.html"><a href="tidy.html"><i class="fa fa-check"></i><b>7</b> Предобработка данных. Концепция tidy data</a><ul>
 <li class="chapter" data-level="7.1" data-path="tidy.html"><a href="tidy.html#tidyverse"><i class="fa fa-check"></i><b>7.1</b> <code>tidyverse</code></a></li>
-<li class="chapter" data-level="7.2" data-path="realdata.html"><a href="realdata.html#импорт-данных"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
+<li class="chapter" data-level="7.2" data-path="tidy.html"><a href="tidy.html#импорт-данных-1"><i class="fa fa-check"></i><b>7.2</b> Импорт данных</a></li>
 <li class="chapter" data-level="7.3" data-path="tidy.html"><a href="tidy.html#tibble"><i class="fa fa-check"></i><b>7.3</b> <code>tibble</code></a></li>
 <li class="chapter" data-level="7.4" data-path="tidy.html"><a href="tidy.html#грузим-много-данных"><i class="fa fa-check"></i><b>7.4</b> Грузим много данных</a></li>
 <li class="chapter" data-level="7.5" data-path="tidy.html"><a href="tidy.html#сабсет-данных"><i class="fa fa-check"></i><b>7.5</b> Сабсет данных</a><ul>
@@ -298,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -309,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -355,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
 <li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
 <li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
-<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
 </ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
@@ -392,11 +397,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a></li>
+<li class="chapter" data-level="21.5" data-path="logistic.html"><a href="logistic.html#задача-построения-линейной-модели"><i class="fa fa-check"></i><b>21.5</b> Задача построения линейной модели</a></li>
+<li class="chapter" data-level="21.6" data-path="logistic.html"><a href="logistic.html#переход-от-дискретной-величины-к-непрерывной"><i class="fa fa-check"></i><b>21.6</b> Переход от дискретной величины к непрерывной</a><ul>
+<li class="chapter" data-level="21.6.1" data-path="logistic.html"><a href="logistic.html#логистическая-кривая"><i class="fa fa-check"></i><b>21.6.1</b> Логистическая кривая</a></li>
+<li class="chapter" data-level="21.6.2" data-path="logistic.html"><a href="logistic.html#шансы-и-логиты"><i class="fa fa-check"></i><b>21.6.2</b> Шансы и логиты</a></li>
+</ul></li>
+<li class="chapter" data-level="21.7" data-path="logistic.html"><a href="logistic.html#формулирование-модели-в-математическом-виде"><i class="fa fa-check"></i><b>21.7</b> Формулирование модели в математическом виде</a></li>
+<li class="chapter" data-level="21.8" data-path="logistic.html"><a href="logistic.html#подбор-линейной-модели"><i class="fa fa-check"></i><b>21.8</b> Подбор линейной модели</a><ul>
+<li class="chapter" data-level="21.8.1" data-path="logistic.html"><a href="logistic.html#метод-максимального-правдоподобия"><i class="fa fa-check"></i><b>21.8.1</b> Метод максимального правдоподобия</a></li>
+</ul></li>
+<li class="chapter" data-level="21.9" data-path="logistic.html"><a href="logistic.html#анализ-модели"><i class="fa fa-check"></i><b>21.9</b> Анализ модели</a></li>
+<li class="chapter" data-level="21.10" data-path="logistic.html"><a href="logistic.html#анализ-девиансы-и-упрощение-модели"><i class="fa fa-check"></i><b>21.10</b> Анализ девиансы и упрощение модели</a></li>
+<li class="chapter" data-level="21.11" data-path="logistic.html"><a href="logistic.html#интерпретация-коэффициентов-модели"><i class="fa fa-check"></i><b>21.11</b> Интерпретация коэффициентов модели</a><ul>
+<li class="chapter" data-level="21.11.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.11.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="21.12" data-path="logistic.html"><a href="logistic.html#предсказательная-сила-модели"><i class="fa fa-check"></i><b>21.12</b> Предсказательная сила модели</a><ul>
+<li class="chapter" data-level="21.12.1" data-path="logistic.html"><a href="logistic.html#перевод-непрерывных-предсказаний-в-дискретные"><i class="fa fa-check"></i><b>21.12.1</b> Перевод непрерывных предсказаний в дискретные</a></li>
+<li class="chapter" data-level="21.12.2" data-path="logistic.html"><a href="logistic.html#confusion-matrix"><i class="fa fa-check"></i><b>21.12.2</b> Confusion matrix</a></li>
+<li class="chapter" data-level="21.12.3" data-path="logistic.html"><a href="logistic.html#accuracy"><i class="fa fa-check"></i><b>21.12.3</b> Accuracy</a></li>
+<li class="chapter" data-level="21.12.4" data-path="logistic.html"><a href="logistic.html#precision-and-recall"><i class="fa fa-check"></i><b>21.12.4</b> Precision and Recall</a></li>
+<li class="chapter" data-level="21.12.5" data-path="logistic.html"><a href="logistic.html#f1-мера"><i class="fa fa-check"></i><b>21.12.5</b> F1-мера</a></li>
+<li class="chapter" data-level="21.12.6" data-path="logistic.html"><a href="logistic.html#roc-auc"><i class="fa fa-check"></i><b>21.12.6</b> ROC-AUC</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
 <li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
 <li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
@@ -473,9 +554,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">15.1.1</span> Мода</h3>
 <p><strong>Мода (mode)</strong> — наиболее часто встречающееся значение данной переменной.</p>
 <p>Тут все достаточно просто и интуитивно понятно. Пусть у нас есть следующий вектор наблюдений:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="descriptives.html#cb1-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>)</span></code></pre></div>
 <p>Если мы составим таблицу частот по этому вектору, то получим следующее:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="descriptives.html#cb2-1"></a><span class="kw">table</span>(x)</span></code></pre></div>
 <pre><code>## x
 ## 1 2 3 4 6 
 ## 2 2 2 4 1</code></pre>
@@ -493,9 +574,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая принимает на вход вектор значений дискретной переменной, и вычисляет моду данной переменной<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. Если мод у данной переменной несколько, необходимо вернуть все.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">mode</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="descriptives.html#cb4-1"></a><span class="kw">mode</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">mode</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="descriptives.html#cb6-1"></a><span class="kw">mode</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>))</span></code></pre></div>
 <pre><code>## [1] 2 4</code></pre>
 </div>
 </div>
@@ -516,7 +597,7 @@ X(\frac{n+1}{2}), &amp; \text{ if } n \text{ is odd},\\
 \]</span>
 где <span class="math inline">\(X\)</span> — вектор налюдений данной переменной, <span class="math inline">\(n\)</span> — число наблюдений, <span class="math inline">\(X(a)\)</span> — наблюдение с индексом <span class="math inline">\(a\)</span> в сортированном векторе <span class="math inline">\(X\)</span>.</p>
 <p>Для вектора <code>x</code>, который был создан выше, расчёт медианы выглядит так:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">median</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="descriptives.html#cb8-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Изи.</p>
 </div>
@@ -532,15 +613,15 @@ X(\frac{n+1}{2}), &amp; \text{ if } n \text{ is odd},\\
 \]</span>
 где <span class="math inline">\(\bar X\)</span> — среднее арифметическое, <span class="math inline">\(x_i\)</span> — наблюдение в векторе <span class="math inline">\(X\)</span>, <span class="math inline">\(n\)</span> — количество наблюдений.</p>
 <p>В <strong>R</strong> оно считается абсолютно элементарно:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="descriptives.html#cb10-1"></a><span class="kw">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3.090909</code></pre>
 <p>Кстати, оценка генерального среднего через выборочное среднее — это один из примеров <a href="">точечной оценки</a> параметра <a href="">методом моментов</a>.</p>
 <p>Давайте сравним для рассмотреные статистики (используем все тот же вектор <code>x</code>):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">mode</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="descriptives.html#cb12-1"></a><span class="kw">mode</span>(x)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">median</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="descriptives.html#cb14-1"></a><span class="kw">median</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="descriptives.html#cb16-1"></a><span class="kw">mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3.090909</code></pre>
 Как мы видим, хотя все три статистики описывают цкентральную тенденцию, тем не менее они всё же дают разные результаты. Посмотрим их взаимное положение на графике:
 <img src="wlm2021-book_files/figure-html/unnamed-chunk-8-1.png" width="672" />
@@ -593,12 +674,12 @@ G_{X} = \sqrt[n]{\prod_{i=1}^n x_i} = \Big(\prod_{i=1}^n x_i\Big)^{\tfrac{1}{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая принимает на вход вектор значений переменной и вычисляет геометрическое среднее. Функция должна возвращать одно число.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">geometric_mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="descriptives.html#cb18-1"></a><span class="kw">geometric_mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 2.698696</code></pre>
 </div>
 <p>Геометрическое среднее используется при работе с экспоненциально растущими величинами (например, численность населения).</p>
 </div>
-<div id="гармоническое" class="section level4">
+<div id="harmonic_mean" class="section level4">
 <h4><span class="header-section-number">15.1.3.3</span> Гармоническое</h4>
 <blockquote>
 <p>Суперэкзотичный покемон.</p>
@@ -637,7 +718,7 @@ X_{\mathrm{RMS}} = \sqrt{\frac{\sum_{i=1}^n x_i^2}{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая вычисляет квадратичное среднее по данному вектору наблюдений. Функция должна принимать на вход числовой вектор и возвращать одно число.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">quadratic_mean</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="descriptives.html#cb20-1"></a><span class="kw">quadratic_mean</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1.028519</code></pre>
 </div>
 </div>
@@ -690,8 +771,8 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 Тогда сумма коэффициентов будет равна единице. Так чаще всего и поступают, так как тогда коэффициент будет представлять долю, которую весит данный параметр в суммарной оценке. Удобно, практично, красиво.</p>
 <p>Взвещенное среднее часто применяется именно во всякого рода ассессментах, и не только образовательных. Например, вы HR-аналитик и оцениваете персонал. Вы аналитически вычисляете веса коэффициентов (допусти, с помощью линейной регрессии), а далее на их основе высчитаете интегральный балл, по которому будете оценивать сотрудников. Это как один из индустриальных примеров.</p>
 <p>Есть специально обученная функция, которая вычисляет взвешенное среднее:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">weighted.mean</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>), <span class="co"># вектор значений параметров (например, баллы за тест, эссе и экзамен)</span></a>
-<a class="sourceLine" id="cb22-2" data-line-number="2">              <span class="dt">w =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>)) <span class="co"># веса в итоговой оценке</span></a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="descriptives.html#cb22-1"></a><span class="kw">weighted.mean</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">8</span>), <span class="co"># вектор значений параметров (например, баллы за тест, эссе и экзамен)</span></span>
+<span id="cb22-2"><a href="descriptives.html#cb22-2"></a>              <span class="dt">w =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>)) <span class="co"># веса в итоговой оценке</span></span></code></pre></div>
 <pre><code>## [1] 8.2</code></pre>
 <blockquote>
 <p>На этом список средних не заканчивается, но нам обозначенных выше будет более чем достаточно.</p>
@@ -706,23 +787,23 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <img src="img/not_enough.jpg" width="50%">
 </center>
 <p>Простенький пример для наглядности. Пусть у нас есть два следующих вектора:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">x1</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="descriptives.html#cb24-1"></a>x1</span></code></pre></div>
 <pre><code>## [1]  5 50 12  4  4  6 24</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">x2</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="descriptives.html#cb26-1"></a>x2</span></code></pre></div>
 <pre><code>##  [1] 20 30  6  8  2 11  1 13 28 31</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">mean</span>(x1)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="descriptives.html#cb28-1"></a><span class="kw">mean</span>(x1)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">mean</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="descriptives.html#cb30-1"></a><span class="kw">mean</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <p>Средние по выборкам одинаковы, однако мы явно наблдаем, что вектора различны. Более того, если пристально посмотреть, то мы обнаружим, что у них разный <em>разброс</em> значений. Вообще-то помня о том, что <em>неопределенность и вариация</em> — главные характеристики статистических данных, было бы крайне неразумно пренебречь описанием этой самой вариативности. Что ж, займемся этим вопросом.</p>
 <div id="минимум-и-максимум" class="section level3">
 <h3><span class="header-section-number">15.2.1</span> Минимум и максимум</h3>
 <p>Как можно описать разброс? Указать минимум и максимум!</p>
 <p>Это, во-первых, справедливо, во-вторых, просто, что даже останавливаться на этом не будем. Вот соответствующие функции:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">min</span>(x1); <span class="kw">min</span>(x2) <span class="co"># да, точка с запятой в R тоже работает</span></a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="descriptives.html#cb32-1"></a><span class="kw">min</span>(x1); <span class="kw">min</span>(x2) <span class="co"># да, точка с запятой в R тоже работает</span></span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">max</span>(x1); <span class="kw">max</span>(x2) <span class="co"># но заклинаю вас использовать её не в ущерб удобочитаемости</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="descriptives.html#cb35-1"></a><span class="kw">max</span>(x1); <span class="kw">max</span>(x2) <span class="co"># но заклинаю вас использовать её не в ущерб удобочитаемости</span></span></code></pre></div>
 <pre><code>## [1] 50</code></pre>
 <pre><code>## [1] 31</code></pre>
 <p>Минимум и максимум по переменных всегда полезно смотреть при исследовании данных — так можно обнаружить ошибки записи. Например, если вы психометрик и используете в вопросах опросника семибальную шкалу его высочества Ликерта (Лайкерта), а при исследовании собранных данных обнаруживаете минимум по какому-либо вопросу 0, а максимум 9 — явно что-то пошло не так. Или, допустим, вы анализируете заработную плату сотрудников организации и обнаруживаете минимум по переменной «фонд оплаты труда» ниже МРОТ — повод задуматься. Конечно, сразу выкидывать наблюдения не надо, но точно надо обратить на них внимание и изучить возможные причины появления таких значений — может сотрудник устроен на 0.1 ставки?</p>
@@ -730,10 +811,10 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <div class="task">
 <p><em>Очевидно, что минимум — это первый элемент отсортированного (по возрастанию) массива, а максимум — последний. А как найти минимум (или максимум) без сортировки?</em></p>
 <p>Напишите функцию, которая принимает на вход массив (вектор) и возвращает минимальный (максимальный) элемент массива. Внутри функции нельзя использовать сортировку и встроенные в R функции.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">min_custom</span>(x1); <span class="kw">min_custom</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="descriptives.html#cb38-1"></a><span class="kw">min_custom</span>(x1); <span class="kw">min_custom</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">max_custom</span>(x1); <span class="kw">max_custom</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="descriptives.html#cb41-1"></a><span class="kw">max_custom</span>(x1); <span class="kw">max_custom</span>(x2)</span></code></pre></div>
 <pre><code>## [1] 50</code></pre>
 <pre><code>## [1] 31</code></pre>
 <p><strong>P.S.</strong> Функции для поиска минимума и максимума будут практически идентичны, поэтому если вы напишите одну из них, тут же поймете, как её модифицировать, чтобы получить вторую. <br>
@@ -743,9 +824,9 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <div id="размах" class="section level3">
 <h3><span class="header-section-number">15.2.2</span> Размах</h3>
 <p>А если у нас есть минимум и максимум — значит можно посчитать разницу между ими. И получить такую статистику как <strong>размах (range)</strong>. Добрые люди написали одноименную функцию, правда считает она не сам размах, а выводит минимум и максимум по массиву:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">range</span>(x1)</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="descriptives.html#cb44-1"></a><span class="kw">range</span>(x1)</span></code></pre></div>
 <pre><code>## [1]  4 50</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1"><span class="kw">range</span>(x2)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="descriptives.html#cb46-1"></a><span class="kw">range</span>(x2)</span></code></pre></div>
 <pre><code>## [1]  1 31</code></pre>
 <p>Но это не беда, потому что другие добрые люди написали более серьезные функции, чтобы облегчить нам статистическую жизнь. С ними познакомимся далее.</p>
 </div>
@@ -753,22 +834,22 @@ w_i&#39; = \frac{w_i}{\sum_{i=1}^n w_i}
 <h3><span class="header-section-number">15.2.3</span> Дисперсия</h3>
 <p>Ну, хорошо, <code>range()</code> нам указал, что действительно разброс в наших векторах различный, несмотря на то, что средние в точности равны. Что нам еще надо?</p>
 <p>Вот другой пример. Есть два таких вектора.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">x3</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="descriptives.html#cb48-1"></a>x3</span></code></pre></div>
 <pre><code>##  [1]  1  1  2  5  5  6  8  8 10 10</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">x4</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="descriptives.html#cb50-1"></a>x4</span></code></pre></div>
 <pre><code>##  [1]  1  3  4  4  5  6  7  7  9 10</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">mean</span>(x3); <span class="kw">mean</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="descriptives.html#cb52-1"></a><span class="kw">mean</span>(x3); <span class="kw">mean</span>(x4)</span></code></pre></div>
 <pre><code>## [1] 5.6</code></pre>
 <pre><code>## [1] 5.6</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">range</span>(x3); <span class="kw">range</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="descriptives.html#cb55-1"></a><span class="kw">range</span>(x3); <span class="kw">range</span>(x4)</span></code></pre></div>
 <pre><code>## [1]  1 10</code></pre>
 <pre><code>## [1]  1 10</code></pre>
 <p>Вроде и средние одинаковы, и размах одинаковый. Но вектора явно различаются. Можно даже посмотреть на картинку:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)) <span class="co"># размещаем два графика друг по другом</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="kw">hist</span>(x3, <span class="dt">breaks =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="kw">hist</span>(x4, <span class="dt">breaks =</span> <span class="dv">10</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="descriptives.html#cb58-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)) <span class="co"># размещаем два графика друг по другом</span></span>
+<span id="cb58-2"><a href="descriptives.html#cb58-2"></a><span class="kw">hist</span>(x3, <span class="dt">breaks =</span> <span class="dv">10</span>)</span>
+<span id="cb58-3"><a href="descriptives.html#cb58-3"></a><span class="kw">hist</span>(x4, <span class="dt">breaks =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p><img src="wlm2021-book_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co"># откатываем настройки обратно</span></a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="descriptives.html#cb59-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co"># откатываем настройки обратно</span></span></code></pre></div>
 <p>Всё это безобразие приводит нас к мысли о том, что нам недостаточно описания «общей», «внешней» вариативности, нам надо ещё постараться как-то ухватить вариативность «внутри» ряда наблюдений. И желательно тоже в какой-нибудь одной чиселке.</p>
 <center>
 <img src="img/challenge_accepted.png" width="50%">
@@ -829,7 +910,7 @@ d = \bar x - x_i
 s^2 = \frac{\sum_{i=1}^n (\bar x - x_i)^2}{n-1}
 \]</span></p>
 <p>Функция, которая занимается вычислением дисперсии, называется <code>var()</code>, так как «вариация» (variance) — это полный синоним дисперсии.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">var</span>(x3); <span class="kw">var</span>(x4) <span class="co"># вычисляется несмещённая дисперсия</span></a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="descriptives.html#cb60-1"></a><span class="kw">var</span>(x3); <span class="kw">var</span>(x4) <span class="co"># вычисляется несмещённая дисперсия</span></span></code></pre></div>
 <pre><code>## [1] 11.82222</code></pre>
 <pre><code>## [1] 7.6</code></pre>
 <p>И — voila! — дисперсии у наших векторов действительно различны.</p>
@@ -837,7 +918,7 @@ s^2 = \frac{\sum_{i=1}^n (\bar x - x_i)^2}{n-1}
 <div class="task">
 <p><em>Функция для расчёта дисперсии у нас есть, а вот для суммы квадратов — нет.</em> 😞</p>
 <p>Напишите функцию, которая вычисляет сумму квадратов отклонений от среднего значения по данному вектору. Функция принимает числовой вектор и возвращает одно число.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">SS</span>(x4)</a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="descriptives.html#cb63-1"></a><span class="kw">SS</span>(x4)</span></code></pre></div>
 <pre><code>## [1] 68.4</code></pre>
 </div>
 </div>
@@ -914,8 +995,8 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 </center>
 <p>Квартили хорошо визуализируются графиком «ящик с усами» (boxplot). По этому графику можно увидеть симметричность распределения, разброс значений переменной, сравнить вариативность нескольких переменных.</p>
 <p>Квартили в R можно рассчитать следующим образом:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1">x5 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="fl">3.5</span>, <span class="dt">sd =</span> <span class="fl">0.45</span>)</a>
-<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="kw">quantile</span>(x5) <span class="co"># обратите внимание на название функции :)</span></a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="descriptives.html#cb65-1"></a>x5 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>, <span class="dt">mean =</span> <span class="fl">3.5</span>, <span class="dt">sd =</span> <span class="fl">0.45</span>)</span>
+<span id="cb65-2"><a href="descriptives.html#cb65-2"></a><span class="kw">quantile</span>(x5) <span class="co"># обратите внимание на название функции :)</span></span></code></pre></div>
 <pre><code>##       0%      25%      50%      75%     100% 
 ## 2.184432 3.162326 3.507951 3.804915 4.436762</code></pre>
 <p>С первым и третьим квартилями связана следующая полезная метрика — <strong>межквартильный размах (interquartile range)</strong>. Это разность между третьим и первым квартилем:</p>
@@ -941,17 +1022,16 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите функцию, которая находит выбросы. Функция должна принимать на вход числовой вектор и возвращать логический вектор такой же длины, как и исходный. Каждое значение логического вектора будет ответом на вопрос, является ли выбросом соответствующее ему значение исходного вектора. Для определения выбросов воспользуйтесь первым из упомянутых подходов.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1"><span class="kw">is_outlier</span>(<span class="kw">c</span>(x5, <span class="dv">100</span>))</a></code></pre></div>
-<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [23] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [34] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [45] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [56] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [67] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [78] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-##  [89] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-## [100] FALSE  TRUE</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="descriptives.html#cb67-1"></a><span class="kw">is_outlier</span>(<span class="kw">c</span>(x5, <span class="dv">100</span>))</span></code></pre></div>
+<pre><code>##   [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [25] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [37] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [49] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE
+##  [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [85] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##  [97] FALSE FALSE FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
 </div>
@@ -998,194 +1078,168 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <h2><span class="header-section-number">15.5</span> Описательные статистики в R</h2>
 <p>Ну, хорошо. А считать-то как?</p>
 <p>Можно по отдельности:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<pre><code>## ── Attaching packages ───────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
-## ✔ tidyr   1.0.2     ✔ stringr 1.4.0
-## ✔ readr   1.3.1     ✔ forcats 0.4.0
-## ✔ purrr   0.3.4</code></pre>
-<pre><code>## Warning: package &#39;purrr&#39; was built under R version 3.6.2</code></pre>
-<pre><code>## ── Conflicts ──────────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="co"># воспользуемся данными, которые уже видели</span></a>
-<a class="sourceLine" id="cb74-2" data-line-number="2">share &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv&#39;</span>)</a></code></pre></div>
-<pre><code>## Parsed with column specification:
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="descriptives.html#cb69-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0
+## ✓ purrr   0.3.4</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="descriptives.html#cb73-1"></a><span class="co"># воспользуемся данными, которые уже видели</span></span>
+<span id="cb73-2"><a href="descriptives.html#cb73-2"></a>share &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double(),
 ##   trialtype = col_character(),
 ##   platform = col_character()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">mean</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="descriptives.html#cb75-1"></a><span class="kw">mean</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 1.599066</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">median</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="descriptives.html#cb77-1"></a><span class="kw">median</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 1.346363</code></pre>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">var</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="descriptives.html#cb79-1"></a><span class="kw">var</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 0.7451164</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">sd</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="descriptives.html#cb81-1"></a><span class="kw">sd</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 0.8632012</code></pre>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" data-line-number="1"><span class="kw">min</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="descriptives.html#cb83-1"></a><span class="kw">min</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 0.5392201</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">max</span>(share<span class="op">$</span>time1)</a></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="descriptives.html#cb85-1"></a><span class="kw">max</span>(share<span class="op">$</span>time1)</span></code></pre></div>
 <pre><code>## [1] 12.23256</code></pre>
 <p>Но можно и все сразу:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">psych<span class="op">::</span><span class="kw">describe</span>(share<span class="op">$</span>time1)</a></code></pre></div>
-<pre><code>##    vars     n mean   sd median trimmed mad  min   max range skew kurtosis
-## X1    1 16200  1.6 0.86   1.35    1.45 0.5 0.54 12.23 11.69 3.03    16.88
-##      se
-## X1 0.01</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="descriptives.html#cb87-1"></a>psych<span class="op">::</span><span class="kw">describe</span>(share<span class="op">$</span>time1)</span></code></pre></div>
+<pre><code>##    vars     n mean   sd median trimmed mad  min   max range skew kurtosis   se
+## X1    1 16200  1.6 0.86   1.35    1.45 0.5 0.54 12.23 11.69 3.03    16.88 0.01</code></pre>
 <p>Но это мы посчитали по всей переменной времени реакции сразу. А обычно нас интересуют описательные статистики по экспериментальным группам. Это можно сделать так:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> share<span class="op">$</span>trialtype)</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="descriptives.html#cb89-1"></a>psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> share<span class="op">$</span>trialtype)</span></code></pre></div>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: both
-##    vars    n mean  sd median trimmed  mad  min   max range skew kurtosis
-## X1    1 5400 1.38 0.6   1.23    1.29 0.39 0.54 10.89 10.35 3.35    26.63
-##      se
-## X1 0.01
-## -------------------------------------------------------- 
+##    vars    n mean  sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.38 0.6   1.23    1.29 0.39 0.54 10.89 10.35 3.35    26.63 0.01
+## ------------------------------------------------------------ 
 ## group: dots
-##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis
-## X1    1 5400 1.68 0.93    1.4    1.52 0.55 0.58 12.23 11.66 2.92    15.97
-##      se
-## X1 0.01
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.68 0.93    1.4    1.52 0.55 0.58 12.23 11.66 2.92    15.97 0.01
+## ------------------------------------------------------------ 
 ## group: tray
-##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis
-## X1    1 5400 1.74 0.97   1.45    1.57 0.59 0.58 11.88  11.3 2.68    12.25
-##      se
-## X1 0.01</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> <span class="kw">interaction</span>(share<span class="op">$</span>trialtype, share<span class="op">$</span>setsize))</a></code></pre></div>
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 5400 1.74 0.97   1.45    1.57 0.59 0.58 11.88  11.3 2.68    12.25 0.01</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="descriptives.html#cb91-1"></a>psych<span class="op">::</span><span class="kw">describeBy</span>(share<span class="op">$</span>time1, <span class="dt">group =</span> <span class="kw">interaction</span>(share<span class="op">$</span>trialtype, share<span class="op">$</span>setsize))</span></code></pre></div>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## group: both.8
-##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis
-## X1    1 1800 1.24 0.44   1.13    1.18 0.32 0.54 4.86  4.32 2.11     7.45
-##      se
-## X1 0.01
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.24 0.44   1.13    1.18 0.32 0.54 4.86  4.32 2.11     7.45 0.01
+## ------------------------------------------------------------ 
 ## group: dots.8
-##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis
-## X1    1 1800 1.43 0.68   1.26    1.33 0.41 0.58 7.65  7.07 3.21    17.73
-##      se
-## X1 0.02
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.43 0.68   1.26    1.33 0.41 0.58 7.65  7.07 3.21    17.73 0.02
+## ------------------------------------------------------------ 
 ## group: tray.8
-##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis
-## X1    1 1800 1.44 0.62   1.28    1.34 0.42 0.63 6.56  5.93 2.68    12.46
-##      se
-## X1 0.01
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.44 0.62   1.28    1.34 0.42 0.63 6.56  5.93 2.68    12.46 0.01
+## ------------------------------------------------------------ 
 ## group: both.12
-##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis
-## X1    1 1800 1.37 0.61   1.22    1.28 0.37 0.6 10.89 10.29 4.37    43.73
-##      se
-## X1 0.01
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis   se
+## X1    1 1800 1.37 0.61   1.22    1.28 0.37 0.6 10.89 10.29 4.37    43.73 0.01
+## ------------------------------------------------------------ 
 ## group: dots.12
-##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis
-## X1    1 1800 1.68 0.86   1.43    1.54 0.56 0.59 11.66 11.07 2.64    14.76
-##      se
-## X1 0.02
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 1800 1.68 0.86   1.43    1.54 0.56 0.59 11.66 11.07 2.64    14.76 0.02
+## ------------------------------------------------------------ 
 ## group: tray.12
-##    vars    n mean   sd median trimmed mad min   max range skew kurtosis
-## X1    1 1800 1.73 0.86    1.5     1.6 0.6 0.6 10.03  9.43 2.19     8.78
-##      se
-## X1 0.02
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed mad min   max range skew kurtosis   se
+## X1    1 1800 1.73 0.86    1.5     1.6 0.6 0.6 10.03  9.43 2.19     8.78 0.02
+## ------------------------------------------------------------ 
 ## group: both.16
-##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis
-## X1    1 1800 1.53 0.69   1.35    1.43 0.49 0.55 9.25   8.7 2.72    16.06
-##      se
-## X1 0.02
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 1800 1.53 0.69   1.35    1.43 0.49 0.55 9.25   8.7 2.72    16.06 0.02
+## ------------------------------------------------------------ 
 ## group: dots.16
-##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis
-## X1    1 1800 1.92 1.13   1.59    1.74 0.71 0.6 12.23 11.64 2.62    12.49
-##      se
-## X1 0.03
-## -------------------------------------------------------- 
+##    vars    n mean   sd median trimmed  mad min   max range skew kurtosis   se
+## X1    1 1800 1.92 1.13   1.59    1.74 0.71 0.6 12.23 11.64 2.62    12.49 0.03
+## ------------------------------------------------------------ 
 ## group: tray.16
-##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis
-## X1    1 1800 2.05 1.22   1.68    1.85 0.81 0.58 11.88  11.3 2.31     8.61
-##      se
-## X1 0.03</code></pre>
+##    vars    n mean   sd median trimmed  mad  min   max range skew kurtosis   se
+## X1    1 1800 2.05 1.22   1.68    1.85 0.81 0.58 11.88  11.3 2.31     8.61 0.03</code></pre>
 <p>Но мы же с вами осваивали <em>tidyverse</em> не просто так, поэтому воспользуемся его мощностями:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb95-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb95-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb95-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(time1),</a>
-<a class="sourceLine" id="cb95-5" data-line-number="5">            <span class="dt">median =</span> <span class="kw">median</span>(time1),</a>
-<a class="sourceLine" id="cb95-6" data-line-number="6">            <span class="dt">var =</span> <span class="kw">var</span>(time1),</a>
-<a class="sourceLine" id="cb95-7" data-line-number="7">            <span class="dt">sd =</span> <span class="kw">sd</span>(time1),</a>
-<a class="sourceLine" id="cb95-8" data-line-number="8">            <span class="dt">min =</span> <span class="kw">min</span>(time1),</a>
-<a class="sourceLine" id="cb95-9" data-line-number="9">            <span class="dt">max =</span> <span class="kw">max</span>(time1),</a>
-<a class="sourceLine" id="cb95-10" data-line-number="10">            <span class="dt">se =</span> sd<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(time1)),</a>
-<a class="sourceLine" id="cb95-11" data-line-number="11">            <span class="dt">skew =</span> moments<span class="op">::</span><span class="kw">skewness</span>(time1),</a>
-<a class="sourceLine" id="cb95-12" data-line-number="12">            <span class="dt">kurt =</span> moments<span class="op">::</span><span class="kw">kurtosis</span>(time1))</a></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="descriptives.html#cb93-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-2"><a href="descriptives.html#cb93-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-3"><a href="descriptives.html#cb93-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb93-4"><a href="descriptives.html#cb93-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(time1),</span>
+<span id="cb93-5"><a href="descriptives.html#cb93-5"></a>            <span class="dt">median =</span> <span class="kw">median</span>(time1),</span>
+<span id="cb93-6"><a href="descriptives.html#cb93-6"></a>            <span class="dt">var =</span> <span class="kw">var</span>(time1),</span>
+<span id="cb93-7"><a href="descriptives.html#cb93-7"></a>            <span class="dt">sd =</span> <span class="kw">sd</span>(time1),</span>
+<span id="cb93-8"><a href="descriptives.html#cb93-8"></a>            <span class="dt">min =</span> <span class="kw">min</span>(time1),</span>
+<span id="cb93-9"><a href="descriptives.html#cb93-9"></a>            <span class="dt">max =</span> <span class="kw">max</span>(time1),</span>
+<span id="cb93-10"><a href="descriptives.html#cb93-10"></a>            <span class="dt">se =</span> sd<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(time1)),</span>
+<span id="cb93-11"><a href="descriptives.html#cb93-11"></a>            <span class="dt">skew =</span> moments<span class="op">::</span><span class="kw">skewness</span>(time1),</span>
+<span id="cb93-12"><a href="descriptives.html#cb93-12"></a>            <span class="dt">kurt =</span> moments<span class="op">::</span><span class="kw">kurtosis</span>(time1))</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;trialtype&#39;, &#39;setsize&#39;, &#39;platform&#39; (override with `.groups` argument)</code></pre>
 <pre><code>## # A tibble: 216 x 13
 ## # Groups:   trialtype, setsize, platform [12]
-##    trialtype setsize platform    id  mean median    var    sd   min   max
-##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1 dots            8 android      4  1.37  1.16  0.342  0.585 0.750  3.40
-##  2 dots            8 android      6  1.20  0.945 0.669  0.818 0.667  5.92
-##  3 dots            8 android      7  1.86  1.77  0.325  0.570 0.809  3.15
-##  4 dots            8 android      8  1.85  1.59  0.578  0.760 1.03   4.53
-##  5 dots            8 android     10  1.04  0.964 0.0997 0.316 0.614  2.01
-##  6 dots            8 android     11  1.20  1.11  0.145  0.380 0.766  2.45
-##  7 dots            8 android     12  1.21  1.06  0.199  0.447 0.666  2.62
-##  8 dots            8 android     15  1.48  1.29  0.445  0.667 0.807  4.55
-##  9 dots            8 android     16  1.16  1.05  0.233  0.483 0.648  2.65
-## 10 dots            8 android     18  1.42  1.20  0.287  0.536 0.813  2.96
-## # … with 206 more rows, and 3 more variables: se &lt;dbl&gt;, skew &lt;dbl&gt;,
-## #   kurt &lt;dbl&gt;</code></pre>
-<p>Кода побольше, зато всё кастомное, а значит всем этим можно управлять! Обратите внимание, что для расчёта коэффициента асимметрии и коэффициента эксцесса потребуются функции из дополнительного пакета <code>moments</code>, который нужно установить через команду <code>install.packages(&quot;moments&quot;)</code>.</p>
+##    trialtype setsize platform    id  mean median    var    sd   min   max     se
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+##  1 dots            8 android      4  1.37  1.16  0.342  0.585 0.750  3.40 0.0827
+##  2 dots            8 android      6  1.20  0.945 0.669  0.818 0.667  5.92 0.116 
+##  3 dots            8 android      7  1.86  1.77  0.325  0.570 0.809  3.15 0.0807
+##  4 dots            8 android      8  1.85  1.59  0.578  0.760 1.03   4.53 0.108 
+##  5 dots            8 android     10  1.04  0.964 0.0997 0.316 0.614  2.01 0.0447
+##  6 dots            8 android     11  1.20  1.11  0.145  0.380 0.766  2.45 0.0538
+##  7 dots            8 android     12  1.21  1.06  0.199  0.447 0.666  2.62 0.0632
+##  8 dots            8 android     15  1.48  1.29  0.445  0.667 0.807  4.55 0.0943
+##  9 dots            8 android     16  1.16  1.05  0.233  0.483 0.648  2.65 0.0683
+## 10 dots            8 android     18  1.42  1.20  0.287  0.536 0.813  2.96 0.0758
+## # … with 206 more rows, and 2 more variables: skew &lt;dbl&gt;, kurt &lt;dbl&gt;</code></pre>
+<p>Кода побольше, зато всё кастомное, а значит всем этим можно управлять! Обратите внимание, что для расчёта коэффициента асимметрии и коэффициента эксцесса потребуются функции из дополнительного пакета <code>moments</code>, который нужно установить через команду <code>install.packages("moments")</code>.</p>
 <p>Кучу описательных статистик мы насчитали. Теперь разберёмся в квартилями и выбросами (нехарактерными значениями). Когда мы с вами говорили о визуализации, мы упоминали, что график «ящик с усами» (boxplot) отображает выбросы. Посмотрим:</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb97-1" data-line-number="1"><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</a>
-<a class="sourceLine" id="cb97-2" data-line-number="2">share <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb97-3" data-line-number="3"><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb97-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">as_factor</span>(setsize), time1, <span class="dt">color =</span> trialtype)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb97-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb97-6" data-line-number="6"><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;point&#39;</span>, <span class="dt">shape =</span> <span class="dv">15</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="fl">0.8</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb97-7" data-line-number="7"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>platform)</a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="descriptives.html#cb96-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span>
+<span id="cb96-2"><a href="descriptives.html#cb96-2"></a>share <span class="op">%&gt;%</span></span>
+<span id="cb96-3"><a href="descriptives.html#cb96-3"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb96-4"><a href="descriptives.html#cb96-4"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="kw">as_factor</span>(setsize), time1, <span class="dt">color =</span> trialtype)) <span class="op">+</span></span>
+<span id="cb96-5"><a href="descriptives.html#cb96-5"></a><span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span></span>
+<span id="cb96-6"><a href="descriptives.html#cb96-6"></a><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;point&#39;</span>, <span class="dt">shape =</span> <span class="dv">15</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="fl">0.8</span>)) <span class="op">+</span></span>
+<span id="cb96-7"><a href="descriptives.html#cb96-7"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>platform)</span></code></pre></div>
 <p><img src="wlm2021-book_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 <p>Видим много-много точек над ящиками — это и есть выбросы. Это данные поведенческого эксперимента, поэтому для последующего анализа мы желаем, чтобы таких значений в данных не было. Почистим!</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-4" data-line-number="4"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">lower =</span> <span class="kw">quantile</span>(time1)[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1),</a>
-<a class="sourceLine" id="cb98-5" data-line-number="5">            <span class="dt">upper =</span> <span class="kw">quantile</span>(time1)[<span class="dv">4</span>] <span class="op">+</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-6" data-line-number="6"><span class="st">  </span><span class="kw">right_join</span>(share) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-7" data-line-number="7"><span class="st">  </span><span class="kw">filter</span>(time1 <span class="op">&gt;</span><span class="st"> </span>lower <span class="op">&amp;</span><span class="st"> </span>time1 <span class="op">&lt;</span><span class="st"> </span>upper) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb98-8" data-line-number="8"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lower, <span class="op">-</span>upper) -&gt;<span class="st"> </span>share_clear</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="descriptives.html#cb97-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-2"><a href="descriptives.html#cb97-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-3"><a href="descriptives.html#cb97-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-4"><a href="descriptives.html#cb97-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">lower =</span> <span class="kw">quantile</span>(time1)[<span class="dv">2</span>] <span class="op">-</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1),</span>
+<span id="cb97-5"><a href="descriptives.html#cb97-5"></a>            <span class="dt">upper =</span> <span class="kw">quantile</span>(time1)[<span class="dv">4</span>] <span class="op">+</span><span class="st"> </span><span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">IQR</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-6"><a href="descriptives.html#cb97-6"></a><span class="st">  </span><span class="kw">right_join</span>(share) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-7"><a href="descriptives.html#cb97-7"></a><span class="st">  </span><span class="kw">filter</span>(time1 <span class="op">&gt;</span><span class="st"> </span>lower <span class="op">&amp;</span><span class="st"> </span>time1 <span class="op">&lt;</span><span class="st"> </span>upper) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb97-8"><a href="descriptives.html#cb97-8"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>lower, <span class="op">-</span>upper) -&gt;<span class="st"> </span>share_clear</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;trialtype&#39;, &#39;setsize&#39;, &#39;platform&#39; (override with `.groups` argument)</code></pre>
 <pre><code>## Joining, by = c(&quot;trialtype&quot;, &quot;setsize&quot;, &quot;platform&quot;, &quot;id&quot;)</code></pre>
 <p>Вот так мы удалили все выбросы. Можно было также воспользоваться функцией <code>is_outlier()</code>, которую мы написали в одном из заданий:</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb100-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">outlier =</span> <span class="kw">is_outlier</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb100-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>outlier)</a></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="descriptives.html#cb100-1"></a>share <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-2"><a href="descriptives.html#cb100-2"></a><span class="st">  </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-3"><a href="descriptives.html#cb100-3"></a><span class="st">  </span><span class="kw">group_by</span>(trialtype, setsize, platform, id) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-4"><a href="descriptives.html#cb100-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">outlier =</span> <span class="kw">is_outlier</span>(time1)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb100-5"><a href="descriptives.html#cb100-5"></a><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span>outlier)</span></code></pre></div>
 <pre><code>## # A tibble: 10,213 x 23
 ## # Groups:   trialtype, setsize, platform, id [216]
-##    trialtype setsize time1 click1x click1y time2 click2x click2y    id
-##    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
-##  1 tray            8  1.67    -227     202 1.28       14    -351     1
-##  2 tray            8  1.13     -69     231 1.06      -44    -392     1
-##  3 tray            8  1.59    -241      43 0.931     -25    -397     1
-##  4 tray            8  1.14     -51      59 0.896      10    -383     1
-##  5 tray            8  2.14      99      62 0.879     -29    -372     1
-##  6 tray            8  1.63     213      46 0.947     -27    -353     1
-##  7 tray            8  2.02     -70     -82 0.970     -19    -394     1
-##  8 tray            8  1.08      72     -95 1.33       30    -399     1
-##  9 tray            8  1.50     222     -55 0.879      46    -344     1
-## 10 tray            8  1.36    -231    -229 0.880      -8    -388     1
-## # … with 10,203 more rows, and 14 more variables: platform &lt;chr&gt;,
-## #   posx1 &lt;dbl&gt;, posy1 &lt;dbl&gt;, posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;,
-## #   posymin1 &lt;dbl&gt;, posymax1 &lt;dbl&gt;, posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;,
-## #   posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;, posymin2 &lt;dbl&gt;, posymax2 &lt;dbl&gt;,
-## #   outlier &lt;lgl&gt;</code></pre>
+##    trialtype setsize time1 click1x click1y time2 click2x click2y    id platform
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   
+##  1 tray            8  1.67    -227     202 1.28       14    -351     1 ios     
+##  2 tray            8  1.13     -69     231 1.06      -44    -392     1 ios     
+##  3 tray            8  1.59    -241      43 0.931     -25    -397     1 ios     
+##  4 tray            8  1.14     -51      59 0.896      10    -383     1 ios     
+##  5 tray            8  2.14      99      62 0.879     -29    -372     1 ios     
+##  6 tray            8  1.63     213      46 0.947     -27    -353     1 ios     
+##  7 tray            8  2.02     -70     -82 0.970     -19    -394     1 ios     
+##  8 tray            8  1.08      72     -95 1.33       30    -399     1 ios     
+##  9 tray            8  1.50     222     -55 0.879      46    -344     1 ios     
+## 10 tray            8  1.36    -231    -229 0.880      -8    -388     1 ios     
+## # … with 10,203 more rows, and 13 more variables: posx1 &lt;dbl&gt;, posy1 &lt;dbl&gt;,
+## #   posxmin1 &lt;dbl&gt;, posxmax1 &lt;dbl&gt;, posymin1 &lt;dbl&gt;, posymax1 &lt;dbl&gt;,
+## #   posx2 &lt;dbl&gt;, posy2 &lt;dbl&gt;, posxmin2 &lt;dbl&gt;, posxmax2 &lt;dbl&gt;, posymin2 &lt;dbl&gt;,
+## #   posymax2 &lt;dbl&gt;, outlier &lt;lgl&gt;</code></pre>
 <p>Ну, вот теперь у нас мало того, что опрятные, так они еще и чистые!</p>
 
 </div>
@@ -1193,13 +1247,13 @@ s_X^- = \mathrm{se}(X) = \frac{s_X}{\sqrt{n}}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Count noun, plural in this case<a href="descriptives.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Mass (uncountable) noun<a href="descriptives.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Обычно противоставляется статистическому выводу (inferential statistics), потому что не делает никаких заключений на основе данных, а просто говорит, что вот жанные такие, какие они есть.<a href="descriptives.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Обратите внимание на функцию <code>tabulate()</code>.<a href="descriptives.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Здесь важно помнить о нюансах терминов «упорядоченный» и «сортированный». <em>Упорядоченный</em> ряд наблюдений — это ряд чисел, на котором задан определенный порядок (например, по ID испытуемого — 1, 2, 3, 4, …), а <em>сортированный ряд наблюдений</em> — это ряд, упорядоченный по возрастанию или убыванию.<a href="descriptives.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>И очень косвенно — нормальности распределения. Точнее будет сказать так: если распределение симметрично, то можно предположить, оно нормальное, однако это требует дополнительной проверки! Здесь надо помнить про <a href="maths.html#implication">особенности импликации</a>: <em>нормальное распределение всегда симметрично, однако не любое симметричное распределение нормально</em>.<a href="descriptives.html#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p><em>Квазинепрерывная шкала</em> — это порядковая шкала, относительно которой мы сделали допущение, что она непрерывная. Например, такое допущение делается в психометрике относительно шкалы Ликерта (Лайкерта), когда мы предполагаем, что интервал между двумя соседними значениями мы тоже описали, несмотря на то, что респондент должен выбираться между этими соседними значениями.<a href="descriptives.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Count noun, plural in this case<a href="descriptives.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Mass (uncountable) noun<a href="descriptives.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Обычно противоставляется статистическому выводу (inferential statistics), потому что не делает никаких заключений на основе данных, а просто говорит, что вот жанные такие, какие они есть.<a href="descriptives.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Обратите внимание на функцию <code>tabulate()</code>.<a href="descriptives.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Здесь важно помнить о нюансах терминов «упорядоченный» и «сортированный». <em>Упорядоченный</em> ряд наблюдений — это ряд чисел, на котором задан определенный порядок (например, по ID испытуемого — 1, 2, 3, 4, …), а <em>сортированный ряд наблюдений</em> — это ряд, упорядоченный по возрастанию или убыванию.<a href="descriptives.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>И очень косвенно — нормальности распределения. Точнее будет сказать так: если распределение симметрично, то можно предположить, оно нормальное, однако это требует дополнительной проверки! Здесь надо помнить про <a href="maths.html#implication">особенности импликации</a>: <em>нормальное распределение всегда симметрично, однако не любое симметричное распределение нормально</em>.<a href="descriptives.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><em>Квазинепрерывная шкала</em> — это порядковая шкала, относительно которой мы сделали допущение, что она непрерывная. Например, такое допущение делается в психометрике относительно шкалы Ликерта (Лайкерта), когда мы предполагаем, что интервал между двумя соседними значениями мы тоже описали, несмотря на то, что респондент должен выбираться между этими соседними значениями.<a href="descriptives.html#fnref7" class="footnote-back">↩︎</a></p></li>
 <li id="fn8"><p>Метрика, основанная на использовании модуля, конечно, существует и называется <strong>среднее абсолютное отклонение (mean absolute deviation, MAD)</strong>:
 <span class="math display">\[
 \mathrm{MAD}(X) = \frac{\sum_{i=1}^n |\bar x - x_i|}{n}
@@ -1211,7 +1265,7 @@ Per se встречается редко, но столкнёмся с её до
 \]</span>
 <span class="math display">\[
 \mathrm{MAD}_{\mathrm{mode}}(X) = \frac{\sum_{i=1}^n |\mathrm{mode}(x) - x_i|}{n}
-\]</span><a href="descriptives.html#fnref8" class="footnote-back">↩</a></p></li>
+\]</span><a href="descriptives.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
