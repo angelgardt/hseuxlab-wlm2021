@@ -303,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -314,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -387,9 +387,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.2.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-1"><i class="fa fa-check"></i><b>18.2.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.2.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-2"><i class="fa fa-check"></i><b>18.2.4</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.3.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-2"><i class="fa fa-check"></i><b>18.3.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.3.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-3"><i class="fa fa-check"></i><b>18.3.4</b> Диагностика модели</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
 <li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
@@ -1016,7 +1057,7 @@ z = \cos(x) + \log(|y|)
 </center>
 <p>Работают они так же, как и обычные функции, но у них есть важная фича. 👇🏻</p>
 </div>
-<div id="частные-производные" class="section level3">
+<div id="partial" class="section level3">
 <h3><span class="header-section-number">9.4.6</span> Частные производные</h3>
 <p>Так как у нас теперь несколько переменных, от которых зависит значение функции, мы можем смотреть, как они изменяются по каждой из них в отдельности. Это позволяют сделать <strong>частные производные</strong>.</p>
 <p>Частные производные в целом беруться так же, как и обычные, только мы предполагаем, что все другие переменные, то есть те, по которым мы не берём производную — <em>это константы</em>. Таким образом, мы получаем скорость изменения функции по какой-либо одной переменной.</p>
@@ -1339,10 +1380,10 @@ a_{1k} &amp; a_{2k} &amp; \dots &amp; a_{nk}
 \]</span>
 Транспонированная матрица будет иметь размер <span class="math inline">\(k × n\)</span>.</p>
 </div>
-<div id="детерминант-и-обратная-матрица" class="section level3">
+<div id="inv" class="section level3">
 <h3><span class="header-section-number">9.5.8</span> Детерминант и обратная матрица</h3>
 <p><em>Детерминант (определитель)</em> <span class="math inline">\(\det \boldsymbol{A}, \; |\boldsymbol{A}|, \Delta \boldsymbol{A}\)</span> — величина, которая может быть вычислена и поставлена в однозначное соответствие квадратной матрице. Он «определяет» свойства матрицы, в том числе, её <strong>обратимость</strong>.</p>
-<p>Детерминан матрицы из одного элемента равен этому элементу:</p>
+<p>Детерминант матрицы из одного элемента равен этому элементу:</p>
 <p><span class="math display">\[
 \det \begin{pmatrix} a_{11} \end{pmatrix} = a_{11}
 \]</span>
@@ -1367,7 +1408,18 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>Но жизнь упрощается, когда есть R:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
 <span id="cb30-2"><a href="maths.html#cb30-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
-<pre><code>## [1] 1170</code></pre>
+<pre><code>## [1] 941</code></pre>
+<p>Если матрица <em>квадратная</em> и её <em>детерминант не равен нулю</em>, то для данной матрицы <span class="math inline">\(\boldsymbol{A}\)</span> существует обратная ей <span class="math inline">\(\boldsymbol{A}^{-1}\)</span>, которая обаладет следующим свойством:</p>
+<p><span class="math display">\[
+\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{E}
+\]</span></p>
+<p>Детерминант матрицы равен нулю, в частности, если её столбцы <em>линейно зависимы</em>, то есть значения одного можно линейно выразить через значения другого. Например,</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,</span>
+<span id="cb32-2"><a href="maths.html#cb32-2"></a>              <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>,</span>
+<span id="cb32-3"><a href="maths.html#cb32-3"></a>              <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
+<span id="cb32-4"><a href="maths.html#cb32-4"></a><span class="kw">det</span>(B)</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p>Для такой матрицы обратной ей матрицы не существует.</p>
 </div>
 <div id="след-матрицы" class="section level3">
 <h3><span class="header-section-number">9.5.9</span> След матрицы</h3>
@@ -1381,11 +1433,11 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>В R нет специальной функции, которая вычисляет след матрицы. Давайте её напишем!</p>
 <p>Функция должна принимать на вход матрицу, проверять, является ли матрица квадратной, и, если да, то возвращать значение следа матрицы, если нет, то печатать в консоль «матрица не является квадратной».</p>
 <p><em>Подсказка:</em> <code>?diag</code></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
-<span id="cb32-2"><a href="maths.html#cb32-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb32-3"><a href="maths.html#cb32-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
-<pre><code>## [1] 253</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
+<span id="cb34-2"><a href="maths.html#cb34-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb34-3"><a href="maths.html#cb34-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
+<pre><code>## [1] 261</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="maths.html#cb36-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
 <pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
 </div>
 <img class="taskimg" src="img/maths.png">

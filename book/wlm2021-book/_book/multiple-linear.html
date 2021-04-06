@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -239,7 +303,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -250,7 +314,7 @@
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -291,7 +355,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,9 +387,48 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
 <li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
 <li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
 <li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
@@ -360,6 +469,452 @@
 <div id="multiple_linear" class="section level1">
 <h1><span class="header-section-number">18</span> Множественная линейная регрессия</h1>
 
+<p>Связи двух переменных — это, конечно, хорошо. Но на практике нас обычно интересуют более сложные закономерности. Их, как мы говорили, можно изучать и корреляционным анализом, но регрессия делает это как-то более элегантно.</p>
+<div id="множественная-линейная-регрессия-с-количественными-предикторами" class="section level2">
+<h2><span class="header-section-number">18.1</span> Множественная линейная регрессия с количественными предикторами</h2>
+<div id="математическая-модель" class="section level3">
+<h3><span class="header-section-number">18.1.1</span> Математическая модель</h3>
+<p>Итак, мы хотим изучить влияние<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> нескольких независимых переменных (предикторов) на нашу зависимую (целевую) переменную. Модель в общем-то меняется не сильно — просто добавляется ещё одно слагаемое:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 x_{i1} + b_2 x_{i2} + e_i
+\]</span></p>
+<p>Теперь нам надо подбирать не два коэффициента, а три. Но, на самом деле, это ничего не меняет.</p>
+</div>
+<div id="подбор-модели" class="section level3">
+<h3><span class="header-section-number">18.1.2</span> Подбор модели</h3>
+<p>Конечно, если мы будем пытаться решить задачу аналитически, то там будут определённые изменения. Однако мы познакомились с матричными вычислениями и можем обратиться к ним.</p>
+<p>В матричном виде модель будет записываться следующим образом:</p>
+<p><span class="math display">\[
+\boldsymbol{y}= \boldsymbol{X}\boldsymbol{b}+ \boldsymbol{e},
+\]</span>
+где <span class="math inline">\(\boldsymbol{y}\)</span> — всё ещё вектор нашей зависимой переменной, <span class="math inline">\(\boldsymbol{X}\)</span> — всё ещё матрица независимых переменных, <span class="math inline">\(\boldsymbol{b}\)</span> — всё ещё вектор коэффициентов модели, а <span class="math inline">\(\boldsymbol{e}\)</span> — вектор ошибок (остатков) модели.</p>
+<p>Отличие будет в том, как организованы внутри <span class="math inline">\(\boldsymbol{X}\)</span> и <span class="math inline">\(\boldsymbol{b}\)</span>:</p>
+<p>$$
+= \begin{pmatrix}
+1 &amp; x_{11} &amp; x_{12} \
+1 &amp; x_{21} &amp; x_{22} \
+1 &amp; x_{31} &amp; x_{32} \
+&amp; &amp; \
+1 &amp; x_{n1} &amp; x_{n2}
+\end{pmatrix}; </p>
+<p> \begin{pmatrix}
+b_0 \
+b_1 \
+b_2
+\end{pmatrix}
+$$</p>
+<p>Вычисление же коэффициентов будет осуществляться абсолютно аналогично простой линейной регрессии:</p>
+<p><span class="math display">\[
+\boldsymbol{b}= (\boldsymbol{X}^\mathrm{T}\boldsymbol{X})^{-1}\boldsymbol{X}^\mathrm{T}\boldsymbol{y}
+\]</span></p>
+<p>Ясно, что не важно, сколько предикторов будет содержать модель — вычисление коэффициентов будет работать одинаково. Однако по сравнению с простой линейной моделью здесь есть одна важная особеность.</p>
+<div id="проблема-мультиколлинеарности" class="section level4">
+<h4><span class="header-section-number">18.1.2.1</span> Проблема мультиколлинеарности</h4>
+<p>Предикторы могут быть связаны не только с целевой перемненой, но и друг с другом, что обуславливает <strong>проблему мультиколлинеарности</strong>.</p>
+<p>В чем она заключается? Посмотрим ещё раз на формулу выше, которая нам позволяет вычислить параметры модели: в ходе вычислений мы берем обратную матрицу. Если наши предикторы сильно коррелируют друг с другом (<span class="math inline">\(\geq 0.8\)</span>), то в нашей матрице возникают линейно зависимые столбцы, а значит обратная матрица не будет существовать.</p>
+<p>Чем это чревато? В случае абсолютно линейной связи коэффициент модели просто не вычислится — в аутпуте будет <code>NA</code>. Как правило, это намёк на то, чтобы проверить данные — возможно, у вас есть одна и та же переменная, записанная по-разному (например, рост в метрах и сантиметрах). В случае высоких (но меньших единицы) корреляций проблема подбора коэффициентов решается с помощью методов численной оптимизации, однако это может приводить к смещённым оценкам коэффициентов модели, а также большим ошибкам в оценках коэффициентов.</p>
+<p>Поэтому с мультиколлинеарностью надо бороться. Вариантов существует много. Наиболее часто используемые: исключение коллинеарных переменных из модели, <a href="multiple-linear.html#staff_reg">метод служебной регресии</a>, методы уменьшения размерности (кластерный анализ, PCA и др.).</p>
+</div>
+<div id="подбор-коэффициентов-модели-в-r" class="section level4">
+<h4><span class="header-section-number">18.1.2.2</span> Подбор коэффициентов модели в R</h4>
+<p>Подбор модели осуществляется с помощью той же самой функции <code>lm()</code>, только в данном случае немного изменяется запись модели. Другие предикторы перечистяются через символ <code>+</code>, как и в математической записи модели.</p>
+<p>Допустим, мы хотим учесть в модели [из прошлой главы] не только возраст, но и рост ребенка в предсказании ОФВ. Построим такую модель:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="multiple-linear.html#cb1-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>Height, ofv)</span>
+<span id="cb1-2"><a href="multiple-linear.html#cb1-2"></a><span class="kw">summary</span>(model1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age + Height, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.50533 -0.25657 -0.01184  0.24575  2.01914 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -4.610466   0.224271 -20.558  &lt; 2e-16 ***
+## Age          0.054281   0.009106   5.961 4.11e-09 ***
+## Height       0.109712   0.004716  23.263  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4197 on 651 degrees of freedom
+## Multiple R-squared:  0.7664, Adjusted R-squared:  0.7657 
+## F-statistic:  1068 on 2 and 651 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Как мы видим, аутпут функции <code>summary()</code> практически не отличается от простой линейной регрессии, только угловых коэффициента у нас теперь два, а не один.</p>
+</div>
+</div>
+<div id="оценка-качества-модели" class="section level3">
+<h3><span class="header-section-number">18.1.3</span> Оценка качества модели</h3>
+<p>Качество модели оценивается аналогично простой линейной регрессии.</p>
+<p>Прежде всего, мы смотрим на F-статистику и p-value, рассчитанный для неё. Если p-value меньше конвенционального значения 0.05, то мы делаем вывод о том, что модель в целом статистически значима.</p>
+<p>Далее обращаем внимание на <span class="math inline">\(R^2\)</span>, а лучше сразу на <span class="math inline">\(R^2_{\mathrm{adj}}\)</span> — скорректированный коэффициент детерминации. Почему на него? Так как в нашей модели теперь несколько предикторов, то скорректированный [на количество предикторов] коэффициент детерминации для нас более информативен. В частности, по его значениям мы можем сравнивать модели с разным количеством предикторов. Как он корректируется? Вот так:</p>
+<p><span class="math display">\[
+R^2_{\mathrm{adj}} = 1 - (1 - R^2)\frac{n-1}{n-p}
+\]</span></p>
+<p>После оценки информативности модели мы переходим к тестированию значимости отдельных предикторов — и здесь тоже всё аналогично простой линейной регрессии. Есть оценки значений коэффициентов, есть их стандатные ошибки, есть значение t-теста и p-values, рассчитанные для них. Со всем этим мы уже знакомы.</p>
+</div>
+<div id="диагностика-модели-1" class="section level3">
+<h3><span class="header-section-number">18.1.4</span> Диагностика модели</h3>
+<div id="исследование-мультиколлинеарности" class="section level4">
+<h4><span class="header-section-number">18.1.4.1</span> Исследование мультиколлинеарности</h4>
+<p>Но если мы на секунду задумаемся… Мы ввели в модель предиктор «рост», который несомненно связан с ОФВ. Однако он также связан и с возрастом! А не принесли ли мы в нашу модель коллинеарных предикторов?</p>
+<p>На этапе разведочного анализа при наличии большого числа предикторов полезно посмотреть на корреляционную матрицу предикторов — что с чем связано. В нашем случае мы можем просто посчитать значение корреляции, так как у нас предикторов сейчас всего два:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="multiple-linear.html#cb3-1"></a><span class="kw">cor</span>(ofv<span class="op">$</span>Age, ofv<span class="op">$</span>Height)</span></code></pre></div>
+<pre><code>## [1] 0.7919436</code></pre>
+<p>Ожидаемо высокая корреляция. Если корреляция предикторов друг с другом 0.8 и выше — повод задуматься о мультиколлинеарности. У нас значение довольно близкое. Продолжим анализ.</p>
+<p>Для того, чтобы выявить, есть ли таки у нас проблема мультикоолинеарности, или мы радостные и довольные можем наслаждаться результатами моделирования, необходимо вычислить <strong>коэффициент вздутия дисперсии (variance inflation factor, VIF)</strong>. Чтобы его вычислить, проводятся следующие операции:</p>
+<ul>
+<li>пусть у нас есть модель <span class="math inline">\(y = b_0 + b_1 x_1 + b_2 x_2 + \dots + b_m x_m + e\)</span></li>
+<li>строиться линейная регрессия, в которой один из предикторов регрессируется всеми другими. Например, для первого предиктора:</li>
+</ul>
+<p><span class="math display">\[
+x_1 = \alpha_0 + \alpha_2 x_2 + \dots \alpha_m x_m
+\]</span></p>
+<ul>
+<li>вычисляется коэффициент детерминации для данной модели <span class="math inline">\(R_i\)</span></li>
+<li>вычисляется VIF для коэффциента <span class="math inline">\(b_i\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\mathrm{VIF}_i = \frac{1}{1 - R^2_i}
+\]</span></p>
+<p>Все эти вычисления реализованы в функции <code>vif()</code> из пакета <code>car</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="multiple-linear.html#cb5-1"></a>car<span class="op">::</span><span class="kw">vif</span>(model1)</span></code></pre></div>
+<pre><code>##      Age   Height 
+## 2.682221 2.682221</code></pre>
+<p>Пороговым значением для вынесение вердикта о наличии мультиколлинеарности считается 3 (иногда 2). Мы этот вердикт всё же вынесем, и будем с мультиколлинеарностью бороться.</p>
+</div>
+</div>
+<div id="staff_reg" class="section level3">
+<h3><span class="header-section-number">18.1.5</span> Доработка модели</h3>
+<p>Как уже отмечалось выше, способов борьбы с мультиколлинеарностью существует несколько. Сейчас мы рассмотрим <strong>метод служебной регрессии</strong>.</p>
+<p>В чём логика этого метода? Наши предикторы связаны друг с другом, но всё же корреляция меньше единицы (что так-то ожидаемо и логично). То есть, часть изменчивости роста может быть объяснена изменчивостью возраста, а часть, конечно же, останется случайной изменчивостью. Звучит как регрессия, не так ли?</p>
+<p>Итак, мы можем построить служебную регрессионную модель, которая учтёт часть извенчивости роста, связанную с возрастом — будем считать возраст основным предиктором для нашей главной модели. Всё то, что возрастом объяснено не будет, составит остатки модели служебной регрессии, которые мы сможем внести как предиктор в модель.</p>
+<p>Давайте по порядку. Строим служебную регрессию:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="multiple-linear.html#cb7-1"></a>model_anc &lt;-<span class="st"> </span><span class="kw">lm</span>(Height <span class="op">~</span><span class="st"> </span>Age, ofv)</span></code></pre></div>
+<p>Записываем остатки модели в новую переменную датасета:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="multiple-linear.html#cb8-1"></a>ofv<span class="op">$</span>resHeight &lt;-<span class="st"> </span>model_anc<span class="op">$</span>residuals</span></code></pre></div>
+<p>Заменяем в главной модели рост на «остатки по росту»:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="multiple-linear.html#cb9-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>resHeight, ofv)</span>
+<span id="cb9-2"><a href="multiple-linear.html#cb9-2"></a><span class="kw">summary</span>(model2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age + resHeight, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.50533 -0.25657 -0.01184  0.24575  2.01914 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 0.431648   0.057606   7.493  2.2e-13 ***
+## Age         0.222041   0.005560  39.934  &lt; 2e-16 ***
+## resHeight   0.109712   0.004716  23.263  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4197 on 651 degrees of freedom
+## Multiple R-squared:  0.7664, Adjusted R-squared:  0.7657 
+## F-statistic:  1068 on 2 and 651 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Коэффициенты, конечно, получились другие, но модель осталась статистически значима, более того, остатки служебной регрессии в качестве предиктора тоже оказались статистически значимы — значит есть зависимость ОФВ от той изменчивости роста, которая не объясняется возрастом.</p>
+<p>И самое главное, что больше нет мультиколлинеарности:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="multiple-linear.html#cb11-1"></a>car<span class="op">::</span><span class="kw">vif</span>(model2)</span></code></pre></div>
+<pre><code>##       Age resHeight 
+##         1         1</code></pre>
+<hr />
+<p>Для множественной линейной регрессии также можно строить диагностические графики, которые будут интерпретироваться аналогично графика простой линейной регрессии. Например, для модели <code>model2</code> графики будут выглядеть так:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="multiple-linear.html#cb13-1"></a><span class="kw">plot</span>(model2)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="wlm2021-book_files/figure-html/unnamed-chunk-9-2.png" width="672" /><img src="wlm2021-book_files/figure-html/unnamed-chunk-9-3.png" width="672" /><img src="wlm2021-book_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
+<img class="taskimg" src="img/question.png">
+<div class="task">
+<p>Оцените, стала ли модель лучше после включения в неё второго предиктора. Сравните <code>model2</code> и <code>model</code> из предыдущей главы.</p>
+</div>
+</div>
+</div>
+<div id="множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами" class="section level2">
+<h2><span class="header-section-number">18.2</span> Множественная линейная регрессия с количественными и категориальными предикторами</h2>
+<p>Когда мы имеем дело с количественными предикторами, то всё более-менее ясно — есть зависимость между двумя количественными переменными, описываемая прямой. А что делать, если среди предикторов появляются категориальные переменные?</p>
+<p>Посмотрим на датасет, с которым мы работаем, внимательно:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="multiple-linear.html#cb14-1"></a><span class="kw">str</span>(ofv)</span></code></pre></div>
+<pre><code>## tibble [654 × 7] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ ID       : num [1:654] 301 451 501 642 901 ...
+##  $ Age      : num [1:654] 9 8 7 9 9 8 6 6 8 9 ...
+##  $ FEV      : num [1:654] 1.71 1.72 1.72 1.56 1.9 ...
+##  $ Height   : num [1:654] 57 67.5 54.5 53 57 61 58 56 58.5 60 ...
+##  $ Sex      : chr [1:654] &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Male&quot; ...
+##  $ Smoker   : chr [1:654] &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; ...
+##  $ resHeight: Named num [1:654] -2.72 9.31 -2.16 -6.72 -2.72 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:654] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   ID = col_double(),
+##   ..   Age = col_double(),
+##   ..   FEV = col_double(),
+##   ..   Height = col_double(),
+##   ..   Sex = col_character(),
+##   ..   Smoker = col_character()
+##   .. )</code></pre>
+<p>Есть две тестовые переменые: <code>Smoker</code> и <code>Sex</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="multiple-linear.html#cb16-1"></a><span class="kw">table</span>(ofv<span class="op">$</span>Smoker)</span></code></pre></div>
+<pre><code>## 
+## Current     Non 
+##      65     589</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="multiple-linear.html#cb18-1"></a><span class="kw">table</span>(ofv<span class="op">$</span>Sex)</span></code></pre></div>
+<pre><code>## 
+## Female   Male 
+##    318    336</code></pre>
+<p>Они категориальные. Вполне можно ожидать, что, например, у курящих и некурящих ОФВ будет различаться, так как это показатель косвенно свидетельствующий о состоянии бронхиального дерева. Как включить это в модель?</p>
+<div id="математическая-модель-1" class="section level3">
+<h3><span class="header-section-number">18.2.1</span> Математическая модель</h3>
+<p>С точки зрения влияние категориального предиктора на целевую переменную будет выражаться в различном базовом уровне, то есть intercept, для разных категорий наблюдений. В модели это фиксируется так:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_1 + b_2 x_2 + b_3 x_2
+\]</span></p>
+<p>В данном случае представлена модель с одним категориальным (<span class="math inline">\(I_1\)</span>) и двумя количественными (<span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>) предикторами.</p>
+<p>Переменная <span class="math inline">\(I\)</span> — это переменная индикатор, которая обладает следующим свойством:</p>
+<ul>
+<li><span class="math inline">\(I_1 = 0\)</span>, если наблюдение относится к категории 1,</li>
+<li><span class="math inline">\(I_1 = 1\)</span>, если наблюдение относится к категории 2.</li>
+</ul>
+<p>Таким образом, у нас получается как бы две модели в одной:</p>
+<ul>
+<li>для наблюдений категории 1 модель принимает следующий вид: <span class="math inline">\(y_i = b_0 + b_2 x_2 + b_3 x_2\)</span>,</li>
+<li>а для наблюдений категории 2 вот такой: <span class="math inline">\(y_i = (b_0 + b_1) + b_2 x_2 + b_3 x_2\)</span>.</li>
+</ul>
+<p>Коэффициент <span class="math inline">\(b_1\)</span> показывает разницу в базовых уровнях между двумя категориями (группами) наблюдений.</p>
+</div>
+<div id="подбор-модели-1" class="section level3">
+<h3><span class="header-section-number">18.2.2</span> Подбор модели</h3>
+<p>С точки зрения подбора модели кардинальных изменений не происходит:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="multiple-linear.html#cb20-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>resHeight <span class="op">+</span><span class="st"> </span>Smoker, ofv)</span></code></pre></div>
+<p>А вот на аутпут <code>summary()</code> придётся посмотреть чуть внимательнее:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="multiple-linear.html#cb21-1"></a><span class="kw">summary</span>(model3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age + resHeight + Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.50182 -0.26305 -0.01882  0.24989  1.98535 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.28752    0.09729   2.955  0.00324 ** 
+## Age          0.22656    0.00607  37.321  &lt; 2e-16 ***
+## resHeight    0.10909    0.00472  23.115  &lt; 2e-16 ***
+## SmokerNon    0.11023    0.06002   1.837  0.06672 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4189 on 650 degrees of freedom
+## Multiple R-squared:  0.7676, Adjusted R-squared:  0.7665 
+## F-statistic: 715.7 on 3 and 650 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Отличия мы находим в таблице с предикторами. Здесь мы видим, что у <code>Age</code> и у <code>resHeight</code> коэффициенты остались как и прежде, но добавилась ещё одна строка — <code>SmokerNon</code>. Так как наша переменная содержит только два уровня, baseline какой-то из двух групп уходит в intercept — в данном случае это <code>SmokerCurrent</code>. Коэффициент при <code>SmokerNon</code> показывается, на сколько отличается baseline группы <code>SmokerNon</code> по сравнению со <code>SmokerCurrent</code>. Итак, объем форсированного выхода на первую секунду у некурящих детей на 0.11 литра больше, чем у курящих. Результат, вполне согласующийся со здравым смыслом.</p>
+<p>Оценка и диагностика модели производится аналогично тому, как мы это делали на предыдущих моделях.</p>
+</div>
+</div>
+<div id="модели-со-взаимодействием-предикторов" class="section level2">
+<h2><span class="header-section-number">18.3</span> Модели со взаимодействием предикторов</h2>
+<p>Но можно ведь не только уловить различия в базовом уровне количественны предикторов в раз личных группах наблюдений, но и разную степень их связи с целевой переменной в этих группах. Для этоо нужно ввести <strong>взаимодействие предикторов</strong> в модель.</p>
+<div id="математическая-модель-2" class="section level3">
+<h3><span class="header-section-number">18.3.1</span> Математическая модель</h3>
+<p>В данном случае модель будет выглядеть так:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_1 + b_2 x_2 + b_3 I_1 x_2
+\]</span></p>
+<p>Для простоты здесь один количественный и один категориальный предиктор. Переменная <span class="math inline">\(I_1\)</span> снова выступает здесь индикатором. То есть наша модель как бы снова содержит в себе две «подмодели»:</p>
+<ul>
+<li>для наблюдений категории 1 (<span class="math inline">\(I_1 = 0\)</span>) модель принимает следующий вид: <span class="math inline">\(y_i = b_0 + b_2 x_2\)</span>,</li>
+<li>а для наблюдений категории 2 (<span class="math inline">\(I_1 = 1\)</span>) вот такой: <span class="math inline">\(y_i = (b_0 + b_1) + (b_2 + b_3) x_2\)</span>.</li>
+</ul>
+<p>Теперь у нас не только есть поправочный коэффициент на baseline, но и поправочный угловой коэффициент для количественного предиктора.</p>
+</div>
+<div id="подбор-модели-2" class="section level3">
+<h3><span class="header-section-number">18.3.2</span> Подбор модели</h3>
+<p>Взаиможействие предикторов можно указать двумя способами:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="multiple-linear.html#cb23-1"></a>model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">+</span><span class="st"> </span>Smoker <span class="op">+</span><span class="st"> </span>Age<span class="op">:</span>Smoker, ofv) <span class="co"># : указывает на дополнительный угловой коэффициент для категории Smoker</span></span>
+<span id="cb23-2"><a href="multiple-linear.html#cb23-2"></a>model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">*</span><span class="st"> </span>Smoker, ofv) <span class="co"># эквивалентна предыдущей записи, но короче</span></span></code></pre></div>
+<p>Обе команды построят идентичные модели. Взглянем на <code>summary()</code>:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="multiple-linear.html#cb24-1"></a><span class="kw">summary</span>(model4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age * Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.76645 -0.34947 -0.03364  0.33679  2.05990 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    2.19697    0.40596   5.412 8.78e-08 ***
+## Age            0.07986    0.02959   2.699  0.00713 ** 
+## SmokerNon     -1.94357    0.41428  -4.691 3.31e-06 ***
+## Age:SmokerNon  0.16270    0.03074   5.293 1.65e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.5537 on 650 degrees of freedom
+## Multiple R-squared:  0.5941, Adjusted R-squared:  0.5922 
+## F-statistic: 317.1 on 3 and 650 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Intercept содержит baseline для уровня <code>Current</code> переменой <code>Smoker</code>. Коэффициент при <code>SmokerNon</code>, как и в предыдущей модели, показывает, насколько отличается baseline для уровня <code>Non</code> переменной <code>Smoker</code> от базового уровня категории <code>Current</code> этой же переменной. Коэффициент при <code>Age</code> — это угловой коэффициент регрессионной прямой для категории <code>SmokerCurrent</code>, в то время как запись <code>Age:SmokerNon</code> показывается, то это добавочный угловой коэффициент для группы некурящих респондентов. Как видите, всё аналогично тому, как это задаётся в математической модели, поэтому если вы помните её, интерпретация результатов анализа не составляет особого труда.</p>
+</div>
+</div>
+<div id="сравнение-моделей" class="section level2">
+<h2><span class="header-section-number">18.4</span> Сравнение моделей</h2>
+<p>Часто нам надо сравнить две модели друг с другом. Зачем? Например, чтобы понять, можно ли данную модель упростить, ведь мы хотим найти <a href="https://ru.wikipedia.org/wiki/Бритва_Оккама">наиболее простую и интерпретируемую модель</a>, не так ли?</p>
+<p>Как уже упоминалось выше, можно это сделать по значению скорректированного коэффициента детерминации, но можно использовать и другие показатели. Есть способ сравнить информативность двух моделей статистическим тестом — <strong>частным F-критерием</strong>. Делается это с помощью функции <code>anova()</code>, в которую необходимо передать сравниваемые модели.</p>
+<p>Допустим мы хотим сравнить <code>model2</code> и <code>model3</code> — первая содержит два количественных предиктора, а вторая ещё и категориальный.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="multiple-linear.html#cb26-1"></a><span class="kw">anova</span>(model2, model3)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: FEV ~ Age + resHeight
+## Model 2: FEV ~ Age + resHeight + Smoker
+##   Res.Df    RSS Df Sum of Sq      F  Pr(&gt;F)  
+## 1    651 114.67                              
+## 2    650 114.08  1   0.59206 3.3733 0.06672 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Здесь мы смотрим на значение F-статистики и p-value — впрочем, как и обычно при тестировании статистических гипотез. Если модели статистически значимо различаются, то влияние предиктора, который присутствует в одной модели, но отсутствует в другой, статистически значимо. В данном случае мы видим, что обе модели в общем-то одинаковы по своей информативности — то есть введение предиктора <code>Smoker</code> не особо-то и улучшает модель, даже несмотря на то, что он статистически значим. <del>Но мы получили значение p-value, которое говорит о том, что модели различаются на уровне статистической тенденции. Возможно, стоит обратить на это внимание.</del></p>
+<p>Частный F-критерий можно рассчитать и с помощью другой функции — <code>drop1()</code>. Допустим, мы решили регрессировать нашу целевую переменную по всем переменным датасета сразу да ещё и со всеми взаиможействиями:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="multiple-linear.html#cb28-1"></a>model5 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Age <span class="op">*</span><span class="st"> </span>Height <span class="op">*</span><span class="st"> </span>Sex <span class="op">*</span><span class="st"> </span>Smoker, ofv)</span>
+<span id="cb28-2"><a href="multiple-linear.html#cb28-2"></a><span class="kw">summary</span>(model5)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age * Height * Sex * Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.42585 -0.22543  0.00276  0.22556  1.62815 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)                   25.71051   13.30602   1.932   0.0538 .
+## Age                           -1.95406    1.00231  -1.950   0.0517 .
+## Height                        -0.34974    0.20513  -1.705   0.0887 .
+## SexMale                      -31.17265   15.46414  -2.016   0.0442 *
+## SmokerNon                    -28.32508   13.33280  -2.124   0.0340 *
+## Age:Height                     0.03009    0.01547   1.946   0.0521 .
+## Age:SexMale                    1.60183    1.21164   1.322   0.1866  
+## Height:SexMale                 0.47343    0.23620   2.004   0.0455 *
+## Age:SmokerNon                  1.92939    1.00829   1.914   0.0561 .
+## Height:SmokerNon               0.42323    0.20565   2.058   0.0400 *
+## SexMale:SmokerNon             34.15472   15.50337   2.203   0.0279 *
+## Age:Height:SexMale            -0.02410    0.01844  -1.307   0.1916  
+## Age:Height:SmokerNon          -0.02860    0.01556  -1.838   0.0666 .
+## Age:SexMale:SmokerNon         -2.07178    1.21924  -1.699   0.0898 .
+## Height:SexMale:SmokerNon      -0.52090    0.23696  -2.198   0.0283 *
+## Age:Height:SexMale:SmokerNon   0.03172    0.01856   1.709   0.0880 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.3827 on 638 degrees of freedom
+## Multiple R-squared:  0.8096, Adjusted R-squared:  0.8051 
+## F-statistic: 180.9 on 15 and 638 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>В итоге мы получили, конечно, что-то значимое, но совершенно не интерпретабельное. Надо пытаться упрощать.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="multiple-linear.html#cb30-1"></a><span class="kw">drop1</span>(model5, <span class="dt">test =</span> <span class="st">&#39;F&#39;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age * Height * Sex * Smoker
+##                       Df Sum of Sq    RSS     AIC F value  Pr(&gt;F)  
+## &lt;none&gt;                             93.465 -1240.4                  
+## Age:Height:Sex:Smoker  1   0.42783 93.893 -1239.4  2.9204 0.08795 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Функция <code>drop1()</code> исключается по одному предиктору из модели, начиная со взаиможействий самого высокого порядка и сразу тестирует гипотезу о различии моделей. Необходимо в её аргументах указать <code>test = "F"</code>, так как сейчас нас интересует именно F-критерий. Эта функция умеет считать ещё и другие — с ними мы столкнемся в следующих главах.</p>
+<p>В данном случае мы видим, что при исключении из модели взаимодействия третьего уровня (то есть взаиможействия четырёх предикторов) информативность модели не изменится — а значит модель можно упростить.</p>
+<p>Ещё одна полезная функция — это <code>update()</code>, чтобы не переписывать модель заново, а просто указать, какую её составляющую надо удалить:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="multiple-linear.html#cb32-1"></a>model5<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Height<span class="op">:</span>Sex<span class="op">:</span>Smoker)</span></code></pre></div>
+<p>Синтаксис <code>. ~ . -x</code> говорит о том, что «оставь формулу модели той же, но удали из неё предиктор <code>x</code>».</p>
+<p>Снова протестиируем модель с помощью частного F-критерия:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="multiple-linear.html#cb33-1"></a><span class="kw">drop1</span>(model5<span class="fl">.1</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Age:Height:Smoker + Age:Sex:Smoker + Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.893 -1239.4                      
+## Age:Height:Sex     1   1.67744 95.570 -1229.8 11.4160 0.0007724 ***
+## Age:Height:Smoker  1   0.08082 93.974 -1240.8  0.5500 0.4585756    
+## Age:Sex:Smoker     1   0.00474 93.898 -1241.3  0.0322 0.8575529    
+## Height:Sex:Smoker  1   1.20821 95.101 -1233.0  8.2226 0.0042735 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Видим, что при удалении взаиможействий <code>Age:Height:Smoker</code> и <code>Age:Sex:Smoker</code> информативность модели не изменится — поочередно удалим. Почему лучше делать это поочередно? Так как при удалении предиктора из модели статистики других предикторов могут измениться:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="multiple-linear.html#cb35-1"></a>model5<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5<span class="fl">.1</span>, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Sex<span class="op">:</span>Smoker)</span>
+<span id="cb35-2"><a href="multiple-linear.html#cb35-2"></a><span class="kw">drop1</span>(model5<span class="fl">.2</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Age:Height:Smoker + Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.898 -1241.3                      
+## Age:Height:Sex     1    1.6786 95.576 -1231.8 11.4412 0.0007621 ***
+## Age:Height:Smoker  1    0.0811 93.979 -1242.8  0.5528 0.4574650    
+## Height:Sex:Smoker  1    1.2755 95.173 -1234.5  8.6939 0.0033091 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="multiple-linear.html#cb37-1"></a>model5<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">update</span>(model5<span class="fl">.2</span>, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>Age<span class="op">:</span>Height<span class="op">:</span>Smoker)</span>
+<span id="cb37-2"><a href="multiple-linear.html#cb37-2"></a><span class="kw">drop1</span>(model5<span class="fl">.3</span>, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Age + Height + Sex + Smoker + Age:Height + Age:Sex + Height:Sex + 
+##     Age:Smoker + Height:Smoker + Sex:Smoker + Age:Height:Sex + 
+##     Height:Sex:Smoker
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         93.979 -1242.8                      
+## Age:Smoker         1    1.4059 95.385 -1235.1  9.5893 0.0020425 ** 
+## Age:Height:Sex     1    1.7363 95.715 -1232.8 11.8424 0.0006166 ***
+## Height:Sex:Smoker  1    1.1946 95.173 -1236.5  8.1478 0.0044507 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>И вот мы добрались до того момента, когда исключение любого из взаиможействий значимо ухудшит модель. То есть мы максимально упростили модель, насколько это возможно. Итоговая модель выглядит так:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="multiple-linear.html#cb39-1"></a><span class="kw">summary</span>(model5<span class="fl">.3</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Age + Height + Sex + Smoker + Age:Height + 
+##     Age:Sex + Height:Sex + Age:Smoker + Height:Smoker + Sex:Smoker + 
+##     Age:Height:Sex + Height:Sex:Smoker, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.42575 -0.22638  0.00352  0.22770  1.62661 
+## 
+## Coefficients:
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)               1.559311   2.313757   0.674 0.500598    
+## Age                      -0.119427   0.113202  -1.055 0.291827    
+## Height                    0.022225   0.035423   0.627 0.530599    
+## SexMale                  -4.668960   2.978608  -1.567 0.117492    
+## SmokerNon                -4.042750   1.980650  -2.041 0.041648 *  
+## Age:Height                0.001818   0.001738   1.046 0.295947    
+## Age:SexMale              -0.446116   0.134768  -3.310 0.000984 ***
+## Height:SexMale            0.067449   0.045821   1.472 0.141504    
+## Age:SmokerNon             0.073548   0.023751   3.097 0.002043 ** 
+## Height:SmokerNon          0.049233   0.030222   1.629 0.103798    
+## SexMale:SmokerNon         7.515828   2.604824   2.885 0.004041 ** 
+## Age:Height:SexMale        0.007257   0.002109   3.441 0.000617 ***
+## Height:SexMale:SmokerNon -0.112966   0.039576  -2.854 0.004451 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.3829 on 641 degrees of freedom
+## Multiple R-squared:  0.8086, Adjusted R-squared:  0.805 
+## F-statistic: 225.6 on 12 and 641 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Почему в неё остались незначимые предикторы? Так как оказались значимы взаимодействия, а включить в модель взаиможействия без самого предиктора невозможно.</p>
+<p>Конечно, можно делать это не руками, а автоматически, но это уже относится к сфере машинного обучения. При этом не проводится содержательным анализ того, что происходит — пока же вы руками исключаете предикторы друг за другом, можно успеть подумать, что складывается в модели с содержательной точки зрения и почему.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Будем говорить о влиянии, помня о тех оговорках, которые мы обозначили в предыдущей главе — регрессия per se не показывает причинно-следственной связи.<a href="multiple-linear.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -417,6 +972,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

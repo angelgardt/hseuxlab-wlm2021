@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -239,7 +303,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -250,7 +314,7 @@
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -291,7 +355,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,11 +387,69 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
 <li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
 <li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
@@ -359,7 +487,256 @@
             <section class="normal" id="section-">
 <div id="ancova" class="section level1">
 <h1><span class="header-section-number">20</span> Ковариационный анализ</h1>
+<blockquote>
+<p>Это будет очень короткая глава, так как всё, что нужно знать о ковариационном анализе, мы уже знаем. Просто пока не знаем, что то, что мы знаем, это ковариационный анализ. 🙃</p>
+</blockquote>
+<p>Вспомним данные, с которым работали в главах о <a href="#simple-linear">простой</a> и <a href="#multiple-linear">множественной</a> линейной регрессии.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ancova.html#cb1-1"></a><span class="kw">library</span>(tidyverse) <span class="co"># наш любимый пакет</span></span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="ancova.html#cb5-1"></a><span class="co"># даннные</span></span>
+<span id="cb5-2"><a href="ancova.html#cb5-2"></a>ofv &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&#39;http://www.statsci.org/data/general/fev.txt&#39;</span>, <span class="dt">delim =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   ID = col_double(),
+##   Age = col_double(),
+##   FEV = col_double(),
+##   Height = col_double(),
+##   Sex = col_character(),
+##   Smoker = col_character()
+## )</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ancova.html#cb7-1"></a><span class="kw">str</span>(ofv)</span></code></pre></div>
+<pre><code>## tibble [654 × 6] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ ID    : num [1:654] 301 451 501 642 901 ...
+##  $ Age   : num [1:654] 9 8 7 9 9 8 6 6 8 9 ...
+##  $ FEV   : num [1:654] 1.71 1.72 1.72 1.56 1.9 ...
+##  $ Height: num [1:654] 57 67.5 54.5 53 57 61 58 56 58.5 60 ...
+##  $ Sex   : chr [1:654] &quot;Female&quot; &quot;Female&quot; &quot;Female&quot; &quot;Male&quot; ...
+##  $ Smoker: chr [1:654] &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; &quot;Non&quot; ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   ID = col_double(),
+##   ..   Age = col_double(),
+##   ..   FEV = col_double(),
+##   ..   Height = col_double(),
+##   ..   Sex = col_character(),
+##   ..   Smoker = col_character()
+##   .. )</code></pre>
+<p>Описание данных из источника: «FEV (forced expiratory volume) is an index of pulmonary function that measures the volume of air expelled after one second of constant effort. The data contains determinations of FEV on 654 children ages 6-22 who were seen in the Childhood Respiratory Desease Study in 1980 in East Boston, Massachusetts. The data are part of a larger study to follow the change in pulmonary function over time in children.»</p>
+<p>Файл содержит данные об объёме форсированного выдоха (ОФВ) (forced expiratory volume, FEV)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> у курящих и некурящих детей (6–22 лет) и информацию о поле, возрасте, росте и ID пациента.</p>
+<p>Поставим задачу: мы хотим исследовать, влияет ли статус курения на объем формированного выдоха у детей. Ожидаем, что влияет. Однако мы также понимаем, что рост ребенка будет связан с объёмом его лёгких, а значит, и с нашей целевой переменной.</p>
+<p>Построим соответствующую модель. В качестве целевой переменной возьмем ОФВ (<code>FEV</code>), а в качестве предикторов статус курения (<code>Smoker</code>) и рост (<code>Height</code>), а также их взаимодействие, так как оно может быть потенциально значимо:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ancova.html#cb9-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Smoker <span class="op">*</span><span class="st"> </span>Height, ofv)</span>
+<span id="cb9-2"><a href="ancova.html#cb9-2"></a><span class="kw">summary</span>(model1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Smoker * Height, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.74332 -0.26960 -0.00462  0.23909  2.12941 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      -7.40165    1.11228  -6.654 6.04e-11 ***
+## SmokerNon         2.03678    1.12846   1.805   0.0716 .  
+## Height            0.16191    0.01685   9.612  &lt; 2e-16 ***
+## SmokerNon:Height -0.03106    0.01713  -1.813   0.0703 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4302 on 650 degrees of freedom
+## Multiple R-squared:  0.7549, Adjusted R-squared:  0.7538 
+## F-statistic: 667.3 on 3 and 650 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Модель сошлась, статистически значима, объясняет 75% дисперсии данных. Это очень хорошо.</p>
+<p>Мы также говорили, что чем проще модель, тем лучше, и учились упрощать модели. Мы видим, что взаимодействие предикторов оказалось статистически незначимым. Посмотрим, влияет ли его удаление на информативность модели:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ancova.html#cb11-1"></a><span class="kw">drop1</span>(model1, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Smoker * Height
+##               Df Sum of Sq    RSS     AIC F value Pr(&gt;F)  
+## &lt;none&gt;                     120.32 -1099.2                 
+## Smoker:Height  1   0.60843 120.93 -1097.9  3.2868 0.0703 .
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Частный F-критерий показывает, что удаление взаимодействия из модели не повлияет на её информативность, следовательно, взаиможействие можно удалить — оно не значимо.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ancova.html#cb13-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">update</span>(model1, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span><span class="st"> </span>Smoker<span class="op">:</span>Height)</span>
+<span id="cb13-2"><a href="ancova.html#cb13-2"></a><span class="kw">summary</span>(model2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Smoker + Height, data = ofv)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.7505 -0.2660 -0.0041  0.2447  2.1207 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -5.421300   0.210104 -25.803   &lt;2e-16 ***
+## SmokerNon   -0.006319   0.058686  -0.108    0.914    
+## Height       0.131883   0.003081  42.808   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.431 on 651 degrees of freedom
+## Multiple R-squared:  0.7537, Adjusted R-squared:  0.7529 
+## F-statistic: 995.9 on 2 and 651 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Внимательно на неё посмотрим. И познакомимся. Ведь мы только что построили модель <strong>ковариационного анализа (analysis of covariance, ANCOVA)</strong>.</p>
+<div id="модель-ковариационного-анализа" class="section level2">
+<h2><span class="header-section-number">20.1</span> Модель ковариационного анализа</h2>
+<p>Модель ковариационного анализа — это модель множественной линейной регрессии, в которой <em>отсутствуют взаимодействия дискретных и непрерывных предикторов</em>. Мы можем пойти с другой стороны и сказать, что модель ковариационного анализа — это модель дисперсионного анализа, в которую <em>включён (включены) один или несколько непрерывных предикторов</em>. Непрерывный предиктор называется <strong>ковариатой</strong>.</p>
+<p><strong>Ковариата</strong> — это переменная, которая [потенциально] связана с нашей целевой переменной, но её влияние не является целью нашего анализа. Например, в случае, рассмотренном выше, рост — это переменная, которая, несомненно, связана с ОФВ, но эта связь — не наша основная цель, так как мы исследуем влияние статуса курения.</p>
+<p>Математическая модель ровным счётом та же самая, что мы видели в случае множественной линейной регрессии:</p>
+<p><span class="math display">\[
+y_i = b_0 + b_1 I_{\mathrm{Group2}} + b_2 x_2 + e = b_0 + b_1 x_1 + b_2 x_2
+\]</span></p>
+<p>Это самый простой вариант. Здесь <span class="math inline">\(x_1\)</span> — категориальный предиктор (принимает значения <span class="math inline">\(0\)</span> и <span class="math inline">\(1\)</span>), а <span class="math inline">\(x_2\)</span> — ковариата, или непрерывный предиктор. Как можно заметить, взаимодействие в модель не включено.</p>
+</div>
+<div id="влияние-ковариаты" class="section level2">
+<h2><span class="header-section-number">20.2</span> Влияние ковариаты</h2>
+<p>Зачем вообще учитывать ковариаты? Рассмотрим такую модель:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ancova.html#cb15-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Smoker, ofv)</span>
+<span id="cb15-2"><a href="ancova.html#cb15-2"></a><span class="kw">summary</span>(model3)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Smoker, data = ofv)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.7751 -0.6339 -0.1021  0.4804  3.2269 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   3.2769     0.1043  31.407  &lt; 2e-16 ***
+## SmokerNon    -0.7107     0.1099  -6.464 1.99e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.8412 on 652 degrees of freedom
+## Multiple R-squared:  0.06023,    Adjusted R-squared:  0.05879 
+## F-statistic: 41.79 on 1 and 652 DF,  p-value: 1.993e-10</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="ancova.html#cb17-1"></a>car<span class="op">::</span><span class="kw">Anova</span>(model3)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: FEV
+##           Sum Sq  Df F value    Pr(&gt;F)    
+## Smoker     29.57   1  41.789 1.993e-10 ***
+## Residuals 461.35 652                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Видим, что предиктор «статус курения» оказывается статистически значимым. Если мы на этом завершим наш анализ, то мы сделаем <strong>некорректный вывод</strong>: <em>статус курения детей значимо влияет на ОФВ, при этом у группы некурящих ОФВ на 0.7 л меньше</em>. Здесь нас наталкивает на мысль об ошибке направление влияния нашего предиктора — согласно здравому смыслу и биологии и медицины ОФВ должен быть ниже у курящей группы. Но мы можем получить результаты, адекватные текущей реальности и ничего не заподозрить.</p>
+<p>Проблема здесь кроется в том, что, как мы уде сказали, ОФВ связан не только со статусом курения. Ковариата, как и любой предиктор, будет объяснять часть дисперсии данных, поэтому значимость других предикторов модели при её введении может изменяться.</p>
+<p>Взглянем ещё раз на модель ANCOVA:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="ancova.html#cb19-1"></a><span class="kw">summary</span>(model2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Smoker + Height, data = ofv)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.7505 -0.2660 -0.0041  0.2447  2.1207 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -5.421300   0.210104 -25.803   &lt;2e-16 ***
+## SmokerNon   -0.006319   0.058686  -0.108    0.914    
+## Height       0.131883   0.003081  42.808   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.431 on 651 degrees of freedom
+## Multiple R-squared:  0.7537, Adjusted R-squared:  0.7529 
+## F-statistic: 995.9 on 2 and 651 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Ковариата значима, а вот наш основной предиктор свою значимость утратил — причем практически абсолютно (p &gt; 0.9). Что мы можем сказать, увидев такие результаты? Мы можем заключить, что разница в ОФВ между группами курящих и некурящих, которую мы видели в <code>model3</code> объясняется не статусом курения, а возрастом респондентов, вошедших в эту группу. Теперь и вывод о направлении связи не кажется таким безумным — в группа курящих, вероятно, просто в среднем старше, а соответственно, и объем легких, следовательно и ОФВ, у них больше.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Проверьте данное предположение, сравнив рост и возраст в двух группах.</p>
+</div>
+<p>Таким образом, введя ковариату в анализ, мы обнаружили, что связи между статусом курения и одним из объективных показателей здоровья дыхательной системы нет. Как это интерпретировать? Ну, ça dépend. Одним из возможных вариантов может быть как раз таки возраст респондентов — «запас прочности» организма ещё не исчерпан.</p>
+</div>
+<div id="более-сложные-модели" class="section level2">
+<h2><span class="header-section-number">20.3</span> Более сложные модели</h2>
+<p>В модель можно ввести несколько дискретных предикторов, их взаиможействия, а также несколько ковариат. Однако надо быть внимательным.</p>
+<p>Пусть мы хотим немного усложнить нашу модель и ввести в неё одним из предикторов пол. Итого у нас будут следующие предикторы:</p>
+<ul>
+<li>основные:
+<ul>
+<li>пол (<code>Sex</code>)</li>
+<li>статус курения (<code>Smoker</code>)</li>
+<li>их взаимодействие (<code>Sex:Smoker</code>)</li>
+</ul></li>
+<li>ковариаты:
+<ul>
+<li>рост (<code>Height</code>)</li>
+</ul></li>
+</ul>
+<p>Однако нам придется начать с полной модели, чтобы понять, можно ли вообще проводить здесь ковариационный анализ.</p>
+<blockquote>
+<p><strong>Ковариационный анализ можно проводить только в том случае, если отсутствует значимое взаиможействие между факторами и ковариатами!</strong></p>
+</blockquote>
+<p>Строим полную модель:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="ancova.html#cb21-1"></a>model4 &lt;-<span class="st"> </span><span class="kw">lm</span>(FEV <span class="op">~</span><span class="st"> </span>Sex<span class="op">*</span>Smoker<span class="op">*</span>Height, ofv)</span>
+<span id="cb21-2"><a href="ancova.html#cb21-2"></a><span class="kw">summary</span>(model4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = FEV ~ Sex * Smoker * Height, data = ofv)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.55289 -0.25070  0.00711  0.24854  2.03200 
+## 
+## Coefficients:
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)               -0.02132    1.90900  -0.011 0.991093    
+## SexMale                  -10.27579    2.59616  -3.958 8.39e-05 ***
+## SmokerNon                 -4.37701    1.93495  -2.262 0.024024 *  
+## Height                     0.04628    0.02956   1.566 0.117886    
+## SexMale:SmokerNon          8.96579    2.62577   3.415 0.000679 ***
+## SexMale:Height             0.16002    0.03925   4.077 5.13e-05 ***
+## SmokerNon:Height           0.06743    0.03002   2.246 0.025048 *  
+## SexMale:SmokerNon:Height  -0.13649    0.03978  -3.431 0.000640 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4173 on 646 degrees of freedom
+## Multiple R-squared:  0.7708, Adjusted R-squared:  0.7683 
+## F-statistic: 310.4 on 7 and 646 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Саммари нам как бы намекает, что это самая простая модель из возможных, но попытаемся её упростить. Рассчитаем частный F-критерий:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="ancova.html#cb23-1"></a><span class="kw">drop1</span>(model4, <span class="dt">test =</span> <span class="st">&quot;F&quot;</span>)</span></code></pre></div>
+<pre><code>## Single term deletions
+## 
+## Model:
+## FEV ~ Sex * Smoker * Height
+##                   Df Sum of Sq    RSS     AIC F value    Pr(&gt;F)    
+## &lt;none&gt;                         112.52 -1135.0                      
+## Sex:Smoker:Height  1    2.0503 114.57 -1125.2  11.771 0.0006398 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Значимо взаиможействие самого высокого уровня, а значит его нельзя исключить из модели. Поэтому ковариационный анализ в этом случае невозможен. 😢</p>
+</div>
+<div id="тестирование-значимости-предикторов-и-диагностика-модели" class="section level2">
+<h2><span class="header-section-number">20.4</span> Тестирование значимости предикторов и диагностика модели</h2>
+<p>Так как ANCOVA — это всё ещё линейная регрессия, то и всё, что можно делать с регрессией, можно делать и с ней. Тестирование значимости предикторов происходит точно так же, как и две главы назад. Диагностика модели также аналогична. Более того, если возникает потребность, то можно воспользоваться и функцией <code>predict()</code>, чтобы предсказать значения на новых данных. Всё абсолютно то же самое.</p>
+<hr />
+<blockquote>
+<p>Как видите, несмотря на то, что мы уже освоили достаточно много методов анализа данных, все они базируются на одной и той же модели — модели линейной регрессии — которая время от времени несколько модифицируется под те или иные типы данных. Спойлер, далее тоже ничего не измениться — мы будем в рамках всё той же линейной регрессии, только ход адаптации модели будет несколько более сложным. Но если сейчас вы чувствуете себя достаточно уверенно, то и дальше всё пойдёт ровно. 😉</p>
+</blockquote>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Объём воздуха, выдыхаемого за первую секунду манёвра форсированного выдоха. Используется для расчёта индекса наличия/отсутствия ухудшения проходимости дыхательных путей.<a href="ancova.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -417,6 +794,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

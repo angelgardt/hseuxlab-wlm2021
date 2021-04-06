@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -239,7 +303,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -250,7 +314,7 @@
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -291,7 +355,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,12 +387,98 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a></li>
+<li class="chapter" data-level="21.5" data-path="logistic.html"><a href="logistic.html#задача-построения-линейной-модели"><i class="fa fa-check"></i><b>21.5</b> Задача построения линейной модели</a></li>
+<li class="chapter" data-level="21.6" data-path="logistic.html"><a href="logistic.html#переход-от-дискретной-величины-к-непрерывной"><i class="fa fa-check"></i><b>21.6</b> Переход от дискретной величины к непрерывной</a><ul>
+<li class="chapter" data-level="21.6.1" data-path="logistic.html"><a href="logistic.html#логистическая-кривая"><i class="fa fa-check"></i><b>21.6.1</b> Логистическая кривая</a></li>
+<li class="chapter" data-level="21.6.2" data-path="logistic.html"><a href="logistic.html#шансы-и-логиты"><i class="fa fa-check"></i><b>21.6.2</b> Шансы и логиты</a></li>
+</ul></li>
+<li class="chapter" data-level="21.7" data-path="logistic.html"><a href="logistic.html#формулирование-модели-в-математическом-виде"><i class="fa fa-check"></i><b>21.7</b> Формулирование модели в математическом виде</a></li>
+<li class="chapter" data-level="21.8" data-path="logistic.html"><a href="logistic.html#подбор-линейной-модели"><i class="fa fa-check"></i><b>21.8</b> Подбор линейной модели</a><ul>
+<li class="chapter" data-level="21.8.1" data-path="logistic.html"><a href="logistic.html#метод-максимального-правдоподобия"><i class="fa fa-check"></i><b>21.8.1</b> Метод максимального правдоподобия</a></li>
+</ul></li>
+<li class="chapter" data-level="21.9" data-path="logistic.html"><a href="logistic.html#анализ-модели"><i class="fa fa-check"></i><b>21.9</b> Анализ модели</a></li>
+<li class="chapter" data-level="21.10" data-path="logistic.html"><a href="logistic.html#анализ-девиансы-и-упрощение-модели"><i class="fa fa-check"></i><b>21.10</b> Анализ девиансы и упрощение модели</a></li>
+<li class="chapter" data-level="21.11" data-path="logistic.html"><a href="logistic.html#интерпретация-коэффициентов-модели"><i class="fa fa-check"></i><b>21.11</b> Интерпретация коэффициентов модели</a><ul>
+<li class="chapter" data-level="21.11.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.11.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="21.12" data-path="logistic.html"><a href="logistic.html#предсказательная-сила-модели"><i class="fa fa-check"></i><b>21.12</b> Предсказательная сила модели</a><ul>
+<li class="chapter" data-level="21.12.1" data-path="logistic.html"><a href="logistic.html#перевод-непрерывных-предсказаний-в-дискретные"><i class="fa fa-check"></i><b>21.12.1</b> Перевод непрерывных предсказаний в дискретные</a></li>
+<li class="chapter" data-level="21.12.2" data-path="logistic.html"><a href="logistic.html#confusion-matrix"><i class="fa fa-check"></i><b>21.12.2</b> Confusion matrix</a></li>
+<li class="chapter" data-level="21.12.3" data-path="logistic.html"><a href="logistic.html#accuracy"><i class="fa fa-check"></i><b>21.12.3</b> Accuracy</a></li>
+<li class="chapter" data-level="21.12.4" data-path="logistic.html"><a href="logistic.html#precision-and-recall"><i class="fa fa-check"></i><b>21.12.4</b> Precision and Recall</a></li>
+<li class="chapter" data-level="21.12.5" data-path="logistic.html"><a href="logistic.html#f1-мера"><i class="fa fa-check"></i><b>21.12.5</b> F1-мера</a></li>
+<li class="chapter" data-level="21.12.6" data-path="logistic.html"><a href="logistic.html#roc-auc"><i class="fa fa-check"></i><b>21.12.6</b> ROC-AUC</a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="logistic.html"><a href="logistic.html#предсказания-на-новых-данных"><i class="fa fa-check"></i><b>21.13</b> Предсказания на новых данных</a></li>
+</ul></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
 <li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
 <li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
@@ -359,7 +515,805 @@
             <section class="normal" id="section-">
 <div id="logistic" class="section level1">
 <h1><span class="header-section-number">21</span> Обобщенные линейные модели. Логистическая регрессия</h1>
+<div id="ограничения-общих-линейных-моделей" class="section level2">
+<h2><span class="header-section-number">21.1</span> Ограничения общих линейных моделей</h2>
+<p>Модели, которые мы изучали на предыдущих занятиях носят название <strong>общих линейных моделей (general linear models)</strong>. Они достаточно просты и удобны в большинстве случаев, однако имеют ряд важных ограничений.</p>
+<p>Вспомним, как выглядит уравнение такой модели:
+<span class="math display">\[y = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p + \varepsilon\]</span></p>
+<p>Предикторы в такой модели могут быть как дискретными, так и непрерывными.</p>
+<p>Важнейшим допущением / требованием этой модели является распределение ошибки:
+<span class="math display">\[\varepsilon \thicksim \mathcal{N}(0, \, \sigma)\]</span></p>
+<p>Поскольку ошибка модели должна быть распределена нормально, а моделируется среднее значение, то можно сформулировать более общее допущение / требование:
+<span class="math display">\[y_i \thicksim \mathcal{N}(\mu_i, \, \sigma)\]</span></p>
+<p>Таким образом, общие линейные модели позволяют моделировать зависимости только для нормально-распределенных величин. Если же отклик модели (он же зависимая переменная) подчиняется другому распределению, эти модели не годятся.</p>
+<p>Однако нам на помощь приходят <strong>обобщенные линейные модели (generalized linear models)</strong>, которые позволяют моделировать зависимости величин, подчиняющихся не только нормальному распределению, но и многим другим.</p>
+<p>Мы познакомимся с общей логикой построения GLM, подробно рассмотрев один из вариантов таких моделей, а именно <strong>биномиальную регрессию</strong>.</p>
+</div>
+<div id="биномиальное-распределение" class="section level2">
+<h2><span class="header-section-number">21.2</span> Биномиальное распределение</h2>
+<p><a href="https://ru.wikipedia.org/wiki/Биномиальное_распределение">Биномальное распределение</a> описывает вероятность выпадения определенного числа «успехов» в серии <a href="https://ru.wikipedia.org/wiki/Схема_Бернулли">испытаний Бернулли</a>.</p>
+<p>Здесь можно <a href="https://angelgardt.shinyapps.io/binomial_app">поиграться</a>.</p>
+</div>
+<div id="бинарные-переменные" class="section level2">
+<h2><span class="header-section-number">21.3</span> Бинарные переменные</h2>
+<p>Эти переменные достаточно широко распространены как повседневности, так и в науке. Блюдо вкусное или невкусное, команда выиграла или проиграла, пациент в результате медицинских манипуляций выжил или умер, в ходе эксперимента была выбрана какая-то опция или нет, сдал студент экзамен или не сдал — и т.д.</p>
+<p>Эти события могут быть связаны с раздичными предикторами, и такую взаимосвязь можно описать с помощью регрессионных моделей.</p>
+</div>
+<div id="hr-данные" class="section level2">
+<h2><span class="header-section-number">21.4</span> HR-данные</h2>
+<p><a href="https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/managers.csv">Тут</a> есть датасет про менеджеров. Это часть данных большого датасета, собранного в рамках одного из HR-исследований.</p>
+<p>Грузим данные.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="logistic.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="logistic.html#cb5-1"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<pre><code>## Loading required package: carData</code></pre>
+<pre><code>## 
+## Attaching package: &#39;car&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     recode</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     some</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="logistic.html#cb10-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="logistic.html#cb11-1"></a>managers &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/managers.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   X1 = col_double(),
+##   id = col_character(),
+##   lvl = col_character(),
+##   qualification = col_double(),
+##   autonomy = col_double(),
+##   subdiv_regulations = col_double(),
+##   company_regulations = col_double(),
+##   direct_juniors = col_double(),
+##   func_juniors = col_double(),
+##   income_influence = col_double(),
+##   error_cost = col_double()
+## )</code></pre>
+<p>Смотрим их структуру.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="logistic.html#cb14-1"></a><span class="kw">str</span>(managers)</span></code></pre></div>
+<pre><code>## tibble [3,210 × 11] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ X1                 : num [1:3210] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ id                 : chr [1:3210] &quot;таб_1544093&quot; &quot;таб_1397647&quot; &quot;таб_4078395&quot; &quot;таб_4172997&quot; ...
+##  $ lvl                : chr [1:3210] &quot;Сотрудник&quot; &quot;Сотрудник&quot; &quot;Сотрудник&quot; &quot;Сотрудник&quot; ...
+##  $ qualification      : num [1:3210] 5 4 2 4 5 2 5 5 2 2 ...
+##  $ autonomy           : num [1:3210] 2 2 2 3 3 2 3 2 1 1 ...
+##  $ subdiv_regulations : num [1:3210] 1 1 1 1 2 1 1 1 1 1 ...
+##  $ company_regulations: num [1:3210] 1 1 1 1 3 1 1 1 1 1 ...
+##  $ direct_juniors     : num [1:3210] 1 1 1 1 2 1 1 1 1 1 ...
+##  $ func_juniors       : num [1:3210] 1 1 1 1 1 1 2 1 1 1 ...
+##  $ income_influence   : num [1:3210] 1 1 1 1 3 2 1 1 1 2 ...
+##  $ error_cost         : num [1:3210] 1 2 1 1 5 2 1 2 1 2 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   X1 = col_double(),
+##   ..   id = col_character(),
+##   ..   lvl = col_character(),
+##   ..   qualification = col_double(),
+##   ..   autonomy = col_double(),
+##   ..   subdiv_regulations = col_double(),
+##   ..   company_regulations = col_double(),
+##   ..   direct_juniors = col_double(),
+##   ..   func_juniors = col_double(),
+##   ..   income_influence = col_double(),
+##   ..   error_cost = col_double()
+##   .. )</code></pre>
+<p>У нас есть следуюшие переменные:</p>
+<ul>
+<li><code>id</code> — табельный номер сотрудника</li>
+<li><code>lvl</code> — уровень (<code>Сотрудник</code> или <code>Менеджер</code>)</li>
+<li><code>qualification</code> — профессиональная квалификация</li>
+<li><code>autonomy</code> — автономия в принятии решений</li>
+<li><code>subdiv_regulations</code> — участие в формировании регламентов подразделения</li>
+<li><code>company_regulations</code> — участие в формировании регламентов Компании</li>
+<li><code>direct_juniors</code> — количество прямых подчинённых</li>
+<li><code>func_juniors</code> — количество функциональных подчинённых</li>
+<li><code>income_influence</code> — влияние на доход Компании</li>
+<li><code>error_cost</code> — стоимость ошибки</li>
+</ul>
+<p>Поизучаем данные.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="logistic.html#cb16-1"></a><span class="kw">colSums</span>(<span class="kw">is.na</span>(managers))</span></code></pre></div>
+<pre><code>##                  X1                  id                 lvl       qualification 
+##                   0                   0                   0                   0 
+##            autonomy  subdiv_regulations company_regulations      direct_juniors 
+##                   0                   0                   0                   0 
+##        func_juniors    income_influence          error_cost 
+##                   0                   0                   0</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="logistic.html#cb18-1"></a><span class="kw">table</span>(managers<span class="op">$</span>lvl)</span></code></pre></div>
+<pre><code>## 
+##  Менеджер Сотрудник 
+##       810      2400</code></pre>
+</div>
+<div id="задача-построения-линейной-модели" class="section level2">
+<h2><span class="header-section-number">21.5</span> Задача построения линейной модели</h2>
+<p>В наших данных есть бинарная переменная <code>lvl</code> — она содержит две градации: <code>Сотрудник</code> и <code>Менеджер</code>. Вопрос, на который нам необходимо ответить: по каким параметрам различаются менеджеры и сотрудники?</p>
+<p>Прежде всего надо вспомнить, что мы работаем с математической моделью, которой необходимы числа, поэтому придётся перекодировать нашу целевую переменную. Пусть <code>1</code> обозначает менеджеров, а <code>0</code> — сотрудников.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="logistic.html#cb20-1"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb20-2"><a href="logistic.html#cb20-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>X1, <span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># заодно удалим лишние переменные</span></span>
+<span id="cb20-3"><a href="logistic.html#cb20-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lvl =</span> <span class="kw">ifelse</span>(lvl <span class="op">==</span><span class="st"> &#39;Менеджер&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) -&gt;<span class="st"> </span>managers</span></code></pre></div>
+<p>Теперь мы можем построить модель, описывающую связь <code>lvl</code> с имеющимися предикторами.</p>
+<p>Попробуем обычную линейную регрессию.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="logistic.html#cb21-1"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers)</span>
+<span id="cb21-2"><a href="logistic.html#cb21-2"></a><span class="kw">summary</span>(model0)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = lvl ~ ., data = managers)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.47532 -0.07671 -0.04250  0.06891  1.02042 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         -0.869056   0.015520 -55.994  &lt; 2e-16 ***
+## qualification        0.048487   0.004420  10.969  &lt; 2e-16 ***
+## autonomy             0.016780   0.008309   2.019 0.043527 *  
+## subdiv_regulations   0.281009   0.014017  20.048  &lt; 2e-16 ***
+## company_regulations -0.068712   0.011403  -6.026 1.88e-09 ***
+## direct_juniors       0.369140   0.012549  29.416  &lt; 2e-16 ***
+## func_juniors         0.107304   0.008069  13.298  &lt; 2e-16 ***
+## income_influence     0.072478   0.007434   9.749  &lt; 2e-16 ***
+## error_cost          -0.026336   0.007985  -3.298 0.000984 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2235 on 3201 degrees of freedom
+## Multiple R-squared:  0.7361, Adjusted R-squared:  0.7354 
+## F-statistic:  1116 on 8 and 3201 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Модель сошлась, всё суперклассно.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="logistic.html#cb23-1"></a>managers <span class="op">%&gt;%</span></span>
+<span id="cb23-2"><a href="logistic.html#cb23-2"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
+<span id="cb23-3"><a href="logistic.html#cb23-3"></a>    <span class="dt">L =</span> qualification <span class="op">+</span></span>
+<span id="cb23-4"><a href="logistic.html#cb23-4"></a><span class="st">        </span>autonomy <span class="op">+</span></span>
+<span id="cb23-5"><a href="logistic.html#cb23-5"></a><span class="st">        </span>subdiv_regulations <span class="op">+</span></span>
+<span id="cb23-6"><a href="logistic.html#cb23-6"></a><span class="st">        </span>company_regulations <span class="op">+</span></span>
+<span id="cb23-7"><a href="logistic.html#cb23-7"></a><span class="st">        </span>direct_juniors <span class="op">+</span></span>
+<span id="cb23-8"><a href="logistic.html#cb23-8"></a><span class="st">        </span>func_juniors <span class="op">+</span></span>
+<span id="cb23-9"><a href="logistic.html#cb23-9"></a><span class="st">        </span>income_influence <span class="op">+</span></span>
+<span id="cb23-10"><a href="logistic.html#cb23-10"></a><span class="st">        </span>error_cost</span>
+<span id="cb23-11"><a href="logistic.html#cb23-11"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb23-12"><a href="logistic.html#cb23-12"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(L, lvl)) <span class="op">+</span></span>
+<span id="cb23-13"><a href="logistic.html#cb23-13"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">.3</span>) <span class="op">+</span></span>
+<span id="cb23-14"><a href="logistic.html#cb23-14"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> model0<span class="op">$</span>fitted.values),</span>
+<span id="cb23-15"><a href="logistic.html#cb23-15"></a>             <span class="dt">color =</span> <span class="st">&#39;darkred&#39;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Но получается что-то странное…</p>
+<p>Во-первых, непонятно, какая величина отложена на оси <span class="math inline">\(y\)</span>. Во-вторых, предсказания модели выходят за границы допустимых значений (модель предсказывает отрицательные и большие единицы значения). Поэтому простая линейная модель нам не подходит. Надо искать что-то еще.</p>
+</div>
+<div id="переход-от-дискретной-величины-к-непрерывной" class="section level2">
+<h2><span class="header-section-number">21.6</span> Переход от дискретной величины к непрерывной</h2>
+<div id="логистическая-кривая" class="section level3">
+<h3><span class="header-section-number">21.6.1</span> Логистическая кривая</h3>
+<p>Собственно бинарные переменные неудобны для работы, поэтому надо найти способ превратить такую дискретную бинарную шкалу в «безграничную» и непрерывную. При моделировании нулей и единиц переходят к моделированию <strong>вероятности получения единиц</strong>.</p>
+<p>Сама зависимая переменная в зависимости от предиктора распределена примерно так:</p>
+<p>КАРТИНКА</p>
+<p>Введем новые обозначения:</p>
+<ul>
+<li><span class="math inline">\(p_i\)</span> — вероятность события <span class="math inline">\(y_i = 1\)</span> при данных значениях предиктора,</li>
+<li><span class="math inline">\(1 - p_i\)</span> — вероятность альтернативного события <span class="math inline">\(y_i = 0\)</span>.</li>
+</ul>
+<p>Получается непрерывная величина <span class="math inline">\(0 \leq p_i \leq 1\)</span>.</p>
+<p>КАРТИНКА</p>
+<p>И вроде бы как ее можно уже моделировать. Но нужно помнить, что вероятность изменяется в пределах от нуля до единицы, а прямая ничем не ограничена. Поэтому прямая — не лучший вариант.</p>
+<p>Такая закономерность моделируется логистической кривой.</p>
+<p>КАРТИНКА</p>
+<p>КАРТИНКА логистической кривой</p>
+<p>Она лежит как раз в пределах от 0 до 1. Наша логистическая кривая задается уравнением</p>
+<p><span class="math display">\[p_i = \frac{e^{\beta_0 + \beta_1 x_i}}{1 + e^{\beta_0 + \beta_1 x_i}}\]</span></p>
+<p>Логистическую кривую мы больше никогда не увидим [печаль :(], но она используется внутри функций, которыми мы строим модель.</p>
+</div>
+<div id="шансы-и-логиты" class="section level3">
+<h3><span class="header-section-number">21.6.2</span> Шансы и логиты</h3>
+<p>Теперь нам надо побороться с ограниченностью логистической кривой. Для этого можно перейти от вероятностей к шансам.</p>
+<p><strong>Шанс (отношение шансов, odds, odds ratio)</strong> — это отношение вероятности успеха к вероятности неудачи. Их величина варьируется от <span class="math inline">\(0\)</span> до <span class="math inline">\(+\infty\)</span>.</p>
+<p>Уже лучше, но все еще не самый лучший вариант… Последний шаг, необходимый нам, чтобы все было хорошо, юзануть логарифм, который преобразуем шансы в логиты.</p>
+<p><span class="math display">\[
+\mathrm{logit}(p) = \ln\left(\frac{p_i}{1-p_i}\right)
+\]</span></p>
+<p>Значения логитов — трансформированные оценки вероятностей события. Они варьируют от <span class="math inline">\(-\infty\)</span> до <span class="math inline">\(+\infty\)</span>, симметричны относительно нуля, и их удобно брать в качестве зависимой переменной для построения модели. Кроме того, logit-преобразование еще и линеаризует логистическую кривую. <a href="https://angelgardt.github.io/hseuxlab-andan/logit_transformation_proof.html">Доказательство.</a></p>
+<p>Функция, используемая для линеаризации связи между предиктором и зависимой переменной, называется <strong>связывающей функцией (linked function)</strong>. Функция logit-преобразоввания — одна из нескольких связывающих функций, применяемых для анализа бинарных переменных отклика.</p>
+<p>Итак, summary от всего, что было выше:</p>
+<ol style="list-style-type: decimal">
+<li>От дискретной оценки событий (0 и 1) переходим к оценке вероятностей.</li>
+<li>Связь вероятностей с предиктором описывается логистической кривой.</li>
+<li>Если при помощи функции связи перейти от вероятностей к логитам, то связь будет описываться прямой линией.</li>
+<li>Параметры линейной модели для такой прямой можно оценить с помощью регрессионного анализа.</li>
+</ol>
+</div>
+</div>
+<div id="формулирование-модели-в-математическом-виде" class="section level2">
+<h2><span class="header-section-number">21.7</span> Формулирование модели в математическом виде</h2>
+<p><strong>GLM с биномиальным распределением отклика</strong></p>
+<p><span class="math display">\[y_i \thicksim \mathrm{Bin}(n = 1, p_i)
+\\
+\mathbb{E}(y_i) = p_i = \frac{e^{\beta_0 + \beta_1 x_1 + \dots + \beta_p x_p}}{1 + e^{\beta_0 + \beta_1 x_1 + \dots + \beta_p x_p}}\]</span></p>
+<p>Функция связи (linked function):
+<span class="math display">\[
+\ln \left(\frac{p_i}{1 - p_i}\right) = \eta_i
+\\
+\eta_i = \beta_0 + \beta_1 x_{1i} + \dots + \beta_p x_{pi}
+\]</span></p>
+<p>Для перехода от логитов к вероятностям используется функция, обратная функции связи. В данном случае, логистическое преобразование:
+<span class="math display">\[
+p_i = \frac{e^{\eta_i}}{1 + e^{\eta_i}}
+\]</span></p>
+</div>
+<div id="подбор-линейной-модели" class="section level2">
+<h2><span class="header-section-number">21.8</span> Подбор линейной модели</h2>
+<p>Для построения модели используется функция <code>glm()</code>. Синтаксически она очень похожа на <code>lm()</code>, но у неё есть дополнительный аргумент <code>family</code>, в который необходимо указать тип регрессии, которую мы собираемся использовать. Внутри указания типа можно указать функцию связи, с использвоание которой будет строиться модель.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="logistic.html#cb24-1"></a>model &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="logistic.html#cb26-1"></a><span class="kw">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = lvl ~ ., family = binomial(link = &quot;logit&quot;), data = managers)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -3.8626  -0.0897  -0.0800   0.0000   3.5607  
+## 
+## Coefficients:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)         -22.08642    1.13159 -19.518  &lt; 2e-16 ***
+## qualification         1.55224    0.14058  11.042  &lt; 2e-16 ***
+## autonomy              0.18304    0.24017   0.762    0.446    
+## subdiv_regulations   -0.08816    0.27523  -0.320    0.749    
+## company_regulations   0.10685    0.21973   0.486    0.627    
+## direct_juniors        8.86211    0.70679  12.539  &lt; 2e-16 ***
+## func_juniors          2.98508    0.26324  11.340  &lt; 2e-16 ***
+## income_influence      0.63992    0.16049   3.987 6.68e-05 ***
+## error_cost           -0.04441    0.15745  -0.282    0.778    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 3626.58  on 3209  degrees of freedom
+## Residual deviance:  640.79  on 3201  degrees of freedom
+## AIC: 658.79
+## 
+## Number of Fisher Scoring iterations: 8</code></pre>
+<p>Модель сошлась, все ровно, хотя нам R выдал предупреждение. Вызываем функцию <code>summary()</code>, чтобы посмотреть статистики модели. Вывод функции нам уже знаком, он аналогичен тому, с которым мы встречались, однако все-таки отличается некоторыми деталями.</p>
+<p>Во-первых, нет F-статистики. Во-вторых, нет R². Это связано с тем, что алгоритм GLM не работает с дисперсией и суммой квадратов — модель подбирается <strong>методом максимального правдоподобия</strong>. Данный метод позволяет учесть разную форму распределений, которые мы можем моделировать с использованием GLM.</p>
+<div id="метод-максимального-правдоподобия" class="section level3">
+<h3><span class="header-section-number">21.8.1</span> Метод максимального правдоподобия</h3>
+<p><strong>Правдоподобие (likelihood)</strong> — способ измерить соответствие имеющихся данных тому, что можно получить при определенных значениях параметров модели. Оно представляет собой произведение вероятностей получения каждой из точек данных:</p>
+<p><span class="math display">\[
+L(\theta | \mathrm{data}) = \prod_{i=1}^n f(\mathrm{data}|\theta),
+\]</span>
+где <span class="math inline">\(f(\mathrm{data}|\theta)\)</span> — функция распределения с параметрами <span class="math inline">\(\theta\)</span>.</p>
+<p>Параметры модели должны максимизировать значения [логарифма] правдоподобия, т.е.
+<span class="math display">\[
+L(\theta | \mathrm{data}) \rightarrow \max
+\]</span>
+Однако для упрощения вычислений используют логарифмы правдоподобий (loglikelihood) и максимизируют их
+<span class="math display">\[
+\ln L(\theta | \mathrm{data}) \rightarrow \max
+\]</span>
+Аналитически такие задачи решаются редко, чаще используются методы численной оптимизации.</p>
+</div>
+</div>
+<div id="анализ-модели" class="section level2">
+<h2><span class="header-section-number">21.9</span> Анализ модели</h2>
+<p>Итак, продолжим изучать аутпут функции <code>summary()</code>. Обратимся к ней еще раз.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="logistic.html#cb28-1"></a><span class="kw">summary</span>(model)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = lvl ~ ., family = binomial(link = &quot;logit&quot;), data = managers)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -3.8626  -0.0897  -0.0800   0.0000   3.5607  
+## 
+## Coefficients:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)         -22.08642    1.13159 -19.518  &lt; 2e-16 ***
+## qualification         1.55224    0.14058  11.042  &lt; 2e-16 ***
+## autonomy              0.18304    0.24017   0.762    0.446    
+## subdiv_regulations   -0.08816    0.27523  -0.320    0.749    
+## company_regulations   0.10685    0.21973   0.486    0.627    
+## direct_juniors        8.86211    0.70679  12.539  &lt; 2e-16 ***
+## func_juniors          2.98508    0.26324  11.340  &lt; 2e-16 ***
+## income_influence      0.63992    0.16049   3.987 6.68e-05 ***
+## error_cost           -0.04441    0.15745  -0.282    0.778    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 3626.58  on 3209  degrees of freedom
+## Residual deviance:  640.79  on 3201  degrees of freedom
+## AIC: 658.79
+## 
+## Number of Fisher Scoring iterations: 8</code></pre>
+<p>Мы видим знакомую нам табличку с оценками коэффициентов. У каждого предиктора есть информация о значении коэффициента при нем (<code>Estimate</code>), значение стандартной ошибки, z-value и p-value, рассчитанный для последнего.</p>
+<p>Судя по аутпуту, значимыми являются следующие предикторы: профессиональная квалификация, количество прямых и функциональных подчинённых и влияние на доход компании. Заметьте, что в этой модели значимых предикторов меньше, чем в модели обычной линейной регрессии. Но так ли это?</p>
+<p>Внимательно посмотрим на эту табличку. Раньше у нас были значения t-статистики — теперь z-теста. К чему это может приводить?</p>
+<p>Чтобы ответить на этот вопрос, надо разобраться, что такое этот z-тест.</p>
+<p>КАРТИНКА</p>
+<p>Значение z-value является результатом подсчета <strong>теста Вальда</strong> и позволяет оценить значимость коэффициента модели. Расчет статистики похож на подсчет t-теста, только распределение данной статистики <em>ассимптотически</em> стремиться к нормальному (отсюда и <em>z</em>). Ассимптотика приводит к тому, что опеределение значимости коэффициентов на маленьких выборках будет неточным.</p>
+<p><span class="math display">\[
+H_0: \beta_k = 0 \\
+H_1: \beta_k \neq 0 \\
+\\
+z = \frac{b_k - \beta_k}{SE_{b_k}} = \frac{b_k}{SE_{b_k}} \thicksim \mathcal{N}(0,\,1)
+\]</span></p>
+<p>Поскольку значения теста Вальда нам не могут обеспечить достаточной точности оценки коэффициентов, нам необходимы другие метрики оценки значимости коэффициентов.</p>
+</div>
+<div id="анализ-девиансы-и-упрощение-модели" class="section level2">
+<h2><span class="header-section-number">21.10</span> Анализ девиансы и упрощение модели</h2>
+<p>Для получения более точных оценок необходимо поработать в логарифмами правдоподобий. Вообще логарифмы правдоподобий используются в GLM много для чего:</p>
+<ul>
+<li>для описания качества подгонки модели;</li>
+<li>для тестирования значимости подобранной модели в целом;</li>
+<li>для тестирования значимости отдельных предикторов;</li>
+<li>для отбора моделей.</li>
+</ul>
+<p>Дла понимания механики анализа нам потребуется несколько полезных абстракций:</p>
+<ul>
+<li><strong>Насыщенная модель (saturated model)</strong> — каждое уникальное наблюдение (сочетание предикторов) описывается одним из <span class="math inline">\(n\)</span> параметров.</li>
+</ul>
+<p><span class="math display">\[
+\ln L_{\mathrm{sat}} = 0 \\
+\mathrm{df}_{\mathrm{sat}} = n - p_{\mathrm{sat}} = n - n = 0
+\]</span></p>
+<ul>
+<li><strong>Нулевая модель (null model)</strong> — все наблюдения описываются одним параметром (средним значением)</li>
+</ul>
+<p><span class="math display">\[
+\hat y_i = \beta_0 \\
+\ln L_{\mathrm{null}} \neq 0 \rightarrow -\infty \\
+\mathrm{df}_{\mathrm{null}} = n - p_{\mathrm{null}} = n - 1
+\]</span></p>
+<p>Наша <strong>реальная (предложенная) модель</strong>, которую мы подбираем, будет находится где-то между насыщенной и нулевой моделью (вернее, не сама модель, а значение логарифма её правдоподобия).</p>
+<p><span class="math display">\[
+\hat y_i = \beta_0 + \beta_1 x_{1i} + \dots + \beta_p x_{pi} \\
+\ln L_{\mathrm{model}} \neq 0 \\
+\mathrm{df}_\mathrm{model} = n - p_\mathrm{model}
+\]</span></p>
+<p>КАРТИНКА</p>
+<p><strong>Девианса</strong> является мерой различия правдоподобий двух моделей (оценка разницы логарифмов правдоподобий). [см. рисунок выше]</p>
+<p><strong>Остаточная девианса</strong>
+<span class="math display">\[
+d_\mathrm{resid} = 2\big(\ln L_\mathrm{sat} - \ln L_\mathrm{model} \big) = -2 \ln(L_\mathrm{model})
+\]</span></p>
+<p><strong>Нулевая девианса</strong>
+<span class="math display">\[
+d_\mathrm{null} = 2 \big(\ln L_\mathrm{sat} - \ln L_\mathrm{null}\big) = -2 \ln(L_\mathrm{null})
+\]</span></p>
+<p>Сравнение нулевой и остаточной девианс позволяет судить о статистической значимости модели в целом. Такое сравнение проводится с помощью <strong>теста отношения правдоподобий (likelihood ratio test, LRT)</strong>.</p>
+<p><span class="math display">\[
+d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{model} ) = 2 (\ln L_\mathrm{model} - \ln L_\mathrm{null}) = 2 \ln \left( \frac{L_\mathrm{model}}{L_\mathrm{null}} \right) \\
+\mathrm{LRT} = 2 \ln \left( \frac{L_\mathrm{M_1}}{L_\mathrm{M_2}} \right) = 2 (\ln L_\mathrm{M_1} - \ln L_\mathrm{M_2}),
+\]</span>
+где <span class="math inline">\(M_1,\, M_2\)</span> — вложенные модели (<span class="math inline">\(M_1\)</span> — более полная, <span class="math inline">\(M_2\)</span> — уменьшенная),
+<span class="math inline">\(L_\mathrm{M_1}, \, L_\mathrm{M_2}\)</span> — правдоподобия.</p>
+<p>Распределенеи разницы логарифмов правдоподобий аппроксиммируется распределением <span class="math inline">\(\chi^2\)</span> с числом степеней свободы <span class="math inline">\(\mathrm{df} = \mathrm{df}_\mathrm{M_2} - \mathrm{df}_\mathrm{M_1}\)</span>.</p>
+<p>LRT для тестирования значимости модели в целом:</p>
+<p><span class="math display">\[
+\mathrm{LRT} = 2 \ln \left( \frac{L_\mathrm{model}}{L_\mathrm{null}} \right) = 2 (\ln L_\mathrm{model} - \ln L_{\mathrm{null}}) = d_\mathrm{null} - d_\mathrm{resid} \\
+\mathrm{df} = p_\mathrm{model} - 1
+\]</span></p>
+<p>LRT для тестирования значимости отдельных предикторов:</p>
+<p><span class="math display">\[
+\mathrm{LRT} = 2 \ln \left( \frac{L_\mathrm{model}}{L_\mathrm{reduced}} \right) = 2 (\ln L_\mathrm{model} - \ln L_\mathrm{reduced}) \\
+\mathrm{df} = p_\mathrm{model} - p_\mathrm{reduced}
+\]</span></p>
+<p>Реализуем изученное в <code>R</code>.</p>
+<p>Протестируем значимость модели в целом. Для этого неоходимо создать нулевую модель с одним предиктором — среднее — и передать эту модель и тестируемую в функцию <code>anova()</code> с указанием параметра <code>test = 'Chi'</code>. Получим нужным нам аутпут:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="logistic.html#cb30-1"></a>model_null &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span>
+<span id="cb30-2"><a href="logistic.html#cb30-2"></a><span class="kw">anova</span>(model_null, model, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: lvl ~ 1
+## Model 2: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
+##     direct_juniors + func_juniors + income_influence + error_cost
+##   Resid. Df Resid. Dev Df Deviance  Pr(&gt;Chi)    
+## 1      3209     3626.6                          
+## 2      3201      640.8  8   2985.8 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Как можно увидеть, наша модель получилась статистически значима.</p>
+<p>Для тестирования значимости отдельных предикторов можно (и лучше) использовать функцию <code>Anova()</code> из пакета <code>car</code>.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="logistic.html#cb32-1"></a><span class="kw">Anova</span>(model)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Analysis of Deviance Table (Type II tests)
+## 
+## Response: lvl
+##                     LR Chisq Df Pr(&gt;Chisq)    
+## qualification         159.68  1  &lt; 2.2e-16 ***
+## autonomy                0.58  1     0.4477    
+## subdiv_regulations      0.10  1     0.7484    
+## company_regulations     0.24  1     0.6273    
+## direct_juniors        536.45  1  &lt; 2.2e-16 ***
+## func_juniors          151.00  1  &lt; 2.2e-16 ***
+## income_influence       16.33  1   5.31e-05 ***
+## error_cost              0.08  1     0.7778    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Мы получаем табличку, похожую на результат работы <code>summary()</code>, но с другими статистиками.</p>
+<p>У нас есть незначимые предикторы, а значит можно упростить модель:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="logistic.html#cb35-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">update</span>(model, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>error_cost)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="logistic.html#cb37-1"></a><span class="kw">anova</span>(model1, model, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
+##     direct_juniors + func_juniors + income_influence
+## Model 2: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
+##     direct_juniors + func_juniors + income_influence + error_cost
+##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
+## 1      3202     640.87                     
+## 2      3201     640.79  1 0.079615   0.7778</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="logistic.html#cb39-1"></a><span class="kw">Anova</span>(model1)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Analysis of Deviance Table (Type II tests)
+## 
+## Response: lvl
+##                     LR Chisq Df Pr(&gt;Chisq)    
+## qualification         160.85  1  &lt; 2.2e-16 ***
+## autonomy                0.53  1     0.4677    
+## subdiv_regulations      0.13  1     0.7184    
+## company_regulations     0.25  1     0.6172    
+## direct_juniors        537.61  1  &lt; 2.2e-16 ***
+## func_juniors          157.78  1  &lt; 2.2e-16 ***
+## income_influence       18.52  1  1.684e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="logistic.html#cb42-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">update</span>(model1, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>subdiv_regulations)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="logistic.html#cb44-1"></a><span class="kw">anova</span>(model2, model1, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: lvl ~ qualification + autonomy + company_regulations + direct_juniors + 
+##     func_juniors + income_influence
+## Model 2: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
+##     direct_juniors + func_juniors + income_influence
+##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
+## 1      3203     641.00                     
+## 2      3202     640.87  1  0.13007   0.7184</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="logistic.html#cb46-1"></a><span class="kw">Anova</span>(model2)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Analysis of Deviance Table (Type II tests)
+## 
+## Response: lvl
+##                     LR Chisq Df Pr(&gt;Chisq)    
+## qualification         175.86  1  &lt; 2.2e-16 ***
+## autonomy                0.51  1     0.4735    
+## company_regulations     0.15  1     0.7009    
+## direct_juniors       1058.34  1  &lt; 2.2e-16 ***
+## func_juniors          157.89  1  &lt; 2.2e-16 ***
+## income_influence       19.23  1  1.157e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="logistic.html#cb49-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">update</span>(model2, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>company_regulations)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="logistic.html#cb51-1"></a><span class="kw">anova</span>(model3, model2, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: lvl ~ qualification + autonomy + direct_juniors + func_juniors + 
+##     income_influence
+## Model 2: lvl ~ qualification + autonomy + company_regulations + direct_juniors + 
+##     func_juniors + income_influence
+##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
+## 1      3204     641.15                     
+## 2      3203     641.00  1  0.14751   0.7009</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="logistic.html#cb53-1"></a><span class="kw">Anova</span>(model3)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Analysis of Deviance Table (Type II tests)
+## 
+## Response: lvl
+##                  LR Chisq Df Pr(&gt;Chisq)    
+## qualification      185.88  1  &lt; 2.2e-16 ***
+## autonomy             0.63  1     0.4286    
+## direct_juniors    1062.67  1  &lt; 2.2e-16 ***
+## func_juniors       158.54  1  &lt; 2.2e-16 ***
+## income_influence    19.24  1  1.152e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="logistic.html#cb56-1"></a>model4 &lt;-<span class="st"> </span><span class="kw">update</span>(model3, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>autonomy)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="logistic.html#cb58-1"></a><span class="kw">anova</span>(model4, model3, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: lvl ~ qualification + direct_juniors + func_juniors + income_influence
+## Model 2: lvl ~ qualification + autonomy + direct_juniors + func_juniors + 
+##     income_influence
+##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
+## 1      3205     641.78                     
+## 2      3204     641.15  1  0.62663   0.4286</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="logistic.html#cb60-1"></a><span class="kw">Anova</span>(model4)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Analysis of Deviance Table (Type II tests)
+## 
+## Response: lvl
+##                  LR Chisq Df Pr(&gt;Chisq)    
+## qualification      396.15  1  &lt; 2.2e-16 ***
+## direct_juniors    1066.65  1  &lt; 2.2e-16 ***
+## func_juniors       191.98  1  &lt; 2.2e-16 ***
+## income_influence    20.54  1  5.845e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>В модели остались только значимые предикторы, и таким образом, мы получили нашу финальную модель.</p>
+<p>Кроме статистический тестов для сравнения моделей можно использовать информационные критерии. Например, <strong><a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D1%80%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D0%B9_%D0%90%D0%BA%D0%B0%D0%B8%D0%BA%D0%B5">информационный критерий Акаике</a> (Akaike information criterion)</strong>, позволяющий сделать выбор из нескольких моделей. Его можно использовать и в нашем случае как дополнительную проверку.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="logistic.html#cb63-1"></a><span class="kw">AIC</span>(model, model4)</span></code></pre></div>
+<pre><code>##        df      AIC
+## model   9 658.7949
+## model4  5 651.7787</code></pre>
+<p>С удалением незначимых предикторов из модели AIC хоть и немного, но снизился, что позволяет сделать вывод о том, что модель с меньшим количеством предикторов лучше, чем модель, включающая все предложенные предикторы.</p>
+</div>
+<div id="интерпретация-коэффициентов-модели" class="section level2">
+<h2><span class="header-section-number">21.11</span> Интерпретация коэффициентов модели</h2>
+<p>Еще раз позовем summary нашей окончательной модели:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="logistic.html#cb65-1"></a><span class="kw">summary</span>(model4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = lvl ~ qualification + direct_juniors + func_juniors + 
+##     income_influence, family = binomial(link = &quot;logit&quot;), data = managers)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -3.8408  -0.0852  -0.0852   0.0000   3.5391  
+## 
+## Coefficients:
+##                  Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)      -22.0070     1.1112 -19.804  &lt; 2e-16 ***
+## qualification      1.6056     0.1112  14.441  &lt; 2e-16 ***
+## direct_juniors     8.8192     0.6459  13.653  &lt; 2e-16 ***
+## func_juniors       3.0718     0.2423  12.680  &lt; 2e-16 ***
+## income_influence   0.6440     0.1458   4.418 9.97e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 3626.58  on 3209  degrees of freedom
+## Residual deviance:  641.78  on 3205  degrees of freedom
+## AIC: 651.78
+## 
+## Number of Fisher Scoring iterations: 9</code></pre>
+<p>Что значат эти непонятные коэффициенты при предикторах? В общих линейных моделях все ясно как белый день, а тут какая-то дичь…</p>
+<p>Посмотрим на математическую запись нашей модели:</p>
+<p><span class="math display">\[
+\mathrm{Out}_i \thicksim \mathrm{Bin}(n = 1, \, p_i) \\
+\mathbb{E}(\mathrm{Out}_i) = p_i \\
+\ln \left(\frac{p_i}{1 - p_i}\right) = \eta_i \\
+\eta_i = -22.0 + 1.6 \, \mathrm{qualification}_i + 8.8 \, \mathrm{direct\_juniors}_{i} + 3.1 \, \mathrm{func_juniors}_i + 0.6 \, \mathrm{income_influence}_i
+\]</span></p>
+<p>Наша зависимая переменная — логарифм отношения шансов. От этого и будем толкаться.</p>
+<p>Тогда,</p>
+<ul>
+<li><span class="math inline">\(b_0\)</span>, интерсепт, показывает <em>логарифм отношения шансов для базового уровня</em> (<code>Tr</code>) дискретного предиктора (<code>Sp</code>);</li>
+<li><span class="math inline">\(b_j\)</span> показывает, <em>на сколько единиц изменяется логарифм отношения шансов</em> при изменении значения предиктора на единицу.</li>
+</ul>
+<p>Корректно, но непонятно… Чтобы разобраться лучше, немного потупим в алгебру.</p>
+<div id="немного-алгебры-для-понимания-сути-коэффициентов" class="section level3">
+<h3><span class="header-section-number">21.11.1</span> Немного алгебры для понимания сути коэффициентов</h3>
+<p>Пусть у нас есть модель с одним непрервным предиктором. Тогда она будет записываться так:</p>
+<p><span class="math display">\[
+\eta = b_0 + b_1 x
+\]</span></p>
+<p>В терминах логитов её можно записать следующим образом:</p>
+<p><span class="math display">\[
+\eta = \ln \left( \frac{p}{1 - p} \right) = \ln (\mathrm{odds})
+\]</span></p>
+<p>Как изменится предсказание модели при изменении предиктора на единицу?</p>
+<p><span class="math display">\[
+\eta_{x+1} - \eta_x = \ln (\mathrm{odds}_{x+1}) - \ln (\mathrm{odds}_{x}) = 
+\ln \left( \frac{\mathrm{odds}_{x+1}}{\mathrm{odds}_x} \right)
+\]</span>
+<span class="math display">\[
+\eta_{x+1} - \eta_x = b_0 + b_1 (x + 1) - b_0 - b_1x = b_1
+\]</span>
+<span class="math display">\[
+\ln \left( \frac{\mathrm{odds}_{x+1}}{\mathrm{odds}_{x}} \right) = b_1
+\]</span>
+<span class="math display">\[
+\frac{\mathrm{odds}_{x+1}}{\mathrm{odds}_{x}} = e^{b_1}
+\]</span></p>
+<p>Таким образом, <span class="math inline">\(e^{b_1}\)</span> показывает, во сколько раз изменится отношение шансов при увеличении предиктора на единицу. Для дискретных предикторов <span class="math inline">\(e^{b_1}\)</span> покажет, во сколько раз различается отношение шансов для данного уровня предиктора по сравнению с базовым.</p>
+<hr />
+<p><img src="/Users/antonangelgardt/Desktop/geom_interpret.png" /></p>
+<hr />
+<p>Теперь мы можем тракровать полученные коэффициенты нормальным языком.</p>
+<p><span class="math display">\[
+\eta_i = -22.0 + 1.6 \, \mathrm{qualification}_i + 8.8 \, \mathrm{direct\_juniors}_{i} + 3.1 \, \mathrm{func\_juniors}_i + 0.6 \, \mathrm{income\_influence}_i
+\]</span></p>
+<p>При увеличении оценки профессиональной квалификации на 1 отношение шансов принадлежать к уровню менеджеров увеличится в <span class="math inline">\(e^{3.1} = 22.2\)</span> раза. То есть работник, имеющий более высокую оценку профессиональной квалицикации, имеет больше шансов быть менеджером.</p>
+<img class="taskimg" src="img/task.png">
+<div class="task">
+<p>Потренируйтесь в интерпретации коэффициентов при предикторах самостоятельно. Ешё раз изучите логику интерпретации и сформулируйте, как связаны предикторы <code>direct_juniors</code>, <code>func_juniors</code> и <code>income_influence</code> с целевой переменной модели.</p>
+</div>
+</div>
+</div>
+<div id="предсказательная-сила-модели" class="section level2">
+<h2><span class="header-section-number">21.12</span> Предсказательная сила модели</h2>
+<p>Оценить предсказательную силу общих линейных моделей не сложно, и логика процесса интуитивно понятна. С логистической моделью же есть некоторые тонкости.</p>
+<p>Чтобы оценить предсказательную силу модели, нам потребуется разбить наши данные на две подвыборки — <em>обучающую</em> и <em>тестовую</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Первую мы использует для подбора коэффициентов модели, а вторую для проверки предсказательной силы.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="logistic.html#cb67-1"></a><span class="kw">set.seed</span>(<span class="dv">5432</span>)</span>
+<span id="cb67-2"><a href="logistic.html#cb67-2"></a>ind_train &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(managers), <span class="dt">size =</span> <span class="fl">0.7</span> <span class="op">*</span><span class="st"> </span><span class="kw">nrow</span>(managers), <span class="dt">replace =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb67-3"><a href="logistic.html#cb67-3"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb67-4"><a href="logistic.html#cb67-4"></a><span class="st">  </span><span class="kw">slice</span>(ind_train) -&gt;<span class="st"> </span>managers_train</span>
+<span id="cb67-5"><a href="logistic.html#cb67-5"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb67-6"><a href="logistic.html#cb67-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="op">-</span>ind_train) -&gt;<span class="st"> </span>managers_test</span></code></pre></div>
+<p>Обучим модель, то есть подберём коэффициенты, на тренировочных данных. Возьмём полную модель.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="logistic.html#cb68-1"></a>model5 &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers_train, <span class="dt">family =</span> binomial)</span></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<p>Как оценить, насколько модель хорошо работает? Для этого потребуются метрики качества модели. Однако перед этим надо поработать с предсказаниями.</p>
+<div id="перевод-непрерывных-предсказаний-в-дискретные" class="section level3">
+<h3><span class="header-section-number">21.12.1</span> Перевод непрерывных предсказаний в дискретные</h3>
+<p>Множество допустимых значений нашей целевой переменной — <span class="math inline">\(\{0, 1\}\)</span>, а наша модель возвращает вероятности принадлежности каждого из наблюдений к классу <code>1</code>:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="logistic.html#cb70-1"></a><span class="kw">head</span>(model5<span class="op">$</span>fitted.values)</span></code></pre></div>
+<pre><code>##            1            2            3            4            5            6 
+## 0.9999609133 0.0048211719 0.0004782344 0.0634837569 0.0004782344 0.0048211719</code></pre>
+<p>Поэтому чтобы мы смогли рассчитать метрики качества, нам необходимо перейти от вероятностей обратно к нулям и единицам. Для этого необходимо выбрать <em>порог</em> — если значение вероятности выше него, мы будем считать, что модель предсказала <code>1</code>, если ниже, то <code>0</code>. Значение порога зависит от многих факторов и будет влиять на качество модели. Прежде всего стоит ориентироваться на сферу деятельности, в которой вы проводите анализ. Если у вас качественные чистые данные и вам важна высокая точность, то и порог для предсказаний должен быть высокий — <span class="math inline">\(\geq 0.9\)</span>. Если же вы знаете, что вы работаете с зашумлёнными данными, и цена ошибки не так высока, то можете выбрать более либеральный критерий — <span class="math inline">\(0.7-0.8\)</span>. Самый либеральный критерий из возможных — <span class="math inline">\(0.5\)</span>, что по сути есть вероятность случайного угадывания.</p>
+<p>Итак, переведем предсказания пока на тренировочной выборке в дискретную форму. Выберем критерий <span class="math inline">\(0.8\)</span> как не очень строгий, но и не очень либеральный:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="logistic.html#cb72-1"></a>predicted_train &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="confusion-matrix" class="section level3">
+<h3><span class="header-section-number">21.12.2</span> Confusion matrix</h3>
+<p>Построим <strong>confusion matrix</strong> — это таблица частот по модельным и реальным значениям нашей целевой переменной</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="logistic.html#cb73-1"></a><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</span></code></pre></div>
+<pre><code>##    predicted_train
+##        0    1
+##   0 1678    5
+##   1   71  493</code></pre>
+<p>По столбцам идут предсказанные значения, по строкам — реальные. В целом мы видим, что модель практически всегда предсказывает верно, однако хотелось бы как-то понять, что такое это «практически всегда» в числовом формате.</p>
+<p>Для этого надо понять структуру confusion matrix:</p>
+<p>КАРТИНКА</p>
+<ul>
+<li><em>True Positive</em> (<span class="math inline">\(TP\)</span>) — верное предсказанные единицы</li>
+<li><em>True Negative</em> (<span class="math inline">\(TN\)</span>) — верно предсказанные нули</li>
+<li><em>False Positive</em> (<span class="math inline">\(FP\)</span>) — ложноположительные предсказания, ошибочно предсказанные единицы</li>
+<li><em>False Negative</em> (<span class="math inline">\(FN\)</span>) — ложноотрицательные предсказания, ошибочно предсказанные нули</li>
+</ul>
+<p>На основе данных значение можно расчитать несколько <strong>метрик качества модели</strong>.</p>
+</div>
+<div id="accuracy" class="section level3">
+<h3><span class="header-section-number">21.12.3</span> Accuracy</h3>
+<p>Чаще всего эту метрику называют «точность». Она определяется по формуле</p>
+<p><span class="math display">\[
+\mathrm{accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+\]</span></p>
+<p>Она показывает долю верно предказанных значений.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение accuracy.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="logistic.html#cb75-1"></a>confmat &lt;-<span class="st"> </span><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</span></code></pre></div>
+<pre><code>## [1] 0.9661771</code></pre>
+</div>
+<p>Это неплохая метрика, но она перестаёт работать на несбалансированных данных. Например, у нас есть такие данные по целевой переменной:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="logistic.html#cb77-1"></a>iv &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>) </span></code></pre></div>
+<p>Пусть у нас есть наиболее топорная модель, которая просто всегда предсказывает ноль:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="logistic.html#cb78-1"></a>pred &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div>
+<p>Тогда точность будет следующая:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="logistic.html#cb79-1"></a><span class="kw">mean</span>(iv <span class="op">==</span><span class="st"> </span>pred)</span></code></pre></div>
+<pre><code>## [1] 0.7272727</code></pre>
+<p>Достаточно высокий показатель, хотя модель не ухватывает закономерность вовсе. Поэтому были разработаны другие метрики качества, которые хорошо работают и на несбалансированных данных.</p>
+</div>
+<div id="precision-and-recall" class="section level3">
+<h3><span class="header-section-number">21.12.4</span> Precision and Recall</h3>
+<p><strong>Presicion</strong> тоже переводится как «точность», поэтому лучше пользоваться английской терминологией во избежании путаницы. Эта метрика показывается <em>долю верно предсказанных единиц</em>, то есть сколько из предсказанных единиц предсказано верно:</p>
+<p><span class="math display">\[
+\mathrm{precision} = \frac{TP}{TP + FP}
+\]</span></p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение precision.</p>
+<pre><code>## [1] 0.9899598</code></pre>
+</div>
+<p><strong>Recall</strong> можно перевести как «полнота», хотя по сути это снова «точность». Эта метрика показывается <em>долю предсказанных единиц из всех единиц датаста</em>, то есть сколько из всех единиц датасета модель предсказала верно:</p>
+<p><span class="math display">\[
+\mathrm{recall} = \frac{TP}{TP + FN}
+\]</span></p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение recall.</p>
+<pre><code>## [1] 0.8741135</code></pre>
+</div>
+<p>И ещё раз обобщаюшая картинка:</p>
+<center>
+<img src="img/precision_recall.png">
+</center>
+<p>Очевидно, что чем ближе показатели всех метрик к единице, тем качество модели выше.</p>
+</div>
+<div id="f1-мера" class="section level3">
+<h3><span class="header-section-number">21.12.5</span> F1-мера</h3>
+<p>На основе precision и recall вычисляется ещё одна метрика качества, которая является <a href="descriptives.html#harmonic_mean">гармоническим средним</a> этих двух метрик.</p>
+<p><span class="math display">\[
+\mathrm{F1} = 2 \times \frac{\mathrm{precision} \times \mathrm{recall}}{\mathrm{precision + \mathrm{recall}}}
+\]</span></p>
+<p>Её значение также изменяется от нуля до единицы.</p>
+<img class="taskimg" src="img/code.png">
+<div class="task">
+<p><em>Опять?</em></p>
+<p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение F1-меры.</p>
+<details>
+<summary>Подсказка</summary>
+Можно использовать функции, написанные ранее, внутри новой функции.
+</details>
+<pre><code>## [1] 0.9284369</code></pre>
+</div>
+</div>
+<div id="roc-auc" class="section level3">
+<h3><span class="header-section-number">21.12.6</span> ROC-AUC</h3>
+</div>
+</div>
+<div id="предсказания-на-новых-данных" class="section level2">
+<h2><span class="header-section-number">21.13</span> Предсказания на новых данных</h2>
+<p>Мы рассчитали метрики качества на тренировочных данных, но гораздо интереснее, как модель справится с предсказаниями на тех данных, которые она ещё не видела. Это просто проверить.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="logistic.html#cb84-1"></a>predicted_test &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, managers_test, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb84-2"><a href="logistic.html#cb84-2"></a>cm &lt;-<span class="st"> </span><span class="kw">table</span>(managers_test<span class="op">$</span>lvl, predicted_test)</span></code></pre></div>
+<p>Рассчитаем метрики качества и сравним со значениями для тренировочной выборки:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="logistic.html#cb85-1"></a><span class="kw">tibble</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="st">&#39;train&#39;</span>, <span class="st">&#39;test&#39;</span>),</span>
+<span id="cb85-2"><a href="logistic.html#cb85-2"></a>       <span class="dt">accuracy =</span> <span class="kw">c</span>(<span class="kw">accuracy</span>(confmat), <span class="kw">accuracy</span>(cm)),</span>
+<span id="cb85-3"><a href="logistic.html#cb85-3"></a>       <span class="dt">precision =</span> <span class="kw">c</span>(<span class="kw">precision</span>(confmat), <span class="kw">precision</span>(cm)),</span>
+<span id="cb85-4"><a href="logistic.html#cb85-4"></a>       <span class="dt">recall =</span> <span class="kw">c</span>(<span class="kw">recall</span>(confmat), <span class="kw">recall</span>(cm)),</span>
+<span id="cb85-5"><a href="logistic.html#cb85-5"></a>       <span class="dt">F1 =</span> <span class="kw">c</span>(<span class="kw">F1</span>(confmat), <span class="kw">F1</span>(cm)))</span></code></pre></div>
+<pre><code>## # A tibble: 2 x 5
+##   data  accuracy precision recall    F1
+##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1 train    0.966     0.990  0.874 0.928
+## 2 test     0.977     0.987  0.923 0.954</code></pre>
+<p>Здесь надо обратить внимание на следующий очень важный момент: согласно метрикам качества, модель, пусть и немного, но лучше работает на тестовых данных, чем на тренировочных. Такого, вообще-то говоря, быть не может, и любая модель будет работать на тестовых данных хуже, чем на тех, на которых она была обучена. Это приводит нас с мысли, что результат работы модели зависит не от самой модели и её коэффициентов, а, скорее, от случайного совпадения данных — проще говоря, модель переобучилась. Мы вплотную подошли к сфере машинного обучения и дальше не пойдём, так как это не цель нашего курса. Но о самом феномене вы теперь знаете.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Машин лёрнинг, привет 👋<a href="logistic.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -417,6 +1371,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
