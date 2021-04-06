@@ -1,0 +1,107 @@
+---
+title: "A10. Generalized linear models. Логистическая регрессия"
+author:
+  - name: A. Angelgardt
+  - name: A. Kharitonova
+output: radix::radix_article
+---
+
+
+Сегодня мы работаем с данными о факторам сердечно-сосудистых заболеваний. Ниже представлено описание данных из [источника](https://www.kaggle.com/dileep070/heart-disease-prediction-using-logistic-regression):
+
+**Introduction**
+World Health Organization has estimated 12 million deaths occur worldwide, every year due to Heart diseases. Half the deaths in the United States and other developed countries are due to cardio vascular diseases. The early prognosis of cardiovascular diseases can aid in making decisions on lifestyle changes in high risk patients and in turn reduce the complications. This research intends to pinpoint the most relevant/risk factors of heart disease as well as predict the overall risk using logistic regression
+Data Preparation
+
+**Source**
+The dataset is publically available on the Kaggle website, and it is from an ongoing cardiovascular study on residents of the town of Framingham, Massachusetts. The classification goal is to predict whether the patient has 10-year risk of future coronary heart disease (CHD).The dataset provides the patients’ information. It includes over 4,000 records and 15 attributes.
+
+
+**Variables**
+Each attribute is a potential risk factor. There are both demographic, behavioral and medical risk factors.
+
+*Demographic:*
+
+* Sex: male or female (Nominal)
+* Age: Age of the patient; (Continuous - Although the recorded ages have been truncated to whole numbers, the concept of age is continuous)
+
+*Behavioral:*
+
+* Current Smoker: whether or not the patient is a current smoker (Nominal)
+* Cigs Per Day: the number of cigarettes that the person smoked on average in one day (can be considered continuous as one can have any number of cigarettes, even half a cigarette.)
+
+*Medical (history):*
+
+* BP Meds: whether or not the patient was on blood pressure medication (Nominal)
+* Prevalent Stroke: whether or not the patient had previously had a stroke (Nominal)
+* Prevalent Hyp: whether or not the patient was hypertensive (Nominal)
+* Diabetes: whether or not the patient had diabetes (Nominal)
+
+*Medical (current):*
+
+* Tot Chol: total cholesterol level (Continuous)
+* Sys BP: systolic blood pressure (Continuous)
+* Dia BP: diastolic blood pressure (Continuous)
+* BMI: Body Mass Index (Continuous)
+* Heart Rate: heart rate (Continuous --- In medical research, variables such as heart rate though in fact discrete, yet are considered continuous because of large number of possible values.)
+* Glucose: glucose level (Continuous)
+
+
+*Predict variable (desired target):*
+
+* 10 year risk of coronary heart disease CHD (binary: “1”, means “Yes”, “0” means “No”)
+
+
+***
+
+**1. Загрузите [датасет](https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/data/framingham.csv). Почистите данные, если это необходимо: удалите пропущенные значения, выбросы, скорректируйте типы переменных. (1 балл)**
+
+***
+
+**2. Изучите закономерности, представленные в данных. Какие взаимосвязи присутствуют между переменными? (2 балла)**
+
+*Можно использовать любые методы анализа из изученных, чтобы ответить на поставленный вопрос.*
+
+***
+
+**3. Постройте простую биномиальную модель, содержащую один предиктор, зависимой переменной в которой будет `TenYearCHD`. (1 балл)**
+
+***
+
+**4. Протестируйте статистическую значимость модели и значимость отдельных предикторов. Кратко интерпретируйте результаты модели --- какой смысл они имеют? (2 балл)**
+
+***
+
+**5. Какова предсказательная сила построенной модели? Оцените её с помощью нескольких метрик. (2 балл)**
+
+***
+
+**6. Разбейте данные на обучающую и тестовую подвыборки. Постройте на обучающей подвыборке модель множественной биномиальной регрессии, которая будет включать все содержащиеся в данных переменные в качестве предикторов. В качестве зависимой переменной снова возьмите `TenYearCHD`. (2 балла)**
+
+Не забудьте указать начальное положение генератора случайных чисел для воспроихводимых результатов.
+
+***
+
+**7. Протестируйте статистическую значимость модели и значимость отдельных предикторов. Можно ли упростить получившуюся модель? (2 балла)**
+
+***
+
+**8. Упростите получившуюся модель. В окончательной модели должны остаться только статистически значимые предикторы. (2 балла)**
+
+***
+
+**9. Протестируйте статистическую значимость окончательной модели. Интерпретируйте результаты. (1 балл)**
+
+***
+
+**10. Интерпретируйте коэффициенты при предикторах модели --- какой смысл они имеют? (1 балл)**
+
+***
+
+**11. Протестируйте предсказательную силу модели на обучающей подвыборке. Используйте несколько метрик качества модели. Интерпретируйте полученные результаты. (2 балла)**
+
+***
+
+**12. Протестируйте предсказательную силу модели на тестовой подвыборке. Используйте несколько метрик качества модели. Интерпретируйте полученные результаты. Соотнесите их с результатами тестирования предсказательной силы модели на обучающей подвыборке. (2 балла)**
+
+
