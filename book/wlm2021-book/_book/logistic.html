@@ -50,15 +50,12 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -67,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -85,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -543,16 +538,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">21.4</span> HR-данные</h2>
 <p><a href="https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/managers.csv">Тут</a> есть датасет про менеджеров. Это часть данных большого датасета, собранного в рамках одного из HR-исследований.</p>
 <p>Грузим данные.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="logistic.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
-## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.1.0     ✓ dplyr   1.0.5
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="logistic.html#cb5-1"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(car)</a></code></pre></div>
 <pre><code>## Loading required package: carData</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;car&#39;</code></pre>
@@ -562,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## The following object is masked from &#39;package:purrr&#39;:
 ## 
 ##     some</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="logistic.html#cb10-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="logistic.html#cb11-1"></a>managers &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/managers.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">managers &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/book/wlm2021-book/data/managers.csv&#39;</span>)</a></code></pre></div>
 <pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -581,7 +576,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   error_cost = col_double()
 ## )</code></pre>
 <p>Смотрим их структуру.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="logistic.html#cb14-1"></a><span class="kw">str</span>(managers)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">str</span>(managers)</a></code></pre></div>
 <pre><code>## tibble [3,210 × 11] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ X1                 : num [1:3210] 1 2 3 4 5 6 7 8 9 10 ...
 ##  $ id                 : chr [1:3210] &quot;таб_1544093&quot; &quot;таб_1397647&quot; &quot;таб_4078395&quot; &quot;таб_4172997&quot; ...
@@ -622,14 +617,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>error_cost</code> — стоимость ошибки</li>
 </ul>
 <p>Поизучаем данные.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="logistic.html#cb16-1"></a><span class="kw">colSums</span>(<span class="kw">is.na</span>(managers))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">colSums</span>(<span class="kw">is.na</span>(managers))</a></code></pre></div>
 <pre><code>##                  X1                  id                 lvl       qualification 
 ##                   0                   0                   0                   0 
 ##            autonomy  subdiv_regulations company_regulations      direct_juniors 
 ##                   0                   0                   0                   0 
 ##        func_juniors    income_influence          error_cost 
 ##                   0                   0                   0</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="logistic.html#cb18-1"></a><span class="kw">table</span>(managers<span class="op">$</span>lvl)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">table</span>(managers<span class="op">$</span>lvl)</a></code></pre></div>
 <pre><code>## 
 ##  Менеджер Сотрудник 
 ##       810      2400</code></pre>
@@ -638,13 +633,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">21.5</span> Задача построения линейной модели</h2>
 <p>В наших данных есть бинарная переменная <code>lvl</code> — она содержит две градации: <code>Сотрудник</code> и <code>Менеджер</code>. Вопрос, на который нам необходимо ответить: по каким параметрам различаются менеджеры и сотрудники?</p>
 <p>Прежде всего надо вспомнить, что мы работаем с математической моделью, которой необходимы числа, поэтому придётся перекодировать нашу целевую переменную. Пусть <code>1</code> обозначает менеджеров, а <code>0</code> — сотрудников.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="logistic.html#cb20-1"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb20-2"><a href="logistic.html#cb20-2"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>X1, <span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># заодно удалим лишние переменные</span></span>
-<span id="cb20-3"><a href="logistic.html#cb20-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lvl =</span> <span class="kw">ifelse</span>(lvl <span class="op">==</span><span class="st"> &#39;Менеджер&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) -&gt;<span class="st"> </span>managers</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">managers <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>X1, <span class="op">-</span>id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># заодно удалим лишние переменные</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">lvl =</span> <span class="kw">ifelse</span>(lvl <span class="op">==</span><span class="st"> &#39;Менеджер&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) -&gt;<span class="st"> </span>managers</a></code></pre></div>
 <p>Теперь мы можем построить модель, описывающую связь <code>lvl</code> с имеющимися предикторами.</p>
 <p>Попробуем обычную линейную регрессию.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="logistic.html#cb21-1"></a>model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers)</span>
-<span id="cb21-2"><a href="logistic.html#cb21-2"></a><span class="kw">summary</span>(model0)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">model0 &lt;-<span class="st"> </span><span class="kw">lm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers)</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="kw">summary</span>(model0)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lvl ~ ., data = managers)
@@ -671,22 +666,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.7361, Adjusted R-squared:  0.7354 
 ## F-statistic:  1116 on 8 and 3201 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Модель сошлась, всё суперклассно.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="logistic.html#cb23-1"></a>managers <span class="op">%&gt;%</span></span>
-<span id="cb23-2"><a href="logistic.html#cb23-2"></a><span class="st">  </span><span class="kw">mutate</span>(</span>
-<span id="cb23-3"><a href="logistic.html#cb23-3"></a>    <span class="dt">L =</span> qualification <span class="op">+</span></span>
-<span id="cb23-4"><a href="logistic.html#cb23-4"></a><span class="st">        </span>autonomy <span class="op">+</span></span>
-<span id="cb23-5"><a href="logistic.html#cb23-5"></a><span class="st">        </span>subdiv_regulations <span class="op">+</span></span>
-<span id="cb23-6"><a href="logistic.html#cb23-6"></a><span class="st">        </span>company_regulations <span class="op">+</span></span>
-<span id="cb23-7"><a href="logistic.html#cb23-7"></a><span class="st">        </span>direct_juniors <span class="op">+</span></span>
-<span id="cb23-8"><a href="logistic.html#cb23-8"></a><span class="st">        </span>func_juniors <span class="op">+</span></span>
-<span id="cb23-9"><a href="logistic.html#cb23-9"></a><span class="st">        </span>income_influence <span class="op">+</span></span>
-<span id="cb23-10"><a href="logistic.html#cb23-10"></a><span class="st">        </span>error_cost</span>
-<span id="cb23-11"><a href="logistic.html#cb23-11"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb23-12"><a href="logistic.html#cb23-12"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(L, lvl)) <span class="op">+</span></span>
-<span id="cb23-13"><a href="logistic.html#cb23-13"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">.3</span>) <span class="op">+</span></span>
-<span id="cb23-14"><a href="logistic.html#cb23-14"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> model0<span class="op">$</span>fitted.values),</span>
-<span id="cb23-15"><a href="logistic.html#cb23-15"></a>             <span class="dt">color =</span> <span class="st">&#39;darkred&#39;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div>
-<p><img src="wlm2021-book_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">managers <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">    <span class="dt">L =</span> qualification <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-4" data-line-number="4"><span class="st">        </span>autonomy <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-5" data-line-number="5"><span class="st">        </span>subdiv_regulations <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="st">        </span>company_regulations <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-7" data-line-number="7"><span class="st">        </span>direct_juniors <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-8" data-line-number="8"><span class="st">        </span>func_juniors <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-9" data-line-number="9"><span class="st">        </span>income_influence <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-10" data-line-number="10"><span class="st">        </span>error_cost</a>
+<a class="sourceLine" id="cb23-11" data-line-number="11">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb23-12" data-line-number="12"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(L, lvl)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-13" data-line-number="13"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">.3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb23-14" data-line-number="14"><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">y =</span> model0<span class="op">$</span>fitted.values),</a>
+<a class="sourceLine" id="cb23-15" data-line-number="15">             <span class="dt">color =</span> <span class="st">&#39;darkred&#39;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)</a></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/lmbad-1.png" width="672" /></p>
 <p>Но получается что-то странное…</p>
 <p>Во-первых, непонятно, какая величина отложена на оси <span class="math inline">\(y\)</span>. Во-вторых, предсказания модели выходят за границы допустимых значений (модель предсказывает отрицательные и большие единицы значения). Поэтому простая линейная модель нам не подходит. Надо искать что-то еще.</p>
 </div>
@@ -696,18 +691,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">21.6.1</span> Логистическая кривая</h3>
 <p>Собственно бинарные переменные неудобны для работы, поэтому надо найти способ превратить такую дискретную бинарную шкалу в «безграничную» и непрерывную. При моделировании нулей и единиц переходят к моделированию <strong>вероятности получения единиц</strong>.</p>
 <p>Сама зависимая переменная в зависимости от предиктора распределена примерно так:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/predictor_binomial.jpg">
+</center>
 <p>Введем новые обозначения:</p>
 <ul>
 <li><span class="math inline">\(p_i\)</span> — вероятность события <span class="math inline">\(y_i = 1\)</span> при данных значениях предиктора,</li>
 <li><span class="math inline">\(1 - p_i\)</span> — вероятность альтернативного события <span class="math inline">\(y_i = 0\)</span>.</li>
 </ul>
 <p>Получается непрерывная величина <span class="math inline">\(0 \leq p_i \leq 1\)</span>.</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/prob_with_lm.jpg">
+</center>
 <p>И вроде бы как ее можно уже моделировать. Но нужно помнить, что вероятность изменяется в пределах от нуля до единицы, а прямая ничем не ограничена. Поэтому прямая — не лучший вариант.</p>
 <p>Такая закономерность моделируется логистической кривой.</p>
-<p>КАРТИНКА</p>
-<p>КАРТИНКА логистической кривой</p>
+<center>
+<img src="img/logistic_curve_1.jpg">
+</center>
+<center>
+<img src="img/logistic_curve_2.png">
+</center>
 <p>Она лежит как раз в пределах от 0 до 1. Наша логистическая кривая задается уравнением</p>
 <p><span class="math display">\[p_i = \frac{e^{\beta_0 + \beta_1 x_i}}{1 + e^{\beta_0 + \beta_1 x_i}}\]</span></p>
 <p>Логистическую кривую мы больше никогда не увидим [печаль :(], но она используется внутри функций, которыми мы строим модель.</p>
@@ -751,9 +754,9 @@ p_i = \frac{e^{\eta_i}}{1 + e^{\eta_i}}
 <div id="подбор-линейной-модели" class="section level2">
 <h2><span class="header-section-number">21.8</span> Подбор линейной модели</h2>
 <p>Для построения модели используется функция <code>glm()</code>. Синтаксически она очень похожа на <code>lm()</code>, но у неё есть дополнительный аргумент <code>family</code>, в который необходимо указать тип регрессии, которую мы собираемся использовать. Внутри указания типа можно указать функцию связи, с использвоание которой будет строиться модель.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="logistic.html#cb24-1"></a>model &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">model &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="logistic.html#cb26-1"></a><span class="kw">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">summary</span>(model)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = lvl ~ ., family = binomial(link = &quot;logit&quot;), data = managers)
@@ -806,7 +809,7 @@ L(\theta | \mathrm{data}) \rightarrow \max
 <div id="анализ-модели" class="section level2">
 <h2><span class="header-section-number">21.9</span> Анализ модели</h2>
 <p>Итак, продолжим изучать аутпут функции <code>summary()</code>. Обратимся к ней еще раз.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="logistic.html#cb28-1"></a><span class="kw">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">summary</span>(model)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = lvl ~ ., family = binomial(link = &quot;logit&quot;), data = managers)
@@ -840,7 +843,9 @@ L(\theta | \mathrm{data}) \rightarrow \max
 <p>Судя по аутпуту, значимыми являются следующие предикторы: профессиональная квалификация, количество прямых и функциональных подчинённых и влияние на доход компании. Заметьте, что в этой модели значимых предикторов меньше, чем в модели обычной линейной регрессии. Но так ли это?</p>
 <p>Внимательно посмотрим на эту табличку. Раньше у нас были значения t-статистики — теперь z-теста. К чему это может приводить?</p>
 <p>Чтобы ответить на этот вопрос, надо разобраться, что такое этот z-тест.</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/zvalue.png">
+</center>
 <p>Значение z-value является результатом подсчета <strong>теста Вальда</strong> и позволяет оценить значимость коэффициента модели. Расчет статистики похож на подсчет t-теста, только распределение данной статистики <em>ассимптотически</em> стремиться к нормальному (отсюда и <em>z</em>). Ассимптотика приводит к тому, что опеределение значимости коэффициентов на маленьких выборках будет неточным.</p>
 <p><span class="math display">\[
 H_0: \beta_k = 0 \\
@@ -881,7 +886,9 @@ z = \frac{b_k - \beta_k}{SE_{b_k}} = \frac{b_k}{SE_{b_k}} \thicksim \mathcal{N}(
 \ln L_{\mathrm{model}} \neq 0 \\
 \mathrm{df}_\mathrm{model} = n - p_\mathrm{model}
 \]</span></p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/deviance.jpg">
+</center>
 <p><strong>Девианса</strong> является мерой различия правдоподобий двух моделей (оценка разницы логарифмов правдоподобий). [см. рисунок выше]</p>
 <p><strong>Остаточная девианса</strong>
 <span class="math display">\[
@@ -911,8 +918,8 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 \]</span></p>
 <p>Реализуем изученное в <code>R</code>.</p>
 <p>Протестируем значимость модели в целом. Для этого неоходимо создать нулевую модель с одним предиктором — среднее — и передать эту модель и тестируемую в функцию <code>anova()</code> с указанием параметра <code>test = 'Chi'</code>. Получим нужным нам аутпут:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="logistic.html#cb30-1"></a>model_null &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span>
-<span id="cb30-2"><a href="logistic.html#cb30-2"></a><span class="kw">anova</span>(model_null, model, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">model_null &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, managers, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="kw">anova</span>(model_null, model, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</a></code></pre></div>
 <pre><code>## Analysis of Deviance Table
 ## 
 ## Model 1: lvl ~ 1
@@ -925,7 +932,7 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Как можно увидеть, наша модель получилась статистически значима.</p>
 <p>Для тестирования значимости отдельных предикторов можно (и лучше) использовать функцию <code>Anova()</code> из пакета <code>car</code>.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="logistic.html#cb32-1"></a><span class="kw">Anova</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">Anova</span>(model)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
@@ -955,19 +962,39 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Мы получаем табличку, похожую на результат работы <code>summary()</code>, но с другими статистиками.</p>
 <p>У нас есть незначимые предикторы, а значит можно упростить модель:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="logistic.html#cb35-1"></a>model1 &lt;-<span class="st"> </span><span class="kw">update</span>(model, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>error_cost)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">model1 &lt;-<span class="st"> </span><span class="kw">update</span>(model, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>error_cost)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="logistic.html#cb37-1"></a><span class="kw">anova</span>(model1, model, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
-<pre><code>## Analysis of Deviance Table
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">drop1</span>(model1, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</a></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Single term deletions
 ## 
-## Model 1: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
+## Model:
+## lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
 ##     direct_juniors + func_juniors + income_influence
-## Model 2: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
-##     direct_juniors + func_juniors + income_influence + error_cost
-##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
-## 1      3202     640.87                     
-## 2      3201     640.79  1 0.079615   0.7778</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="logistic.html#cb39-1"></a><span class="kw">Anova</span>(model1)</span></code></pre></div>
+##                     Df Deviance     AIC    LRT  Pr(&gt;Chi)    
+## &lt;none&gt;                   640.87  656.87                     
+## qualification        1   801.72  815.72 160.85 &lt; 2.2e-16 ***
+## autonomy             1   641.40  655.40   0.53    0.4677    
+## subdiv_regulations   1   641.00  655.00   0.13    0.7184    
+## company_regulations  1   641.12  655.12   0.25    0.6172    
+## direct_juniors       1  1178.48 1192.48 537.61 &lt; 2.2e-16 ***
+## func_juniors         1   798.65  812.65 157.78 &lt; 2.2e-16 ***
+## income_influence     1   659.39  673.39  18.52 1.684e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">model2 &lt;-<span class="st"> </span><span class="kw">update</span>(model1, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>subdiv_regulations)</a></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">drop1</span>(model2, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
@@ -976,69 +1003,25 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
-## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<pre><code>## Analysis of Deviance Table (Type II tests)
+<pre><code>## Single term deletions
 ## 
-## Response: lvl
-##                     LR Chisq Df Pr(&gt;Chisq)    
-## qualification         160.85  1  &lt; 2.2e-16 ***
-## autonomy                0.53  1     0.4677    
-## subdiv_regulations      0.13  1     0.7184    
-## company_regulations     0.25  1     0.6172    
-## direct_juniors        537.61  1  &lt; 2.2e-16 ***
-## func_juniors          157.78  1  &lt; 2.2e-16 ***
-## income_influence       18.52  1  1.684e-05 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="logistic.html#cb42-1"></a>model2 &lt;-<span class="st"> </span><span class="kw">update</span>(model1, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>subdiv_regulations)</span></code></pre></div>
-<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="logistic.html#cb44-1"></a><span class="kw">anova</span>(model2, model1, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
-<pre><code>## Analysis of Deviance Table
-## 
-## Model 1: lvl ~ qualification + autonomy + company_regulations + direct_juniors + 
+## Model:
+## lvl ~ qualification + autonomy + company_regulations + direct_juniors + 
 ##     func_juniors + income_influence
-## Model 2: lvl ~ qualification + autonomy + subdiv_regulations + company_regulations + 
-##     direct_juniors + func_juniors + income_influence
-##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
-## 1      3203     641.00                     
-## 2      3202     640.87  1  0.13007   0.7184</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="logistic.html#cb46-1"></a><span class="kw">Anova</span>(model2)</span></code></pre></div>
-<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
-
-## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<pre><code>## Analysis of Deviance Table (Type II tests)
-## 
-## Response: lvl
-##                     LR Chisq Df Pr(&gt;Chisq)    
-## qualification         175.86  1  &lt; 2.2e-16 ***
-## autonomy                0.51  1     0.4735    
-## company_regulations     0.15  1     0.7009    
-## direct_juniors       1058.34  1  &lt; 2.2e-16 ***
-## func_juniors          157.89  1  &lt; 2.2e-16 ***
-## income_influence       19.23  1  1.157e-05 ***
+##                     Df Deviance     AIC     LRT  Pr(&gt;Chi)    
+## &lt;none&gt;                   641.00  655.00                      
+## qualification        1   816.86  828.86  175.86 &lt; 2.2e-16 ***
+## autonomy             1   641.52  653.52    0.51    0.4735    
+## company_regulations  1   641.15  653.15    0.15    0.7009    
+## direct_juniors       1  1699.35 1711.35 1058.34 &lt; 2.2e-16 ***
+## func_juniors         1   798.89  810.89  157.89 &lt; 2.2e-16 ***
+## income_influence     1   660.24  672.24   19.23 1.157e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="logistic.html#cb49-1"></a>model3 &lt;-<span class="st"> </span><span class="kw">update</span>(model2, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>company_regulations)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">model3 &lt;-<span class="st"> </span><span class="kw">update</span>(model2, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>company_regulations)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="logistic.html#cb51-1"></a><span class="kw">anova</span>(model3, model2, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
-<pre><code>## Analysis of Deviance Table
-## 
-## Model 1: lvl ~ qualification + autonomy + direct_juniors + func_juniors + 
-##     income_influence
-## Model 2: lvl ~ qualification + autonomy + company_regulations + direct_juniors + 
-##     func_juniors + income_influence
-##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
-## 1      3204     641.15                     
-## 2      3203     641.00  1  0.14751   0.7009</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="logistic.html#cb53-1"></a><span class="kw">Anova</span>(model3)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">drop1</span>(model3, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
@@ -1046,29 +1029,41 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<pre><code>## Analysis of Deviance Table (Type II tests)
+<pre><code>## Single term deletions
 ## 
-## Response: lvl
-##                  LR Chisq Df Pr(&gt;Chisq)    
-## qualification      185.88  1  &lt; 2.2e-16 ***
-## autonomy             0.63  1     0.4286    
-## direct_juniors    1062.67  1  &lt; 2.2e-16 ***
-## func_juniors       158.54  1  &lt; 2.2e-16 ***
-## income_influence    19.24  1  1.152e-05 ***
+## Model:
+## lvl ~ qualification + autonomy + direct_juniors + func_juniors + 
+##     income_influence
+##                  Df Deviance     AIC     LRT  Pr(&gt;Chi)    
+## &lt;none&gt;                641.15  653.15                      
+## qualification     1   827.03  837.03  185.88 &lt; 2.2e-16 ***
+## autonomy          1   641.78  651.78    0.63    0.4286    
+## direct_juniors    1  1703.82 1713.82 1062.67 &lt; 2.2e-16 ***
+## func_juniors      1   799.70  809.70  158.54 &lt; 2.2e-16 ***
+## income_influence  1   660.39  670.39   19.24 1.152e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="logistic.html#cb56-1"></a>model4 &lt;-<span class="st"> </span><span class="kw">update</span>(model3, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>autonomy)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">model4 &lt;-<span class="st"> </span><span class="kw">update</span>(model3, . <span class="op">~</span><span class="st"> </span>. <span class="op">-</span>autonomy)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="logistic.html#cb58-1"></a><span class="kw">anova</span>(model4, model3, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</span></code></pre></div>
-<pre><code>## Analysis of Deviance Table
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="kw">drop1</span>(model4, <span class="dt">test =</span> <span class="st">&#39;Chi&#39;</span>)</a></code></pre></div>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
+
+## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<pre><code>## Single term deletions
 ## 
-## Model 1: lvl ~ qualification + direct_juniors + func_juniors + income_influence
-## Model 2: lvl ~ qualification + autonomy + direct_juniors + func_juniors + 
-##     income_influence
-##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
-## 1      3205     641.78                     
-## 2      3204     641.15  1  0.62663   0.4286</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="logistic.html#cb60-1"></a><span class="kw">Anova</span>(model4)</span></code></pre></div>
+## Model:
+## lvl ~ qualification + direct_juniors + func_juniors + income_influence
+##                  Df Deviance     AIC     LRT  Pr(&gt;Chi)    
+## &lt;none&gt;                641.78  651.78                      
+## qualification     1  1037.93 1045.93  396.15 &lt; 2.2e-16 ***
+## direct_juniors    1  1708.43 1716.43 1066.65 &lt; 2.2e-16 ***
+## func_juniors      1   833.76  841.76  191.98 &lt; 2.2e-16 ***
+## income_influence  1   662.32  670.32   20.54 5.845e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1"><span class="kw">Anova</span>(model4)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
 
 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred
@@ -1086,7 +1081,7 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>В модели остались только значимые предикторы, и таким образом, мы получили нашу финальную модель.</p>
 <p>Кроме статистический тестов для сравнения моделей можно использовать информационные критерии. Например, <strong><a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D1%80%D0%B8%D1%82%D0%B5%D1%80%D0%B8%D0%B9_%D0%90%D0%BA%D0%B0%D0%B8%D0%BA%D0%B5">информационный критерий Акаике</a> (Akaike information criterion)</strong>, позволяющий сделать выбор из нескольких моделей. Его можно использовать и в нашем случае как дополнительную проверку.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="logistic.html#cb63-1"></a><span class="kw">AIC</span>(model, model4)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">AIC</span>(model, model4)</a></code></pre></div>
 <pre><code>##        df      AIC
 ## model   9 658.7949
 ## model4  5 651.7787</code></pre>
@@ -1095,7 +1090,7 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <div id="интерпретация-коэффициентов-модели" class="section level2">
 <h2><span class="header-section-number">21.11</span> Интерпретация коэффициентов модели</h2>
 <p>Еще раз позовем summary нашей окончательной модели:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="logistic.html#cb65-1"></a><span class="kw">summary</span>(model4)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">summary</span>(model4)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = lvl ~ qualification + direct_juniors + func_juniors + 
@@ -1133,7 +1128,7 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <p>Наша зависимая переменная — логарифм отношения шансов. От этого и будем толкаться.</p>
 <p>Тогда,</p>
 <ul>
-<li><span class="math inline">\(b_0\)</span>, интерсепт, показывает <em>логарифм отношения шансов для базового уровня</em> (<code>Tr</code>) дискретного предиктора (<code>Sp</code>);</li>
+<li><span class="math inline">\(b_0\)</span>, интерсепт, показывает <em>логарифм отношения шансов для случая, когда все остальные предикторы равны нулю</em> — в данном примере он сложноинетерпретабелен;</li>
 <li><span class="math inline">\(b_j\)</span> показывает, <em>на сколько единиц изменяется логарифм отношения шансов</em> при изменении значения предиктора на единицу.</li>
 </ul>
 <p>Корректно, но непонятно… Чтобы разобраться лучше, немного потупим в алгебру.</p>
@@ -1163,7 +1158,9 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 \]</span></p>
 <p>Таким образом, <span class="math inline">\(e^{b_1}\)</span> показывает, во сколько раз изменится отношение шансов при увеличении предиктора на единицу. Для дискретных предикторов <span class="math inline">\(e^{b_1}\)</span> покажет, во сколько раз различается отношение шансов для данного уровня предиктора по сравнению с базовым.</p>
 <hr />
-<p><img src="/Users/antonangelgardt/Desktop/geom_interpret.png" /></p>
+<center>
+<img src="img/geom_interpret.png">
+</center>
 <hr />
 <p>Теперь мы можем тракровать полученные коэффициенты нормальным языком.</p>
 <p><span class="math display">\[
@@ -1180,37 +1177,39 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <h2><span class="header-section-number">21.12</span> Предсказательная сила модели</h2>
 <p>Оценить предсказательную силу общих линейных моделей не сложно, и логика процесса интуитивно понятна. С логистической моделью же есть некоторые тонкости.</p>
 <p>Чтобы оценить предсказательную силу модели, нам потребуется разбить наши данные на две подвыборки — <em>обучающую</em> и <em>тестовую</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Первую мы использует для подбора коэффициентов модели, а вторую для проверки предсказательной силы.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="logistic.html#cb67-1"></a><span class="kw">set.seed</span>(<span class="dv">5432</span>)</span>
-<span id="cb67-2"><a href="logistic.html#cb67-2"></a>ind_train &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(managers), <span class="dt">size =</span> <span class="fl">0.7</span> <span class="op">*</span><span class="st"> </span><span class="kw">nrow</span>(managers), <span class="dt">replace =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb67-3"><a href="logistic.html#cb67-3"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb67-4"><a href="logistic.html#cb67-4"></a><span class="st">  </span><span class="kw">slice</span>(ind_train) -&gt;<span class="st"> </span>managers_train</span>
-<span id="cb67-5"><a href="logistic.html#cb67-5"></a>managers <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb67-6"><a href="logistic.html#cb67-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="op">-</span>ind_train) -&gt;<span class="st"> </span>managers_test</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">5432</span>)</a>
+<a class="sourceLine" id="cb62-2" data-line-number="2">ind_train &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(managers), <span class="dt">size =</span> <span class="fl">0.7</span> <span class="op">*</span><span class="st"> </span><span class="kw">nrow</span>(managers), <span class="dt">replace =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb62-3" data-line-number="3">managers <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"><span class="st">  </span><span class="kw">slice</span>(ind_train) -&gt;<span class="st"> </span>managers_train</a>
+<a class="sourceLine" id="cb62-5" data-line-number="5">managers <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-6" data-line-number="6"><span class="st">  </span><span class="kw">slice</span>(<span class="op">-</span>ind_train) -&gt;<span class="st"> </span>managers_test</a></code></pre></div>
 <p>Обучим модель, то есть подберём коэффициенты, на тренировочных данных. Возьмём полную модель.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="logistic.html#cb68-1"></a>model5 &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers_train, <span class="dt">family =</span> binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1">model5 &lt;-<span class="st"> </span><span class="kw">glm</span>(lvl <span class="op">~</span><span class="st"> </span>., managers_train, <span class="dt">family =</span> binomial)</a></code></pre></div>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
 <p>Как оценить, насколько модель хорошо работает? Для этого потребуются метрики качества модели. Однако перед этим надо поработать с предсказаниями.</p>
 <div id="перевод-непрерывных-предсказаний-в-дискретные" class="section level3">
 <h3><span class="header-section-number">21.12.1</span> Перевод непрерывных предсказаний в дискретные</h3>
 <p>Множество допустимых значений нашей целевой переменной — <span class="math inline">\(\{0, 1\}\)</span>, а наша модель возвращает вероятности принадлежности каждого из наблюдений к классу <code>1</code>:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="logistic.html#cb70-1"></a><span class="kw">head</span>(model5<span class="op">$</span>fitted.values)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">head</span>(model5<span class="op">$</span>fitted.values)</a></code></pre></div>
 <pre><code>##            1            2            3            4            5            6 
 ## 0.9999609133 0.0048211719 0.0004782344 0.0634837569 0.0004782344 0.0048211719</code></pre>
 <p>Поэтому чтобы мы смогли рассчитать метрики качества, нам необходимо перейти от вероятностей обратно к нулям и единицам. Для этого необходимо выбрать <em>порог</em> — если значение вероятности выше него, мы будем считать, что модель предсказала <code>1</code>, если ниже, то <code>0</code>. Значение порога зависит от многих факторов и будет влиять на качество модели. Прежде всего стоит ориентироваться на сферу деятельности, в которой вы проводите анализ. Если у вас качественные чистые данные и вам важна высокая точность, то и порог для предсказаний должен быть высокий — <span class="math inline">\(\geq 0.9\)</span>. Если же вы знаете, что вы работаете с зашумлёнными данными, и цена ошибки не так высока, то можете выбрать более либеральный критерий — <span class="math inline">\(0.7-0.8\)</span>. Самый либеральный критерий из возможных — <span class="math inline">\(0.5\)</span>, что по сути есть вероятность случайного угадывания.</p>
 <p>Итак, переведем предсказания пока на тренировочной выборке в дискретную форму. Выберем критерий <span class="math inline">\(0.8\)</span> как не очень строгий, но и не очень либеральный:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="logistic.html#cb72-1"></a>predicted_train &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">predicted_train &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</a></code></pre></div>
 </div>
 <div id="confusion-matrix" class="section level3">
 <h3><span class="header-section-number">21.12.2</span> Confusion matrix</h3>
 <p>Построим <strong>confusion matrix</strong> — это таблица частот по модельным и реальным значениям нашей целевой переменной</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="logistic.html#cb73-1"></a><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1"><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</a></code></pre></div>
 <pre><code>##    predicted_train
 ##        0    1
 ##   0 1678    5
 ##   1   71  493</code></pre>
 <p>По столбцам идут предсказанные значения, по строкам — реальные. В целом мы видим, что модель практически всегда предсказывает верно, однако хотелось бы как-то понять, что такое это «практически всегда» в числовом формате.</p>
 <p>Для этого надо понять структуру confusion matrix:</p>
-<p>КАРТИНКА</p>
+<center>
+<img src="img/confusion_matrix.jpg">
+</center>
 <ul>
 <li><em>True Positive</em> (<span class="math inline">\(TP\)</span>) — верное предсказанные единицы</li>
 <li><em>True Negative</em> (<span class="math inline">\(TN\)</span>) — верно предсказанные нули</li>
@@ -1229,15 +1228,16 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение accuracy.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="logistic.html#cb75-1"></a>confmat &lt;-<span class="st"> </span><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">confmat &lt;-<span class="st"> </span><span class="kw">table</span>(managers_train<span class="op">$</span>lvl, predicted_train)</a></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" data-line-number="1"><span class="kw">accuracy</span>(confmat)</a></code></pre></div>
 <pre><code>## [1] 0.9661771</code></pre>
 </div>
-<p>Это неплохая метрика, но она перестаёт работать на несбалансированных данных. Например, у нас есть такие данные по целевой переменной:</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="logistic.html#cb77-1"></a>iv &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>) </span></code></pre></div>
+<p>Это неплохая метрика, но она перестаёт работать на несбалансированных данных. Например, у нас есть такие данные по целевой переменной (<code>dv</code>):</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" data-line-number="1">dv &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>) </a></code></pre></div>
 <p>Пусть у нас есть наиболее топорная модель, которая просто всегда предсказывает ноль:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="logistic.html#cb78-1"></a>pred &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1">pred &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</a></code></pre></div>
 <p>Тогда точность будет следующая:</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="logistic.html#cb79-1"></a><span class="kw">mean</span>(iv <span class="op">==</span><span class="st"> </span>pred)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="kw">mean</span>(dv <span class="op">==</span><span class="st"> </span>pred)</a></code></pre></div>
 <pre><code>## [1] 0.7272727</code></pre>
 <p>Достаточно высокий показатель, хотя модель не ухватывает закономерность вовсе. Поэтому были разработаны другие метрики качества, которые хорошо работают и на несбалансированных данных.</p>
 </div>
@@ -1250,15 +1250,17 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение precision.</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw">precision</span>(confmat)</a></code></pre></div>
 <pre><code>## [1] 0.9899598</code></pre>
 </div>
-<p><strong>Recall</strong> можно перевести как «полнота», хотя по сути это снова «точность». Эта метрика показывается <em>долю предсказанных единиц из всех единиц датаста</em>, то есть сколько из всех единиц датасета модель предсказала верно:</p>
+<p><strong>Recall</strong> можно перевести как «полнота», хотя по сути это снова «точность». Эта метрика показывается <em>долю предсказанных единиц из всех единиц датасета</em>, то есть сколько из всех единиц датасета модель предсказала верно:</p>
 <p><span class="math display">\[
 \mathrm{recall} = \frac{TP}{TP + FN}
 \]</span></p>
 <img class="taskimg" src="img/code.png">
 <div class="task">
 <p>Напишите фунцию, которая будет принимать на вход confusion matrix и возвращать значение recall.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb79-1" data-line-number="1"><span class="kw">recall</span>(confmat)</a></code></pre></div>
 <pre><code>## [1] 0.8741135</code></pre>
 </div>
 <p>И ещё раз обобщаюшая картинка:</p>
@@ -1282,24 +1284,93 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <summary>Подсказка</summary>
 Можно использовать функции, написанные ранее, внутри новой функции.
 </details>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">F1</span>(confmat)</a></code></pre></div>
 <pre><code>## [1] 0.9284369</code></pre>
 </div>
 </div>
 <div id="roc-auc" class="section level3">
 <h3><span class="header-section-number">21.12.6</span> ROC-AUC</h3>
+<p>Ну и напоследок, самое занятное. Ещё одна метрика качества модели. Однако логика её расчёта не такая простая.</p>
+<p>Чем хороша эта метрика? Тем, что она работает не с предсказанными значениями (0 и 1), а с <em>предсказанными вероятностями</em>. Таким образом, она избавляет нас от вмешательства нас же в предсказания, ведь когда мы выбираем порог, мы хотя и опираемся на какое-то содержательное основание, тем не менее, глобально выбираем его условно произвольно.</p>
+<p>Что рассчитать значение этой метрики нужно сделать следующее (разберём на некотором вымышленном примере):</p>
+<ol style="list-style-type: decimal">
+<li>Упорядочить объекты по убыванию значения предсказанной вероятности:</li>
+</ol>
+<center>
+<img src="img/rocauc1.jpg">
+</center>
+<ol start="2" style="list-style-type: decimal">
+<li>Добавить столбец истинных значений (0 и 1)</li>
+</ol>
+<center>
+<img src="img/rocauc2.jpg">
+</center>
+<p>Отметим, что если модель идеально справляется с предказаниями, то в упорядоченном по значению предсказанной вероятности наборе данных сначала будут идти все наблюдения с истинным значением <code>1</code>, а потом с <code>0</code>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Построим кривую, которая будет описывать качество нашей модели:</li>
+</ol>
+<ul>
+<li>Стартуем из точки <span class="math inline">\((0, 0)\)</span> и хотим прийти в точку <span class="math inline">\((1, 1)\)</span>:</li>
+</ul>
+<center>
+<img src="img/rocauc3.jpg">
+</center>
+<ul>
+<li>Ось <span class="math inline">\(y\)</span> делим на равные части, число которых равно количеству <code>1</code> в датасете:</li>
+</ul>
+<center>
+<img src="img/rocauc4.jpg">
+</center>
+<ul>
+<li>Ось <span class="math inline">\(x\)</span> делим на равные части, число которых равно количеству <code>0</code> в датасете:</li>
+</ul>
+<center>
+<img src="img/rocauc5.jpg">
+</center>
+<ul>
+<li><p>Идём по нашим данным сверху вниз, и когда встречаем наблюдение со значением <code>1</code>, поднимаемся на графике на одно деление вверх; когда встречаем наблюдение со значением <code>0</code>, сдвигаемся на одно деление вправо.</p></li>
+<li><p>В итоге получится такая кривая:</p></li>
+</ul>
+<center>
+<img src="img/rocauc6.jpg">
+</center>
+<p>Каждая точка на этой кривой соответствует некоторому порогу вероятности отсечения объектов. Например, выделенная точка (рисунок ниже) соответствует порогу вероятности <span class="math inline">\(0.6\)</span> и имеет координаты <span class="math inline">\((\frac{1}{6}, \frac{3}{4})\)</span>. Это означает, что если при переходе к предсказаниями модели мы будем использовать порог <span class="math inline">\(0.6\)</span>, то <em>доля true positive</em>, или <em>true positive rate (TRP)</em> окажется равной <span class="math inline">\(\frac{3}{4}\)</span>, а <em>доля falce positive</em>, или <em>false positive rate (FPR)</em> окажется равной <span class="math inline">\(\frac{1}{6}\)</span>.</p>
+<center>
+<img src="img/rocauc7.jpg">
+</center>
+<p>Построенная кривая называется <strong>ROC-кривой (receiver operating characteristic)</strong>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Определяем площадь фигуры под ROC-кривой — это и будет значением метрики ROC-AUC. <em>AUC — area under a curve.</em></li>
+</ol>
+<center>
+<img src="img/rocauc8.jpg">
+</center>
+<p>В случае идеального упорядочивания наблюдений по предсказанной вероятности площадь под кривой будет равна единице. Чем ближе значение ROC-AUC к единице, тем модель работает лучше. Значение <span class="math inline">\(0.5\)</span> указывает на то, что модель совсем не ухватывает закономерность и точность её предсказаний на уровне случайного угадывания — ROC-кривая в этом случае будет проходить близко к диагонали <span class="math inline">\([(0,0),(1,1)]\)</span>.</p>
+<p>В R эту метрику рассчитать с помощью функций <code>roc()</code> и <code>auc()</code> из пакета <code>pROC</code>. Первая функция хочет получить на вход вектор истинных значений и вектор предсказанных вероятностей. Вторая же хочет получить результат работы первой:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">library</span>(pROC)</a></code></pre></div>
+<pre><code>## Type &#39;citation(&quot;pROC&quot;)&#39; for a citation.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;pROC&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     cov, smooth, var</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1"><span class="kw">auc</span>(<span class="kw">roc</span>(managers_train<span class="op">$</span>lvl, model5<span class="op">$</span>fitted.values)) <span class="co"># на тренировочных данных</span></a></code></pre></div>
+<pre><code>## Setting levels: control = 0, case = 1</code></pre>
+<pre><code>## Setting direction: controls &lt; cases</code></pre>
+<pre><code>## Area under the curve: 0.9834</code></pre>
 </div>
 </div>
 <div id="предсказания-на-новых-данных" class="section level2">
 <h2><span class="header-section-number">21.13</span> Предсказания на новых данных</h2>
 <p>Мы рассчитали метрики качества на тренировочных данных, но гораздо интереснее, как модель справится с предсказаниями на тех данных, которые она ещё не видела. Это просто проверить.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="logistic.html#cb84-1"></a>predicted_test &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, managers_test, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb84-2"><a href="logistic.html#cb84-2"></a>cm &lt;-<span class="st"> </span><span class="kw">table</span>(managers_test<span class="op">$</span>lvl, predicted_test)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb91-1" data-line-number="1">predicted_test &lt;-<span class="st"> </span><span class="kw">ifelse</span>(<span class="kw">predict</span>(model5, managers_test, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.8</span>, <span class="dv">1</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb91-2" data-line-number="2">cm &lt;-<span class="st"> </span><span class="kw">table</span>(managers_test<span class="op">$</span>lvl, predicted_test)</a></code></pre></div>
 <p>Рассчитаем метрики качества и сравним со значениями для тренировочной выборки:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="logistic.html#cb85-1"></a><span class="kw">tibble</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="st">&#39;train&#39;</span>, <span class="st">&#39;test&#39;</span>),</span>
-<span id="cb85-2"><a href="logistic.html#cb85-2"></a>       <span class="dt">accuracy =</span> <span class="kw">c</span>(<span class="kw">accuracy</span>(confmat), <span class="kw">accuracy</span>(cm)),</span>
-<span id="cb85-3"><a href="logistic.html#cb85-3"></a>       <span class="dt">precision =</span> <span class="kw">c</span>(<span class="kw">precision</span>(confmat), <span class="kw">precision</span>(cm)),</span>
-<span id="cb85-4"><a href="logistic.html#cb85-4"></a>       <span class="dt">recall =</span> <span class="kw">c</span>(<span class="kw">recall</span>(confmat), <span class="kw">recall</span>(cm)),</span>
-<span id="cb85-5"><a href="logistic.html#cb85-5"></a>       <span class="dt">F1 =</span> <span class="kw">c</span>(<span class="kw">F1</span>(confmat), <span class="kw">F1</span>(cm)))</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1"><span class="kw">tibble</span>(<span class="dt">data =</span> <span class="kw">c</span>(<span class="st">&#39;train&#39;</span>, <span class="st">&#39;test&#39;</span>),</a>
+<a class="sourceLine" id="cb92-2" data-line-number="2">       <span class="dt">accuracy =</span> <span class="kw">c</span>(<span class="kw">accuracy</span>(confmat), <span class="kw">accuracy</span>(cm)),</a>
+<a class="sourceLine" id="cb92-3" data-line-number="3">       <span class="dt">precision =</span> <span class="kw">c</span>(<span class="kw">precision</span>(confmat), <span class="kw">precision</span>(cm)),</a>
+<a class="sourceLine" id="cb92-4" data-line-number="4">       <span class="dt">recall =</span> <span class="kw">c</span>(<span class="kw">recall</span>(confmat), <span class="kw">recall</span>(cm)),</a>
+<a class="sourceLine" id="cb92-5" data-line-number="5">       <span class="dt">F1 =</span> <span class="kw">c</span>(<span class="kw">F1</span>(confmat), <span class="kw">F1</span>(cm)))</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 5
 ##   data  accuracy precision recall    F1
 ##   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
@@ -1312,7 +1383,7 @@ d_\mathrm{null} - d_\mathrm{resid} = -2 ( \ln L_\mathrm{null} - \ln L_\mathrm{mo
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Машин лёрнинг, привет 👋<a href="logistic.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Машин лёрнинг, привет 👋<a href="logistic.html#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
