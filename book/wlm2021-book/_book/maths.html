@@ -50,15 +50,12 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -67,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -85,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -360,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
 <li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
 <li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
-<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#проблема-множественных-сравнений"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
 </ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
@@ -417,23 +412,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
 <li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
 <li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
 </ul></li>
 <li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
 <li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
 <li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
-<li class="chapter" data-level="18.2.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-1"><i class="fa fa-check"></i><b>18.2.3</b> Оценка качества модели</a></li>
-<li class="chapter" data-level="18.2.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-2"><i class="fa fa-check"></i><b>18.2.4</b> Диагностика модели</a></li>
 </ul></li>
 <li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
 <li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
 <li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
-<li class="chapter" data-level="18.3.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели-2"><i class="fa fa-check"></i><b>18.3.3</b> Оценка качества модели</a></li>
-<li class="chapter" data-level="18.3.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-3"><i class="fa fa-check"></i><b>18.3.4</b> Диагностика модели</a></li>
 </ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a></li>
+<li class="chapter" data-level="21.5" data-path="logistic.html"><a href="logistic.html#задача-построения-линейной-модели"><i class="fa fa-check"></i><b>21.5</b> Задача построения линейной модели</a></li>
+<li class="chapter" data-level="21.6" data-path="logistic.html"><a href="logistic.html#переход-от-дискретной-величины-к-непрерывной"><i class="fa fa-check"></i><b>21.6</b> Переход от дискретной величины к непрерывной</a><ul>
+<li class="chapter" data-level="21.6.1" data-path="logistic.html"><a href="logistic.html#логистическая-кривая"><i class="fa fa-check"></i><b>21.6.1</b> Логистическая кривая</a></li>
+<li class="chapter" data-level="21.6.2" data-path="logistic.html"><a href="logistic.html#шансы-и-логиты"><i class="fa fa-check"></i><b>21.6.2</b> Шансы и логиты</a></li>
+</ul></li>
+<li class="chapter" data-level="21.7" data-path="logistic.html"><a href="logistic.html#формулирование-модели-в-математическом-виде"><i class="fa fa-check"></i><b>21.7</b> Формулирование модели в математическом виде</a></li>
+<li class="chapter" data-level="21.8" data-path="logistic.html"><a href="logistic.html#подбор-линейной-модели"><i class="fa fa-check"></i><b>21.8</b> Подбор линейной модели</a><ul>
+<li class="chapter" data-level="21.8.1" data-path="logistic.html"><a href="logistic.html#метод-максимального-правдоподобия"><i class="fa fa-check"></i><b>21.8.1</b> Метод максимального правдоподобия</a></li>
+</ul></li>
+<li class="chapter" data-level="21.9" data-path="logistic.html"><a href="logistic.html#анализ-модели"><i class="fa fa-check"></i><b>21.9</b> Анализ модели</a></li>
+<li class="chapter" data-level="21.10" data-path="logistic.html"><a href="logistic.html#анализ-девиансы-и-упрощение-модели"><i class="fa fa-check"></i><b>21.10</b> Анализ девиансы и упрощение модели</a></li>
+<li class="chapter" data-level="21.11" data-path="logistic.html"><a href="logistic.html#интерпретация-коэффициентов-модели"><i class="fa fa-check"></i><b>21.11</b> Интерпретация коэффициентов модели</a><ul>
+<li class="chapter" data-level="21.11.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.11.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="21.12" data-path="logistic.html"><a href="logistic.html#предсказательная-сила-модели"><i class="fa fa-check"></i><b>21.12</b> Предсказательная сила модели</a><ul>
+<li class="chapter" data-level="21.12.1" data-path="logistic.html"><a href="logistic.html#перевод-непрерывных-предсказаний-в-дискретные"><i class="fa fa-check"></i><b>21.12.1</b> Перевод непрерывных предсказаний в дискретные</a></li>
+<li class="chapter" data-level="21.12.2" data-path="logistic.html"><a href="logistic.html#confusion-matrix"><i class="fa fa-check"></i><b>21.12.2</b> Confusion matrix</a></li>
+<li class="chapter" data-level="21.12.3" data-path="logistic.html"><a href="logistic.html#accuracy"><i class="fa fa-check"></i><b>21.12.3</b> Accuracy</a></li>
+<li class="chapter" data-level="21.12.4" data-path="logistic.html"><a href="logistic.html#precision-and-recall"><i class="fa fa-check"></i><b>21.12.4</b> Precision and Recall</a></li>
+<li class="chapter" data-level="21.12.5" data-path="logistic.html"><a href="logistic.html#f1-мера"><i class="fa fa-check"></i><b>21.12.5</b> F1-мера</a></li>
+<li class="chapter" data-level="21.12.6" data-path="logistic.html"><a href="logistic.html#roc-auc"><i class="fa fa-check"></i><b>21.12.6</b> ROC-AUC</a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="logistic.html"><a href="logistic.html#предсказания-на-новых-данных"><i class="fa fa-check"></i><b>21.13</b> Предсказания на новых данных</a></li>
+</ul></li>
 <li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
 <li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
 <li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
@@ -523,14 +563,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="инверсия-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.2.1.1</span> Инверсия в R</h5>
 <p>Оператор отрицания в R обозначается восклицательным знаком <code>!</code>. Если его поставить перед некоторой командой, которая возвращает логическое значение, то этот оператор изменит его на противоположное:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="maths.html#cb1-1"></a><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>; <span class="op">!</span>(<span class="dv">3</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span>)</a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="maths.html#cb4-1"></a><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>; <span class="op">!</span>(<span class="st">&quot;sing&quot;</span> <span class="op">==</span><span class="st"> &quot;sign&quot;</span>); <span class="st">&quot;sing&quot;</span> <span class="op">!=</span><span class="st"> &quot;sign&quot;</span></a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="maths.html#cb8-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>); <span class="op">!</span>a</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -581,12 +621,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="конъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.1.1</span> Конъюнкция в R</h5>
 <p>В качестве оператора логического И в R используется символ <code>&amp;</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="maths.html#cb10-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="maths.html#cb12-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">1</span> <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="maths.html#cb14-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
-<span id="cb14-2"><a href="maths.html#cb14-2"></a>a <span class="op">&amp;</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">a <span class="op">&amp;</span><span class="st"> </span>b</a></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
@@ -632,12 +672,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.2.1</span> Дизъюнкция в R</h5>
 <p>В качестве оператора логического ИЛИ в R используется символ <code>|</code>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="maths.html#cb16-1"></a><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="dv">4</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="maths.html#cb18-1"></a><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span><span class="dv">1</span> <span class="op">==</span><span class="st"> </span><span class="dv">4</span></a></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="maths.html#cb20-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
-<span id="cb20-2"><a href="maths.html#cb20-2"></a>a <span class="op">|</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">a <span class="op">|</span><span class="st"> </span>b</a></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -684,8 +724,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="разделительная-дизъюнкция-в-r" class="section level5">
 <h5><span class="header-section-number">9.1.3.3.1</span> Разделительная дизъюнкция в R</h5>
 <p>В R эта логическая функция реализована, в отличие от предыдущих, не как оператор, а как функция с соответствующим названием:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="maths.html#cb22-1"></a>a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
-<span id="cb22-2"><a href="maths.html#cb22-2"></a><span class="kw">xor</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>); b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">xor</span>(a, b)</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 </div>
@@ -931,10 +971,10 @@ A \times B = \{(a, b): a \in A, b \in B\}
 F: L \rightarrow N
 \]</span></p>
 <p>Более того, мы даже можем реализовать его в R:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="maths.html#cb24-1"></a>letter_number &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb24-2"><a href="maths.html#cb24-2"></a>  <span class="kw">which</span>(x <span class="op">==</span><span class="st"> </span>letters)</span>
-<span id="cb24-3"><a href="maths.html#cb24-3"></a>}</span>
-<span id="cb24-4"><a href="maths.html#cb24-4"></a><span class="kw">letter_number</span>(<span class="st">&quot;a&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;z&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;i&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">letter_number &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">  <span class="kw">which</span>(x <span class="op">==</span><span class="st"> </span>letters)</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4"><span class="kw">letter_number</span>(<span class="st">&quot;a&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;z&quot;</span>); <span class="kw">letter_number</span>(<span class="st">&quot;i&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <pre><code>## [1] 26</code></pre>
 <pre><code>## [1] 9</code></pre>
@@ -1102,7 +1142,7 @@ S \approx \sum_{i=1}^n y_i \Delta x_i
 <p><span class="math display">\[
 \int_0^3 \sqrt x \, dx \approx 3.46
 \]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="maths.html#cb28-1"></a><span class="kw">integrate</span>(<span class="dt">f =</span> sqrt, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">integrate</span>(<span class="dt">f =</span> sqrt, <span class="dt">lower =</span> <span class="dv">0</span>, <span class="dt">upper =</span> <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## 3.464102 with absolute error &lt; 4e-04</code></pre>
 <p>А раз есть определённых интеграл, значит есть и неопределённый. Здесь нам понадобиться вот эта визуализация:</p>
 <center>
@@ -1406,18 +1446,18 @@ A_{ij} = (-1)^{i+j} M_{ij}
 \]</span>
 где <span class="math inline">\(M_{1j}\)</span> — дополнительный минор к элементу <span class="math inline">\(a_{1j}\)</span>.</p>
 <p>Но жизнь упрощается, когда есть R:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="maths.html#cb30-1"></a>A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
-<span id="cb30-2"><a href="maths.html#cb30-2"></a><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></span></code></pre></div>
-<pre><code>## [1] 941</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">A &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="kw">det</span>(A) <span class="co"># так вычисляется детерминант матрицы</span></a></code></pre></div>
+<pre><code>## [1] 334</code></pre>
 <p>Если матрица <em>квадратная</em> и её <em>детерминант не равен нулю</em>, то для данной матрицы <span class="math inline">\(\boldsymbol{A}\)</span> существует обратная ей <span class="math inline">\(\boldsymbol{A}^{-1}\)</span>, которая обаладет следующим свойством:</p>
 <p><span class="math display">\[
 \boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{E}
 \]</span></p>
 <p>Детерминант матрицы равен нулю, в частности, если её столбцы <em>линейно зависимы</em>, то есть значения одного можно линейно выразить через значения другого. Например,</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="maths.html#cb32-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,</span>
-<span id="cb32-2"><a href="maths.html#cb32-2"></a>              <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>,</span>
-<span id="cb32-3"><a href="maths.html#cb32-3"></a>              <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</span>
-<span id="cb32-4"><a href="maths.html#cb32-4"></a><span class="kw">det</span>(B)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">              <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>,</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">              <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>), <span class="dt">nrow =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="kw">det</span>(B)</a></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <p>Для такой матрицы обратной ей матрицы не существует.</p>
 </div>
@@ -1433,12 +1473,12 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <p>В R нет специальной функции, которая вычисляет след матрицы. Давайте её напишем!</p>
 <p>Функция должна принимать на вход матрицу, проверять, является ли матрица квадратной, и, если да, то возвращать значение следа матрицы, если нет, то печатать в консоль «матрица не является квадратной».</p>
 <p><em>Подсказка:</em> <code>?diag</code></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="maths.html#cb34-1"></a>B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</span>
-<span id="cb34-2"><a href="maths.html#cb34-2"></a>C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb34-3"><a href="maths.html#cb34-3"></a><span class="kw">tr</span>(B)</span></code></pre></div>
-<pre><code>## [1] 261</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="maths.html#cb36-1"></a><span class="kw">tr</span>(C)</span></code></pre></div>
-<pre><code>## [1] &quot;матрица не является квадратной&quot;</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">B &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">25</span>), <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">C &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dv">12</span>), <span class="dt">nrow =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="kw">tr</span>(B)</a></code></pre></div>
+<pre><code>## [1] 159</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">tr</span>(C)</a></code></pre></div>
+<pre><code>## [1] &quot;\u043c\u0430\u0442\u0440\u0438\u0446\u0430 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043a\u0432\u0430\u0434\u0440\u0430\u0442\u043d\u043e\u0439&quot;</code></pre>
 </div>
 <img class="taskimg" src="img/maths.png">
 <div class="task">
@@ -1603,17 +1643,17 @@ A_{ij} = (-1)^{i+j} M_{ij}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>Этот факт часто используется при доказательстве всяких невозможных математических утверждений, когда изначально принимается неверная посылка, но это не очевидно.<a href="maths.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>В теории множеств натуральные числа начинаются с нуля. Если нас интересуют натуральные числа без нуля, то мы будем использовать обозначение <span class="math inline">\(\mathbb{Z}_+\)</span>, то есть целые положительные числа.<a href="maths.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>По умолчанию считаем, что <span class="math inline">\(x \in \mathbb{R}\)</span>.<a href="maths.html#fnref5" class="footnote-back">↩︎</a></p></li>
-<li id="fn6"><p>Некотрые определения математики заставляют тебя задуматься о том, что ты ещё не до конца постиг дзен абстрактной науки…<a href="maths.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>Хотя и не все. Непрерывность является <em>необходимым, но недостаточным</em> условием для дифференцируемости.<a href="maths.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref9" class="footnote-back">↩︎</a></p></li>
-<li id="fn10"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Обсуждение критериев объективности мы оставим за рамками этого курса и постулируем, что мы их как-то хотя бы интуитивно пониманием. Для некоторой концептуальной рамки обозначим следующее: мы говорим об объективной связи между предметами, если (1) определённым предметам (или индивидам) присущи определённые признаки и если (2) определённым признакам свойственны определённые признаки.<a href="maths.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Есть в другие подходы к определению истинности высказываний — таковый различные виды многозначной логики. Но они не-необходимы нам для целей курса, поэтому оставим их за бортом.<a href="maths.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Этот факт часто используется при доказательстве всяких невозможных математических утверждений, когда изначально принимается неверная посылка, но это не очевидно.<a href="maths.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>В теории множеств натуральные числа начинаются с нуля. Если нас интересуют натуральные числа без нуля, то мы будем использовать обозначение <span class="math inline">\(\mathbb{Z}_+\)</span>, то есть целые положительные числа.<a href="maths.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>По умолчанию считаем, что <span class="math inline">\(x \in \mathbb{R}\)</span>.<a href="maths.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Некотрые определения математики заставляют тебя задуматься о том, что ты ещё не до конца постиг дзен абстрактной науки…<a href="maths.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Хотя и не все. Непрерывность является <em>необходимым, но недостаточным</em> условием для дифференцируемости.<a href="maths.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Та, которая идёт справа сверху влево вниз.<a href="maths.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Эта формула называется разложением по строке. Есть и <a href="https://ru.wikipedia.org/wiki/Определитель">другие</a><a href="maths.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>Та, которая идёт слева сверху вправо вниз.<a href="maths.html#fnref11" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
