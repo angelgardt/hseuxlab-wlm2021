@@ -1,0 +1,9 @@
+---
+title: "A11. Обобщенные линейные модели для счетных данных. Регуляризованная регрессия"
+author:
+  - name: A. Angelgardt
+  - name: A. Kharitonova
+output: radix::radix_article
+---
+
+Сегодня мы работаем с [данными о ценах домов](https://www.kaggle.com/srikanthladda/house-price-prediction). 
