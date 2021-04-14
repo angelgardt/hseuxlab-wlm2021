@@ -50,11 +50,70 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -239,7 +298,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -250,7 +309,7 @@
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -291,7 +350,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,15 +382,144 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
-<li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
-<li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
-<li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a></li>
+<li class="chapter" data-level="21.5" data-path="logistic.html"><a href="logistic.html#задача-построения-линейной-модели"><i class="fa fa-check"></i><b>21.5</b> Задача построения линейной модели</a></li>
+<li class="chapter" data-level="21.6" data-path="logistic.html"><a href="logistic.html#переход-от-дискретной-величины-к-непрерывной"><i class="fa fa-check"></i><b>21.6</b> Переход от дискретной величины к непрерывной</a><ul>
+<li class="chapter" data-level="21.6.1" data-path="logistic.html"><a href="logistic.html#логистическая-кривая"><i class="fa fa-check"></i><b>21.6.1</b> Логистическая кривая</a></li>
+<li class="chapter" data-level="21.6.2" data-path="logistic.html"><a href="logistic.html#шансы-и-логиты"><i class="fa fa-check"></i><b>21.6.2</b> Шансы и логиты</a></li>
+</ul></li>
+<li class="chapter" data-level="21.7" data-path="logistic.html"><a href="logistic.html#формулирование-модели-в-математическом-виде"><i class="fa fa-check"></i><b>21.7</b> Формулирование модели в математическом виде</a></li>
+<li class="chapter" data-level="21.8" data-path="logistic.html"><a href="logistic.html#подбор-линейной-модели"><i class="fa fa-check"></i><b>21.8</b> Подбор линейной модели</a><ul>
+<li class="chapter" data-level="21.8.1" data-path="logistic.html"><a href="logistic.html#метод-максимального-правдоподобия"><i class="fa fa-check"></i><b>21.8.1</b> Метод максимального правдоподобия</a></li>
+</ul></li>
+<li class="chapter" data-level="21.9" data-path="logistic.html"><a href="logistic.html#анализ-модели"><i class="fa fa-check"></i><b>21.9</b> Анализ модели</a></li>
+<li class="chapter" data-level="21.10" data-path="logistic.html"><a href="logistic.html#анализ-девиансы-и-упрощение-модели"><i class="fa fa-check"></i><b>21.10</b> Анализ девиансы и упрощение модели</a></li>
+<li class="chapter" data-level="21.11" data-path="logistic.html"><a href="logistic.html#интерпретация-коэффициентов-модели"><i class="fa fa-check"></i><b>21.11</b> Интерпретация коэффициентов модели</a><ul>
+<li class="chapter" data-level="21.11.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.11.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="21.12" data-path="logistic.html"><a href="logistic.html#предсказательная-сила-модели"><i class="fa fa-check"></i><b>21.12</b> Предсказательная сила модели</a><ul>
+<li class="chapter" data-level="21.12.1" data-path="logistic.html"><a href="logistic.html#перевод-непрерывных-предсказаний-в-дискретные"><i class="fa fa-check"></i><b>21.12.1</b> Перевод непрерывных предсказаний в дискретные</a></li>
+<li class="chapter" data-level="21.12.2" data-path="logistic.html"><a href="logistic.html#confusion-matrix"><i class="fa fa-check"></i><b>21.12.2</b> Confusion matrix</a></li>
+<li class="chapter" data-level="21.12.3" data-path="logistic.html"><a href="logistic.html#accuracy"><i class="fa fa-check"></i><b>21.12.3</b> Accuracy</a></li>
+<li class="chapter" data-level="21.12.4" data-path="logistic.html"><a href="logistic.html#precision-and-recall"><i class="fa fa-check"></i><b>21.12.4</b> Precision and Recall</a></li>
+<li class="chapter" data-level="21.12.5" data-path="logistic.html"><a href="logistic.html#f1-мера"><i class="fa fa-check"></i><b>21.12.5</b> F1-мера</a></li>
+<li class="chapter" data-level="21.12.6" data-path="logistic.html"><a href="logistic.html#roc-auc"><i class="fa fa-check"></i><b>21.12.6</b> ROC-AUC</a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="logistic.html"><a href="logistic.html#предсказания-на-новых-данных"><i class="fa fa-check"></i><b>21.13</b> Предсказания на новых данных</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a><ul>
+<li class="chapter" data-level="22.1" data-path="poisson.html"><a href="poisson.html#распределение-пуассона"><i class="fa fa-check"></i><b>22.1</b> Распределение Пуассона</a></li>
+<li class="chapter" data-level="22.2" data-path="poisson.html"><a href="poisson.html#почему-обычные-регрессионные-модели-плохо-работают-на-счётных-данных"><i class="fa fa-check"></i><b>22.2</b> Почему обычные регрессионные модели плохо работают на счётных данных</a></li>
+<li class="chapter" data-level="22.3" data-path="poisson.html"><a href="poisson.html#данные-1"><i class="fa fa-check"></i><b>22.3</b> Данные</a></li>
+<li class="chapter" data-level="22.4" data-path="poisson.html"><a href="poisson.html#glm-с-пуассоновским-распределением-целевой-переменной"><i class="fa fa-check"></i><b>22.4</b> GLM с пуассоновским распределением целевой переменной</a><ul>
+<li class="chapter" data-level="22.4.1" data-path="poisson.html"><a href="poisson.html#подбор-модели-в-r"><i class="fa fa-check"></i><b>22.4.1</b> Подбор модели в R</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="poisson.html"><a href="poisson.html#интерпретация-коэффициентов-модели-1"><i class="fa fa-check"></i><b>22.5</b> Интерпретация коэффициентов модели</a></li>
+<li class="chapter" data-level="22.6" data-path="poisson.html"><a href="poisson.html#анализ-девиансы"><i class="fa fa-check"></i><b>22.6</b> Анализ девиансы</a></li>
+<li class="chapter" data-level="22.7" data-path="poisson.html"><a href="poisson.html#проверка-на-сверхдисперсию-overdispersion"><i class="fa fa-check"></i><b>22.7</b> Проверка на сверхдисперсию (overdispersion)</a></li>
+<li class="chapter" data-level="22.8" data-path="poisson.html"><a href="poisson.html#квазипуассоновские-модели"><i class="fa fa-check"></i><b>22.8</b> Квазипуассоновские модели</a><ul>
+<li class="chapter" data-level="22.8.1" data-path="poisson.html"><a href="poisson.html#квазипуассоновские-модели-в-r"><i class="fa fa-check"></i><b>22.8.1</b> Квазипуассоновские модели в R</a></li>
+</ul></li>
+<li class="chapter" data-level="22.9" data-path="poisson.html"><a href="poisson.html#особенности-работы-с-квазипуассоновскими-моделями"><i class="fa fa-check"></i><b>22.9</b> Особенности работы с квазипуассоновскими моделями</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a><ul>
+<li class="chapter" data-level="23.1" data-path="regularization.html"><a href="regularization.html#варианты-штрафа"><i class="fa fa-check"></i><b>23.1</b> Варианты штрафа</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a><ul>
+<li class="chapter" data-level="24.1" data-path="glmm.html"><a href="glmm.html#ограничения-изученных-ранее-линейных-моделей"><i class="fa fa-check"></i><b>24.1</b> Ограничения изученных ранее линейных моделей</a></li>
+<li class="chapter" data-level="24.2" data-path="glmm.html"><a href="glmm.html#случайные-vs-фиксированные-факторы"><i class="fa fa-check"></i><b>24.2</b> Случайные vs фиксированные факторы</a></li>
+<li class="chapter" data-level="24.3" data-path="glmm.html"><a href="glmm.html#почему-обычные-методы-плохо-работают"><i class="fa fa-check"></i><b>24.3</b> Почему обычные методы плохо работают?</a><ul>
+<li class="chapter" data-level="24.3.1" data-path="glmm.html"><a href="glmm.html#плохое-решение-игнорирование-группирующего-фактора"><i class="fa fa-check"></i><b>24.3.1</b> Плохое решение: игнорирование группирующего фактора</a></li>
+<li class="chapter" data-level="24.3.2" data-path="glmm.html"><a href="glmm.html#плохое-решение-включение-группирующего-фактора-как-фиксированного"><i class="fa fa-check"></i><b>24.3.2</b> Плохое решение: включение группирующего фактора как фиксированного</a></li>
+</ul></li>
+<li class="chapter" data-level="24.4" data-path="glmm.html"><a href="glmm.html#виды-glmm-и-их-математическая-формулировка"><i class="fa fa-check"></i><b>24.4</b> Виды GLMM и их математическая формулировка</a><ul>
+<li class="chapter" data-level="24.4.1" data-path="glmm.html"><a href="glmm.html#математическая-формулировка-модели-со-случайным-интерсептом"><i class="fa fa-check"></i><b>24.4.1</b> Математическая формулировка модели со случайным интерсептом</a></li>
+<li class="chapter" data-level="24.4.2" data-path="glmm.html"><a href="glmm.html#математическая-формулировка-модели-со-случайными-интерсептом-и-углом-наклона"><i class="fa fa-check"></i><b>24.4.2</b> Математическая формулировка модели со случайными интерсептом и углом наклона</a></li>
+</ul></li>
+<li class="chapter" data-level="24.5" data-path="glmm.html"><a href="glmm.html#подбор-моделей-со-смешанными-эффектами"><i class="fa fa-check"></i><b>24.5</b> Подбор моделей со смешанными эффектами</a></li>
+<li class="chapter" data-level="24.6" data-path="glmm.html"><a href="glmm.html#методы-подбора-параметров-в-смешанных-моделях"><i class="fa fa-check"></i><b>24.6</b> Методы подбора параметров в смешанных моделях</a><ul>
+<li class="chapter" data-level="24.6.1" data-path="glmm.html"><a href="glmm.html#reml-или-ml"><i class="fa fa-check"></i><b>24.6.1</b> REML или ML?</a></li>
+</ul></li>
+<li class="chapter" data-level="24.7" data-path="glmm.html"><a href="glmm.html#диагностика-модели-2"><i class="fa fa-check"></i><b>24.7</b> Диагностика модели</a><ul>
+<li class="chapter" data-level="24.7.1" data-path="glmm.html"><a href="glmm.html#индуцированные-корреляции"><i class="fa fa-check"></i><b>24.7.1</b> Индуцированные корреляции</a></li>
+<li class="chapter" data-level="24.7.2" data-path="glmm.html"><a href="glmm.html#анализ-остатков-модели"><i class="fa fa-check"></i><b>24.7.2</b> Анализ остатков модели</a></li>
+</ul></li>
+<li class="chapter" data-level="24.8" data-path="glmm.html"><a href="glmm.html#предсказания-с-помощью-моделей.-сравнение-точности-предсказаний-смешанных-и-обычных-моделей"><i class="fa fa-check"></i><b>24.8</b> Предсказания с помощью моделей. Сравнение точности предсказаний смешанных и обычных моделей</a></li>
+<li class="chapter" data-level="24.9" data-path="glmm.html"><a href="glmm.html#тестирование-гипотез"><i class="fa fa-check"></i><b>24.9</b> Тестирование гипотез</a><ul>
+<li class="chapter" data-level="24.9.1" data-path="glmm.html"><a href="glmm.html#t-тест-вальда"><i class="fa fa-check"></i><b>24.9.1</b> t-тест Вальда</a></li>
+<li class="chapter" data-level="24.9.2" data-path="glmm.html"><a href="glmm.html#тест-отношения-правдоподобий-likelihood-ratio-test-lrt"><i class="fa fa-check"></i><b>24.9.2</b> Тест отношения правдоподобий (likelihood ratio test, LRT)</a></li>
+<li class="chapter" data-level="24.9.3" data-path="glmm.html"><a href="glmm.html#lrt-для-случайных-эффектов"><i class="fa fa-check"></i><b>24.9.3</b> LRT для случайных эффектов</a></li>
+<li class="chapter" data-level="24.9.4" data-path="glmm.html"><a href="glmm.html#lrt-для-фиксированных-эффектов"><i class="fa fa-check"></i><b>24.9.4</b> LRT для фиксированных эффектов</a></li>
+</ul></li>
+<li class="chapter" data-level="24.10" data-path="glmm.html"><a href="glmm.html#сравнение-моделей-с-помощью-aic"><i class="fa fa-check"></i><b>24.10</b> Сравнение моделей с помощью AIC</a></li>
+</ul></li>
 <li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a></li>
 <li class="chapter" data-level="26" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a></li>
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
@@ -359,7 +553,619 @@
             <section class="normal" id="section-">
 <div id="glmm" class="section level1">
 <h1><span class="header-section-number">24</span> Смешанные линейные модели</h1>
+<div id="ограничения-изученных-ранее-линейных-моделей" class="section level2">
+<h2><span class="header-section-number">24.1</span> Ограничения изученных ранее линейных моделей</h2>
+<p>При построении обычных линейных моделей мы предполагаем, что наши наблюдения независимы. Однако зачастую это требование не выполняется в полной мере, и наши данные имеют некоторую группировку (clustered data), которую, возможно, мы даже не планировали.</p>
+<p>Примеры возможных группировок:</p>
+<ul>
+<li>измерения в разные периоды времени (разные партии химических реактивов, разные настройки аппаратуры)</li>
+<li>измерения в разных участках пространства (мониторы компьютеров могут различаться)</li>
+<li>повторные измерения (испытуемые / респонденты различаются между собой)</li>
+<li>измерения на разных группах испытуемых / респондентов (школьники разных классов в одной параллели могут различаться)</li>
+</ul>
+<p>Возникают <em>внутригрупповые корреляции</em> — наблюдения из одной группы более похожи друг на друга, чем наблюдениях из разных групп.</p>
+<p>Подобную структуру данных некорректно игнорировать — увеличивается вероятность ошибиться с выводами. Интуитивное решение: включить группирующие факторы в модель в качестве предикторов — технически так, безусловно, сделать можно, однако такой подход, во-первых, значительно усложные модель (чрезмерно увеличивается количество параметров), а во-вторых, ограничивает широту обобщения результатов (интерпретаировать параметры модели можно только для конкретных испытуемых / респондентов / учебных классов).</p>
+<p>Чтобы решить возникающие трудности, необходимо ввести в модель <strong>случайные факторы</strong>.</p>
+</div>
+<div id="случайные-vs-фиксированные-факторы" class="section level2">
+<h2><span class="header-section-number">24.2</span> Случайные vs фиксированные факторы</h2>
+<p>До сих пор мы работали только с <strong>фиксированными факторами</strong> — моделировали среднее значение для каждго уровня фактора. Если групп возникает много, то и моделируемых средных значений также много. Кроме того, когда мы задавали фиксированные факторы, мы считали, что сравниваемые группы фиксированные, и нас интересуют сравнения именно между ними.</p>
+<p>Однако когда группировка возникает не как результат дизайна исследования, а как некоторый побочный результат (то есть, мы не планировали изучать фактор, по которому разделилась наша выборка), нам не важны конкретные значения интерсептов в каждой из групп. Мы можем представить данный фактор как случайную величину (величину «поправки»), и оценить дисперсию между уровнями группирующего фактора. Это и есть <strong>случайные факторы</strong>.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="17%" />
+<col width="45%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Свойства</th>
+<th align="left">Фиксированные факторы</th>
+<th align="left">Случайные факторы</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Уровни фактора</td>
+<td align="left">Фиксированные, заранее определенные, потенциально воспроизводимые</td>
+<td align="left">Случайная выборка из всех возможных уровней</td>
+</tr>
+<tr class="even">
+<td align="left">Используются для тестирования гипотез</td>
+<td align="left">О средних значениях ЗП на разных уровнях фактора<span class="math inline">\(H_0: \mu_1 = \mu_2 = \dots = \mu\)</span></td>
+<td align="left">О дисперсии ЗП между уровнями фактора <span class="math inline">\(H_0: \sigma^2_r = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Выводы можно экстраполировать</td>
+<td align="left">Только на уровни анализа</td>
+<td align="left">На все возможные уровни</td>
+</tr>
+</tbody>
+</table>
+<p><font size = 2> <a href="https://www.coursera.org/learn/smeshannye-lineynye-modeli">Источник</a> </font></p>
+<p>На один и тот же фактор можно смотреть и как на случайный, и как на фиксированный в зависимости от задач исследователя. Так как мы хотим моделировать дисперсию, то у случайного фактора должно быть минимум пять градаций.</p>
+</div>
+<div id="почему-обычные-методы-плохо-работают" class="section level2">
+<h2><span class="header-section-number">24.3</span> Почему обычные методы плохо работают?</h2>
+<p>Подгружаем <a href="https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv">данные</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.1.0     ✓ dplyr   1.0.5
+## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">share &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/mk_ggplot2/master/sharexp_data.csv&#39;</span>)</a></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   trialtype = col_character(),
+##   platform = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">str</span>(share)</a></code></pre></div>
+<pre><code>## spec_tbl_df [16,200 × 22] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ trialtype: chr [1:16200] &quot;tray&quot; &quot;tray&quot; &quot;tray&quot; &quot;tray&quot; ...
+##  $ setsize  : num [1:16200] 8 8 8 8 8 8 8 8 8 8 ...
+##  $ time1    : num [1:16200] 1.67 1.13 2.6 2.61 1.59 ...
+##  $ click1x  : num [1:16200] -227 -69 60 199 -241 -51 99 213 -201 -70 ...
+##  $ click1y  : num [1:16200] 202 231 195 213 43 59 62 46 -123 -82 ...
+##  $ time2    : num [1:16200] 1.28 1.061 0.963 0.863 0.931 ...
+##  $ click2x  : num [1:16200] 14 -44 17 -26 -25 10 -29 -27 -25 -19 ...
+##  $ click2y  : num [1:16200] -351 -392 -361 -356 -397 -383 -372 -353 -385 -394 ...
+##  $ id       : num [1:16200] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ platform : chr [1:16200] &quot;ios&quot; &quot;ios&quot; &quot;ios&quot; &quot;ios&quot; ...
+##  $ posx1    : num [1:16200] -238 -63 66 203 -243 -60 73 213 -229 -84 ...
+##  $ posy1    : num [1:16200] 202 226 217 218 59 90 66 52 -93 -79 ...
+##  $ posxmin1 : num [1:16200] -313 -138 -9 128 -318 -135 -2 138 -304 -159 ...
+##  $ posxmax1 : num [1:16200] -163 12 141 278 -168 15 148 288 -154 -9 ...
+##  $ posymin1 : num [1:16200] 127 151 142 143 -16 15 -9 -23 -168 -154 ...
+##  $ posymax1 : num [1:16200] 277 301 292 293 134 165 141 127 -18 -4 ...
+##  $ posx2    : num [1:16200] 450 450 450 450 450 450 450 450 450 450 ...
+##  $ posy2    : num [1:16200] -350 -350 -350 -350 -350 -350 -350 -350 -350 -350 ...
+##  $ posxmin2 : num [1:16200] 350 350 350 350 350 350 350 350 350 350 ...
+##  $ posxmax2 : num [1:16200] 550 550 550 550 550 550 550 550 550 550 ...
+##  $ posymin2 : num [1:16200] -425 -425 -425 -425 -425 -425 -425 -425 -425 -425 ...
+##  $ posymax2 : num [1:16200] -275 -275 -275 -275 -275 -275 -275 -275 -275 -275 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   trialtype = col_character(),
+##   ..   setsize = col_double(),
+##   ..   time1 = col_double(),
+##   ..   click1x = col_double(),
+##   ..   click1y = col_double(),
+##   ..   time2 = col_double(),
+##   ..   click2x = col_double(),
+##   ..   click2y = col_double(),
+##   ..   id = col_double(),
+##   ..   platform = col_character(),
+##   ..   posx1 = col_double(),
+##   ..   posy1 = col_double(),
+##   ..   posxmin1 = col_double(),
+##   ..   posxmax1 = col_double(),
+##   ..   posymin1 = col_double(),
+##   ..   posymax1 = col_double(),
+##   ..   posx2 = col_double(),
+##   ..   posy2 = col_double(),
+##   ..   posxmin2 = col_double(),
+##   ..   posxmax2 = col_double(),
+##   ..   posymin2 = col_double(),
+##   ..   posymax2 = col_double()
+##   .. )</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">trialtype =</span> <span class="kw">as_factor</span>(trialtype),</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">                 <span class="dt">time1 =</span> <span class="dv">1000</span> <span class="op">*</span><span class="st"> </span>time1,</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">                 <span class="dt">id =</span> <span class="kw">as_factor</span>(id),</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4">                 <span class="dt">platform =</span> <span class="kw">as_factor</span>(platform)) -&gt;<span class="st"> </span>share</a></code></pre></div>
+<p>Это данные, которые мы уже обсчитали вдоль и поперёк, но ещё не совсем. Поведенческий эксперимента, в котором пользователи Android и iOS искали иконки «share» обеих платформ среди универсальных иконок. Короче, зрительный поиск.</p>
+<p>Нас будут интересовать следующие переменные:</p>
+<ul>
+<li><code>trialtype</code> — тип пробы (<code>tray</code>/<code>dots</code>/<code>both</code>)</li>
+<li><code>setsize</code> — количество стимулов в пробе (<code>8</code>/<code>12</code>/<code>16</code>)</li>
+<li><code>time1</code> — время первого клика</li>
+<li><code>id</code> — индентификатор испытуемого</li>
+<li><code>platform</code> — платформа смартфона (<code>Android</code>/<code>iOS</code>)</li>
+</ul>
+<p>В нашем случае <code>id</code> — это наш группирующий фактор (повторные измерения).</p>
+<p>Перед построением моделей сабсетнем данные, чтобы получать осмысленные результаты:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(trialtype <span class="op">!=</span><span class="st"> &#39;both&#39;</span>) -&gt;<span class="st"> </span>share</a></code></pre></div>
+<div id="плохое-решение-игнорирование-группирующего-фактора" class="section level3">
+<h3><span class="header-section-number">24.3.1</span> Плохое решение: игнорирование группирующего фактора</h3>
+<p>Построим модель без учета повторных измерений.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">fit1 &lt;-<span class="st"> </span><span class="kw">glm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize, <span class="dt">family =</span> Gamma, <span class="dt">data =</span> share)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="kw">summary</span>(fit1)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = time1 ~ setsize, family = Gamma, data = share)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.0261  -0.3816  -0.1465   0.1638   2.8301  
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  8.814e-04  1.204e-05   73.18   &lt;2e-16 ***
+## setsize     -2.382e-05  9.093e-07  -26.20   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for Gamma family taken to be 0.2708188)
+## 
+##     Null deviance: 2353.4  on 10799  degrees of freedom
+## Residual deviance: 2165.1  on 10798  degrees of freedom
+## AIC: 172083
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<p>Визуализируем модель:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(setsize, time1)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>)</a></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="wlm2021-book_files/figure-html/glmm1-1.png" width="672" /></p>
+<p>Что плохо?</p>
+<ol style="list-style-type: decimal">
+<li>Завышен объем выборки (10800 наблюдений вместо 36 испытуемых) → Увеличивается вероятность ошибки I рода.</li>
+<li>Нарушено условие независимости наблюдений</li>
+</ol>
+</div>
+<div id="плохое-решение-включение-группирующего-фактора-как-фиксированного" class="section level3">
+<h3><span class="header-section-number">24.3.2</span> Плохое решение: включение группирующего фактора как фиксированного</h3>
+<p>Построим такую модель:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">fit2 &lt;-<span class="st"> </span><span class="kw">glm</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>id, <span class="dt">family =</span> Gamma, <span class="dt">data =</span> share)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">summary</span>(fit2)</a></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = time1 ~ setsize + id, family = Gamma, data = share)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.0555  -0.3306  -0.1247   0.1530   3.2899  
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  8.260e-04  1.790e-05  46.149  &lt; 2e-16 ***
+## setsize     -2.288e-05  8.071e-07 -28.351  &lt; 2e-16 ***
+## id2          4.754e-06  2.070e-05   0.230 0.818339    
+## id3         -1.432e-05  2.032e-05  -0.705 0.481055    
+## id4          5.838e-05  2.178e-05   2.680 0.007374 ** 
+## id5          1.665e-04  2.409e-05   6.910 5.11e-12 ***
+## id6          1.828e-04  2.445e-05   7.475 8.31e-14 ***
+## id7         -8.840e-05  1.893e-05  -4.670 3.05e-06 ***
+## id8         -7.699e-05  1.914e-05  -4.023 5.77e-05 ***
+## id9          2.469e-04  2.589e-05   9.536  &lt; 2e-16 ***
+## id10         2.990e-04  2.709e-05  11.039  &lt; 2e-16 ***
+## id11         1.536e-04  2.381e-05   6.451 1.16e-10 ***
+## id12         1.460e-04  2.364e-05   6.174 6.90e-10 ***
+## id13         9.434e-05  2.253e-05   4.187 2.85e-05 ***
+## id14         5.381e-05  2.169e-05   2.481 0.013119 *  
+## id15         1.033e-04  2.272e-05   4.545 5.55e-06 ***
+## id16         1.351e-04  2.341e-05   5.771 8.09e-09 ***
+## id17         1.894e-05  2.098e-05   0.903 0.366593    
+## id18         2.045e-05  2.101e-05   0.974 0.330325    
+## id19        -9.739e-05  1.877e-05  -5.189 2.15e-07 ***
+## id20        -2.869e-05  2.004e-05  -1.432 0.152291    
+## id21        -2.063e-04  1.698e-05 -12.149  &lt; 2e-16 ***
+## id22         6.137e-05  2.184e-05   2.810 0.004969 ** 
+## id23         1.942e-04  2.471e-05   7.861 4.19e-15 ***
+## id24        -7.991e-05  1.908e-05  -4.187 2.84e-05 ***
+## id25         1.759e-05  2.095e-05   0.840 0.401129    
+## id26         1.166e-04  2.301e-05   5.069 4.07e-07 ***
+## id27         2.701e-04  2.642e-05  10.223  &lt; 2e-16 ***
+## id28        -5.144e-06  2.050e-05  -0.251 0.801878    
+## id29         1.368e-04  2.344e-05   5.834 5.55e-09 ***
+## id30         7.956e-05  2.222e-05   3.580 0.000345 ***
+## id31        -1.538e-18  2.060e-05   0.000 1.000000    
+## id32         9.434e-05  2.253e-05   4.187 2.85e-05 ***
+## id33         5.381e-05  2.169e-05   2.481 0.013119 *  
+## id34         1.665e-04  2.409e-05   6.910 5.11e-12 ***
+## id35         2.900e-05  2.118e-05   1.369 0.171045    
+## id36         2.900e-05  2.118e-05   1.369 0.171045    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for Gamma family taken to be 0.2214734)
+## 
+##     Null deviance: 2353.4  on 10799  degrees of freedom
+## Residual deviance: 1765.0  on 10763  degrees of freedom
+## AIC: 169880
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<p>Визуализируем:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(setsize, time1, <span class="dt">color =</span> id)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>)</a></code></pre></div>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="wlm2021-book_files/figure-html/glmm2-1.png" width="672" /></p>
+<p>Что плохо?</p>
+<ol style="list-style-type: decimal">
+<li>37 предикторов (ок, у нас, конечно, 10800 наблюдений, это нас может спасти, но в общем случае нам может не хватить мощности на тестирование такого количества предикторов)</li>
+<li>Нужно минимум 20 наблюдений на каждый параметр (опять же, нам повезло, но в общем случае может и не хватить)</li>
+<li>Широта обобщения — сравниваем только представленных испытуемых, теряется универсальность модели.</li>
+</ol>
+</div>
+</div>
+<div id="виды-glmm-и-их-математическая-формулировка" class="section level2">
+<h2><span class="header-section-number">24.4</span> Виды GLMM и их математическая формулировка</h2>
+<p>Мы строим прямые — модели же линейные. А прямая задается двумя параметрами — интерсептом и углом наклона (slope). Эти параметры мы оцениваем в качестве фиксированных факторов. Но так как других у нас нет, то эти же параметры оцениваются и как случайные факторы. То есть, случайные факторы как бы дополняют фиксированные.</p>
+<div id="математическая-формулировка-модели-со-случайным-интерсептом" class="section level3">
+<h3><span class="header-section-number">24.4.1</span> Математическая формулировка модели со случайным интерсептом</h3>
+<p><span class="math display">\[ y_{ij} = \beta_0 + \beta_1 x_{ij} + \eta_i + \varepsilon_{ij}\]</span>
+<span class="math display">\[ \eta_i \thicksim \mathcal{N}(0, \, \sigma^2_\eta) \]</span>
+<span class="math display">\[ \varepsilon_{ij} \thicksim \mathcal{N}(0, \, \sigma^2) \]</span>
+<span class="math inline">\(i\)</span> — наблюдение (респондент), <span class="math inline">\(j\)</span> — уровни (значения) предиктора</p>
+</div>
+<div id="математическая-формулировка-модели-со-случайными-интерсептом-и-углом-наклона" class="section level3">
+<h3><span class="header-section-number">24.4.2</span> Математическая формулировка модели со случайными интерсептом и углом наклона</h3>
+<p><span class="math display">\[ y_{ij} = \beta_0 + \beta_1 x_{ij} + \eta_{0i} + \eta_{1ij} x_{ij}+ \varepsilon_{ij}\]</span>
+<span class="math display">\[ \eta_{0i} \thicksim \mathcal{N}(0, \, \sigma^2_{\eta_0}) \]</span>
+<span class="math display">\[ \eta_{1ij} \thicksim \mathcal{N}(0, \, \sigma^2_{\eta_1}) \]</span>
+<span class="math display">\[ \varepsilon_{ij} \thicksim \mathcal{N}(0, \, \sigma^2) \]</span>
+<span class="math inline">\(i\)</span> — наблюдение (респондент), <span class="math inline">\(j\)</span> — уровни (значения) предиктора</p>
+</div>
+</div>
+<div id="подбор-моделей-со-смешанными-эффектами" class="section level2">
+<h2><span class="header-section-number">24.5</span> Подбор моделей со смешанными эффектами</h2>
+<p>Посмотрим на график:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(setsize, time1, <span class="dt">shape =</span> id)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;point&#39;</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(.<span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;line&#39;</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(.<span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="st">  </span><span class="kw">scale_shape_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="dv">65</span><span class="op">:</span><span class="dv">90</span>, <span class="dv">97</span><span class="op">:</span><span class="dv">107</span>))</a></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/glmm3-1.png" width="672" /></p>
+<p>Для подбора смешанных моделей существует несколько пакетов. Мы будем использовать <code>lmer4</code>.</p>
+<p>Модель со случайным интерсептом:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">library</span>(lme4)</a></code></pre></div>
+<pre><code>## Loading required package: Matrix</code></pre>
+<pre><code>## 
+## Attaching package: &#39;Matrix&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:tidyr&#39;:
+## 
+##     expand, pack, unpack</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">mix1 &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">|</span>id), <span class="dt">data =</span> share)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">summary</span>(mix1)</a></code></pre></div>
+<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
+## Formula: time1 ~ setsize + (1 | id)
+##    Data: share
+## 
+## REML criterion at convergence: 176564.1
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.2221 -0.5925 -0.2073  0.3089 12.0561 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  id       (Intercept) 125046   353.6   
+##  Residual             728614   853.6   
+## Number of obs: 10800, groups:  id, 36
+## 
+## Fixed effects:
+##             Estimate Std. Error t value
+## (Intercept)  881.446     66.721   13.21
+## setsize       68.928      2.515   27.41
+## 
+## Correlation of Fixed Effects:
+##         (Intr)
+## setsize -0.452</code></pre>
+<p>Модель со случайными интерсептом и углом наклона:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1">mix2 &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>setsize<span class="op">|</span>id), <span class="dt">data =</span> share)</a></code></pre></div>
+<pre><code>## boundary (singular) fit: see ?isSingular</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">summary</span>(mix2)</a></code></pre></div>
+<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
+## Formula: time1 ~ setsize + (1 + setsize | id)
+##    Data: share
+## 
+## REML criterion at convergence: 176475.3
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.6529 -0.5717 -0.2156  0.3044 12.1128 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev. Corr
+##  id       (Intercept)   4033.5  63.51       
+##           setsize        584.5  24.18   1.00
+##  Residual             722516.4 850.01       
+## Number of obs: 10800, groups:  id, 36
+## 
+## Fixed effects:
+##             Estimate Std. Error t value
+## (Intercept)  881.446     32.895   26.80
+## setsize       68.928      4.744   14.53
+## 
+## Correlation of Fixed Effects:
+##         (Intr)
+## setsize -0.209
+## optimizer (nloptwrap) convergence code: 0 (OK)
+## boundary (singular) fit: see ?isSingular</code></pre>
+<p>Итак, видно что аутпут значительно отличается от тех, что мы видели ранее. К этому мы еще вернемся. Чтобы более содержательно поговорить о том, что получилось, необходимо понять, как подбираются параметры в смешанных моделях.</p>
+</div>
+<div id="методы-подбора-параметров-в-смешанных-моделях" class="section level2">
+<h2><span class="header-section-number">24.6</span> Методы подбора параметров в смешанных моделях</h2>
+<p>Параметры в смешанных моделях могут подбираться двумя методами. Первый из них — <strong>метод максимального правдоподобия (maximum likelihood, ML)</strong>.</p>
+<p><strong>Правдоподобие (likelihood)</strong> — способ измерить соответствие имеющихся данных тому, что можно получить при определенных значениях параметров модели. Оно представляет собой произведение вероятностей получения каждой из точек данных:</p>
+<p><span class="math display">\[
+L(\theta | \mathrm{data}) = \prod_{i=1}^n f(\mathrm{data}|\theta),
+\]</span></p>
+<p>где <span class="math inline">\(f(\mathrm{data}|\theta)\)</span> — функция распределения с параметрами <span class="math inline">\(\theta\)</span>.</p>
+<p>Параметры модели должны максимизировать значения [логарифма] правдоподобия, т.е.</p>
+<p><span class="math display">\[
+L(\theta | \mathrm{data}) \rightarrow \max
+\]</span></p>
+<p>Однако для упрощения вычислений используют логарифмы правдоподобий (loglikelihood) и максимизируют их.</p>
+<p><span class="math display">\[
+\ln L(\theta | \mathrm{data}) \rightarrow \max
+\]</span></p>
+<p>Аналитически такие задачи решаются редко, чаще используются методы численной оптимизации.</p>
+<p>Однако когда мы пытаемся оценить дисперсию методом максимального правдоподобия, оценки получаются смещенными. Это происходит потому, что сразу приходится оценивать и <span class="math inline">\(\beta\)</span> и дисперсии.</p>
+<p>Этого можно избежать, применяя метод <strong>ограниченного максимального правдоподобия (restricted maximum likelihood, REML)</strong>. Данный метод позволяет с помощью математических преобразования занулить <span class="math inline">\(\beta\)</span> и получить несмещенные оценки дисперсий.</p>
+<p>REML-оценки <span class="math inline">\(\beta\)</span> стремятся к ML-оценкам при увеличении объема выборки.</p>
+<div id="reml-или-ml" class="section level3">
+<h3><span class="header-section-number">24.6.1</span> REML или ML?</h3>
+<ul>
+<li>Если нужны точные оценки фиксированных эффектов — ML.</li>
+<li>Если нужны точные оценки случайных эффектов — REML.</li>
+<li>Если нужно работать с правдоподобиями — следите, чтобы в моделях, подобранных REML была одинаковая фиксированная часть.</li>
+<li>Для обобщенных негауссовских смешанных линейных моделей REML не определен — там используется ML.</li>
+</ul>
+</div>
+</div>
+<div id="диагностика-модели-2" class="section level2">
+<h2><span class="header-section-number">24.7</span> Диагностика модели</h2>
+<div id="индуцированные-корреляции" class="section level3">
+<h3><span class="header-section-number">24.7.1</span> Индуцированные корреляции</h3>
+<p>Появление в модели случайного фактора позволяет учесть взаимосвязь наблюдений для каждого из респондентов — «индуцированные» корреляции.</p>
+<p>Посмотрим внимательно на случайную часть модели.</p>
+<ul>
+<li>Случайные эффекты, распределенные нормально со средним 0 и некоторой дисперсией</li>
+</ul>
+<p><span class="math display">\[ \eta \thicksim \mathcal{N}(0, \, \sigma^2_\eta) \]</span></p>
+<ul>
+<li>Остатки модели, <em>независимые</em> распределенные нормально со средним 0 и некоторой дисперсией</li>
+</ul>
+<p><span class="math display">\[ \varepsilon \underset{\mathrm{i.i.d.}}{\thicksim} \mathcal{N}(0, \, \sigma^2) \]</span></p>
+<p>Путем математических преобразований матриц ковариаций можно получить, что <strong>корреляция между наблюдениями одного субъекта</strong> равна следующему выражению. Эта характеристика называется <strong>коэффициент внутриклассовой корреляции (intra-class correlation, ICC)</strong>.</p>
+<p><span class="math display">\[ \mathrm{ICC} = \frac{\sigma^2_\eta}{(\sigma^2_\eta + \sigma^2)}\]</span></p>
+<p>Таким образом, ICC — это способ измерить, насколько коррелируют друг с другом наблюдения из одной и той же группы, заданной случайным фактором. Значения ICC интерпретируются аналогично коэффициенту корреляции.</p>
+<p>Если ICC низкий, то наблюдения очень разные внутри каждой из групп. Значит, чтобы надежно оценить эффект этого случайного фактора, нужно брать больше наблюдений в группе.</p>
+<p>Если ICC высокий, то наблюдения очень похожи внутри каждой из групп, заданных случайным фактором. Значит, можно брать меньше наблюдений в группе.</p>
+<p>Это можно использовать при определении объема выборки (при анализе пилотных данных).</p>
+<p>Посчитает ICC для модели со случайным интерсептом. Для этого воспользуемся одноименной функцией из пакета <code>sjstats</code>:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="co"># install.packages(&#39;performance&#39;)</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">performance<span class="op">::</span><span class="kw">icc</span>(mix1)</a></code></pre></div>
+<pre><code>## # Intraclass Correlation Coefficient
+## 
+##      Adjusted ICC: 0.146
+##   Conditional ICC: 0.138</code></pre>
+</div>
+<div id="анализ-остатков-модели" class="section level3">
+<h3><span class="header-section-number">24.7.2</span> Анализ остатков модели</h3>
+<p>Нужно провести анализ остатков модели, чтобы понять, можно ли с ней работать дальше. Одна из потенциальных проблем — время реакции разных субъектов может меняться непараллельно. Возможно, модель придется переформулировать.</p>
+<p>Подготовим данные для анализа остатков.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw">tibble</span>(share,</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2">              <span class="dt">fitted =</span> <span class="kw">fitted</span>(mix1),</a>
+<a class="sourceLine" id="cb34-3" data-line-number="3">              <span class="dt">resid =</span> <span class="kw">resid</span>(mix1, <span class="dt">type =</span> <span class="st">&#39;pearson&#39;</span>),</a>
+<a class="sourceLine" id="cb34-4" data-line-number="4">              <span class="dt">sresid =</span> <span class="kw">resid</span>(mix1, <span class="dt">type =</span> <span class="st">&#39;pearson&#39;</span>, <span class="dt">scaled =</span> <span class="ot">TRUE</span>))</a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="kw">str</span>(res)</a></code></pre></div>
+<pre><code>## tibble [10,800 × 25] (S3: tbl_df/tbl/data.frame)
+##  $ trialtype: Factor w/ 3 levels &quot;tray&quot;,&quot;dots&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ setsize  : num [1:10800] 8 8 8 8 8 8 8 8 8 8 ...
+##  $ time1    : num [1:10800] 1672 1126 2595 2609 1593 ...
+##  $ click1x  : num [1:10800] -227 -69 60 199 -241 -51 99 213 -201 -70 ...
+##  $ click1y  : num [1:10800] 202 231 195 213 43 59 62 46 -123 -82 ...
+##  $ time2    : num [1:10800] 1.28 1.061 0.963 0.863 0.931 ...
+##  $ click2x  : num [1:10800] 14 -44 17 -26 -25 10 -29 -27 -25 -19 ...
+##  $ click2y  : num [1:10800] -351 -392 -361 -356 -397 -383 -372 -353 -385 -394 ...
+##  $ id       : Factor w/ 36 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ platform : Factor w/ 2 levels &quot;ios&quot;,&quot;android&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ posx1    : num [1:10800] -238 -63 66 203 -243 -60 73 213 -229 -84 ...
+##  $ posy1    : num [1:10800] 202 226 217 218 59 90 66 52 -93 -79 ...
+##  $ posxmin1 : num [1:10800] -313 -138 -9 128 -318 -135 -2 138 -304 -159 ...
+##  $ posxmax1 : num [1:10800] -163 12 141 278 -168 15 148 288 -154 -9 ...
+##  $ posymin1 : num [1:10800] 127 151 142 143 -16 15 -9 -23 -168 -154 ...
+##  $ posymax1 : num [1:10800] 277 301 292 293 134 165 141 127 -18 -4 ...
+##  $ posx2    : num [1:10800] 450 450 450 450 450 450 450 450 450 450 ...
+##  $ posy2    : num [1:10800] -350 -350 -350 -350 -350 -350 -350 -350 -350 -350 ...
+##  $ posxmin2 : num [1:10800] 350 350 350 350 350 350 350 350 350 350 ...
+##  $ posxmax2 : num [1:10800] 550 550 550 550 550 550 550 550 550 550 ...
+##  $ posymin2 : num [1:10800] -425 -425 -425 -425 -425 -425 -425 -425 -425 -425 ...
+##  $ posymax2 : num [1:10800] -275 -275 -275 -275 -275 -275 -275 -275 -275 -275 ...
+##  $ fitted   : Named num [1:10800] 1569 1569 1569 1569 1569 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10800] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ resid    : Named num [1:10800] 102.5 -443.3 1026 1040 23.3 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10800] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ sresid   : Named num [1:10800] 0.1201 -0.5194 1.202 1.2184 0.0273 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:10800] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...</code></pre>
+<p>Визуализируем стандартизованные остатки.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">gg_res &lt;-<span class="st"> </span><span class="kw">ggplot</span>(res, <span class="kw">aes</span>(<span class="dt">y =</span> sresid)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb36-3" data-line-number="3">gg_res <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> fitted))</a></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/glmm6-1.png" width="672" />
+На графике ответливо визуализируется воронкообразный паттерн, что свидетельструет о гетерогенности дисперсий — не выполнено условие гомоскедастичности. Кроме того, наблюдаются большие остатки. Во-первых, помним о том, что мы не чистили данные, а во-вторых, все равно для многих наблюдений модель плохо работает.</p>
+<p>Визуализируем зависимость остатков от факторов модели.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">gg_res <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(share<span class="op">$</span>setsize)))</a></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/glmm4-1.png" width="672" /></p>
+<p>Вновь наблюдается гетерогенность дисперсий и большие остатки.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1">gg_res <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(share<span class="op">$</span>id)))</a></code></pre></div>
+<p><img src="wlm2021-book_files/figure-html/glmm5-1.png" width="672" /></p>
+<p>Опять видим гетерогенность дисперсий и большие остатки.</p>
+</div>
+</div>
+<div id="предсказания-с-помощью-моделей.-сравнение-точности-предсказаний-смешанных-и-обычных-моделей" class="section level2">
+<h2><span class="header-section-number">24.8</span> Предсказания с помощью моделей. Сравнение точности предсказаний смешанных и обычных моделей</h2>
+<p>Сделаем новый датафрей для предсказаний:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">new_share &lt;-<span class="st"> </span>share <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(setsize, id)</a></code></pre></div>
+<p>Запишем предсказания моделей:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">new_share<span class="op">$</span>pred_mix &lt;-<span class="st"> </span><span class="kw">predict</span>(mix1, new_share, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>)</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">new_share<span class="op">$</span>pred_lm &lt;-<span class="st"> </span><span class="kw">predict</span>(fit1, new_share, <span class="dt">type =</span> <span class="st">&#39;response&#39;</span>)</a></code></pre></div>
+<p>Посчитаем ошибки моделей:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1">err_mix &lt;-<span class="st"> </span><span class="kw">sum</span>((new_share<span class="op">$</span>pred_mix <span class="op">-</span><span class="st"> </span>share<span class="op">$</span>time1)<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">err_lm &lt;-<span class="st"> </span><span class="kw">sum</span>((new_share<span class="op">$</span>pred_lm <span class="op">-</span><span class="st"> </span>share<span class="op">$</span>time1)<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">err_mix</a></code></pre></div>
+<pre><code>## [1] 7842558975</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1">err_lm</a></code></pre></div>
+<pre><code>## [1] 9184035804</code></pre>
+<p>Ошибка, конечно же, огромная, поскольку мы включили в модель только один предиктор. К тому же, мы выяснили, что разброс данных велик. Однако главное, что нам хотелось понять с помощью этих манипуляций — ошибка модели со случайным эффектом меньше, чем аналогичной модели, но с включением респондента в качестве фиксированного предиктора.
+Вот пруф:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1">err_mix <span class="op">&lt;</span><span class="st"> </span>err_lm</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Такие дела.</p>
+</div>
+<div id="тестирование-гипотез" class="section level2">
+<h2><span class="header-section-number">24.9</span> Тестирование гипотез</h2>
+<p>С помощью смешанных моделей можно тестировать статистические гипотезы. Но есть проблема: тесты, применяемые для GLM (t- и z-тесты Вальда, LRT) дают <em>приблизительные</em> оценки. Для отбора моделей используют информационные критерии (AIC).</p>
+<p>«Золотой стандарт» точности результатов тестов можно получить с помощью параметрического бутстрепа (см. Faraway, 2017).</p>
+<div id="t-тест-вальда" class="section level3">
+<h3><span class="header-section-number">24.9.1</span> t-тест Вальда</h3>
+<p><span class="math display">\[
+H_0: \beta_k = 0 \\
+H_1: \beta_k \neq 0 \\
+\\
+t = \frac{b_k - \beta_k}{SE_{b_k}} = \frac{b_k}{SE_{b_k}} \thicksim \mathrm t(n-p)
+\]</span></p>
+<p>Так как эти тесты дают лишь приблизительные оценки, их значения даже не представлены в <code>summary()</code> модели.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">summary</span>(mix1)</a></code></pre></div>
+<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
+## Formula: time1 ~ setsize + (1 | id)
+##    Data: share
+## 
+## REML criterion at convergence: 176564.1
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.2221 -0.5925 -0.2073  0.3089 12.0561 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  id       (Intercept) 125046   353.6   
+##  Residual             728614   853.6   
+## Number of obs: 10800, groups:  id, 36
+## 
+## Fixed effects:
+##             Estimate Std. Error t value
+## (Intercept)  881.446     66.721   13.21
+## setsize       68.928      2.515   27.41
+## 
+## Correlation of Fixed Effects:
+##         (Intr)
+## setsize -0.452</code></pre>
+<p>Их можно вернуть — и так часто делают. <strong>Однако при интерпретации получаемых результатов всегда нужно помнить, что это только приблизительные оценки!</strong></p>
+<p>Потребуется пакет <code>lmerTest</code>:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="kw">library</span>(lmerTest)</a></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;lmerTest&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:lme4&#39;:
+## 
+##     lmer</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     step</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">mix1<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">|</span>id), <span class="dt">data =</span> share)</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="kw">summary</span>(mix1<span class="fl">.1</span>)</a></code></pre></div>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: time1 ~ setsize + (1 | id)
+##    Data: share
+## 
+## REML criterion at convergence: 176564.1
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.2221 -0.5925 -0.2073  0.3089 12.0561 
+## 
+## Random effects:
+##  Groups   Name        Variance Std.Dev.
+##  id       (Intercept) 125046   353.6   
+##  Residual             728614   853.6   
+## Number of obs: 10800, groups:  id, 36
+## 
+## Fixed effects:
+##              Estimate Std. Error        df t value Pr(&gt;|t|)    
+## (Intercept)   881.446     66.721    55.308   13.21   &lt;2e-16 ***
+## setsize        68.928      2.515 10763.000   27.41   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##         (Intr)
+## setsize -0.452</code></pre>
+</div>
+<div id="тест-отношения-правдоподобий-likelihood-ratio-test-lrt" class="section level3">
+<h3><span class="header-section-number">24.9.2</span> Тест отношения правдоподобий (likelihood ratio test, LRT)</h3>
+<p><span class="math display">\[ \mathrm{LRT} = 2 \ln \left( \frac{L_\mathrm{M_1}}{L_\mathrm{M_2}} \right) = 2 (\ln L_\mathrm{M_1} - L_\mathrm{M_2}), \]</span>
+где <span class="math inline">\(\mathrm{M}_1,\, \mathrm{M}_2\)</span> — вложенные модели (<span class="math inline">\(\mathrm{M}_1\)</span> — более полная, <span class="math inline">\(\mathrm{M}_2\)</span> — уменьшенная),
+<span class="math inline">\(L_\mathrm{M_1}, \, L_\mathrm{M_2}\)</span> — правдоподобия.</p>
+<p>Распределенеи разницы логарифмов правдоподобий аппроксиммируется распределением <span class="math inline">\(\chi^2\)</span> с числом степеней свободы <span class="math inline">\(\mathrm{df} = \mathrm{df}_\mathrm{M_2} - \mathrm{df}_\mathrm{M_1}\)</span>.</p>
+</div>
+<div id="lrt-для-случайных-эффектов" class="section level3">
+<h3><span class="header-section-number">24.9.3</span> LRT для случайных эффектов</h3>
+<p>Требуются модели <strong>с одинаковой фиксированной частью</strong>, подобранные <strong>REML</strong>. Уровни значимости будут завышены. <strong>Обычно тесты не делают</strong>, а набор случайных эффектов определяется структурой данных.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">mix1 &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">|</span>id), <span class="dt">data =</span> share, <span class="dt">REML =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb55-2" data-line-number="2">mix2 &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>setsize<span class="op">|</span>id), <span class="dt">data =</span> share, <span class="dt">REML =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## boundary (singular) fit: see ?isSingular</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">anova</span>(mix1, mix2, <span class="dt">refit =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>## Data: share
+## Models:
+## mix1: time1 ~ setsize + (1 | id)
+## mix2: time1 ~ setsize + (1 + setsize | id)
+##      npar    AIC    BIC logLik deviance  Chisq Df Pr(&gt;Chisq)    
+## mix1    4 176572 176601 -88282   176564                         
+## mix2    6 176487 176531 -88238   176475 88.784  2  &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Получается, что время у разных респондентов по-разному зависит от сетсайза.</p>
+</div>
+<div id="lrt-для-фиксированных-эффектов" class="section level3">
+<h3><span class="header-section-number">24.9.4</span> LRT для фиксированных эффектов</h3>
+<p>Требуются модели <strong>с одинаковой случайной частью</strong>, подобранные <strong>ML</strong>. Уровни значимости будут занижены.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">mix3.null &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">|</span>id), <span class="dt">data =</span> share, <span class="dt">REML =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb59-2" data-line-number="2">mix3 &lt;-<span class="st"> </span><span class="kw">lmer</span>(time1 <span class="op">~</span><span class="st"> </span>setsize <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">|</span>id), <span class="dt">data =</span> share, <span class="dt">REML =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb59-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="kw">anova</span>(mix3.null, mix3)</a></code></pre></div>
+<pre><code>## Data: share
+## Models:
+## mix3.null: time1 ~ 1 + (1 | id)
+## mix3: time1 ~ setsize + (1 | id)
+##           npar    AIC    BIC logLik deviance  Chisq Df Pr(&gt;Chisq)    
+## mix3.null    3 177310 177332 -88652   177304                         
+## mix3         4 176586 176615 -88289   176578 726.19  1  &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Время реакции зависит от сетсайза.</p>
+</div>
+</div>
+<div id="сравнение-моделей-с-помощью-aic" class="section level2">
+<h2><span class="header-section-number">24.10</span> Сравнение моделей с помощью AIC</h2>
+<p>Можно сравнивать вложенные или невложенные модели, подобранные ML, с одинаковой случайной частью.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">AIC</span>(mix3.null, mix3)</a></code></pre></div>
+<pre><code>##           df      AIC
+## mix3.null  3 177309.9
+## mix3       4 176585.8</code></pre>
+<p>AIC падает, что говорит о том, что модель становится лучше.</p>
 
+</div>
 </div>
             </section>
 
@@ -417,6 +1223,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
