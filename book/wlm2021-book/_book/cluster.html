@@ -50,6 +50,9 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -466,7 +469,26 @@
 </ul></li>
 <li class="chapter" data-level="24.10" data-path="glmm.html"><a href="glmm.html#сравнение-моделей-с-помощью-aic"><i class="fa fa-check"></i><b>24.10</b> Сравнение моделей с помощью AIC</a></li>
 </ul></li>
-<li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a></li>
+<li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a><ul>
+<li class="chapter" data-level="25.1" data-path="cluster.html"><a href="cluster.html#геометрическая-интерпретация-задачи-кластеризации"><i class="fa fa-check"></i><b>25.1</b> Геометрическая интерпретация задачи кластеризации</a></li>
+<li class="chapter" data-level="25.2" data-path="cluster.html"><a href="cluster.html#расстояние-между-объектами"><i class="fa fa-check"></i><b>25.2</b> Расстояние между объектами</a></li>
+<li class="chapter" data-level="25.3" data-path="cluster.html"><a href="cluster.html#проблема-операционализации-расстояния"><i class="fa fa-check"></i><b>25.3</b> Проблема операционализации расстояния</a></li>
+<li class="chapter" data-level="25.4" data-path="cluster.html"><a href="cluster.html#иерархическая-кластеризация"><i class="fa fa-check"></i><b>25.4</b> Иерархическая кластеризация</a><ul>
+<li class="chapter" data-level="25.4.1" data-path="cluster.html"><a href="cluster.html#алгоритм-иерархического-кластерного-анализа"><i class="fa fa-check"></i><b>25.4.1</b> Алгоритм иерархического кластерного анализа</a></li>
+<li class="chapter" data-level="25.4.2" data-path="cluster.html"><a href="cluster.html#иерархическая-кластеризация-в-r"><i class="fa fa-check"></i><b>25.4.2</b> Иерархическая кластеризация в R</a></li>
+</ul></li>
+<li class="chapter" data-level="25.5" data-path="cluster.html"><a href="cluster.html#k-means-метод-k-средних"><i class="fa fa-check"></i><b>25.5</b> k-means (метод k-средних)</a><ul>
+<li class="chapter" data-level="25.5.1" data-path="cluster.html"><a href="cluster.html#алгоритм-метода-k-средних"><i class="fa fa-check"></i><b>25.5.1</b> Алгоритм метода k-средних</a></li>
+<li class="chapter" data-level="25.5.2" data-path="cluster.html"><a href="cluster.html#типы-кластеров"><i class="fa fa-check"></i><b>25.5.2</b> Типы кластеров</a></li>
+</ul></li>
+<li class="chapter" data-level="25.6" data-path="cluster.html"><a href="cluster.html#субъективность-кластерного-анализа"><i class="fa fa-check"></i><b>25.6</b> Субъективность кластерного анализа</a></li>
+<li class="chapter" data-level="25.7" data-path="cluster.html"><a href="cluster.html#интерпретация-результатов-кластерного-анализа"><i class="fa fa-check"></i><b>25.7</b> Интерпретация результатов кластерного анализа</a></li>
+<li class="chapter" data-level="25.8" data-path="cluster.html"><a href="cluster.html#метрики-качества-кластеризации"><i class="fa fa-check"></i><b>25.8</b> Метрики качества кластеризации</a><ul>
+<li class="chapter" data-level="25.8.1" data-path="cluster.html"><a href="cluster.html#внешние-метрики"><i class="fa fa-check"></i><b>25.8.1</b> Внешние метрики</a></li>
+<li class="chapter" data-level="25.8.2" data-path="cluster.html"><a href="cluster.html#внутренние-метрики"><i class="fa fa-check"></i><b>25.8.2</b> Внутренние метрики</a></li>
+</ul></li>
+<li class="chapter" data-level="25.9" data-path="cluster.html"><a href="cluster.html#нечёткий-кластерный-анализ"><i class="fa fa-check"></i><b>25.9</b> Нечёткий кластерный анализ</a></li>
+</ul></li>
 <li class="chapter" data-level="26" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a></li>
 <li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
@@ -505,7 +527,53 @@
 <li><em>задачи классификации</em> — когда нам необходимо определить, к какому классу относиться объект на основе признаков, которыми он обладает (биномиальная регрессия).</li>
 </ul>
 <p>Но нам часто бывает нужно определить, какие наблюдения наиболее похожи друг на друга, то есть разбить их на группы, при условии что число групп неизвестно. Эта задача носит название <em>кластеризации</em>. Ей мы и посвятим эту главу.</p>
+<div id="геометрическая-интерпретация-задачи-кластеризации" class="section level2">
+<h2><span class="header-section-number">25.1</span> Геометрическая интерпретация задачи кластеризации</h2>
+</div>
+<div id="расстояние-между-объектами" class="section level2">
+<h2><span class="header-section-number">25.2</span> Расстояние между объектами</h2>
+</div>
+<div id="проблема-операционализации-расстояния" class="section level2">
+<h2><span class="header-section-number">25.3</span> Проблема операционализации расстояния</h2>
+</div>
+<div id="иерархическая-кластеризация" class="section level2">
+<h2><span class="header-section-number">25.4</span> Иерархическая кластеризация</h2>
+<div id="алгоритм-иерархического-кластерного-анализа" class="section level3">
+<h3><span class="header-section-number">25.4.1</span> Алгоритм иерархического кластерного анализа</h3>
+</div>
+<div id="иерархическая-кластеризация-в-r" class="section level3">
+<h3><span class="header-section-number">25.4.2</span> Иерархическая кластеризация в R</h3>
+</div>
+</div>
+<div id="k-means-метод-k-средних" class="section level2">
+<h2><span class="header-section-number">25.5</span> k-means (метод k-средних)</h2>
+<div id="алгоритм-метода-k-средних" class="section level3">
+<h3><span class="header-section-number">25.5.1</span> Алгоритм метода k-средних</h3>
+</div>
+<div id="типы-кластеров" class="section level3">
+<h3><span class="header-section-number">25.5.2</span> Типы кластеров</h3>
+</div>
+</div>
+<div id="субъективность-кластерного-анализа" class="section level2">
+<h2><span class="header-section-number">25.6</span> Субъективность кластерного анализа</h2>
+<p>отбор переменных</p>
+</div>
+<div id="интерпретация-результатов-кластерного-анализа" class="section level2">
+<h2><span class="header-section-number">25.7</span> Интерпретация результатов кластерного анализа</h2>
+</div>
+<div id="метрики-качества-кластеризации" class="section level2">
+<h2><span class="header-section-number">25.8</span> Метрики качества кластеризации</h2>
+<div id="внешние-метрики" class="section level3">
+<h3><span class="header-section-number">25.8.1</span> Внешние метрики</h3>
+</div>
+<div id="внутренние-метрики" class="section level3">
+<h3><span class="header-section-number">25.8.2</span> Внутренние метрики</h3>
+</div>
+</div>
+<div id="нечёткий-кластерный-анализ" class="section level2">
+<h2><span class="header-section-number">25.9</span> Нечёткий кластерный анализ</h2>
 
+</div>
 </div>
             </section>
 
