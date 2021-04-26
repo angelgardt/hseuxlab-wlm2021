@@ -1,0 +1,74 @@
+---
+title: "A13. Кластерный анализ"
+author:
+  - name: A. Angelgardt
+  - name: A. Kharitonova
+output: radix::radix_article
+---
+
+Сегодня мы работаем с [датасетом о банковских картах](https://www.kaggle.com/arjunbhasin2013/ccdata). Датасет содержит информацию об активности 9000 держателей кредитных карт за 6 месяцев. Описание переменных из источника:
+
+* `CUSTID` : Identification of Credit Card holder (Categorical)
+* `BALANCE` : Balance amount left in their account to make purchases
+* `BALANCEFREQUENCY` : How frequently the Balance is updated, score between 0 and 1 (1 = frequently updated, 0 = not frequently updated)
+* `PURCHASES` : Amount of purchases made from account
+* `ONEOFFPURCHASES` : Maximum purchase amount done in one-go
+* `INSTALLMENTSPURCHASES` : Amount of purchase done in installment
+* `CASHADVANCE` : Cash in advance given by the user
+* `PURCHASESFREQUENCY` : How frequently the Purchases are being made, score between 0 and 1 (1 = frequently purchased, 0 = not frequently purchased)
+* `ONEOFFPURCHASESFREQUENCY` : How frequently Purchases are happening in one-go (1 = frequently purchased, 0 = not frequently purchased)
+* `PURCHASESINSTALLMENTSFREQUENCY` : How frequently purchases in installments are being done (1 = frequently done, 0 = not frequently done)
+* `CASHADVANCEFREQUENCY` : How frequently the cash in advance being paid
+* `CASHADVANCETRX` : Number of Transactions made with "Cash in Advanced"
+* `PURCHASESTRX` : Number of purchase transactions made
+* `CREDITLIMIT` : Limit of Credit Card for user
+* `PAYMENTS` : Amount of Payment done by user
+* `MINIMUM_PAYMENTS` : Minimum amount of payments made by user
+* `PRCFULLPAYMENT` : Percent of full payment paid by user
+* `TENURE` : Tenure of credit card service for user
+
+
+
+***
+
+**1. Загрузите [датасет](https://raw.githubusercontent.com/angelgardt/hseuxlab-wlm2021/master/data/CC%20GENERAL.csv). Проверьте типы переменных. Если есть такие переменные, которые по своему содержанию должны быть другого типа, приведите их к нужному типу. Приведите данные к виду tidy data --- cделайте необходимые преобразования с переменными, если они потребуются. (2 балла)**
+
+***
+
+**2. Проанализируйте переменные датасета. Отберите переменные, которые будут участвовать в кластерном анализе. Кратко обоснуйте свой выбор. (2 балла)**
+
+***
+
+**3. Подготовьте данные к кластерному анализу. Преобразуйте переменные, если это необходимо. Кратко обоснуйте требуемые преобразования или отсутствие необходимости в них. (2 балла)**
+
+***
+
+**4. Какую метрику расстояния между наблюдениями и расстояния между кластерами лучше использовать в данном случае? Кратко обоснуйте свой выбор. (2 балла)**
+
+***
+
+**5. Проведите иерархическую кластеризацию. Постройте дендрограмму и/или график «каменистая осыпь». (2 балла)**
+
+***
+
+**6. Сколько кластеров представлено в данных? Чем вы руководствовались при ответе на вопрос? (1 балл)**
+
+***
+
+**7. Проинтерпретируйте результаты иерархического кластерного анализа. (3 балла)**
+
+Мы понимаем, что интерпретация результатов может быть достаточно сложна, так как здесь едва ли можно найти однозначный правильный ответ. Поэтому корретными будут считаться любые рассуждения, основанные на имеющихся данных.
+
+***
+
+**8. Проведите кластеризацию методом k-means. Постройте график «каменистая осыпь». (2 балла)**
+
+***
+
+**9. Сколько кластеров представлено в данных? Чем вы руководствовались при ответе на вопрос? (1 балл)**
+
+***
+
+**10. Проинтерпретируйте результаты, полученные методом k-means. Попробуйте сопоставить с результатами иерархического кластерного анализа. (3 балла)**
+
+
