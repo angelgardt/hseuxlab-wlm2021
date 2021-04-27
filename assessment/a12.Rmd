@@ -1,7 +1,5 @@
 ---
 title: "A12. Линейные модели со смешанными эффектами"
-description: |
-  A new article created using the Radix format.
 author:
   - name: A. Angelgardt
   - name: A. Kharitonova
