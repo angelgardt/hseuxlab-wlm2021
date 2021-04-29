@@ -33,7 +33,7 @@
   
 <link rel="prev" href="pca.html"/>
 <link rel="next" href="cfa.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -53,8 +53,79 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -239,7 +310,7 @@
 <li class="chapter" data-level="9.4.3" data-path="maths.html"><a href="maths.html#функции"><i class="fa fa-check"></i><b>9.4.3</b> Функции</a></li>
 <li class="chapter" data-level="9.4.4" data-path="maths.html"><a href="maths.html#дифференцируемость-функции.-производная"><i class="fa fa-check"></i><b>9.4.4</b> Дифференцируемость функции. Производная</a></li>
 <li class="chapter" data-level="9.4.5" data-path="maths.html"><a href="maths.html#функции-нескольких-переменных"><i class="fa fa-check"></i><b>9.4.5</b> Функции нескольких переменных</a></li>
-<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#частные-производные"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
+<li class="chapter" data-level="9.4.6" data-path="maths.html"><a href="maths.html#partial"><i class="fa fa-check"></i><b>9.4.6</b> Частные производные</a></li>
 <li class="chapter" data-level="9.4.7" data-path="maths.html"><a href="maths.html#интеграл"><i class="fa fa-check"></i><b>9.4.7</b> Интеграл</a></li>
 </ul></li>
 <li class="chapter" data-level="9.5" data-path="maths.html"><a href="maths.html#matrix"><i class="fa fa-check"></i><b>9.5</b> Элементы линейной алгебры</a><ul>
@@ -250,7 +321,7 @@
 <li class="chapter" data-level="9.5.5" data-path="maths.html"><a href="maths.html#векторное-произведение-векторов"><i class="fa fa-check"></i><b>9.5.5</b> Векторное произведение векторов</a></li>
 <li class="chapter" data-level="9.5.6" data-path="maths.html"><a href="maths.html#произведение-матриц-матричное-умножение"><i class="fa fa-check"></i><b>9.5.6</b> Произведение матриц (матричное умножение)</a></li>
 <li class="chapter" data-level="9.5.7" data-path="maths.html"><a href="maths.html#транспонирование-матрицы"><i class="fa fa-check"></i><b>9.5.7</b> Транспонирование матрицы</a></li>
-<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#детерминант-и-обратная-матрица"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
+<li class="chapter" data-level="9.5.8" data-path="maths.html"><a href="maths.html#inv"><i class="fa fa-check"></i><b>9.5.8</b> Детерминант и обратная матрица</a></li>
 <li class="chapter" data-level="9.5.9" data-path="maths.html"><a href="maths.html#след-матрицы"><i class="fa fa-check"></i><b>9.5.9</b> След матрицы</a></li>
 </ul></li>
 </ul></li>
@@ -291,7 +362,13 @@
 <li class="chapter" data-level="13.2.1" data-path="statestim.html"><a href="statestim.html#confinterval"><i class="fa fa-check"></i><b>13.2.1</b> Доверительный интервал</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a></li>
+<li class="chapter" data-level="14" data-path="hypotheses.html"><a href="hypotheses.html"><i class="fa fa-check"></i><b>14</b> Тестирование статистических гипотез</a><ul>
+<li class="chapter" data-level="14.1" data-path="hypotheses.html"><a href="hypotheses.html#базовые-понятия"><i class="fa fa-check"></i><b>14.1</b> Базовые понятия</a></li>
+<li class="chapter" data-level="14.2" data-path="hypotheses.html"><a href="hypotheses.html#асимметрия-статистического-вывода"><i class="fa fa-check"></i><b>14.2</b> Асимметрия статистического вывода</a></li>
+<li class="chapter" data-level="14.3" data-path="hypotheses.html"><a href="hypotheses.html#возможные-результаты-проверки-гипотез"><i class="fa fa-check"></i><b>14.3</b> Возможные результаты проверки гипотез</a></li>
+<li class="chapter" data-level="14.4" data-path="hypotheses.html"><a href="hypotheses.html#алгоритм-тестирования-статистических-гипотез"><i class="fa fa-check"></i><b>14.4</b> Алгоритм тестирования статистических гипотез</a></li>
+<li class="chapter" data-level="14.5" data-path="hypotheses.html"><a href="hypotheses.html#multiple_comp_problem"><i class="fa fa-check"></i><b>14.5</b> Проблема множественных сравнений</a></li>
+</ul></li>
 <li class="part"><span><b>III Анализ данных</b></span></li>
 <li class="chapter" data-level="15" data-path="descriptives.html"><a href="descriptives.html"><i class="fa fa-check"></i><b>15</b> Описательные статистики</a><ul>
 <li class="chapter" data-level="15.1" data-path="descriptives.html"><a href="descriptives.html#меры-центральной-тенденции"><i class="fa fa-check"></i><b>15.1</b> Меры центральной тенденции</a><ul>
@@ -317,18 +394,202 @@
 <li class="chapter" data-level="16.2.1" data-path="correlation.html"><a href="correlation.html#тестирование-статистической-значимости-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.1</b> Тестирование статистической значимости коэффициента корреляции</a></li>
 <li class="chapter" data-level="16.2.2" data-path="correlation.html"><a href="correlation.html#доверительный-интервал-для-коэффициента-корреляции"><i class="fa fa-check"></i><b>16.2.2</b> Доверительный интервал для коэффициента корреляции</a></li>
 </ul></li>
+<li class="chapter" data-level="16.3" data-path="correlation.html"><a href="correlation.html#ковариация-и-корреляция-в-r"><i class="fa fa-check"></i><b>16.3</b> Ковариация и корреляция в R</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="correlation.html"><a href="correlation.html#коэффициенты-корреляции-для-разных-шкал"><i class="fa fa-check"></i><b>16.3.1</b> Коэффициенты корреляции для разных шкал</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a></li>
-<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a></li>
-<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a></li>
-<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a></li>
-<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a></li>
-<li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a></li>
-<li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a></li>
-<li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a></li>
-<li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a></li>
-<li class="chapter" data-level="26" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a></li>
-<li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a></li>
+<li class="chapter" data-level="16.4" data-path="correlation.html"><a href="correlation.html#частный-и-множественный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.4</b> Частный и множественный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5" data-path="correlation.html"><a href="correlation.html#другие-корреляции"><i class="fa fa-check"></i><b>16.5</b> Другие корреляции</a><ul>
+<li class="chapter" data-level="16.5.1" data-path="correlation.html"><a href="correlation.html#phi-коэффициент"><i class="fa fa-check"></i><b>16.5.1</b> <span class="math inline">\(\phi\)</span>-коэффициент</a></li>
+<li class="chapter" data-level="16.5.2" data-path="correlation.html"><a href="correlation.html#бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.2</b> Бисериальный коэффициент корреляции</a></li>
+<li class="chapter" data-level="16.5.3" data-path="correlation.html"><a href="correlation.html#рангово-бисериальный-коэффициент-корреляции"><i class="fa fa-check"></i><b>16.5.3</b> Рангово-бисериальный коэффициент корреляции</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="simple-linear.html"><a href="simple-linear.html"><i class="fa fa-check"></i><b>17</b> Общие линейные модели. Простая линейная регрессия</a><ul>
+<li class="chapter" data-level="17.1" data-path="simple-linear.html"><a href="simple-linear.html#формализация-модели"><i class="fa fa-check"></i><b>17.1</b> Формализация модели</a></li>
+<li class="chapter" data-level="17.2" data-path="simple-linear.html"><a href="simple-linear.html#идентификация-модели"><i class="fa fa-check"></i><b>17.2</b> Идентификация модели</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="simple-linear.html"><a href="simple-linear.html#метод-наименьших-квадратов"><i class="fa fa-check"></i><b>17.2.1</b> Метод наименьших квадратов</a></li>
+<li class="chapter" data-level="17.2.2" data-path="simple-linear.html"><a href="simple-linear.html#матричное-вычисление-коэффициентов"><i class="fa fa-check"></i><b>17.2.2</b> Матричное вычисление коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="simple-linear.html"><a href="simple-linear.html#тестирование-качества-модели"><i class="fa fa-check"></i><b>17.3</b> Тестирование качества модели</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="simple-linear.html"><a href="simple-linear.html#коэффициент-детерминации"><i class="fa fa-check"></i><b>17.3.1</b> Коэффициент детерминации</a></li>
+<li class="chapter" data-level="17.3.2" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-модели"><i class="fa fa-check"></i><b>17.3.2</b> Статистическая значимость модели</a></li>
+<li class="chapter" data-level="17.3.3" data-path="simple-linear.html"><a href="simple-linear.html#статистическая-значимость-отдельных-предикторов"><i class="fa fa-check"></i><b>17.3.3</b> Статистическая значимость отдельных предикторов</a></li>
+</ul></li>
+<li class="chapter" data-level="17.4" data-path="simple-linear.html"><a href="simple-linear.html#простая-линейная-регрессия-в-r"><i class="fa fa-check"></i><b>17.4</b> Простая линейная регрессия в R</a></li>
+<li class="chapter" data-level="17.5" data-path="simple-linear.html"><a href="simple-linear.html#диагностика-модели"><i class="fa fa-check"></i><b>17.5</b> Диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="multiple-linear.html"><a href="multiple-linear.html"><i class="fa fa-check"></i><b>18</b> Множественная линейная регрессия</a><ul>
+<li class="chapter" data-level="18.1" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-предикторами"><i class="fa fa-check"></i><b>18.1</b> Множественная линейная регрессия с количественными предикторами</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель"><i class="fa fa-check"></i><b>18.1.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.1.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели"><i class="fa fa-check"></i><b>18.1.2</b> Подбор модели</a></li>
+<li class="chapter" data-level="18.1.3" data-path="multiple-linear.html"><a href="multiple-linear.html#оценка-качества-модели"><i class="fa fa-check"></i><b>18.1.3</b> Оценка качества модели</a></li>
+<li class="chapter" data-level="18.1.4" data-path="multiple-linear.html"><a href="multiple-linear.html#диагностика-модели-1"><i class="fa fa-check"></i><b>18.1.4</b> Диагностика модели</a></li>
+<li class="chapter" data-level="18.1.5" data-path="multiple-linear.html"><a href="multiple-linear.html#staff_reg"><i class="fa fa-check"></i><b>18.1.5</b> Доработка модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="multiple-linear.html"><a href="multiple-linear.html#множественная-линейная-регрессия-с-количественными-и-категориальными-предикторами"><i class="fa fa-check"></i><b>18.2</b> Множественная линейная регрессия с количественными и категориальными предикторами</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-1"><i class="fa fa-check"></i><b>18.2.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.2.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-1"><i class="fa fa-check"></i><b>18.2.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="multiple-linear.html"><a href="multiple-linear.html#модели-со-взаимодействием-предикторов"><i class="fa fa-check"></i><b>18.3</b> Модели со взаимодействием предикторов</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="multiple-linear.html"><a href="multiple-linear.html#математическая-модель-2"><i class="fa fa-check"></i><b>18.3.1</b> Математическая модель</a></li>
+<li class="chapter" data-level="18.3.2" data-path="multiple-linear.html"><a href="multiple-linear.html#подбор-модели-2"><i class="fa fa-check"></i><b>18.3.2</b> Подбор модели</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="multiple-linear.html"><a href="multiple-linear.html#сравнение-моделей"><i class="fa fa-check"></i><b>18.4</b> Сравнение моделей</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>19</b> Дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.1" data-path="anova.html"><a href="anova.html#параметризация-индикаторов-и-параметризация-эффектов"><i class="fa fa-check"></i><b>19.1</b> Параметризация индикаторов и параметризация эффектов</a></li>
+<li class="chapter" data-level="19.2" data-path="anova.html"><a href="anova.html#однофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2</b> Однофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="anova.html"><a href="anova.html#зачем-вообще-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.2.1</b> Зачем вообще дисперсионный анализ?</a></li>
+<li class="chapter" data-level="19.2.2" data-path="anova.html"><a href="anova.html#структура-изменчивости"><i class="fa fa-check"></i><b>19.2.2</b> Структура изменчивости</a></li>
+<li class="chapter" data-level="19.2.3" data-path="anova.html"><a href="anova.html#тестирование-значимости-фактора"><i class="fa fa-check"></i><b>19.2.3</b> Тестирование значимости фактора</a></li>
+<li class="chapter" data-level="19.2.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-в-r"><i class="fa fa-check"></i><b>19.2.4</b> Дисперсионный анализ в R</a></li>
+<li class="chapter" data-level="19.2.5" data-path="anova.html"><a href="anova.html#post-hoc-тесты"><i class="fa fa-check"></i><b>19.2.5</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="anova.html"><a href="anova.html#многофакторный-дисперсионный-анализ"><i class="fa fa-check"></i><b>19.3</b> Многофакторный дисперсионный анализ</a><ul>
+<li class="chapter" data-level="19.3.1" data-path="anova.html"><a href="anova.html#типы-сумм-квадратов"><i class="fa fa-check"></i><b>19.3.1</b> Типы сумм квадратов</a></li>
+<li class="chapter" data-level="19.3.2" data-path="anova.html"><a href="anova.html#post-hoc-тесты-1"><i class="fa fa-check"></i><b>19.3.2</b> Post hoc тесты</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="anova.html"><a href="anova.html#дисперсионный-анализ-с-повторными-измерениями"><i class="fa fa-check"></i><b>19.4</b> Дисперсионный анализ с повторными измерениями</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="ancova.html"><a href="ancova.html"><i class="fa fa-check"></i><b>20</b> Ковариационный анализ</a><ul>
+<li class="chapter" data-level="20.1" data-path="ancova.html"><a href="ancova.html#модель-ковариационного-анализа"><i class="fa fa-check"></i><b>20.1</b> Модель ковариационного анализа</a></li>
+<li class="chapter" data-level="20.2" data-path="ancova.html"><a href="ancova.html#влияние-ковариаты"><i class="fa fa-check"></i><b>20.2</b> Влияние ковариаты</a></li>
+<li class="chapter" data-level="20.3" data-path="ancova.html"><a href="ancova.html#более-сложные-модели"><i class="fa fa-check"></i><b>20.3</b> Более сложные модели</a></li>
+<li class="chapter" data-level="20.4" data-path="ancova.html"><a href="ancova.html#тестирование-значимости-предикторов-и-диагностика-модели"><i class="fa fa-check"></i><b>20.4</b> Тестирование значимости предикторов и диагностика модели</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="logistic.html"><a href="logistic.html"><i class="fa fa-check"></i><b>21</b> Обобщенные линейные модели. Логистическая регрессия</a><ul>
+<li class="chapter" data-level="21.1" data-path="logistic.html"><a href="logistic.html#ограничения-общих-линейных-моделей"><i class="fa fa-check"></i><b>21.1</b> Ограничения общих линейных моделей</a></li>
+<li class="chapter" data-level="21.2" data-path="logistic.html"><a href="logistic.html#биномиальное-распределение"><i class="fa fa-check"></i><b>21.2</b> Биномиальное распределение</a></li>
+<li class="chapter" data-level="21.3" data-path="logistic.html"><a href="logistic.html#бинарные-переменные"><i class="fa fa-check"></i><b>21.3</b> Бинарные переменные</a></li>
+<li class="chapter" data-level="21.4" data-path="logistic.html"><a href="logistic.html#hr-данные"><i class="fa fa-check"></i><b>21.4</b> HR-данные</a></li>
+<li class="chapter" data-level="21.5" data-path="logistic.html"><a href="logistic.html#задача-построения-линейной-модели"><i class="fa fa-check"></i><b>21.5</b> Задача построения линейной модели</a></li>
+<li class="chapter" data-level="21.6" data-path="logistic.html"><a href="logistic.html#переход-от-дискретной-величины-к-непрерывной"><i class="fa fa-check"></i><b>21.6</b> Переход от дискретной величины к непрерывной</a><ul>
+<li class="chapter" data-level="21.6.1" data-path="logistic.html"><a href="logistic.html#логистическая-кривая"><i class="fa fa-check"></i><b>21.6.1</b> Логистическая кривая</a></li>
+<li class="chapter" data-level="21.6.2" data-path="logistic.html"><a href="logistic.html#шансы-и-логиты"><i class="fa fa-check"></i><b>21.6.2</b> Шансы и логиты</a></li>
+</ul></li>
+<li class="chapter" data-level="21.7" data-path="logistic.html"><a href="logistic.html#формулирование-модели-в-математическом-виде"><i class="fa fa-check"></i><b>21.7</b> Формулирование модели в математическом виде</a></li>
+<li class="chapter" data-level="21.8" data-path="logistic.html"><a href="logistic.html#подбор-линейной-модели"><i class="fa fa-check"></i><b>21.8</b> Подбор линейной модели</a><ul>
+<li class="chapter" data-level="21.8.1" data-path="logistic.html"><a href="logistic.html#метод-максимального-правдоподобия"><i class="fa fa-check"></i><b>21.8.1</b> Метод максимального правдоподобия</a></li>
+</ul></li>
+<li class="chapter" data-level="21.9" data-path="logistic.html"><a href="logistic.html#анализ-модели"><i class="fa fa-check"></i><b>21.9</b> Анализ модели</a></li>
+<li class="chapter" data-level="21.10" data-path="logistic.html"><a href="logistic.html#анализ-девиансы-и-упрощение-модели"><i class="fa fa-check"></i><b>21.10</b> Анализ девиансы и упрощение модели</a></li>
+<li class="chapter" data-level="21.11" data-path="logistic.html"><a href="logistic.html#интерпретация-коэффициентов-модели"><i class="fa fa-check"></i><b>21.11</b> Интерпретация коэффициентов модели</a><ul>
+<li class="chapter" data-level="21.11.1" data-path="logistic.html"><a href="logistic.html#немного-алгебры-для-понимания-сути-коэффициентов"><i class="fa fa-check"></i><b>21.11.1</b> Немного алгебры для понимания сути коэффициентов</a></li>
+</ul></li>
+<li class="chapter" data-level="21.12" data-path="logistic.html"><a href="logistic.html#предсказательная-сила-модели"><i class="fa fa-check"></i><b>21.12</b> Предсказательная сила модели</a><ul>
+<li class="chapter" data-level="21.12.1" data-path="logistic.html"><a href="logistic.html#перевод-непрерывных-предсказаний-в-дискретные"><i class="fa fa-check"></i><b>21.12.1</b> Перевод непрерывных предсказаний в дискретные</a></li>
+<li class="chapter" data-level="21.12.2" data-path="logistic.html"><a href="logistic.html#confusion-matrix"><i class="fa fa-check"></i><b>21.12.2</b> Confusion matrix</a></li>
+<li class="chapter" data-level="21.12.3" data-path="logistic.html"><a href="logistic.html#accuracy"><i class="fa fa-check"></i><b>21.12.3</b> Accuracy</a></li>
+<li class="chapter" data-level="21.12.4" data-path="logistic.html"><a href="logistic.html#precision-and-recall"><i class="fa fa-check"></i><b>21.12.4</b> Precision and Recall</a></li>
+<li class="chapter" data-level="21.12.5" data-path="logistic.html"><a href="logistic.html#f1-мера"><i class="fa fa-check"></i><b>21.12.5</b> F1-мера</a></li>
+<li class="chapter" data-level="21.12.6" data-path="logistic.html"><a href="logistic.html#roc-auc"><i class="fa fa-check"></i><b>21.12.6</b> ROC-AUC</a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="logistic.html"><a href="logistic.html#предсказания-на-новых-данных"><i class="fa fa-check"></i><b>21.13</b> Предсказания на новых данных</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="poisson.html"><a href="poisson.html"><i class="fa fa-check"></i><b>22</b> Пуассоновская регрессия</a><ul>
+<li class="chapter" data-level="22.1" data-path="poisson.html"><a href="poisson.html#распределение-пуассона"><i class="fa fa-check"></i><b>22.1</b> Распределение Пуассона</a></li>
+<li class="chapter" data-level="22.2" data-path="poisson.html"><a href="poisson.html#почему-обычные-регрессионные-модели-плохо-работают-на-счётных-данных"><i class="fa fa-check"></i><b>22.2</b> Почему обычные регрессионные модели плохо работают на счётных данных</a></li>
+<li class="chapter" data-level="22.3" data-path="poisson.html"><a href="poisson.html#данные-1"><i class="fa fa-check"></i><b>22.3</b> Данные</a></li>
+<li class="chapter" data-level="22.4" data-path="poisson.html"><a href="poisson.html#glm-с-пуассоновским-распределением-целевой-переменной"><i class="fa fa-check"></i><b>22.4</b> GLM с пуассоновским распределением целевой переменной</a><ul>
+<li class="chapter" data-level="22.4.1" data-path="poisson.html"><a href="poisson.html#подбор-модели-в-r"><i class="fa fa-check"></i><b>22.4.1</b> Подбор модели в R</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="poisson.html"><a href="poisson.html#интерпретация-коэффициентов-модели-1"><i class="fa fa-check"></i><b>22.5</b> Интерпретация коэффициентов модели</a></li>
+<li class="chapter" data-level="22.6" data-path="poisson.html"><a href="poisson.html#анализ-девиансы"><i class="fa fa-check"></i><b>22.6</b> Анализ девиансы</a></li>
+<li class="chapter" data-level="22.7" data-path="poisson.html"><a href="poisson.html#проверка-на-сверхдисперсию-overdispersion"><i class="fa fa-check"></i><b>22.7</b> Проверка на сверхдисперсию (overdispersion)</a></li>
+<li class="chapter" data-level="22.8" data-path="poisson.html"><a href="poisson.html#квазипуассоновские-модели"><i class="fa fa-check"></i><b>22.8</b> Квазипуассоновские модели</a><ul>
+<li class="chapter" data-level="22.8.1" data-path="poisson.html"><a href="poisson.html#квазипуассоновские-модели-в-r"><i class="fa fa-check"></i><b>22.8.1</b> Квазипуассоновские модели в R</a></li>
+</ul></li>
+<li class="chapter" data-level="22.9" data-path="poisson.html"><a href="poisson.html#особенности-работы-с-квазипуассоновскими-моделями"><i class="fa fa-check"></i><b>22.9</b> Особенности работы с квазипуассоновскими моделями</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="regularization.html"><a href="regularization.html"><i class="fa fa-check"></i><b>23</b> Регуляризация регрессии</a><ul>
+<li class="chapter" data-level="23.1" data-path="regularization.html"><a href="regularization.html#варианты-штрафа"><i class="fa fa-check"></i><b>23.1</b> Варианты штрафа</a><ul>
+<li class="chapter" data-level="23.1.1" data-path="regularization.html"><a href="regularization.html#пример-работы-штрафного-коэффициента"><i class="fa fa-check"></i><b>23.1.1</b> Пример работы штрафного коэффициента</a></li>
+</ul></li>
+<li class="chapter" data-level="23.2" data-path="regularization.html"><a href="regularization.html#регуляризованная-регрессия-в-r"><i class="fa fa-check"></i><b>23.2</b> Регуляризованная регрессия в R</a><ul>
+<li class="chapter" data-level="23.2.1" data-path="regularization.html"><a href="regularization.html#данные-2"><i class="fa fa-check"></i><b>23.2.1</b> Данные</a></li>
+<li class="chapter" data-level="23.2.2" data-path="regularization.html"><a href="regularization.html#особенности-синтаксиса-пакета-glmnet"><i class="fa fa-check"></i><b>23.2.2</b> Особенности синтаксиса пакета <code>glmnet</code></a></li>
+<li class="chapter" data-level="23.2.3" data-path="regularization.html"><a href="regularization.html#ridge-регрессия-в-r"><i class="fa fa-check"></i><b>23.2.3</b> Ridge-регрессия в R</a></li>
+<li class="chapter" data-level="23.2.4" data-path="regularization.html"><a href="regularization.html#lasso-регрессия-в-r"><i class="fa fa-check"></i><b>23.2.4</b> LASSO-регрессия в R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="glmm.html"><a href="glmm.html"><i class="fa fa-check"></i><b>24</b> Смешанные линейные модели</a><ul>
+<li class="chapter" data-level="24.1" data-path="glmm.html"><a href="glmm.html#ограничения-изученных-ранее-линейных-моделей"><i class="fa fa-check"></i><b>24.1</b> Ограничения изученных ранее линейных моделей</a></li>
+<li class="chapter" data-level="24.2" data-path="glmm.html"><a href="glmm.html#случайные-vs-фиксированные-факторы"><i class="fa fa-check"></i><b>24.2</b> Случайные vs фиксированные факторы</a></li>
+<li class="chapter" data-level="24.3" data-path="glmm.html"><a href="glmm.html#почему-обычные-методы-плохо-работают"><i class="fa fa-check"></i><b>24.3</b> Почему обычные методы плохо работают?</a><ul>
+<li class="chapter" data-level="24.3.1" data-path="glmm.html"><a href="glmm.html#плохое-решение-игнорирование-группирующего-фактора"><i class="fa fa-check"></i><b>24.3.1</b> Плохое решение: игнорирование группирующего фактора</a></li>
+<li class="chapter" data-level="24.3.2" data-path="glmm.html"><a href="glmm.html#плохое-решение-включение-группирующего-фактора-как-фиксированного"><i class="fa fa-check"></i><b>24.3.2</b> Плохое решение: включение группирующего фактора как фиксированного</a></li>
+</ul></li>
+<li class="chapter" data-level="24.4" data-path="glmm.html"><a href="glmm.html#виды-glmm-и-их-математическая-формулировка"><i class="fa fa-check"></i><b>24.4</b> Виды GLMM и их математическая формулировка</a><ul>
+<li class="chapter" data-level="24.4.1" data-path="glmm.html"><a href="glmm.html#математическая-формулировка-модели-со-случайным-интерсептом"><i class="fa fa-check"></i><b>24.4.1</b> Математическая формулировка модели со случайным интерсептом</a></li>
+<li class="chapter" data-level="24.4.2" data-path="glmm.html"><a href="glmm.html#математическая-формулировка-модели-со-случайными-интерсептом-и-углом-наклона"><i class="fa fa-check"></i><b>24.4.2</b> Математическая формулировка модели со случайными интерсептом и углом наклона</a></li>
+</ul></li>
+<li class="chapter" data-level="24.5" data-path="glmm.html"><a href="glmm.html#подбор-моделей-со-смешанными-эффектами"><i class="fa fa-check"></i><b>24.5</b> Подбор моделей со смешанными эффектами</a></li>
+<li class="chapter" data-level="24.6" data-path="glmm.html"><a href="glmm.html#методы-подбора-параметров-в-смешанных-моделях"><i class="fa fa-check"></i><b>24.6</b> Методы подбора параметров в смешанных моделях</a><ul>
+<li class="chapter" data-level="24.6.1" data-path="glmm.html"><a href="glmm.html#reml-или-ml"><i class="fa fa-check"></i><b>24.6.1</b> REML или ML?</a></li>
+</ul></li>
+<li class="chapter" data-level="24.7" data-path="glmm.html"><a href="glmm.html#диагностика-модели-2"><i class="fa fa-check"></i><b>24.7</b> Диагностика модели</a><ul>
+<li class="chapter" data-level="24.7.1" data-path="glmm.html"><a href="glmm.html#индуцированные-корреляции"><i class="fa fa-check"></i><b>24.7.1</b> Индуцированные корреляции</a></li>
+<li class="chapter" data-level="24.7.2" data-path="glmm.html"><a href="glmm.html#анализ-остатков-модели"><i class="fa fa-check"></i><b>24.7.2</b> Анализ остатков модели</a></li>
+</ul></li>
+<li class="chapter" data-level="24.8" data-path="glmm.html"><a href="glmm.html#предсказания-с-помощью-моделей.-сравнение-точности-предсказаний-смешанных-и-обычных-моделей"><i class="fa fa-check"></i><b>24.8</b> Предсказания с помощью моделей. Сравнение точности предсказаний смешанных и обычных моделей</a></li>
+<li class="chapter" data-level="24.9" data-path="glmm.html"><a href="glmm.html#тестирование-гипотез"><i class="fa fa-check"></i><b>24.9</b> Тестирование гипотез</a><ul>
+<li class="chapter" data-level="24.9.1" data-path="glmm.html"><a href="glmm.html#t-тест-вальда"><i class="fa fa-check"></i><b>24.9.1</b> t-тест Вальда</a></li>
+<li class="chapter" data-level="24.9.2" data-path="glmm.html"><a href="glmm.html#тест-отношения-правдоподобий-likelihood-ratio-test-lrt"><i class="fa fa-check"></i><b>24.9.2</b> Тест отношения правдоподобий (likelihood ratio test, LRT)</a></li>
+<li class="chapter" data-level="24.9.3" data-path="glmm.html"><a href="glmm.html#lrt-для-случайных-эффектов"><i class="fa fa-check"></i><b>24.9.3</b> LRT для случайных эффектов</a></li>
+<li class="chapter" data-level="24.9.4" data-path="glmm.html"><a href="glmm.html#lrt-для-фиксированных-эффектов"><i class="fa fa-check"></i><b>24.9.4</b> LRT для фиксированных эффектов</a></li>
+</ul></li>
+<li class="chapter" data-level="24.10" data-path="glmm.html"><a href="glmm.html#сравнение-моделей-с-помощью-aic"><i class="fa fa-check"></i><b>24.10</b> Сравнение моделей с помощью AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>25</b> Кластерный анализ</a><ul>
+<li class="chapter" data-level="25.1" data-path="cluster.html"><a href="cluster.html#кластерный-анализ"><i class="fa fa-check"></i><b>25.1</b> Кластерный анализ</a></li>
+<li class="chapter" data-level="25.2" data-path="cluster.html"><a href="cluster.html#геометрическая-интерпретация-задачи-кластеризации"><i class="fa fa-check"></i><b>25.2</b> Геометрическая интерпретация задачи кластеризации</a><ul>
+<li class="chapter" data-level="25.2.1" data-path="cluster.html"><a href="cluster.html#проблема-кластеризации"><i class="fa fa-check"></i><b>25.2.1</b> Проблема кластеризации</a></li>
+<li class="chapter" data-level="25.2.2" data-path="cluster.html"><a href="cluster.html#расстояние-между-объектами"><i class="fa fa-check"></i><b>25.2.2</b> Расстояние между объектами</a></li>
+<li class="chapter" data-level="25.2.3" data-path="cluster.html"><a href="cluster.html#проблема-операционализации-расстояния"><i class="fa fa-check"></i><b>25.2.3</b> Проблема операционализации расстояния</a></li>
+<li class="chapter" data-level="25.2.4" data-path="cluster.html"><a href="cluster.html#субъективность-кластерного-анализа"><i class="fa fa-check"></i><b>25.2.4</b> Субъективность кластерного анализа</a></li>
+</ul></li>
+<li class="chapter" data-level="25.3" data-path="cluster.html"><a href="cluster.html#расстояние-между-кластерами"><i class="fa fa-check"></i><b>25.3</b> Расстояние между кластерами</a><ul>
+<li class="chapter" data-level="25.3.1" data-path="cluster.html"><a href="cluster.html#среднее-невзвешенное-расстояние"><i class="fa fa-check"></i><b>25.3.1</b> Среднее невзвешенное расстояние</a></li>
+<li class="chapter" data-level="25.3.2" data-path="cluster.html"><a href="cluster.html#центроидный-метод"><i class="fa fa-check"></i><b>25.3.2</b> Центроидный метод</a></li>
+<li class="chapter" data-level="25.3.3" data-path="cluster.html"><a href="cluster.html#метод-дальнего-соседа"><i class="fa fa-check"></i><b>25.3.3</b> Метод дальнего соседа</a></li>
+<li class="chapter" data-level="25.3.4" data-path="cluster.html"><a href="cluster.html#метод-ближайшего-соседа"><i class="fa fa-check"></i><b>25.3.4</b> Метод ближайшего соседа</a></li>
+<li class="chapter" data-level="25.3.5" data-path="cluster.html"><a href="cluster.html#расстояние-sørensendice"><i class="fa fa-check"></i><b>25.3.5</b> Расстояние Sørensen—Dice</a></li>
+</ul></li>
+<li class="chapter" data-level="25.4" data-path="cluster.html"><a href="cluster.html#иерархическая-кластеризация"><i class="fa fa-check"></i><b>25.4</b> Иерархическая кластеризация</a><ul>
+<li class="chapter" data-level="25.4.1" data-path="cluster.html"><a href="cluster.html#алгоритм-иерархического-кластерного-анализа"><i class="fa fa-check"></i><b>25.4.1</b> Алгоритм иерархического кластерного анализа</a></li>
+<li class="chapter" data-level="25.4.2" data-path="cluster.html"><a href="cluster.html#дендрограмма"><i class="fa fa-check"></i><b>25.4.2</b> Дендрограмма</a></li>
+<li class="chapter" data-level="25.4.3" data-path="cluster.html"><a href="cluster.html#каменистая-осыпь"><i class="fa fa-check"></i><b>25.4.3</b> Каменистая осыпь</a></li>
+<li class="chapter" data-level="25.4.4" data-path="cluster.html"><a href="cluster.html#когда-кластеризации-нет"><i class="fa fa-check"></i><b>25.4.4</b> Когда кластеризации нет?</a></li>
+<li class="chapter" data-level="25.4.5" data-path="cluster.html"><a href="cluster.html#иерархическая-кластеризация-в-r"><i class="fa fa-check"></i><b>25.4.5</b> Иерархическая кластеризация в R</a></li>
+<li class="chapter" data-level="25.4.6" data-path="cluster.html"><a href="cluster.html#чем-плох-иерархический-кластерный-анализ"><i class="fa fa-check"></i><b>25.4.6</b> Чем плох иерархический кластерный анализ?</a></li>
+</ul></li>
+<li class="chapter" data-level="25.5" data-path="cluster.html"><a href="cluster.html#k-means-метод-k-средних"><i class="fa fa-check"></i><b>25.5</b> k-means (метод k-средних)</a><ul>
+<li class="chapter" data-level="25.5.1" data-path="cluster.html"><a href="cluster.html#алгоритм-метода-k-средних"><i class="fa fa-check"></i><b>25.5.1</b> Алгоритм метода k-средних</a></li>
+<li class="chapter" data-level="25.5.2" data-path="cluster.html"><a href="cluster.html#ограничения-k-means"><i class="fa fa-check"></i><b>25.5.2</b> Ограничения k-means</a></li>
+<li class="chapter" data-level="25.5.3" data-path="cluster.html"><a href="cluster.html#начальное-положение-кластеров"><i class="fa fa-check"></i><b>25.5.3</b> Начальное положение кластеров</a></li>
+<li class="chapter" data-level="25.5.4" data-path="cluster.html"><a href="cluster.html#k-means-в-r"><i class="fa fa-check"></i><b>25.5.4</b> k-means в R</a></li>
+</ul></li>
+<li class="chapter" data-level="25.6" data-path="cluster.html"><a href="cluster.html#метрики-качества-кластеризации"><i class="fa fa-check"></i><b>25.6</b> Метрики качества кластеризации</a><ul>
+<li class="chapter" data-level="25.6.1" data-path="cluster.html"><a href="cluster.html#внешние-метрики"><i class="fa fa-check"></i><b>25.6.1</b> Внешние метрики</a></li>
+<li class="chapter" data-level="25.6.2" data-path="cluster.html"><a href="cluster.html#внутренние-метрики"><i class="fa fa-check"></i><b>25.6.2</b> Внутренние метрики</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="26" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>26</b> Анализ главных компонент</a><ul>
+<li class="chapter" data-level="26.1" data-path="pca.html"><a href="pca.html#проклятие-размерности-curse-of-dimensionality"><i class="fa fa-check"></i><b>26.1</b> Проклятие размерности (curse of dimensionality)</a><ul>
+<li class="chapter" data-level="26.1.1" data-path="pca.html"><a href="pca.html#геометрическая-вероятность"><i class="fa fa-check"></i><b>26.1.1</b> Геометрическая вероятность</a></li>
+</ul></li>
+<li class="chapter" data-level="26.2" data-path="pca.html"><a href="pca.html#факторный-анализ-vs-анализ-главных-компонент"><i class="fa fa-check"></i><b>26.2</b> Факторный анализ vs анализ главных компонент</a></li>
+<li class="chapter" data-level="26.3" data-path="pca.html"><a href="pca.html#задачи-факторного-анализа-и-анализа-главных-компонент"><i class="fa fa-check"></i><b>26.3</b> Задачи факторного анализа и анализа главных компонент</a></li>
+<li class="chapter" data-level="26.4" data-path="pca.html"><a href="pca.html#математическая-модель-анализа-главных-компонент"><i class="fa fa-check"></i><b>26.4</b> Математическая модель анализа главных компонент</a></li>
+<li class="chapter" data-level="26.5" data-path="pca.html"><a href="pca.html#сокращение-размерности-признакового-пространства"><i class="fa fa-check"></i><b>26.5</b> Сокращение размерности признакового пространства</a></li>
+<li class="chapter" data-level="26.6" data-path="pca.html"><a href="pca.html#реализация-pca-в-r"><i class="fa fa-check"></i><b>26.6</b> Реализация PCA в R</a></li>
+</ul></li>
+<li class="chapter" data-level="27" data-path="efa.html"><a href="efa.html"><i class="fa fa-check"></i><b>27</b> Эксплораторный факторный анализ</a><ul>
+<li class="chapter" data-level="27.1" data-path="efa.html"><a href="efa.html#математическая-модель-эскплораторного-факторного-анализа"><i class="fa fa-check"></i><b>27.1</b> Математическая модель эскплораторного факторного анализа</a><ul>
+<li class="chapter" data-level="27.1.1" data-path="efa.html"><a href="efa.html#вращение-факторов-factor-rotation"><i class="fa fa-check"></i><b>27.1.1</b> Вращение факторов (factor rotation)</a></li>
+</ul></li>
+<li class="chapter" data-level="27.2" data-path="efa.html"><a href="efa.html#реализация-efa-в-r"><i class="fa fa-check"></i><b>27.2</b> Реализация EFA в R</a></li>
+</ul></li>
 <li class="chapter" data-level="28" data-path="cfa.html"><a href="cfa.html"><i class="fa fa-check"></i><b>28</b> Конфирматорный факторный анализ</a></li>
 <li class="chapter" data-level="29" data-path="further.html"><a href="further.html"><i class="fa fa-check"></i><b>29</b> Что дальше?</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>Литература</a><ul>
@@ -360,6 +621,547 @@
 <div id="efa" class="section level1">
 <h1><span class="header-section-number">27</span> Эксплораторный факторный анализ</h1>
 
+<p>Он же <strong>exploratory factor analysis</strong>.</p>
+<div id="математическая-модель-эскплораторного-факторного-анализа" class="section level2">
+<h2><span class="header-section-number">27.1</span> Математическая модель эскплораторного факторного анализа</h2>
+<p>У нас есть все та же матрица наблюдений <span class="math inline">\(\boldsymbol{X}^\mathrm{T}= (\boldsymbol{X}_1 \, \boldsymbol{X}_2 \, \dots \boldsymbol{X}_k)\)</span>, только мы ее транспонировали для будущего удобства. Мы предполагаем, что под нашими наблюдениями спрятаны некие факторы в количестве <span class="math inline">\(p\)</span> штук, <span class="math inline">\(p &lt; k\)</span>. Их мы также можем оформить в матрицу <span class="math inline">\(\boldsymbol{F}^\mathrm{T}=(\boldsymbol{F}_1 \, \boldsymbol{F}_2 \, \dots \boldsymbol{F}_p)\)</span>. Эти факторы объясняют имеющиеся переменные. Делают это они следующим образом:</p>
+<p><span class="math display">\[
+\boldsymbol{X}_i = a_{i1} \boldsymbol{F}_1 + a_{i2} \boldsymbol{F}_ 2 + \dots + a_{ip} \boldsymbol{F}_p + \boldsymbol{U}_i, \; 1≤i≤k
+\]</span></p>
+<p><span class="math display">\[
+\boldsymbol{X}= \boldsymbol{A}\boldsymbol{F}+ \boldsymbol{U}, \\
+\boldsymbol{A}= (a_{ij}),\; 1≤i≤k, \; 1≤j≤p, \\
+\boldsymbol{U}^\mathrm{T}= (\boldsymbol{U}_1 \, \boldsymbol{U}_2 \dots \boldsymbol{U}_k)
+\]</span></p>
+<p>Здесь <span class="math inline">\(U\)</span> — то, что не удалось объяснить факторами (остатки, уникальность, <em>uniqueness</em>).</p>
+<p>Также выдвигаем ряд дополнительных предположения для формализации требования и упрощения вычислений:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb{E} \boldsymbol{X}= 0\)</span>. Так сделать можно, так как мы все равно будем стандартизировать переменные, и математическое ожидание обратиться в ноль.</li>
+<li><span class="math inline">\(\mathrm{corr}(\boldsymbol{F}_j, \boldsymbol{F}_t) = 0, \; ∀j\,∀t, \;j≠t, \; 1≤j≤p, \; 1≤t≤p\)</span>. То есть хотим, чтобы факторы были независимы (некоррелированы).</li>
+<li><span class="math inline">\(\mathrm{var}(\boldsymbol{F})=\boldsymbol{I}\)</span>. Если «истинная» дисперсия факторов будет отличаться от единицы, то разница уйдет в матрицу A.</li>
+<li><span class="math inline">\(\mathrm{corr}(\boldsymbol{U}_i, \boldsymbol{U}_r) = 0; \;\; \mathrm{corr}(\boldsymbol{U}_i, \boldsymbol{F}_j) = 0,\; ∀i\,∀r\,∀j, i \neq r, \; 1≤i≤k, \; 1≤r≤k, \; 1≤j≤p\)</span>. Ну, они же все-таки уникальности.</li>
+</ol>
+<p>Элементы матрицы <span class="math inline">\(\boldsymbol{A}\)</span> называются <em>факторными нагрузками (factor loadings)</em>. Элементы вектора <span class="math inline">\(\boldsymbol{U}\)</span> называются <em>уникальными факторами (specific variates)</em>.</p>
+<p>Теперь об информативности. Аналогично PCA, возьмем в качестве меры информативности дисперсию. Мы хотим узнать, насколько хорошо факторы объясняют исходные переменные. Дисперсия переменных будет складываться из следующего:</p>
+<p><span class="math display">\[
+\mathrm{var}(\boldsymbol{X}_i) = \sum_{j=1}^p a^2_{ij} + \mathrm{var}(\boldsymbol{U}_i)
+\]</span></p>
+<p>То есть, чем больше <strong>уникальность (uniqueness)</strong> — часть дисперсии переменной, объясненной уникальными факторами — тем хуже наши факторы объясняют переменную. Что делать? Либо подобрать другую модель (изменить количество факторов), либо не брать такую переменную в факторный анализ…</p>
+<p>Однако в факторном анализе есть еще одна интересная деталь. Мы работаем с выборочными корреляциями. По этой причине мы не можем подобрать единственно верное решение задачи факторного анализа. Матрица факторных нагрузок определена до ортогонального преобразования (по-русски, вращения). То есть у нас есть множество решений, которые отличаются друг от друга поворотом, и мы можем выбирать самое «симпатишное».</p>
+<blockquote>
+<p>За такую неопределенность факторный анализа часто критикуют. Да и вообще, как вы могли заметить, в факторном анализе субъективность чуть ли не на каждом шагу.</p>
+</blockquote>
+<div id="вращение-факторов-factor-rotation" class="section level3">
+<h3><span class="header-section-number">27.1.1</span> Вращение факторов (factor rotation)</h3>
+<p>Вращать вообще-то не обязательно. Если хочется, чтобы все было похоже на PCA, то можно ввести дополнительное условие, чтобы матрица <span class="math inline">\(\boldsymbol{A}^\mathrm{T}\text{diag}(\mathrm{var}(\boldsymbol{U}))\boldsymbol{A}\)</span> быда диагональной и элементы на её главной диагонали стояли в убывающем порядке.</p>
+<p>Но, господи, вращать это же весело!</p>
+<p>Поэтому придумали много всяких разных вариантов вращения. Самый популярный — <em>varimax.</em> Его идея состоит в том, чтобы найти наиболее «контрастное» решение — чтобы значения факторов были или большими, или маленькими. Эта логика хорошо согласуется с тем, что мы хотели, чтобы каждый фактор описывал что-то своё. Попутно мы минимизируем количество переменных, которые имеют высокую нагрузку на каждый фактор. Работает <em>varimax</em> по следуюшей математической модели:</p>
+<p><span class="math display">\[
+\cases{
+a_2 + b_ 2 \rightarrow \max \\
+a + b = 1
+}
+\]</span></p>
+<p>Коротенечко о других вращениях:</p>
+<ul>
+<li><em>quartimax</em> — минимизирует количество факторов, необходимых для объяснения каждой переменной</li>
+<li><em>equamax</em> — количество переменных, сильно нагружающих фактор, и количество факторов, необходимых для объяснения переменных, минимальны</li>
+<li><em>promax</em> — наклонное вращение, позволяющее коррелировать факторы</li>
+</ul>
+</div>
+</div>
+<div id="реализация-efa-в-r" class="section level2">
+<h2><span class="header-section-number">27.2</span> Реализация EFA в R</h2>
+<p>Работаем с тем же датасетом:</p>
+<ul>
+<li><code>brand</code> — Pizza brand (class label)</li>
+<li><code>id</code> — Sample analysed</li>
+<li><code>mois</code> — Amount of water per 100 grams in the sample</li>
+<li><code>prot</code> — Amount of protein per 100 grams in the sample</li>
+<li><code>fat</code> — Amount of fat per 100 grams in the sample</li>
+<li><code>ash</code> — Amount of ash per 100 grams in the sample</li>
+<li><code>sodium</code> — Amount of sodium per 100 grams in the sample</li>
+<li><code>carb</code> — Amount of carbohydrates per 100 grams in the sample</li>
+<li><code>cal</code> — Amount of calories per 100 grams in the sample</li>
+</ul>
+<p>Строки из предыдущей главы:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="efa.html#cb1-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.4.0     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="efa.html#cb5-1"></a><span class="kw">theme_set</span>(<span class="kw">theme_bw</span>())</span>
+<span id="cb5-2"><a href="efa.html#cb5-2"></a>pizza &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/angelgardt/hseuxlab-andan/master/Pizza.csv&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   brand = col_character(),
+##   id = col_double(),
+##   mois = col_double(),
+##   prot = col_double(),
+##   fat = col_double(),
+##   ash = col_double(),
+##   sodium = col_double(),
+##   carb = col_double(),
+##   cal = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="efa.html#cb7-1"></a>pizza <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">brand =</span> <span class="kw">as_factor</span>(brand),</span>
+<span id="cb7-2"><a href="efa.html#cb7-2"></a>             <span class="dt">id =</span> <span class="kw">as_factor</span>(id)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="efa.html#cb7-3"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>brand, <span class="op">-</span>id) -&gt;<span class="st"> </span>pizza2 <span class="co"># убираем номинативные переменные</span></span></code></pre></div>
+<p>Для факторного анализа есть функция <code>factanal()</code>. Она ждет от нас данные и количество факторов.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="efa.html#cb8-1"></a><span class="kw">factanal</span>(pizza2, <span class="dt">factors =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Error in factanal(pizza2, factors = 5): 5 factors are too many for 7 variables</code></pre>
+<p>Опа, попросили слишком много факторов. Действительно, если математические ограничения на количество факторов, оно завязано на число имеющихся переменных. Но нам не надо об этом париться, R за нас сам все проверит и посчитает.</p>
+<p>Попробуем 4:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="efa.html#cb10-1"></a><span class="kw">factanal</span>(pizza2, <span class="dt">factors =</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## Error in factanal(pizza2, factors = 4): 4 factors are too many for 7 variables</code></pre>
+<p>Тоже много. Давайте 3:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="efa.html#cb12-1"></a>fan &lt;-<span class="st"> </span><span class="kw">factanal</span>(pizza2, <span class="dt">factors =</span> <span class="dv">3</span>, <span class="dt">scores =</span> <span class="st">&#39;regression&#39;</span>) <span class="co">#укажем scores, чтобы сохранились сами значения факторов</span></span>
+<span id="cb12-2"><a href="efa.html#cb12-2"></a>fan</span></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = pizza2, factors = 3, scores = &quot;regression&quot;)
+## 
+## Uniquenesses:
+##   mois   prot    fat    ash sodium   carb    cal 
+##  0.005  0.005  0.005  0.091  0.114  0.005  0.005 
+## 
+## Loadings:
+##        Factor1 Factor2 Factor3
+## mois            0.266  -0.961 
+## prot    0.199   0.971  -0.116 
+## fat     0.904   0.356   0.232 
+## ash     0.629   0.706  -0.118 
+## sodium  0.889   0.278   0.135 
+## carb   -0.539  -0.714   0.443 
+## cal     0.632           0.772 
+## 
+##                Factor1 Factor2 Factor3
+## SS loadings      2.736   2.228   1.815
+## Proportion Var   0.391   0.318   0.259
+## Cumulative Var   0.391   0.709   0.968
+## 
+## Test of the hypothesis that 3 factors are sufficient.
+## The chi square statistic is 2281.07 on 3 degrees of freedom.
+## The p-value is 0</code></pre>
+<p>О, норм, работает.</p>
+<p>Итак, что видно в аутпуте: уникальности, матрица факторных нагрузок, доля объясненной дисперсии и даже какой-то статистический тест с p-value.</p>
+<p>Анализируем уникальности: больших значений нет, значит все наши переменные хорошо объясняются факторами.</p>
+<p>Смотрим на таблицу факторных нагрузок. Так получается, что она еще и автоматически корреляционная матрица переменных с факторами. Вот почему:</p>
+<p>corr(Xi,Fj)=corr(ai1F1+ai2F2+⋯+aipFp+Ui,Fj)==corr(ai1F1,Fj)+corr(ai2F2,Fj)+⋯+corr(aijFj,Fj)+⋯+corr(aipFp,Fj)+corr(Ui,Fj)==aijcorr(Fj,Fj)=aijvar(Fj)=aij</p>
+<p>Таким образом, мы интерпретируем факторы так же, как мы интерпретировали главные компоненты — на основании корреляций с исходными переменными. Как бы вы проинтерпретировали получившиеся три фактора?</p>
+<p>Можно подобрать модель с двумя факторами:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="efa.html#cb14-1"></a><span class="kw">factanal</span>(pizza2, <span class="dt">factors =</span> <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## factanal(x = pizza2, factors = 2)
+## 
+## Uniquenesses:
+##   mois   prot    fat    ash sodium   carb    cal 
+##  0.005  0.520  0.005  0.191  0.126  0.071  0.005 
+## 
+## Loadings:
+##        Factor1 Factor2
+## mois    0.406  -0.911 
+## prot    0.684  -0.111 
+## fat     0.827   0.558 
+## ash     0.895         
+## sodium  0.807   0.472 
+## carb   -0.934   0.238 
+## cal     0.274   0.960 
+## 
+##                Factor1 Factor2
+## SS loadings      3.717   2.364
+## Proportion Var   0.531   0.338
+## Cumulative Var   0.531   0.869
+## 
+## Test of the hypothesis that 2 factors are sufficient.
+## The chi square statistic is 3485.54 on 8 degrees of freedom.
+## The p-value is 0</code></pre>
+<p>Как теперь их можно интерпретировать? Отличается ли результат от PCA?</p>
+<p>Из результатов факторного анализа можно отдельно доставать всякие штуки:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="efa.html#cb16-1"></a>fan<span class="op">$</span>loadings <span class="co"># факторные нагрузки aka матрица корреляций переменных с факторами</span></span></code></pre></div>
+<pre><code>## 
+## Loadings:
+##        Factor1 Factor2 Factor3
+## mois            0.266  -0.961 
+## prot    0.199   0.971  -0.116 
+## fat     0.904   0.356   0.232 
+## ash     0.629   0.706  -0.118 
+## sodium  0.889   0.278   0.135 
+## carb   -0.539  -0.714   0.443 
+## cal     0.632           0.772 
+## 
+##                Factor1 Factor2 Factor3
+## SS loadings      2.736   2.228   1.815
+## Proportion Var   0.391   0.318   0.259
+## Cumulative Var   0.391   0.709   0.968</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="efa.html#cb18-1"></a>fan<span class="op">$</span>correlation <span class="co"># корреляционная матрица исходных переменных</span></span></code></pre></div>
+<pre><code>##              mois       prot        fat        ash     sodium        carb
+## mois    1.0000000  0.3602477 -0.1713182  0.2655555 -0.1022789 -0.59180165
+## prot    0.3602477  1.0000000  0.4980017  0.8238437  0.4291295 -0.85354226
+## fat    -0.1713182  0.4980017  1.0000000  0.7916340  0.9333252 -0.64023817
+## ash     0.2655555  0.8238437  0.7916340  1.0000000  0.8081221 -0.89898837
+## sodium -0.1022789  0.4291295  0.9333252  0.8081221  1.0000000 -0.62017634
+## carb   -0.5918017 -0.8535423 -0.6402382 -0.8989884 -0.6201763  1.00000000
+## cal    -0.7644405  0.0702581  0.7645671  0.3264685  0.6719575 -0.02348458
+##                cal
+## mois   -0.76444054
+## prot    0.07025810
+## fat     0.76456710
+## ash     0.32646845
+## sodium  0.67195750
+## carb   -0.02348458
+## cal     1.00000000</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="efa.html#cb20-1"></a>fan<span class="op">$</span>uniquenesses <span class="co"># уникальности</span></span></code></pre></div>
+<pre><code>##       mois       prot        fat        ash     sodium       carb        cal 
+## 0.00500000 0.00500000 0.00500000 0.09123351 0.11363405 0.00500000 0.00500000</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="efa.html#cb22-1"></a>fan<span class="op">$</span>factors <span class="co"># количество факторов</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="efa.html#cb24-1"></a>fan<span class="op">$</span>dof <span class="co"># число степеней сводобы</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="efa.html#cb26-1"></a>fan<span class="op">$</span>rotmat <span class="co"># rotation matrix (кстати, мы по умолчанию применили varimax)</span></span></code></pre></div>
+<pre><code>##            [,1]      [,2]       [,3]
+## [1,]  0.7536936 0.1565949  0.6382978
+## [2,]  0.1916326 0.8766368 -0.4413444
+## [3,] -0.6286676 0.4549571  0.6307068</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="efa.html#cb28-1"></a>fan<span class="op">$</span>n.obs <span class="co"># число наблюдений</span></span></code></pre></div>
+<pre><code>## [1] 300</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="efa.html#cb30-1"></a>fan<span class="op">$</span>scores <span class="co"># значения факторов</span></span></code></pre></div>
+<pre><code>##              Factor1     Factor2      Factor3
+##   [1,]  2.2403606726  1.01365654  1.586355336
+##   [2,]  2.1517548542  1.00091815  1.496408251
+##   [3,]  2.4850667309  0.72364156  1.437571756
+##   [4,]  2.1961101438  0.77695944  1.231803288
+##   [5,]  1.9063377764  1.02361718  1.317077547
+##   [6,]  2.1080650467  0.80291517  1.169719507
+##   [7,]  1.9106978395  0.96219229  1.226313169
+##   [8,]  1.8419336983  1.08904918  1.501611777
+##   [9,]  2.3597231318  0.82839938  1.490011356
+##  [10,]  2.2997558996  0.96763399  1.580551579
+##  [11,]  2.3171874472  0.96533982  1.625380205
+##  [12,]  2.2394984222  0.99187466  1.670151354
+##  [13,]  2.4010735791  0.73763937  1.413621437
+##  [14,]  2.1691001728  0.69065729  1.192213382
+##  [15,]  2.0138510469  0.91483867  1.234337039
+##  [16,]  2.5802939761  0.32831412  1.032800530
+##  [17,]  1.8510266753  0.81639109  0.990412118
+##  [18,]  2.2745608639  0.28807009  0.632433234
+##  [19,]  1.8753957387  0.87708898  1.099961226
+##  [20,]  2.2117838012  0.59714566  1.099454189
+##  [21,]  2.6617777924  0.62981107  1.556565161
+##  [22,]  2.4447180621  0.73872153  1.508952001
+##  [23,]  2.0620657018  0.87473489  1.221283371
+##  [24,]  2.3612603970  0.57294296  1.001523050
+##  [25,]  2.3244039216  0.38111229  0.802152569
+##  [26,]  2.3662367303  0.68194554  1.214699229
+##  [27,]  2.4256829077  0.72226741  1.389241102
+##  [28,]  2.4316853463  0.49596114  1.155773681
+##  [29,]  2.1243633904  0.96229702  1.377906129
+##  [30,]  1.5245191852 -0.38591847 -1.115422504
+##  [31,]  1.1144121194 -0.23128326 -1.381128600
+##  [32,]  1.6946707363 -0.49788000 -1.033852276
+##  [33,]  1.4371994153 -0.36068816 -1.171080576
+##  [34,]  1.4071001078 -0.45100948 -1.255734239
+##  [35,]  1.5788200815 -0.46090330 -1.181013939
+##  [36,]  1.7296881919 -0.56912880 -1.298799704
+##  [37,]  1.7466188162 -0.64082886 -1.294966697
+##  [38,]  1.1836832066 -0.44264630 -1.587410267
+##  [39,]  1.0101788214 -0.20634894 -1.317818517
+##  [40,]  1.5337258621 -0.35655449 -1.179478042
+##  [41,]  1.5888661077 -0.41395683 -1.124934026
+##  [42,]  1.3317229696 -0.31112092 -1.262173758
+##  [43,]  1.5426171736 -0.46663798 -1.163324108
+##  [44,]  0.8407773262 -0.22250609 -1.622066201
+##  [45,]  0.6487965309 -0.08028165 -1.593806926
+##  [46,]  1.0805401304 -0.29427053 -1.547582136
+##  [47,]  1.5529898252 -0.37247076 -1.083277985
+##  [48,]  1.5709499707 -0.49863089 -1.277396981
+##  [49,]  0.9984879853 -0.23423108 -1.376616855
+##  [50,]  1.5152058510 -0.43750266 -1.169501388
+##  [51,]  1.6089133152 -0.48940577 -1.144758288
+##  [52,]  1.6130042718 -0.50646770 -1.124521755
+##  [53,]  1.3698388494 -0.34341836 -1.247357567
+##  [54,]  1.3595486121 -0.33410616 -1.261472695
+##  [55,]  1.0559521732 -0.28792381 -1.545025210
+##  [56,]  1.3435712796 -0.38944131 -1.400085217
+##  [57,]  1.3979053333 -0.34587471 -1.338457029
+##  [58,]  1.4837380311 -0.39847340 -1.329807264
+##  [59,]  1.5837908950 -0.52816023 -1.371221916
+##  [60,]  1.5254965452 -0.50539511 -1.356971003
+##  [61,] -0.6564304681  2.11766623 -0.166976218
+##  [62,] -1.3955566660  2.67209895 -0.024385555
+##  [63,] -0.6439029608  1.97154837 -0.256448225
+##  [64,] -0.8744255312  2.08895038 -0.239432061
+##  [65,] -0.2090670311  1.66833341 -0.343001080
+##  [66,] -0.7699740622  2.03786028 -0.293637694
+##  [67,] -1.5347278184  2.65119362 -0.190832803
+##  [68,] -1.1917307459  2.55270925 -0.003793950
+##  [69,] -1.3468090115  2.45350710 -0.181656518
+##  [70,] -1.2062193773  2.22601950 -0.487925867
+##  [71,] -1.4109000180  2.27302994 -0.535696204
+##  [72,] -0.7438030121  1.98352299 -0.290824607
+##  [73,] -0.6436995362  2.12107486 -0.131094138
+##  [74,] -0.7390440384  2.10206079 -0.109591606
+##  [75,] -0.6843265470  2.04250364 -0.117166835
+##  [76,] -0.5667719396  1.83401273 -0.301262709
+##  [77,] -0.6512577379  1.77796905 -0.441735958
+##  [78,] -1.1236981168  2.17386524 -0.593206084
+##  [79,] -0.7317686173  2.16958936 -0.006643861
+##  [80,] -0.9075375101  2.29165938 -0.132728822
+##  [81,] -1.1963530935  2.23114877 -0.561171329
+##  [82,] -1.1605763707  2.32554134 -0.167078126
+##  [83,] -1.0233565303  1.97503662 -0.546891922
+##  [84,] -1.2919992535  2.46241444 -0.128349471
+##  [85,] -0.1391120436  1.67880770 -0.190705740
+##  [86,] -1.2489448170  2.25579590 -0.386383866
+##  [87,] -0.6611091064  2.00245912 -0.307434785
+##  [88,]  0.1885979781  1.21958461 -0.326288126
+##  [89,]  0.2601249140  1.24838692 -0.234436763
+##  [90,] -0.3538261531  1.42592007 -0.337197495
+##  [91,] -0.6017589423  1.54298063 -0.299575284
+##  [92,] -0.3459991818  1.38668573 -0.275651040
+##  [93,] -0.0146485657  1.31432242 -0.322070333
+##  [94,] -0.3773789287  1.38084025 -0.336722579
+##  [95,] -0.3654960133  1.40428407 -0.388891708
+##  [96,] -1.3255604922  2.56714064 -0.094706030
+##  [97,] -0.3613116928  1.46871134 -0.275505996
+##  [98,] -0.2476722068  1.31202060 -0.338505886
+##  [99,] -0.2204720598  1.24212636 -0.383045628
+## [100,] -0.5767082151  1.50063565 -0.338952718
+## [101,] -0.2882175965  1.51884367 -0.417630932
+## [102,] -0.3010984843  1.48050831 -0.394382685
+## [103,] -0.3476628457  1.53855072 -0.449358034
+## [104,] -0.3809592875  1.44427420 -0.313896243
+## [105,] -0.4242264947  1.40291836 -0.353980844
+## [106,] -0.4148148445  1.42966395 -0.385380757
+## [107,] -0.2849448624  1.28068192 -0.426206521
+## [108,] -0.4076482165  1.48865177 -0.299168407
+## [109,] -0.4703742257  1.49515330 -0.331947871
+## [110,] -0.5837414082  1.54017359 -0.378226432
+## [111,]  0.2228909974  1.18798010 -0.289467744
+## [112,] -0.6630063572  1.53609572 -0.431809952
+## [113,] -0.2491017302  1.55139606 -0.495807157
+## [114,] -0.4699016029  1.47621685 -0.351585932
+## [115,]  0.2094440488  1.24571710 -0.274406306
+## [116,]  0.3007729562  1.21284206 -0.295522536
+## [117,]  0.3331837834  1.09597392 -0.404659545
+## [118,]  0.2616061627  1.09241178 -0.381803577
+## [119,] -1.1236981168  2.17386524 -0.593206084
+## [120,] -0.3000530023 -0.83158171  0.488023463
+## [121,] -0.1318964137 -0.84396801  0.237619511
+## [122,] -0.3913683952 -0.71954937  0.459104420
+## [123,] -1.7824889326 -0.37073958  0.120606209
+## [124,] -0.5062646322 -0.73396282  0.521536476
+## [125,] -1.7508036890 -0.43167666  0.069029838
+## [126,] -0.6599641614 -0.69749429  0.487625793
+## [127,] -0.1471450550 -0.82058298 -0.033604901
+## [128,] -0.3672733856 -0.78693893  0.332512908
+## [129,] -0.3268926424 -0.80095526  0.275289584
+## [130,] -0.6628668564 -0.65174582  0.184293672
+## [131,] -0.6314139563 -0.68847351  0.446553197
+## [132,]  0.0620842391 -0.87847252  0.476208521
+## [133,]  0.0866662887 -0.88267477  0.614038597
+## [134,]  0.2646732156 -1.00485599  0.115112698
+## [135,] -0.5758860162 -0.73169183  0.188392424
+## [136,] -0.7291339553 -0.74901749  0.294293682
+## [137,]  0.2646732156 -1.00485599  0.115112698
+## [138,] -0.5689581078 -0.68164815  0.556653854
+## [139,] -0.4412783353 -0.76979556  0.268819563
+## [140,] -0.1092327637 -0.81326762  0.511861391
+## [141,] -0.0714279440 -0.88920515  0.353315373
+## [142,]  0.2705697644 -1.04010003  0.347424840
+## [143,]  0.1322437936 -0.96480380  0.533364254
+## [144,]  0.0690241268 -0.93870178  0.418985182
+## [145,] -1.2472538982 -0.66558367  0.228233689
+## [146,] -0.6628668564 -0.65174582  0.184293672
+## [147,] -0.6131405536 -0.74431085  0.518370420
+## [148,] -0.2633341239 -0.71595766  1.217767729
+## [149,] -0.6452732493 -0.60657008  1.035891625
+## [150,] -0.7863210938 -0.54181156  1.082516215
+## [151,]  0.0399793183 -0.75014649  0.989664128
+## [152,] -0.1958271874 -0.72955635  1.172809228
+## [153,] -0.6889072014 -0.58321943  1.017012897
+## [154,] -0.5534773902 -0.65909045  1.172386875
+## [155,] -0.8796835042 -0.51342908  0.968200779
+## [156,] -0.7625457389 -0.54292645  1.082984946
+## [157,] -0.5136323523 -0.67488901  0.992410797
+## [158,] -0.1260441128 -0.69718469  1.016658593
+## [159,] -0.6630200341 -0.62791921  1.091423664
+## [160,] -0.1433731874 -0.67466674  1.133934202
+## [161,] -0.6633503098 -0.60652431  1.055744228
+## [162,] -0.4456240518 -0.65538122  1.302235507
+## [163,] -0.3299463103 -0.67951831  1.202957460
+## [164,] -0.0462946668 -0.71034224  1.106137789
+## [165,] -0.7922443006 -0.54985709  1.111121538
+## [166,] -0.2765030338 -0.66555894  1.392900093
+## [167,] -0.7643990265 -0.58073080  0.994930751
+## [168,] -0.9308335754 -0.53026450  0.992796345
+## [169,] -1.0378602881 -0.50927628  1.060276180
+## [170,] -0.5252360474 -0.61711983  1.118287551
+## [171,] -0.5604205081 -0.67371934  1.046086695
+## [172,] -0.3016177534 -0.74021680  1.105263592
+## [173,] -0.4620008841 -0.67775527  1.132068625
+## [174,] -0.4152371410 -0.65820714  1.153426690
+## [175,] -0.2392387783 -0.73462895  1.178923743
+## [176,] -0.1347829908 -0.75465222  1.170848548
+## [177,] -0.7065606368 -0.66007230  0.907077888
+## [178,] -0.7052084389 -0.52907926  1.270454126
+## [179,] -0.7669398263 -0.52418763  1.254392851
+## [180,] -0.8287004468 -0.56989612  0.965871034
+## [181,] -0.7682631495 -0.50400407  1.275308271
+## [182,] -0.0681737908 -0.67197746  1.153811750
+## [183,] -0.5204759038 -0.60207280  1.235604840
+## [184,] -0.6092084547 -0.54575639  1.207813338
+## [185,] -0.6972704977 -0.51567524  1.314716201
+## [186,] -0.5939143569 -0.54508464  1.278438987
+## [187,] -0.6157929001 -0.53015748  1.272934448
+## [188,] -0.9075546254 -0.45209687  1.298956859
+## [189,] -0.9034021373 -0.42248813  1.284882425
+## [190,] -0.7331520605 -0.49758105  1.228558551
+## [191,] -0.9381055131 -0.60315974  0.720210141
+## [192,] -0.1542219603 -0.65658458  1.424124840
+## [193,] -0.7970942874 -0.44354121  1.388287278
+## [194,] -0.8344037197 -0.48926991  1.343928463
+## [195,] -0.7272484866 -0.54664030  1.312450364
+## [196,] -0.3634201019 -0.63934454  0.970983776
+## [197,] -0.8669825809 -0.46824072  1.186391474
+## [198,] -0.4458325684 -0.58687218  1.202331935
+## [199,] -0.8403950759 -0.47135000  1.380179771
+## [200,] -0.9311263837 -0.49171184  1.261024081
+## [201,] -0.4837883396 -0.58944642  1.460393423
+## [202,] -0.4120952211 -0.62578548  1.429259752
+## [203,] -0.7603225496 -0.50858031  1.320757323
+## [204,] -0.6511242527 -0.45611815  1.633198829
+## [205,] -1.1083210972 -0.41517655  1.198410938
+## [206,] -0.5915123496 -0.59547625  1.196299077
+## [207,] -0.8966051013 -0.57599698  0.396145385
+## [208,]  0.0466019595 -0.81639803  0.433541167
+## [209,] -0.3893761776 -0.78932624  0.400991460
+## [210,] -1.7164518588 -0.27511957  0.544040743
+## [211,] -0.3265123805 -0.73624683  0.403224130
+## [212,] -0.2932551471 -0.75588575  0.392583499
+## [213,] -1.6418119782 -0.47483164 -0.065190853
+## [214,] -0.2319282837 -0.86766588  0.350593553
+## [215,] -0.4093341372 -0.80398693  0.656136555
+## [216,] -0.5611281783 -0.66226519  0.627610390
+## [217,] -1.8047530753 -0.38026537  0.170378061
+## [218,] -0.0455772260 -0.86881185  0.591489371
+## [219,] -0.4972289904 -0.61334498  0.354144355
+## [220,] -0.5771739885 -0.71612835  0.389513271
+## [221,] -0.7870893792 -0.60044211  0.337399891
+## [222,] -0.6904069626 -0.65067737  0.444019329
+## [223,] -0.4688860134 -0.76426230  0.259689750
+## [224,] -0.3526204332 -0.81986949  0.382351195
+## [225,] -0.4063563585 -0.74899600  0.583501109
+## [226,] -0.5733465959 -0.72541362  0.380232698
+## [227,] -0.5483667556 -0.72460286  0.391720562
+## [228,]  0.1224767974 -0.93423499  0.323200478
+## [229,] -0.2640182510 -0.73059744  0.358039524
+## [230,] -0.6152917257 -0.70061070  0.426118720
+## [231,] -0.2207262896 -0.86301422  0.308637907
+## [232,] -0.3533345249 -0.79725501  0.336647802
+## [233,]  0.0316932063 -0.93931308  0.224401367
+## [234,] -0.4561786417 -0.80227378  0.338105783
+## [235,] -0.7760109052 -0.65134221  0.354519098
+## [236,] -0.0584421152 -0.92914021  0.452832672
+## [237,] -1.1641433622 -0.60578215  0.316331489
+## [238,] -0.6548454950 -0.68458555  0.380456991
+## [239,] -0.5483667556 -0.72460286  0.391720562
+## [240,] -0.2261682399 -0.62774049 -1.657090791
+## [241,] -0.1053217215 -0.73691400 -1.666798111
+## [242,] -0.2273248664 -0.64091000 -1.564983928
+## [243,] -0.1193538843 -0.60003667 -1.602905105
+## [244,] -0.0891131708 -0.66492303 -1.472197597
+## [245,] -0.4969962743 -0.45410882 -1.632509013
+## [246,] -0.2483464369 -0.85944509 -1.887226594
+## [247,] -0.0970237888 -0.74360357 -1.858042502
+## [248,] -0.2641877399 -0.73832715 -1.663799441
+## [249,] -0.0049763509 -0.55948273 -1.538010395
+## [250,] -0.1125711670 -0.65963883 -1.671613523
+## [251,] -0.2310873737 -0.47450775 -1.444859445
+## [252,] -0.3081643611 -0.52574339 -1.679093153
+## [253,] -0.1593471933 -0.57962511 -1.662364206
+## [254,] -0.2789489329 -0.61110059 -1.736717879
+## [255,] -0.0087151472 -0.79989235 -1.804803439
+## [256,] -0.2258723792 -0.69881743 -1.658660575
+## [257,] -0.2512359869 -0.65453256 -1.666814956
+## [258,] -0.3690831334 -0.54182691 -1.570913580
+## [259,] -0.3274008558 -0.51338581 -1.413770692
+## [260,] -0.3064494648 -0.43113070 -1.564645325
+## [261,] -0.1701732230 -0.57316168 -1.616412981
+## [262,] -0.1945782780 -0.62726961 -1.637032756
+## [263,] -0.2005364068 -0.57558560 -1.569821295
+## [264,] -0.3343848744 -0.75388906 -1.963691419
+## [265,] -0.1700467032 -0.60998592 -1.659556801
+## [266,] -0.1865690767 -0.66843038 -1.612812090
+## [267,] -0.3176273572 -0.53318695 -1.507685396
+## [268,] -0.1586424822 -0.73766474 -1.755852980
+## [269,] -0.0912035483 -0.54523205 -0.733212692
+## [270,] -0.1896130982 -0.38994722 -0.429646993
+## [271,] -0.1864072779 -0.52926831 -0.873944328
+## [272,] -0.1264472341 -0.61768326 -0.817252368
+## [273,] -0.0914707391 -0.62231127 -0.732443888
+## [274,] -0.2400717376 -0.56506499 -0.909002089
+## [275,]  0.0023752220 -0.53682294 -0.687442611
+## [276,] -0.0450163720 -0.49768748 -0.749746599
+## [277,]  0.0139827070 -0.50856352 -0.712657273
+## [278,]  0.0248556056 -0.69824580 -1.029945432
+## [279,] -0.4482304001 -0.03404786 -0.412792955
+## [280,] -0.4227670694 -0.39271346 -0.674079591
+## [281,] -0.0145035502 -0.56212568 -0.869975519
+## [282,] -0.1981420653 -0.37251769 -0.682075736
+## [283,] -0.1319332508 -0.46869511 -0.603371462
+## [284,] -0.2032093971 -0.51540468 -0.812895514
+## [285,]  0.2166337669 -0.49911115 -0.426480989
+## [286,]  0.0027125211 -0.60372788 -0.920509837
+## [287,] -0.0009888876 -0.53971526 -0.616514538
+## [288,] -0.1600400524 -0.48270054 -0.559359510
+## [289,] -0.0815784835 -0.50492781 -0.902831050
+## [290,] -0.0587008082 -0.56497971 -0.675739390
+## [291,] -0.0643984553 -0.55783784 -0.725236942
+## [292,] -0.1443051554 -0.55601196 -0.859305404
+## [293,] -0.0477442039 -0.69937331 -0.659514402
+## [294,]  0.1458822477 -0.65520493 -0.778702613
+## [295,]  0.0751389883 -0.45088887 -0.484026429
+## [296,] -0.1249121426 -0.41300520 -0.564966576
+## [297,] -0.0184274013 -0.28697552 -0.324125970
+## [298,] -0.2266289174 -0.38575999 -0.506405446
+## [299,] -0.1864072779 -0.52926831 -0.873944328
+## [300,] -0.1264472341 -0.61768326 -0.817252368</code></pre>
+<p>Ну, и напоследок, визуализируем связь номинативного предиктора с получившимися факторами.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="efa.html#cb32-1"></a><span class="kw">library</span>(plotly)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;plotly&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     last_plot</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     filter</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     layout</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="efa.html#cb37-1"></a><span class="kw">plot_ly</span>(<span class="dt">x =</span> fan<span class="op">$</span>scores[,<span class="dv">1</span>], <span class="dt">y =</span> fan<span class="op">$</span>scores[,<span class="dv">2</span>], <span class="dt">z =</span> fan<span class="op">$</span>scores[,<span class="dv">3</span>], <span class="dt">color =</span> pizza<span class="op">$</span>brand,</span>
+<span id="cb37-2"><a href="efa.html#cb37-2"></a>                <span class="dt">type =</span> <span class="st">&#39;scatter3d&#39;</span>, <span class="dt">mode =</span> <span class="st">&#39;markers&#39;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb37-3"><a href="efa.html#cb37-3"></a><span class="st">  </span><span class="kw">layout</span>(<span class="dt">scene =</span> <span class="kw">list</span>(</span>
+<span id="cb37-4"><a href="efa.html#cb37-4"></a>    <span class="dt">xaxis =</span> <span class="kw">list</span>(<span class="dt">title =</span> <span class="st">&#39;Factor 1&#39;</span>),</span>
+<span id="cb37-5"><a href="efa.html#cb37-5"></a>    <span class="dt">yaxis =</span> <span class="kw">list</span>(<span class="dt">title =</span> <span class="st">&#39;Factor 2&#39;</span>),</span>
+<span id="cb37-6"><a href="efa.html#cb37-6"></a>    <span class="dt">zaxis =</span> <span class="kw">list</span>(<span class="dt">title =</span> <span class="st">&#39;Factor 3&#39;</span>)</span>
+<span id="cb37-7"><a href="efa.html#cb37-7"></a>  ))</span></code></pre></div>
+<pre><code>## Warning in RColorBrewer::brewer.pal(N, &quot;Set2&quot;): n too large, allowed maximum for palette Set2 is 8
+## Returning the palette you asked for with that many colors
+
+## Warning in RColorBrewer::brewer.pal(N, &quot;Set2&quot;): n too large, allowed maximum for palette Set2 is 8
+## Returning the palette you asked for with that many colors</code></pre>
+<div id="htmlwidget-aefe40c50ed6cf20688a" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aefe40c50ed6cf20688a">{"x":{"visdat":{"111571b4b6dc4":["function () ","plotlyVisDat"]},"cur_data":"111571b4b6dc4","attrs":{"111571b4b6dc4":{"x":[2.24036067259823,2.15175485415328,2.48506673089274,2.19611014378213,1.90633777636402,2.10806504668525,1.91069783953296,1.84193369825483,2.35972313182638,2.29975589963993,2.31718744719378,2.23949842223494,2.4010735791244,2.16910017275046,2.01385104690226,2.58029397605967,1.85102667533166,2.27456086386969,1.87539573874589,2.21178380116526,2.6617777923739,2.44471806213047,2.06206570175589,2.36126039697886,2.32440392163133,2.36623673026198,2.42568290772769,2.43168534626531,2.1243633904013,1.52451918515455,1.11441211944515,1.69467073633266,1.4371994153036,1.40710010783856,1.57882008154702,1.7296881918519,1.74661881618693,1.1836832066338,1.01017882137675,1.53372586213735,1.58886610769077,1.33172296962037,1.54261717356917,0.840777326179829,0.648796530860371,1.0805401303856,1.55298982515242,1.57094997068614,0.99848798534496,1.51520585095953,1.60891331518932,1.6130042718183,1.36983884938152,1.35954861207139,1.05595217319815,1.3435712796342,1.39790533325631,1.48373803111068,1.5837908949545,1.52549654519026,-0.65643046811207,-1.39555666602169,-0.643902960787955,-0.874425531199658,-0.209067031140727,-0.769974062202554,-1.534727818385,-1.19173074590002,-1.34680901151907,-1.20621937734062,-1.41090001802367,-0.743803012127801,-0.643699536247072,-0.739044038371164,-0.684326546968772,-0.56677193958199,-0.651257737949545,-1.12369811675758,-0.731768617280504,-0.907537510124241,-1.19635309349386,-1.16057637068871,-1.02335653027859,-1.2919992534963,-0.139112043641378,-1.24894481695686,-0.661109106401056,0.188597978094852,0.260124913961055,-0.353826153124466,-0.601758942267809,-0.345999181750237,-0.0146485656555753,-0.377378928698038,-0.365496013308975,-1.32556049215193,-0.361311692772703,-0.247672206761503,-0.220472059796647,-0.576708215091538,-0.288217596459315,-0.301098484275507,-0.347662845732615,-0.380959287549715,-0.424226494739332,-0.414814844480563,-0.284944862412319,-0.407648216497274,-0.470374225692662,-0.583741408151646,0.222890997372937,-0.663006357243064,-0.249101730227799,-0.469901602910906,0.209444048791233,0.300772956156214,0.333183783377205,0.261606162724603,-1.12369811675758,-0.300053002320677,-0.131896413732026,-0.391368395175452,-1.78248893263848,-0.50626463222464,-1.75080368896868,-0.659964161352326,-0.14714505498438,-0.36727338559384,-0.326892642426814,-0.662866856369191,-0.631413956285825,0.062084239142636,0.0866662887486274,0.264673215588528,-0.575886016246622,-0.729133955256453,0.264673215588528,-0.568958107849406,-0.441278335269675,-0.10923276373407,-0.0714279440272105,0.270569764410649,0.132243793582224,0.0690241267656017,-1.2472538982285,-0.662866856369191,-0.613140553634566,-0.263334123870664,-0.64527324932223,-0.786321093793248,0.0399793183250499,-0.195827187438226,-0.68890720144501,-0.553477390208007,-0.879683504158088,-0.762545738944049,-0.513632352277903,-0.126044112799571,-0.663020034115401,-0.1433731873735,-0.663350309796979,-0.445624051823012,-0.329946310317917,-0.046294666810869,-0.792244300642812,-0.27650303375684,-0.764399026539271,-0.930833575405399,-1.03786028808796,-0.525236047389585,-0.560420508073746,-0.301617753381319,-0.462000884143174,-0.415237140989368,-0.239238778308604,-0.134782990795266,-0.706560636766986,-0.705208438948708,-0.76693982634679,-0.828700446788611,-0.768263149475693,-0.0681737907575063,-0.520475903751729,-0.609208454664032,-0.697270497675375,-0.593914356865283,-0.615792900094094,-0.907554625448025,-0.90340213729357,-0.733152060524721,-0.938105513057101,-0.154221960322263,-0.797094287398542,-0.834403719727544,-0.727248486593005,-0.363420101889583,-0.866982580944881,-0.445832568426234,-0.840395075866247,-0.931126383732846,-0.4837883395677,-0.412095221115218,-0.760322549631552,-0.651124252736048,-1.10832109719112,-0.591512349550249,-0.89660510133386,0.0466019594891075,-0.389376177645209,-1.71645185882582,-0.326512380460866,-0.293255147058717,-1.6418119781791,-0.231928283746499,-0.409334137199022,-0.561128178273085,-1.80475307528958,-0.0455772259620796,-0.497228990421437,-0.577173988465361,-0.787089379222306,-0.690406962571303,-0.468886013425782,-0.352620433192858,-0.406356358469501,-0.573346595929715,-0.548366755564902,0.122476797387726,-0.264018251018402,-0.615291725696541,-0.220726289576021,-0.35333452486623,0.0316932062703597,-0.456178641678037,-0.776010905238148,-0.0584421151778347,-1.16414336220076,-0.65484549499493,-0.548366755564902,-0.226168239868559,-0.105321721466093,-0.227324866370439,-0.119353884286403,-0.0891131708437853,-0.49699627425301,-0.248346436932179,-0.097023788768311,-0.264187739878745,-0.0049763509076502,-0.11257116703284,-0.231087373706605,-0.308164361103661,-0.159347193269378,-0.278948932883407,-0.00871514719710698,-0.225872379161453,-0.251235986892218,-0.369083133380027,-0.327400855791552,-0.306449464835521,-0.170173223029816,-0.194578277951099,-0.200536406777495,-0.334384874430893,-0.170046703201415,-0.186569076687118,-0.317627357209386,-0.15864248222705,-0.091203548259855,-0.189613098162273,-0.186407277946592,-0.126447234097576,-0.0914707391267346,-0.240071737601826,0.00237522201179935,-0.0450163720487959,0.0139827069729597,0.0248556056191034,-0.448230400083885,-0.422767069429845,-0.0145035501672472,-0.198142065325086,-0.131933250831969,-0.203209397059834,0.216633766885299,0.00271252108791559,-0.000988887585440246,-0.16004005241877,-0.0815784835040497,-0.0587008082373998,-0.0643984553279523,-0.144305155430905,-0.0477442039143752,0.145882247656279,0.0751389882607037,-0.124912142640069,-0.0184274013421762,-0.226628917433386,-0.186407277946592,-0.126447234097576],"y":[1.01365653602109,1.00091815155949,0.723641562677787,0.776959442764104,1.02361718374339,0.802915169204006,0.962192293333687,1.08904918320896,0.828399382630275,0.967633990675757,0.965339816184981,0.991874659541217,0.737639365279752,0.690657293580753,0.914838674703081,0.328314122531445,0.816391094290233,0.288070090759459,0.877088977182095,0.597145655297669,0.629811070773451,0.738721532767935,0.874734891592685,0.572942955581306,0.381112285396794,0.681945540389693,0.722267411558036,0.49596114133201,0.962297016539941,-0.385918471936279,-0.231283263230537,-0.497879997990864,-0.360688159469188,-0.451009484856024,-0.46090330476131,-0.569128796768993,-0.640828857319901,-0.442646295992695,-0.206348935783802,-0.356554487460918,-0.413956827933118,-0.31112092000095,-0.466637981644861,-0.222506086824414,-0.0802816466302886,-0.294270534249229,-0.372470763446462,-0.498630887029985,-0.234231080348458,-0.437502664207077,-0.48940577145296,-0.50646769563515,-0.343418361952175,-0.334106156153643,-0.287923806744682,-0.389441313193879,-0.345874705825765,-0.398473400579198,-0.528160232462727,-0.505395112768105,2.1176662304134,2.67209895346538,1.97154837466372,2.08895037522198,1.66833340583785,2.037860278318,2.6511936234967,2.552709245338,2.45350710141291,2.22601949628587,2.27302994278607,1.98352299136017,2.12107485976068,2.10206078575345,2.04250364375969,1.83401272614534,1.77796905390347,2.17386523935573,2.16958936047584,2.29165938390457,2.23114877083413,2.32554134499845,1.97503662270545,2.46241444116047,1.67880769724926,2.25579589604754,2.00245911741144,1.21958460657488,1.24838692000869,1.42592007314704,1.54298063310543,1.3866857326375,1.31432241813395,1.38084024995694,1.4042840697722,2.56714063853887,1.46871134484085,1.31202059932371,1.24212636278116,1.50063564705918,1.51884366878516,1.48050830885566,1.53855071927743,1.44427419728026,1.40291835523715,1.42966395032913,1.28068191750881,1.488651766886,1.49515330173433,1.54017358920625,1.1879801034152,1.53609571746334,1.55139606023343,1.47621684745057,1.24571710420083,1.21284205813275,1.09597391507862,1.09241177747921,2.17386523935573,-0.831581709079885,-0.843968007662991,-0.719549374959644,-0.370739575261849,-0.73396281714834,-0.431676655925066,-0.697494292071156,-0.820582983835025,-0.786938931683959,-0.800955264592985,-0.651745818866095,-0.688473512505343,-0.878472518935024,-0.882674768807507,-1.00485598637591,-0.731691831127915,-0.749017491927396,-1.00485598637591,-0.681648149833724,-0.769795560998529,-0.813267623486982,-0.889205147205008,-1.04010002888049,-0.964803801907932,-0.938701777016283,-0.665583673521357,-0.651745818866095,-0.744310849618298,-0.715957661342575,-0.606570082095866,-0.541811561185736,-0.750146490248441,-0.729556349892187,-0.583219425563706,-0.659090447809414,-0.513429084503905,-0.542926452439113,-0.674889005558838,-0.697184690612103,-0.627919211270134,-0.674666743043,-0.606524309704533,-0.655381218156856,-0.679518313157394,-0.710342242698541,-0.549857091281336,-0.665558940426006,-0.580730797344033,-0.530264502440995,-0.50927628430778,-0.617119827444658,-0.673719341607576,-0.740216800381377,-0.677755267265319,-0.658207139095294,-0.734628953460493,-0.754652223434213,-0.660072296516989,-0.52907926187813,-0.524187628853447,-0.569896119024781,-0.504004068473067,-0.671977461618826,-0.602072800713697,-0.545756391353565,-0.515675238165215,-0.545084637678976,-0.530157484627426,-0.452096872889371,-0.422488129183095,-0.49758104748514,-0.603159737410648,-0.656584577939304,-0.443541213330252,-0.489269913905731,-0.546640303710992,-0.639344537430994,-0.468240722861949,-0.586872184661828,-0.471349998678574,-0.491711844081959,-0.589446416956238,-0.625785477587822,-0.508580312537653,-0.456118149946537,-0.415176547420679,-0.595476247665435,-0.575996980221464,-0.816398028368377,-0.789326236323073,-0.275119569495794,-0.736246826864174,-0.755885750360073,-0.474831644691791,-0.867665882875059,-0.803986925027392,-0.662265189925995,-0.380265370430011,-0.868811848509534,-0.613344975429209,-0.716128351065223,-0.600442112944562,-0.650677365492427,-0.764262297397943,-0.819869491866925,-0.748995998081768,-0.725413616582977,-0.724602860062608,-0.934234986393829,-0.73059744179467,-0.700610701566288,-0.863014215157521,-0.797255005045743,-0.939313076392447,-0.802273778033822,-0.65134221248598,-0.929140213133316,-0.60578215354692,-0.684585545153801,-0.724602860062608,-0.627740488210811,-0.73691400254789,-0.64090999884981,-0.600036671776076,-0.664923033220372,-0.454108824411974,-0.859445093530009,-0.743603573066718,-0.738327151982593,-0.559482733751416,-0.659638833157121,-0.474507745802241,-0.525743392521795,-0.579625109474683,-0.611100589916185,-0.799892347802658,-0.698817425690951,-0.654532560267659,-0.541826912571999,-0.513385805623035,-0.431130695826684,-0.573161684466268,-0.627269609801203,-0.575585598947175,-0.753889057031193,-0.609985915367685,-0.668430375649467,-0.533186950057531,-0.737664738366633,-0.545232053743225,-0.389947224094456,-0.529268311336264,-0.617683261870723,-0.622311270095105,-0.565064992636073,-0.536822939082301,-0.497687482080375,-0.508563523222972,-0.698245798018419,-0.0340478584450486,-0.392713458103875,-0.562125681422562,-0.372517688412611,-0.468695110495698,-0.515404679022996,-0.499111149021099,-0.603727877463608,-0.539715256554365,-0.482700542830018,-0.504927811420535,-0.564979708991415,-0.557837842342092,-0.556011955386318,-0.699373308158135,-0.655204930794502,-0.450888870132452,-0.413005203715607,-0.286975515560425,-0.385759993333433,-0.529268311336264,-0.617683261870723],"z":[1.58635533643923,1.49640825118315,1.43757175571936,1.23180328767466,1.3170775468785,1.16971950735609,1.22631316895572,1.50161177695736,1.49001135621367,1.5805515787213,1.62538020484001,1.67015135443048,1.41362143716681,1.19221338207769,1.23433703902201,1.03280052975366,0.990412118334817,0.632433234290876,1.09996122636601,1.09945418920797,1.55656516105929,1.50895200089679,1.2212833711762,1.00152304998215,0.802152569189457,1.21469922912671,1.38924110238183,1.15577368066946,1.37790612863896,-1.11542250351872,-1.38112859986098,-1.03385227626743,-1.17108057645023,-1.25573423920303,-1.18101393910109,-1.29879970436372,-1.29496669737517,-1.58741026734516,-1.3178185174851,-1.17947804178081,-1.12493402570586,-1.26217375838343,-1.16332410817906,-1.62206620080585,-1.59380692627597,-1.54758213622275,-1.08327798466497,-1.27739698084914,-1.37661685547934,-1.16950138802088,-1.14475828781132,-1.12452175456275,-1.24735756722899,-1.26147269482267,-1.54502521012625,-1.40008521748888,-1.33845702913453,-1.32980726385086,-1.37122191645893,-1.35697100317161,-0.16697621813529,-0.024385555487952,-0.256448224781369,-0.239432060756418,-0.343001080152593,-0.293637694346347,-0.190832803243758,-0.00379394978162906,-0.181656517645492,-0.48792586672161,-0.535696204389737,-0.290824606916784,-0.131094138486544,-0.109591606175712,-0.117166835344402,-0.301262709141072,-0.441735958076524,-0.593206083986328,-0.00664386127838831,-0.132728822362396,-0.561171328638137,-0.167078126160795,-0.546891921875269,-0.128349470904924,-0.190705739597804,-0.386383866119737,-0.307434785021343,-0.32628812637811,-0.234436762583526,-0.337197495103728,-0.299575284464091,-0.275651039536364,-0.322070332606721,-0.336722578665554,-0.388891708450025,-0.0947060295196431,-0.275505996412432,-0.338505886401387,-0.38304562757126,-0.338952718055142,-0.417630932326303,-0.394382684894423,-0.449358034328591,-0.313896243108983,-0.353980844162161,-0.385380757383038,-0.426206521218877,-0.299168406966687,-0.331947871101977,-0.378226432314719,-0.289467743717354,-0.431809952432382,-0.495807156673314,-0.351585932153001,-0.274406306147669,-0.295522536362943,-0.404659545440084,-0.381803577340129,-0.593206083986328,0.488023463057448,0.237619511278949,0.459104419751467,0.120606208924394,0.521536475862206,0.0690298379803435,0.487625793395997,-0.0336049011422212,0.332512907920858,0.275289583557282,0.184293671832436,0.446553196883572,0.476208520784137,0.614038597038247,0.1151126979174,0.188392423690308,0.294293682449761,0.1151126979174,0.556653853939803,0.268819563088586,0.511861391383821,0.353315372503183,0.347424839647393,0.533364253544735,0.418985181880922,0.228233688759061,0.184293671832436,0.518370420180465,1.21776772948703,1.03589162516616,1.08251621540277,0.989664127702022,1.17280922802156,1.01701289659065,1.17238687526368,0.968200778952338,1.0829849463153,0.992410797086686,1.016658593153,1.09142366350982,1.13393420150918,1.05574422817713,1.30223550735041,1.20295745996629,1.10613778918517,1.11112153781658,1.39290009329157,0.994930751309692,0.99279634536077,1.0602761796441,1.11828755142229,1.04608669503398,1.10526359155082,1.13206862502139,1.15342668970625,1.17892374347336,1.17084854840545,0.907077887815783,1.27045412571433,1.25439285064259,0.965871034464333,1.27530827100902,1.15381175003064,1.23560484014879,1.20781333831076,1.31471620130484,1.27843898683896,1.27293444842355,1.29895685900354,1.2848824249346,1.22855855057122,0.720210141412931,1.42412484028236,1.38828727762624,1.34392846334065,1.31245036371814,0.970983776268834,1.18639147389582,1.2023319352651,1.38017977113085,1.26102408102037,1.46039342329543,1.42925975170664,1.32075732257362,1.63319882917573,1.19841093756028,1.19629907710609,0.396145384900462,0.433541167301775,0.400991460276488,0.544040743477162,0.403224129528286,0.392583499164753,-0.0651908526234811,0.35059355267974,0.656136555206862,0.627610389985384,0.170378061448261,0.591489371419898,0.354144355034642,0.389513270918119,0.337399890703987,0.444019329143886,0.259689749954874,0.382351195173197,0.583501108976593,0.380232698366266,0.391720562121996,0.323200478123307,0.3580395237507,0.42611872040677,0.308637906572708,0.336647801704097,0.224401366513948,0.338105782977825,0.354519098348026,0.452832671681463,0.316331489368473,0.380456991160784,0.391720562121996,-1.65709079136127,-1.66679811055735,-1.56498392797657,-1.60290510479666,-1.47219759650764,-1.63250901320235,-1.88722659445272,-1.85804250239135,-1.66379944066098,-1.5380103951747,-1.67161352271212,-1.44485944542169,-1.67909315322451,-1.66236420620743,-1.73671787886244,-1.80480343872444,-1.65866057519677,-1.66681495555436,-1.57091357985577,-1.41377069155325,-1.56464532499756,-1.61641298148475,-1.63703275583296,-1.56982129543491,-1.96369141937648,-1.65955680092674,-1.61281208986356,-1.50768539552203,-1.75585297987403,-0.733212691599436,-0.429646992922144,-0.873944328111487,-0.817252367853908,-0.732443888348704,-0.909002089359836,-0.687442611480838,-0.749746599263847,-0.712657272929599,-1.02994543204646,-0.412792955029431,-0.674079590782322,-0.86997551881301,-0.682075735599638,-0.603371461576682,-0.812895513691459,-0.426480989054756,-0.920509836909491,-0.616514538344978,-0.559359510305695,-0.902831049951748,-0.675739390092232,-0.725236942433029,-0.859305403567661,-0.659514401877824,-0.778702613258289,-0.484026429194612,-0.564966576420509,-0.324125970266287,-0.506405445837878,-0.873944328111487,-0.817252367853908],"mode":"markers","color":["A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","A","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","D","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","E","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","I","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J","J"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Factor 1"},"yaxis":{"title":"Factor 2"},"zaxis":{"title":"Factor 3"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"x":[2.24036067259823,2.15175485415328,2.48506673089274,2.19611014378213,1.90633777636402,2.10806504668525,1.91069783953296,1.84193369825483,2.35972313182638,2.29975589963993,2.31718744719378,2.23949842223494,2.4010735791244,2.16910017275046,2.01385104690226,2.58029397605967,1.85102667533166,2.27456086386969,1.87539573874589,2.21178380116526,2.6617777923739,2.44471806213047,2.06206570175589,2.36126039697886,2.32440392163133,2.36623673026198,2.42568290772769,2.43168534626531,2.1243633904013],"y":[1.01365653602109,1.00091815155949,0.723641562677787,0.776959442764104,1.02361718374339,0.802915169204006,0.962192293333687,1.08904918320896,0.828399382630275,0.967633990675757,0.965339816184981,0.991874659541217,0.737639365279752,0.690657293580753,0.914838674703081,0.328314122531445,0.816391094290233,0.288070090759459,0.877088977182095,0.597145655297669,0.629811070773451,0.738721532767935,0.874734891592685,0.572942955581306,0.381112285396794,0.681945540389693,0.722267411558036,0.49596114133201,0.962297016539941],"z":[1.58635533643923,1.49640825118315,1.43757175571936,1.23180328767466,1.3170775468785,1.16971950735609,1.22631316895572,1.50161177695736,1.49001135621367,1.5805515787213,1.62538020484001,1.67015135443048,1.41362143716681,1.19221338207769,1.23433703902201,1.03280052975366,0.990412118334817,0.632433234290876,1.09996122636601,1.09945418920797,1.55656516105929,1.50895200089679,1.2212833711762,1.00152304998215,0.802152569189457,1.21469922912671,1.38924110238183,1.15577368066946,1.37790612863896],"mode":"markers","type":"scatter3d","name":"A","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"frame":null},{"x":[1.52451918515455,1.11441211944515,1.69467073633266,1.4371994153036,1.40710010783856,1.57882008154702,1.7296881918519,1.74661881618693,1.1836832066338,1.01017882137675,1.53372586213735,1.58886610769077,1.33172296962037,1.54261717356917,0.840777326179829,0.648796530860371,1.0805401303856,1.55298982515242,1.57094997068614,0.99848798534496,1.51520585095953,1.60891331518932,1.6130042718183,1.36983884938152,1.35954861207139,1.05595217319815,1.3435712796342,1.39790533325631,1.48373803111068,1.5837908949545,1.52549654519026],"y":[-0.385918471936279,-0.231283263230537,-0.497879997990864,-0.360688159469188,-0.451009484856024,-0.46090330476131,-0.569128796768993,-0.640828857319901,-0.442646295992695,-0.206348935783802,-0.356554487460918,-0.413956827933118,-0.31112092000095,-0.466637981644861,-0.222506086824414,-0.0802816466302886,-0.294270534249229,-0.372470763446462,-0.498630887029985,-0.234231080348458,-0.437502664207077,-0.48940577145296,-0.50646769563515,-0.343418361952175,-0.334106156153643,-0.287923806744682,-0.389441313193879,-0.345874705825765,-0.398473400579198,-0.528160232462727,-0.505395112768105],"z":[-1.11542250351872,-1.38112859986098,-1.03385227626743,-1.17108057645023,-1.25573423920303,-1.18101393910109,-1.29879970436372,-1.29496669737517,-1.58741026734516,-1.3178185174851,-1.17947804178081,-1.12493402570586,-1.26217375838343,-1.16332410817906,-1.62206620080585,-1.59380692627597,-1.54758213622275,-1.08327798466497,-1.27739698084914,-1.37661685547934,-1.16950138802088,-1.14475828781132,-1.12452175456275,-1.24735756722899,-1.26147269482267,-1.54502521012625,-1.40008521748888,-1.33845702913453,-1.32980726385086,-1.37122191645893,-1.35697100317161],"mode":"markers","type":"scatter3d","name":"B","marker":{"color":"rgba(228,156,113,1)","line":{"color":"rgba(228,156,113,1)"}},"textfont":{"color":"rgba(228,156,113,1)"},"error_y":{"color":"rgba(228,156,113,1)"},"error_x":{"color":"rgba(228,156,113,1)"},"line":{"color":"rgba(228,156,113,1)"},"frame":null},{"x":[-0.65643046811207,-1.39555666602169,-0.643902960787955,-0.874425531199658,-0.209067031140727,-0.769974062202554,-1.534727818385,-1.19173074590002,-1.34680901151907,-1.20621937734062,-1.41090001802367,-0.743803012127801,-0.643699536247072,-0.739044038371164,-0.684326546968772,-0.56677193958199,-0.651257737949545,-1.12369811675758,-0.731768617280504,-0.907537510124241,-1.19635309349386,-1.16057637068871,-1.02335653027859,-1.2919992534963,-0.139112043641378,-1.24894481695686,-0.661109106401056],"y":[2.1176662304134,2.67209895346538,1.97154837466372,2.08895037522198,1.66833340583785,2.037860278318,2.6511936234967,2.552709245338,2.45350710141291,2.22601949628587,2.27302994278607,1.98352299136017,2.12107485976068,2.10206078575345,2.04250364375969,1.83401272614534,1.77796905390347,2.17386523935573,2.16958936047584,2.29165938390457,2.23114877083413,2.32554134499845,1.97503662270545,2.46241444116047,1.67880769724926,2.25579589604754,2.00245911741144],"z":[-0.16697621813529,-0.024385555487952,-0.256448224781369,-0.239432060756418,-0.343001080152593,-0.293637694346347,-0.190832803243758,-0.00379394978162906,-0.181656517645492,-0.48792586672161,-0.535696204389737,-0.290824606916784,-0.131094138486544,-0.109591606175712,-0.117166835344402,-0.301262709141072,-0.441735958076524,-0.593206083986328,-0.00664386127838831,-0.132728822362396,-0.561171328638137,-0.167078126160795,-0.546891921875269,-0.128349470904924,-0.190705739597804,-0.386383866119737,-0.307434785021343],"mode":"markers","type":"scatter3d","name":"C","marker":{"color":"rgba(201,152,157,1)","line":{"color":"rgba(201,152,157,1)"}},"textfont":{"color":"rgba(201,152,157,1)"},"error_y":{"color":"rgba(201,152,157,1)"},"error_x":{"color":"rgba(201,152,157,1)"},"line":{"color":"rgba(201,152,157,1)"},"frame":null},{"x":[0.188597978094852,0.260124913961055,-0.353826153124466,-0.601758942267809,-0.345999181750237,-0.0146485656555753,-0.377378928698038,-0.365496013308975,-1.32556049215193,-0.361311692772703,-0.247672206761503,-0.220472059796647,-0.576708215091538,-0.288217596459315,-0.301098484275507,-0.347662845732615,-0.380959287549715,-0.424226494739332,-0.414814844480563,-0.284944862412319,-0.407648216497274,-0.470374225692662,-0.583741408151646,0.222890997372937,-0.663006357243064,-0.249101730227799,-0.469901602910906,0.209444048791233,0.300772956156214,0.333183783377205,0.261606162724603,-1.12369811675758],"y":[1.21958460657488,1.24838692000869,1.42592007314704,1.54298063310543,1.3866857326375,1.31432241813395,1.38084024995694,1.4042840697722,2.56714063853887,1.46871134484085,1.31202059932371,1.24212636278116,1.50063564705918,1.51884366878516,1.48050830885566,1.53855071927743,1.44427419728026,1.40291835523715,1.42966395032913,1.28068191750881,1.488651766886,1.49515330173433,1.54017358920625,1.1879801034152,1.53609571746334,1.55139606023343,1.47621684745057,1.24571710420083,1.21284205813275,1.09597391507862,1.09241177747921,2.17386523935573],"z":[-0.32628812637811,-0.234436762583526,-0.337197495103728,-0.299575284464091,-0.275651039536364,-0.322070332606721,-0.336722578665554,-0.388891708450025,-0.0947060295196431,-0.275505996412432,-0.338505886401387,-0.38304562757126,-0.338952718055142,-0.417630932326303,-0.394382684894423,-0.449358034328591,-0.313896243108983,-0.353980844162161,-0.385380757383038,-0.426206521218877,-0.299168406966687,-0.331947871101977,-0.378226432314719,-0.289467743717354,-0.431809952432382,-0.495807156673314,-0.351585932153001,-0.274406306147669,-0.295522536362943,-0.404659545440084,-0.381803577340129,-0.593206083986328],"mode":"markers","type":"scatter3d","name":"D","marker":{"color":"rgba(175,154,200,1)","line":{"color":"rgba(175,154,200,1)"}},"textfont":{"color":"rgba(175,154,200,1)"},"error_y":{"color":"rgba(175,154,200,1)"},"error_x":{"color":"rgba(175,154,200,1)"},"line":{"color":"rgba(175,154,200,1)"},"frame":null},{"x":[-0.300053002320677,-0.131896413732026,-0.391368395175452,-1.78248893263848,-0.50626463222464,-1.75080368896868,-0.659964161352326,-0.14714505498438,-0.36727338559384,-0.326892642426814,-0.662866856369191,-0.631413956285825,0.062084239142636,0.0866662887486274,0.264673215588528,-0.575886016246622,-0.729133955256453,0.264673215588528,-0.568958107849406,-0.441278335269675,-0.10923276373407,-0.0714279440272105,0.270569764410649,0.132243793582224,0.0690241267656017,-1.2472538982285,-0.662866856369191,-0.613140553634566],"y":[-0.831581709079885,-0.843968007662991,-0.719549374959644,-0.370739575261849,-0.73396281714834,-0.431676655925066,-0.697494292071156,-0.820582983835025,-0.786938931683959,-0.800955264592985,-0.651745818866095,-0.688473512505343,-0.878472518935024,-0.882674768807507,-1.00485598637591,-0.731691831127915,-0.749017491927396,-1.00485598637591,-0.681648149833724,-0.769795560998529,-0.813267623486982,-0.889205147205008,-1.04010002888049,-0.964803801907932,-0.938701777016283,-0.665583673521357,-0.651745818866095,-0.744310849618298],"z":[0.488023463057448,0.237619511278949,0.459104419751467,0.120606208924394,0.521536475862206,0.0690298379803435,0.487625793395997,-0.0336049011422212,0.332512907920858,0.275289583557282,0.184293671832436,0.446553196883572,0.476208520784137,0.614038597038247,0.1151126979174,0.188392423690308,0.294293682449761,0.1151126979174,0.556653853939803,0.268819563088586,0.511861391383821,0.353315372503183,0.347424839647393,0.533364253544735,0.418985181880922,0.228233688759061,0.184293671832436,0.518370420180465],"mode":"markers","type":"scatter3d","name":"E","marker":{"color":"rgba(226,148,184,1)","line":{"color":"rgba(226,148,184,1)"}},"textfont":{"color":"rgba(226,148,184,1)"},"error_y":{"color":"rgba(226,148,184,1)"},"error_x":{"color":"rgba(226,148,184,1)"},"line":{"color":"rgba(226,148,184,1)"},"frame":null},{"x":[-0.263334123870664,-0.64527324932223,-0.786321093793248,0.0399793183250499,-0.195827187438226,-0.68890720144501,-0.553477390208007,-0.879683504158088,-0.762545738944049,-0.513632352277903,-0.126044112799571,-0.663020034115401,-0.1433731873735,-0.663350309796979,-0.445624051823012,-0.329946310317917,-0.046294666810869,-0.792244300642812,-0.27650303375684,-0.764399026539271,-0.930833575405399,-1.03786028808796,-0.525236047389585,-0.560420508073746,-0.301617753381319,-0.462000884143174,-0.415237140989368,-0.239238778308604,-0.134782990795266,-0.706560636766986],"y":[-0.715957661342575,-0.606570082095866,-0.541811561185736,-0.750146490248441,-0.729556349892187,-0.583219425563706,-0.659090447809414,-0.513429084503905,-0.542926452439113,-0.674889005558838,-0.697184690612103,-0.627919211270134,-0.674666743043,-0.606524309704533,-0.655381218156856,-0.679518313157394,-0.710342242698541,-0.549857091281336,-0.665558940426006,-0.580730797344033,-0.530264502440995,-0.50927628430778,-0.617119827444658,-0.673719341607576,-0.740216800381377,-0.677755267265319,-0.658207139095294,-0.734628953460493,-0.754652223434213,-0.660072296516989],"z":[1.21776772948703,1.03589162516616,1.08251621540277,0.989664127702022,1.17280922802156,1.01701289659065,1.17238687526368,0.968200778952338,1.0829849463153,0.992410797086686,1.016658593153,1.09142366350982,1.13393420150918,1.05574422817713,1.30223550735041,1.20295745996629,1.10613778918517,1.11112153781658,1.39290009329157,0.994930751309692,0.99279634536077,1.0602761796441,1.11828755142229,1.04608669503398,1.10526359155082,1.13206862502139,1.15342668970625,1.17892374347336,1.17084854840545,0.907077887815783],"mode":"markers","type":"scatter3d","name":"F","marker":{"color":"rgba(176,208,99,1)","line":{"color":"rgba(176,208,99,1)"}},"textfont":{"color":"rgba(176,208,99,1)"},"error_y":{"color":"rgba(176,208,99,1)"},"error_x":{"color":"rgba(176,208,99,1)"},"line":{"color":"rgba(176,208,99,1)"},"frame":null},{"x":[-0.705208438948708,-0.76693982634679,-0.828700446788611,-0.768263149475693,-0.0681737907575063,-0.520475903751729,-0.609208454664032,-0.697270497675375,-0.593914356865283,-0.615792900094094,-0.907554625448025,-0.90340213729357,-0.733152060524721,-0.938105513057101,-0.154221960322263,-0.797094287398542,-0.834403719727544,-0.727248486593005,-0.363420101889583,-0.866982580944881,-0.445832568426234,-0.840395075866247,-0.931126383732846,-0.4837883395677,-0.412095221115218,-0.760322549631552,-0.651124252736048,-1.10832109719112,-0.591512349550249],"y":[-0.52907926187813,-0.524187628853447,-0.569896119024781,-0.504004068473067,-0.671977461618826,-0.602072800713697,-0.545756391353565,-0.515675238165215,-0.545084637678976,-0.530157484627426,-0.452096872889371,-0.422488129183095,-0.49758104748514,-0.603159737410648,-0.656584577939304,-0.443541213330252,-0.489269913905731,-0.546640303710992,-0.639344537430994,-0.468240722861949,-0.586872184661828,-0.471349998678574,-0.491711844081959,-0.589446416956238,-0.625785477587822,-0.508580312537653,-0.456118149946537,-0.415176547420679,-0.595476247665435],"z":[1.27045412571433,1.25439285064259,0.965871034464333,1.27530827100902,1.15381175003064,1.23560484014879,1.20781333831076,1.31471620130484,1.27843898683896,1.27293444842355,1.29895685900354,1.2848824249346,1.22855855057122,0.720210141412931,1.42412484028236,1.38828727762624,1.34392846334065,1.31245036371814,0.970983776268834,1.18639147389582,1.2023319352651,1.38017977113085,1.26102408102037,1.46039342329543,1.42925975170664,1.32075732257362,1.63319882917573,1.19841093756028,1.19629907710609],"mode":"markers","type":"scatter3d","name":"G","marker":{"color":"rgba(227,217,62,1)","line":{"color":"rgba(227,217,62,1)"}},"textfont":{"color":"rgba(227,217,62,1)"},"error_y":{"color":"rgba(227,217,62,1)"},"error_x":{"color":"rgba(227,217,62,1)"},"line":{"color":"rgba(227,217,62,1)"},"frame":null},{"x":[-0.89660510133386,0.0466019594891075,-0.389376177645209,-1.71645185882582,-0.326512380460866,-0.293255147058717,-1.6418119781791,-0.231928283746499,-0.409334137199022,-0.561128178273085,-1.80475307528958,-0.0455772259620796,-0.497228990421437,-0.577173988465361,-0.787089379222306,-0.690406962571303,-0.468886013425782,-0.352620433192858,-0.406356358469501,-0.573346595929715,-0.548366755564902,0.122476797387726,-0.264018251018402,-0.615291725696541,-0.220726289576021,-0.35333452486623,0.0316932062703597,-0.456178641678037,-0.776010905238148,-0.0584421151778347,-1.16414336220076,-0.65484549499493,-0.548366755564902],"y":[-0.575996980221464,-0.816398028368377,-0.789326236323073,-0.275119569495794,-0.736246826864174,-0.755885750360073,-0.474831644691791,-0.867665882875059,-0.803986925027392,-0.662265189925995,-0.380265370430011,-0.868811848509534,-0.613344975429209,-0.716128351065223,-0.600442112944562,-0.650677365492427,-0.764262297397943,-0.819869491866925,-0.748995998081768,-0.725413616582977,-0.724602860062608,-0.934234986393829,-0.73059744179467,-0.700610701566288,-0.863014215157521,-0.797255005045743,-0.939313076392447,-0.802273778033822,-0.65134221248598,-0.929140213133316,-0.60578215354692,-0.684585545153801,-0.724602860062608],"z":[0.396145384900462,0.433541167301775,0.400991460276488,0.544040743477162,0.403224129528286,0.392583499164753,-0.0651908526234811,0.35059355267974,0.656136555206862,0.627610389985384,0.170378061448261,0.591489371419898,0.354144355034642,0.389513270918119,0.337399890703987,0.444019329143886,0.259689749954874,0.382351195173197,0.583501108976593,0.380232698366266,0.391720562121996,0.323200478123307,0.3580395237507,0.42611872040677,0.308637906572708,0.336647801704097,0.224401366513948,0.338105782977825,0.354519098348026,0.452832671681463,0.316331489368473,0.380456991160784,0.391720562121996],"mode":"markers","type":"scatter3d","name":"H","marker":{"color":"rgba(245,207,100,1)","line":{"color":"rgba(245,207,100,1)"}},"textfont":{"color":"rgba(245,207,100,1)"},"error_y":{"color":"rgba(245,207,100,1)"},"error_x":{"color":"rgba(245,207,100,1)"},"line":{"color":"rgba(245,207,100,1)"},"frame":null},{"x":[-0.226168239868559,-0.105321721466093,-0.227324866370439,-0.119353884286403,-0.0891131708437853,-0.49699627425301,-0.248346436932179,-0.097023788768311,-0.264187739878745,-0.0049763509076502,-0.11257116703284,-0.231087373706605,-0.308164361103661,-0.159347193269378,-0.278948932883407,-0.00871514719710698,-0.225872379161453,-0.251235986892218,-0.369083133380027,-0.327400855791552,-0.306449464835521,-0.170173223029816,-0.194578277951099,-0.200536406777495,-0.334384874430893,-0.170046703201415,-0.186569076687118,-0.317627357209386,-0.15864248222705],"y":[-0.627740488210811,-0.73691400254789,-0.64090999884981,-0.600036671776076,-0.664923033220372,-0.454108824411974,-0.859445093530009,-0.743603573066718,-0.738327151982593,-0.559482733751416,-0.659638833157121,-0.474507745802241,-0.525743392521795,-0.579625109474683,-0.611100589916185,-0.799892347802658,-0.698817425690951,-0.654532560267659,-0.541826912571999,-0.513385805623035,-0.431130695826684,-0.573161684466268,-0.627269609801203,-0.575585598947175,-0.753889057031193,-0.609985915367685,-0.668430375649467,-0.533186950057531,-0.737664738366633],"z":[-1.65709079136127,-1.66679811055735,-1.56498392797657,-1.60290510479666,-1.47219759650764,-1.63250901320235,-1.88722659445272,-1.85804250239135,-1.66379944066098,-1.5380103951747,-1.67161352271212,-1.44485944542169,-1.67909315322451,-1.66236420620743,-1.73671787886244,-1.80480343872444,-1.65866057519677,-1.66681495555436,-1.57091357985577,-1.41377069155325,-1.56464532499756,-1.61641298148475,-1.63703275583296,-1.56982129543491,-1.96369141937648,-1.65955680092674,-1.61281208986356,-1.50768539552203,-1.75585297987403],"mode":"markers","type":"scatter3d","name":"I","marker":{"color":"rgba(219,192,155,1)","line":{"color":"rgba(219,192,155,1)"}},"textfont":{"color":"rgba(219,192,155,1)"},"error_y":{"color":"rgba(219,192,155,1)"},"error_x":{"color":"rgba(219,192,155,1)"},"line":{"color":"rgba(219,192,155,1)"},"frame":null},{"x":[-0.091203548259855,-0.189613098162273,-0.186407277946592,-0.126447234097576,-0.0914707391267346,-0.240071737601826,0.00237522201179935,-0.0450163720487959,0.0139827069729597,0.0248556056191034,-0.448230400083885,-0.422767069429845,-0.0145035501672472,-0.198142065325086,-0.131933250831969,-0.203209397059834,0.216633766885299,0.00271252108791559,-0.000988887585440246,-0.16004005241877,-0.0815784835040497,-0.0587008082373998,-0.0643984553279523,-0.144305155430905,-0.0477442039143752,0.145882247656279,0.0751389882607037,-0.124912142640069,-0.0184274013421762,-0.226628917433386,-0.186407277946592,-0.126447234097576],"y":[-0.545232053743225,-0.389947224094456,-0.529268311336264,-0.617683261870723,-0.622311270095105,-0.565064992636073,-0.536822939082301,-0.497687482080375,-0.508563523222972,-0.698245798018419,-0.0340478584450486,-0.392713458103875,-0.562125681422562,-0.372517688412611,-0.468695110495698,-0.515404679022996,-0.499111149021099,-0.603727877463608,-0.539715256554365,-0.482700542830018,-0.504927811420535,-0.564979708991415,-0.557837842342092,-0.556011955386318,-0.699373308158135,-0.655204930794502,-0.450888870132452,-0.413005203715607,-0.286975515560425,-0.385759993333433,-0.529268311336264,-0.617683261870723],"z":[-0.733212691599436,-0.429646992922144,-0.873944328111487,-0.817252367853908,-0.732443888348704,-0.909002089359836,-0.687442611480838,-0.749746599263847,-0.712657272929599,-1.02994543204646,-0.412792955029431,-0.674079590782322,-0.86997551881301,-0.682075735599638,-0.603371461576682,-0.812895513691459,-0.426480989054756,-0.920509836909491,-0.616514538344978,-0.559359510305695,-0.902831049951748,-0.675739390092232,-0.725236942433029,-0.859305403567661,-0.659514401877824,-0.778702613258289,-0.484026429194612,-0.564966576420509,-0.324125970266287,-0.506405445837878,-0.873944328111487,-0.817252367853908],"mode":"markers","type":"scatter3d","name":"J","marker":{"color":"rgba(179,179,179,1)","line":{"color":"rgba(179,179,179,1)"}},"textfont":{"color":"rgba(179,179,179,1)"},"error_y":{"color":"rgba(179,179,179,1)"},"error_x":{"color":"rgba(179,179,179,1)"},"line":{"color":"rgba(179,179,179,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+</div>
 </div>
             </section>
 
@@ -417,6 +1219,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
