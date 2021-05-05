@@ -1,0 +1,9 @@
+---
+title: "A15. Конфирматорный факторный анализ"
+author:
+  - name: A. Angelgardt
+  - name: A. Kharitonova
+
+output: radix::radix_article
+---
+
