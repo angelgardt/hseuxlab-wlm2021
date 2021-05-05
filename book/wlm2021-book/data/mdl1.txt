@@ -1,0 +1,2 @@
+F1 =~ prot + fat + sodium + ash + carb
+F2 =~ mois + cal
