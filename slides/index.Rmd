@@ -13,15 +13,15 @@ output: radix::radix_article
 
 |№|Видео|Слайды|
 |:--|:-------|:---------|
-|0|[Введение в курс]()|[Введение в курс](https://angelgardt.github.io/hseuxlab-wlm2021/slides/0-intro)|
-|1|[Введение в R]()|[Введение в R](https://angelgardt.github.io/hseuxlab-wlm2021/slides/1-r-intro)|
-|2.1|[Работа с реальными данными. Предобработка]()|[Работа с реальными данными. Предобработка](https://angelgardt.github.io/hseuxlab-wlm2021/slides/2-1-tidy)|
-|2.2|[Работа с реальными данными. Визуализация]()|[Работа с реальными данными. Визуализация](https://angelgardt.github.io/hseuxlab-wlm2021/slides/2-2-visualization)|
+|0|[Введение в курс](https://youtu.be/HjwF7BzGazE)|[Введение в курс](https://angelgardt.github.io/hseuxlab-wlm2021/slides/0-intro)|
+|1|[Введение в R](https://youtu.be/iiH6zoCf3fU)|[Введение в R](https://angelgardt.github.io/hseuxlab-wlm2021/slides/1-r-intro)|
+|2.1|[Работа с реальными данными. Предобработка](https://youtu.be/9qlnGVmJRgY)|[Работа с реальными данными. Предобработка](https://angelgardt.github.io/hseuxlab-wlm2021/slides/2-1-tidy)|
+|2.2|[Работа с реальными данными. Визуализация](https://youtu.be/dFggm-e80i8)|[Работа с реальными данными. Визуализация](https://angelgardt.github.io/hseuxlab-wlm2021/slides/2-2-visualization)|
 |3.1|[Математический ликбез. Элементы теории множеств]()|[Математический ликбез. Элементы теории множеств](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-1-set-theory)|
-|3.2|[Математический ликбез. Элементы алгебры логики]()|[Математический ликбез. Элементы алгебры логики](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-2-logic)|
+|3.2|[Математический ликбез. Элементы алгебры логики](https://youtu.be/OTX4m0sAuzM)|[Математический ликбез. Элементы алгебры логики](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-2-logic)|
 |3.3|[Математический ликбез. Последовательности и функции]()|[Математический ликбез. Последовательности и функции](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-3-calculus)|
-|3.4|[Математический ликбез. Элементы линейной алгебры]()|[Математический ликбез. Элементы линейной алгебры](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-4-linal)|
-|4|[Введение в статистику]()|[Введение в статистику](https://angelgardt.github.io/hseuxlab-wlm2021/slides/4-intro-stat)|
+|3.4|[Математический ликбез. Элементы линейной алгебры](https://youtu.be/A0ha1YLrSZg)|[Математический ликбез. Элементы линейной алгебры](https://angelgardt.github.io/hseuxlab-wlm2021/slides/3-4-linal)|
+|4|[Введение в статистику](https://youtu.be/4-Vlo4kTDr8)|[Введение в статистику](https://angelgardt.github.io/hseuxlab-wlm2021/slides/4-intro-stat)|
 |5.1|[Оценивание параметров в практике статистического анализа]()|[Оценивание параметров в практике статистического анализа](https://angelgardt.github.io/hseuxlab-wlm2021/slides/5-1-estimation)|
 |5.2|[Тестирование статистических гипотез]()|[Тестирование статистических гипотез](https://angelgardt.github.io/hseuxlab-wlm2021/slides/5-2-testing)|
 |6.1|[Описательные статистики]()|[Описательные статистики](https://angelgardt.github.io/hseuxlab-wlm2021/slides/6-1-descriptives)|

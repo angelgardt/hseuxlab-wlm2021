@@ -1,0 +1,14 @@
+Attributes:
+
+1. Country - Name of the country.
+2. Region - Region the country belongs to.
+3. Happiness Rank - Rank of the country based on the Happiness Score.
+4. Happiness Score - A metric measured by asking the sampled people a question.
+5. Standard Error - The standard error of the happiness score.
+6. Economy - The extent to which GDP contributes to the calculation of the Happiness Score.
+7. Family - The extent to which Family contributes to the calculation of the Happiness Score
+8. Health - The extent to which Life expectancy contributed to the calculation of the Happiness Score
+9. Freedom - The extent to which Freedom contributed to the calculation of the Happiness Score.
+10. Trust - The extent to which Perception of Corruption contributes to Happiness Score.
+11. Generosity - The extent to which Generosity contributed to the calculation of the Happiness Score.
+12. Dystopia Residual - The extent to which Dystopia Residual contributed to the calculation of the Happiness Score.
